@@ -1,0 +1,84 @@
+{
+  "date": "2026-02-22",
+  "cycle": "morning",
+  "findings": [
+    {
+      "type": "news",
+      "title": "WordPress WPvivid Plugin — Unauthenticated RCE",
+      "threat_score": 8,
+      "cve": "Not yet assigned",
+      "cvss": null,
+      "affected_technology": "WordPress (WPvivid Backup & Migration plugin)",
+      "summary": "Unauthenticated RCE via file upload in WPvivid plugin with 900K+ installs; mass-exploitation imminent.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "bleepingcomputer.com"
+    },
+    {
+      "type": "news",
+      "title": "ClickFix Campaigns Surge — Now 53% of All Malware Loader Activity",
+      "threat_score": 7,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Cross-platform (Windows, macOS)",
+      "summary": "ClickFix evolved with DNS-based delivery, Matanbuchus 3.0, and macOS variants; fueled 53% of all malware loaders in 2025.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "bleepingcomputer.com"
+    },
+    {
+      "type": "news",
+      "title": "GS7 Threat Actor — Fortune 500 Phishing via Telegram Bots",
+      "threat_score": 6,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Fortune 500 companies (financial, tech, healthcare, telecom)",
+      "summary": "GS7 actor phishing Fortune 500 via 150+ lookalike domains and Telegram bots; potential initial access broker for ransomware.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "thehackernews.com"
+    }
+  ],
+  "noted": [
+    {
+      "cve": "CVE-2024-43468",
+      "product": "Microsoft Configuration Manager",
+      "summary": "SQL injection, CISA KEV flagged. Older CVE now exploited."
+    },
+    {
+      "cve": "CVE-2025-40536",
+      "product": "SolarWinds Web Help Desk",
+      "summary": "Auth bypass, CISA KEV."
+    },
+    {
+      "cve": "CVE-2024-7694",
+      "product": "TeamT5 ThreatSonar",
+      "summary": "Unrestricted file upload, CISA KEV. Requires admin."
+    },
+    {
+      "cve": "CVE-2025-15556",
+      "product": "Notepad++",
+      "summary": "Code download without integrity check. Fixed with double-lock mechanism."
+    },
+    {
+      "cve": null,
+      "product": "Remcos RAT",
+      "summary": "New variant with live C2 and webcam streaming capability."
+    },
+    {
+      "cve": null,
+      "product": "Atlassian Jira",
+      "summary": "Trial accounts weaponized for spam targeting government/corporate."
+    },
+    {
+      "cve": null,
+      "product": "ICS/OT",
+      "summary": "119 ransomware groups targeting industrial orgs in 2025; 3,300 hit (49% increase)."
+    }
+  ],
+  "source_coverage": {
+    "total": 90,
+    "checked": 90,
+    "with_findings": 9,
+    "unreachable": [],
+    "degraded": []
+  },
+  "full_report": "reports/2026/02/22/morning/report.md"
+}

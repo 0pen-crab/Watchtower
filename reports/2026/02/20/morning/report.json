@@ -1,0 +1,69 @@
+{
+  "date": "2026-02-20",
+  "cycle": "morning",
+  "findings": [
+    {
+      "type": "update",
+      "title": "BeyondTrust CVE-2026-1731 — Confirmed in Ransomware Attacks",
+      "threat_score": 10,
+      "previous_threat_score": 9,
+      "cve": "CVE-2026-1731",
+      "cvss": 9.9,
+      "affected_technology": "BeyondTrust Remote Support (RS) & Privileged Remote Access (PRA)",
+      "summary": "CISA confirms ransomware exploitation; Unit 42 details web shells, C2, lateral movement across financial, legal, tech, healthcare sectors.",
+      "first_seen_at": "cisa.gov"
+    },
+    {
+      "type": "news",
+      "title": "Roundcube Webmail — Two Vulns Added to CISA KEV",
+      "threat_score": 8,
+      "cve": "CVE-2025-68461, CVE-2025-49113",
+      "cvss": null,
+      "affected_technology": "Roundcube Webmail",
+      "summary": "XSS via SVG and deserialization RCE in Roundcube added to CISA KEV; chain enables full server compromise from email.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "cisa.gov"
+    },
+    {
+      "type": "news",
+      "title": "LockBit 5.0 — Cross-Platform Ransomware Now Targeting Proxmox",
+      "threat_score": 7,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Windows, Linux, ESXi, Proxmox VE",
+      "summary": "LockBit 5.0 adds dedicated Proxmox builds targeting the increasingly popular open-source virtualization platform.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "thehackernews.com"
+    }
+  ],
+  "noted": [
+    {
+      "cve": null,
+      "product": "PayPal",
+      "summary": "SSNs exposed via loan application bug for ~6 months."
+    },
+    {
+      "cve": null,
+      "product": "Advantest",
+      "summary": "Japanese chip testing giant hit by ransomware."
+    },
+    {
+      "cve": null,
+      "product": "UMMC",
+      "summary": "All clinics closed statewide after ransomware attack."
+    },
+    {
+      "cve": null,
+      "product": "ATM jackpotting",
+      "summary": "FBI reports $20M lost in 2025 from 700 Ploutus malware incidents."
+    }
+  ],
+  "source_coverage": {
+    "total": 90,
+    "checked": 90,
+    "with_findings": 8,
+    "unreachable": [],
+    "degraded": []
+  },
+  "full_report": "reports/2026/02/20/morning/report.md"
+}

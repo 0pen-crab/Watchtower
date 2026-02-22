@@ -1,0 +1,59 @@
+{
+  "date": "2026-02-21",
+  "cycle": "morning",
+  "findings": [
+    {
+      "type": "news",
+      "title": "AI-Assisted Hacker Compromises 600+ FortiGate Devices in 55 Countries",
+      "threat_score": 8,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Fortinet FortiGate firewalls",
+      "summary": "Russian-speaking actor used commercial AI to breach 600+ FortiGate firewalls via exposed mgmt ports and weak credentials in 5 weeks.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "thehackernews.com"
+    },
+    {
+      "type": "news",
+      "title": "OpenClaw Security Vulnerabilities and Misconfiguration Risks",
+      "threat_score": 6,
+      "cve": "Not yet assigned",
+      "cvss": null,
+      "affected_technology": "OpenClaw (AI agent framework)",
+      "summary": "Third OpenClaw security incident this week; ongoing misconfiguration risks despite rapid patches.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "securityweek.com"
+    },
+    {
+      "type": "news",
+      "title": "Predator Spyware Hooks iOS SpringBoard to Hide Surveillance",
+      "threat_score": 5,
+      "cve": "Not disclosed",
+      "cvss": null,
+      "affected_technology": "iOS (Predator/Intellexa spyware)",
+      "summary": "Predator hooks iOS SpringBoard to hide recording indicators while streaming camera and mic feeds.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "bleepingcomputer.com"
+    }
+  ],
+  "noted": [
+    {
+      "cve": null,
+      "product": "Arkanix Stealer",
+      "summary": "AI-assisted infostealer experiment on dark web forums. Short-lived."
+    },
+    {
+      "cve": null,
+      "product": "Google",
+      "summary": "Former engineers indicted for trade secret exfiltration to Iran."
+    }
+  ],
+  "source_coverage": {
+    "total": 90,
+    "checked": 90,
+    "with_findings": 7,
+    "unreachable": [],
+    "degraded": []
+  },
+  "full_report": "reports/2026/02/21/morning/report.md"
+}

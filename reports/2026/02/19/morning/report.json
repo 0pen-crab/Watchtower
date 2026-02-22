@@ -1,0 +1,75 @@
+{
+  "date": "2026-02-19",
+  "cycle": "morning",
+  "findings": [
+    {
+      "type": "news",
+      "title": "Grandstream VoIP Phones — Unauthenticated Root RCE with Eavesdropping",
+      "threat_score": 8,
+      "cve": "CVE-2026-2329",
+      "cvss": null,
+      "affected_technology": "Grandstream GXP1600 series VoIP phones",
+      "summary": "Unauthenticated root RCE in Grandstream VoIP phones enables silent eavesdropping; no patch available.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "securityweek.com"
+    },
+    {
+      "type": "news",
+      "title": "Microsoft Entra Accounts Targeted via Device Code + Vishing",
+      "threat_score": 7,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Microsoft Entra ID (Azure AD)",
+      "summary": "Device code phishing combined with vishing bypasses MFA to compromise Microsoft Entra accounts across enterprise environments.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "bleepingcomputer.com"
+    },
+    {
+      "type": "update",
+      "title": "Dell RecoverPoint — CISA Orders 3-Day Patch",
+      "threat_score": 9,
+      "previous_threat_score": 8,
+      "cve": "CVE-2026-22769",
+      "cvss": 10.0,
+      "affected_technology": "Dell RecoverPoint for Virtual Machines (RP4VMs)",
+      "summary": "CISA emergency 3-day directive confirms Chinese APT exploitation since mid-2024; 18+ month zero-day campaign.",
+      "first_seen_at": "cisa.gov"
+    },
+    {
+      "type": "news",
+      "title": "OpenSSL RCE Vulnerability Disclosed",
+      "threat_score": 7,
+      "cve": "Details pending",
+      "cvss": null,
+      "affected_technology": "OpenSSL",
+      "summary": "New RCE in OpenSSL disclosed; details emerging but high impact given ubiquity across all encrypted services.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "thehackernews.com"
+    }
+  ],
+  "noted": [
+    {
+      "cve": null,
+      "product": "PromptSpy",
+      "summary": "First Android malware to abuse Gemini AI at runtime for persistence. Mobile-only."
+    },
+    {
+      "cve": null,
+      "product": "Massiv banking trojan",
+      "summary": "Targeting south Europe via IPTV app disguise. Mobile-only."
+    },
+    {
+      "cve": null,
+      "product": "TP-Link",
+      "summary": "Texas sues over firmware vulnerabilities and Chinese hacking risks."
+    }
+  ],
+  "source_coverage": {
+    "total": 90,
+    "checked": 90,
+    "with_findings": 7,
+    "unreachable": [],
+    "degraded": []
+  },
+  "full_report": "reports/2026/02/19/morning/report.md"
+}

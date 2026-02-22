@@ -1,0 +1,59 @@
+{
+  "date": "2026-02-16",
+  "cycle": "morning",
+  "findings": [
+    {
+      "type": "news",
+      "title": "Chrome Zero-Day Exploited in the Wild",
+      "threat_score": 8,
+      "cve": "CVE-2026-2441",
+      "cvss": null,
+      "affected_technology": "Google Chrome / Chromium-based browsers",
+      "summary": "High-severity use-after-free in Chromium CSS component actively exploited in the wild, first Chrome zero-day of 2026.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "bleepingcomputer.com"
+    },
+    {
+      "type": "news",
+      "title": "BeyondTrust RCE Under Active Exploitation — CISA 3-Day Deadline",
+      "threat_score": 9,
+      "cve": "CVE-2026-1731",
+      "cvss": 9.9,
+      "affected_technology": "BeyondTrust Remote Support (RS) & Privileged Remote Access (PRA)",
+      "summary": "Pre-auth OS command injection (CVSS 9.9) with public PoC, active exploitation, and CISA 3-day patch deadline; used in ransomware.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "bleepingcomputer.com"
+    },
+    {
+      "type": "news",
+      "title": "Infostealer Malware Now Targeting OpenClaw AI Agent Secrets",
+      "threat_score": 6,
+      "cve": "Not yet assigned",
+      "cvss": null,
+      "affected_technology": "OpenClaw (self-hosted AI agent framework)",
+      "summary": "Infostealers now harvesting OpenClaw config files containing API keys and auth tokens alongside traditional browser credential stores.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "bleepingcomputer.com"
+    }
+  ],
+  "noted": [
+    {
+      "cve": null,
+      "product": "Eurail B.V.",
+      "summary": "Stolen traveler data from earlier breach now for sale on dark web."
+    },
+    {
+      "cve": null,
+      "product": "Washington Hotel Japan",
+      "summary": "Ransomware infection disclosed; business data exposed."
+    }
+  ],
+  "source_coverage": {
+    "total": 90,
+    "checked": 90,
+    "with_findings": 5,
+    "unreachable": [],
+    "degraded": []
+  },
+  "full_report": "reports/2026/02/16/morning/report.md"
+}

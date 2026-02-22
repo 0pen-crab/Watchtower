@@ -1,0 +1,75 @@
+{
+  "date": "2026-02-18",
+  "cycle": "morning",
+  "findings": [
+    {
+      "type": "news",
+      "title": "SmarterMail RCE Flaws Rapidly Weaponized — Ransomware Activity Confirmed",
+      "threat_score": 9,
+      "cve": "CVE-2026-24423, CVE-2026-23760",
+      "cvss": null,
+      "affected_technology": "SmarterMail (email server)",
+      "summary": "Two critical SmarterMail RCEs with public PoCs on Telegram, 1000+ vulnerable servers, tied to ransomware campaigns.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "bleepingcomputer.com"
+    },
+    {
+      "type": "news",
+      "title": "Honeywell CCTV Authentication Bypass — Critical Infrastructure at Risk",
+      "threat_score": 7,
+      "cve": "Not specified",
+      "cvss": null,
+      "affected_technology": "Honeywell CCTV products",
+      "summary": "Critical auth bypass in Honeywell CCTV allows unauthorized feed access or account hijacking at critical infrastructure sites.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "bleepingcomputer.com"
+    },
+    {
+      "type": "news",
+      "title": "AI Platforms Abused as Covert C2 Channels",
+      "threat_score": 5,
+      "cve": "Not yet assigned",
+      "cvss": null,
+      "affected_technology": "Grok, Microsoft Copilot, AI assistants with web browsing",
+      "summary": "AI assistants with web browsing can be abused as C2 proxies, making malicious traffic invisible to traditional monitoring.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "bleepingcomputer.com"
+    },
+    {
+      "type": "news",
+      "title": "Cline CLI Supply Chain Attack Installs OpenClaw on Developer Machines",
+      "threat_score": 6,
+      "cve": "Not yet assigned",
+      "cvss": null,
+      "affected_technology": "Cline CLI (npm package), OpenClaw",
+      "summary": "Compromised npm token pushed Cline CLI v2.3.0 with postinstall script silently installing OpenClaw on developer machines.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "thehackernews.com"
+    }
+  ],
+  "noted": [
+    {
+      "cve": null,
+      "product": "Figure Technology",
+      "summary": "Nearly 1M accounts compromised by ShinyHunters."
+    },
+    {
+      "cve": null,
+      "product": "Deutsche Bahn",
+      "summary": "Large-scale DDoS disrupted booking systems."
+    },
+    {
+      "cve": "CW1226324",
+      "product": "Microsoft 365 Copilot",
+      "summary": "DLP bypass bug let Copilot summarize confidential emails. Fixed Feb 3."
+    }
+  ],
+  "source_coverage": {
+    "total": 90,
+    "checked": 90,
+    "with_findings": 7,
+    "unreachable": [],
+    "degraded": []
+  },
+  "full_report": "reports/2026/02/18/morning/report.md"
+}

@@ -1,0 +1,70 @@
+{
+  "date": "2026-02-17",
+  "cycle": "morning",
+  "findings": [
+    {
+      "type": "news",
+      "title": "Ivanti EPMM Zero-Days Under Mass Exploitation",
+      "threat_score": 9,
+      "cve": "CVE-2026-1281, CVE-2026-1340",
+      "cvss": null,
+      "affected_technology": "Ivanti Endpoint Manager Mobile (EPMM)",
+      "summary": "Two critical RCE zero-days exploited since July 2025; single threat actor responsible for 83% of attacks.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "bleepingcomputer.com"
+    },
+    {
+      "type": "news",
+      "title": "Dell RecoverPoint for VMs — Hardcoded Credentials Under Active Exploitation",
+      "threat_score": 8,
+      "cve": "CVE-2026-22769",
+      "cvss": 10.0,
+      "affected_technology": "Dell RecoverPoint for Virtual Machines (RP4VMs)",
+      "summary": "Hardcoded credentials allow unauthenticated remote root access; Chinese APT exploitation since mid-2024.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "cisa.gov"
+    },
+    {
+      "type": "news",
+      "title": "VSCode Extensions with 128M+ Downloads Contain Critical Flaws",
+      "threat_score": 6,
+      "cve": "Multiple",
+      "cvss": null,
+      "affected_technology": "Visual Studio Code Extensions",
+      "summary": "High-to-critical flaws in popular VSCode extensions allow file theft and RCE on developer workstations.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "bleepingcomputer.com"
+    },
+    {
+      "type": "news",
+      "title": "CISA KEV: Zimbra SSRF and GitLab SSRF Added",
+      "threat_score": 7,
+      "cve": "CVE-2020-7796, CVE-2021-22175",
+      "cvss": null,
+      "affected_technology": "Zimbra Collaboration Suite, GitLab",
+      "summary": "Older SSRF vulns in Zimbra and GitLab now confirmed exploited in the wild; GitLab targeted by ~400 IPs.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "cisa.gov"
+    }
+  ],
+  "noted": [
+    {
+      "cve": null,
+      "product": "Keenadu Android backdoor",
+      "summary": "Sophisticated malware embedded in firmware from multiple device brands. Mobile-only."
+    },
+    {
+      "cve": null,
+      "product": "Phobos ransomware",
+      "summary": "Poland arrests suspect under Operation Aether."
+    }
+  ],
+  "source_coverage": {
+    "total": 90,
+    "checked": 90,
+    "with_findings": 8,
+    "unreachable": [],
+    "degraded": []
+  },
+  "full_report": "reports/2026/02/17/morning/report.md"
+}
