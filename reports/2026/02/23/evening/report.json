@@ -1,0 +1,75 @@
+{
+  "date": "2026-02-23",
+  "cycle": "evening",
+  "findings": [
+    {
+      "type": "news",
+      "title": "Password Manager Server-Side Vault Theft Research",
+      "threat_score": 6,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Bitwarden, Dashlane, LastPass",
+      "summary": "Researchers demonstrated server operators can steal entire vaults when account recovery or vault sharing is enabled; attacks weaken encryption to convert ciphertext to plaintext.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "schneier.com"
+    },
+    {
+      "type": "news",
+      "title": "Vanta Diagnostics Breach — 140K Affected (Everest Ransomware)",
+      "threat_score": 5,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Vanta Diagnostics (US healthcare)",
+      "summary": "Everest ransomware group breached healthcare diagnostics firm affecting 140,000 individuals.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "securityweek.com"
+    },
+    {
+      "type": "update",
+      "title": "BeyondTrust CVE-2026-1731 — Full Exploit Analysis by Rapid7",
+      "threat_score": 10,
+      "previous_threat_score": 10,
+      "cve": "CVE-2026-1731",
+      "cvss": 9.9,
+      "affected_technology": "BeyondTrust Remote Support and Privileged Remote Access",
+      "summary": "Rapid7 published detailed technical analysis showing vulnerability in same endpoint as CVE-2024-12356; unauth command injection via WebSocket, patch adds numeric input validation.",
+      "first_seen_at": "attackerkb.com"
+    },
+    {
+      "type": "update",
+      "title": "CISA KEV — SolarWinds WHD, Notepad++, TeamT5 Entries",
+      "threat_score": 6,
+      "previous_threat_score": null,
+      "cve": "CVE-2025-40536, CVE-2025-15556, CVE-2024-7694",
+      "cvss": null,
+      "affected_technology": "SolarWinds Web Help Desk, Notepad++, TeamT5 ThreatSonar",
+      "summary": "Three additional KEV entries from Feb 12-17 now cataloged: SolarWinds WHD auth bypass (deadline passed), Notepad++ update integrity bypass, TeamT5 file upload.",
+      "first_seen_at": "cisa.gov"
+    }
+  ],
+  "noted": [
+    {
+      "cve": null,
+      "product": "Password managers (general)",
+      "summary": "ESET guidance on detecting AI deepfake voice calls targeting businesses."
+    },
+    {
+      "cve": null,
+      "product": "Kubernetes Ingress NGINX",
+      "summary": "Retirement warning from Datadog; orgs should plan migration."
+    },
+    {
+      "cve": null,
+      "product": "Ring / Flock",
+      "summary": "Amazon Ring cancels partnership with surveillance-tech company Flock."
+    }
+  ],
+  "source_coverage": {
+    "total": 90,
+    "checked": 25,
+    "with_findings": 3,
+    "unreachable": ["darkreading.com", "vulners.com"],
+    "degraded": ["reddit.com/r/netsec"]
+  },
+  "full_report": "reports/2026/02/23/evening/report.md"
+}
