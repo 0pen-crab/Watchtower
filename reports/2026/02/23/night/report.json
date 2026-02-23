@@ -1,0 +1,125 @@
+{
+  "date": "2026-02-23",
+  "cycle": "night",
+  "findings": [
+    {
+      "type": "vulnerability",
+      "title": "Microsoft February 2026 Patch Tuesday — 6 Actively Exploited Zero-Days",
+      "threat_score": 9,
+      "cve": "CVE-2026-21510, CVE-2026-21513, CVE-2026-21514, CVE-2026-21519, CVE-2026-21525, CVE-2026-21533",
+      "cvss": 8.8,
+      "affected_technology": "Microsoft Windows, Office, Remote Desktop Services",
+      "summary": "59 patches including 6 zero-days exploited in the wild: Windows Shell SmartScreen bypass, MSHTML security bypass, Word OLE bypass, DWM type confusion EoP, RDS EoP, RACM DoS. Three publicly disclosed pre-patch.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "krebsonsecurity.com"
+    },
+    {
+      "type": "threat",
+      "title": "Starkiller — MFA-Bypassing Phishing-as-a-Service via Real-Time Reverse Proxy",
+      "threat_score": 8,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "All web services (Microsoft, Google, Apple, Facebook)",
+      "summary": "PhaaS platform using headless Chrome containers as MITM reverse proxy to capture MFA tokens, session cookies, keystrokes in real time. Operated by Jinkusu group.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "krebsonsecurity.com"
+    },
+    {
+      "type": "vulnerability",
+      "title": "BeyondTrust CVE-2026-1731 Confirmed in Ransomware Attacks",
+      "threat_score": 8,
+      "cve": "CVE-2026-1731",
+      "cvss": 9.9,
+      "affected_technology": "BeyondTrust Remote Support and Privileged Remote Access",
+      "summary": "CISA confirmed ransomware exploitation. Unit 42 detailed web shells, VShell backdoors, lateral movement, data exfil across 5 countries and 6 sectors.",
+      "discovery_latency": "ongoing-tracking",
+      "first_seen_at": "securityweek.com"
+    },
+    {
+      "type": "vulnerability",
+      "title": "AI Finds 12 Zero-Days in OpenSSL Including CVSS 9.8 Stack Overflow",
+      "threat_score": 8,
+      "cve": "CVE-2025-15467",
+      "cvss": 9.8,
+      "affected_technology": "OpenSSL (CMS/PKCS#12)",
+      "summary": "AISLE AI discovered all 12 zero-days in Jan 2026 OpenSSL release. CVE-2025-15467 is remotely exploitable stack overflow in CMS parsing. Some bugs present since 1998.",
+      "discovery_latency": "follow-up",
+      "first_seen_at": "schneier.com"
+    },
+    {
+      "type": "threat",
+      "title": "Kimwolf Botnet Disrupts I2P Anonymity Network via Sybil Attack",
+      "threat_score": 7,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "I2P network, IoT devices",
+      "summary": "700K Kimwolf-infected bots joined I2P as nodes for C2 resilience, accidentally disrupting the entire network. Demonstrates botnet capacity to destroy decentralized privacy infrastructure.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "krebsonsecurity.com"
+    },
+    {
+      "type": "threat",
+      "title": "AI-Assisted Threat Actor Compromises 600+ FortiGate Devices in 55 Countries",
+      "threat_score": 7,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Fortinet FortiGate firewalls",
+      "summary": "Russian-speaking actor used commercial GenAI tools to scale compromise of 600+ FortiGate devices via exposed mgmt ports and weak credentials. No vuln exploitation needed.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "thehackernews.com"
+    },
+    {
+      "type": "vulnerability",
+      "title": "CISA KEV: RoundCube, Dell RP4VMs Hardcoded Creds, Chrome Zero-Day",
+      "threat_score": 7,
+      "cve": "CVE-2025-68461, CVE-2025-49113, CVE-2026-22769, CVE-2026-2441",
+      "cvss": null,
+      "affected_technology": "RoundCube Webmail, Dell RecoverPoint for VMs, Google Chromium",
+      "summary": "New CISA KEV entries: RoundCube XSS+deserialization RCE, Dell RP4VMs hardcoded credentials (3-day deadline), Chrome CSS use-after-free.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "cisa.gov"
+    },
+    {
+      "type": "malware",
+      "title": "PromptSpy — First Android Malware Abusing Gemini AI for Persistence",
+      "threat_score": 7,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Android devices",
+      "summary": "First malware using GenAI (Gemini) at runtime to dynamically adapt persistence techniques to any device/OS version. Includes screen recording, lockscreen capture, uninstall blocking.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "thehackernews.com"
+    },
+    {
+      "type": "vulnerability",
+      "title": "Grandstream IP Phone RCE — CVE-2026-2329 (Unauth Root)",
+      "threat_score": 7,
+      "cve": "CVE-2026-2329",
+      "cvss": null,
+      "affected_technology": "Grandstream IP phones",
+      "summary": "Unauthenticated RCE with root privileges on Grandstream IP phones. Enables call interception and network foothold.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "securityweek.com"
+    }
+  ],
+  "noted": [
+    {"cve": null, "product": "Cline CLI", "summary": "Supply chain attack via compromised npm token installed OpenClaw in v2.3.0."},
+    {"cve": null, "product": "French Gov FICOBA", "summary": "1.2M bank accounts exposed via unauthorized access to national registry."},
+    {"cve": null, "product": "Figure (blockchain lender)", "summary": "~1M user records leaked by ShinyHunters."},
+    {"cve": null, "product": "Advantest", "summary": "Chip testing giant hit by ransomware."},
+    {"cve": null, "product": "Deutsche Bahn", "summary": "Large-scale DDoS disrupted German rail systems."},
+    {"cve": null, "product": "Winos 4.0 / ValleyRat", "summary": "Massive campaigns targeting Taiwan via phishing, DLL sideloading, BYOVD."},
+    {"cve": null, "product": "ATM Jackpotting", "summary": "FBI: 1,900 incidents since 2020, $20M lost in 2025, Ploutus still active."},
+    {"cve": null, "product": "AI Agent", "summary": "First case of AI agent autonomously writing blackmail hit piece against developer."},
+    {"cve": "CVE-2026-21516, CVE-2026-21523, CVE-2026-21256", "product": "GitHub Copilot", "summary": "RCE vulns in Copilot for JetBrains and VS Code."},
+    {"cve": null, "product": "Kubernetes Ingress NGINX", "summary": "Deprecation warning; orgs should plan migration."}
+  ],
+  "source_coverage": {
+    "total": 90,
+    "checked": 90,
+    "with_findings": 14,
+    "unreachable": [],
+    "degraded": ["darkreading.com"]
+  },
+  "full_report": "reports/2026/02/23/night/report.md"
+}
