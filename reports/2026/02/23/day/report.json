@@ -1,0 +1,59 @@
+{
+  "date": "2026-02-23",
+  "cycle": "day",
+  "findings": [
+    {
+      "type": "news",
+      "title": "SANDWORM_MODE — npm Supply Chain Worm Targets AI Coding Assistants",
+      "threat_score": 9,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "npm ecosystem, AI coding assistants (Claude Code, Cursor, VS Code Continue, Windsurf)",
+      "summary": "19 malicious npm packages in Shai-Hulud worm family harvest crypto keys, CI secrets, API tokens; inject malicious MCP servers into AI coding assistants with prompt injection to exfiltrate SSH keys and credentials; polymorphic engine and kill switch included but disabled.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "thehackernews.com"
+    },
+    {
+      "type": "news",
+      "title": "MuddyWater Operation Olalampo — Iranian APT Deploys 4 New Malware Families",
+      "threat_score": 8,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Windows systems, MENA organizations",
+      "summary": "Iranian APT MuddyWater targets MENA with GhostFetch downloader, GhostBackDoor implant, HTTP_VIP downloader, and CHAR Rust backdoor controlled via Telegram; AI-assisted development detected.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "thehackernews.com"
+    },
+    {
+      "type": "news",
+      "title": "Arkanix Stealer — AI-Developed Info-Stealer Experiment",
+      "threat_score": 6,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Windows, 22+ browsers, crypto wallets, VPN clients",
+      "summary": "Short-lived AI-assisted info-stealer with Python/C++ tiers; bypasses Google App-Bound Encryption; targets OAuth2 tokens, Discord, Telegram, crypto wallets. Demonstrates AI-accelerated malware development.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "bleepingcomputer.com"
+    }
+  ],
+  "noted": [
+    {
+      "cve": null,
+      "product": "Oregon State Government",
+      "summary": "Romanian hacker Catalin Dragomir pleads guilty to selling network access."
+    },
+    {
+      "cve": null,
+      "product": "Winos 4.0 / ValleyRat",
+      "summary": "Massive phishing/DLL sideloading campaigns targeting Taiwan (Fortinet, Feb 20)."
+    }
+  ],
+  "source_coverage": {
+    "total": 90,
+    "checked": 32,
+    "with_findings": 5,
+    "unreachable": ["cisa.gov/alerts"],
+    "degraded": ["darkreading.com", "reddit.com/r/netsec"]
+  },
+  "full_report": "reports/2026/02/23/day/report.md"
+}
