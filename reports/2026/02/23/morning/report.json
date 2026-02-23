@@ -1,120 +1,96 @@
 {
-  "report_date": "2026-02-23",
+  "date": "2026-02-23",
   "cycle": "morning",
-  "generated_at": "2026-02-23T06:01:00Z",
-  "analyst": "watchtower-ai",
-  "summary": "Heavy week continues: BeyondTrust CVE-2026-1731 confirmed in ransomware campaigns with full technical analysis published. Microsoft Patch Tuesday includes 6 actively exploited zero-days. AI-assisted attacks at scale (600+ FortiGate devices). First Android malware using GenAI at runtime (PromptSpy). Starkiller PhaaS enables real-time MFA bypass. AISLE AI found all 12 OpenSSL zero-days.",
-  "stats": {
-    "critical_items": 4,
-    "high_items": 4,
-    "notable_items": 7,
-    "breaches_tracked": 5,
-    "cisa_kev_additions_7d": 11,
-    "zero_days_active": 8,
-    "sources_scanned": 20,
-    "sources_failed": 2
-  },
-  "critical": [
+  "findings": [
     {
+      "type": "update",
       "title": "BeyondTrust RS/PRA Command Injection — Ransomware Confirmed",
+      "threat_score": 10,
+      "previous_threat_score": 9,
       "cve": "CVE-2026-1731",
       "cvss": 9.9,
-      "cisa_kev": true,
-      "ransomware": true,
-      "status": "actively_exploited",
-      "affected": "BeyondTrust Remote Support, Privileged Remote Access",
-      "action": "Patch immediately, assume compromise if unpatched past 2026-02-16"
+      "affected_technology": "BeyondTrust Remote Support (RS) & Privileged Remote Access (PRA)",
+      "summary": "CISA confirms ransomware exploitation; Unit 42 details web shells, C2, lateral movement across financial, legal, tech, healthcare sectors in US, France, Germany, Australia, Canada.",
+      "first_seen_at": "cisa.gov"
     },
     {
-      "title": "Microsoft Patch Tuesday — 6 Zero-Days",
-      "cves": ["CVE-2026-21510", "CVE-2026-21513", "CVE-2026-21514", "CVE-2026-21533", "CVE-2026-21519", "CVE-2026-21525"],
-      "status": "actively_exploited",
-      "affected": "Windows (all supported versions), Word, RDS, DWM, RRAS",
-      "action": "Deploy February Patch Tuesday immediately"
+      "type": "news",
+      "title": "Microsoft Patch Tuesday — 6 Zero-Days Under Active Exploitation",
+      "threat_score": 9,
+      "cve": "CVE-2026-21510, CVE-2026-21513, CVE-2026-21514, CVE-2026-21533, CVE-2026-21519, CVE-2026-21525",
+      "cvss": null,
+      "affected_technology": "Windows (all supported versions), Word, RDS, DWM, RRAS",
+      "summary": "Six actively exploited zero-days in February Patch Tuesday; CVE-2026-21510 is single-click Windows Shell bypass affecting all versions.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "bleepingcomputer.com"
     },
     {
-      "title": "Dell RecoverPoint for VMs — Hard-Coded Credentials",
-      "cve": "CVE-2026-22769",
-      "cisa_kev": true,
-      "status": "actively_exploited",
-      "affected": "Dell RecoverPoint for Virtual Machines",
-      "action": "Patch or isolate — CISA deadline overdue"
-    },
-    {
-      "title": "Google Chromium CSS Use-After-Free",
-      "cve": "CVE-2026-2441",
-      "cisa_kev": true,
-      "status": "actively_exploited",
-      "affected": "All Chromium-based browsers",
-      "action": "Update browsers"
-    }
-  ],
-  "high": [
-    {
-      "title": "RoundCube Webmail XSS + Deserialization RCE",
-      "cves": ["CVE-2025-68461", "CVE-2025-49113"],
-      "cisa_kev": true,
-      "action": "Patch by 2026-03-13"
-    },
-    {
-      "title": "Grandstream GXP1600 VoIP Root RCE",
-      "cve": "CVE-2026-2329",
-      "action": "Patch or segment VoIP"
-    },
-    {
-      "title": "AI-Assisted FortiGate Campaign — 600+ Devices in 55 Countries",
-      "source": "Amazon Threat Intelligence",
-      "action": "Audit FortiGate management exposure, enforce MFA"
-    },
-    {
-      "title": "Ivanti Zero-Day Exploitation Surge",
-      "action": "Review Ivanti patching, hunt for IOCs"
-    }
-  ],
-  "notable": [
-    {
-      "title": "PromptSpy — First Android Malware Using GenAI at Runtime",
-      "type": "malware",
-      "significance": "Novel threat class — LLM-assisted runtime adaptation"
-    },
-    {
+      "type": "news",
       "title": "Starkiller PhaaS — Real-Time MFA Bypass via Reverse Proxy",
-      "type": "phishing",
-      "significance": "Commoditizes MFA bypass for unsophisticated attackers"
+      "threat_score": 7,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "All web applications with MFA",
+      "summary": "Phishing-as-a-service platform uses headless Chrome in Docker as MITM reverse proxy to capture credentials and session tokens in real-time, defeating MFA.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "bleepingcomputer.com"
     },
     {
-      "title": "Arkanix Stealer — AI-Developed Info-Stealer",
-      "type": "malware"
+      "type": "news",
+      "title": "AISLE AI Discovers All 12 OpenSSL Zero-Days",
+      "threat_score": 7,
+      "cve": "CVE-2025-15467",
+      "cvss": 9.8,
+      "affected_technology": "OpenSSL",
+      "summary": "AI system found all 12 OpenSSL zero-days in January 2026 release including bugs present since 1998; unprecedented concentration from a single research entity.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "schneier.com"
     },
     {
-      "title": "Predator Spyware — iOS SpringBoard Hooking",
-      "type": "spyware"
-    },
-    {
-      "title": "Cline CLI 2.3.0 Supply Chain Attack",
-      "type": "supply_chain"
-    },
-    {
-      "title": "Kimwolf Botnet Sybil Attack on I2P Network",
-      "type": "botnet"
-    },
-    {
-      "title": "SLSH Extortion Group Escalation — Swatting, Harassment",
-      "type": "threat_actor"
+      "type": "news",
+      "title": "Kimwolf Botnet Sybil Attack Disrupts I2P Network",
+      "threat_score": 5,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "I2P anonymity network",
+      "summary": "700K botnet nodes accidentally disrupted I2P network in Sybil attack while using it for C2 fallback; network degraded since Feb 3.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "bleepingcomputer.com"
     }
   ],
-  "breaches": [
-    {"org": "French Bank Registry (FICOBA)", "records": 1200000, "type": "unauthorized_access"},
-    {"org": "PayPal", "type": "software_error", "detail": "SSNs exposed ~6 months"},
-    {"org": "Figure", "records": 1000000, "type": "data_theft", "actor": "ShinyHunters"},
-    {"org": "Advantest", "type": "ransomware"},
-    {"org": "UMMC Mississippi", "type": "ransomware", "detail": "All clinics closed"}
+  "noted": [
+    {
+      "cve": null,
+      "product": "French Bank Registry (FICOBA)",
+      "summary": "1.2M bank accounts exposed via unauthorized access."
+    },
+    {
+      "cve": null,
+      "product": "PayPal",
+      "summary": "SSNs exposed via loan application software error for ~6 months."
+    },
+    {
+      "cve": null,
+      "product": "Advantest",
+      "summary": "Japanese chip testing giant hit by ransomware."
+    },
+    {
+      "cve": null,
+      "product": "UMMC Mississippi",
+      "summary": "All clinics closed statewide after ransomware attack."
+    },
+    {
+      "cve": null,
+      "product": "SLSH/Scattered Lapsus",
+      "summary": "Extortion group escalating with swatting, harassment, DDoS alongside data theft."
+    }
   ],
-  "trends": [
-    "AI in offense accelerating: AI-assisted campaigns at scale, AI-generated malware, AI runtime malware adaptation",
-    "AI in defense: AISLE found all 12 OpenSSL zero-days — unprecedented concentration",
-    "MFA bypass commoditization via PhaaS (Starkiller)",
-    "Supply chain attacks continue (Cline CLI npm compromise)",
-    "Ransomware driving urgent CISA KEV timelines"
-  ]
+  "source_coverage": {
+    "total": 90,
+    "checked": 20,
+    "with_findings": 10,
+    "unreachable": [],
+    "degraded": []
+  },
+  "full_report": "reports/2026/02/23/morning/report.md"
 }
