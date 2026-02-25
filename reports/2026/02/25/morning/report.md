@@ -1,0 +1,97 @@
+# Watchtower Intelligence Report — 2026-02-25 Morning
+
+**Generated:** 2026-02-25T06:10:00Z | **Cycle:** Morning | **Sources checked:** 93/93
+
+---
+
+## 🔴 CRITICAL FINDINGS
+
+### 1. CVE-2026-25643: Frigate NVR ≤0.16.3 — Blind RCE via go2rtc Exec Injection
+- **CVSS:** 9.8 (estimated) | **Public PoC:** ✅
+- **Summary:** Critical configuration manipulation vulnerability in Frigate NVR. An attacker can inject a malicious go2rtc stream definition and a fake camera entry into the Frigate configuration. Upon service restart, this triggers arbitrary command execution as the Frigate process. Both authenticated and unauthenticated exploitation paths exist.
+- **Impact:** Full server compromise on NVR systems. Frigate is widely used in home automation (Home Assistant ecosystem).
+- **PoC:** [joshuavanderpoll/CVE-2026-25643](https://github.com/joshuavanderpoll/CVE-2026-25643)
+- **Action:** Upgrade Frigate NVR beyond 0.16.3. Restrict API access to trusted networks only.
+
+### 2. CVE-2026-0770: Langflow RCE via Unsafe Code Validation
+- **CVSS:** 9.8 (estimated) | **Public PoC:** ✅
+- **Summary:** Remote Code Execution in Langflow's `/api/v1/validate/code` endpoint. When `AUTO_LOGIN=true` with default credentials, attackers bypass authentication and execute arbitrary system commands through unsafe Python code evaluation.
+- **Impact:** Full server compromise on AI workflow platforms.
+- **PoC:** [0xgh057r3c0n/CVE-2026-0770](https://github.com/0xgh057r3c0n/CVE-2026-0770)
+- **Action:** Disable `AUTO_LOGIN`, rotate credentials, firewall the validation endpoint.
+
+---
+
+## 🟠 HIGH SEVERITY
+
+### 3. Wormable XMRig Campaign with BYOVD & Air-Gap Jumping
+- **Source:** Trellix (via The Hacker News, Feb 23)
+- **Summary:** Sophisticated multi-stage cryptojacking campaign using pirated software lures. Features:
+  - **Worm capability** — spreads via external USB storage, can reach air-gapped environments
+  - **BYOVD exploit** — loads a vulnerable driver for privilege escalation
+  - **Time-based logic bomb** — delayed activation to evade sandboxes
+- **Action:** Block autorun on removable media, monitor for suspicious driver loading, update endpoint detection signatures.
+
+### 4. CVE-2026-21876: OWASP ModSecurity CRS WAF Bypass
+- **Public PoC:** ✅ (Docker container + minimal PoC)
+- **Summary:** WAF bypass in OWASP ModSecurity Core Rule Set. Allows malicious payloads to evade WAF inspection and reach backend applications.
+- **Action:** Monitor CRS project for patches. Review and supplement with custom rules.
+
+### 5. Linux Patch Wednesday February 2026 — 632 Vulnerabilities
+- **Source:** avleonov.com
+- **Key highlights:**
+  - 305 Linux Kernel vulnerabilities
+  - 2 confirmed in-the-wild exploits: CVE-2026-2441 (Chromium), CVE-2025-14847 (MongoDB MongoBleed)
+  - 56+ vulnerabilities with public exploits, including:
+    - **PyTorch RCE** (CVE-2026-24747)
+    - **Wheel RCE** (CVE-2026-24049)
+    - **Grafana EoP** (CVE-2026-21721)
+    - **Roundcube SFB** (CVE-2026-25916)
+    - **Additional OpenSSL RCEs** (CVE-2025-69421, CVE-2025-11187)
+    - **pgAdmin RCEs** (CVE-2025-12762, CVE-2025-13780)
+- **Action:** Prioritize patching based on exposure. RCE vulns with public exploits should be top priority.
+
+### 6. Remote BitLocker Bypass via Intel AMT
+- **Source:** Full Disclosure mailing list
+- **Summary:** Research demonstrating remote BitLocker bypass using Intel Active Management Technology. Physical encryption protections can be circumvented on enterprise laptops with AMT.
+- **Action:** Audit Intel AMT configuration across fleet. Disable if not required.
+
+### 7. CVE-2026-2406: Telnet Vulnerability with Detection Tooling
+- **Public PoC:** ✅
+- **Summary:** New vulnerability in Telnet services with analysis and detection tools published.
+- **Action:** Deprecate Telnet; migrate to SSH.
+
+---
+
+## 🟡 MEDIUM SEVERITY
+
+### 8. Blesta Billing Platform — Multiple Vulnerabilities (KIS-2026-01/02/03)
+Three vulnerabilities disclosed in the Blesta billing/hosting automation platform.
+
+### 9. Solax Power WiFi Module Vulnerabilities
+SEC Consult disclosed vulnerabilities in solar inverter WiFi modules — relevant for OT/IoT environments.
+
+### 10. CVE-2026-26717: Richie LMS Timing Attack
+Timing side-channel in Richie LMS (France Université Numérique) enabling enumeration or auth bypass.
+
+---
+
+## 📊 Dedup Gate
+
+18 items filtered as previously reported in prior cycles (see report.json for full list).
+
+---
+
+## 📈 Trend Analysis
+
+| Trend | Signal |
+|-------|--------|
+| AI/ML infrastructure attacks | Langflow RCE, Frigate NVR injection — AI tooling remains undertested |
+| Linux ecosystem patch debt | 632 CVEs in Feb alone; 56+ with public exploits |
+| Wormable malware evolution | BYOVD + USB worm + logic bomb — sophisticated evasion stack |
+| WAF bypass research | ModSecurity CRS bypass — defense-in-depth remains critical |
+| IoT/OT attack surface | Solar inverter WiFi modules, NVR systems exposed |
+
+---
+
+*Report generated by Watchtower vulnerability-researcher agent. Next cycle: day.*
