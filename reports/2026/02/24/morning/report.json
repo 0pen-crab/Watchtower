@@ -1,176 +1,118 @@
 {
   "date": "2026-02-24",
   "cycle": "morning",
-  "generated_at": "2026-02-24T08:00:00+02:00",
-  "source_coverage": {
-    "checked": 90,
-    "total": 90,
-    "accessible": 71,
-    "inaccessible": 19
-  },
   "findings": [
     {
-      "id": 1,
-      "title": "n8n Ni8mare Unauthenticated RCE Chain",
-      "cve": "CVE-2026-21858",
-      "additional_cves": ["CVE-2025-68613"],
-      "severity": "critical",
+      "type": "news",
+      "title": "n8n Ni8mare Unauthenticated RCE Chain (CVSS 10.0)",
+      "threat_score": 9,
+      "cve": "CVE-2026-21858, CVE-2025-68613",
       "cvss": 10.0,
-      "product": "n8n workflow automation",
-      "affected": "<= 1.65.0 (AFR) / >= 0.211.0 (RCE)",
-      "fixed": "1.121.0 / 1.120.4+",
-      "poc": true,
-      "exploited_itw": false,
-      "summary": "Unauthenticated arbitrary file read via Content-Type confusion chained with expression injection sandbox bypass for full RCE. Public automated exploit available.",
-      "sources": ["github.com/Chocapikk/CVE-2026-21858", "cyera.com"]
+      "affected_technology": "n8n workflow automation platform",
+      "summary": "Unauthenticated file read chained with expression injection sandbox bypass for full RCE on n8n; public automated exploit available, internet-facing instances exposed.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "github.com"
     },
     {
-      "id": 2,
+      "type": "news",
       "title": "GNU inetutils telnetd Unauthenticated RCE",
+      "threat_score": 8,
       "cve": "CVE-2026-24061",
-      "severity": "critical",
-      "product": "GNU inetutils telnetd",
-      "poc": true,
-      "exploited_itw": false,
-      "summary": "11-year-old bug in telnetd allows remote root shell via malformed USER environment variable. SafeBreach Labs PoC published.",
-      "sources": ["github.com/SafeBreach-Labs/CVE-2026-24061", "seclists.org"]
+      "cvss": null,
+      "affected_technology": "GNU inetutils telnetd",
+      "summary": "11-year-old bug in telnetd allows remote root shell via malformed USER environment variable; public PoC and batch scanning tool available.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "github.com"
     },
     {
-      "id": 3,
-      "title": "osTicket Arbitrary File Read + CNEXT RCE",
+      "type": "news",
+      "title": "osTicket Arbitrary File Read + CNEXT RCE Chain",
+      "threat_score": 8,
       "cve": "CVE-2026-22200",
-      "severity": "critical",
-      "product": "osTicket",
-      "poc": true,
-      "exploited_itw": false,
-      "summary": "PHP filter abuse via mPDF library for arbitrary file exfiltration, chainable to RCE via CVE-2024-2961 CNEXT. Full exploit toolkit from Horizon3.ai.",
-      "sources": ["github.com/horizon3ai/CVE-2026-22200", "horizon3.ai"]
+      "cvss": null,
+      "affected_technology": "osTicket helpdesk system",
+      "summary": "PHP filter abuse via mPDF for arbitrary file read chained with glibc iconv exploit for full RCE; complete Horizon3.ai exploit toolkit published.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "github.com"
     },
     {
-      "id": 4,
-      "title": "AdonisJS Bodyparser Path Traversal",
+      "type": "news",
+      "title": "AdonisJS Bodyparser Path Traversal — Arbitrary File Write",
+      "threat_score": 7,
       "cve": "CVE-2026-21440",
-      "severity": "high",
-      "product": "@adonisjs/bodyparser",
-      "poc": true,
-      "exploited_itw": false,
-      "summary": "Critical path traversal allowing arbitrary file writing on server via bodyparser.",
-      "sources": ["github.com/k0nnect/cve-2026-21440-writeup-poc"]
+      "cvss": null,
+      "affected_technology": "@adonisjs/bodyparser (Node.js)",
+      "summary": "Critical path traversal allowing arbitrary file writing on servers using AdonisJS bodyparser; public PoC available.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "github.com"
     },
     {
-      "id": 5,
+      "type": "news",
       "title": "node-tar Arbitrary File Overwrite",
+      "threat_score": 7,
       "cve": "CVE-2026-23745",
-      "severity": "high",
-      "product": "node-tar",
-      "affected": "< 7.5.3",
-      "poc": true,
-      "exploited_itw": false,
-      "summary": "Arbitrary file overwrite via crafted tar archive in node-tar npm package.",
-      "sources": ["github.com/Jvr2022/CVE-2026-23745"]
+      "cvss": null,
+      "affected_technology": "node-tar (npm package)",
+      "summary": "Arbitrary file overwrite via crafted tar archive in node-tar versions below 7.5.3; public PoC available.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "github.com"
     },
     {
-      "id": 6,
-      "title": "ShinyHunters SSO Vishing Campaign",
+      "type": "news",
+      "title": "ShinyHunters SSO Vishing Campaign — 100+ Organizations Targeted",
+      "threat_score": 8,
       "cve": null,
-      "severity": "high",
-      "product": "Okta/Microsoft Entra/Google SSO",
-      "poc": false,
-      "exploited_itw": true,
-      "summary": "ShinyHunters targeting 100+ orgs via voice phishing of SSO accounts. Latest confirmed victim: Optimizely (Feb 11). Data exfiltration from connected SaaS apps followed by extortion.",
-      "sources": ["bleepingcomputer.com", "silentpush.com"]
+      "cvss": null,
+      "affected_technology": "Okta, Microsoft Entra, Google SSO",
+      "summary": "ShinyHunters targeting SSO accounts at 100+ orgs via voice phishing with real-time MFA relay; confirmed breaches at Optimizely, Canada Goose, Panera Bread, SoundCloud.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "bleepingcomputer.com"
     },
     {
-      "id": 7,
+      "type": "news",
       "title": "Phoenix Contact TC Router Command Injection",
+      "threat_score": 6,
       "cve": "CVE-2025-41717",
-      "severity": "high",
-      "product": "Phoenix Contact TC Router 5004T-5G EU",
-      "fixed": "1.06.23 / 3.08.8",
-      "poc": false,
-      "exploited_itw": false,
-      "summary": "Authenticated command injection in industrial TC Router series.",
-      "sources": ["seclists.org/fulldisclosure"]
-    },
-    {
-      "id": 8,
-      "title": "Native Instruments Native Access macOS LPE (UNPATCHED)",
-      "cve": "CVE-2026-24070",
-      "additional_cves": ["CVE-2026-24071"],
-      "severity": "high",
-      "product": "Native Instruments Native Access (macOS)",
-      "affected": "<= 3.22.0",
-      "fixed": null,
-      "poc": false,
-      "exploited_itw": false,
-      "summary": "Local privilege escalation via DYLIB injection in privileged helper. Vendor unresponsive, no patch available.",
-      "sources": ["seclists.org/fulldisclosure", "SEC Consult"]
-    },
-    {
-      "id": 9,
-      "title": "February Linux Patch Wednesday — 632 CVEs",
-      "cve": null,
-      "severity": "high",
-      "product": "Linux ecosystem",
-      "poc": true,
-      "exploited_itw": true,
-      "summary": "632 vulnerabilities patched including 305 in kernel. 2 confirmed ITW (CVE-2026-2441, CVE-2025-14847). 56 with public exploits including PyTorch RCE, Roundcube SFB, pgAdmin RCE, Grafana EoP.",
-      "sources": ["avleonov.com"]
-    },
-    {
-      "id": 10,
-      "title": "Android Mental Health Apps Security Flaws",
-      "cve": null,
-      "severity": "medium",
-      "product": "10 Android mental health apps (14.7M installs)",
-      "poc": false,
-      "exploited_itw": false,
-      "summary": "1,575 vulnerabilities found across 10 mental health apps. 54 high-severity issues. Exposed therapy transcripts, mood logs, and medication data.",
-      "sources": ["bleepingcomputer.com", "Oversecured"]
-    },
-    {
-      "id": 11,
-      "title": "Microsoft Office RCE (Trending)",
-      "cve": "CVE-2026-21509",
-      "severity": "medium",
-      "product": "Microsoft Office",
-      "poc": false,
-      "exploited_itw": false,
-      "summary": "Remote code execution in Microsoft Office — flagged as trending vulnerability by Positive Technologies.",
-      "sources": ["avleonov.com", "ptsecurity.com"]
-    },
-    {
-      "id": 12,
-      "title": "Desktop Window Manager Info Disclosure (Trending)",
-      "cve": "CVE-2026-20805",
-      "severity": "medium",
-      "product": "Windows Desktop Window Manager",
-      "poc": false,
-      "exploited_itw": false,
-      "summary": "Information disclosure in Desktop Window Manager — trending vulnerability.",
-      "sources": ["avleonov.com", "ptsecurity.com"]
+      "cvss": null,
+      "affected_technology": "Phoenix Contact TC Router 5004T-5G EU",
+      "summary": "Authenticated command injection in Phoenix Contact industrial routers; patched in firmware 1.06.23.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "seclists.org"
     }
   ],
   "noted": [
     {
-      "cve": "CVE-2026-2441",
-      "summary": "Chrome zero-day — confirmed ITW exploitation in Linux Patch Wednesday context"
-    },
-    {
-      "cve": "CVE-2026-1731",
-      "summary": "BeyondTrust RS/PRA RCE — detailed Rapid7 technical analysis now on AttackerKB, same endpoint as CVE-2024-12356"
-    },
-    {
-      "cve": "CVE-2025-14847",
-      "summary": "MongoDB MongoBleed — confirmed ITW exploitation in Linux context"
-    },
-    {
-      "cve": "CVE-2025-15467",
-      "summary": "OpenSSL RCE — now confirmed with Linux public exploit"
+      "cve": "CVE-2026-24070",
+      "product": "Native Instruments Native Access (macOS)",
+      "summary": "Local privilege escalation via DYLIB injection; UNPATCHED, vendor unresponsive."
     },
     {
       "cve": null,
-      "summary": "ShinyHunters SSO vishing campaign expanding — Optimizely is latest confirmed victim (Feb 11)"
+      "product": "Linux Kernel",
+      "summary": "February Linux Patch Wednesday: 632 CVEs patched including 305 in kernel."
+    },
+    {
+      "cve": "CVE-2026-24747",
+      "product": "PyTorch",
+      "summary": "RCE vulnerability patched in February Linux updates."
+    },
+    {
+      "cve": null,
+      "product": "ShinyHunters / SLSH",
+      "summary": "Odido (Dutch telecom) breach claimed; Ticketmaster 560M record breach confirmed."
+    },
+    {
+      "cve": null,
+      "product": "Lazarus Group",
+      "summary": "North Korean APT linked to Medusa ransomware attacks on US healthcare."
     }
-  ]
+  ],
+  "source_coverage": {
+    "total": 90,
+    "checked": 90,
+    "with_findings": 12,
+    "unreachable": ["cnvd.org.cn", "cvedetails.com", "vulners.com", "threatpost.com"],
+    "degraded": ["darkreading.com"]
+  },
+  "full_report": "reports/2026/02/24/morning/report.md"
 }

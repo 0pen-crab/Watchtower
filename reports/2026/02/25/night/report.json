@@ -1,145 +1,107 @@
 {
-  "report_date": "2026-02-25",
+  "date": "2026-02-25",
   "cycle": "night",
-  "generated_at": "2026-02-25T02:10:00+02:00",
-  "source_coverage": {
-    "checked": 91,
-    "total": 91,
-    "failed": ["cnvd.org.cn", "vulndb.cyberriskanalytics.com", "vulners.com", "0day.today", "sophos.com", "tripwire.com", "trellix.com", "shadowserver.org"],
-    "note": "Failed sources returned 403/521/timeout but were attempted. X/Twitter sources checked via aggregator coverage. Telegram/Discord/Slack community sources checked via news aggregation."
-  },
   "findings": [
     {
-      "id": "CVE-2026-25108",
-      "title": "Soliton FileZen OS Command Injection",
-      "severity": "critical",
+      "type": "news",
+      "title": "Soliton FileZen OS Command Injection — CISA KEV",
+      "threat_score": 8,
+      "cve": "CVE-2026-25108",
       "cvss": 8.8,
-      "status": "actively_exploited",
-      "tags": ["cisa-kev", "rce", "appliance"],
-      "sources": ["cisa.gov", "opencve.io"]
+      "affected_technology": "Soliton FileZen (file-sharing appliance)",
+      "summary": "Authenticated OS command injection in Soliton FileZen via antivirus check feature; added to CISA KEV on Feb 24 confirming active exploitation.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "cisa.gov"
     },
     {
-      "id": "REYNOLDS-RANSOMWARE-BYOVD",
+      "type": "news",
       "title": "Reynolds Ransomware with Embedded BYOVD EDR Killer",
-      "severity": "critical",
-      "status": "active_campaigns",
-      "tags": ["ransomware", "byovd", "edr-evasion"],
-      "sources": ["thehackernews.com"]
+      "threat_score": 8,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Windows systems (EDR bypass)",
+      "summary": "New ransomware strain embeds BYOVD component directly in binary to disable EDR at kernel level before encrypting; active campaigns observed.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "thehackernews.com"
     },
     {
-      "id": "ANDARIEL-NEW-RATS-2026",
-      "title": "Andariel (DPRK) Deploys StarshellRAT, JelusRAT, GopherRAT",
-      "severity": "high",
-      "status": "active",
-      "tags": ["apt", "dprk", "rat", "espionage"],
-      "sources": ["labs.withsecure.com"]
+      "type": "news",
+      "title": "Andariel (DPRK) Deploys Three New RATs: StarshellRAT, JelusRAT, GopherRAT",
+      "threat_score": 7,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "European public/legal sector, South Korean ERP",
+      "summary": "WithSecure attributes breach of European public sector org to DPRK Andariel with three new RATs; accessed anti-money laundering documents.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "labs.withsecure.com"
     },
     {
-      "id": "DIESEL-VORTEX",
-      "title": "Diesel Vortex Phishing Targeting US/EU Freight & Logistics",
-      "severity": "high",
-      "status": "active",
-      "tags": ["phishing", "logistics", "credential-theft"],
-      "sources": ["bleepingcomputer.com"]
+      "type": "news",
+      "title": "Diesel Vortex Phishing Campaign Targets US/EU Freight & Logistics",
+      "threat_score": 7,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Freight and logistics operators (US/EU)",
+      "summary": "Financially motivated group using 52 lookalike domains targeting logistics platforms for credential theft enabling supply chain fraud.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "bleepingcomputer.com"
     },
     {
-      "id": "SSHSTALKER-BOTNET",
-      "title": "SSHStalker Botnet with IRC C2 Targeting Linux",
-      "severity": "high",
-      "status": "active",
-      "tags": ["botnet", "linux", "irc-c2"],
-      "sources": ["thehackernews.com"]
+      "type": "news",
+      "title": "SSHStalker Botnet — IRC C2 Targeting Linux via Legacy Kernel Exploits",
+      "threat_score": 6,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Linux servers",
+      "summary": "New botnet using IRC C2 to evade modern detection, propagating via legacy kernel exploits and SSH brute-force for DDoS and cryptomining.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "thehackernews.com"
     },
     {
-      "id": "CVE-2025-14905",
+      "type": "news",
       "title": "Red Hat 389-ds-base Heap Buffer Overflow",
-      "severity": "high",
+      "threat_score": 6,
+      "cve": "CVE-2025-14905",
       "cvss": 7.2,
-      "tags": ["rce", "ldap", "redhat"],
-      "sources": ["opencve.io", "redhat.com"]
-    },
-    {
-      "id": "KEENADU-BACKDOOR",
-      "title": "Keenadu Firmware Backdoor via Signed Android OTA Updates",
-      "severity": "high",
-      "status": "active",
-      "tags": ["firmware", "android", "backdoor", "supply-chain"],
-      "sources": ["thehackernews.com"]
-    },
-    {
-      "id": "1CAMPAIGN-MAAS",
-      "title": "1Campaign Malvertising-as-a-Service Platform",
-      "severity": "medium",
-      "status": "active",
-      "tags": ["malvertising", "google-ads", "caas"],
-      "sources": ["bleepingcomputer.com"]
-    },
-    {
-      "id": "CARGURUS-BREACH",
-      "title": "CarGurus Data Breach - 12.4M Records (ShinyHunters)",
-      "severity": "medium",
-      "tags": ["data-breach", "shinyhunters"],
-      "sources": ["bleepingcomputer.com"]
-    },
-    {
-      "id": "WYNN-RESORTS-BREACH",
-      "title": "Wynn Resorts Employee Data Breach (ShinyHunters)",
-      "severity": "medium",
-      "tags": ["data-breach", "shinyhunters"],
-      "sources": ["bleepingcomputer.com"]
-    },
-    {
-      "id": "AD-DYNAMIC-OBJECTS",
-      "title": "Active Directory Dynamic Objects Abuse Technique",
-      "severity": "medium",
-      "tags": ["technique", "active-directory", "evasion"],
-      "sources": ["tenable.com"]
-    },
-    {
-      "id": "FBI-PLOUTUS-ATM",
-      "title": "FBI FLASH: ATM Jackpotting via Ploutus Malware",
-      "severity": "medium",
-      "tags": ["atm", "malware", "fbi-flash"],
-      "sources": ["scworld.com"]
-    },
-    {
-      "id": "PHOBOS-ARREST-POLAND",
-      "title": "Phobos Ransomware Affiliate Arrested in Poland",
-      "severity": "medium",
-      "tags": ["ransomware", "law-enforcement"],
-      "sources": ["cyberscoop.com"]
-    },
-    {
-      "id": "TOXICSKILLS-RESEARCH",
-      "title": "ToxicSkills: 1,467 Malicious Payloads in AI Agent Skills",
-      "severity": "medium",
-      "tags": ["supply-chain", "ai-security", "research"],
-      "sources": ["snyk.io"]
+      "affected_technology": "389 Directory Server (Red Hat)",
+      "summary": "Heap buffer overflow in schema_attr_enum_callback allows remote DoS or potential RCE via large alias processing.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "opencve.io"
     }
   ],
-  "informational": [
-    "Salt Typhoon still active per FBI",
-    "Cisco warns MCP protocol insecure",
-    "CrowdStrike: threat groups at record speeds with AI",
-    "Kubernetes Ingress NGINX retirement warning",
-    "Advantest incident response deployed"
+  "noted": [
+    {
+      "cve": null,
+      "product": "Keenadu",
+      "summary": "Firmware backdoor infecting Android tablets via signed OTA updates; survives factory reset."
+    },
+    {
+      "cve": null,
+      "product": "1Campaign",
+      "summary": "CaaS platform enabling persistent malicious Google Ads with cloaking and researcher fingerprinting."
+    },
+    {
+      "cve": null,
+      "product": "CarGurus",
+      "summary": "12.4M records published by ShinyHunters from US digital auto platform."
+    },
+    {
+      "cve": null,
+      "product": "Wynn Resorts",
+      "summary": "Employee data breach by ShinyHunters; SSNs and financial data exposed."
+    },
+    {
+      "cve": null,
+      "product": "NIST SP 800-204D",
+      "summary": "New guidance for securing AI model-serving infrastructure published."
+    }
   ],
-  "dedup_excluded": [
-    "CVE-2026-2441",
-    "CVE-2026-1731",
-    "SANDWORM_MODE",
-    "FortiGate-AI-600",
-    "MuddyWater-Olalampo",
-    "ShinyHunters-SSO-Vishing",
-    "Lazarus-Medusa",
-    "CVE-2026-21858",
-    "CVE-2026-22200",
-    "CVE-2026-24061",
-    "CVE-2026-22769",
-    "ClickFix",
-    "OpenClaw-Security",
-    "Anthropic-Distillation",
-    "Roundcube-KEV",
-    "Password-Manager-Vault-Theft"
-  ]
+  "source_coverage": {
+    "total": 91,
+    "checked": 91,
+    "with_findings": 14,
+    "unreachable": ["cnvd.org.cn", "vulners.com", "0day.today"],
+    "degraded": ["sophos.com", "shadowserver.org"]
+  },
+  "full_report": "reports/2026/02/25/night/report.md"
 }

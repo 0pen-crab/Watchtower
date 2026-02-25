@@ -1,257 +1,107 @@
 {
-  "metadata": {
-    "cycle": "day",
-    "date": "2026-02-24",
-    "timestamp": "2026-02-24T14:00:00+02:00",
-    "agent": "vulnerability-researcher",
-    "model": "claude-opus-4-6"
-  },
-  "source_coverage": {
-    "checked": 89,
-    "total": 89,
-    "errors": [
-      "group-ib.com (403)",
-      "akamai.com (403)",
-      "orangecyberdefense.com (403)",
-      "threatpost.com (NXDOMAIN)",
-      "twitter.com/x.com (requires auth)",
-      "sophos.com (403)",
-      "talosintelligence.com/threat-roundup (404)",
-      "google-threat-horizons-pdf (404)"
-    ]
-  },
+  "date": "2026-02-24",
+  "cycle": "day",
   "findings": [
     {
-      "id": "VR-2026-02-24-D01",
-      "title": "ShinyHunters Claims Odido (Dutch Telecom) Breach — Millions Affected",
-      "severity": "HIGH",
-      "type": "breach",
-      "sources": ["bleepingcomputer.com"],
-      "cves": [],
-      "summary": "The ShinyHunters extortion gang claims to have breached Dutch telecom provider Odido, stealing millions of user records. Data reportedly includes personal details of subscribers.",
-      "dedup": "new"
+      "type": "news",
+      "title": "Lazarus Group Linked to Medusa Ransomware — US Healthcare Targeted",
+      "threat_score": 9,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "US healthcare organizations",
+      "summary": "North Korean Lazarus group now operating Medusa ransomware against US healthcare, marking escalation from espionage to direct ransomware extortion.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "bleepingcomputer.com"
     },
     {
-      "id": "VR-2026-02-24-D02",
-      "title": "North Korean Lazarus Group Linked to Medusa Ransomware Attacks on US Healthcare",
-      "severity": "CRITICAL",
-      "type": "threat-actor",
-      "sources": ["bleepingcomputer.com", "therecord.media"],
-      "cves": [],
-      "summary": "North Korean state-backed Lazarus group is actively targeting US healthcare organizations using Medusa ransomware. This represents an evolution from espionage to direct ransomware extortion by DPRK actors.",
-      "dedup": "new"
+      "type": "update",
+      "title": "BeyondTrust CVE-2026-1731 — Active Scanning Confirmed by GreyNoise",
+      "threat_score": 10,
+      "previous_threat_score": 10,
+      "cve": "CVE-2026-1731",
+      "cvss": 9.9,
+      "affected_technology": "BeyondTrust Remote Support and Privileged Remote Access",
+      "summary": "GreyNoise confirms active scanning within 24h of PoC; single IP accounts for 86% of probes; attackers targeting non-standard ports to evade detection.",
+      "first_seen_at": "greynoise.io"
     },
     {
-      "id": "VR-2026-02-24-D03",
-      "title": "Optimizely Data Breach via Voice Phishing (Vishing) Attack",
-      "severity": "MEDIUM",
-      "type": "breach",
-      "sources": ["bleepingcomputer.com"],
-      "cves": [],
-      "summary": "New York-based ad tech company Optimizely confirmed a data breach after threat actors compromised systems through a voice phishing (vishing) attack. Undisclosed number of customers notified.",
-      "dedup": "new"
+      "type": "news",
+      "title": "ShinyHunters Claims Odido Breach — Millions of Dutch Telecom Users",
+      "threat_score": 7,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Odido (Dutch telecom)",
+      "summary": "ShinyHunters extortion gang claims breach of Dutch telecom provider Odido, stealing millions of subscriber records.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "bleepingcomputer.com"
     },
     {
-      "id": "VR-2026-02-24-D04",
-      "title": "Android Mental Health Apps (14.7M Installs) Riddled with Security Flaws",
-      "severity": "MEDIUM",
-      "type": "vulnerability",
-      "sources": ["bleepingcomputer.com"],
-      "cves": [],
-      "summary": "Multiple mental health mobile apps on Google Play with 14.7M combined downloads contain security vulnerabilities that could expose sensitive medical information of users.",
-      "dedup": "new"
+      "type": "news",
+      "title": "EnOcean SmartServer IoT — Two New Vulnerabilities",
+      "threat_score": 6,
+      "cve": "CVE-2026-22885, CVE-2026-20761",
+      "cvss": null,
+      "affected_technology": "EnOcean SmartServer IoT (building automation)",
+      "summary": "Claroty Team82 disclosed two vulnerabilities in EnOcean SmartServer IoT devices used in building automation systems.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "claroty.com"
     },
     {
-      "id": "VR-2026-02-24-D05",
-      "title": "CVE-2026-1731 BeyondTrust RCE — Active Reconnaissance Observed by GreyNoise",
-      "severity": "CRITICAL",
-      "type": "exploitation",
-      "sources": ["greynoise.io", "cybersecuritydive.com"],
-      "cves": ["CVE-2026-1731"],
-      "summary": "GreyNoise detailed active reconnaissance for CVE-2026-1731 within 24 hours of PoC publication. A single IP accounts for 86% of scanning. Attackers probing non-standard ports, using shared tooling via VPN tunnels. Exploitation is imminent/ongoing.",
-      "dedup": "update — previously reported as vulnerability; now confirmed active scanning with detailed TTPs"
+      "type": "news",
+      "title": "Six New OpenClaw Vulnerabilities Disclosed by Endor Labs",
+      "threat_score": 6,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "OpenClaw (AI agent framework)",
+      "summary": "Six new vulnerabilities in OpenClaw expanding the attack surface for AI agent infrastructure; fourth week of OpenClaw security issues.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "infosecurity-magazine.com"
     },
     {
-      "id": "VR-2026-02-24-D06",
-      "title": "EnOcean SmartServer IoT — Multiple Vulnerabilities (CVE-2026-22885, CVE-2026-20761)",
-      "severity": "HIGH",
-      "type": "vulnerability",
-      "sources": ["claroty.com/team82"],
-      "cves": ["CVE-2026-22885", "CVE-2026-20761"],
-      "summary": "Claroty Team82 disclosed two vulnerabilities in EnOcean SmartServer IoT devices on Feb 19, 2026. These IoT/OT devices are commonly used in building automation.",
-      "dedup": "new"
-    },
-    {
-      "id": "VR-2026-02-24-D07",
-      "title": "Advantest (Japanese Semiconductor Testing Giant) Hit by Ransomware",
-      "severity": "MEDIUM",
-      "type": "breach",
-      "sources": ["bleepingcomputer.com", "infosecurity-magazine.com"],
-      "cves": [],
-      "summary": "Advantest, which makes testing equipment for major semiconductor manufacturers, has deployed incident response protocols following a ransomware attack.",
-      "dedup": "new"
-    },
-    {
-      "id": "VR-2026-02-24-D08",
-      "title": "Phobos Ransomware Affiliate Arrested in Poland",
-      "severity": "LOW",
-      "type": "law-enforcement",
-      "sources": ["therecord.media"],
-      "cves": [],
-      "summary": "A Phobos ransomware affiliate has been arrested in Poland, continuing international law enforcement pressure on ransomware operators.",
-      "dedup": "new"
-    },
-    {
-      "id": "VR-2026-02-24-D09",
-      "title": "Air Côte d'Ivoire Ransomware Attack",
-      "severity": "MEDIUM",
-      "type": "breach",
-      "sources": ["therecord.media"],
-      "cves": [],
-      "summary": "West African airline Air Côte d'Ivoire has been hit by a ransomware attack, with threat actors claiming to have exfiltrated data.",
-      "dedup": "new"
-    },
-    {
-      "id": "VR-2026-02-24-D10",
-      "title": "Cellebrite Linked to Hacking Kenyan Political Candidate's Phone",
-      "severity": "MEDIUM",
-      "type": "threat-actor",
-      "sources": ["therecord.media"],
-      "cves": [],
-      "summary": "Citizen Lab has linked Cellebrite's mobile forensics tools to the unauthorized access of a Kenyan political candidate's phone, raising concerns about abuse of commercial surveillance tools.",
-      "dedup": "new"
-    },
-    {
-      "id": "VR-2026-02-24-D11",
-      "title": "CrowdStrike: Adversaries Moving Through Networks in Under 30 Minutes",
-      "severity": "INFO",
-      "type": "research",
-      "sources": ["crowdstrike.com", "infosecurity-magazine.com"],
-      "cves": [],
-      "summary": "CrowdStrike Global Threat Report warns adversaries are leveraging AI to make campaigns more efficient, with breakout times now under 30 minutes in many cases.",
-      "dedup": "new"
-    },
-    {
-      "id": "VR-2026-02-24-D12",
-      "title": "Vanta Diagnostics (Formerly Vikor Scientific) Breach — 140K Affected",
-      "severity": "MEDIUM",
-      "type": "breach",
-      "sources": ["therecord.media"],
-      "cves": [],
-      "summary": "Vanta Diagnostics has disclosed a data breach affecting approximately 140,000 individuals, involving sensitive medical and personal data.",
-      "dedup": "new"
-    },
-    {
-      "id": "VR-2026-02-24-D13",
-      "title": "OysterLoader: Multi-Stage Evasion Loader Campaign",
-      "severity": "MEDIUM",
-      "type": "malware",
-      "sources": ["blog.sekoia.io"],
-      "cves": [],
-      "summary": "Sekoia details OysterLoader (Broomstick/CleanUp), a C++ multi-stage evasion loader being used in active campaigns. Multiple evasion stages make detection challenging.",
-      "dedup": "new"
-    },
-    {
-      "id": "VR-2026-02-24-D14",
-      "title": "IClickFix: Widespread WordPress ClickFix Framework",
-      "severity": "MEDIUM",
-      "type": "malware",
-      "sources": ["blog.sekoia.io"],
-      "cves": [],
-      "summary": "Sekoia documents IClickFix, a widespread WordPress-targeting framework using the ClickFix social engineering tactic to deliver malware payloads.",
-      "dedup": "update — extends earlier ClickFix campaign reporting with new WordPress-specific framework details"
-    },
-    {
-      "id": "VR-2026-02-24-D15",
-      "title": "Endor Labs Discloses Six New Vulnerabilities in OpenClaw",
-      "severity": "HIGH",
-      "type": "vulnerability",
-      "sources": ["infosecurity-magazine.com"],
-      "cves": [],
-      "summary": "Endor Labs has published details of six new vulnerabilities in the popular AI assistant OpenClaw, expanding the attack surface for AI agent platforms.",
-      "dedup": "new"
-    },
-    {
-      "id": "VR-2026-02-24-D16",
-      "title": "Bitdefender: OpenClaw Malicious Skill Trap Analysis",
-      "severity": "HIGH",
-      "type": "research",
-      "sources": ["bitdefender.com/labs"],
-      "cves": [],
-      "summary": "Bitdefender Labs published deep analysis of the OpenClaw malicious skill trap — where helpful-looking skills contain hidden payloads targeting AI agent users.",
-      "dedup": "new"
-    },
-    {
-      "id": "VR-2026-02-24-D17",
-      "title": "LummaStealer Revival with CastleLoader",
-      "severity": "MEDIUM",
-      "type": "malware",
-      "sources": ["bitdefender.com/labs"],
-      "cves": [],
-      "summary": "Bitdefender Labs details how LummaStealer is getting a second life alongside a new loader called CastleLoader, showing the infostealer ecosystem continues to evolve.",
-      "dedup": "new"
-    },
-    {
-      "id": "VR-2026-02-24-D18",
-      "title": "Spain Arrests Anonymous Fenix Hacktivists for DDoS Attacks on Government Sites",
-      "severity": "LOW",
-      "type": "law-enforcement",
-      "sources": ["bleepingcomputer.com"],
-      "cves": [],
-      "summary": "Spanish authorities arrested four alleged hacktivists believed to have DDoSed government ministries, political parties, and public institutions.",
-      "dedup": "new"
-    },
-    {
-      "id": "VR-2026-02-24-D19",
-      "title": "Cisco MCP Security Report: AI Agent Infrastructure 'Woefully Insecure'",
-      "severity": "HIGH",
-      "type": "research",
-      "sources": ["cybersecuritydive.com"],
-      "cves": [],
-      "summary": "Cisco warns that Model Context Protocol (MCP) — AI's 'connective tissue' for agent communication — is insecure by design, creating a broad attack surface as organizations deploy AI agents.",
-      "dedup": "new"
-    },
-    {
-      "id": "VR-2026-02-24-D20",
-      "title": "Data-Only Extortion Growing as Ransomware Gangs Seek Better Profits",
-      "severity": "MEDIUM",
-      "type": "research",
-      "sources": ["cybersecuritydive.com"],
-      "cves": [],
-      "summary": "Arctic Wolf report shows data-only extortion (no encryption) is growing as threat actors find it more profitable and lower risk than traditional ransomware.",
-      "dedup": "new"
+      "type": "news",
+      "title": "Cisco Warns AI MCP Infrastructure Is 'Woefully Insecure'",
+      "threat_score": 6,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Model Context Protocol (MCP) for AI agents",
+      "summary": "Cisco warns MCP has fundamental security weaknesses creating broad attack surfaces as enterprises deploy AI agents at scale.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "cybersecuritydive.com"
     }
   ],
-  "dedup_gate": {
-    "previously_reported": [
-      "CVE-2026-2441 (Chrome zero-day)",
-      "CVE-2026-1731 (BeyondTrust RCE) — initial disclosure",
-      "CVE-2026-1281/CVE-2026-1340 (Ivanti EPMM)",
-      "CVE-2026-22769 (Dell RecoverPoint/Grimbolt)",
-      "CVE-2026-24423/CVE-2026-23760 (SmarterMail)",
-      "CVE-2026-2329 (Grandstream VoIP)",
-      "CVE-2025-15467 (OpenSSL RCE/AISLE)",
-      "CVE-2025-68461/CVE-2025-49113 (Roundcube KEV)",
-      "LockBit 5.0 Proxmox targeting",
-      "FortiGate 600+ AI-assisted breach",
-      "Predator spyware iOS",
-      "WPvivid RCE",
-      "ClickFix campaigns (base)",
-      "SANDWORM_MODE npm supply chain",
-      "MuddyWater Operation Olalampo",
-      "Arkanix Stealer",
-      "Microsoft Patch Tuesday 6 zero-days",
-      "Starkiller PhaaS",
-      "Kimwolf I2P",
-      "PromptSpy Android",
-      "ShinyHunters SSO vishing",
-      "CVE-2026-1603 (Ivanti EPM)",
-      "n8n CVE-2026-21858",
-      "GIMP CVEs",
-      "Phoenix Contact CVE-2025-41717"
-    ],
-    "new_findings_count": 20,
-    "update_findings_count": 2
+  "noted": [
+    {
+      "cve": null,
+      "product": "Optimizely",
+      "summary": "Data breach confirmed via vishing attack; undisclosed number of customers affected."
+    },
+    {
+      "cve": null,
+      "product": "Android mental health apps",
+      "summary": "14.7M installs with security flaws that could expose sensitive medical data."
+    },
+    {
+      "cve": null,
+      "product": "Advantest",
+      "summary": "Japanese chip-testing giant hit by ransomware."
+    },
+    {
+      "cve": null,
+      "product": "Air Côte d'Ivoire",
+      "summary": "West African airline hit by ransomware with data exfiltration claims."
+    },
+    {
+      "cve": null,
+      "product": "Bitdefender / OpenClaw",
+      "summary": "Analysis of malicious OpenClaw skills containing hidden payloads targeting AI agent users."
+    }
+  ],
+  "source_coverage": {
+    "total": 89,
+    "checked": 89,
+    "with_findings": 14,
+    "unreachable": ["threatpost.com"],
+    "degraded": ["group-ib.com", "sophos.com"]
   },
-  "summary": "Day cycle scan completed with 89/89 sources checked. 20 new findings and 2 updates. Key highlights: (1) Lazarus Group now linked to Medusa ransomware targeting US healthcare — significant escalation by DPRK actors. (2) GreyNoise details active CVE-2026-1731 reconnaissance with sophisticated tooling. (3) ShinyHunters claims major Dutch telecom breach. (4) Endor Labs + Bitdefender flag growing AI agent security concerns (OpenClaw vulns + malicious skills). (5) Cisco warns MCP infrastructure is 'woefully insecure'. (6) Multiple ransomware incidents across semiconductor (Advantest) and aviation (Air Côte d'Ivoire) sectors."
+  "full_report": "reports/2026/02/24/day/report.md"
 }

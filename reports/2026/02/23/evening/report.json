@@ -39,7 +39,7 @@
       "type": "update",
       "title": "CISA KEV — SolarWinds WHD, Notepad++, TeamT5 Entries",
       "threat_score": 6,
-      "previous_threat_score": null,
+      "previous_threat_score": 6,
       "cve": "CVE-2025-40536, CVE-2025-15556, CVE-2024-7694",
       "cvss": null,
       "affected_technology": "SolarWinds Web Help Desk, Notepad++, TeamT5 ThreatSonar",

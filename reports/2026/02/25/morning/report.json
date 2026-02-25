@@ -1,200 +1,59 @@
 {
-  "metadata": {
-    "cycle": "morning",
-    "date": "2026-02-25",
-    "generated_at": "2026-02-25T06:10:00Z",
-    "source_coverage": {
-      "checked": 93,
-      "total": 93,
-      "unreachable": [
-        "cnvd.org.cn",
-        "cvedetails.com",
-        "vulners.com",
-        "threatpost.com",
-        "securityfocus.com",
-        "0day.today",
-        "x.com (13 accounts - no API)",
-        "t.me/bugbountyradar",
-        "t.me/redteamsec",
-        "discord.gg/infosecprep",
-        "owasp.org/slack"
-      ],
-      "notes": "Social media (X/Twitter, Telegram, Discord, Slack) not fetchable via web_fetch; all web-accessible sources attempted"
+  "date": "2026-02-25",
+  "cycle": "morning",
+  "findings": [
+    {
+      "type": "news",
+      "title": "Frigate NVR Blind RCE via go2rtc Exec Injection",
+      "threat_score": 7,
+      "cve": "CVE-2026-25643",
+      "cvss": 9.8,
+      "affected_technology": "Frigate NVR (Home Assistant ecosystem)",
+      "summary": "Configuration manipulation in Frigate NVR allows blind RCE via go2rtc exec injection with both authenticated and unauthenticated paths; public PoC available.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "github.com"
+    },
+    {
+      "type": "news",
+      "title": "Langflow RCE via Unsafe Code Validation",
+      "threat_score": 7,
+      "cve": "CVE-2026-0770",
+      "cvss": 9.8,
+      "affected_technology": "Langflow (AI workflow platform)",
+      "summary": "RCE in Langflow code validation endpoint when AUTO_LOGIN enabled with default credentials; public PoC available.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "github.com"
+    },
+    {
+      "type": "news",
+      "title": "OWASP ModSecurity CRS WAF Bypass",
+      "threat_score": 6,
+      "cve": "CVE-2026-21876",
+      "cvss": null,
+      "affected_technology": "OWASP ModSecurity Core Rule Set",
+      "summary": "WAF bypass in ModSecurity CRS allows malicious payloads to evade inspection; Docker-based PoC published.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "github.com"
     }
+  ],
+  "noted": [
+    {
+      "cve": null,
+      "product": "XMRig cryptojacking",
+      "summary": "Wormable campaign with BYOVD, logic bombs, and air-gap jumping via USB storage."
+    },
+    {
+      "cve": null,
+      "product": "Linux Kernel",
+      "summary": "February Patch Wednesday: 632 vulnerabilities patched including 305 in kernel."
+    }
+  ],
+  "source_coverage": {
+    "total": 93,
+    "checked": 93,
+    "with_findings": 8,
+    "unreachable": ["cnvd.org.cn", "cvedetails.com", "vulners.com", "threatpost.com", "0day.today"],
+    "degraded": ["x.com"]
   },
-  "new_findings": [
-    {
-      "id": "VR-2026-0225-001",
-      "title": "CVE-2026-25643: Frigate NVR ≤0.16.3 Blind RCE via go2rtc Exec Injection",
-      "cves": ["CVE-2026-25643"],
-      "severity": "CRITICAL",
-      "cvss": 9.8,
-      "type": "vulnerability",
-      "description": "Critical configuration manipulation vulnerability in Frigate NVR versions up to 0.16.3. By injecting a malicious go2rtc stream and fake camera entry into the configuration, an attacker can trigger arbitrary command execution as the Frigate process upon service restart. Both authenticated and unauthenticated exploitation paths exist. Public PoC available on GitHub.",
-      "affected": "Frigate NVR ≤ 0.16.3",
-      "exploitation": "PoC public (joshuavanderpoll/CVE-2026-25643)",
-      "sources": ["github.com", "0xMarcio/cve"],
-      "recommendation": "Upgrade Frigate NVR to version > 0.16.3. Restrict access to Frigate API endpoints."
-    },
-    {
-      "id": "VR-2026-0225-002",
-      "title": "CVE-2026-0770: Langflow Remote Code Execution via Code Validation Endpoint",
-      "cves": ["CVE-2026-0770"],
-      "severity": "CRITICAL",
-      "cvss": 9.8,
-      "type": "vulnerability",
-      "description": "RCE vulnerability in Langflow's /api/v1/validate/code endpoint. When AUTO_LOGIN=true and default credentials are enabled, attackers can bypass authentication and execute arbitrary system commands through unsafe Python code evaluation during validation. Full server compromise possible.",
-      "affected": "Langflow (versions with AUTO_LOGIN=true)",
-      "exploitation": "PoC public (0xgh057r3c0n/CVE-2026-0770)",
-      "sources": ["github.com"],
-      "recommendation": "Disable AUTO_LOGIN, change default credentials, restrict access to validation endpoints."
-    },
-    {
-      "id": "VR-2026-0225-003",
-      "title": "CVE-2026-21962: New PoC Published (Ashwesker)",
-      "cves": ["CVE-2026-21962"],
-      "severity": "HIGH",
-      "cvss": null,
-      "type": "vulnerability",
-      "description": "New exploit PoC published by Ashwesker for CVE-2026-21962. Repository appeared in the last 3 hours on GitHub. Details pending full analysis — repo returned 404 suggesting it may have been taken down or is private.",
-      "affected": "Unknown — under investigation",
-      "exploitation": "PoC attempted (may be removed)",
-      "sources": ["github.com", "0xMarcio/cve"],
-      "recommendation": "Monitor for CVE details publication."
-    },
-    {
-      "id": "VR-2026-0225-004",
-      "title": "CVE-2026-21876: OWASP ModSecurity CRS WAF Bypass",
-      "cves": ["CVE-2026-21876"],
-      "severity": "HIGH",
-      "cvss": null,
-      "type": "vulnerability",
-      "description": "WAF bypass vulnerability in OWASP ModSecurity Core Rule Set (CRS). A PoC with Docker container has been published demonstrating the bypass technique. This could allow attackers to evade WAF protections and deliver malicious payloads to backend applications.",
-      "affected": "OWASP ModSecurity CRS",
-      "exploitation": "PoC public (daytriftnewgen/CVE-2026-21876)",
-      "sources": ["github.com", "0xMarcio/cve"],
-      "recommendation": "Monitor CRS project for patch. Review custom WAF rules."
-    },
-    {
-      "id": "VR-2026-0225-005",
-      "title": "Wormable XMRig Cryptojacking Campaign with BYOVD Exploit and Time-Based Logic Bomb",
-      "cves": [],
-      "severity": "HIGH",
-      "type": "threat",
-      "description": "Sophisticated multi-stage cryptojacking campaign using pirated software bundles as lures to deploy a customized XMRig miner. Features worm-like capabilities spreading via external storage devices (enabling air-gapped lateral movement), BYOVD (Bring Your Own Vulnerable Driver) exploits for privilege escalation, and a time-based logic bomb. Reported by Trellix.",
-      "affected": "Windows systems, air-gapped environments via USB",
-      "exploitation": "Active in-the-wild",
-      "sources": ["thehackernews.com"],
-      "recommendation": "Block known IoCs, disable autorun on removable media, monitor for suspicious driver loading."
-    },
-    {
-      "id": "VR-2026-0225-006",
-      "title": "Linux Patch Wednesday February 2026: 632 Vulnerabilities Including New Critical RCEs",
-      "cves": ["CVE-2026-24747", "CVE-2026-24049", "CVE-2026-21721", "CVE-2026-25916", "CVE-2025-69421", "CVE-2025-11187", "CVE-2025-12762", "CVE-2025-13780", "CVE-2025-69872", "CVE-2026-1504"],
-      "severity": "HIGH",
-      "type": "advisory",
-      "description": "February Linux Patch Wednesday addresses 632 vulnerabilities (305 in Linux Kernel). Notable new CVEs with public exploits: PyTorch RCE (CVE-2026-24747), Wheel RCE (CVE-2026-24049), Grafana EoP (CVE-2026-21721), Roundcube SFB (CVE-2026-25916), additional OpenSSL RCEs (CVE-2025-69421, CVE-2025-11187), pgAdmin RCEs, DiskCache RCE, Chromium SFB (CVE-2026-1504).",
-      "affected": "Linux distributions, PyTorch, Wheel, Grafana, Roundcube, pgAdmin, OpenSSL",
-      "exploitation": "Public exploits available for 56+ vulnerabilities",
-      "sources": ["avleonov.com"],
-      "recommendation": "Prioritize patching based on asset exposure. Focus on RCE vulnerabilities with public exploits."
-    },
-    {
-      "id": "VR-2026-0225-007",
-      "title": "CVE-2026-2406: Telnet Vulnerability Analysis and Detection Tool",
-      "cves": ["CVE-2026-2406"],
-      "severity": "HIGH",
-      "cvss": null,
-      "type": "vulnerability",
-      "description": "New vulnerability in Telnet service with PoC and detection tooling published on GitHub. Appears related to the broader telnetd vulnerability class alongside CVE-2026-24061.",
-      "affected": "Telnet services",
-      "exploitation": "PoC public",
-      "sources": ["github.com"],
-      "recommendation": "Disable Telnet in favor of SSH. If Telnet required, apply patches immediately."
-    },
-    {
-      "id": "VR-2026-0225-008",
-      "title": "Blesta Billing Platform Multiple Vulnerabilities (KIS-2026-01/02/03)",
-      "cves": [],
-      "severity": "MEDIUM",
-      "type": "vulnerability",
-      "description": "Multiple vulnerabilities disclosed in Blesta billing/hosting platform via Full Disclosure mailing list (KIS-2026-01, KIS-2026-02, KIS-2026-03). Details published on seclists.org.",
-      "affected": "Blesta billing platform",
-      "exploitation": "Details public on Full Disclosure",
-      "sources": ["seclists.org/fulldisclosure"],
-      "recommendation": "Review Blesta vendor advisories and patch."
-    },
-    {
-      "id": "VR-2026-0225-009",
-      "title": "Solax Power WiFi Module Vulnerabilities (SEC Consult)",
-      "cves": [],
-      "severity": "MEDIUM",
-      "type": "vulnerability",
-      "description": "SEC Consult disclosed vulnerabilities in Solax Power WiFi modules used in solar inverter systems. Published on Full Disclosure mailing list.",
-      "affected": "Solax Power WiFi modules / solar inverter systems",
-      "exploitation": "Advisory public",
-      "sources": ["seclists.org/fulldisclosure"],
-      "recommendation": "Review SEC Consult advisory. Isolate IoT/OT devices from corporate networks."
-    },
-    {
-      "id": "VR-2026-0225-010",
-      "title": "Remote BitLocker Bypass via Intel AMT",
-      "cves": [],
-      "severity": "HIGH",
-      "type": "research",
-      "description": "Research published on Full Disclosure demonstrating remote BitLocker bypass using Intel Active Management Technology (AMT). Could allow physical security bypass on enterprise laptops with AMT enabled.",
-      "affected": "Systems with Intel AMT and BitLocker encryption",
-      "exploitation": "Research/PoC published",
-      "sources": ["seclists.org/fulldisclosure"],
-      "recommendation": "Review Intel AMT configuration. Ensure AMT is properly secured or disabled if not needed."
-    },
-    {
-      "id": "VR-2026-0225-011",
-      "title": "CVE-2026-26717: Richie LMS Timing Attack Vulnerability",
-      "cves": ["CVE-2026-26717"],
-      "severity": "MEDIUM",
-      "cvss": null,
-      "type": "vulnerability",
-      "description": "Timing attack vulnerability discovered in Richie LMS, developed by France Université Numérique (OpenFUN). Could allow enumeration or authentication bypass through timing side-channel analysis.",
-      "affected": "Richie LMS (OpenFUN)",
-      "exploitation": "PoC public",
-      "sources": ["github.com"],
-      "recommendation": "Apply constant-time comparison for authentication operations."
-    }
-  ],
-  "dedup_filtered": [
-    "CVE-2026-2441 (Chrome zero-day) - reported 2026-02-22",
-    "CVE-2026-1731 (BeyondTrust RCE) - reported 2026-02-08",
-    "CVE-2026-22769 (Dell RecoverPoint) - reported 2026-02-22",
-    "CVE-2026-21858 (n8n RCE) - reported 2026-02-15",
-    "CVE-2026-24061 (GNU telnetd) - reported 2026-02-15",
-    "CVE-2026-22200 (osTicket) - reported 2026-02-15",
-    "CVE-2026-21440 (AdonisJS) - reported 2026-02-15",
-    "CVE-2026-23745 (node-tar) - reported 2026-02-15",
-    "CVE-2025-40538 (SolarWinds Serv-U) - reported 2026-02-22",
-    "CVE-2026-22812 (OpenCode RCE) - reported 2026-02-19",
-    "MuddyWater Operation Olalampo - reported 2026-02-22",
-    "FortiGate AI-assisted compromise - reported 2026-02-22",
-    "Diesel Vortex phishing - reported 2026-02-24",
-    "1Campaign MaaS - reported 2026-02-24",
-    "CarGurus breach - reported 2026-02-24",
-    "Wynn Resorts breach - reported 2026-02-24",
-    "ClickFix campaigns - reported multiple cycles",
-    "OpenClaw security issues - reported multiple cycles"
-  ],
-  "summary": {
-    "new_critical": 2,
-    "new_high": 5,
-    "new_medium": 3,
-    "new_research": 1,
-    "total_new": 11,
-    "dedup_filtered_count": 18,
-    "key_trends": [
-      "AI/ML infrastructure vulnerabilities continue: Langflow RCE, Frigate NVR go2rtc injection",
-      "Linux ecosystem sees 632 CVEs in February patch cycle with 56+ public exploits",
-      "Wormable cryptojacking with BYOVD and air-gap jumping capability",
-      "WAF bypass techniques evolving (ModSecurity CRS bypass)",
-      "IoT/OT security: solar inverter WiFi modules, NVR systems under scrutiny"
-    ]
-  }
+  "full_report": "reports/2026/02/25/morning/report.md"
 }

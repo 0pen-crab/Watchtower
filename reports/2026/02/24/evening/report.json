@@ -1,171 +1,112 @@
 {
-  "metadata": {
-    "cycle": "evening",
-    "date": "2026-02-24",
-    "generated_at": "2026-02-24T18:10:00Z",
-    "analyst": "vulnerability-researcher",
-    "source_coverage": {
-      "checked": 90,
-      "total": 90,
-      "unreachable": ["cnvd.org.cn", "darkreading.com", "securityweek.com (article-level CF)", "vulners.com", "0day.today (dead/parked)"],
-      "no_new_content": ["threatpost.com", "securityfocus.com", "owasp.org/slack", "t.me/bugbountyradar", "t.me/redteamsec", "discord.gg/infosecprep", "dbugs.ptsecurity.com"]
-    }
-  },
+  "date": "2026-02-24",
+  "cycle": "evening",
   "findings": [
     {
-      "id": "EVE-2026-0224-01",
-      "title": "SolarWinds Serv-U Critical RCE Vulnerabilities — Root Access via Broken Access Control",
+      "type": "news",
+      "title": "SolarWinds Serv-U Critical RCE — Root Access via Broken Access Control",
+      "threat_score": 8,
       "cve": "CVE-2025-40538",
       "cvss": 9.1,
-      "severity": "critical",
-      "product": "SolarWinds Serv-U",
-      "affected_versions": "< 15.5.4",
-      "description": "SolarWinds patched four critical vulnerabilities in Serv-U file transfer software (15.5.4). The most severe, CVE-2025-40538, is a broken access control flaw allowing attackers with high privileges to create system admin users and execute arbitrary code as root via domain/group admin abuse. Two additional type confusion flaws and an IDOR vulnerability also enable root-level code execution. While requiring high privileges (limiting initial exploitation), these are highly chainable. Serv-U has been a prime target historically — Clop ransomware exploited CVE-2021-35211, and Chinese state actors (DEV-0322) used zero-days against it. Shodan tracks 12,000+ exposed instances.",
-      "sources": ["bleepingcomputer.com", "packetstormsecurity.com"],
-      "action": "Patch to Serv-U 15.5.4 immediately. Audit admin accounts for unauthorized creation.",
-      "tags": ["file-transfer", "rce", "privilege-escalation", "enterprise"]
+      "affected_technology": "SolarWinds Serv-U",
+      "summary": "Broken access control in Serv-U allows admin user creation and root code execution; 12,000+ exposed instances on Shodan, historically targeted by Clop and Chinese APTs.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "bleepingcomputer.com"
     },
     {
-      "id": "EVE-2026-0224-02",
-      "title": "Microsoft Semantic Kernel RCE — Python Code Injection via InMemoryVectorStore Filters",
+      "type": "news",
+      "title": "Microsoft Semantic Kernel RCE — Python Code Injection via Vector Store Filters",
+      "threat_score": 8,
       "cve": "CVE-2026-26030",
       "cvss": 9.8,
-      "severity": "critical",
-      "product": "Microsoft Semantic Kernel",
-      "affected_versions": "≤ 1.39.4",
-      "description": "Untrusted filter expressions in Microsoft Semantic Kernel's InMemoryVectorStore allow unsafe attribute resolution leading to arbitrary Python code execution. An attacker controlling filter input can traverse __class__.__base__.__subclasses__() to access __builtins__ and execute os.system() calls. This is a classic Python sandbox escape via object traversal (SSTI-style), impacting any application using Semantic Kernel's vector store with user-supplied filters. Public PoC available on GitHub.",
-      "sources": ["github.com/mbanyamer/CVE-2026-26030"],
-      "action": "Update Semantic Kernel. Validate/sanitize all filter inputs to vector stores. Never pass user input directly to InMemoryVectorStore queries.",
-      "tags": ["ai-ml", "rce", "code-injection", "microsoft", "llm-framework"]
+      "affected_technology": "Microsoft Semantic Kernel",
+      "summary": "Untrusted filter expressions in Semantic Kernel InMemoryVectorStore allow Python sandbox escape to arbitrary code execution; public PoC available.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "packetstormsecurity.com"
     },
     {
-      "id": "EVE-2026-0224-03",
+      "type": "news",
       "title": "OpenCode Unauthenticated RCE — Full Exploitation Toolkit Published",
+      "threat_score": 8,
       "cve": "CVE-2026-22812",
       "cvss": 9.8,
-      "severity": "critical",
-      "product": "OpenCode",
-      "affected_versions": "Unknown",
-      "description": "A critical unauthenticated remote code execution vulnerability in OpenCode allows attackers to create sessions without authentication and execute arbitrary commands, read files, upload payloads, and obtain interactive shells. A comprehensive exploitation toolkit has been published on GitHub with capabilities including: unauthenticated session creation, arbitrary command execution, interactive shell with history, file upload/download, arbitrary file read, PTY session creation, and system enumeration. Default port 4096.",
-      "sources": ["github.com/rohmatariow/CVE-2026-22812-exploit", "0xMarcio/cve"],
-      "action": "Audit for OpenCode deployments. Restrict network access. Apply vendor patches when available.",
-      "tags": ["rce", "unauthenticated", "poc-available", "developer-tools"]
+      "affected_technology": "OpenCode",
+      "summary": "Unauthenticated RCE with published exploitation toolkit including session creation, command exec, file ops, and interactive shell on default port 4096.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "github.com"
     },
     {
-      "id": "EVE-2026-0224-04",
-      "title": "Caddy Server FastCGI Path Confusion — Unicode Normalization Leads to Potential RCE",
+      "type": "news",
+      "title": "Caddy FastCGI Path Confusion — Unicode Normalization to RCE",
+      "threat_score": 7,
       "cve": "CVE-2026-27590",
       "cvss": 8.1,
-      "severity": "high",
-      "product": "Caddy Web Server",
-      "affected_versions": "< 2.11.1",
-      "description": "Caddy's FastCGI path splitting logic computes the split index on a lowercased copy of the request path, then uses that byte index to slice the original path. Since strings.ToLower() can change UTF-8 byte length for certain Unicode characters, Caddy derives incorrect SCRIPT_NAME/SCRIPT_FILENAME and PATH_INFO. In deployments with file upload features, attackers can achieve execution of non-.php files as PHP, leading to RCE. Fixed in Caddy 2.11.1.",
-      "sources": ["opencve.io", "github.com/caddyserver/caddy"],
-      "action": "Upgrade Caddy to 2.11.1. Review FastCGI configurations for file upload paths.",
-      "tags": ["web-server", "path-confusion", "rce", "unicode", "php"]
+      "affected_technology": "Caddy web server",
+      "summary": "Unicode normalization bug in Caddy FastCGI path splitting allows executing uploaded non-PHP files as PHP; fixed in 2.11.1.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "github.com"
     },
     {
-      "id": "EVE-2026-0224-05",
-      "title": "Anthropic: Chinese AI Firms Conducted Industrial-Scale Model Distillation (16M Queries)",
-      "cve": "none",
-      "severity": "informational",
-      "product": "Anthropic Claude",
-      "description": "Anthropic disclosed that DeepSeek, Moonshot AI, and MiniMax (all China-based) conducted industrial-scale distillation campaigns against Claude using ~24,000 fraudulent accounts generating 16 million exchanges. The campaigns aimed to extract Claude's capabilities to improve competing models. This violates Anthropic's ToS and regional access restrictions. The incident highlights growing AI model theft via distillation as a strategic threat, and the challenges of protecting AI model intellectual property at the API boundary.",
-      "sources": ["thehackernews.com", "securityweek.com"],
-      "action": "AI providers should implement distillation detection, rate limiting, and behavioral analysis. Organizations using AI APIs should monitor for abuse patterns.",
-      "tags": ["ai-security", "model-theft", "distillation", "china", "anthropic"]
+      "type": "news",
+      "title": "Wormable XMRig Campaign — BYOVD + Logic Bomb + Air-Gap Spreading",
+      "threat_score": 7,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Windows systems (pirated software vector)",
+      "summary": "Sophisticated cryptojacking with BYOVD defense evasion, time-based logic bombs, and worm capabilities via external storage for air-gapped lateral movement.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "trellix.com"
     },
     {
-      "id": "EVE-2026-0224-06",
-      "title": "Wormable XMRig Cryptojacking Campaign with BYOVD and Time-Based Logic Bomb",
-      "cve": "none",
-      "severity": "high",
-      "product": "Windows (via pirated software)",
-      "description": "Trellix documented a sophisticated multi-stage cryptojacking campaign using pirated software bundles as initial access. The dropper deploys a customized XMRig miner with: BYOVD (Bring Your Own Vulnerable Driver) for defense evasion, time-based logic bombs to delay execution, and worm-like capabilities spreading via external storage devices enabling lateral movement even in air-gapped environments. The malware prioritizes maximum mining hashrate, often destabilizing victim systems.",
-      "sources": ["thehackernews.com"],
-      "action": "Block pirated software. Monitor for BYOVD indicators. Check USB autorun policies.",
-      "tags": ["cryptojacking", "byovd", "worm", "air-gap", "malware"]
-    },
-    {
-      "id": "EVE-2026-0224-07",
-      "title": "CISA Binding Operational Directive 26-02: Edge Device Replacement Deadlines",
-      "cve": "none",
-      "severity": "high",
-      "product": "Edge devices (routers, VPN appliances, firewalls)",
-      "description": "CISA issued Binding Operational Directive 26-02 mandating federal agencies to replace end-of-life and vulnerable edge devices by specific deadlines. This signals CISA's escalation from patching advisories to mandatory replacement requirements for network edge infrastructure. Applies to federal agencies but sets industry direction for managing edge device lifecycle risk.",
-      "sources": ["helpnetsecurity.com", "cisa.gov"],
-      "action": "Review edge device inventory against BOD 26-02 requirements. Plan replacement of EOL devices.",
-      "tags": ["policy", "cisa", "edge-devices", "federal", "compliance"]
-    },
-    {
-      "id": "EVE-2026-0224-08",
-      "title": "Linksys MX9600/MX4200 Multiple Critical Vulnerabilities",
-      "cve": "multiple (pending)",
-      "severity": "high",
-      "product": "Linksys MX9600, MX4200",
-      "description": "Multiple vulnerabilities disclosed via Full Disclosure mailing list affecting Linksys mesh router models MX9600 and MX4200, including: path traversal, missing authentication checks, SQL injection, and command injection. These consumer/SOHO routers are widely deployed. Exploitation could lead to full device compromise.",
-      "sources": ["seclists.org/fulldisclosure"],
-      "action": "Check for Linksys firmware updates. Restrict management interface access.",
-      "tags": ["router", "iot", "soho", "command-injection", "sqli"]
-    },
-    {
-      "id": "EVE-2026-0224-09",
-      "title": "pfSense CE Remote Code Execution Vulnerabilities",
-      "cve": "CVE-2025-69690, CVE-2025-69691",
-      "severity": "high",
-      "product": "pfSense Community Edition",
-      "description": "Two RCE vulnerabilities disclosed in pfSense Community Edition firewall via the Full Disclosure mailing list. pfSense is widely used as an open-source firewall/router in small-to-medium businesses and home networks. Details published on seclists.org.",
-      "sources": ["seclists.org/fulldisclosure"],
-      "action": "Update pfSense CE to latest version. Restrict web GUI access to trusted networks.",
-      "tags": ["firewall", "rce", "open-source", "network-security"]
-    },
-    {
-      "id": "EVE-2026-0224-10",
-      "title": "Lazarus Group Confirmed as Medusa Ransomware Affiliate — Targeting US Healthcare",
-      "cve": "none",
-      "severity": "high",
-      "product": "Medusa Ransomware",
-      "description": "Symantec/Carbon Black Threat Hunter Team confirmed North Korean Lazarus Group is now operating as a Medusa ransomware affiliate, targeting US healthcare organizations and Middle East entities. Toolset includes Comebacker and Blindingcan backdoors, ChromeStealer, Mimikatz, and custom proxying tools. Four healthcare/non-profit victims since November 2025 with average $260K ransom demands. This is a significant evolution from prior Lazarus ransomware operations (previously Maui, Play) and represents continued North Korean state-sponsored financially motivated attacks funding espionage.",
-      "sources": ["security.com/threat-intelligence (Symantec)"],
-      "action": "Healthcare orgs: review Lazarus IoCs. Monitor for Comebacker/Blindingcan. Ensure ransomware playbooks address state-sponsored actors.",
-      "tags": ["apt", "lazarus", "north-korea", "ransomware", "healthcare", "medusa"]
+      "type": "news",
+      "title": "CISA BOD 26-02 — Edge Device Replacement Mandates",
+      "threat_score": 6,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Network edge infrastructure (routers, VPN, firewalls)",
+      "summary": "CISA mandates federal agencies replace end-of-life edge devices by specific deadlines; signals shift from patching to hardware replacement.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "cisa.gov"
     }
   ],
   "noted": [
     {
-      "title": "Caddy Admin API Vulnerability",
-      "cve": "CVE-2026-27589",
-      "product": "Caddy",
-      "reason": "Local admin API, lower remote risk, fixed in 2.11.1"
+      "cve": null,
+      "product": "CISA BOD 26-02",
+      "summary": "Binding directive for federal edge device replacement; sets direction for private sector."
     },
     {
-      "title": "ImageMagick PSD Heap Information Disclosure",
-      "cve": "CVE-2026-24481",
-      "product": "ImageMagick",
-      "reason": "Info disclosure only, requires malicious PSD file"
+      "cve": null,
+      "product": "German national cybersecurity",
+      "summary": "Germany proposes banning China and Russia-linked network equipment vendors from 5G infrastructure."
     },
     {
-      "title": "Firefox 148 Security Fixes (UAF, Race Condition)",
-      "cve": "CVE-2026-2804, CVE-2026-2802",
-      "product": "Firefox",
-      "reason": "Medium severity, auto-updates mitigate"
+      "cve": "CVE-2025-21396",
+      "product": "Microsoft Accounts",
+      "summary": "Improper access control allowing unauthenticated network-based attacks; patched, no user action needed."
     },
     {
-      "title": "jsPDF PDF Object Injection",
-      "cve": "CVE-2026-25755",
-      "product": "jsPDF",
-      "reason": "Library-level vuln, requires specific usage pattern"
+      "cve": null,
+      "product": "AI/MCP ecosystem",
+      "summary": "ElizaOS contributor bribes documented; trust issues in open-source AI agent infrastructure."
     },
     {
-      "title": "FunAdmin Deserialization",
-      "cve": "CVE-2026-2898",
-      "product": "FunAdmin",
-      "reason": "Niche CMS, limited exposure"
+      "cve": null,
+      "product": "Android spyware",
+      "summary": "SpyLend loan apps on Google Play used for India-targeted extortion, harassment, deepfake blackmail."
     },
     {
-      "title": "Kubernetes Ingress NGINX Retirement Warning",
-      "product": "Kubernetes",
-      "reason": "Deprecation notice, not an active vulnerability"
+      "cve": null,
+      "product": "Industrial ransomware",
+      "summary": "Dragos 2025 report: 119 groups targeting OT, 3,300 orgs hit, 49% increase year-over-year."
     }
-  ]
+  ],
+  "source_coverage": {
+    "total": 90,
+    "checked": 90,
+    "with_findings": 15,
+    "unreachable": ["cnvd.org.cn", "darkreading.com", "vulners.com", "0day.today"],
+    "degraded": ["securityweek.com"]
+  },
+  "full_report": "reports/2026/02/24/evening/report.md"
 }

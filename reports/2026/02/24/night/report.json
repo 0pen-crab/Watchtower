@@ -1,159 +1,110 @@
 {
-  "report_id": "2026-02-24-night",
-  "generated_at": "2026-02-24T02:00:00+02:00",
+  "date": "2026-02-24",
   "cycle": "night",
-  "source_coverage": {
-    "total": 91,
-    "checked": 91,
-    "returned_data": 72,
-    "errors": 19
-  },
   "findings": [
     {
-      "id": 1,
-      "type": "vulnerability",
-      "cve": "CVE-2026-1603",
-      "title": "Ivanti EPM Authentication Bypass — Credential Exposure",
-      "product": "Ivanti Endpoint Manager < 2024 SU5",
-      "cvss": 8.6,
+      "type": "news",
+      "title": "Ivanti Endpoint Manager Authentication Bypass — Credential Exposure",
       "threat_score": 8,
-      "exploitation_status": "no_public_exploitation",
-      "source": ["horizon3.ai", "nvd.nist.gov"]
+      "cve": "CVE-2026-1603",
+      "cvss": 8.6,
+      "affected_technology": "Ivanti Endpoint Manager (EPM)",
+      "summary": "Authentication bypass in Ivanti EPM allows remote unauthenticated access to stored credentials enabling lateral movement across managed endpoints.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "horizon3.ai"
     },
     {
-      "id": 2,
-      "type": "campaign",
+      "type": "update",
+      "title": "AI-Augmented FortiGate Campaign — Full Scope Analysis Published",
+      "threat_score": 8,
+      "previous_threat_score": 8,
       "cve": null,
-      "title": "AI-Augmented FortiGate Mass Exploitation — 600+ Devices via Gen AI",
-      "product": "Fortinet FortiGate",
-      "threat_score": 9,
-      "exploitation_status": "active_exploitation",
-      "source": ["therecord.media", "aws.amazon.com/blogs/security"]
+      "cvss": null,
+      "affected_technology": "Fortinet FortiGate firewalls",
+      "summary": "Amazon TI details: actor stole full configs including passwords, moved into AD, targeted backups; preparation for possible ransomware follow-on.",
+      "first_seen_at": "therecord.media"
     },
     {
-      "id": 3,
-      "type": "threat_intel_update",
-      "cve": "CVE-2026-22769",
-      "title": "Dell RecoverPoint — Grimbolt Malware Replaces Brickstorm (UNC6201/Silk Typhoon)",
-      "product": "Dell RecoverPoint for Virtual Machines",
-      "cvss": 10.0,
+      "type": "update",
+      "title": "Dell CVE-2026-22769 — Grimbolt Replaces Brickstorm (Silk Typhoon)",
       "threat_score": 10,
-      "exploitation_status": "active_exploitation",
-      "source": ["cyberscoop.com", "cloud.google.com/blog"]
+      "previous_threat_score": 9,
+      "cve": "CVE-2026-22769",
+      "cvss": 10.0,
+      "affected_technology": "Dell RecoverPoint for Virtual Machines",
+      "summary": "Google/Mandiant confirms UNC6201 replaced Brickstorm with harder-to-detect Grimbolt malware; Dell patched Feb 23; 18+ months of access since mid-2024.",
+      "first_seen_at": "cyberscoop.com"
     },
     {
-      "id": 4,
-      "type": "vulnerability",
-      "cve": "CVE-2026-2044,CVE-2026-2045,CVE-2026-2047,CVE-2026-2048",
-      "title": "GIMP Multiple File Parsing RCE Vulnerabilities",
-      "product": "GIMP",
-      "cvss": 7.8,
+      "type": "news",
+      "title": "GIMP Multiple RCE Vulnerabilities — File Parsing",
       "threat_score": 6,
-      "exploitation_status": "no_public_exploitation",
-      "source": ["zerodayinitiative.com", "ubuntu.com/security"]
-    },
-    {
-      "id": 5,
-      "type": "incident",
-      "cve": null,
-      "title": "Advantest Semiconductor Supplier Ransomware Attack",
-      "product": "Advantest Corporation",
-      "threat_score": 7,
-      "exploitation_status": "confirmed_incident",
-      "source": ["therecord.media"]
-    },
-    {
-      "id": 6,
-      "type": "breach",
-      "cve": null,
-      "title": "France FICOBA National Bank Database Breach — 1.2M Accounts",
-      "product": "French DGFiP FICOBA",
-      "threat_score": 7,
-      "exploitation_status": "confirmed_incident",
-      "source": ["therecord.media"]
-    },
-    {
-      "id": 7,
-      "type": "law_enforcement",
-      "cve": null,
-      "title": "Phobos Ransomware Affiliate Arrested in Poland",
-      "product": "Phobos/8base ransomware",
-      "threat_score": 4,
-      "exploitation_status": "law_enforcement_action",
-      "source": ["cyberscoop.com"]
-    },
-    {
-      "id": 8,
-      "type": "incident",
-      "cve": null,
-      "title": "Air Côte d'Ivoire Ransomware Attack (INC Gang) — 208GB Stolen",
-      "product": "Air Côte d'Ivoire",
-      "threat_score": 5,
-      "exploitation_status": "confirmed_incident",
-      "source": ["therecord.media"]
+      "cve": "CVE-2026-2044, CVE-2026-2045, CVE-2026-2047, CVE-2026-2048",
+      "cvss": 7.8,
+      "affected_technology": "GIMP (all platforms)",
+      "summary": "Four file parsing vulnerabilities in GIMP allow code execution via crafted image files; patches available for Ubuntu.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "zerodayinitiative.com"
     }
   ],
   "noted": [
     {
       "cve": null,
-      "product": "Docker Desktop MCP Server",
-      "summary": "ZDI-26-123: Cleartext credential storage, CVSS 5.5, beta only, no CVE"
-    },
-    {
-      "cve": "CVE-2026-2490",
-      "product": "RustDesk Client",
-      "summary": "Info disclosure via link following, CVSS 5.5"
-    },
-    {
-      "cve": "CVE-2026-2492",
-      "product": "TensorFlow",
-      "summary": "HDF5 uncontrolled search path LPE, CVSS 7.0"
-    },
-    {
-      "cve": "CVE-2025-62676",
-      "product": "FortiClient VPN",
-      "summary": "FCConfig link following LPE, CVSS 7.8"
-    },
-    {
-      "cve": "CVE-2026-1334,CVE-2026-1335",
-      "product": "Dassault eDrawings",
-      "summary": "EPRT file parsing memory corruption/OOB write RCE, CVSS 7.8"
+      "product": "Advantest",
+      "summary": "Japanese semiconductor test equipment manufacturer ($6.4B) hit by ransomware; supply chain risk to chip production."
     },
     {
       "cve": null,
-      "product": "Active Directory",
-      "summary": "Dynamic Objects stealthy evasion — self-destructing objects bypass forensics (Tenable research)"
+      "product": "French FICOBA",
+      "summary": "1.2M bank accounts exposed from national registry via impersonated civil servant credentials."
     },
     {
       "cve": null,
-      "product": "Kubernetes Ingress NGINX",
-      "summary": "Retirement warning — migration urgency (Datadog Labs)"
+      "product": "ShinyHunters",
+      "summary": "Ticketmaster breach court proceedings confirm 560M records stolen."
     },
     {
       "cve": null,
-      "product": "Perplexity Comet",
-      "summary": "Trail of Bits: Prompt injection to exfiltrate Gmail data via AI assistant"
+      "product": "MediaTek",
+      "summary": "CERT-In advisory for multiple MediaTek chipset vulnerabilities; mobile-only."
     },
     {
       "cve": null,
-      "product": "OpenClaw",
-      "summary": "Trend Micro research paper on agentic AI security risks"
+      "product": "MongoBleed",
+      "summary": "Wiz open-sourced tests for CVE-2025-14847; MongoDB patches deployed but cluster detection still relevant."
     },
     {
-      "cve": "CVE-2025-14847",
-      "product": "MongoDB",
-      "summary": "MongoBleed info disclosure, in-the-wild exploitation per avleonov"
+      "cve": null,
+      "product": "Cobalt Strike 4.11",
+      "summary": "Fortra released with 12 fixes addressing known tradecraft defenses."
+    },
+    {
+      "cve": null,
+      "product": "Counter-Ransomware Initiative",
+      "summary": "CRI membership expanded to 72 countries with new Pall Mall Process for commercial spyware."
+    },
+    {
+      "cve": null,
+      "product": "Japanese financial sector",
+      "summary": "Unprecedented stock exchange fraud losses of ¥22B in 2025 from stolen brokerage credentials."
+    },
+    {
+      "cve": null,
+      "product": "GrassCall",
+      "summary": "Fake AI meeting app targeting Web3 job seekers to steal crypto wallets."
+    },
+    {
+      "cve": null,
+      "product": "AI agent blackmail",
+      "summary": "Autonomous AI agent wrote and published hit piece against developer who rejected its code."
     }
   ],
-  "dedup_excluded": [
-    "CVE-2026-2441 (Chrome zero-day)",
-    "CVE-2026-1731 (BeyondTrust RCE)",
-    "CVE-2026-2329 (Grandstream VoIP)",
-    "CVE-2025-15467 (OpenSSL)",
-    "CVE-2026-22769 (Dell RecoverPoint) — base CVE already reported, Grimbolt update is new",
-    "FortiGate 600+ compromise — base event already reported, Amazon attribution is new",
-    "CVE-2026-1281/1340 (Ivanti EPMM)",
-    "CVE-2026-24423/23760 (SmarterMail)",
-    "CVE-2026-21510+ (MS Patch Tuesday)"
-  ]
+  "source_coverage": {
+    "total": 91,
+    "checked": 91,
+    "with_findings": 14,
+    "unreachable": ["cnvd.org.cn", "vulners.com", "0day.today"],
+    "degraded": ["sophos.com", "trellix.com"]
+  },
+  "full_report": "reports/2026/02/24/night/report.md"
 }
