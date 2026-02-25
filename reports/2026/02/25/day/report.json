@@ -1,0 +1,112 @@
+{
+  "date": "2026-02-25",
+  "cycle": "day",
+  "findings": [
+    {
+      "type": "news",
+      "title": "Frigate NVR ≤0.16.3 Blind RCE via go2rtc Exec Injection",
+      "threat_score": 7,
+      "cve": "CVE-2026-25643",
+      "cvss": null,
+      "affected_technology": "Frigate NVR (≤0.16.3)",
+      "summary": "Frigate NVR up to 0.16.3 is vulnerable to blind RCE through go2rtc exec injection with both authenticated and unauthenticated paths, and a full weaponized Python PoC is publicly available.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "github.com"
+    },
+    {
+      "type": "news",
+      "title": "Lanscope Endpoint Manager Path Traversal — Unauthenticated RCE",
+      "threat_score": 7,
+      "cve": "CVE-2026-25785",
+      "cvss": 9.8,
+      "affected_technology": "Lanscope Endpoint Manager (On-Premises) (≤9.4.7.3)",
+      "summary": "Lanscope Endpoint Manager On-Premises has a CVSS 9.8 path traversal allowing unauthenticated remote attackers to tamper with arbitrary files and execute code on Windows systems.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "jvn.jp"
+    },
+    {
+      "type": "news",
+      "title": "Langflow Remote Code Execution",
+      "threat_score": 6,
+      "cve": "CVE-2026-0770",
+      "cvss": null,
+      "affected_technology": "Langflow (AI workflow platform)",
+      "summary": "Langflow AI workflow platform has an RCE vulnerability with a public PoC, affecting commonly internet-exposed AI agent deployment infrastructure.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "github.com"
+    },
+    {
+      "type": "news",
+      "title": "OpenEMR 7.0.4 SQL Injection",
+      "threat_score": 5,
+      "cve": "CVE-2026-25746",
+      "cvss": null,
+      "affected_technology": "OpenEMR 7.0.4",
+      "summary": "SQL injection vulnerability in OpenEMR 7.0.4 with PoC published, affecting widely deployed internet-facing healthcare records systems.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "github.com"
+    },
+    {
+      "type": "news",
+      "title": "GitLab 18.9.1 Security Patch Release",
+      "threat_score": 5,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "GitLab CE/EE",
+      "summary": "GitLab released security patch 18.9.1 on February 25 addressing XSS and DoS vulnerabilities across all prior versions.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "about.gitlab.com"
+    },
+    {
+      "type": "update",
+      "title": "n8n Ni8mare Unauthenticated RCE Chain",
+      "threat_score": 9,
+      "previous_threat_score": 8,
+      "cve": "CVE-2026-21858",
+      "cvss": 10.0,
+      "affected_technology": "n8n (≤1.65.0)",
+      "summary": "The n8n Ni8mare exploit has gained 222 GitHub stars with LeakIX tracking exposed instances and multiple forks appearing, indicating widespread scanner adoption.",
+      "first_seen_at": "github.com"
+    }
+  ],
+  "noted": [
+    {
+      "cve": "CVE-2026-3118",
+      "product": "Red Hat Developer Hub (Backstage)",
+      "summary": "DoS via GraphQL injection by authenticated user, medium severity 6.5."
+    },
+    {
+      "cve": "CVE-2026-26104",
+      "product": "udisks (Linux)",
+      "summary": "Unprivileged LUKS header backup without authorization, local only, no remote vector."
+    },
+    {
+      "cve": "CVE-2026-21962",
+      "product": "Unknown (Ashwesker PoC)",
+      "summary": "New PoC on GitHub with 10 stars, details pending investigation."
+    },
+    {
+      "cve": null,
+      "product": "Firefox 148",
+      "summary": "MFSA 2026-13 released Feb 24 with multiple high-severity fixes including sandbox escapes, browser-only scope."
+    },
+    {
+      "cve": "CVE-2026-0229",
+      "product": "PAN-OS",
+      "summary": "DoS in Advanced DNS Security feature, patched in 12.1.4+ and 11.2.10+, CVSS 6.6."
+    },
+    {
+      "cve": null,
+      "product": "Prisma Browser",
+      "summary": "PAN-SA-2026-0002 Chromium monthly vulnerability update for February 2026, routine."
+    }
+  ],
+  "source_coverage": {
+    "total": 120,
+    "checked": 120,
+    "with_findings": 14,
+    "unreachable": ["threatpost.com", "securityfocus.com", "cnvd.org.cn", "cvedetails.com", "sonicwall.com"],
+    "degraded": ["vuldb.com", "reddit.com", "x.com (all 15 accounts)", "owasp.org", "t.me", "discord.gg", "vulndb.cyberriskanalytics.com", "teletype.in/@cyberok", "cybersecuritydispatch.com"]
+  },
+  "full_report": "reports/2026/02/25/day/report.md"
+}
