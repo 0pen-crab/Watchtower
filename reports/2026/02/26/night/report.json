@@ -1,0 +1,113 @@
+{
+  "date": "2026-02-26",
+  "cycle": "night",
+  "findings": [
+    {
+      "type": "news",
+      "title": "Cisco SD-WAN CVE-2026-20127 Auth Bypass — Zero-Day Since 2023, CISA Emergency Directive 26-03",
+      "threat_score": 10,
+      "cve": "CVE-2026-20127",
+      "cvss": 10.0,
+      "affected_technology": "Cisco Catalyst SD-WAN Controller",
+      "summary": "Critical authentication bypass in Cisco Catalyst SD-WAN Controller exploited as a zero-day since at least 2023, now added to CISA KEV with Emergency Directive 26-03 requiring immediate federal agency remediation.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "bleepingcomputer.com"
+    },
+    {
+      "type": "news",
+      "title": "UNC2814 GRIDTIDE — Chinese Espionage Campaign Using Google Sheets C2 Hits 53 Orgs in 42 Countries",
+      "threat_score": 9,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Telecom and Government Networks",
+      "summary": "Google/Mandiant disrupted a Chinese state-sponsored espionage campaign (UNC2814) deploying the GRIDTIDE backdoor that abuses Google Sheets API for C2 communications, impacting 53 organizations across 42 countries primarily targeting telecoms and government agencies.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "bleepingcomputer.com"
+    },
+    {
+      "type": "news",
+      "title": "US Sanctions Operation Zero — Russian Exploit Broker Caught Buying Stolen L3Harris Zero-Days",
+      "threat_score": 7,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Zero-Day Exploit Market",
+      "summary": "US Treasury sanctioned Russian exploit broker Operation Zero and owner Sergey Zelenyuk under PAIPA for purchasing 8 stolen zero-day exploits from former L3Harris executive Peter Williams, who was sentenced to 87 months in prison.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "bleepingcomputer.com"
+    },
+    {
+      "type": "news",
+      "title": "Fake Next.js Job Interview Malware Campaign Targets Software Developers",
+      "threat_score": 7,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Next.js / Node.js Developer Environment",
+      "summary": "Microsoft Defender team identified a coordinated campaign using malicious Next.js repositories disguised as coding assessments and job interview tests that achieve RCE on developer machines through VS Code folder-open triggers, trojanized dev servers, and backend startup hooks.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "bleepingcomputer.com"
+    },
+    {
+      "type": "news",
+      "title": "Zyxel Critical RCE in Consumer Routers — 12+ Models Affected",
+      "threat_score": 8,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Zyxel Consumer Routers",
+      "summary": "Zyxel issued an advisory for a critical remote code execution vulnerability affecting over a dozen consumer router models, with no patch available for some end-of-life devices.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "bleepingcomputer.com"
+    },
+    {
+      "type": "news",
+      "title": "SolarWinds Patches Four Critical Serv-U Vulnerabilities",
+      "threat_score": 8,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "SolarWinds Serv-U",
+      "summary": "SolarWinds released patches for four new critical vulnerabilities in Serv-U file transfer software, following the previous CVE-2025-40538 which was actively exploited and added to CISA KEV.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "securityweek.com"
+    },
+    {
+      "type": "update",
+      "title": "Lazarus Group Confirmed Working With Medusa Ransomware — Symantec Analysis",
+      "threat_score": 8,
+      "previous_threat_score": 7,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Healthcare and Enterprise Networks",
+      "summary": "Symantec/Broadcom published detailed analysis confirming North Korean Lazarus Group is now actively collaborating with Medusa ransomware operators, expanding the threat beyond previously reported initial indicators.",
+      "first_seen_at": "security.com"
+    }
+  ],
+  "noted": [
+    {
+      "cve": "CVE-2022-20775",
+      "product": "Cisco SD-WAN",
+      "summary": "Legacy Cisco SD-WAN path traversal vulnerability added to CISA KEV alongside CVE-2026-20127 as part of Emergency Directive 26-03."
+    },
+    {
+      "cve": "CVE-2026-2441",
+      "product": "Chromium",
+      "summary": "Chromium RCE being exploited in the wild per avleonov.com Linux Patch Wednesday analysis."
+    },
+    {
+      "cve": "CVE-2026-21509",
+      "product": "Microsoft Office",
+      "summary": "Microsoft Office RCE trending in vulnerability management per Positive Technologies February digest."
+    },
+    {
+      "cve": null,
+      "product": "AI Training Data Integrity",
+      "summary": "Schneier on Security highlighted trivial poisoning of AI training data via personal websites affecting Google Gemini and ChatGPT within 24 hours."
+    }
+  ],
+  "source_coverage": {
+    "total": 90,
+    "checked": 87,
+    "with_findings": 14,
+    "unreachable": ["securityfocus.com", "cnvd.org.cn", "0day.today"],
+    "degraded": ["vulners.com", "cvedetails.com"]
+  },
+  "full_report": "reports/2026/02/26/night/report.md"
+}

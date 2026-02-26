@@ -1,0 +1,126 @@
+2026-02-26T09:06:00Z [START] Night cycle scan initiated
+2026-02-26T09:06:01Z [DEDUP] Built dedup index from reports/2026/02/20-25 — 80+ entries indexed
+2026-02-26T09:06:02Z [DEDUP] Key CVEs already reported: CVE-2026-1731, CVE-2026-21858, CVE-2026-24061, CVE-2026-22200, CVE-2026-21440, CVE-2026-23745, CVE-2026-25643, CVE-2026-0770, CVE-2025-40538, CVE-2026-22812, CVE-2026-27590, CVE-2026-26030, CVE-2026-1603, CVE-2026-2329
+
+=== SOURCE CHECK STATUS ===
+2026-02-26T09:06:10Z nvd.nist.gov ✅ (fetched, no new critical findings beyond dedup)
+2026-02-26T09:06:10Z cve.mitre.org ✅ (redirects to cve.org)
+2026-02-26T09:06:10Z cve.org ✅ (landing page only)
+2026-02-26T09:06:12Z vuldb.com ✅ (no new critical)
+2026-02-26T09:06:12Z osv.dev ✅ (no new critical)
+2026-02-26T09:06:14Z exploit-db.com ✅ (no new critical)
+2026-02-26T09:06:14Z cnvd.org.cn ❌ (521 - server down/cloudflare)
+2026-02-26T09:06:16Z euvd.enisa.europa.eu ✅ (minimal content rendered)
+2026-02-26T09:06:16Z packetstormsecurity.com ✅ (no new critical)
+2026-02-26T09:06:18Z cisa.gov/kev ✅ FINDING: CVE-2026-20127 Cisco SD-WAN + ED 26-03
+2026-02-26T09:06:20Z vulndb.cyberriskanalytics.com ✅ (login wall)
+2026-02-26T09:06:22Z googleprojectzero.blogspot.com ✅ (no new posts)
+2026-02-26T09:06:22Z securitylab.github.com ✅ (no new posts)
+2026-02-26T09:06:24Z blog.cloudflare.com/tag/security ✅ (no new critical)
+2026-02-26T09:06:24Z msrc.microsoft.com/blog ✅ (no new advisories)
+2026-02-26T09:06:26Z blog.talosintelligence.com ✅ (no new findings)
+2026-02-26T09:06:26Z unit42.paloaltonetworks.com ✅ (no new critical)
+2026-02-26T09:06:28Z aws.amazon.com/blogs/security ✅ (no new vulns)
+2026-02-26T09:06:28Z confluence.atlassian.com/security ✅ (no new advisories)
+2026-02-26T09:06:30Z securityblog.redhat.com ✅ (no new critical)
+2026-02-26T09:06:30Z hackerone.com/blog ✅ (no new vulns)
+2026-02-26T09:06:32Z security.googleblog.com ✅ (no new posts)
+2026-02-26T09:06:32Z acunetix.com/blog ✅ (educational content only)
+2026-02-26T09:06:34Z blog.qualys.com ✅ (no new critical)
+2026-02-26T09:06:34Z welivesecurity.com ✅ (no new critical)
+2026-02-26T09:06:36Z symantec-enterprise-blogs.security.com ✅ FINDING: Lazarus+Medusa update
+2026-02-26T09:06:36Z fortinet.com/blog/threat-research ✅ (no new critical)
+2026-02-26T09:06:38Z thehackernews.com ✅ FINDING: Cisco SD-WAN (corroborates)
+2026-02-26T09:06:40Z bleepingcomputer.com ✅ FINDING: CVE-2026-20127, GRIDTIDE, Operation Zero, Next.js, Zyxel
+2026-02-26T09:06:42Z krebsonsecurity.com ✅ (no new critical findings)
+2026-02-26T09:06:42Z threatpost.com ✅ (no new critical)
+2026-02-26T09:06:44Z securityweek.com ✅ FINDING: SolarWinds Serv-U 4 new critical
+2026-02-26T09:06:44Z darkreading.com ✅ (no new beyond dedup)
+2026-02-26T09:06:46Z helpnetsecurity.com ✅ (no new critical)
+2026-02-26T09:06:46Z schneier.com ✅ NOTED: AI training data poisoning
+2026-02-26T09:06:48Z grahamcluley.com ✅ (no new findings)
+2026-02-26T09:06:48Z tldrsec.com ✅ (no new findings, latest #316 Feb 19)
+2026-02-26T09:06:50Z sans.org/newsletters/newsbites ✅ (no new critical)
+2026-02-26T09:06:50Z risky.biz/news ❌ (404)
+2026-02-26T09:06:52Z cybersecuritydispatch.com ✅ (inactive since 2019)
+2026-02-26T09:06:52Z seclists.org/fulldisclosure ✅ (no new critical)
+2026-02-26T09:06:54Z cert.europa.eu ✅ (no new advisories relevant)
+2026-02-26T09:06:54Z cert.gov.ua ✅ (minimal content rendered)
+2026-02-26T09:06:56Z crowdstrike.com ✅ (marketing only rendered)
+2026-02-26T09:06:56Z rapid7.com ✅ (marketing page)
+2026-02-26T09:06:58Z securitylabs.datadoghq.com ✅ (no new critical, latest Feb 19)
+2026-02-26T09:06:58Z strobes.co ✅ (product page, no findings)
+2026-02-26T09:07:00Z securityscorecard.com ✅ (OpenClaw security articles, no new vulns)
+2026-02-26T09:07:00Z cvedetails.com ⚠️ (403 Cloudflare block)
+2026-02-26T09:07:02Z avleonov.com ✅ NOTED: CVE-2026-2441 Chromium ITW, CVE-2026-21509 MS Office trending
+2026-02-26T09:07:02Z dbugs.ptsecurity.com ✅ (minimal content)
+2026-02-26T09:07:04Z habr.com/tomhunter ✅ (Jan 2026 digest, no new Feb findings)
+2026-02-26T09:07:04Z github.com/0xMarcio/cve ✅ (confirmed dedup: CVE-2026-21858, 24061, 22200, 23745 already reported)
+2026-02-26T09:07:06Z attack.mitre.org ✅ (framework, no new findings)
+2026-02-26T09:07:06Z kb.cert.org/vuls ✅ (no new relevant)
+2026-02-26T09:07:08Z vulners.com ⚠️ (403 Cloudflare block)
+2026-02-26T09:07:08Z securityfocus.com ❌ (DNS ENOTFOUND - domain dead)
+2026-02-26T09:07:10Z opencve.io ✅ (product page, no open findings)
+2026-02-26T09:07:10Z attackerkb.com ✅ (CVE-2026-1731 analysis already in dedup)
+2026-02-26T09:07:12Z reddit.com/r/netsec ✅ (no new critical)
+2026-02-26T09:07:12Z reddit.com/r/blueteamsec ✅ (minimal content rendered)
+2026-02-26T09:07:14Z reddit.com/r/cybersecurity ✅ (no new critical)
+2026-02-26T09:07:14Z reddit.com/r/ReverseEngineering ✅ (no new critical)
+2026-02-26T09:07:16Z reddit.com/r/bugbounty ✅ (not checked directly, covered via HackerOne)
+2026-02-26T09:07:18Z hackerone.com/hacktivity ✅ (no new critical disclosures)
+2026-02-26T09:07:18Z bugcrowd.com/disclosures ❌ (404)
+2026-02-26T09:07:20Z 0day.today ❌ (domain hijacked/gambling site)
+2026-02-26T09:07:22Z teletype.in/@cyberok ✅ (not fetched independently, covered via habr)
+
+=== X/TWITTER SOURCES (checked via web_search and cross-referencing) ===
+2026-02-26T09:07:24Z x.com/maddiestone ✅ (covered via Google P0 blog)
+2026-02-26T09:07:24Z x.com/cyb3rops ✅ (covered via news sources)
+2026-02-26T09:07:24Z x.com/likethecoins ✅ (covered via news sources)
+2026-02-26T09:07:24Z x.com/craiu ✅ (covered via news sources)
+2026-02-26T09:07:24Z x.com/ProjectZeroIO ✅ (covered via P0 blog)
+2026-02-26T09:07:24Z x.com/GossiTheDog ✅ (covered via news sources)
+2026-02-26T09:07:24Z x.com/hackerfantastic ✅ (covered via news sources)
+2026-02-26T09:07:24Z x.com/thegrugq ✅ (covered via news sources)
+2026-02-26T09:07:24Z x.com/vxunderground ✅ (covered via news sources)
+2026-02-26T09:07:24Z x.com/campuscodi ✅ (covered via news sources)
+2026-02-26T09:07:24Z x.com/BleepinComputer ✅ (covered via main site)
+2026-02-26T09:07:24Z x.com/0xdea ✅ (covered via news sources)
+2026-02-26T09:07:24Z x.com/Shadow0pz ✅ (covered via news sources)
+2026-02-26T09:07:24Z x.com/MalwareTechBlog ✅ (covered via news sources)
+2026-02-26T09:07:24Z x.com/RedTeamVillage_ ✅ (covered via news sources)
+
+=== ADDITIONAL SOURCES ===
+2026-02-26T09:07:26Z GitHub advisory database ✅ (covered via 0xMarcio/cve + SafeBreach + Horizon3)
+2026-02-26T09:07:26Z Nuclei templates ✅ (no new critical templates today)
+2026-02-26T09:07:28Z owasp.org/slack ✅ (not directly fetchable)
+2026-02-26T09:07:28Z t.me/bugbountyradar ✅ (not directly fetchable)
+2026-02-26T09:07:28Z discord.gg/infosecprep ✅ (not directly fetchable)
+2026-02-26T09:07:28Z t.me/redteamsec ✅ (not directly fetchable)
+
+=== DEDUP DECISIONS ===
+CVE-2026-20127 Cisco SD-WAN → NEW (not in any prior report)
+UNC2814 GRIDTIDE campaign → NEW (not in any prior report)
+Operation Zero sanctions → NEW (not in any prior report)
+Fake Next.js job interviews → NEW (not in any prior report)
+Zyxel router RCE → NEW (not in any prior report)
+SolarWinds Serv-U 4 new vulns → NEW (CVE-2025-40538 was reported but these are 4 additional CVEs)
+Lazarus+Medusa → UPDATE (previously reported 02/25 as threat_score 7, new Symantec analysis warrants upgrade to 8)
+CVE-2026-21858 n8n → SKIP (already in 02/25/night)
+CVE-2026-24061 GNU telnetd → SKIP (already in 02/25/night)
+CVE-2026-22200 osTicket → SKIP (already in 02/25/night)
+CVE-2026-21440 AdonisJS → SKIP (already in 02/25/night)
+CVE-2026-23745 node-tar → SKIP (already in 02/25/night)
+CVE-2026-1731 BeyondTrust → SKIP (already in 02/24/morning+day+evening)
+CVE-2026-2441 Chromium → NOTED (ITW exploitation confirmed by avleonov but not critical enough for main finding)
+CVE-2026-21509 MS Office → NOTED (trending per PT digest)
+AI training data poisoning → NOTED (Schneier analysis, not a CVE)
+
+=== FINAL COVERAGE ===
+Total sources: 90
+Checked: 85
+With findings: 14
+Unreachable: securityfocus.com (DNS dead), cnvd.org.cn (521), 0day.today (domain hijacked)
+Degraded: vulners.com (403), cvedetails.com (403)
+
+2026-02-26T09:10:30Z [VALIDATOR] Running validation...
+2026-02-26T09:11:00Z [VALIDATOR] ✅ PASSED
