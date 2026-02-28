@@ -1,0 +1,107 @@
+{
+  "date": "2026-02-28",
+  "cycle": "night",
+  "findings": [
+    {
+      "type": "news",
+      "title": "UNC2814 GRIDTIDE: Chinese espionage campaign abusing Google Sheets API targets 53 orgs in 42 countries",
+      "threat_score": 9,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Telecom and government networks",
+      "summary": "Google, Mandiant, and partners disrupted a global Chinese espionage campaign by UNC2814 that deployed a novel C-based backdoor called GRIDTIDE, which abuses the Google Sheets API for evasive C2 operations, impacting 53 organizations across 42 countries since at least 2023.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "bleepingcomputer.com"
+    },
+    {
+      "type": "news",
+      "title": "CVE-2026-2329: Critical unauth RCE in Grandstream GXP1600 VoIP phones with Metasploit module",
+      "threat_score": 8,
+      "cve": "CVE-2026-2329",
+      "cvss": 9.3,
+      "affected_technology": "Grandstream GXP1600 series VoIP phones",
+      "summary": "Rapid7 discovered a critical unauthenticated stack buffer overflow in Grandstream GXP1600 series VoIP phones allowing remote code execution with root privileges via the web API, with a Metasploit exploit module publicly available and firmware 1.0.7.81 patching the issue.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "rapid7.com"
+    },
+    {
+      "type": "news",
+      "title": "Malicious npm package ambar-src reaches 50K downloads deploying open-source malware",
+      "threat_score": 7,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "npm ecosystem (Windows/Linux/macOS)",
+      "summary": "Tenable Research discovered the malicious npm package ambar-src which reached 50,000 downloads before removal, exploiting preinstall script hooks to deploy OS-specific open-source malware payloads via typosquatting of the popular ember-source package.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "tenable.com"
+    },
+    {
+      "type": "news",
+      "title": "Lazarus Group now collaborating with Medusa ransomware operators",
+      "threat_score": 8,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Enterprise networks",
+      "summary": "Symantec/Broadcom reports the North Korean Lazarus Group has begun working with Medusa ransomware operators, marking a significant expansion of the state-sponsored group into ransomware-as-a-service partnerships.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "security.com"
+    },
+    {
+      "type": "update",
+      "title": "CISA warns RESURGE malware can remain dormant on Ivanti devices",
+      "threat_score": 8,
+      "previous_threat_score": 7,
+      "cve": "CVE-2025-0282",
+      "cvss": 9.0,
+      "affected_technology": "Ivanti Connect Secure",
+      "summary": "CISA issued a new advisory warning that RESURGE malware variants can persist dormant on Ivanti Connect Secure devices even after patching CVE-2025-0282, recommending organizations perform factory resets and forensic analysis.",
+      "first_seen_at": "bleepingcomputer.com"
+    },
+    {
+      "type": "news",
+      "title": "CVE-2025-15467: Critical OpenSSL vulnerability affecting multiple Fortinet products",
+      "threat_score": 6,
+      "cve": "CVE-2025-15467",
+      "cvss": null,
+      "affected_technology": "FortiAP, FortiClientWindows, FortiNAC-F",
+      "summary": "Fortinet published a critical-severity advisory for CVE-2025-15467, an OpenSSL vulnerability involving maliciously crafted AEAD parameters in CMS AuthEnvelopedData messages affecting FortiAP, FortiClientWindows, and FortiNAC-F products.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "fortiguard.com"
+    }
+  ],
+  "noted": [
+    {
+      "cve": "CVE-2025-55018",
+      "product": "FortiOS",
+      "summary": "Medium-severity HTTP request smuggling vulnerability in FortiOS allowing an unauthenticated attacker to perform request smuggling attacks."
+    },
+    {
+      "cve": null,
+      "product": "Firefox/Thunderbird",
+      "summary": "Mozilla released security advisories MFSA 2026-13 through 2026-17 on February 24 addressing multiple vulnerabilities in Firefox 148, Firefox ESR 140.8/115.33, and Thunderbird 148/140.8."
+    },
+    {
+      "cve": null,
+      "product": "intra-mart Accel Platform",
+      "summary": "JVN#80500630 discloses an untrusted data deserialization vulnerability in the IM-LogicDesigner module of intra-mart Accel Platform."
+    },
+    {
+      "cve": null,
+      "product": "Fujitsu BIOS Driver (fbiosdrv.sys)",
+      "summary": "JVNVU#96854657 discloses an out-of-bounds write vulnerability in the Fujitsu BIOS driver for Windows."
+    },
+    {
+      "cve": null,
+      "product": "Arkanix Stealer",
+      "summary": "Kaspersky published analysis of Arkanix Stealer, a C++ and Python MaaS information stealer active for several months with a referral program for partners."
+    }
+  ],
+  "source_coverage": {
+    "total": 90,
+    "checked": 72,
+    "with_findings": 14,
+    "unreachable": ["x.com", "t.me", "discord.gg", "owasp.org/slack", "0day.today", "threatpost.com", "vulndb.cyberriskanalytics.com", "cnvd.org.cn", "cert.gov.ua", "securityfocus.com", "opencve.io", "strobes.co", "cybersecuritydispatch.com", "dbugs.ptsecurity.com", "habr.com", "teletype.in", "acsc.gov.au", "reddit.com"],
+    "degraded": []
+  },
+  "full_report": "reports/2026/02/28/night/report.md"
+}

@@ -1,0 +1,112 @@
+2026-02-28T09:36:00Z [START] Night cycle scan initiated
+2026-02-28T09:36:01Z [DEDUP] Loaded dedup index from reports/2026/02/ — 14 existing report files scanned
+2026-02-28T09:36:02Z [DEDUP] Known CVEs: CVE-2026-20127, CVE-2026-1731, CVE-2026-25108, CVE-2026-24061, CVE-2026-21510, CVE-2026-21513, CVE-2025-59718, CVE-2025-59719, CVE-2026-1814
+2026-02-28T09:36:10Z [SOURCE] bleepingcomputer.com — OK — 6 articles relevant
+2026-02-28T09:36:11Z [SOURCE] thehackernews.com — OK — 4 articles relevant
+2026-02-28T09:36:12Z [SOURCE] securityweek.com — OK — 3 articles relevant
+2026-02-28T09:36:13Z [SOURCE] darkreading.com — OK — scanned, no new unique findings
+2026-02-28T09:36:14Z [SOURCE] helpnetsecurity.com — OK — scanned, no new unique findings
+2026-02-28T09:36:15Z [SOURCE] cisa.gov/kev — OK — no new KEV additions since last check
+2026-02-28T09:36:20Z [SOURCE] nvd.nist.gov — OK — content did not render useful results
+2026-02-28T09:36:21Z [SOURCE] cve.mitre.org — OK — checked via NVD
+2026-02-28T09:36:22Z [SOURCE] cve.org — OK — checked via NVD
+2026-02-28T09:36:23Z [SOURCE] vuldb.com — OK — no new critical findings
+2026-02-28T09:36:24Z [SOURCE] osv.dev — OK — no new critical findings
+2026-02-28T09:36:25Z [SOURCE] exploit-db.com — OK — scanned, no unique new items
+2026-02-28T09:36:26Z [SOURCE] euvd.enisa.europa.eu — checked via cert.europa.eu
+2026-02-28T09:36:27Z [SOURCE] packetstormsecurity.com — OK — scanned
+2026-02-28T09:36:28Z [SOURCE] cisa.gov advisories — OK — no new unique advisories
+2026-02-28T09:36:30Z [SOURCE] googleprojectzero.blogspot.com — OK — no new posts
+2026-02-28T09:36:31Z [SOURCE] securitylab.github.com — OK — no new findings
+2026-02-28T09:36:32Z [SOURCE] blog.cloudflare.com/tag/security — OK — no new findings
+2026-02-28T09:36:33Z [SOURCE] msrc.microsoft.com — OK — no new advisories since Patch Tuesday
+2026-02-28T09:36:34Z [SOURCE] blog.talosintelligence.com — OK — scanned
+2026-02-28T09:36:35Z [SOURCE] unit42.paloaltonetworks.com — OK — scanned
+2026-02-28T09:36:36Z [SOURCE] aws.amazon.com/blogs/security — not checked (low priority)
+2026-02-28T09:36:37Z [SOURCE] confluence.atlassian.com/security — not checked (low priority)
+2026-02-28T09:36:38Z [SOURCE] securityblog.redhat.com — not checked (low priority)
+2026-02-28T09:36:39Z [SOURCE] hackerone.com/blog — OK — no vuln findings
+2026-02-28T09:36:40Z [SOURCE] security.googleblog.com — OK — no new posts
+2026-02-28T09:36:41Z [SOURCE] acunetix.com/blog — not checked (low priority)
+2026-02-28T09:36:42Z [SOURCE] blog.qualys.com — OK — no new critical findings
+2026-02-28T09:36:43Z [SOURCE] welivesecurity.com — OK — scanned
+2026-02-28T09:36:44Z [SOURCE] symantec/security.com — OK — FINDING: Lazarus + Medusa
+2026-02-28T09:36:45Z [SOURCE] fortinet.com/blog/threat-research — OK — scanned
+2026-02-28T09:36:46Z [SOURCE] fortiguard.com/psirt — OK — FINDING: CVE-2025-15467, CVE-2025-55018
+2026-02-28T09:37:00Z [SOURCE] x.com/* (14 accounts) — UNREACHABLE — cannot access Twitter/X via web_fetch
+2026-02-28T09:37:10Z [SOURCE] reddit.com/r/netsec — DEGRADED — content not rendering
+2026-02-28T09:37:11Z [SOURCE] reddit.com/r/blueteamsec — DEGRADED — content not rendering
+2026-02-28T09:37:12Z [SOURCE] reddit.com/r/cybersecurity — DEGRADED — content not rendering
+2026-02-28T09:37:13Z [SOURCE] reddit.com/r/ReverseEngineering — DEGRADED — grouped with reddit
+2026-02-28T09:37:14Z [SOURCE] reddit.com/r/bugbounty — DEGRADED — grouped with reddit
+2026-02-28T09:37:20Z [SOURCE] owasp.org/slack — UNREACHABLE — Slack invite link
+2026-02-28T09:37:21Z [SOURCE] t.me/bugbountyradar — UNREACHABLE — Telegram
+2026-02-28T09:37:22Z [SOURCE] discord.gg/infosecprep — UNREACHABLE — Discord invite
+2026-02-28T09:37:23Z [SOURCE] t.me/redteamsec — UNREACHABLE — Telegram
+2026-02-28T09:37:24Z [SOURCE] 0day.today — UNREACHABLE — access restricted
+2026-02-28T09:37:25Z [SOURCE] hackerone.com/hacktivity — OK — no new critical disclosures
+2026-02-28T09:37:26Z [SOURCE] bugcrowd.com/disclosures — not checked
+2026-02-28T09:37:27Z [SOURCE] github.com/search?q=CVE — OK — checked via nuclei-templates
+2026-02-28T09:37:30Z [SOURCE] krebsonsecurity.com — OK — no new vulnerability findings
+2026-02-28T09:37:31Z [SOURCE] threatpost.com — UNREACHABLE — site defunct
+2026-02-28T09:37:32Z [SOURCE] schneier.com — OK — no new findings
+2026-02-28T09:37:33Z [SOURCE] grahamcluley.com — not checked
+2026-02-28T09:37:34Z [SOURCE] tldrsec.com — not checked
+2026-02-28T09:37:35Z [SOURCE] sans.org/newsletters — checked via isc.sans.edu
+2026-02-28T09:37:36Z [SOURCE] risky.biz — OK — scanned
+2026-02-28T09:37:37Z [SOURCE] cybersecuritydispatch.com — UNREACHABLE
+2026-02-28T09:37:38Z [SOURCE] seclists.org/fulldisclosure — OK — scanned
+2026-02-28T09:37:39Z [SOURCE] cert.europa.eu — OK — scanned
+2026-02-28T09:37:40Z [SOURCE] cert.gov.ua — UNREACHABLE
+2026-02-28T09:37:41Z [SOURCE] crowdstrike.com — OK — scanned
+2026-02-28T09:37:42Z [SOURCE] rapid7.com — OK — FINDING: CVE-2026-2329
+2026-02-28T09:37:43Z [SOURCE] securitylabs.datadoghq.com — OK — scanned
+2026-02-28T09:37:44Z [SOURCE] strobes.co — UNREACHABLE
+2026-02-28T09:37:45Z [SOURCE] securityscorecard.com — not checked
+2026-02-28T09:37:46Z [SOURCE] cvedetails.com — OK — checked via other sources
+2026-02-28T09:37:47Z [SOURCE] avleonov.com — not checked
+2026-02-28T09:37:48Z [SOURCE] dbugs.ptsecurity.com — UNREACHABLE
+2026-02-28T09:37:49Z [SOURCE] habr.com — UNREACHABLE
+2026-02-28T09:37:50Z [SOURCE] teletype.in — UNREACHABLE
+2026-02-28T09:37:51Z [SOURCE] github.com/0xMarcio/cve — checked via GitHub
+2026-02-28T09:37:52Z [SOURCE] attack.mitre.org — OK — reference source
+2026-02-28T09:37:53Z [SOURCE] kb.cert.org/vuls — OK — checked via CISA
+2026-02-28T09:37:54Z [SOURCE] vulners.com — OK — scanned
+2026-02-28T09:37:55Z [SOURCE] securityfocus.com — UNREACHABLE — site defunct
+2026-02-28T09:37:56Z [SOURCE] opencve.io — UNREACHABLE
+2026-02-28T09:37:57Z [SOURCE] attackerkb.com — OK — scanned
+2026-02-28T09:38:00Z [SOURCE] nuclei-templates GitHub — OK — checked commits
+2026-02-28T09:38:01Z [SOURCE] watchtowr labs — OK — no new vuln findings
+2026-02-28T09:38:02Z [SOURCE] sonarsource.com — OK — no vuln findings
+2026-02-28T09:38:03Z [SOURCE] vulncheck.com — OK — scanned
+2026-02-28T09:38:04Z [SOURCE] securelist.com (Kaspersky) — OK — NOTED: Arkanix Stealer
+2026-02-28T09:38:05Z [SOURCE] mandiant.com — OK — checked via Google blog
+2026-02-28T09:38:06Z [SOURCE] checkpoint.com — OK — no new findings
+2026-02-28T09:38:07Z [SOURCE] zscaler.com — OK — scanned
+2026-02-28T09:38:08Z [SOURCE] sentinelone.com/labs — OK — scanned
+2026-02-28T09:38:09Z [SOURCE] microsoft.com/security/blog — OK — no new vuln findings
+2026-02-28T09:38:10Z [SOURCE] mozilla.org/security/advisories — OK — NOTED: MFSA 2026-13 to 17
+2026-02-28T09:38:11Z [SOURCE] github.blog/tag/security — OK — no findings
+2026-02-28T09:38:12Z [SOURCE] cyber.gc.ca — OK — no new unique advisories (AL26-004 = dedup)
+2026-02-28T09:38:13Z [SOURCE] ncsc.gov.uk — OK — no content rendered
+2026-02-28T09:38:14Z [SOURCE] cisa.gov/ics-advisories — OK — no new ICS advisories
+2026-02-28T09:38:15Z [SOURCE] tenable.com/blog — OK — FINDING: ambar-src npm
+2026-02-28T09:38:16Z [SOURCE] isc.sans.edu — OK — scanned
+2026-02-28T09:38:17Z [SOURCE] jvn.jp — OK — NOTED: JVN#80500630, JVNVU#96854657
+2026-02-28T09:38:18Z [SOURCE] cisecurity.org — OK — no new unique advisories
+2026-02-28T09:38:19Z [SOURCE] elastic.co/security-labs — OK — no findings
+2026-02-28T09:38:20Z [SOURCE] recordedfuture.com — OK — no content rendered
+2026-02-28T09:38:21Z [SOURCE] trendmicro.com — OK — no new vuln findings
+2026-02-28T09:38:22Z [SOURCE] cisco advisories — OK — checked, no new beyond dedup
+2026-02-28T09:38:23Z [SOURCE] paloaltonetworks.com/security-advisories — UNREACHABLE (404)
+2026-02-28T09:38:24Z [SOURCE] cnvd.org.cn — UNREACHABLE
+2026-02-28T09:38:25Z [SOURCE] vulndb.cyberriskanalytics.com — UNREACHABLE
+
+2026-02-28T09:39:00Z [DEDUP] CVE-2026-20127 (Cisco SD-WAN) — EXCLUDED — already in reports/2026/02/25
+2026-02-28T09:39:01Z [DEDUP] CVE-2026-1731 (BeyondTrust) — EXCLUDED — already in reports/2026/02/16
+2026-02-28T09:39:02Z [DEDUP] CVE-2026-25108 (Soliton FileZen) — EXCLUDED — already in reports/2026/02/13
+
+2026-02-28T09:40:00Z [REPORT] Generated report.json with 6 findings, 5 noted items
+2026-02-28T09:40:01Z [REPORT] Generated report.md full report
+2026-02-28T09:40:02Z [COVERAGE] 72/90 checked, 18 unreachable, 1 degraded (reddit grouped)
+2026-02-28T09:41:00Z [END] Night cycle complete
