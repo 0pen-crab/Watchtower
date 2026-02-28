@@ -1,0 +1,80 @@
+{
+  "date": "2026-02-28",
+  "cycle": "night",
+  "findings": [
+    {
+      "type": "news",
+      "title": "900 Sangoma FreePBX Instances Infected With Web Shells",
+      "threat_score": 8,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Sangoma FreePBX",
+      "summary": "900+ FreePBX instances compromised with web shells via post-auth command injection in endpoint manager; active mass exploitation of internet-facing PBX infrastructure.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "securityweek.com"
+    },
+    {
+      "type": "update",
+      "title": "Juniper PTX — CVE-2026-21902 Assigned, Out-of-Band Patch",
+      "threat_score": 9,
+      "previous_threat_score": 9,
+      "cve": "CVE-2026-21902",
+      "cvss": null,
+      "affected_technology": "Juniper Networks Junos OS Evolved (PTX Series)",
+      "summary": "Critical PTX RCE now has CVE-2026-21902; Juniper released emergency out-of-band patch for Junos OS Evolved.",
+      "first_seen_at": "securityweek.com"
+    },
+    {
+      "type": "news",
+      "title": "Claude Code Vulnerabilities Exposed Developers to Silent Hacking",
+      "threat_score": 7,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Claude Code (Anthropic CLI)",
+      "summary": "Malicious configuration files could trigger arbitrary code execution when opened with Claude Code; patched by Anthropic after Check Point disclosure.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "securityweek.com"
+    },
+    {
+      "type": "news",
+      "title": "Aeternum Botnet — Polygon Blockchain C2 for Takedown Resilience",
+      "threat_score": 6,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "IoT devices, Windows/Linux systems",
+      "summary": "New botnet uses Polygon blockchain smart contracts for C2, making infrastructure nearly impossible to disrupt via traditional takedown methods.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "securityweek.com"
+    }
+  ],
+  "noted": [
+    {
+      "cve": null,
+      "product": "Gardyn Smart Gardens",
+      "summary": "CISA advisory on 4 vulnerabilities in IoT garden systems."
+    },
+    {
+      "cve": null,
+      "product": "US Federal AI policy",
+      "summary": "Trump orders federal agencies to phase out Anthropic technology."
+    },
+    {
+      "cve": null,
+      "product": "Apple iOS",
+      "summary": "iPhone and iPad cleared for classified NATO use."
+    },
+    {
+      "cve": null,
+      "product": "Chilean carding shop",
+      "summary": "Operator extradited to US for trafficking 26,000+ cards."
+    }
+  ],
+  "source_coverage": {
+    "total": 90,
+    "checked": 90,
+    "with_findings": 6,
+    "unreachable": [],
+    "degraded": []
+  },
+  "full_report": "reports/2026/02/28/night/report.md"
+}

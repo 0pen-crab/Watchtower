@@ -1,0 +1,107 @@
+{
+  "date": "2026-02-27",
+  "cycle": "night",
+  "findings": [
+    {
+      "type": "news",
+      "title": "Juniper Networks PTX — Unauthenticated Root RCE",
+      "threat_score": 9,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Juniper Networks Junos OS Evolved (PTX Series)",
+      "summary": "Unauthenticated root RCE on Juniper PTX routers used in carrier-grade and enterprise core networks.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "bleepingcomputer.com"
+    },
+    {
+      "type": "news",
+      "title": "Trend Micro Apex One — Critical Remote Code Execution",
+      "threat_score": 8,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Trend Micro Apex One (Windows)",
+      "summary": "Two critical RCE vulnerabilities patched in Trend Micro Apex One enterprise endpoint security product.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "bleepingcomputer.com"
+    },
+    {
+      "type": "news",
+      "title": "APT37 (ScarCruft) — New Toolset Breaches Air-Gapped Networks",
+      "threat_score": 8,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Windows systems, air-gapped networks",
+      "summary": "North Korean APT37 deploys six new malware families using Zoho WorkDrive C2 and USB implants to breach air-gapped networks in campaign Ruby Jumper.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "bleepingcomputer.com"
+    },
+    {
+      "type": "news",
+      "title": "Google API Keys Now Expose Gemini AI Data",
+      "threat_score": 7,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Google API keys, Gemini AI",
+      "summary": "Previously low-risk Google API keys embedded in client-side code can now authenticate to Gemini AI and access private data, retroactively exposing millions of leaked keys.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "bleepingcomputer.com"
+    },
+    {
+      "type": "update",
+      "title": "CISA Warns RESURGE Malware Can Be Dormant on Ivanti Devices",
+      "threat_score": 9,
+      "previous_threat_score": 9,
+      "cve": "CVE-2025-0282",
+      "cvss": null,
+      "affected_technology": "Ivanti Connect Secure",
+      "summary": "CISA details RESURGE malware dormancy on Ivanti devices; orgs that patched but didn't fully remediate may still be compromised.",
+      "first_seen_at": "cisa.gov"
+    },
+    {
+      "type": "news",
+      "title": "Malicious Go Crypto Module — Password Theft + Rekoobe Backdoor",
+      "threat_score": 7,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Go ecosystem (golang.org/x/crypto impersonation)",
+      "summary": "Malicious Go module impersonates golang.org/x/crypto, intercepts terminal passwords, and deploys Rekoobe Linux backdoor via namespace confusion.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "thehackernews.com"
+    }
+  ],
+  "noted": [
+    {
+      "cve": null,
+      "product": "ManoMano",
+      "summary": "European DIY chain breach impacts 38 million customers via third-party compromise."
+    },
+    {
+      "cve": null,
+      "product": "The Com (Europol)",
+      "summary": "Project Compass: 30 arrests of cybercrime collective targeting minors."
+    },
+    {
+      "cve": null,
+      "product": "Olympique Marseille",
+      "summary": "French football club confirms cyberattack after data leak."
+    },
+    {
+      "cve": null,
+      "product": "UFP Technologies",
+      "summary": "Medical device maker discloses data theft in cyberattack."
+    },
+    {
+      "cve": null,
+      "product": "Ransomware payments",
+      "summary": "Payment rate drops to 28% record low despite attack volume surge (Coveware report)."
+    }
+  ],
+  "source_coverage": {
+    "total": 90,
+    "checked": 90,
+    "with_findings": 8,
+    "unreachable": [],
+    "degraded": []
+  },
+  "full_report": "reports/2026/02/27/night/report.md"
+}
