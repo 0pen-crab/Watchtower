@@ -1,0 +1,69 @@
+{
+  "date": "2026-03-01",
+  "cycle": "night",
+  "findings": [
+    {
+      "type": "news",
+      "title": "ClawJacked: OpenClaw WebSocket hijacking allows malicious websites to take over local AI agents",
+      "threat_score": 8,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "OpenClaw Gateway (all versions before v2026.2.25)",
+      "summary": "Oasis Security disclosed ClawJacked, a high-severity vulnerability in the OpenClaw AI agent gateway. A malicious website can open a cross-origin WebSocket connection to localhost, brute-force the gateway password due to missing rate limiting, silently register as a trusted device (auto-approved for localhost), and gain complete control over the AI agent including configuration dumping, node enumeration, and log access. OpenClaw patched the issue within 24 hours in version 2026.2.25 released February 26. A separate log poisoning vulnerability allowing indirect prompt injection via WebSocket requests to exposed instances was also fixed.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "thehackernews.com"
+    },
+    {
+      "type": "news",
+      "title": "CVE-2025-25249: High-severity heap buffer overflow in FortiOS and FortiSwitchManager cw_acd daemon",
+      "threat_score": 7,
+      "cve": "CVE-2025-25249",
+      "cvss": null,
+      "affected_technology": "FortiOS, FortiSwitchManager",
+      "summary": "Fortinet published PSIRT advisory FG-IR-25-084 for CVE-2025-25249, a high-severity heap-based buffer overflow in the cw_acd daemon of FortiOS and FortiSwitchManager. The vulnerability could allow an attacker to execute arbitrary code. FortiOS versions through 7.6.3 and FortiSwitchManager through 7.2.6 include fixes. Published February 23, 2026.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "fortiguard.com"
+    },
+    {
+      "type": "news",
+      "title": "CVE-2026-22153: FortiOS LDAP authentication bypass in Agentless VPN and FSSO",
+      "threat_score": 7,
+      "cve": "CVE-2026-22153",
+      "cvss": null,
+      "affected_technology": "FortiOS (fnbamd - Agentless VPN, FSSO)",
+      "summary": "Fortinet published PSIRT advisory FG-IR-25-1052 for CVE-2026-22153, a high-severity authentication bypass by primary weakness (CWE-305) in the FortiOS fnbamd component affecting Agentless VPN and FSSO authentication. An attacker could bypass LDAP authentication. FortiOS versions through 7.6.4 include the fix. Published February 10, 2026.",
+      "discovery_latency": "late",
+      "first_seen_at": "fortiguard.com"
+    }
+  ],
+  "noted": [
+    {
+      "cve": "CVE-2025-68686",
+      "product": "FortiOS SSL-VPN",
+      "summary": "FG-IR-25-934: SSL-VPN symlink persistence patch bypass allowing sensitive information exposure to unauthorized actors. Medium severity."
+    },
+    {
+      "cve": null,
+      "product": "Datadog/1Phish",
+      "summary": "Datadog Security Labs published deep dive into the 1Phish phishing kit, a technically sophisticated credential harvesting framework."
+    },
+    {
+      "cve": null,
+      "product": "Winos 4.0 / ValleyRat",
+      "summary": "FortiGuard Labs analyzed massive Winos 4.0 (ValleyRat) campaigns targeting Taiwan using phishing lures, DLL sideloading, and BYOVD abuse."
+    },
+    {
+      "cve": null,
+      "product": "Agent Tesla",
+      "summary": "FortiGuard Labs detailed a multi-stage Agent Tesla campaign using phishing, encrypted scripts, in-memory execution, and process hollowing."
+    }
+  ],
+  "source_coverage": {
+    "total": 90,
+    "checked": 72,
+    "with_findings": 8,
+    "unreachable": ["x.com", "t.me", "discord.gg", "owasp.org/slack", "0day.today", "threatpost.com", "vulndb.cyberriskanalytics.com", "cnvd.org.cn", "cert.gov.ua", "securityfocus.com", "opencve.io", "strobes.co", "cybersecuritydispatch.com", "dbugs.ptsecurity.com", "habr.com", "teletype.in", "isc.sans.edu", "reddit.com"],
+    "degraded": []
+  },
+  "full_report": "reports/2026/03/01/night/report.md"
+}

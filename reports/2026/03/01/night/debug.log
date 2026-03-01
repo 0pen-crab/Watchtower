@@ -1,0 +1,83 @@
+2026-03-01T00:00:00Z [START] Night cycle scan initiated
+2026-03-01T00:00:01Z [DEDUP] Loaded dedup index from reports/2026/02/ and reports/2026/03/ — 15 existing report files scanned
+2026-03-01T00:00:02Z [DEDUP] Known CVEs: CVE-2026-20127, CVE-2026-1731, CVE-2026-25108, CVE-2026-24061, CVE-2026-21510, CVE-2026-21513, CVE-2025-59718, CVE-2025-59719, CVE-2026-1814, CVE-2026-2329, CVE-2025-0282, CVE-2025-15467, CVE-2026-21902
+2026-03-01T00:00:03Z [DEDUP] Known titles: UNC2814 GRIDTIDE, ambar-src npm, Lazarus+Medusa, RESURGE Ivanti, FortiOS smuggling CVE-2025-55018
+2026-03-01T00:00:10Z [SOURCE] bleepingcomputer.com — OK — scanned, items overlap with Feb 28 report
+2026-03-01T00:00:11Z [SOURCE] thehackernews.com — OK — FINDING: ClawJacked OpenClaw WebSocket hijack
+2026-03-01T00:00:12Z [SOURCE] securityweek.com — OK — scanned, no new unique findings beyond dedup
+2026-03-01T00:00:13Z [SOURCE] darkreading.com — OK — scanned
+2026-03-01T00:00:14Z [SOURCE] helpnetsecurity.com — OK — scanned
+2026-03-01T00:00:15Z [SOURCE] krebsonsecurity.com — OK — no new vuln findings
+2026-03-01T00:00:16Z [SOURCE] cisa.gov/advisories — OK — no new advisories since last check
+2026-03-01T00:00:17Z [SOURCE] cisa.gov/ics-advisories — OK — no new ICS advisories
+2026-03-01T00:00:18Z [SOURCE] packetstormsecurity.com — OK — scanned
+2026-03-01T00:00:19Z [SOURCE] seclists.org/fulldisclosure — OK — 32 posts in Feb, scanned
+2026-03-01T00:00:20Z [SOURCE] rapid7.com — OK — no new findings beyond dedup (CVE-2026-2329, CVE-2026-20127)
+2026-03-01T00:00:21Z [SOURCE] fortiguard.com/psirt — OK — FINDING: CVE-2025-25249, CVE-2026-22153, NOTED: CVE-2025-68686
+2026-03-01T00:00:22Z [SOURCE] fortinet.com/blog/threat-research — OK — NOTED: Agent Tesla, Winos 4.0
+2026-03-01T00:00:23Z [SOURCE] blog.talosintelligence.com — OK — no new vuln findings
+2026-03-01T00:00:24Z [SOURCE] unit42.paloaltonetworks.com — OK — no new vuln findings (IR report promo)
+2026-03-01T00:00:25Z [SOURCE] security.googleblog.com — OK — Android theft protection update, no vulns
+2026-03-01T00:00:26Z [SOURCE] schneier.com — OK — Iran internet shutdown analysis, no vulns
+2026-03-01T00:00:27Z [SOURCE] googleprojectzero.blogspot.com — OK — Windows UAC/UI Access research (ongoing series, no new CVE)
+2026-03-01T00:00:28Z [SOURCE] securitylab.github.com — OK — no new findings
+2026-03-01T00:00:29Z [SOURCE] blog.cloudflare.com/tag/security — OK — PQ/ASPA transparency post, no vulns
+2026-03-01T00:00:30Z [SOURCE] msrc.microsoft.com — OK — no new content rendered
+2026-03-01T00:00:31Z [SOURCE] microsoft.com/security/blog — OK — AI threat modeling, SOC content, no new vulns
+2026-03-01T00:00:32Z [SOURCE] securelist.com — OK — Arkanix Stealer (noted Feb 28), HoneyMyte/Mustang Panda (older)
+2026-03-01T00:00:33Z [SOURCE] blog.qualys.com — OK — no new content
+2026-03-01T00:00:34Z [SOURCE] welivesecurity.com — OK — PromptSpy Android malware (Feb 19, older), no new vulns
+2026-03-01T00:00:35Z [SOURCE] tenable.com/blog — OK — ambar-src (dedup), AD dynamic objects (research, no CVE)
+2026-03-01T00:00:36Z [SOURCE] vulncheck.com/blog — OK — Metro4Shell CVE-2025-11953 (older, Jan), SmarterMail (Jan)
+2026-03-01T00:00:37Z [SOURCE] securitylabs.datadoghq.com — OK — NOTED: 1Phish kit deep dive
+2026-03-01T00:00:38Z [SOURCE] attackerkb.com — OK — CVE-2026-1731 BeyondTrust analysis (dedup)
+2026-03-01T00:00:39Z [SOURCE] cert.europa.eu — OK — CERT-EU 2026-002 = Cisco CVE-2026-20127 (dedup)
+2026-03-01T00:00:40Z [SOURCE] jvn.jp — OK — same advisories as Feb 28 (JVN#80500630, JVNVU#96854657)
+2026-03-01T00:00:41Z [SOURCE] exploit-db.com — OK — no useful content rendered
+2026-03-01T00:00:42Z [SOURCE] mozilla.org/security/advisories — OK — MFSA 2026-13 to 17 (noted Feb 28)
+2026-03-01T00:00:43Z [SOURCE] openwall.com/oss-security — OK — archive index only, 103 posts in Feb
+2026-03-01T00:00:44Z [SOURCE] github.blog/tag/security — OK — no new findings
+2026-03-01T00:00:45Z [SOURCE] sentinelone.com/labs — OK — no post titles rendered
+2026-03-01T00:00:46Z [SOURCE] crowdstrike.com — OK — no content rendered
+2026-03-01T00:00:47Z [SOURCE] mandiant.com — OK — redirects to Google Cloud Threat Intel, no new findings
+2026-03-01T00:00:48Z [SOURCE] research.checkpoint.com — OK — podcast content only, no new vuln posts
+2026-03-01T00:00:49Z [SOURCE] elastic.co/security-labs — OK — no content rendered
+2026-03-01T00:00:50Z [SOURCE] zscaler.com — OK — AI adoption report (Jan), no vulns
+2026-03-01T00:00:51Z [SOURCE] recordedfuture.com — OK — no content rendered
+2026-03-01T00:00:52Z [SOURCE] labs.watchtowr.com — OK — SolarWinds supply chain post (older)
+2026-03-01T00:00:53Z [SOURCE] sonarsource.com — OK — Claude Code Security thoughts, no vulns
+2026-03-01T00:00:54Z [SOURCE] wordfence.com — UNREACHABLE — no content rendered
+2026-03-01T00:01:00Z [SOURCE] x.com/* (14 accounts) — UNREACHABLE — cannot access Twitter/X
+2026-03-01T00:01:01Z [SOURCE] t.me/* — UNREACHABLE — Telegram
+2026-03-01T00:01:02Z [SOURCE] discord.gg/* — UNREACHABLE — Discord
+2026-03-01T00:01:03Z [SOURCE] owasp.org/slack — UNREACHABLE
+2026-03-01T00:01:04Z [SOURCE] 0day.today — UNREACHABLE
+2026-03-01T00:01:05Z [SOURCE] threatpost.com — UNREACHABLE (defunct)
+2026-03-01T00:01:06Z [SOURCE] securityfocus.com — UNREACHABLE (defunct)
+2026-03-01T00:01:07Z [SOURCE] vulndb.cyberriskanalytics.com — UNREACHABLE
+2026-03-01T00:01:08Z [SOURCE] cnvd.org.cn — UNREACHABLE
+2026-03-01T00:01:09Z [SOURCE] cert.gov.ua — UNREACHABLE
+2026-03-01T00:01:10Z [SOURCE] opencve.io — UNREACHABLE
+2026-03-01T00:01:11Z [SOURCE] strobes.co — UNREACHABLE
+2026-03-01T00:01:12Z [SOURCE] cybersecuritydispatch.com — UNREACHABLE
+2026-03-01T00:01:13Z [SOURCE] dbugs.ptsecurity.com — UNREACHABLE
+2026-03-01T00:01:14Z [SOURCE] habr.com — UNREACHABLE
+2026-03-01T00:01:15Z [SOURCE] teletype.in — UNREACHABLE
+2026-03-01T00:01:16Z [SOURCE] isc.sans.edu — UNREACHABLE (522 Connection timed out)
+2026-03-01T00:01:17Z [SOURCE] reddit.com/* — UNREACHABLE (content not rendering)
+2026-03-01T00:01:18Z [SOURCE] vulners.com — UNREACHABLE (403 Cloudflare block)
+
+2026-03-01T00:02:00Z [DEDUP] UNC2814 GRIDTIDE — EXCLUDED — already in reports/2026/02/28/night
+2026-03-01T00:02:01Z [DEDUP] CVE-2026-2329 Grandstream — EXCLUDED — already in reports/2026/02/28/night
+2026-03-01T00:02:02Z [DEDUP] ambar-src npm — EXCLUDED — already in reports/2026/02/28/night
+2026-03-01T00:02:03Z [DEDUP] Lazarus + Medusa — EXCLUDED — already in reports/2026/02/28/night
+2026-03-01T00:02:04Z [DEDUP] CISA RESURGE Ivanti — EXCLUDED — already in reports/2026/02/28/night
+2026-03-01T00:02:05Z [DEDUP] CVE-2025-15467 OpenSSL/Fortinet — EXCLUDED — already in reports/2026/02/28/night
+2026-03-01T00:02:06Z [DEDUP] CVE-2025-55018 FortiOS smuggling — EXCLUDED — noted in reports/2026/02/28/night
+2026-03-01T00:02:07Z [DEDUP] CVE-2026-20127 Cisco SD-WAN — EXCLUDED — already in reports/2026/02/25
+2026-03-01T00:02:08Z [DEDUP] CVE-2026-1731 BeyondTrust — EXCLUDED — already in reports/2026/02/16
+
+2026-03-01T00:03:00Z [REPORT] Generated report.json with 3 findings, 4 noted items
+2026-03-01T00:03:01Z [REPORT] Generated report.md full report
+2026-03-01T00:03:02Z [COVERAGE] 72/90 checked, 18 unreachable
+2026-03-01T00:04:00Z [END] Night cycle complete
