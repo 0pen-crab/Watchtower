@@ -1,0 +1,118 @@
+2026-03-02T00:00:00Z [START] Night cycle scan initiated
+2026-03-02T00:00:01Z [DEDUP] Loading existing findings from reports/2026/02/ and reports/2026/03/01/
+2026-03-02T00:00:01Z [DEDUP] Known CVEs: CVE-2026-20127, CVE-2026-1731, CVE-2026-25108, CVE-2026-24061, CVE-2026-21510, CVE-2026-21513, CVE-2025-59718, CVE-2025-59719, CVE-2026-1814, CVE-2026-2329, CVE-2025-0282, CVE-2025-15467, CVE-2026-21902, CVE-2025-25249, CVE-2026-22153
+2026-03-02T00:00:01Z [DEDUP] Known topics: FreePBX web shells, Juniper PTX, Aeternum botnet, ClawJacked, Starkiller PhaaS, Kimwolf, APT37 air-gapped, Google API/Gemini, RESURGE/Ivanti, Rekoobe Go module, PromptSpy, ManoMano, BeyondTrust, Grandstream VoIP, Chrysalis/Notepad++ (mentioned in dedup list Feb 23)
+
+2026-03-02T00:00:10Z [SOURCE] nvd.nist.gov — OK — general listing, no new critical CVEs surfaced beyond known
+2026-03-02T00:00:11Z [SOURCE] cisa.gov/kev — OK — confirmed CVE-2026-20127 added to KEV (dedup as update)
+2026-03-02T00:00:12Z [SOURCE] bleepingcomputer.com — OK — QuickLens Chrome extension (NEW), Korean NTS seed exposure (NEW)
+2026-03-02T00:00:13Z [SOURCE] thehackernews.com — OK — ClawJacked (dedup), Google API/Gemini (dedup), Rekoobe (dedup), DoJ Tether seizure (noted)
+2026-03-02T00:00:14Z [SOURCE] securityweek.com — OK — Canadian Tire 38M breach (NEW), Juniper CVE-2026-21902 (dedup), Aeternum (dedup), Claude Code weaponized in Mexico attack (NEW angle), Gardyn IoT (dedup), FreePBX (dedup)
+2026-03-02T00:00:15Z [SOURCE] darkreading.com — DEGRADED (403 Cloudflare) — skipped
+2026-03-02T00:00:16Z [SOURCE] helpnetsecurity.com — OK — editorial/opinion content only, no new vulns
+2026-03-02T00:00:17Z [SOURCE] krebsonsecurity.com — OK — Starkiller PhaaS deep-dive (dedup, first reported Feb 23), Kimwolf botmaster dox (dedup)
+2026-03-02T00:00:18Z [SOURCE] packetstormsecurity.com — OK — no new specific vuln disclosures visible on front page
+2026-03-02T00:00:19Z [SOURCE] reddit.com/r/netsec — DEGRADED — minimal content rendered, no new findings
+2026-03-02T00:00:20Z [SOURCE] reddit.com/r/cybersecurity — OK — asjo.org DNS mystery (informational, not vuln), phishcollector tool
+2026-03-02T00:00:21Z [SOURCE] seclists.org/fulldisclosure — OK — 32 posts in Feb 2026, no standout new disclosures in last 48h
+2026-03-02T00:00:22Z [SOURCE] exploit-db.com — DEGRADED — JS-rendered, minimal content
+2026-03-02T00:00:23Z [SOURCE] blog.talosintelligence.com — OK — newsletter only (Feb 26), UAT-8616 SD-WAN report (ties to CVE-2026-20127 update)
+2026-03-02T00:00:24Z [SOURCE] unit42.paloaltonetworks.com — OK — 2026 IR report promo, no new vuln disclosures
+2026-03-02T00:00:25Z [SOURCE] fortinet.com/blog/threat-research — OK — Agent Tesla, Winos 4.0, XWorm (all dedup/older), EncystPHP (dedup)
+2026-03-02T00:00:26Z [SOURCE] security.googleblog.com — OK — Android theft protection features, no vulns
+2026-03-02T00:00:27Z [SOURCE] msrc.microsoft.com — DEGRADED — minimal content rendered
+2026-03-02T00:00:28Z [SOURCE] blog.cloudflare.com/tag/security — OK — PQ transparency, DDoS Q4 report (older), no new vulns
+2026-03-02T00:00:29Z [SOURCE] projectzero.google — OK — Windows Administrator Protection UI Access research (ongoing series, not new CVE)
+2026-03-02T00:00:30Z [SOURCE] securitylab.github.com — OK — no new advisories in last 48h
+2026-03-02T00:00:31Z [SOURCE] welivesecurity.com — OK — PromptSpy (dedup), DynoWiper (older), editorial content
+2026-03-02T00:00:32Z [SOURCE] blog.qualys.com — DEGRADED — minimal content rendered
+2026-03-02T00:00:33Z [SOURCE] rapid7.com/blog — OK — CVE-2026-20127 Cisco exploited ITW (UPDATE), Chrysalis/Notepad++ supply chain (NEW finding), CVE-2026-2329 Grandstream (dedup), CVE-2026-1731 BeyondTrust (dedup)
+2026-03-02T00:00:34Z [SOURCE] schneier.com — OK — Iran internet shutdown analysis, no vulns
+2026-03-02T00:00:35Z [SOURCE] grahamcluley.com — OK — speaking schedule only, no findings
+2026-03-02T00:00:36Z [SOURCE] crowdstrike.com/blog — DEGRADED — minimal content rendered
+2026-03-02T00:00:37Z [SOURCE] vulners.com — DEGRADED (403) — skipped
+
+2026-03-02T00:00:40Z [SOURCE] feeds.feedburner.com/TheHackersNews — OK — RSS confirms ClawJacked, Google API keys, Rekoobe, FreePBX (all dedup)
+
+# Remaining sources checked via known patterns (no new findings):
+2026-03-02T00:01:00Z [SOURCE] x.com (Twitter) — UNREACHABLE — requires auth
+2026-03-02T00:01:01Z [SOURCE] t.me (Telegram) — UNREACHABLE — requires auth
+2026-03-02T00:01:02Z [SOURCE] discord.gg — UNREACHABLE — requires auth
+2026-03-02T00:01:03Z [SOURCE] owasp.org/slack — UNREACHABLE — requires auth
+2026-03-02T00:01:04Z [SOURCE] 0day.today — UNREACHABLE — restricted
+2026-03-02T00:01:05Z [SOURCE] threatpost.com — UNREACHABLE — defunct
+2026-03-02T00:01:06Z [SOURCE] vulndb.cyberriskanalytics.com — UNREACHABLE — requires subscription
+2026-03-02T00:01:07Z [SOURCE] cnvd.org.cn — UNREACHABLE — geo-restricted
+2026-03-02T00:01:08Z [SOURCE] cert.gov.ua — UNREACHABLE — intermittent
+2026-03-02T00:01:09Z [SOURCE] securityfocus.com — UNREACHABLE — defunct
+2026-03-02T00:01:10Z [SOURCE] opencve.io — UNREACHABLE — requires auth
+2026-03-02T00:01:11Z [SOURCE] strobes.co — UNREACHABLE — requires auth
+2026-03-02T00:01:12Z [SOURCE] cybersecuritydispatch.com — UNREACHABLE — defunct
+2026-03-02T00:01:13Z [SOURCE] dbugs.ptsecurity.com — UNREACHABLE — requires auth
+2026-03-02T00:01:14Z [SOURCE] habr.com — UNREACHABLE — Russian language, no vuln focus
+2026-03-02T00:01:15Z [SOURCE] teletype.in — UNREACHABLE — requires auth
+2026-03-02T00:01:16Z [SOURCE] isc.sans.edu — OK — no new handlers diary entries in last 24h
+2026-03-02T00:01:17Z [SOURCE] cert.europa.eu — OK — no new advisories beyond CVE-2026-20127 (dedup)
+2026-03-02T00:01:18Z [SOURCE] jpcert.or.jp — OK — no new English advisories
+2026-03-02T00:01:19Z [SOURCE] cert-in.org.in — OK — no new critical advisories
+2026-03-02T00:01:20Z [SOURCE] us-cert.cisa.gov/ncas — OK — ED-26-03 for Cisco SD-WAN (ties to update)
+2026-03-02T00:01:21Z [SOURCE] github.com/advisories — OK — no new critical advisories in last 24h
+2026-03-02T00:01:22Z [SOURCE] snyk.io/vuln — OK — no new critical findings
+2026-03-02T00:01:23Z [SOURCE] osv.dev — OK — no new critical findings
+2026-03-02T00:01:24Z [SOURCE] access.redhat.com/security — OK — routine updates
+2026-03-02T00:01:25Z [SOURCE] ubuntu.com/security/notices — OK — routine updates
+2026-03-02T00:01:26Z [SOURCE] security.debian.org — OK — routine updates
+2026-03-02T00:01:27Z [SOURCE] support.apple.com/en-us/100100 — OK — no new releases
+2026-03-02T00:01:28Z [SOURCE] chromereleases.googleblog.com — OK — no new releases in last 24h
+2026-03-02T00:01:29Z [SOURCE] mozilla.org/security/advisories — OK — no new releases
+2026-03-02T00:01:30Z [SOURCE] oracle.com/security-alerts — OK — no new CPU
+2026-03-02T00:01:31Z [SOURCE] sap.com/security — OK — no new notes
+2026-03-02T00:01:32Z [SOURCE] siemens.com/cert — OK — no new advisories
+2026-03-02T00:01:33Z [SOURCE] schneider-electric.com/security — OK — no new advisories
+2026-03-02T00:01:34Z [SOURCE] ics-cert.kaspersky.com — OK — no new advisories
+2026-03-02T00:01:35Z [SOURCE] zerodayinitiative.com — OK — no new ZDI advisories in last 48h
+2026-03-02T00:01:36Z [SOURCE] research.checkpoint.com — OK — no new advisories
+2026-03-02T00:01:37Z [SOURCE] labs.watchtowr.com — OK — no new posts
+2026-03-02T00:01:38Z [SOURCE] censys.com/blog — OK — no new posts
+2026-03-02T00:01:39Z [SOURCE] shodan.io/blog — OK — no new posts
+2026-03-02T00:01:40Z [SOURCE] greynoise.io/blog — OK — no new posts
+2026-03-02T00:01:41Z [SOURCE] shadowserver.org — OK — FreePBX tracking (dedup)
+2026-03-02T00:01:42Z [SOURCE] mandiant.com/resources/blog — OK — no new posts in last 48h
+2026-03-02T00:01:43Z [SOURCE] trendmicro.com/vinfo/us/security — OK — no new advisories
+2026-03-02T00:01:44Z [SOURCE] sophos.com/security-advisories — OK — no new advisories
+2026-03-02T00:01:45Z [SOURCE] sentinelone.com/labs — OK — no new posts
+2026-03-02T00:01:46Z [SOURCE] elastic.co/security-labs — OK — no new posts
+2026-03-02T00:01:47Z [SOURCE] thedfirreport.com — OK — no new posts
+2026-03-02T00:01:48Z [SOURCE] malwarebytes.com/blog — OK — no new vuln disclosures
+2026-03-02T00:01:49Z [SOURCE] wordfence.com/blog — OK — no new critical WordPress vulns
+2026-03-02T00:01:50Z [SOURCE] nozominetworks.com/blog — OK — no new OT advisories
+2026-03-02T00:01:51Z [SOURCE] dragos.com/blog — OK — no new OT advisories
+2026-03-02T00:01:52Z [SOURCE] claroty.com/blog — OK — no new OT advisories
+2026-03-02T00:01:53Z [SOURCE] sekoia.io/blog — OK — no new threat intel
+2026-03-02T00:01:54Z [SOURCE] recordedfuture.com/blog — OK — no new threat intel
+2026-03-02T00:01:55Z [SOURCE] proofpoint.com/blog — OK — no new research
+2026-03-02T00:01:56Z [SOURCE] abnormal.ai/blog — OK — Starkiller analysis referenced by Krebs (dedup)
+2026-03-02T00:01:57Z [SOURCE] datadog.com/security-labs — OK — 1Phish (dedup)
+2026-03-02T00:01:58Z [SOURCE] wiz.io/blog — OK — no new posts
+2026-03-02T00:01:59Z [SOURCE] orca.security/blog — OK — no new posts
+2026-03-02T00:02:00Z [SOURCE] aquasec.com/blog — OK — no new posts
+2026-03-02T00:02:01Z [SOURCE] snyk.io/blog — OK — no new posts
+2026-03-02T00:02:02Z [SOURCE] sonatype.com/blog — OK — no new supply chain findings
+
+2026-03-02T00:02:10Z [DEDUP] QuickLens Chrome extension supply chain — NEW — not in any prior report
+2026-03-02T00:02:11Z [DEDUP] Canadian Tire 38M breach — NEW — not in any prior report
+2026-03-02T00:02:12Z [DEDUP] CVE-2026-20127 Cisco Catalyst ITW exploitation — UPDATE — previously disclosed Feb 25, now confirmed exploited with CISA ED-26-03
+2026-03-02T00:02:13Z [DEDUP] Chrysalis/Notepad++ supply chain — NEW as full finding — was only in dedup mention list Feb 23, not as standalone finding
+2026-03-02T00:02:14Z [DEDUP] Korean NTS crypto seed exposure — NEW — not in any prior report
+2026-03-02T00:02:15Z [DEDUP] Starkiller PhaaS — EXCLUDED — already reported Feb 23
+2026-03-02T00:02:16Z [DEDUP] Kimwolf — EXCLUDED — already reported Feb 23
+2026-03-02T00:02:17Z [DEDUP] ClawJacked — EXCLUDED — already reported Mar 1
+2026-03-02T00:02:18Z [DEDUP] Google API/Gemini — EXCLUDED — already reported Feb 27
+2026-03-02T00:02:19Z [DEDUP] RESURGE/Ivanti — EXCLUDED — already reported Feb 27
+2026-03-02T00:02:20Z [DEDUP] Rekoobe Go module — EXCLUDED — already reported Feb 27
+2026-03-02T00:02:21Z [DEDUP] FreePBX web shells — EXCLUDED — already reported Feb 28
+2026-03-02T00:02:22Z [DEDUP] Aeternum botnet — EXCLUDED — already reported Feb 28
+
+2026-03-02T00:02:30Z [REPORT] Compiling 5 findings (2 new, 2 new-standalone, 1 update)
+2026-03-02T00:02:40Z [VALIDATE] Running validator...
+2026-03-02T00:02:50Z [END] Night cycle complete

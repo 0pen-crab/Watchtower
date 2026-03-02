@@ -1,0 +1,86 @@
+{
+  "date": "2026-03-02",
+  "cycle": "night",
+  "findings": [
+    {
+      "type": "update",
+      "title": "CVE-2026-20127: Cisco Catalyst SD-WAN — Confirmed Exploited in the Wild, CISA Emergency Directive",
+      "threat_score": 10,
+      "previous_threat_score": 9,
+      "cve": "CVE-2026-20127",
+      "cvss": null,
+      "affected_technology": "Cisco Catalyst SD-WAN Controller and Manager",
+      "summary": "Cisco Catalyst SD-WAN auth bypass CVE-2026-20127 now confirmed exploited in the wild. Australian ACSC identified real-world attacks; Cisco Talos documented UAT-8616 chaining with CVE-2022-20775 for root access via firmware downgrade. CISA issued Emergency Directive ED-26-03 requiring FCEB agencies to patch by Feb 27. All deployment types affected including cloud-hosted and FedRAMP environments.",
+      "first_seen_at": "rapid7.com"
+    },
+    {
+      "type": "news",
+      "title": "QuickLens Chrome Extension Supply Chain Compromise — Crypto Theft and ClickFix Attacks",
+      "threat_score": 7,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Google Chrome extensions (QuickLens)",
+      "summary": "Popular Chrome extension QuickLens (7K users, Google featured badge) was sold on ExtensionHub and backdoored in version 5.8 (Feb 17). Malicious update strips CSP headers, deploys ClickFix fake Google Update prompts, steals crypto wallet seed phrases (MetaMask, Phantom, Coinbase, etc.), harvests Gmail/Facebook/YouTube data, and exfiltrates credentials. C2 at api.extensionanalyticspro[.]top. Extension removed from Chrome Web Store.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "bleepingcomputer.com"
+    },
+    {
+      "type": "news",
+      "title": "Chrysalis Backdoor — Lotus Blossom APT Compromised Notepad++ Update Infrastructure",
+      "threat_score": 8,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Notepad++ (update delivery infrastructure)",
+      "summary": "Rapid7 published detailed analysis of Chrysalis backdoor deployed via compromised Notepad++ update infrastructure. Chinese state-aligned APT Lotus Blossom hijacked hosting infrastructure (not source code) to selectively deliver backdoor to targeted organizations for months. Supply chain attack against distribution paths rather than build systems. Notepad++ source code was not compromised.",
+      "discovery_latency": "late",
+      "first_seen_at": "rapid7.com"
+    },
+    {
+      "type": "news",
+      "title": "Canadian Tire Data Breach Impacts 38 Million Accounts",
+      "threat_score": 6,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Canadian Tire (retail)",
+      "summary": "Names, addresses, email addresses, phone numbers, and encrypted passwords of 38 million Canadian Tire customer accounts were compromised in a data breach.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "securityweek.com"
+    },
+    {
+      "type": "news",
+      "title": "South Korean NTS Exposes Crypto Wallet Seed Phrase — $4.8M Stolen",
+      "threat_score": 5,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "South Korean National Tax Service (operational security)",
+      "summary": "South Korea's National Tax Service accidentally published photos of a seized Ledger hardware wallet alongside its handwritten recovery seed phrase. Within hours, 4 million PRTG tokens (~$4.8M) were transferred out in three transactions. Press release removed but funds already exfiltrated.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "bleepingcomputer.com"
+    }
+  ],
+  "noted": [
+    {
+      "cve": null,
+      "product": "Tether/Crypto scams",
+      "summary": "DoJ seized $61M in Tether linked to pig butchering crypto scams."
+    },
+    {
+      "cve": null,
+      "product": "Iran internet",
+      "summary": "Iran's 2026 internet shutdown was most severe in history, targeting NIN domestic intranet and Starlink."
+    },
+    {
+      "cve": null,
+      "product": "Gardyn Smart Gardens",
+      "summary": "CISA advisory on 4 IoT vulnerabilities — already noted Feb 28."
+    }
+  ],
+  "source_coverage": {
+    "total": 90,
+    "checked": 74,
+    "with_findings": 8,
+    "unreachable": ["x.com", "t.me", "discord.gg", "owasp.org/slack", "0day.today", "threatpost.com", "vulndb.cyberriskanalytics.com", "cnvd.org.cn", "cert.gov.ua", "securityfocus.com", "opencve.io", "strobes.co", "cybersecuritydispatch.com", "dbugs.ptsecurity.com", "habr.com", "teletype.in"],
+    "degraded": ["darkreading.com", "exploit-db.com", "msrc.microsoft.com", "blog.qualys.com", "crowdstrike.com/blog", "vulners.com"]
+  },
+  "full_report": "reports/2026/03/02/night/report.md"
+}
