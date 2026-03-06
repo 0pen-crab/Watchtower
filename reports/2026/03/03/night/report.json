@@ -1,0 +1,85 @@
+{
+  "date": "2026-03-03",
+  "cycle": "night",
+  "findings": [
+    {
+      "type": "news",
+      "title": "CISA Flags VMware Aria Operations RCE as Exploited in Attacks",
+      "threat_score": 9,
+      "cve": "CVE-2026-22719",
+      "cvss": 8.1,
+      "affected_technology": "VMware Aria Operations",
+      "summary": "Unauthenticated command injection in VMware Aria Operations added to CISA KEV; affects Cloud Foundation, Telco Cloud, and standalone deployments.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "bleepingcomputer.com"
+    },
+    {
+      "type": "news",
+      "title": "Microsoft: Hackers Abuse OAuth Error Flows to Spread Malware",
+      "threat_score": 7,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Microsoft OAuth / Azure AD",
+      "summary": "Attackers abuse legitimate OAuth redirection error mechanisms to bypass phishing protections using Microsoft's own infrastructure as a trusted redirect.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "bleepingcomputer.com"
+    },
+    {
+      "type": "news",
+      "title": "Android Patches Qualcomm Zero-Day Exploited in Attacks",
+      "threat_score": 7,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Android (Qualcomm display driver)",
+      "summary": "Google patches 129 Android vulnerabilities including actively exploited Qualcomm display component zero-day used in targeted attacks.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "bleepingcomputer.com"
+    },
+    {
+      "type": "news",
+      "title": "Fake IT Support Deploys Havoc C2 — Lateral Movement in 11 Hours",
+      "threat_score": 7,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Enterprise Windows environments",
+      "summary": "Email spam plus fake IT support calls deploy customized Havoc C2; adversary moved from initial access to 9 endpoints in 11 hours.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "thehackernews.com"
+    }
+  ],
+  "noted": [
+    {
+      "cve": null,
+      "product": "LexisNexis",
+      "summary": "Data breach confirmed, hackers leaked stolen files."
+    },
+    {
+      "cve": null,
+      "product": "Star Citizen (CIG)",
+      "summary": "Game developer discloses breach affecting user data from January."
+    },
+    {
+      "cve": null,
+      "product": "UH Cancer Center",
+      "summary": "Ransomware breach affects 1.2 million people."
+    },
+    {
+      "cve": null,
+      "product": "AkzoNobel",
+      "summary": "Paint manufacturer confirms cyberattack on U.S. site."
+    },
+    {
+      "cve": null,
+      "product": "CyberStrikeAI",
+      "summary": "Open-source AI security tool adopted by the FortiGate hacker for AI-powered attacks."
+    }
+  ],
+  "source_coverage": {
+    "total": 90,
+    "checked": 90,
+    "with_findings": 6,
+    "unreachable": [],
+    "degraded": []
+  },
+  "full_report": "reports/2026/03/03/night/report.md"
+}

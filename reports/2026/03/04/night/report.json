@@ -1,0 +1,75 @@
+{
+  "date": "2026-03-04",
+  "cycle": "night",
+  "findings": [
+    {
+      "type": "news",
+      "title": "Fake Laravel Packages on Packagist Deploy Cross-Platform RAT",
+      "threat_score": 8,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "PHP/Packagist ecosystem (Laravel)",
+      "summary": "Malicious Packagist packages impersonating Laravel utilities deploy cross-platform RAT via Composer dependency chain with obfuscated payloads.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "thehackernews.com"
+    },
+    {
+      "type": "update",
+      "title": "VMware Aria Operations CVE-2026-22719 — Federal Patch Deadline Set",
+      "threat_score": 9,
+      "previous_threat_score": 9,
+      "cve": "CVE-2026-22719",
+      "cvss": 8.1,
+      "affected_technology": "VMware Aria Operations",
+      "summary": "CISA sets March 24 federal patch deadline; orgs recently migrated or planning migration are at highest risk.",
+      "first_seen_at": "cisa.gov"
+    },
+    {
+      "type": "news",
+      "title": "Europol Takes Down Tycoon 2FA Phishing-as-a-Service Platform",
+      "threat_score": 6,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Phishing infrastructure (MFA bypass)",
+      "summary": "Europol dismantled Tycoon 2FA PhaaS platform linked to 64,000 AitM credential harvesting attacks; developer allegedly based in Pakistan.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "thehackernews.com"
+    },
+    {
+      "type": "news",
+      "title": "FBI and Europol Seize LeakBase Forum",
+      "threat_score": 5,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Cybercrime infrastructure",
+      "summary": "Joint operation seized LeakBase forum with 142K+ members; all content including IP logs preserved for evidence and potential follow-on arrests.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "thehackernews.com"
+    }
+  ],
+  "noted": [
+    {
+      "cve": null,
+      "product": "Ransomware infrastructure",
+      "summary": "Huntress mapped RaaS infrastructure via brute-force attack analysis."
+    },
+    {
+      "cve": null,
+      "product": "Google Chrome",
+      "summary": "Shifts to 2-week release cycle for faster security patches."
+    },
+    {
+      "cve": null,
+      "product": "Google Security PWA phishing",
+      "summary": "Fake Google security page uses PWA app to steal credentials and MFA codes."
+    }
+  ],
+  "source_coverage": {
+    "total": 90,
+    "checked": 90,
+    "with_findings": 5,
+    "unreachable": [],
+    "degraded": []
+  },
+  "full_report": "reports/2026/03/04/night/report.md"
+}
