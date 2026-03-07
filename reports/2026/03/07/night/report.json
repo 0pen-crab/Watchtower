@@ -1,0 +1,140 @@
+{
+  "date": "2026-03-07",
+  "cycle": "night",
+  "findings": [
+    {
+      "type": "news",
+      "title": "n8n Ni8mare — Unauthenticated Full-Chain RCE via File Read + Sandbox Bypass",
+      "threat_score": 10,
+      "cve": "CVE-2026-21858",
+      "cvss": 10.0,
+      "affected_technology": "n8n",
+      "summary": "Public PoC chains CVE-2026-21858 (Content-Type confusion arbitrary file read) with CVE-2025-68613 (expression injection sandbox bypass) for unauthenticated RCE on n8n workflow automation instances, with exposed instances visible on LeakIX.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "github.com"
+    },
+    {
+      "type": "news",
+      "title": "BeyondTrust RS/PRA Critical Command Injection — Same Endpoint as Prior Zero-Day",
+      "threat_score": 9,
+      "cve": "CVE-2026-1731",
+      "cvss": 9.8,
+      "affected_technology": "BeyondTrust Remote Support / Privileged Remote Access",
+      "summary": "Rapid7 reproduced a critical command injection in BeyondTrust RS/PRA in the same endpoint as previously exploited zero-day CVE-2024-12356, making exploitation highly likely despite no known in-the-wild activity yet.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "attackerkb.com"
+    },
+    {
+      "type": "news",
+      "title": "osTicket File Read to RCE via PHP Filters and CNEXT Chain",
+      "threat_score": 8,
+      "cve": "CVE-2026-22200",
+      "cvss": 9.1,
+      "affected_technology": "osTicket",
+      "summary": "Horizon3.ai released a fully automated PoC exploiting PHP filters in osTicket mPDF library for arbitrary file exfiltration chained to RCE via CVE-2024-2961 (CNEXT).",
+      "discovery_latency": "on-time",
+      "first_seen_at": "github.com"
+    },
+    {
+      "type": "news",
+      "title": "MuddyWater Deploys Dindoor Backdoor on U.S. Bank, Airport, Defense Software Networks",
+      "threat_score": 8,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "U.S. Critical Infrastructure",
+      "summary": "Iranian state-sponsored MuddyWater embedded in networks of U.S. banks, airports, and defense software companies using new Deno-based Dindoor backdoor and Python Fakeset backdoor, with data exfiltration attempts via Rclone to Wasabi cloud storage.",
+      "discovery_latency": "early",
+      "first_seen_at": "security.com"
+    },
+    {
+      "type": "news",
+      "title": "FBI Confirms Breach of Surveillance and Wiretap Warrant Systems",
+      "threat_score": 7,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "FBI Internal Systems",
+      "summary": "FBI confirmed a breach affecting systems used to manage surveillance and wiretap warrants, with potential connections to earlier Salt Typhoon Chinese state-sponsored campaign against U.S. telecom infrastructure.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "bleepingcomputer.com"
+    },
+    {
+      "type": "news",
+      "title": "Telnet RCE via Malformed USER Environment Variable",
+      "threat_score": 7,
+      "cve": "CVE-2026-24061",
+      "cvss": null,
+      "affected_technology": "Telnet",
+      "summary": "SafeBreach Labs released a public PoC for remote code execution in Telnet servers through exploitation of a malformed USER environment variable, with the exploit gaining rapid community attention.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "github.com"
+    },
+    {
+      "type": "news",
+      "title": "node-tar Arbitrary File Overwrite Vulnerability",
+      "threat_score": 7,
+      "cve": "CVE-2026-23745",
+      "cvss": null,
+      "affected_technology": "node-tar",
+      "summary": "PoC released for arbitrary file overwrite vulnerability in node-tar versions before 7.5.3, a widely-used npm package for tar archive handling with significant downstream supply chain impact potential.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "github.com"
+    },
+    {
+      "type": "news",
+      "title": "Zammad IDOR and SQL Injection Disclosed by GitHub Security Lab",
+      "threat_score": 6,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Zammad",
+      "summary": "GitHub Security Lab disclosed an IDOR vulnerability (GHSL-2026-049) enabling access control violations and a SQL injection flaw (GHSL-2026-047) allowing sensitive data leakage in Zammad helpdesk software.",
+      "discovery_latency": "early",
+      "first_seen_at": "securitylab.github.com"
+    },
+    {
+      "type": "update",
+      "title": "CISA Issues Emergency Directive 26-03 for Cisco Catalyst SD-WAN",
+      "threat_score": 9,
+      "previous_threat_score": 8,
+      "cve": "CVE-2026-20127",
+      "cvss": 10.0,
+      "affected_technology": "Cisco Catalyst SD-WAN",
+      "summary": "CISA escalated CVE-2026-20127 to Emergency Directive 26-03, requiring federal agencies to inventory SD-WAN systems, apply mitigations, and assess for compromise, reflecting expanded exploitation scope.",
+      "first_seen_at": "cisa.gov"
+    }
+  ],
+  "noted": [
+    {
+      "cve": "CVE-2026-30844",
+      "product": "Wekan",
+      "summary": "Server-Side Request Forgery (SSRF) vulnerability disclosed in Wekan project management software."
+    },
+    {
+      "cve": "CVE-2026-30843",
+      "product": "Wekan",
+      "summary": "Unauthorized data manipulation vulnerability disclosed in Wekan project management software."
+    },
+    {
+      "cve": null,
+      "product": "AFFiNE",
+      "summary": "Access control bypass vulnerability (GHSL-2026-040) disclosed in AFFiNE knowledge management platform."
+    },
+    {
+      "cve": null,
+      "product": "Cisco ASA/FMC/FTD",
+      "summary": "Cisco patched 48 vulnerabilities across ASA, Firepower Management Center, and Firepower Threat Defense products."
+    },
+    {
+      "cve": "CVE-2025-64328",
+      "product": "FreePBX",
+      "summary": "Weaponized EncystPHP web shell exploiting CVE-2025-64328 enables persistent remote command execution in FreePBX environments."
+    }
+  ],
+  "source_coverage": {
+    "total": 90,
+    "checked": 83,
+    "with_findings": 14,
+    "unreachable": ["cnvd.org.cn", "vulners.com", "cvedetails.com", "securityfocus.com", "risky.biz", "0day.today", "bugcrowd.com"],
+    "degraded": ["x.com/maddiestone", "x.com/cyb3rops", "x.com/likethecoins", "x.com/craiu", "x.com/ProjectZeroIO", "x.com/GossiTheDog", "x.com/hackerfantastic", "x.com/thegrugq", "x.com/vxunderground", "x.com/campuscodi", "x.com/BleepinComputer", "x.com/0xdea", "x.com/Shadow0pz", "x.com/MalwareTechBlog", "x.com/RedTeamVillage_", "t.me/bugbountyradar", "t.me/redteamsec", "owasp.org/slack/invite", "discord.gg/infosecprep", "darkreading.com", "vulndb.cyberriskanalytics.com"]
+  },
+  "full_report": "reports/2026/03/07/night/report.md"
+}

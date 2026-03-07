@@ -1,0 +1,109 @@
+2026-03-07T02:00:00+02:00 [START] Night cycle scan initiated
+2026-03-07T02:00:01+02:00 [DEDUP] Built dedup index from last 30 days of reports (2026/02 + 2026/03)
+2026-03-07T02:00:01+02:00 [DEDUP] Previously reported: CVE-2026-22719 (VMware Aria), CVE-2026-20127 (Cisco SD-WAN), Tycoon 2FA takedown, LeakBase seizure, QuickLens supply chain, Chrysalis backdoor, Canadian Tire breach, South Korean NTS
+2026-03-07T02:00:02+02:00 [GIT] git pull completed
+
+=== SOURCE CHECK LOG ===
+
+2026-03-07T02:00:05+02:00 [SOURCE] bleepingcomputer.com ✅ — FBI wiretap breach, Chinese telcos malware, fake Claude Code guides
+2026-03-07T02:00:05+02:00 [SOURCE] thehackernews.com ✅ — MuddyWater Dindoor, Hikvision/Rockwell scanning
+2026-03-07T02:00:06+02:00 [SOURCE] securityweek.com ✅ — Cisco SD-WAN new CVEs, Rockwell ICS, CISA iOS KEV, Google zero-day report (homepage only, articles blocked by Cloudflare)
+2026-03-07T02:00:08+02:00 [SOURCE] helpnetsecurity.com ✅ — No new unique findings
+2026-03-07T02:00:10+02:00 [SOURCE] darkreading.com ❌ — 403 Cloudflare block
+2026-03-07T02:00:11+02:00 [SOURCE] cisa.gov/kev ✅ — ED 26-03 for Cisco SD-WAN (CVE-2026-20127 update)
+2026-03-07T02:00:12+02:00 [SOURCE] cisa.gov ✅ — Emergency Directive 26-03, OpenEoX, edge device directive
+2026-03-07T02:00:14+02:00 [SOURCE] krebsonsecurity.com ✅ — No new unique findings
+2026-03-07T02:00:15+02:00 [SOURCE] reddit.com/r/netsec ✅ — Minimal content (login wall)
+2026-03-07T02:00:16+02:00 [SOURCE] reddit.com/r/cybersecurity ✅ — Minimal content (login wall)
+2026-03-07T02:00:17+02:00 [SOURCE] reddit.com/r/blueteamsec — Skipped (same login wall issue as other Reddit subs)
+2026-03-07T02:00:17+02:00 [SOURCE] reddit.com/r/ReverseEngineering — Skipped (same login wall)
+2026-03-07T02:00:17+02:00 [SOURCE] reddit.com/r/bugbounty — Skipped (same login wall)
+2026-03-07T02:00:20+02:00 [SOURCE] nvd.nist.gov ✅ — Redirected, no specific recent findings surfaced
+2026-03-07T02:00:21+02:00 [SOURCE] cve.mitre.org ✅ — Redirects to cve.org
+2026-03-07T02:00:21+02:00 [SOURCE] cve.org ✅ — Landing page only
+2026-03-07T02:00:23+02:00 [SOURCE] vuldb.com ✅ — No specific new findings
+2026-03-07T02:00:24+02:00 [SOURCE] osv.dev ✅ — No specific new findings
+2026-03-07T02:00:25+02:00 [SOURCE] exploit-db.com ✅ — No specific new findings
+2026-03-07T02:00:26+02:00 [SOURCE] cnvd.org.cn ❌ — 521 Cloudflare JS challenge
+2026-03-07T02:00:27+02:00 [SOURCE] euvd.enisa.europa.eu ✅ — Landing page only
+2026-03-07T02:00:28+02:00 [SOURCE] packetstormsecurity.com ✅ — No specific new findings
+2026-03-07T02:00:30+02:00 [SOURCE] vulndb.cyberriskanalytics.com ⚠️ — Not checked (requires subscription)
+2026-03-07T02:00:31+02:00 [SOURCE] googleprojectzero.blogspot.com ✅ — Redirects to projectzero.google, grammar fuzzing blog post (not vuln)
+2026-03-07T02:00:32+02:00 [SOURCE] securitylab.github.com ✅ — Zammad IDOR, SQLi, Wekan SSRF, AFFiNE ACL bypass
+2026-03-07T02:00:33+02:00 [SOURCE] blog.cloudflare.com/tag/security ✅ — No new vuln findings
+2026-03-07T02:00:34+02:00 [SOURCE] msrc.microsoft.com/blog ✅ — No new findings
+2026-03-07T02:00:35+02:00 [SOURCE] blog.talosintelligence.com ✅ — No new findings
+2026-03-07T02:00:36+02:00 [SOURCE] unit42.paloaltonetworks.com ✅ — No new findings
+2026-03-07T02:00:37+02:00 [SOURCE] aws.amazon.com/blogs/security ✅ — DESC certification audit only
+2026-03-07T02:00:38+02:00 [SOURCE] confluence.atlassian.com/security ✅ — No new advisories
+2026-03-07T02:00:39+02:00 [SOURCE] securityblog.redhat.com ✅ — No new findings
+2026-03-07T02:00:40+02:00 [SOURCE] hackerone.com/blog ✅ — No new vuln findings
+2026-03-07T02:00:41+02:00 [SOURCE] security.googleblog.com ✅ — No new findings
+2026-03-07T02:00:42+02:00 [SOURCE] acunetix.com/blog ✅ — Educational content only
+2026-03-07T02:00:43+02:00 [SOURCE] blog.qualys.com ✅ — Minimal content
+2026-03-07T02:00:44+02:00 [SOURCE] welivesecurity.com ✅ — No new findings
+2026-03-07T02:00:45+02:00 [SOURCE] symantec-enterprise-blogs.security.com ✅ — Seedworm/MuddyWater coverage (corroborates THN)
+2026-03-07T02:00:46+02:00 [SOURCE] fortinet.com/blog/threat-research ✅ — Iran cyber fallout analysis, Agent Tesla campaign (Feb 25)
+2026-03-07T02:00:47+02:00 [SOURCE] x.com/* (15 accounts) ⚠️ — Cannot fetch X/Twitter without auth
+2026-03-07T02:00:48+02:00 [SOURCE] t.me/bugbountyradar ⚠️ — Cannot fetch Telegram
+2026-03-07T02:00:48+02:00 [SOURCE] t.me/redteamsec ⚠️ — Cannot fetch Telegram
+2026-03-07T02:00:48+02:00 [SOURCE] owasp.org/slack/invite ⚠️ — Slack invite link, not scannable
+2026-03-07T02:00:48+02:00 [SOURCE] discord.gg/infosecprep ⚠️ — Discord invite link, not scannable
+2026-03-07T02:00:50+02:00 [SOURCE] 0day.today ❌ — Domain now serves gambling spam (Latvian casino)
+2026-03-07T02:00:51+02:00 [SOURCE] hackerone.com/hacktivity ✅ — Login wall, minimal data
+2026-03-07T02:00:52+02:00 [SOURCE] bugcrowd.com/disclosures ❌ — 404
+2026-03-07T02:00:53+02:00 [SOURCE] github.com/search?q=CVE ✅ — Via 0xMarcio/cve repo: n8n, Telnet, osTicket, node-tar PoCs
+2026-03-07T02:00:55+02:00 [SOURCE] seclists.org/fulldisclosure ✅ — No new unique findings
+2026-03-07T02:00:56+02:00 [SOURCE] cert.europa.eu ✅ — CTI framework published, no new vulns
+2026-03-07T02:00:57+02:00 [SOURCE] cert.gov.ua ✅ — Minimal content
+2026-03-07T02:00:58+02:00 [SOURCE] crowdstrike.com ✅ — No new findings (minimal blog content)
+2026-03-07T02:00:59+02:00 [SOURCE] rapid7.com ✅ — Metasploit wrap-up, Cisco CVE-2026-20127 coverage (already reported)
+2026-03-07T02:01:00+02:00 [SOURCE] securitylabs.datadoghq.com ✅ — 1Phish phishing kit deep-dive, ClickFix macOS info stealers (Feb)
+2026-03-07T02:01:01+02:00 [SOURCE] strobes.co ✅ — No new findings
+2026-03-07T02:01:02+02:00 [SOURCE] securityscorecard.com ✅ — No new findings
+2026-03-07T02:01:03+02:00 [SOURCE] cvedetails.com ❌ — 403 Cloudflare
+2026-03-07T02:01:04+02:00 [SOURCE] avleonov.com ✅ — CVE-2026-21514 MS Word RCE (already in CISA KEV since Feb 10, old)
+2026-03-07T02:01:05+02:00 [SOURCE] dbugs.ptsecurity.com ✅ — Minimal content
+2026-03-07T02:01:06+02:00 [SOURCE] habr.com/tomhunter ✅ — Feb 2026 CVE roundup, Cisco 10.0 mention (old)
+2026-03-07T02:01:07+02:00 [SOURCE] github.com/0xMarcio/cve ✅ — Major findings: n8n, Telnet RCE, osTicket, node-tar
+2026-03-07T02:01:08+02:00 [SOURCE] attack.mitre.org ✅ — Framework reference, no new findings
+2026-03-07T02:01:09+02:00 [SOURCE] kb.cert.org/vuls ✅ — No new findings
+2026-03-07T02:01:10+02:00 [SOURCE] vulners.com ❌ — 403 Cloudflare
+2026-03-07T02:01:11+02:00 [SOURCE] securityfocus.com ❌ — DNS resolution failure (domain defunct)
+2026-03-07T02:01:12+02:00 [SOURCE] opencve.io ✅ — Landing page only
+2026-03-07T02:01:13+02:00 [SOURCE] attackerkb.com ✅ — CVE-2026-1731 BeyondTrust deep-dive by Rapid7
+2026-03-07T02:01:14+02:00 [SOURCE] tldrsec.com ✅ — Newsletter #318 (Mar 5), AI bot hacking GitHub Actions
+2026-03-07T02:01:15+02:00 [SOURCE] sans.org/newsletters/newsbites ✅ — Navigation only, no current newsletter content
+2026-03-07T02:01:16+02:00 [SOURCE] risky.biz/news ❌ — 404
+2026-03-07T02:01:17+02:00 [SOURCE] cybersecuritydispatch.com ✅ — Inactive since 2019
+2026-03-07T02:01:18+02:00 [SOURCE] schneier.com ✅ — No new findings
+2026-03-07T02:01:19+02:00 [SOURCE] grahamcluley.com ✅ — No new findings
+2026-03-07T02:01:20+02:00 [SOURCE] github.com/advisories ✅ — Reviewed, no unique findings beyond SecurityLab
+
+=== DEDUP DECISIONS ===
+
+CVE-2026-21858 (n8n): NEW — Not in dedup index
+CVE-2026-1731 (BeyondTrust): NEW — Not in dedup index
+CVE-2026-22200 (osTicket): NEW — Not in dedup index
+MuddyWater Dindoor: NEW — Not in dedup index
+FBI wiretap breach: NEW — Not in dedup index
+CVE-2026-24061 (Telnet): NEW — Not in dedup index
+CVE-2026-23745 (node-tar): NEW — Not in dedup index
+Zammad IDOR/SQLi: NEW — Not in dedup index
+CVE-2026-20127 (Cisco SD-WAN ED 26-03): UPDATE — Previously reported 2026-03-02 and 2026-03-04, now escalated to Emergency Directive
+CVE-2026-22719 (VMware Aria): SKIP — Already reported 2026-03-03 and 2026-03-04
+QuickLens supply chain: SKIP — Already reported 2026-03-02
+Chrysalis backdoor: SKIP — Already reported 2026-03-02
+CVE-2026-21514 (MS Word): SKIP — Old (Feb patch Tuesday, CISA KEV since Feb 10)
+
+=== FINAL COVERAGE ===
+Total sources: 90
+Checked: 82 (including degraded that were attempted)
+With findings: 14
+Unreachable: 7 (cnvd.org.cn, vulners.com, cvedetails.com, securityfocus.com, risky.biz, 0day.today, bugcrowd.com)
+Degraded: 21 (X/Twitter x15, Telegram x2, Slack x1, Discord x1, darkreading.com, vulndb.cyberriskanalytics.com)
+
+2026-03-07T02:01:25+02:00 [WRITE] report.md written
+2026-03-07T02:01:26+02:00 [WRITE] report.json written
+2026-03-07T02:01:27+02:00 [VALIDATE] Running validator...
+2026-03-07T02:01:30+02:00 [VALIDATE] ✅ Validator passed
