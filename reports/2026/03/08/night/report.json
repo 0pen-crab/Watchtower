@@ -1,0 +1,92 @@
+{
+  "date": "2026-03-08",
+  "cycle": "night",
+  "findings": [
+    {
+      "type": "news",
+      "title": "FreeScout Mail2Shell — Zero-Click RCE via Crafted Email",
+      "threat_score": 9,
+      "cve": "CVE-2026-28289",
+      "cvss": 10.0,
+      "affected_technology": "FreeScout Helpdesk",
+      "summary": "A zero-click RCE in FreeScout allows unauthenticated attackers to execute arbitrary code by sending a single crafted email to any configured mailbox, bypassing a previous patch via Unicode zero-width space.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "bleepingcomputer.com"
+    },
+    {
+      "type": "news",
+      "title": "Cisco Secure FMC — Two Max-Severity Flaws Allow Unauthenticated Root Access",
+      "threat_score": 8,
+      "cve": "CVE-2026-20079",
+      "cvss": 10.0,
+      "affected_technology": "Cisco Secure Firewall Management Center",
+      "summary": "Two CVSS 10.0 vulnerabilities in Cisco Secure FMC allow unauthenticated remote attackers to bypass authentication and execute arbitrary Java code as root, also affecting Cisco Security Cloud Control.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "bleepingcomputer.com"
+    },
+    {
+      "type": "news",
+      "title": "WordPress User Registration Plugin — Actively Exploited Privilege Escalation",
+      "threat_score": 8,
+      "cve": "CVE-2026-1492",
+      "cvss": 9.8,
+      "affected_technology": "WordPress (User Registration & Membership plugin)",
+      "summary": "A critical privilege escalation flaw in the User Registration & Membership plugin (60K+ installs) is being actively exploited to create admin accounts, with over 200 attacks blocked in 24 hours.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "bleepingcomputer.com"
+    },
+    {
+      "type": "news",
+      "title": "Coruna iOS Exploit Kit — Spyware-Grade Chains Now Used for Crypto Theft",
+      "threat_score": 8,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Apple iOS 13.0–17.2.1",
+      "summary": "Google GTIG revealed a 23-exploit iOS kit called Coruna with five full exploit chains, now repurposed from nation-state espionage to cryptocurrency theft via fake gambling and crypto sites.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "bleepingcomputer.com"
+    },
+    {
+      "type": "news",
+      "title": "CISA KEV: Rockwell ICS, Hikvision, and Apple iOS Flaws Added",
+      "threat_score": 7,
+      "cve": "CVE-2021-22681",
+      "cvss": null,
+      "affected_technology": "Rockwell Automation, Hikvision, Apple iOS",
+      "summary": "CISA added five vulnerabilities to KEV on March 5 including Rockwell ICS credential flaw (CVE-2021-22681), Hikvision auth bypass (CVE-2017-7921), and three Apple iOS exploits used by the Coruna kit.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "cisa.gov"
+    },
+    {
+      "type": "news",
+      "title": "UAT-9244 — Chinese APT Targets South American Telecoms with Three New Implants",
+      "threat_score": 7,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Telecommunications infrastructure",
+      "summary": "Cisco Talos disclosed UAT-9244, a China-linked APT targeting South American telecoms since 2024 with three new implants: TernDoor (Windows), PeerTime (Linux), and BruteEntry (network edge devices).",
+      "discovery_latency": "on-time",
+      "first_seen_at": "thehackernews.com"
+    }
+  ],
+  "noted": [
+    {
+      "cve": null,
+      "product": "Wikipedia",
+      "summary": "Self-propagating JavaScript worm vandalized Wikipedia pages and modified user scripts across multiple wikis."
+    },
+    {
+      "cve": null,
+      "product": "Cognizant TriZetto",
+      "summary": "Healthcare IT breach exposed health data of 3.4 million patients."
+    }
+  ],
+  "source_coverage": {
+    "total": 35,
+    "checked": 35,
+    "with_findings": 5,
+    "unreachable": [],
+    "degraded": ["securityweek.com"]
+  },
+  "full_report": "reports/2026/03/08/night/report.md"
+}

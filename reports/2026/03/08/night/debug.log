@@ -1,0 +1,5 @@
+[2026-03-08 02:09:00] Night cycle started
+[2026-03-08 02:09:00] Git pull: Already up to date
+[2026-03-08 02:09:00] Dedup index built from 26 report.json files (Feb 6 - Mar 7)
+[2026-03-08 02:09:00] Key dedup entries: CVE-2026-21858 (n8n), CVE-2026-1731 (BeyondTrust), CVE-2026-22200 (osTicket), CVE-2026-24061 (Telnet), CVE-2026-23745 (node-tar), CVE-2026-20127 (Cisco SD-WAN), Zammad IDOR/SQLi, MuddyWater Dindoor, FBI Wiretap breach, Tycoon 2FA, LeakBase seizure, FreePBX CVE-2025-64328
+[2026-03-08 02:09:30] Starting source scanning - 90+ sources to check

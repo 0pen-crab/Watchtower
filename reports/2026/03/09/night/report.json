@@ -1,0 +1,92 @@
+{
+  "date": "2026-03-09",
+  "cycle": "night",
+  "findings": [
+    {
+      "type": "news",
+      "title": "Velvet Tempest Deploys CastleRAT via ClickFix in Termite Ransomware Campaign",
+      "threat_score": 8,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Windows endpoints",
+      "summary": "Velvet Tempest (DEV-0504), an affiliate linked to Ryuk, Conti, BlackCat, and LockBit, was observed using ClickFix malvertising to deploy DonutLoader and CastleRAT backdoor in a 12-day campaign against a 3,000-endpoint US non-profit.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "bleepingcomputer.com"
+    },
+    {
+      "type": "news",
+      "title": "AirSnitch — Full Bidirectional MitM Attack Against Wi-Fi Encryption",
+      "threat_score": 7,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Wi-Fi (all implementations)",
+      "summary": "Researchers disclosed AirSnitch, a cross-layer identity desynchronization attack enabling full bidirectional MitM on Wi-Fi networks across homes, offices, and enterprises by exploiting Layer 1/2 binding failures.",
+      "discovery_latency": "early",
+      "first_seen_at": "schneier.com"
+    },
+    {
+      "type": "news",
+      "title": "Phishing Campaigns Abuse .arpa DNS and IPv6 Reverse DNS to Evade Defenses",
+      "threat_score": 6,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Email security gateways",
+      "summary": "Threat actors are abusing ip6.arpa reverse DNS zones via Hurricane Electric and Cloudflare to host phishing infrastructure that evades domain reputation checks and email security gateways.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "bleepingcomputer.com"
+    },
+    {
+      "type": "news",
+      "title": "Transparent Tribe Uses AI to Mass-Produce Polyglot Malware Implants Targeting India",
+      "threat_score": 7,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Government and military networks (India)",
+      "summary": "Pakistan-aligned APT Transparent Tribe adopted AI-assisted coding to produce high-volume disposable implants in Nim, Zig, and Crystal, using Slack, Discord, Supabase, and Google Sheets as C2 channels.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "thehackernews.com"
+    },
+    {
+      "type": "news",
+      "title": "CL-UNK-1068 — Chinese Espionage Campaign Targets Asian Critical Infrastructure",
+      "threat_score": 7,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Aviation, energy, government, telecom, pharma (South/Southeast/East Asia)",
+      "summary": "Palo Alto Unit 42 disclosed CL-UNK-1068, a Chinese espionage cluster using custom malware, modified open-source tools, and LOLBINs to target critical infrastructure across aviation, energy, government, telecom, and pharma sectors in Asia.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "thehackernews.com"
+    },
+    {
+      "type": "news",
+      "title": "BoryptGrab Stealer Distributed via 100+ Malicious GitHub Repositories",
+      "threat_score": 6,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Developer workstations",
+      "summary": "Over 100 GitHub repositories are distributing the BoryptGrab stealer targeting browser data, cryptocurrency wallets, system information, and user files.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "securityweek.com"
+    }
+  ],
+  "noted": [
+    {
+      "cve": null,
+      "product": "US Cyber Strategy",
+      "summary": "Trump administration published new cyber strategy targeting adversaries, critical infrastructure, and emerging technologies including AI and post-quantum cryptography."
+    },
+    {
+      "cve": null,
+      "product": "Google TIG",
+      "summary": "Google reported 90 zero-days were exploited in attacks throughout 2025, with nearly half targeting enterprise software."
+    }
+  ],
+  "source_coverage": {
+    "total": 35,
+    "checked": 35,
+    "with_findings": 5,
+    "unreachable": [],
+    "degraded": ["securityweek.com"]
+  },
+  "full_report": "reports/2026/03/09/night/report.md"
+}
