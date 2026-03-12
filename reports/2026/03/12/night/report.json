@@ -1,0 +1,124 @@
+{
+  "date": "2026-03-12",
+  "cycle": "night",
+  "findings": [
+    {
+      "type": "news",
+      "title": "n8n CVE-2025-68613 Added to CISA KEV — Second Actively Exploited n8n RCE in Two Weeks",
+      "threat_score": 9,
+      "cve": "CVE-2025-68613",
+      "cvss": 9.8,
+      "affected_technology": "n8n",
+      "summary": "CISA added CVE-2025-68613, a second n8n workflow expression evaluation RCE flaw, to the Known Exploited Vulnerabilities catalog on March 11 with a federal patch deadline of March 25.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "cisa.gov"
+    },
+    {
+      "type": "news",
+      "title": "ICS Patch Tuesday: Critical Vulnerabilities Fixed by Siemens, Schneider, Moxa, Mitsubishi Electric",
+      "threat_score": 8,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Siemens, Schneider Electric, Moxa, Mitsubishi Electric ICS products",
+      "summary": "March 2026 ICS Patch Tuesday advisories from Siemens, Schneider Electric, Moxa, and Mitsubishi Electric address multiple critical and high-severity vulnerabilities in industrial control systems.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "securityweek.com"
+    },
+    {
+      "type": "news",
+      "title": "Michelin Confirms 300GB Data Breach Linked to Oracle EBS Attack",
+      "threat_score": 7,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Oracle E-Business Suite",
+      "summary": "Tire manufacturer Michelin confirmed a data breach in which attackers exploited Oracle EBS to exfiltrate over 300GB of corporate files now being leaked by the threat actors.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "securityweek.com"
+    },
+    {
+      "type": "news",
+      "title": "Zombie ZIP Evasion Technique Bypasses AV and EDR Security Tools",
+      "threat_score": 7,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Antivirus and EDR products",
+      "summary": "A new technique called Zombie ZIP creates specially crafted compressed files that conceal malicious payloads in a way that evades detection by antivirus and EDR security products.",
+      "discovery_latency": "early",
+      "first_seen_at": "bleepingcomputer.com"
+    },
+    {
+      "type": "news",
+      "title": "CVE-2026-26113 and CVE-2026-26110: Microsoft Office Preview Pane RCE Flaws",
+      "threat_score": 8,
+      "cve": "CVE-2026-26113",
+      "cvss": 8.8,
+      "affected_technology": "Microsoft Office",
+      "summary": "Two critical Microsoft Office remote code execution vulnerabilities can be triggered simply by viewing a booby-trapped message in the Preview Pane, requiring no user interaction beyond previewing.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "krebsonsecurity.com"
+    },
+    {
+      "type": "news",
+      "title": "Fortinet, Ivanti, and Intel Patch Multiple High-Severity Vulnerabilities",
+      "threat_score": 7,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Fortinet, Ivanti, Intel products",
+      "summary": "Fortinet, Ivanti, and Intel released patches for high-severity vulnerabilities that could lead to arbitrary code execution, privilege escalation, or authentication rate-limit bypass.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "securityweek.com"
+    },
+    {
+      "type": "news",
+      "title": "CVE-2026-21440: AdonisJS Bodyparser Critical Path Traversal — Arbitrary File Write",
+      "threat_score": 7,
+      "cve": "CVE-2026-21440",
+      "cvss": null,
+      "affected_technology": "AdonisJS",
+      "summary": "A critical path traversal vulnerability in the AdonisJS bodyparser allows unauthenticated arbitrary file writing, with public PoC and writeup now available on GitHub.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "github.com"
+    },
+    {
+      "type": "update",
+      "title": "Stryker Wiper Attack Update: 5,000+ Workers Sent Home, Irish Operations Crippled",
+      "threat_score": 10,
+      "previous_threat_score": 8,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Stryker Corporation",
+      "summary": "Krebs on Security reports Stryker sent home 5,000+ workers in Ireland, personal devices with Outlook were wiped, login pages defaced with Handala logo, and US headquarters declared a building emergency.",
+      "first_seen_at": "krebsonsecurity.com"
+    }
+  ],
+  "noted": [
+    {
+      "cve": null,
+      "product": "Meta Platforms",
+      "summary": "Meta disabled over 150,000 accounts linked to Southeast Asian scam centers in partnership with international law enforcement."
+    },
+    {
+      "cve": null,
+      "product": "Bell Ambulance",
+      "summary": "Bell Ambulance data breach impacted 238,000 individuals with exposed SSNs and driver license numbers."
+    },
+    {
+      "cve": "CVE-2026-30844",
+      "product": "Wekan",
+      "summary": "GitHub Security Lab disclosed SSRF (CVE-2026-30844) and unauthorized data manipulation (CVE-2026-30843) vulnerabilities in Wekan."
+    },
+    {
+      "cve": null,
+      "product": "AFFINE",
+      "summary": "GitHub Security Lab disclosed an access control bypass vulnerability in the AFFINE collaboration platform."
+    }
+  ],
+  "source_coverage": {
+    "total": 30,
+    "checked": 30,
+    "with_findings": 14,
+    "unreachable": [],
+    "degraded": ["bugcrowd.com", "cert.gov.ua"]
+  },
+  "full_report": "reports/2026/03/12/night/report.md"
+}

@@ -1,0 +1,84 @@
+2026-03-12 Night Cycle Debug Log
+==================================
+
+[07:28:00] START — Night cycle initiated
+[07:28:05] git pull — Already up to date
+[07:28:10] Dedup index built from reports/2026/03/01-11 (11 previous reports scanned)
+
+[07:28:30] === SOURCE SCANNING ===
+
+Tier 1 Sources:
+  ✅ bleepingcomputer.com — 1.3s — Findings: Elementor Ally (dedup:03/11), PhantomRaven (dedup:03/11), n8n CISA (dedup:03/11), Stryker (dedup:03/11 but material update), BlackSanta (dedup:03/10), BeatBanker (dedup:03/11), Zombie ZIP (NEW), Meta anti-scam (noted)
+  ✅ thehackernews.com — 0.14s — Findings: Perplexity Comet (dedup:03/11), Meta 150K accounts (noted), MS Patch Tuesday (dedup:03/10), FortiGate (dedup:03/10)
+  ✅ cisa.gov/kev — 0.36s — Findings: CVE-2025-68613 n8n (NEW), CVE-2026-1603 Ivanti (dedup:03/10), CVE-2025-26399 SolarWinds (dedup)
+  ✅ cisa.gov — 0.32s — Findings: ED 26-03 Cisco SD-WAN (dedup:03/07), OpenEoX guidance
+  ✅ securityweek.com — 0.83s — Findings: Stryker (update), Wiz/Google (not vuln), Bell Ambulance (noted), ICS PT (NEW), Michelin breach (NEW), Fortinet/Ivanti/Intel patches (NEW), BlackSanta (dedup:03/10)
+  ✅ schneier.com — 0.21s — No security vuln findings (Canada AI policy article)
+  ✅ krebsonsecurity.com — 0.38s — Findings: Stryker deep dive (UPDATE - material), MS PT analysis (dedup:03/10 but new detail on CVE-2026-26113/26110 Preview Pane RCEs — NEW)
+  ✅ rapid7.com/blog — 2.1s — Findings: Iran cyber detection coverage, March PT analysis (dedup:03/10), Cisco CVE-2026-20127 (dedup:03/02)
+  ✅ attackerkb.com — 1.4s — Findings: CVE-2026-20127 deep analysis (dedup:03/02)
+  ✅ fortinet.com/blog/threat-research — 0.58s — Findings: Iran cyber fallout warning, Agent Tesla campaign (Feb), Winos 4.0 (Feb)
+  ✅ securitylab.github.com — 0.20s — Findings: Zammad IDOR/SQLi (dedup:03/07), Wekan SSRF CVE-2026-30844 (NEW noted), AFFINE access control bypass (NEW noted)
+  ✅ seclists.org/fulldisclosure — 1.0s — No new March 2026 posts yet (archive only shows Jan/Feb)
+  ✅ packetstormsecurity.com — 2.2s — General stats: 78 exploits, 263 advisories in last 7 days (no specific new findings beyond covered)
+  ✅ opencve.io — 0.85s — Landing page only (requires auth for CVE feed)
+
+Tier 2 Sources:
+  ✅ nvd.nist.gov — 1.75s — Search page only, no structured recent CVE list extractable
+  ✅ cve.mitre.org → cve.org — 0.60s — Redirects to cve.org, minimal content
+  ✅ cve.org — 0.24s — Minimal landing page
+  ✅ googleprojectzero.blogspot.com → projectzero.google — 1.67s — No new March posts (latest: grammar fuzzing, Windows GetProcessHandleFromHwnd, UAC bypass research)
+  ✅ blog.cloudflare.com/tag/security — 0.87s — Findings: AI Security for Apps GA (not vuln), Log Explorer multi-vector (not vuln)
+  ✅ msrc.microsoft.com/blog — 0.81s — Minimal content returned (JS-heavy page)
+  ✅ hackerone.com/hacktivity — 2.32s — No content (JS-rendered)
+  ❌ bugcrowd.com/disclosures — 404 Not Found — DEGRADED
+  ✅ kb.cert.org/vuls — 0.50s — No new recent advisories visible on landing page
+  ✅ avleonov.com — 0.70s — Findings: March MS PT analysis (dedup:03/10, new CVE detail), Windows Shell CVE-2026-21510 (Feb PT, already known)
+  ✅ github.com/0xMarcio/cve — 0.77s — Findings: CVE-2026-21858 n8n PoC 222★ (dedup:03/07), CVE-2026-21440 AdonisJS (NEW), CVE-2026-24061 (dedup:03/07), CVE-2026-22200 (dedup:03/07), CVE-2026-23745 (dedup:03/07), CVE-2026-21962 PoC (low-info, skipped)
+  ✅ dbugs.ptsecurity.com — 0.86s — Landing page only, no specific new findings
+  ✅ habr.com/tomhunter — 1.29s — Feb 2026 monthly roundup (no new March content)
+  ✅ teletype.in/@cyberok — 0.27s — Dec/Jan roundup only (no March content)
+  ❌ cert.gov.ua — 0.25s — Minimal content returned — DEGRADED
+
+[07:30:40] === DEDUP DECISIONS ===
+
+NEW findings:
+  📰 CVE-2025-68613 n8n CISA KEV — NEW (different CVE from CVE-2026-21858)
+  📰 ICS Patch Tuesday (Siemens/Schneider/Moxa/Mitsubishi) — NEW
+  📰 Michelin breach via Oracle EBS — NEW
+  📰 Zombie ZIP evasion technique — NEW
+  📰 CVE-2026-26113/CVE-2026-26110 MS Office Preview Pane RCE — NEW (specific CVEs not individually covered in 03/10 PT report)
+  📰 Fortinet/Ivanti/Intel multi-vendor patches — NEW
+  📰 CVE-2026-21440 AdonisJS path traversal — NEW
+  🔄 Stryker/Handala wiper — UPDATE (material: 5K workers sent home, devices wiped, building emergency)
+
+SKIP (already in dedup):
+  - Elementor Ally SQLi → 03/11/night
+  - PhantomRaven NPM → 03/11/night
+  - n8n CVE-2026-21858 CISA order → 03/11/night
+  - BeatBanker Android → 03/11/night
+  - Perplexity Comet AI → 03/11/night
+  - MS March PT (general) → 03/10/night
+  - FortiGate exploitation → 03/10/night
+  - BlackSanta EDR killer → 03/10/night
+  - Cisco SD-WAN ED 26-03 → 03/07/night
+  - CVE-2026-24061 → 03/07/night
+  - CVE-2026-22200 osTicket → 03/07/night
+  - CVE-2026-23745 node-tar → 03/07/night
+
+NOTED:
+  - Meta 150K accounts disabled (scam centers)
+  - Bell Ambulance 238K breach
+  - Wekan CVE-2026-30844 SSRF
+  - AFFINE access control bypass
+
+[07:30:50] === SOURCE COVERAGE ===
+  Total: 30
+  Checked: 30
+  With findings: 14
+  Unreachable: 0
+  Degraded: bugcrowd.com (404), cert.gov.ua (minimal content)
+
+[07:31:00] Writing report.json and report.md
+[07:31:05] Running validator...
+[07:31:10] END — Cycle complete
