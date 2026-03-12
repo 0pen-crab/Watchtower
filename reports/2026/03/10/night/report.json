@@ -1,0 +1,125 @@
+{
+  "date": "2026-03-10",
+  "cycle": "night",
+  "findings": [
+    {
+      "type": "news",
+      "title": "Microsoft March 2026 Patch Tuesday — 2 Public Zero-Days, 8 Critical Flaws",
+      "threat_score": 8,
+      "cve": "CVE-2026-26127, CVE-2026-21262",
+      "cvss": 8.8,
+      "affected_technology": "Microsoft Windows, .NET, SQL Server",
+      "summary": "Microsoft patched 84 vulnerabilities including two publicly disclosed zero-days: a .NET DoS flaw (CVE-2026-26127) and a SQL Server privilege escalation (CVE-2026-21262), plus a critical RCE in Microsoft Devices.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "bleepingcomputer.com"
+    },
+    {
+      "type": "news",
+      "title": "KadNap Botnet Infects 14,000+ Edge Devices via Kademlia DHT Protocol",
+      "threat_score": 8,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "ASUS routers and edge networking devices",
+      "summary": "Black Lotus Labs discovered KadNap, a botnet using a custom Kademlia DHT protocol to build a stealth proxy network from 14,000+ compromised ASUS routers, with 60% of infections in the US.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "thehackernews.com"
+    },
+    {
+      "type": "news",
+      "title": "APT28 Deploys BEARDSHELL and COVENANT for Long-Term Ukraine Military Surveillance",
+      "threat_score": 8,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Ukrainian military systems",
+      "summary": "ESET disclosed APT28 (Fancy Bear/GRU Unit 26165) using custom BEARDSHELL and COVENANT implants plus SLIMAGENT keylogger for persistent espionage against Ukrainian military personnel since April 2024.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "thehackernews.com"
+    },
+    {
+      "type": "news",
+      "title": "FortiGate NGFW Devices Exploited to Steal Service Account Credentials",
+      "threat_score": 8,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Fortinet FortiGate NGFW",
+      "summary": "SentinelOne reported a campaign exploiting FortiGate firewalls to extract configuration files containing AD/LDAP service account credentials, targeting healthcare, government, and MSP environments.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "thehackernews.com"
+    },
+    {
+      "type": "news",
+      "title": "CISA Flags Ivanti EPM Flaw as Actively Exploited — Patch in 3 Weeks",
+      "threat_score": 7,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Ivanti Endpoint Manager",
+      "summary": "CISA added a recently patched high-severity Ivanti EPM vulnerability to KEV and ordered federal agencies to patch within three weeks after confirming active exploitation.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "bleepingcomputer.com"
+    },
+    {
+      "type": "news",
+      "title": "HPE Aruba AOS-CX Critical Flaw Allows Unauthenticated Admin Password Reset",
+      "threat_score": 7,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "HPE Aruba Networking AOS-CX switches",
+      "summary": "HPE patched multiple security vulnerabilities in Aruba AOS-CX including critical authentication bypass and code execution flaws allowing unauthenticated admin password resets.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "bleepingcomputer.com"
+    },
+    {
+      "type": "news",
+      "title": "BlackSanta EDR Killer Targets HR Departments for Over a Year",
+      "threat_score": 7,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Windows endpoints (EDR solutions)",
+      "summary": "A Russian-speaking threat actor has been targeting HR departments for over a year with malware delivering BlackSanta, a new EDR killer designed to disable endpoint security products.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "bleepingcomputer.com"
+    },
+    {
+      "type": "news",
+      "title": "A0Backdoor Deployed via Microsoft Teams Phishing Against Financial and Healthcare Orgs",
+      "threat_score": 7,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Microsoft Teams / Windows",
+      "summary": "Attackers are contacting employees at financial and healthcare organizations via Microsoft Teams to trick them into granting Quick Assist remote access, then deploying the new A0Backdoor malware.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "bleepingcomputer.com"
+    },
+    {
+      "type": "news",
+      "title": "Dutch Government Warns of Russian Signal and WhatsApp Account Hijacking Campaign",
+      "threat_score": 7,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Signal, WhatsApp",
+      "summary": "Russian state-sponsored hackers are running an ongoing phishing campaign targeting government officials, military, and journalists to hijack Signal and WhatsApp accounts and access sensitive messages.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "bleepingcomputer.com"
+    }
+  ],
+  "noted": [
+    {
+      "cve": null,
+      "product": "ZIP archives",
+      "summary": "New Zombie ZIP technique helps conceal payloads in compressed files to evade AV and EDR detection."
+    },
+    {
+      "cve": null,
+      "product": "Ericsson US",
+      "summary": "Ericsson US disclosed breach of 15,000+ employee and customer records after service provider hack."
+    }
+  ],
+  "source_coverage": {
+    "total": 35,
+    "checked": 35,
+    "with_findings": 4,
+    "unreachable": [],
+    "degraded": []
+  },
+  "full_report": "reports/2026/03/10/night/report.md"
+}

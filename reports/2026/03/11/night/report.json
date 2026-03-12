@@ -1,0 +1,92 @@
+{
+  "date": "2026-03-11",
+  "cycle": "night",
+  "findings": [
+    {
+      "type": "news",
+      "title": "Stryker Medtech Offline After Iran-Linked Handala Wiper Malware Attack",
+      "threat_score": 8,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Stryker (medical technology)",
+      "summary": "Leading medical technology company Stryker was hit by wiper malware claimed by Handala, an Iranian-linked pro-Palestinian hacktivist group, taking systems offline.",
+      "discovery_latency": "early",
+      "first_seen_at": "bleepingcomputer.com"
+    },
+    {
+      "type": "update",
+      "title": "CISA Orders Federal Agencies to Patch n8n RCE Flaw (CVE-2026-21858)",
+      "threat_score": 9,
+      "previous_threat_score": 8,
+      "cve": "CVE-2026-21858",
+      "cvss": 10.0,
+      "affected_technology": "n8n workflow automation",
+      "summary": "CISA added the n8n Ni8mare RCE (CVE-2026-21858) to KEV and ordered federal agencies to patch, confirming active exploitation in the wild.",
+      "first_seen_at": "bleepingcomputer.com"
+    },
+    {
+      "type": "news",
+      "title": "Elementor Ally SQLi Vulnerability Impacts 250K+ WordPress Sites",
+      "threat_score": 7,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "WordPress (Elementor Ally plugin)",
+      "summary": "An unauthenticated SQL injection vulnerability in the Elementor Ally WordPress accessibility plugin (400,000+ installs) could be exploited to steal sensitive database data.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "bleepingcomputer.com"
+    },
+    {
+      "type": "news",
+      "title": "PhantomRaven NPM Supply Chain Attack — 88 Malicious Packages Stealing Dev Data",
+      "threat_score": 7,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "npm ecosystem / JavaScript developers",
+      "summary": "New attack waves from the PhantomRaven supply-chain campaign hit the npm registry with 88 malicious packages exfiltrating sensitive data from JavaScript developers.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "bleepingcomputer.com"
+    },
+    {
+      "type": "news",
+      "title": "BeatBanker Android Malware Poses as Starlink App to Hijack Devices",
+      "threat_score": 6,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Android devices",
+      "summary": "A new Android banking trojan named BeatBanker disguises itself as a Starlink app on fake Google Play Store websites to hijack devices and steal financial credentials.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "bleepingcomputer.com"
+    },
+    {
+      "type": "news",
+      "title": "Perplexity Comet AI Browser Tricked Into Phishing in Under Four Minutes",
+      "threat_score": 6,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Perplexity Comet AI Browser",
+      "summary": "Guardio researchers demonstrated Agentic Blabbering attacks against Perplexity's Comet AI browser, tricking it into executing phishing scams by exploiting its real-time reasoning narration.",
+      "discovery_latency": "early",
+      "first_seen_at": "thehackernews.com"
+    }
+  ],
+  "noted": [
+    {
+      "cve": null,
+      "product": "Meta platforms",
+      "summary": "Meta disabled 150K accounts linked to Southeast Asia scam centers, resulting in 21 arrests by Thai police."
+    },
+    {
+      "cve": null,
+      "product": "ShinyHunters",
+      "summary": "ShinyHunters claims ongoing Salesforce Aura data theft attacks."
+    }
+  ],
+  "source_coverage": {
+    "total": 35,
+    "checked": 35,
+    "with_findings": 3,
+    "unreachable": [],
+    "degraded": []
+  },
+  "full_report": "reports/2026/03/11/night/report.md"
+}
