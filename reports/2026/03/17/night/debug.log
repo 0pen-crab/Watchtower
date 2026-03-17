@@ -1,0 +1,120 @@
+## Debug Log — 2026-03-17 / night cycle
+## Started: 2026-03-17T02:00:00+02:00 (Athens) / 2026-03-17T00:00:00Z
+
+### Step 1: git pull
+[00:00:00] Git pull completed — already up to date.
+
+### Step 2: Dedup index built
+[00:00:05] Scanned all report.json files from 2026-02-15 through 2026-03-12 (latest report: 2026-03-12/night).
+[00:00:05] Total dedup entries: 258 CVEs/titles indexed.
+[00:00:05] NOTE: 5-day gap since last report (March 13–16 had no scheduled runs or reports were missed).
+
+Key dedup lookups performed:
+  CVE-2025-47812 → NOT in dedup. NEW.
+  CVE-2025-47813 → NOT in dedup. NEW.
+  CVE-2026-3909  → NOT in dedup. NEW.
+  CVE-2026-3910  → NOT in dedup. NEW.
+  CVE-2025-55182 → NOT in dedup. NEW (but pre-dates 30-day window by Dec 2025 addition).
+  CVE-2025-33073 → NOT in dedup. NEW.
+  CVE-2026-28514 → NOT in dedup. NEW.
+  CVE-2026-30833 → NOT in dedup. NEW.
+  CVE-2026-24061 → IN DEDUP (2026-02-24/morning, 2026-03-07/night). SKIP main finding; note PoC proliferation.
+  CVE-2026-22200 → IN DEDUP (2026-02-24/morning, 2026-03-07/night). SKIP.
+  CVE-2026-21858 → IN DEDUP (multiple, last: 2026-03-12/night ts=9). SKIP.
+  CVE-2026-2441  → IN DEDUP (2026-02-16/morning ts=8). New PoC published (0 stars) - insufficient for Update.
+  CVE-2026-20841 → NOT in dedup. But OUT OF SCOPE (local desktop vulnerability, no remote vector).
+  CVE-2026-21440 → IN DEDUP (2026-02-24/morning ts=7). SKIP.
+  CVE-2026-23745 → IN DEDUP (2026-02-24/morning ts=7). SKIP.
+  Stryker attack → IN DEDUP (2026-03-12/night ts=10). UPDATE — scope confirmed at tens of thousands of devices + "no malware needed" revelation = material change (attack scope significantly expanded, new technical detail).
+  GlassWorm/ForceMemo → NOT in dedup. NEW.
+  DRILLAPP → NOT in dedup. NEW.
+
+### Step 3: Source scanning — 30 unique sources in SOURCES.md
+Note: SOURCES.md lists seclists.org/fulldisclosure twice (Tier 1 + Tier 2). Counted once. Total unique: 30.
+
+[00:01:00] SOURCE 1: bleepingcomputer.com ✅ — Wing FTP CISA KEV, Stryker update, Exchange outage, AppsFlyer SDK
+[00:01:05] SOURCE 2: thehackernews.com ✅ — GlassWorm/ForceMemo, Chrome 0-days, DRILLAPP, Oracle EBS
+[00:01:10] SOURCE 3: cisa.gov/known-exploited-vulnerabilities-catalog ✅ — CVE-2025-47813 added 3/16, CVE-2026-3909/3910 added 3/13
+[00:01:10] SOURCE 4: cisa.gov ✅ — same domain as above, no additional findings
+[00:01:15] SOURCE 5: securityweek.com ⚠️ — 403 on direct articles; homepage partial: Oracle EBS corporate silence, CL-STA-1087, Storm-2561
+[00:01:20] SOURCE 6: github.com/search?q=CVE ✅ — 84 results: CVE-2025-33073 (658★), CVE-2026-2441 new PoC (0★), CVE-2026-24061 scanners
+[00:01:25] SOURCE 7: schneier.com ✅ — No in-scope findings (quantum factorization research, OOS)
+[00:01:30] SOURCE 8: krebsonsecurity.com ✅ — Stryker "no malware needed" detail + expanded device count
+[00:01:35] SOURCE 9: rapid7.com ✅ — Cisco SD-WAN ETR (CVE-2026-20127), WordPress stealer context
+[00:01:40] SOURCE 10: attackerkb.com ✅ — CVE-2026-20127 deep technical analysis published (material for Update but score not changing by 2+; left as noted)
+[00:01:45] SOURCE 11: fortinet.com/blog/threat-research ✅ — Iran cyber retaliation risk post US-Israeli strikes, EncystPHP FreePBX (CVE-2025-64328 in dedup)
+[00:01:50] SOURCE 12: securitylab.github.com ✅ — Rocket.Chat CVE-2026-28514/30833 (NEW), Zammad IDOR/SQLi (in dedup from 2026-03-12)
+[00:01:55] SOURCE 13: seclists.org/fulldisclosure ✅ — 7 posts (all Mar 12): Apple iOS 15.8.7/16.7.15, Alipay DeepLink, Cohesity TranZman, CryptoPro, AppLocker bypass, JSON deserialiser
+[00:02:00] SOURCE 14: packetstormsecurity.com ⚠️ — ToS redirect, no article listing accessible
+[00:02:05] SOURCE 15: opencve.io ✅ — CVE-2026-4224 (Expat), CVE-2026-20841 (Notepad, OOS), CVE-2026-26119 (Windows Admin Center)
+[00:02:10] SOURCE 16: nvd.nist.gov ✅ — CVE-2025-55182 (React RCE, CISA-ADP China-nexus ref), CVE-2026-24061 (inetutils, new PoC)
+[00:02:15] SOURCE 17: cve.mitre.org ⚠️ — Redirected to cve.org; search results not rendering (JS required)
+[00:02:20] SOURCE 18: cve.org ⚠️ — Minimal page content; no parseable advisory listings
+[00:02:25] SOURCE 19: googleprojectzero.blogspot.com ✅ — Grammar fuzzing research; no in-scope CVE findings
+[00:02:30] SOURCE 20: blog.cloudflare.com/tag/security ✅ — Account abuse protection product post; no vulnerability intel in scope
+[00:02:35] SOURCE 21: msrc.microsoft.com/blog ⚠️ — Minimal content returned; JS-heavy, no parseable blog content
+[00:02:40] SOURCE 22: hackerone.com/hacktivity ❌ — Authentication required; no public content
+[00:02:45] SOURCE 23: bugcrowd.com/disclosures ❌ — HTTP 404; page removed or restructured
+[00:02:50] SOURCE 24: seclists.org/fulldisclosure ✅ — DUPLICATE entry (already checked as SOURCE 13)
+[00:02:55] SOURCE 25: kb.cert.org/vuls ⚠️ — Search form only; no public listing parseable
+[00:03:00] SOURCE 26: avleonov.com ✅ — CVE-2026-21519, CVE-2026-21533 (Feb Patch Tuesday, in dedup); no new findings
+[00:03:05] SOURCE 27: github.com/0xMarcio/cve ✅ — CVE-2025-55182 (1356★), CVE-2025-33073 (658★), CVE-2026-21858 (in dedup), CVE-2026-22200 (in dedup)
+[00:03:10] SOURCE 28: dbugs.ptsecurity.com ⚠️ — ToS/footer only; no advisory listings accessible
+[00:03:15] SOURCE 29: habr.com/ru/companies/tomhunter/articles ✅ — Latest: Feb 2026 roundup; no March 2026 content
+[00:03:20] SOURCE 30: teletype.in/@cyberok ✅ — Latest: Dec/Jan top-vuln roundup; no March 2026 content
+[00:03:25] SOURCE 31: cert.gov.ua ❌ — Empty response body
+
+### Step 4: Dedup decisions summary
+
+FINDINGS (new or material update):
+  ✅ CVE-2025-47813 (Wing FTP) → NEW → findings[0]
+  ✅ CVE-2026-3909/3910 (Chrome zeros) → NEW → findings[1]
+  ✅ GlassWorm/ForceMemo → NEW → findings[2]
+  ✅ CVE-2025-33073 (NTLM SMB) → NEW → findings[3]
+  ✅ CVE-2026-28514/30833 (Rocket.Chat) → NEW → findings[4]
+  ✅ DRILLAPP (Laundry Bear) → NEW → findings[5]
+  ✅ Stryker wiper → UPDATE (scope expanded, technical detail) → findings[6]
+
+SKIPPED (in dedup, no material change):
+  ❌ CVE-2026-21858 (n8n) → SKIP — last seen 2026-03-12/night ts=9
+  ❌ CVE-2026-20127 (Cisco SD-WAN) → SKIP — last seen 2026-03-07/night; AttackerKB analysis interesting but ts not changing by 2+
+  ❌ CVE-2026-2441 (Chrome UAF Blink) → SKIP — in dedup 2026-02-16; new PoC at 0 stars insufficient
+  ❌ CVE-2026-21440 (AdonisJS) → SKIP — in dedup 2026-02-24
+  ❌ CVE-2026-23745 (node-tar) → SKIP — in dedup 2026-02-24
+  ❌ CVE-2026-22200 (osTicket) → SKIP — in dedup 2026-03-07 (horizon3ai PoC was already noted)
+  ❌ CVE-2026-24061 (inetutils) → SKIP main finding — in dedup 2026-03-07; new PoC noted only
+  ❌ CVE-2025-64328 (FreePBX EncystPHP) → SKIP — in dedup
+  ❌ CVE-2026-20841 (Notepad) → OUT OF SCOPE (local desktop only)
+
+NOTED (low-interest or insufficient detail):
+  📋 CVE-2025-55182 (React RCE) — pre-dates window but ongoing China-nexus exploitation
+  📋 CVE-2026-4224 (Expat) — no PoC, widely embedded
+  📋 CVE-2026-24061 — PoC proliferation watch
+  📋 CVE-2025-10010 (CryptoPro) — niche product
+  📋 Cohesity TranZman 5 CVEs
+  📋 Alipay DeepLink+JSBridge
+  📋 Apple iOS 15.8.7/16.7.15
+  📋 CVE-2026-25177 (AD SPN Unicode Collision)
+  📋 CVE-2026-29000 (unknown)
+  📋 Oracle EBS breach corporate silence
+  📋 AppsFlyer Web SDK
+  📋 Storm-2561 VPN campaign
+  📋 CVE-2026-26119 (Windows Admin Center)
+  📋 CL-STA-1087 (Chinese APT)
+
+### Step 5: Report files written
+[00:15:00] Written: reports/2026/03/17/night/report.md (17534 bytes)
+[00:15:05] Written: reports/2026/03/17/night/report.json (7851 bytes)
+
+### Step 6: Validator output
+[00:16:00] Running: python3 scripts/validate_report.py reports/2026/03/17/night/report.json
+[00:16:01] Initial run: ⚠️ 3 warnings (summary length), ✅ valid
+[00:16:30] Trimmed 3 long summaries (findings[2], [5], [6])
+[00:16:31] Re-run: ✅ reports/2026/03/17/night/report.json — valid (no warnings)
+
+### Step 7: Source coverage final
+Total: 30 | Checked: 30 | With findings: 12
+Unreachable: hackerone.com, bugcrowd.com, cert.gov.ua
+Degraded: packetstormsecurity.com, msrc.microsoft.com, dbugs.ptsecurity.com, cve.mitre.org, cve.org, kb.cert.org
+
+### Step 8: git add / commit / push (pending)

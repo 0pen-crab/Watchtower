@@ -1,0 +1,158 @@
+{
+  "date": "2026-03-17",
+  "cycle": "night",
+  "findings": [
+    {
+      "type": "news",
+      "title": "Wing FTP Server Path Disclosure Added to CISA KEV — Actively Chained for RCE",
+      "threat_score": 7,
+      "cve": "CVE-2025-47813",
+      "cvss": 5.3,
+      "affected_technology": "Wing FTP Server",
+      "summary": "CISA added CVE-2025-47813 (Wing FTP Server path disclosure) to the KEV catalog on 2026-03-16 after confirming attackers are actively chaining it with the critical RCE flaw CVE-2025-47812 to achieve full remote code execution against 10,000+ customer environments including US Air Force and Sony.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "bleepingcomputer.com"
+    },
+    {
+      "type": "news",
+      "title": "Two Chrome Zero-Days (Skia + V8) Added to CISA KEV — Targeted Exploitation Confirmed",
+      "threat_score": 9,
+      "cve": "CVE-2026-3909",
+      "cvss": null,
+      "affected_technology": "Google Chrome",
+      "summary": "Google patched two actively exploited Chrome zero-days — CVE-2026-3909 (Skia heap corruption) and CVE-2026-3910 (V8 type confusion) — both added to CISA KEV on 2026-03-13 with confirmed nation-state targeted exploitation prior to patch release.",
+      "discovery_latency": "late",
+      "first_seen_at": "thehackernews.com"
+    },
+    {
+      "type": "news",
+      "title": "GlassWorm ForceMemo — Mass Force-Push Supply Chain Attack Compromises Hundreds of Python Repos",
+      "threat_score": 8,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Python/PyPI (GitHub-hosted repositories)",
+      "summary": "GlassWorm ForceMemo uses stolen GitHub tokens to force-push crypto-stealing malware into hundreds of Python repos, turning pip install or clone into a silent infection vector.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "thehackernews.com"
+    },
+    {
+      "type": "news",
+      "title": "CVE-2025-33073 — NTLM Reflection SMB Exploit Hits 658 GitHub Stars",
+      "threat_score": 7,
+      "cve": "CVE-2025-33073",
+      "cvss": null,
+      "affected_technology": "Windows SMB / NTLM / Active Directory",
+      "summary": "A public exploit for CVE-2025-33073, an NTLM reflection flaw in Windows SMB, has accumulated 658 GitHub stars, enabling credential capture and relay attacks against Active Directory environments and indicating likely mass scanning or active operator adoption.",
+      "discovery_latency": "late",
+      "first_seen_at": "github.com/0xMarcio/cve"
+    },
+    {
+      "type": "news",
+      "title": "Rocket.Chat Authentication Bypass — CVE-2026-28514 and CVE-2026-30833",
+      "threat_score": 7,
+      "cve": "CVE-2026-28514",
+      "cvss": null,
+      "affected_technology": "Rocket.Chat (self-hosted)",
+      "summary": "GitHub Security Lab published a two-CVE authentication bypass chain (CVE-2026-28514 and CVE-2026-30833) in Rocket.Chat that allows unauthenticated attackers to bypass login controls and gain unauthorized access to the widely deployed open-source collaboration platform.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "securitylab.github.com"
+    },
+    {
+      "type": "news",
+      "title": "DRILLAPP — Laundry Bear Deploys Edge-Abusing Backdoor Against Ukrainian Entities",
+      "threat_score": 6,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Microsoft Edge (headless debugging API abuse)",
+      "summary": "Laundry Bear's DRILLAPP JavaScript backdoor abuses Edge in headless mode to exfiltrate files, audio, webcam, and screen data from Ukrainian orgs via WebSocket C2, with no binary dropped to disk.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "thehackernews.com"
+    },
+    {
+      "type": "update",
+      "title": "Stryker Wiper Attack — Tens of Thousands of Devices Destroyed, No Malware Used",
+      "threat_score": 10,
+      "previous_threat_score": 10,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Stryker enterprise infrastructure",
+      "summary": "Handala wiper against Stryker confirmed destroyed tens of thousands of devices via LOLBAS only — no malware binary deployed, no forensic trail, scope far exceeding initial 5,000-worker estimate.",
+      "first_seen_at": "bleepingcomputer.com"
+    }
+  ],
+  "noted": [
+    {
+      "cve": "CVE-2025-55182",
+      "product": "Meta React Server Components / Next.js",
+      "summary": "Pre-auth RCE in React Server Components 19.x added to CISA KEV Dec 2025; China-nexus groups are actively exploiting in ongoing wave with 1,356+ GitHub PoC stars — pre-dates 30-day window but exploitation escalating."
+    },
+    {
+      "cve": "CVE-2026-4224",
+      "product": "Expat XML library",
+      "summary": "C stack overflow on deeply nested XML content model definitions; widely embedded in Python, Firefox, Apache; no PoC or KEV."
+    },
+    {
+      "cve": "CVE-2026-24061",
+      "product": "GNU inetutils-telnetd",
+      "summary": "Remote authentication bypass (CISA KEV, previously reported 2026-03-07); new batch scanning PoC tool released within last 24 hours indicating active mass-scanning."
+    },
+    {
+      "cve": "CVE-2025-10010",
+      "product": "CryptoPro Secure Disk for BitLocker",
+      "summary": "Multiple vulnerabilities (command injection, LPE, unsigned patches, weak crypto) disclosed via Full Disclosure on March 12; niche enterprise product."
+    },
+    {
+      "cve": null,
+      "product": "Cohesity TranZman Migration Appliance",
+      "summary": "Five CVEs including command injection, LPE, unsigned patch distribution, and weak crypto disclosed via Full Disclosure on March 12."
+    },
+    {
+      "cve": null,
+      "product": "Alipay (mobile super-app)",
+      "summary": "17 vulnerabilities, 6 CVEs (CVSS 9.3) in DeepLink+JSBridge attack chain enabling silent GPS exfiltration; JSBridge patterns transferable to other mobile platforms."
+    },
+    {
+      "cve": null,
+      "product": "Apple iOS 15.8.7 / iOS 16.7.15",
+      "summary": "Security updates released March 11 for legacy iOS versions addressing prior vulnerabilities; users on unsupported hardware should apply immediately."
+    },
+    {
+      "cve": "CVE-2026-25177",
+      "product": "Active Directory (Windows Server)",
+      "summary": "SPN Unicode Collision vulnerability; detection scanner released; insufficient detail from current scan for scoring — monitoring."
+    },
+    {
+      "cve": "CVE-2026-29000",
+      "product": "Unknown",
+      "summary": "Two fresh PoC exploit repos appeared in the last 24 hours with no description available — requires follow-up next cycle."
+    },
+    {
+      "cve": null,
+      "product": "Oracle E-Business Suite (enterprise breach)",
+      "summary": "Four Fortune 500 companies confirmed as victims (Broadcom, Bechtel, Estee Lauder, Abbott) but have not issued public statements; scope of March 2026 Oracle EBS breach continues expanding."
+    },
+    {
+      "cve": null,
+      "product": "AppsFlyer Web SDK",
+      "summary": "Web SDK supply chain compromise; malicious JavaScript injected to steal cryptocurrency from downstream mobile app analytics integrations."
+    },
+    {
+      "cve": null,
+      "product": "Storm-2561 (Microsoft threat actor)",
+      "summary": "Active VPN credential theft campaign via phishing infrastructure; no CVE — social engineering vector."
+    },
+    {
+      "cve": "CVE-2026-26119",
+      "product": "Windows Admin Center",
+      "summary": "Vulnerability disclosed March 16; insufficient technical detail from current scan for scoring — requires follow-up."
+    }
+  ],
+  "source_coverage": {
+    "total": 30,
+    "checked": 30,
+    "with_findings": 12,
+    "unreachable": ["hackerone.com", "bugcrowd.com", "cert.gov.ua"],
+    "degraded": ["packetstormsecurity.com", "msrc.microsoft.com", "dbugs.ptsecurity.com", "cve.mitre.org", "cve.org", "kb.cert.org"]
+  },
+  "full_report": "reports/2026/03/17/night/report.md"
+}
