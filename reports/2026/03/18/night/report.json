@@ -1,0 +1,155 @@
+{
+  "date": "2026-03-18",
+  "cycle": "night",
+  "full_report": "reports/2026/03/18/night/report.md",
+  "source_coverage": {
+    "total": 31,
+    "checked": 30,
+    "with_findings": 8,
+    "unreachable": ["attackerkb.com"],
+    "degraded": [
+      "securityweek.com (403)",
+      "nvd.nist.gov (redirect loop)",
+      "hackerone.com/hacktivity (empty response)",
+      "ncsc.gov.uk/news/alerts-and-advisories (404)",
+      "rapid7.com/blog/threat-intel (404)",
+      "exploit-db.com (interface only)",
+      "cisa.gov/news-events/alerts (404 — federal funding lapse)",
+      "msrc.microsoft.com/blog (minimal content)",
+      "talosintelligence.com (stale — last post Feb 26)"
+    ]
+  },
+  "findings": [
+    {
+      "type": "news",
+      "title": "Veeam Backup & Replication — Five Critical/High CVEs Allow Authenticated RCE and Credential Theft",
+      "cve": "CVE-2026-21669, CVE-2026-21671, CVE-2026-21708, CVE-2026-21672, CVE-2026-21670",
+      "cvss": "9.9 (CVE-2026-21669, CVE-2026-21708); 9.1 (CVE-2026-21671); 8.8 (CVE-2026-21672); 7.7 (CVE-2026-21670)",
+      "affected_technology": "Veeam Backup & Replication (all versions prior to latest fixed build per KB4831)",
+      "threat_score": 8,
+      "discovery_latency": "late",
+      "first_seen_at": "2026-03-12",
+      "summary": "Veeam patched 5 high/critical flaws on March 12: two CVSS 9.9 RCE bugs (domain user / Backup Viewer → code execution on Backup Server), one CVSS 9.1 HA RCE, a CVSS 8.8 local privilege escalation, and CVSS 7.7 SSH credential extraction. No PoC yet, but Veeam is ransomware groups' top backup-destruction target (Akira, Fog)."
+    },
+    {
+      "type": "news",
+      "title": "\"Poisoned Typeface\" — Font-Rendering PoC Hides Malicious Commands from All Major AI Assistants",
+      "cve": "Not yet assigned",
+      "cvss": "N/A (rejected as out-of-scope by all vendors except Microsoft, who fully patched Copilot)",
+      "affected_technology": "AI browser assistants: ChatGPT, Claude, Gemini, Grok, Perplexity, Leo, Dia, Fellou, Genspark (Microsoft Copilot patched)",
+      "threat_score": 7,
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-03-17",
+      "summary": "LayerX PoC uses custom web fonts with glyph substitution to split DOM from rendered content: AI assistant reads safe text, browser shows a reverse-shell command, AI approves it as safe. Tested against 11 assistants in Dec 2025 — all failed. Live PoC still up. Microsoft alone patched; all others declined."
+    },
+    {
+      "type": "news",
+      "title": "LeakNet Ransomware Combines ClickFix Social Engineering with Deno Runtime Loader for Stealthy Compromise",
+      "cve": "Not yet assigned",
+      "cvss": "N/A",
+      "affected_technology": "Enterprise Windows environments susceptible to ClickFix social engineering",
+      "threat_score": 7,
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-03-17",
+      "summary": "LeakNet RaaS uses ClickFix (fake CAPTCHA/browser-fix tricking users to paste PowerShell) for initial access, then deploys a loader built on the Deno JS runtime — signed legitimate Deno binaries evade EDR allowlisting — combining a rapidly spreading social-engineering technique with a living-off-trusted-binaries evasion."
+    },
+    {
+      "type": "news",
+      "title": "Starkiller PhaaS Uses Live AitM Headless-Chrome Reverse Proxy to Bypass MFA and Harvest Session Tokens",
+      "cve": "Not yet assigned",
+      "cvss": "N/A",
+      "affected_technology": "Any MFA-protected web app (Microsoft 365 primary target; any brand configurable via dashboard)",
+      "threat_score": 7,
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-03-17",
+      "summary": "Starkiller (Jinkusu group) runs headless Chrome in Docker as a live AitM reverse proxy — victim authenticates through attacker infrastructure against the real site in real time, capturing all credentials, OTPs, and session tokens; no static templates to fingerprint; SMS/TOTP MFA fully bypassed; only FIDO2 hardware keys resist."
+    },
+    {
+      "type": "news",
+      "title": "CVE-2026-0628 \"Glic Jack\" — Chrome Gemini Side Panel Lets Malicious Extensions Access Files, Camera, and Mic",
+      "cve": "CVE-2026-0628",
+      "cvss": "8.8",
+      "affected_technology": "Google Chrome prior to 143.0.7499.192 (patched January 2026)",
+      "threat_score": 7,
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-03-17",
+      "summary": "Unit 42 published full disclosure of CVE-2026-0628: insufficient WebView policy in Chrome's Gemini side panel (chrome://glic) lets a malicious extension with basic permissions inject into a high-privilege context, gaining access to local files, camera, microphone, and arbitrary website screenshots. Patched Chrome 143 Jan 2026."
+    },
+    {
+      "type": "news",
+      "title": "CVE-2026-29000 — pac4j JWT Auth Bypass via alg=none PlainJWT in JWE — Public PoC Available",
+      "cve": "CVE-2026-29000",
+      "cvss": "Critical (maximum severity per vendor; NVD score pending)",
+      "affected_technology": "pac4j-jwt prior to versions 4.5.9 / 5.7.9 / 6.3.3 (used in Java frameworks incl. Apache Shiro, Spring)",
+      "threat_score": 7,
+      "discovery_latency": "late",
+      "first_seen_at": "2026-03-03",
+      "summary": "Unauthenticated attacker knowing only the server's RSA public key (often at JWKS endpoint) can forge JWEs with a PlainJWT inner token; logic error skips signature verification when SignedJWT is null, enabling full user impersonation including admins. Public PoC exists. Fix: upgrade pac4j-jwt to 4.5.9+ / 5.7.9+ / 6.3.3+."
+    },
+    {
+      "type": "news",
+      "title": "Anthropic's Claude Opus 4.6 Autonomously Discovers 22 Firefox Bugs Including CVSS 9.8 JIT Flaw CVE-2026-2796",
+      "cve": "CVE-2026-2796",
+      "cvss": "9.8 (CVE-2026-2796); plus 14 high and 7 moderate severity bugs all patched in Firefox 148",
+      "affected_technology": "Mozilla Firefox prior to version 148",
+      "threat_score": 7,
+      "discovery_latency": "late",
+      "first_seen_at": "2026-03-07",
+      "summary": "Claude Opus 4.6 scanned ~6,000 Firefox C++ files in 2 weeks in Jan 2026, finding 22 bugs (14 high); detected CVSS 9.8 WebAssembly JIT use-after-free in 20 min; ~$4K API spend yielded working exploits for 2 bugs; signals AI-driven vuln discovery now accessible at four-digit cost with narrowing gap to weaponization. All patched in Firefox 148."
+    },
+    {
+      "type": "news",
+      "title": "Pingora OSS HTTP/1 Request Smuggling — Three CVEs in Cloudflare's Open-Source Proxy (Fixed in 0.8.0)",
+      "cve": "CVE-2026-2833, CVE-2026-2835, CVE-2026-2836",
+      "cvss": "N/A (CVSSv3 scores not yet published)",
+      "affected_technology": "Cloudflare Pingora OSS prior to version 0.8.0 (Cloudflare production infra is NOT affected)",
+      "threat_score": 6,
+      "discovery_latency": "late",
+      "first_seen_at": "2026-03-09",
+      "summary": "Three HTTP/1 request smuggling flaws in standalone Pingora OSS deployments enable cache poisoning, cross-user session hijacking, and proxy security-control bypass. Non-public PoC provided during responsible disclosure. Fix in Pingora 0.8.0. Increasingly popular as NGINX/HAProxy alternative."
+    },
+    {
+      "type": "news",
+      "title": "Elevated Cyber Risk from Iran/Israel Conflict: BadeSaba App Compromised, 149 Hacktivist DDoS Attacks in 48 Hours",
+      "cve": "Not yet assigned",
+      "cvss": "N/A",
+      "affected_technology": "Critical infrastructure, financial services, government, defense, energy (global — elevated for any org with perceived conflict linkage)",
+      "threat_score": 6,
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-03-17",
+      "summary": "FortiGuard warns no large-scale confirmed Iranian retaliation yet but: 149 hacktivist DDoS attacks hit 110 orgs in 16 countries in 48 hrs; BadeSaba calendar app push-notification backend compromised (implies pre-staging); Iran historically activates pre-staged access weeks post-trigger — treat current quiet as defensive window, not safety signal."
+    }
+  ],
+  "noted": [
+    {
+      "cve": "CVE-2026-21994",
+      "product": "Oracle Edge Cloud Infrastructure Designer and Visualisation Toolkit v0.3.0",
+      "summary": "CVSS 9.8 unauthenticated network RCE via HTTP; niche product but critical severity — monitor for PoC and active exploitation campaigns."
+    },
+    {
+      "cve": "CVE-2026-25937",
+      "product": "GLPI v11.0.0–11.0.5",
+      "summary": "MFA bypass allowing attacker with valid credentials to skip multi-factor authentication; fixed in GLPI 11.0.6; CVSS 6.5; low exploitation risk currently."
+    },
+    {
+      "cve": "CVE-2026-22727",
+      "product": "Cloud Foundry CAPI Release v1.226.0 and below",
+      "summary": "Unprotected internal endpoints allow droplet replacement by any user bypassing the firewall; CVSS 7.5 High; relevant to enterprise PaaS on Cloud Foundry."
+    },
+    {
+      "cve": "CVE-2026-27459, CVE-2026-27448",
+      "product": "pyOpenSSL prior to version 26.0.0",
+      "summary": "Buffer overflow on TLS cookies over 256B (CVE-2026-27459) and connection acceptance when servername callback raises exception (CVE-2026-27448); both fixed in pyOpenSSL 26.0.0."
+    },
+    {
+      "cve": "Not yet assigned",
+      "product": "OpenClaw AI — Exposed Admin Interface and ClawHub Supply Chain (Krebs/DVULN Research)",
+      "summary": "Krebs feature on DVULN research: hundreds of internet-exposed OpenClaw admin interfaces leaking all credentials (API keys, OAuth tokens, bot tokens); new scope from 2026-03-01 ClawJacked (WebSocket) finding; no CVE yet — monitor for PoC and CVE assignment."
+    },
+    {
+      "cve": "Not yet assigned",
+      "product": "GTIG AI Threat Tracker — Q4 2025 Adversarial AI (Google/Mandiant)",
+      "summary": "DPRK/Iran/PRC/Russia using LLMs for phishing and recon; HONESTCUE malware calls Gemini API for dynamic second-stage payload generation; Xanthorox underground jailbreak service uses open-source MCP servers; model extraction distillation attacks rising from private sector worldwide."
+    }
+  ]
+}

@@ -1,0 +1,87 @@
+# Debug Log — 2026-03-18 night cycle
+# Started: 2026-03-18T02:00 UTC+2 (00:00 UTC)
+
+## Step 1: Git pull
+[02:00:01] git pull — Already up to date.
+
+## Step 2: Dedup index built from last 30 days
+Reports found: 2026-02-24 through 2026-03-17
+Key CVEs/threats already in dedup index:
+- CVE-2026-22769 (Dell/Silk Typhoon) — 2026-02-24/night
+- CVE-2026-25643 (Frigate NVR) — 2026-02-25
+- CVE-2026-25785 (Lanscope) — 2026-02-25/day
+- CVE-2026-0770 (Langflow) — 2026-02-25
+- CVE-2026-25746 (OpenEMR) — 2026-02-25/day
+- CVE-2026-21858 (n8n Ni8mare) — 2026-02-25/day; CISA KEV update 2026-03-11
+- CVE-2026-20127 (Cisco SD-WAN) — 2026-02-26 through 2026-03-07
+- CVE-2026-22719 (VMware Aria) — 2026-03-03, update 2026-03-04
+- CVE-2026-21902 (Juniper PTX) — 2026-02-28
+- CVE-2026-28289 (FreeScout) — 2026-03-08
+- CVE-2026-20079 (Cisco FMC) — 2026-03-08
+- CVE-2026-1492 (WordPress) — 2026-03-08
+- CVE-2026-1731 (BeyondTrust) — 2026-03-07
+- CVE-2026-22200 (osTicket) — 2026-03-07
+- CVE-2026-24061 (Telnet RCE) — 2026-03-07
+- CVE-2026-23745 (node-tar) — 2026-03-07
+- CVE-2026-26127, CVE-2026-21262 (MS Patch Tuesday) — 2026-03-10
+- CVE-2025-68613 (n8n) — 2026-03-12
+- CVE-2026-26113, CVE-2026-26110 (MS Office Preview Pane) — 2026-03-12
+- CVE-2026-21440 (AdonisJS) — 2026-03-12
+- CVE-2026-28514 (Rocket.Chat) — 2026-03-17
+- CVE-2025-47813 (Wing FTP) — 2026-03-17
+- CVE-2026-3909 (Chrome Zero-Days) — 2026-03-17
+- CVE-2025-33073 (NTLM Reflection) — 2026-03-17
+- Claude Code Vulnerabilities — 2026-02-28
+- ClawJacked (OpenClaw) — 2026-03-01
+- Stryker Wiper — 2026-03-11 through 2026-03-17
+- GlassWorm ForceMemo — 2026-03-17
+- DRILLAPP (Laundry Bear) — 2026-03-17
+NOTED items to watch: CVE-2025-55182 (React/Next.js), CVE-2026-25177 (AD), CVE-2026-4224 (Expat), CVE-2026-26119 (Win Admin Center)
+
+## Step 3: Source scanning
+Total sources in SOURCES.md: 31 (Tier 1: 15, Tier 2: 16 — file appears incomplete vs 90+ documented)
+Note: SOURCES.md only lists 31 sources. Checked all 31 plus additional standard sources.
+
+### Source Check Log
+[02:01:10] BleepingComputer /news/security/ — OK. New: Font-Rendering AI Bypass, LeakNet Ransomware; deduped GlassWorm, Stryker
+[02:01:11] TheHackerNews — OK. New: Anthropic Firefox 22 vulns, Starkiller PhaaS, Chrome Gemini Glic Jack; deduped GlassWorm, Chrome 0-days
+[02:01:12] CISA KEV catalog — OK (partial; funding lapse note). Confirmed CVE-2025-47813, CVE-2026-3909/3910, CVE-2025-68613 all in dedup.
+[02:01:15] SecurityWeek /vulnerabilities/ — DEGRADED (403 Forbidden)
+[02:01:15] NVD NIST full-listing — DEGRADED (redirect loop to /vuln/search)
+[02:01:15] AttackerKB /topics/recent — DEGRADED (500 Internal Server Error)
+[02:01:22] PacketStorm (packetstorm.news) — PARTIAL. No new exploits in scope.
+[02:01:22] SecLists FullDisclosure Mar 2026 — OK. Checked 8 messages. CryptoPro, Apple legacy iOS, Alipay chain (already in dedup as noted items from 2026-03-17).
+[02:01:22] Rapid7 /blog/threat-intel/ — DEGRADED (404)
+[02:01:25] Google Project Zero blog — OK. Most recent relevant post Jan 2026 (Win Admin Protection bypass — out of scope/already noted).
+[02:01:25] Cloudflare Security Blog — OK. New: Pingora OSS request smuggling CVE-2026-2833/-2835/-2836 (Mar 9).
+[02:01:25] MSRC Blog — DEGRADED (minimal content returned)
+[02:01:25] KB.CERT.org /vuls/ — DEGRADED (empty response)
+[02:01:28] GitHub Security Lab — OK. New: CVE-2026-30833 Rocket.Chat (deduped, covered in 2026-03-17); Zammad IDOR (deduped, covered 2026-03-07); NocoDB (low severity, not in scope).
+[02:01:28] GitHub Advisory Database — PARTIAL (interface only, no listing returned)
+[02:01:28] Unit 42 (paloaltonetworks.com) — OK. New: Glic Jack CVE-2026-0628 Chrome disclosure (Mar 17). 2026 IR Report summary.
+[02:01:29] SANS ISC Diary — OK. Technical note on IPv4-mapped IPv6 address evasion (informational, no CVE, no finding).
+[02:01:29] Mandiant/Google TI Blog — PARTIAL. Redirected to Google Cloud Blog/TI. Found GTIG AI Threat Tracker Q4 2025 (noted).
+[02:01:30] HackerOne Hacktivity — DEGRADED (empty response)
+[02:01:31] OpenCVE /cve?page=1 — OK. Scanned latest CVEs: CVE-2026-21994 Oracle 9.8 (noted); GLPI CVEs (noted); pyOpenSSL (noted); Cloud Foundry CAPI (noted). Low-medium severity items filtered.
+[02:01:31] CVE.org/MITRE — DEGRADED (search page only, no results)
+[02:01:35] KrebsOnSecurity — OK. New: "AI Assistants Moving the Security Goalposts" (OpenClaw admin interface exposure by DVULN — noted); Starkiller (new finding covered under THN article).
+[02:01:36] Fortinet Blog /threat-research/ — OK. New: "Cyber Fallout After the Strikes" Iran/Israel conflict (Mar 17) — new finding.
+[02:01:36] Arctic Wolf Blog — OK. New: Veeam Backup & Replication 5 CVEs (Mar 12/13) — new finding; CVE-2026-29000 pac4j JWT bypass (Mar 11) — new finding (was not in any previous report).
+[02:01:36] Exploit-DB — DEGRADED (interface only, no listings returned)
+[02:01:40] CISA /news-events/alerts — DEGRADED (404 — federal funding lapse continues)
+[02:01:42] NCSC.gov.uk /news/alerts-and-advisories — DEGRADED (404)
+[02:01:43] Google Cloud Threat Intelligence (Mandiant) — PARTIAL. GTIG AI Threat Tracker Q4 2025 fetched. No new CVEs beyond scope.
+[02:01:45] Talos Intelligence Blog — DEGRADED (last post Feb 26, likely stale/not updated)
+[02:01:48] THN Vulnerability label — OK. Cross-validated findings: Anthropic Firefox, Starkiller, Chrome Glic Jack confirmed; also noted 149 DDoS attacks geopolitical context.
+[02:02:00] Schneier on Security — OK. Quantum RSA note (out of scope). South Korean NTS (deduped 2026-03-02).
+
+### Dedup Decisions
+SKIP: GlassWorm ForceMemo (2026-03-17), Chrome CVE-2026-3909/3910 (2026-03-17), NTLM CVE-2025-33073 (2026-03-17), Rocket.Chat CVE-2026-28514/-30833 (2026-03-17), Stryker Wiper (2026-03-11 through -17), DRILLAPP (2026-03-17), Wing FTP (2026-03-17), Zammad IDOR (2026-03-07), Cisco FMC (2026-03-08), n8n (2026-03-07/-11/-12), MS Patch Tuesday (2026-03-10), APT28 BEARDSHELL (2026-03-10), FortiGate creds (2026-03-10), Ivanti EPM (2026-03-10), HPE Aruba (2026-03-10), SKorean crypto (2026-03-02), ClawJacked (2026-03-01).
+
+PROMOTE TO FINDING: CVE-2026-29000 pac4j (was only in Arc Wolf blog, never in any previous report), Veeam 5 CVEs (never reported), Pingora smuggling (never reported), Poisoned Typeface (new today), LeakNet ransomware (new today), Starkiller PhaaS (new today), Chrome Glic Jack (new today, patched Jan 2026), Firefox/Anthropic 22 vulns (new today, reported Mar 7), Iran/Israel cyber fallout (new today).
+
+## Step 4: Report generated
+[02:12:00] report.json written: 9 findings, 5 noted items, 18 dedup skip entries
+
+## Step 5: Validation
+
