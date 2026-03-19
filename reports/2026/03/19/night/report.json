@@ -1,0 +1,132 @@
+{
+  "date": "2026-03-19",
+  "cycle": "night",
+  "full_report": "reports/2026/03/19/night/report.md",
+  "source_coverage": {
+    "total": 31,
+    "checked": 28,
+    "with_findings": 8,
+    "unreachable": [
+      "nvd.nist.gov (redirect loop)",
+      "cisa.gov/news-events/alerts (404 \u2014 federal funding lapse)",
+      "darkreading.com (403)"
+    ],
+    "degraded": [
+      "securityweek.com (403)",
+      "packetstormsecurity.com (ToS redirect)",
+      "msrc.microsoft.com/blog (minimal JS-rendered content)",
+      "kb.cert.org/vuls (minimal content)",
+      "exploit-db.com (interface only)",
+      "crowdstrike.com/blog (minimal content)",
+      "recordedfuture.com/blog (minimal content)",
+      "cert.gov.ua/article (minimal content)",
+      "cve.org (minimal content)"
+    ]
+  },
+  "findings": [
+    {
+      "type": "news",
+      "title": "\ud83d\udea8 CVE-2026-20963 \u2014 Microsoft SharePoint RCE via Deserialization Added to CISA KEV, 3-Day Patch Deadline Expires 2026-03-21",
+      "cve": "CVE-2026-20963",
+      "cvss": "High/Critical (NVD pending; CISA: network-accessible unauthenticated RCE)",
+      "affected_technology": "Microsoft SharePoint (all on-premises versions; patch per Microsoft advisory)",
+      "threat_score": 9,
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-03-18",
+      "summary": "CISA added CVE-2026-20963 (SharePoint deserialization RCE) to KEV on 2026-03-18 with emergency 3-day deadline (due 2026-03-21); unauthenticated network attacker achieves code execution; EPSS 1.63% (81.7th pct); treat as P0 and patch immediately."
+    },
+    {
+      "type": "news",
+      "title": "CVE-2025-32463 \u2014 Sudo chroot Privilege Escalation to Root on Linux (CVSS 9.3, EPSS 26.5%, Multiple PoCs Live)",
+      "cve": "CVE-2025-32463",
+      "cvss": "9.3",
+      "affected_technology": "sudo 1.9.14 through 1.9.17 (all patch revisions) on Ubuntu, RHEL, SUSE, Debian and most Linux distributions",
+      "threat_score": 8,
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-03-18",
+      "summary": "sudo -R flag allows any sudo-privileged user to spawn a root shell on affected Linux systems (sudo 1.9.14\u20131.9.17); CVSS 9.3; EPSS 26.52% (96.3rd pct); 950+ GitHub stars across 3 PoC repos since yesterday; upgrade to sudo >=1.9.17p1 immediately."
+    },
+    {
+      "type": "news",
+      "title": "CVE-2025-66376 \u2014 Zimbra ZCS CSS @import XSS Exploited in Wild, Added to CISA KEV (Due 2026-04-01)",
+      "cve": "CVE-2025-66376",
+      "cvss": "High (NVD pending)",
+      "affected_technology": "Synacor Zimbra Collaboration Suite (ZCS) Classic UI \u2014 all versions prior to vendor-patched build",
+      "threat_score": 7,
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-03-18",
+      "summary": "Attackers embed CSS @import directives in HTML email to trigger XSS in Zimbra Classic UI, stealing session tokens; CISA confirmed active exploitation; added to KEV 2026-03-18, due 2026-04-01; apply Zimbra patch immediately."
+    },
+    {
+      "type": "news",
+      "title": "CVE-2026-3564 \u2014 ConnectWise ScreenConnect Cryptographic Signature Verification Bypass, Machine Key Abuse Observed",
+      "cve": "CVE-2026-3564",
+      "cvss": "Critical (vendor-rated; NVD pending)",
+      "affected_technology": "ConnectWise ScreenConnect (on-premises deployments prior to version 26.1)",
+      "threat_score": 8,
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-03-18",
+      "summary": "ScreenConnect cryptographic signature bypass enables session hijacking; researchers observe ASP.NET machine key abuse attempts targeting on-prem ScreenConnect deployments; MSPs are high-value supply-chain targets; update to version 26.1 immediately."
+    },
+    {
+      "type": "news",
+      "title": "9 CVEs in IP KVM Devices \u2014 Two Unfixed CVSS 9.8/8.8 Flaws in Angeet ES3 KVM Enable Unauthenticated Root Access",
+      "cve": "CVE-2026-32290, CVE-2026-32291, CVE-2026-32292, CVE-2026-32293, CVE-2026-32294, CVE-2026-32295, CVE-2026-32296, CVE-2026-32297, CVE-2026-32298",
+      "cvss": "9.8 (CVE-2026-32297, no fix); 8.8 (CVE-2026-32298, no fix); 7.2\u20138.3 (others, fixes available)",
+      "affected_technology": "Angeet/Yeeso ES3 KVM (NO FIX), GL-iNet Comet RM-1, Sipeed NanoKVM, JetKVM",
+      "threat_score": 7,
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-03-18",
+      "summary": "Researchers disclosed 9 IP KVM vulnerabilities across 4 vendors; CVE-2026-32297 (CVSS 9.8, no fix) and CVE-2026-32298 (CVSS 8.8, no fix) in Angeet/Yeeso ES3 KVM allow unauthenticated root access \u2014 network-isolate all IP KVM management ports."
+    },
+    {
+      "type": "news",
+      "title": "Apple WebKit CVE-2026-20643 \u2014 Same-Origin Policy Bypass Patched via New 'Background Security Improvements' Mechanism",
+      "cve": "CVE-2026-20643",
+      "cvss": "High (Apple rated: 'may allow a remote attacker to break out of Web Content sandbox')",
+      "affected_technology": "Apple iOS, iPadOS, macOS, Safari \u2014 patched via Background Security Improvements update (March 11, 2026)",
+      "threat_score": 6,
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-03-18",
+      "summary": "Apple silently patched WebKit CVE-2026-20643 via its first-ever Background Security Improvements push (2026-03-11); flaw allows remote SOP bypass and Web Content sandbox escape; verify all managed Apple devices received the update via MDM."
+    },
+    {
+      "type": "update",
+      "title": "INTEL UPDATE: Interlock Ransomware Exploited Cisco FMC (CVE-2026-20131) as Zero-Day for 36 Days Before Patch",
+      "cve": "CVE-2026-20131",
+      "cvss": "10.0 (Critical)",
+      "affected_technology": "Cisco Secure Firewall Management Center (FMC) \u2014 all versions prior to 7.4.2 (patched March 4, 2026)",
+      "threat_score": 9,
+      "previous_threat_score": 8,
+      "first_seen_at": "2026-03-08",
+      "summary": "Amazon/AWS confirmed Interlock ransomware exploited Cisco FMC CVE-2026-20131 as a zero-day from January 26 \u2014 36 days before the March 4 patch; any FMC unpatched before March 4 should be forensically investigated and all credentials rotated."
+    }
+  ],
+  "noted": [
+    {
+      "cve": "CVE-2026-22812",
+      "product": "OpenCode (developer IDE/AI coding environment)",
+      "summary": "Unauthenticated RCE vulnerability with public exploit tool (22 GitHub stars); EPSS 2.64% (85.5th percentile); limited enterprise exposure given niche tooling."
+    },
+    {
+      "cve": "CVE-2026-24769, CVE-2026-24768",
+      "product": "NocoDB (open-source Airtable alternative)",
+      "summary": "Stored XSS (CVE-2026-24769) and unvalidated redirect (CVE-2026-24768) from GitHub Security Lab; low EPSS (0.017%); no active exploitation observed; update to latest version."
+    },
+    {
+      "cve": "CVE-2025-26399",
+      "product": "SolarWinds Web Help Desk",
+      "summary": "AjaxProxy deserialization RCE vulnerability \u2014 added to CISA KEV 2026-03-09 with due date 2026-03-12 (expired); late catch; any outstanding SolarWinds Web Help Desk deployments should have patched by now."
+    },
+    {
+      "cve": "Not assigned",
+      "product": "DarkSword iOS Exploit Kit (state-sponsored spyware vendor)",
+      "summary": "Newly identified iOS exploit kit used in infostealer attacks targeting individuals \u2014 chains 6 iOS/WebKit vulnerabilities for full device compromise; primarily targeting journalists, executives, diplomats; no enterprise network vector."
+    },
+    {
+      "cve": "Not assigned",
+      "product": "WhatsApp View Once (Meta)",
+      "summary": "4th known bypass of WhatsApp's View Once feature (modified client saves one-time media before deletion); Meta will not patch; operational security concern for sensitive communications over WhatsApp."
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+WATCHTOWER DEBUG LOG — 2026-03-19 / night cycle
+Generated: 2026-03-19T00:00:00+02:00 (Athens) / 2026-03-18T22:00:00Z
+Agent: vulnerability-researcher
+
+=== SOURCE CHECK STATUS ===
+[00:00:01Z] bleepingcomputer.com                    → ✅ OK — 4 new stories (ConnectWise ScreenConnect CVE-2026-3564, Darksword iOS kit, Zimbra KEV CISA order, Interlock/Cisco FMC zero-day update)
+[00:00:02Z] thehackernews.com                       → ✅ OK — 3 items (9 IP KVM CVEs, Apple WebKit CVE-2026-20643, CISA KEV additions)
+[00:00:03Z] cisa.gov/known-exploited-vulnerabilities-catalog → ✅ OK — 2 NEW KEV additions 2026-03-18: CVE-2026-20963 (SharePoint, due 2026-03-21), CVE-2025-66376 (Zimbra, due 2026-04-01)
+[00:00:04Z] securityweek.com                        → ⚠️  DEGRADED — 403 on direct access; gathered via sidebar/referral links: Darksword iOS kit, EU sanctions story, Stryker update (Iranian credentials)
+[00:00:05Z] krebsonsecurity.com                     → ✅ OK — Stryker wiper scope update (200,000+ systems in 79 countries)
+[00:00:06Z] packetstormsecurity.com                 → ⚠️  DEGRADED — Redirected to ToS page; no findings captured
+[00:00:07Z] rapid7.com                              → ✅ OK (via direct fetch) — no new unique findings; ConnectWise ScreenConnect article
+[00:00:08Z] fortinet.com/blog/threat-research       → ✅ OK — Iran/Israel cyber fallout post (confirmed elevated regional threat, non-unique), Agent Tesla multi-stage campaign (Feb, stale)
+[00:00:09Z] securitylab.github.com                  → ✅ OK — 2 new: NocoDB CVE-2026-24769/CVE-2026-24768 (XSS + redirect); Sylius CVE-2026-31820 (PII exposure); Rocket.Chat CVE-2026-28514/CVE-2026-30833 (already reported 2026-03-17)
+[00:00:10Z] seclists.org/fulldisclosure             → ✅ OK — 8 messages in March archive (through Mar 16); Alipay DeepLink+JSBridge 17 vulns/6 CVEs CVSS 9.3 (Mar 12), CryptoPro Secure Disk CVEs (Mar 12) — all >3 days old; no new items today
+[00:00:11Z] opencve.io                              → ✅ OK — Platform landing only; no new CVE alerts accessible without auth
+[00:00:12Z] schneier.com                            → ✅ OK — Last post Mar 17 (Korean police crypto wallet OPSEC failure); no new technical vulns
+[00:00:13Z] googleprojectzero.blogspot.com          → ✅ OK — UAC bypass research (GetProcessHandleFromHwnd); grammar fuzzing technique; no new 0-day disclosures
+[00:00:14Z] blog.cloudflare.com/tag/security        → ✅ OK — Account Abuse Protection (Mar 12), AI Security for Apps GA (Mar 11); no CVE findings
+[00:00:15Z] msrc.microsoft.com/blog                 → ⚠️  DEGRADED — Minimal content (JS-rendered); last accessible post from March Patch Tuesday (already reported)
+[00:00:16Z] kb.cert.org/vuls                        → ⚠️  DEGRADED — Static landing page only; no new vulnerability notes accessible
+[00:00:17Z] github.com/0xMarcio/cve                 → ✅ OK — Active PoC tracker: CVE-2026-21858 n8n (222★, already reported), CVE-2025-32463 sudo (509★+442★ NEW), CVE-2026-24061 batch scanner updated (already reported), CVE-2026-22812 OpenCode RCE (22★, NEW)
+[00:00:18Z] github.com/advisories                   → ✅ OK — Minimal public content without auth; recent credits visible; no uniquely new CVEs extracted
+[00:00:19Z] exploit-db.com                          → ⚠️  DEGRADED — Interface navigation only; no exploit listing accessible via web fetch
+[00:00:20Z] blog.talosintelligence.com              → ✅ OK — Latest post Mar 18 (Transparent COM instrumentation for malware analysis, tool release); Mar 11 agentic AI post; no new vulnerability findings
+[00:00:21Z] unit42.paloaltonetworks.com             → ✅ OK — 2026 Global Incident Response Report highlights (AI-accelerated attacks 4x faster, 65% identity-based IA); no new CVE disclosures today
+[00:00:22Z] crowdstrike.com/blog                    → ⚠️  DEGRADED — Minimal JS-rendered content; no findings captured
+[00:00:23Z] mandiant.com → cloud.google.com/blog/topics/threat-intelligence → ✅ OK — Minimal landing page; no new blog posts
+[00:00:24Z] recordedfuture.com/blog                 → ⚠️  DEGRADED — Minimal content; no new blog posts accessible
+[00:00:25Z] attackerkb.com                          → ✅ OK — In-depth analysis: CVE-2026-20127 Cisco Catalyst SD-WAN auth bypass via DTLS state machine (already reported 2026-03-10); UAT-8616 Regression Chain details (UPDATE intel, not new CVE)
+[00:00:26Z] cert.gov.ua/article                     → ⚠️  DEGRADED — Minimal content; no new advisories accessible
+[00:00:27Z] first.org/epss API                      → ✅ OK — EPSS scores retrieved for CVE-2026-20963 (1.63%, 81.7th pct), CVE-2025-66376 (0.049%), CVE-2026-3564 (0.046%), CVE-2025-32463 (26.52%, 96.3rd pct), CVE-2026-32297/32298 KVM (<0.05%), CVE-2026-22812 (2.64%, 85.5th pct)
+[00:00:28Z] nvd.nist.gov                            → ❌ UNREACHABLE — Redirect loop to NVD search landing; CVSS scores unavailable directly
+[00:00:29Z] cve.org                                 → ⚠️  DEGRADED — Minimal JS-rendered landing; no CVE records accessible
+[00:00:30Z] cisa.gov/news-events/alerts             → ❌ UNREACHABLE — 404 (ongoing federal funding lapse; CISA KEV catalog still operational and checked separately)
+[00:00:31Z] darkreading.com                         → ❌ UNREACHABLE — 403 Cloudflare block
+
+=== COVERAGE SUMMARY ===
+Total sources:       31
+Checked:             28  (3 fully unreachable — no data retrieved)
+With new findings:    8  (bleepingcomputer, thehackernews, cisa.gov/kev, krebsonsecurity, fortinet, securitylab.github, github.com/0xMarcio/cve, first.org/epss)
+Unreachable:          3  (nvd.nist.gov, cisa.gov/news-events/alerts, darkreading.com)
+Degraded:             9  (securityweek, packetstormsecurity, msrc blog, kb.cert.org/vuls, exploit-db, crowdstrike blog, recordedfuture blog, cert.gov.ua, cve.org)
+
+=== DEDUP DECISIONS ===
+CVE-2026-20963 (SharePoint RCE)          → ✅ NEW — Not in any previous report
+CVE-2025-32463 (sudo chroot LPE)         → ✅ NEW — Not in any previous report
+CVE-2025-66376 (Zimbra ZCS XSS)          → ✅ NEW — Not in any previous report
+CVE-2026-3564 (ScreenConnect sig bypass) → ✅ NEW — Not in any previous report
+CVE-2026-32290–32298 (IP KVM flaws)      → ✅ NEW — Not in any previous report
+CVE-2026-20643 (Apple WebKit SOP bypass) → ✅ NEW — Not in any previous report
+Cisco FMC Interlock zero-day timeline    → UPDATE — CVE-2026-20079/20131 first reported 2026-03-08 (threat_score 8); Amazon/Interlock zero-day since Jan 26 is new intel → threat_score 9
+CVE-2026-28514/CVE-2026-30833 (Rocket.Chat) → ❌ SKIP — Already reported 2026-03-17
+CVE-2026-24769/CVE-2026-24768 (NocoDB)  → NOTED — Low EPSS, low severity; no active exploitation; added to noted[]
+NocoDB redirect CVE-2026-24768          → NOTED — bundled with above
+CVE-2026-22812 (OpenCode RCE)            → NOTED — Niche development tool, limited enterprise exposure; low threat_score
+DarkSword iOS exploit kit               → NOTED — Targets individuals/VIPs, not enterprise infra directly; state-sponsored spyware
+EU Sanctions (no CVE)                   → NOTED — Geopolitical/attribution intel; no actionable patch
+WhatsApp View Once bypass               → NOTED — Meta won't fix; operational security issue, no CVE; low enterprise impact
+CVE-2025-26399 (SolarWinds WHD KEV)     → NOTED — Added to CISA KEV 2026-03-09, due date 2026-03-12 (expired); late catch; include in noted[]
+UAT-8616 DTLS analysis (AttackerKB)     → SKIP — Technical deep-dive on CVE-2026-20127 already reported 2026-03-10; no new CVE
