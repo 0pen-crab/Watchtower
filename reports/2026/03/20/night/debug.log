@@ -1,0 +1,101 @@
+[2026-03-20T00:00:00Z] === VULN-RESEARCHER NIGHT CYCLE START — 2026-03-20 02:00 EEST ===
+[2026-03-20T00:00:01Z] READ: SOUL.md — OK (schema, workflow rules, debug logging requirements loaded)
+[2026-03-20T00:00:02Z] READ: MAIN.md — OK (purpose, scoring, output format confirmed)
+[2026-03-20T00:00:03Z] READ: SOURCES.md — OK (31 sources loaded across Tier 1 + Tier 2)
+[2026-03-20T00:00:05Z] GIT PULL: watchtower repo — OK (up to date)
+[2026-03-20T00:00:06Z] MKDIR: reports/2026/03/20/night — OK
+
+--- DEDUP INDEX BUILD ---
+[2026-03-20T00:00:10Z] READ: reports/2026/03/19/night/report.json — OK
+  CVEs: CVE-2026-20963, CVE-2025-32463, CVE-2025-66376, CVE-2026-3564, CVE-2026-32290..98, CVE-2026-20643, CVE-2026-20131, CVE-2026-22812, CVE-2026-24769, CVE-2026-24768, CVE-2025-26399
+[2026-03-20T00:00:11Z] READ: reports/2026/03/18/night/report.json — OK
+  CVEs: CVE-2026-21669..72, CVE-2026-0628, CVE-2026-29000, CVE-2026-2796/2833/2835/2836, CVE-2026-21994, CVE-2026-25937, CVE-2026-22727, CVE-2026-27459/27448
+[2026-03-20T00:00:12Z] READ: reports/2026/03/17/night/report.json — OK
+  CVEs: CVE-2025-47813, CVE-2026-3909, CVE-2025-33073, CVE-2026-28514, CVE-2025-55182, CVE-2026-4224, CVE-2026-24061, CVE-2025-10010, CVE-2026-25177, CVE-2026-29000, CVE-2026-26119
+[2026-03-20T00:00:13Z] READ: reports/2026/03/12..01 (10 reports) — OK (full historical dedup index built)
+
+--- SOURCE SCANS ---
+[2026-03-20T00:01:00Z] FETCH: bleepingcomputer.com — OK (HTTP 200, ~6k chars)
+  SIGNALS: PolyShell Magento RCE (NEW), Ubiquiti UniFi CVE-2026-22557 (NEW), APT28 Zimbra (UPDATE to CVE-2025-66376)
+[2026-03-20T00:01:05Z] FETCH: thehackernews.com — OK (HTTP 200, ~8k chars)
+  SIGNALS: DarkSword iOS kit (NEW), Citrix CVE-2025-5777 mass exploitation (NEW), BMC FootPrints RCE chain (NEW), CursorJack MCP (NEW), The Gentlemen RaaS CVE-2024-55591 (NEW)
+[2026-03-20T00:01:10Z] FETCH: cisa.gov/known-exploited-vulnerabilities-catalog — OK (HTTP 200, ~6k chars)
+  SIGNALS: CVE-2026-20963 (DEDUP — 2026-03-19), CVE-2025-66376 (DEDUP — 2026-03-19), CVE-2025-47813 (DEDUP — 2026-03-17)
+[2026-03-20T00:01:15Z] FETCH: securityweek.com — OK (HTTP 200, ~6k chars)
+  SIGNALS: APT28 Zimbra (UPDATE to CVE-2025-66376), SharePoint CISA (DEDUP), Cisco FMC Interlock (DEDUP — CVE-2026-20131 in 2026-03-19 CVE list)
+[2026-03-20T00:02:00Z] FETCH: nvd.nist.gov/vuln/full-listing — DEGRADED (redirected to change-timeline; no vuln listing accessible without JS)
+[2026-03-20T00:02:05Z] FETCH: attackerkb.com/topics/recent — ERROR (500: invalid attribute 'recent')
+  FALLBACK: attackerkb.com/topics/CVE-2026-22557 — OK (basic attacker info confirmed)
+[2026-03-20T00:02:10Z] FETCH: packetstormsecurity.com/news/ — DEGRADED (ToS redirect, no vuln news)
+[2026-03-20T00:02:20Z] FETCH: opencve.io/cve — OK (HTTP 200, redirected to app.opencve.io)
+  SIGNALS: CVE-2026-22733 Spring Security auth bypass CVSS 8.2 (NEW), CVE-2026-32758 File Browser path traversal 6.5 (low priority — NOTED not found)
+[2026-03-20T00:02:25Z] FETCH: seclists.org/fulldisclosure/2026/Mar/index.html — OK (12 messages)
+  SIGNALS: CVE-2026-3888 snap-confine LPE (SKIP — local-only, out of scope), PEGA Infinity CVE-2025-62181/9559 (NOTED — medium severity)
+  SIGNAL: Apple Background Security Improvements (DEDUP — CVE-2026-20643 in 2026-03-19)
+[2026-03-20T00:02:30Z] FETCH: seclists.org/fulldisclosure/2026/Mar/8 — OK (PEGA advisory detail retrieved)
+[2026-03-20T00:02:35Z] FETCH: googleprojectzero.blogspot.com — OK (redirected to projectzero.google)
+  SIGNALS: Fuzzing methodology post, UAC bypass research — no new CVEs/findings for today
+[2026-03-20T00:02:40Z] FETCH: blog.cloudflare.com/tag/security — OK (HTTP 200)
+  SIGNALS: Account abuse protection product launch (2026-03-12) — not vulnerability intel
+[2026-03-20T00:02:45Z] FETCH: schneier.com — OK
+  SIGNALS: DJI Romo vacuum IoT hack 7000 devices (interesting, no CVE, out of direct scope)
+[2026-03-20T00:02:50Z] FETCH: krebsonsecurity.com — OK
+  SIGNALS: Stryker/Handala wiper attack — DEDUP (reported 2026-03-17/18)
+[2026-03-20T00:02:55Z] FETCH: github.com/0xMarcio/cve — OK
+  SIGNALS: CVE-2026-21962 (new PoC, 10 stars, unknown product), CVE-2025-53770 SharePoint WebPart 311 stars, CVE-2026-24061 new batch scanner (DEDUP — 2026-03-17), CVE-2025-32463 (DEDUP — 2026-03-19)
+[2026-03-20T00:03:00Z] FETCH: cve.org/CVERecord?id=CVE-2026-21962 — DEGRADED (minimal JS-rendered output, product unknown)
+  DECISION: CVE-2026-21962 insufficient context — SKIP pending more info
+[2026-03-20T00:03:05Z] FETCH: cve.org/CVERecord?id=CVE-2025-53770 — DEGRADED (same issue)
+[2026-03-20T00:03:10Z] FETCH: fortinet.com/blog/threat-research — OK
+  SIGNALS: Cyber fallout after Iran strikes — situational awareness, no specific CVE; Interlock RW analysis (DEDUP — CVE-2026-20131 Cisco FMC)
+[2026-03-20T00:03:15Z] FETCH: rapid7.com/blog/ — OK (200)
+  SIGNALS: Teams phishing guidance (NOTED), Iran cyber playbook (out of scope), Patch Tuesday March 2026 (DEDUP — 2026-03-10)
+[2026-03-20T00:03:20Z] FETCH: msrc.microsoft.com/blog — DEGRADED (only nav rendered)
+[2026-03-20T00:03:25Z] FETCH: securitylab.github.com — OK
+  SIGNALS: CVE-2026-31820 (Sylius PII), CVE-2026-25757 (Spree IDOR) — medium severity, low urgency; Rocket.Chat CVEs (DEDUP — 2026-03-17)
+[2026-03-20T00:03:30Z] FETCH: avleonov.com — OK
+  SIGNALS: n8n CVE-2025-68613 analysis (DEDUP), CVE-2026-21519 DWM EoP (older Patch Tuesday — DEDUP)
+[2026-03-20T00:03:35Z] FETCH: kb.cert.org/vuls/ — DEGRADED (only search box rendered)
+[2026-03-20T00:03:40Z] FETCH: dbugs.ptsecurity.com — DEGRADED (footer only)
+[2026-03-20T00:03:45Z] FETCH: cert.gov.ua/article — DEGRADED (minimal JS-rendered content)
+[2026-03-20T00:03:50Z] FETCH: thehackernews.com/2026/03/darksword-ios-exploit-kit-uses-6-flaws.html — OK
+  SIGNALS: DarkSword article detail confirmed — CVE list extracted: CVE-2026-20700, CVE-2025-43529, CVE-2025-14174, CVE-2025-31277, CVE-2025-43510, CVE-2025-43520
+
+--- DEDUP DECISIONS ---
+[2026-03-20T00:04:00Z] DEDUP: CVE-2026-20963 (SharePoint) — SKIP (in 2026-03-19 findings, no material change)
+[2026-03-20T00:04:01Z] DEDUP: CVE-2025-32463 (sudo) — SKIP (in 2026-03-19 findings)
+[2026-03-20T00:04:02Z] DEDUP: CVE-2025-66376 (Zimbra) — UPDATE (APT28 attribution is material new information → threat_score raised from 7 to 10)
+[2026-03-20T00:04:03Z] DEDUP: CVE-2026-3564 (ScreenConnect) — SKIP (in 2026-03-19)
+[2026-03-20T00:04:04Z] DEDUP: CVE-2026-20131 (Cisco FMC) — SKIP (in 2026-03-19 CVE list; Interlock context already noted)
+[2026-03-20T00:04:05Z] DEDUP: CVE-2026-24061 (telnet) — SKIP (in 2026-03-17 findings; new PoC tool is minor update)
+[2026-03-20T00:04:06Z] DEDUP: CVE-2025-55182 (Next.js RSC) — SKIP (in 2026-03-17 findings)
+[2026-03-20T00:04:07Z] DEDUP: CVE-2026-28514/30833 (Rocket.Chat) — SKIP (in 2026-03-17)
+[2026-03-20T00:04:08Z] DEDUP: CVE-2024-55591 (FortiOS) — NEW (The Gentlemen RaaS report; never previously reported in this watchtower context; pass)
+[2026-03-20T00:04:09Z] DEDUP: CVE-2025-5777 (Citrix) — NEW (not in any prior report)
+[2026-03-20T00:04:10Z] DEDUP: DarkSword iOS kit — NEW (CVE-2026-20643 Apple WebKit in 2026-03-19 was different/same event but DarkSword kit as discrete finding is new; CVE-2026-20700 et al not previously reported; PASS)
+[2026-03-20T00:04:11Z] DEDUP: BMC FootPrints chain (CVE-2025-71257..60) — NEW (not in any prior report)
+[2026-03-20T00:04:12Z] DEDUP: PolyShell Magento RCE — NEW (not in any prior report)
+[2026-03-20T00:04:13Z] DEDUP: CVE-2026-22557 (UniFi) — NEW (not in any prior report)
+[2026-03-20T00:04:14Z] DEDUP: CursorJack — NEW (not in any prior report)
+[2026-03-20T00:04:15Z] DEDUP: CVE-2026-22733 (Spring Security) — NEW (not in any prior report)
+[2026-03-20T00:04:16Z] DEDUP: CVE-2026-3888 snap-confine LPE — SKIP (local-only, out of scope per MAIN.md)
+[2026-03-20T00:04:17Z] DEDUP: CVE-2026-21962 — SKIP (insufficient product context from sources)
+[2026-03-20T00:04:18Z] DEDUP: CVE-2025-53770 SharePoint WebPart — SKIP (likely same product family as CVE-2026-20963, insufficient detail)
+[2026-03-20T00:04:19Z] DEDUP: PEGA CVE-2025-62181/9559 — NOTED (medium severity, pass to noted section)
+[2026-03-20T00:04:20Z] DEDUP: SnappyClient/HijackLoader — NOTED (no CVE, malware family alert)
+[2026-03-20T00:04:21Z] DEDUP: Teams phishing — NOTED (social engineering, no CVE)
+[2026-03-20T00:04:22Z] DEDUP: Iran cyber infrastructure — NOTED (situational awareness)
+
+--- REPORT GENERATION ---
+[2026-03-20T00:05:00Z] WRITE: report.json — OK (14,984 bytes)
+[2026-03-20T00:05:01Z] WRITE: report.md — OK (11,501 bytes)
+
+--- FINDINGS SUMMARY ---
+  Total findings: 9 (1 Update + 8 News)
+  Threat score 10: 1 (APT28 Zimbra UPDATE)
+  Threat score 9: 3 (Citrix mass exploit, DarkSword iOS, Gentlemen RaaS)
+  Threat score 8: 2 (BMC FootPrints RCE, PolyShell Magento)
+  Threat score 7: 3 (UniFi CVE-2026-22557, CursorJack, Spring Security CVE-2026-22733)
+  Noted items: 5
+
+[2026-03-20T00:05:05Z] === CYCLE COMPLETE ===

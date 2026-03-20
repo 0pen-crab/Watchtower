@@ -1,0 +1,153 @@
+{
+  "date": "2026-03-20",
+  "cycle": "night",
+  "full_report": "reports/2026/03/20/night/report.md",
+  "source_coverage": {
+    "total": 31,
+    "checked": 28,
+    "with_findings": 10,
+    "unreachable": [
+      "nvd.nist.gov (redirects to change-timeline page — no CVE listing)",
+      "group-ib.com (403 — JS/bot protection)",
+      "securityweek.com/cisco-firewall article (403 — paywall)"
+    ],
+    "degraded": [
+      "packetstormsecurity.com (ToS redirect)",
+      "msrc.microsoft.com/blog (minimal rendered content)",
+      "kb.cert.org/vuls (minimal content)",
+      "cve.org (minimal JS-rendered content)",
+      "dbugs.ptsecurity.com (minimal content)",
+      "cert.gov.ua/article (minimal content)",
+      "attackerkb.com (500 on /recent endpoint)",
+      "rapid7.com/blog/threat-intel (404 — path changed)"
+    ]
+  },
+  "findings": [
+    {
+      "type": "update",
+      "title": "\ud83d\udea8 CVE-2025-66376 UPDATE — APT28 (GRU) Confirmed Exploiting Zimbra XSS Against Ukrainian Government",
+      "cve": "CVE-2025-66376",
+      "cvss": "High (NVD pending)",
+      "affected_technology": "Synacor Zimbra Collaboration Suite (ZCS) Classic UI — all versions prior to patched build",
+      "threat_score": 10,
+      "previous_threat_score": 7,
+      "first_seen_at": "2026-03-18",
+      "summary": "Russian APT28 (GRU) confirmed actively exploiting CVE-2025-66376 against Ukrainian government. CSS @import XSS steals session tokens. CISA KEV due 2026-04-01. Raise to P0 — nation-state exploitation confirmed."
+    },
+    {
+      "type": "news",
+      "title": "Citrix NetScaler CVE-2025-5777 — Mass Exploitation: 500+ Honeypot Hits in 24 Hours",
+      "cve": "CVE-2025-5777",
+      "cvss": "Critical",
+      "affected_technology": "Citrix NetScaler ADC and Gateway — unpatched instances; CVE-2023-4966 also targeted",
+      "threat_score": 9,
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-03-20",
+      "summary": "Defused Cyber honeypot recorded 500+ exploit attempts on March 16 against CVE-2025-5777 and CVE-2023-4966. Mass scanning phase underway. CISA KEV June 2025. Unpatched NetScaler = P0."
+    },
+    {
+      "type": "news",
+      "title": "DarkSword iOS Full-Chain Exploit Kit — 3 Zero-Days, 6 CVEs, UNC6353 (Russia) Targeting Ukraine",
+      "cve": "CVE-2026-20700, CVE-2025-43529, CVE-2025-14174, CVE-2025-31277, CVE-2025-43510, CVE-2025-43520",
+      "cvss": "Critical (multiple zero-days)",
+      "affected_technology": "Apple iOS 18.4 through 18.7; fixed in iOS 18.7.3 / iOS 26.2 or later",
+      "threat_score": 9,
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-03-20",
+      "summary": "GTIG/iVerify/Lookout: DarkSword iOS kit (6 CVEs, 3 zero-days) achieves zero-click full device takeover. Russian UNC6353 targets Ukraine; also used against Saudi Arabia, Turkey, Malaysia. Steals credentials and crypto wallets. Update iOS to >=18.7.3 immediately."
+    },
+    {
+      "type": "news",
+      "title": "The Gentlemen RaaS — CVE-2024-55591 FortiOS Auth Bypass; 14,700 Compromised Devices in Operational Database",
+      "cve": "CVE-2024-55591",
+      "cvss": "9.8 Critical",
+      "affected_technology": "Fortinet FortiOS and FortiProxy — all versions vulnerable to CVE-2024-55591 authentication bypass",
+      "threat_score": 9,
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-03-20",
+      "summary": "Group-IB: 'The Gentlemen' RaaS (~20 members) uses CVE-2024-55591 FortiOS auth bypass with a database of 14,700 exploited FortiGates and 969 validated VPN credentials. 94 orgs hit since July 2025. BYOVD defense evasion. Any unpatched FortiGate is actively at risk."
+    },
+    {
+      "type": "news",
+      "title": "'PolyShell' — Unauthenticated RCE/XSS on Magento/Adobe Commerce; No Production Patch Available",
+      "cve": "Not yet assigned",
+      "cvss": "~9.1 Critical (researcher estimate)",
+      "affected_technology": "Magento 2 / Adobe Commerce all versions up to and including 2.4.8; fix only in 2.4.9 alpha2",
+      "threat_score": 8,
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-03-20",
+      "summary": "Sansec: unauthenticated polyglot file upload via REST API cart endpoint yields RCE (most configs) or stored XSS. Exploit method circulating. Adobe has no production patch. Mitigation: block web access to pub/media/custom_options/ and audit for backdoors."
+    },
+    {
+      "type": "news",
+      "title": "BMC FootPrints ITSM — Pre-Auth RCE via 4-CVE Chain (Auth Bypass + SSRF + Java Deserialization)",
+      "cve": "CVE-2025-71257, CVE-2025-71258, CVE-2025-71259, CVE-2025-71260",
+      "cvss": "Critical (chain result)",
+      "affected_technology": "BMC FootPrints ITSM — all versions prior to September 2025 patch; first public disclosure today",
+      "threat_score": 8,
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-03-20",
+      "summary": "First public disclosure: 4-CVE pre-auth RCE chain in BMC FootPrints. Auth bypass extracts guest token; AspectJWeaver gadget in VIEWSTATE deserialization writes shell to Tomcat webroot. Patched Sept 2025 but ITSM platforms commonly lag updates — verify version immediately."
+    },
+    {
+      "type": "news",
+      "title": "CVE-2026-22557 — Ubiquiti UniFi CVSS 10.0 Unauthenticated Path Traversal Enables Account Takeover",
+      "cve": "CVE-2026-22557",
+      "cvss": "10.0 Critical",
+      "affected_technology": "Ubiquiti UniFi Network Application <= 10.1.85; fixed in 10.1.89 / 10.2.97 / 9.0.118",
+      "threat_score": 7,
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-03-20",
+      "summary": "CVSS 10.0 unauthenticated path traversal in UniFi Network App: network-adjacent attacker can read files and hijack accounts (no auth, no user interaction). Second flaw: authenticated NoSQL injection for privilege escalation. GRU previously abused Ubiquiti hardware. Update immediately."
+    },
+    {
+      "type": "news",
+      "title": "CursorJack — Proofpoint PoC: Cursor IDE MCP Deep Links Enable One-Click Arbitrary Command Execution",
+      "cve": "Not yet assigned",
+      "cvss": "High (researcher estimate)",
+      "affected_technology": "Cursor IDE — all versions supporting MCP deep links via cursor:// protocol handler",
+      "threat_score": 7,
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-03-20",
+      "summary": "Proofpoint PoC: cursor:// deep links with malicious mcp.json execute arbitrary local commands or install rogue remote MCP server after single-click + accept. Public PoC live. Developer security teams: restrict external deep link acceptance and audit MCP server allowlists."
+    },
+    {
+      "type": "news",
+      "title": "CVE-2026-22733 — Spring Security Authentication Bypass via CloudFoundry Actuator Path (CVSS 8.2)",
+      "cve": "CVE-2026-22733",
+      "cvss": "8.2 High",
+      "affected_technology": "Spring Security 4.0.0-4.0.3, 3.5.0-3.5.11, 3.4.0-3.4.14, 3.3.0-3.3.17, 2.7.0-2.7.31",
+      "threat_score": 7,
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-03-20",
+      "summary": "Spring Boot Actuator apps bypass auth when endpoints share CloudFoundry Actuator path. Published 2026-03-19. Five major Spring Security release lines affected. Fix: upgrade to >=4.0.4 / >=3.5.12 / >=3.4.15 / >=3.3.18 / >=2.7.32 depending on branch."
+    }
+  ],
+  "noted": [
+    {
+      "cve": null,
+      "product": "HijackLoader / SnappyClient C2",
+      "summary": "New C++ C2 framework SnappyClient delivered via HijackLoader (Telefónica-impersonating site). Features: keylogging, screenshots, remote terminal, browser cred theft. AMSI bypass + Heaven's Gate + direct syscalls. Cryptocurrency theft focus."
+    },
+    {
+      "cve": null,
+      "product": "ClickFix / AutoHotKey (Pakistani gov lure)",
+      "summary": "Compromised Pakistani gov site (wasafaisalabad.gop.pk) serves fake CAPTCHA ClickFix lure installing MSI that drops AutoHotKey backdoor. Ongoing ClickFix campaign variant."
+    },
+    {
+      "cve": "CVE-2025-62181, CVE-2025-9559",
+      "product": "PEGA Infinity Platform",
+      "summary": "SEC Consult disclosed medium-severity flaws: weak brute-force protection enabling password spraying + username enumeration (CVE-2025-62181); IDOR bypasses authz for file access (CVE-2025-9559). Patched in 24.1.4 / 24.2.4 / 25.1.1."
+    },
+    {
+      "cve": null,
+      "product": "Microsoft Teams / Quick Assist",
+      "summary": "Rapid7 reports surge in Teams-based IT impersonation phishing deploying malware via Quick Assist remote access. Teams allows external messages by default — functionally no email gateway."
+    },
+    {
+      "cve": null,
+      "product": "Iran Cyber Threat Landscape",
+      "summary": "FortiGuard: six-month Iran-linked infrastructure buildup (US shell companies) positioned for retaliation post-airstrikes. Regional cyber activity rising but no confirmed large-scale attack yet. Harden credentials and reduce attack surface."
+    }
+  ]
+}
