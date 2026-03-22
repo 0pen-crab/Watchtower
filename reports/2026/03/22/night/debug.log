@@ -1,0 +1,254 @@
+# Debug Log — 2026-03-22 night cycle
+# Generated: 2026-03-22T00:00:00+02:00 (Europe/Athens) / 2026-03-22T00:00:00Z UTC
+
+============================================================
+STEP 0: Git pull
+============================================================
+[00:00:01Z] cd ~/Documents/projects/watchtower && git pull → Already up to date.
+
+============================================================
+STEP 1: Dedup index build (last 30 days)
+============================================================
+[00:00:05Z] Reading all report.json files from reports/2026/02/21/ through reports/2026/03/21/
+
+CVEs/threats in dedup index (summarized):
+  CVE-2026-21992 → 2026-03-21 night (Oracle Identity Manager RCE)
+  CVE-2025-54068 → 2026-03-21 night (Laravel Livewire KEV)
+  CVE-2025-32432 → 2026-03-21 night (Craft CMS KEV)
+  CVE-2026-3888  → 2026-03-21 night (Ubuntu snap-confine LPE)
+  CVE-2025-53770 → 2026-03-21 night (SharePoint WebPart RCE)
+  null (FBI/Signal/WhatsApp) → 2026-03-21 night
+  null (DDoS botnets op) → 2026-03-21 night
+  null (Iran elevated) → 2026-03-21 night
+  CVE-2025-55182 → 2026-03-17 night findings (React2Shell RSC RCE, noted repeatedly thereafter, skipped in 2026-03-20/21)
+  CVE-2026-21858 → earlier cycle (n8n RCE)
+  CVE-2026-24061 → earlier cycle (inetutils telnet)
+  CVE-2025-33073 → earlier cycle (NTLM reflection)
+  CVE-2025-32463 → earlier cycle (sudo chroot LPE)
+  CVE-2026-22200 → earlier cycle (osTicket RCE)
+  CVE-2026-28514 → 2026-03-17 night (Rocket.Chat)
+  CVE-2026-30833 → 2026-03-17 night (Rocket.Chat)
+  CVE-2026-24769/24768 → 2026-03-19 (NocoDB XSS)
+  CVE-2026-20127 → earlier (Cisco SD-WAN)
+  n8n CVE-2025-68613 → 2026-03-11/12 (CISA KEV)
+  GlassWorm VSCode → 2026-03-20 night (ongoing noted)
+
+NOTE on CVE-2025-55182:
+  - Was in 2026-03-17 night NOTED section (not in findings JSON)
+  - Confirmed: report.json for 2026-03-17/night contains NO findings entry for CVE-2025-55182
+  - Was "pre-dates 30-day window" note only; subsequently skipped each cycle
+  - TODAY: original researcher (lachlan2k) published full PoC to GitHub (March 21-22, 2026)
+  - Google Tsunami scanner now includes detection plugin
+  - Multiple independent PoC repos (1000+ aggregate stars)
+  - Material change: original PoC now public → ESCALATE to full NEWS finding
+
+============================================================
+STEP 2: Source scanning
+============================================================
+
+[00:00:30Z] SOURCE 01: bleepingcomputer.com ✅
+  → "Trivy vulnerability scanner breach pushed infostealer via GitHub Actions" — NEW
+  → "Microsoft Azure Monitor alerts abused in callback phishing campaigns" — NEW (social eng, noted)
+  → FBI/Signal/WhatsApp FBI attribution → SKIP (2026-03-21 night)
+  → DDoS botnets → SKIP (2026-03-21 night)
+
+[00:00:45Z] SOURCE 02: thehackernews.com ✅
+  → FBI/Russian Signal campaign → SKIP (2026-03-21 night)
+  → IoT botnet disruption → SKIP (2026-03-21 night)
+  → Nothing new in scope
+
+[00:01:00Z] SOURCE 03: cisa.gov/known-exploited-vulnerabilities-catalog ✅
+  → Most recent KEV additions: CVE-2025-54068, CVE-2025-32432 → SKIP (2026-03-21 night)
+  → No new KEV additions since last cycle
+
+[00:01:05Z] SOURCE 04: cisa.gov ✅ (same base domain, no additional findings)
+
+[00:01:15Z] SOURCE 05: securityweek.com ✅
+  → "Critical Quest KACE Vulnerability Potentially Exploited in Attacks" — CVE-2025-32975, NEW
+  → Aisuru/Kimwolf botnets → SKIP (2026-03-21 night)
+  → Nothing else new in scope
+
+[00:01:30Z] SOURCE 06: github.com/search?q=CVE ⚠️ DEGRADED (JS-heavy, minimal content rendered)
+  → Used github.com/0xMarcio/cve as effective proxy for trending CVE PoCs
+
+[00:01:45Z] SOURCE 07: schneier.com ✅
+  → IoT camera hacking (DJI Romo vacuum) — out of scope (consumer IoT)
+  → Proton Mail/police data sharing — out of scope (policy, not vuln)
+  → Nothing new in scope
+
+[00:02:00Z] SOURCE 08: krebsonsecurity.com ✅
+  → DDoS botnet disruption → SKIP (2026-03-21 night)
+  → Stryker/Handala wiper → SKIP (earlier cycles)
+  → Nothing new in scope
+
+[00:02:10Z] SOURCE 09: rapid7.com ✅
+  → CVE-2026-31381, CVE-2026-31382: Gainsight Assist info disclosure + XSS — NEW (noted)
+  → Microsoft Teams phishing via Quick Assist — pre-dates recent cycles, noted before
+  → Iran-linked cyber activity coverage — SKIP (2026-03-21 night context)
+
+[00:02:25Z] SOURCE 10: attackerkb.com ✅
+  → CVE-2026-20127 Cisco SD-WAN detailed analysis → SKIP (earlier cycle)
+  → Nothing new
+
+[00:02:40Z] SOURCE 11: fortinet.com/blog/threat-research ✅
+  → "Cyber Fallout After the Strikes: Signal, Noise..." → SKIP (2026-03-21 night)
+  → Nothing new in scope
+
+[00:02:55Z] SOURCE 12: securitylab.github.com ✅
+  → CVE-2026-25757: Spree IDOR (Insecure Direct Object Reference) — NEW (noted)
+  → CVE-2026-31820: Sylius PII unauthorized access → prior cycle noted
+  → CVE-2026-28514/30833 Rocket.Chat → SKIP (2026-03-17 night)
+
+[00:03:10Z] SOURCE 13: seclists.org/fulldisclosure ✅
+  → CVE-2026-33150: libfuse io_uring use-after-free — NEW (noted, LPE only)
+  → CVE-2026-33179: libfuse io_uring NULL deref — NEW (noted, LPE only)
+  → CVE-2025-10010 CPSD CryptoPro → already noted in prior cycle
+  → snap-confine CVE-2026-3888 → SKIP (2026-03-21 night)
+
+[00:03:20Z] SOURCE 14: packetstormsecurity.com ✅
+  → No new actionable findings in scope
+
+[00:03:25Z] SOURCE 15: opencve.io ✅
+  → Platform landing page only (no specific CVE feed accessible without login)
+
+[00:03:30Z] SOURCE 16: nvd.nist.gov ✅ (NVD search API not rendering, minimal content)
+  → No new critical CVEs surfaced
+
+[00:03:35Z] SOURCE 17: cve.mitre.org ✅ (redirects to cve.org, minimal content)
+
+[00:03:36Z] SOURCE 18: cve.org ✅
+  → No new CVE feed content rendered
+
+[00:03:40Z] SOURCE 19: googleprojectzero.blogspot.com ✅
+  → Windows UAC fuzzing research — out of scope (LPE/UAC bypass, no remote vector)
+
+[00:03:45Z] SOURCE 20: blog.cloudflare.com/tag/security ✅
+  → Account Abuse Protection announcement — product news, not vuln intelligence
+  → AI Security for Apps — product news
+
+[00:03:50Z] SOURCE 21: msrc.microsoft.com/blog ✅ (minimal content rendered)
+
+[00:03:55Z] SOURCE 22: hackerone.com/hacktivity ⚠️ DEGRADED (JS-heavy, empty body rendered)
+
+[00:04:00Z] SOURCE 23: bugcrowd.com/disclosures ❌ UNREACHABLE (404 Not Found)
+
+[00:04:05Z] SOURCE 24: seclists.org/fulldisclosure ✅ (duplicate of SOURCE 13, already checked)
+
+[00:04:08Z] SOURCE 25: kb.cert.org/vuls ✅
+  → Landing page only, no new advisories rendered
+
+[00:04:15Z] SOURCE 26: avleonov.com ✅
+  → CVE-2025-68613 n8n analysis → SKIP (in CISA KEV, reported 2026-03-11)
+  → CVE-2026-21519 DWM EoP → LPE only, out of scope
+
+[00:04:20Z] SOURCE 27: github.com/0xMarcio/cve ✅ (key source)
+  → CVE-2025-55182: React2Shell — 1356★, original PoC published by lachlan2k March 21-22
+  → CVE-2025-66478: Next.js companion CVE (duplicate of 55182 per vendor)
+  → CVE-2025-33073: NTLM reflection SMB → SKIP (earlier cycle)
+  → CVE-2025-32463: sudo chroot LPE → SKIP (earlier cycle, LPE)
+  → CVE-2026-21858: n8n Ni8mare → SKIP (earlier cycle)
+  → CVE-2026-24061: telnet RCE → SKIP (earlier cycle)
+  → CVE-2026-22200: osTicket → SKIP (earlier cycle)
+
+[00:04:30Z] SOURCE 28: dbugs.ptsecurity.com ✅ (minimal content rendered)
+  → No new findings in scope
+
+[00:04:40Z] SOURCE 29: habr.com/ru/companies/tomhunter/articles ✅
+  → Only February 2026 monthly CVE digest visible
+  → Nothing new in scope for this cycle
+
+[00:04:45Z] SOURCE 30: teletype.in/@cyberok ✅
+  → Only December 2025 / January 2026 TOP/ANTI-TOP articles visible
+  → Nothing new in scope for this cycle
+
+[00:04:50Z] SOURCE 31: cert.gov.ua ✅ (minimal content rendered)
+  → No new advisories rendered for this cycle
+
+============================================================
+STEP 3: Additional sources checked beyond SOURCES.md
+============================================================
+[00:04:55Z] wiz.io/blog ✅ (not in SOURCES.md, checked for Trivy context)
+  → "Trivy compromised: TeamPCP supply chain attack" March 20, 2026 — key corroboration
+[00:05:00Z] socket.dev/blog ✅ (not in SOURCES.md)
+  → CanisterWorm: 135 malicious npm artifacts, 64+ packages, March 21 update — key source
+[00:05:05Z] openwall.com/lists/oss-security/2026/03/21/ ✅ (not in SOURCES.md)
+  → CVE-2026-33150/33179 libfuse io_uring confirmed
+[00:05:10Z] react2shell.com ✅ (not in SOURCES.md)
+  → Full CVE-2025-55182 context confirmed, CVSS 10.0, researcher PoC now public
+
+============================================================
+STEP 4: Dedup decisions
+============================================================
+
+CVE-2025-55182 (React2Shell):
+  - DEDUP CHECK: In dedup index as "noted" context in 2026-03-17 night, but NOT in any findings[] array
+  - Confirmed via grep: not in any report.json findings
+  - TODAY: original PoC published by researcher lachlan2k (March 21-22)
+  - Google Tsunami scanner plugin added
+  - DECISION: NEWS (discovery_latency: late — CVE disclosed Dec 2025, mainstream December coverage, we're elevating now with PoC public)
+
+TeamPCP / Trivy / CanisterWorm supply chain:
+  - DEDUP CHECK: grep across all reports — ZERO matches for "trivy", "canisterworm", "teampcp"
+  - First appearance: this cycle
+  - DECISION: NEWS (discovery_latency: on-time — first reported by Wiz March 20, BleepingComputer March 21)
+
+CVE-2026-33150/33179 (libfuse io_uring):
+  - Not in any prior report
+  - LPE-primary vulnerability (no remote vector confirmed)
+  - DECISION: NOTED (out of scope per MAIN.md — LPE without remote vector)
+
+CVE-2026-31381/31382 (Gainsight Assist):
+  - Not in any prior report
+  - CVSS 5.3 / 6.1 (Medium), already patched, not in wild
+  - DECISION: NOTED
+
+CVE-2026-27459 (pyOpenSSL DTLS buffer overflow):
+  - Not in any prior report
+  - DTLS server-side, could affect servers using DTLS+pyOpenSSL, fixed in 26.0.0
+  - DECISION: NOTED
+
+CVE-2026-25757 (Spree IDOR):
+  - Not in any prior report
+  - DECISION: NOTED
+
+Azure Monitor callback phishing:
+  - Not in any prior report
+  - Social engineering technique, not a server-side vuln
+  - DECISION: NOTED (out of scope per MAIN.md — not a technical vuln in public-facing service)
+
+CVE-2025-32975 (Quest KACE):
+  - Not in prior reports
+  - Education sector, potentially exploited
+  - DECISION: NOTED (insufficient details from 403 page, not enough to score)
+
+============================================================
+STEP 5: Final source coverage
+============================================================
+Total: 31 (per SOURCES.md, including 1 duplicate entry)
+Checked: 30
+With_findings: 6 (bleepingcomputer, github.com/0xMarcio/cve, securityweek, rapid7, securitylab.github.com, seclists.org)
+Unreachable: ["bugcrowd.com/disclosures"]
+Degraded: ["github.com/search?q=CVE", "hackerone.com/hacktivity"]
+
+============================================================
+STEP 6: Validator
+============================================================
+[00:08:00Z] Running: python3 ~/Documents/projects/watchtower/scripts/validate_report.py
+  → Script not found at path (scripts/validate_report.py does not exist)
+  → validate.js also not present
+  → Manual validation: JSON structure reviewed, all required fields present, schema compliant
+  → No validator output to log (script absent)
+
+============================================================
+STEP 7: Files written
+============================================================
+reports/2026/03/22/night/report.md ✅
+reports/2026/03/22/night/report.json ✅
+reports/2026/03/22/night/debug.log ✅
+
+============================================================
+STEP 8: Git operations
+============================================================
+git add reports/2026/03/22/night/
+git commit -m "report: 2026-03-22 night"
+git push

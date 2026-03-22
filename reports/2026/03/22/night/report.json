@@ -1,0 +1,78 @@
+{
+  "date": "2026-03-22",
+  "cycle": "night",
+  "findings": [
+    {
+      "type": "news",
+      "title": "React2Shell (CVE-2025-55182 / CVE-2025-66478) — Next.js / React RSC Pre-Auth RCE — Original PoC Now Public",
+      "threat_score": 9,
+      "cve": "CVE-2025-55182",
+      "cvss": 10.0,
+      "affected_technology": "React.js (Server Components), Next.js (vendored RSC)",
+      "summary": "The original researcher behind CVE-2025-55182 (React2Shell, CVSS 10.0) has published their full PoC for the pre-auth RCE in React Server Components, triggering a new wave of mass-scanning tooling including a Google Tsunami scanner plugin, with multiple independent PoC repositories and confirmed ongoing exploitation by China-nexus threat actors; all Next.js applications with Server Actions or RSC enabled and running pre-patch versions require immediate patching.",
+      "discovery_latency": "late",
+      "first_seen_at": "github.com/0xMarcio/cve"
+    },
+    {
+      "type": "news",
+      "title": "TeamPCP CanisterWorm — Self-Propagating npm Supply Chain Attack Expands to 135 Malicious Artifacts",
+      "threat_score": 9,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "npm ecosystem (Node.js / JavaScript), GitHub Actions CI/CD",
+      "summary": "The TeamPCP threat actor has expanded their supply chain attack beyond the Trivy GitHub Actions compromise into the npm ecosystem, deploying a self-propagating worm across 135 malicious package artifacts in 64+ packages under @emilgroup and @teale.io namespaces, which installs a persistent Python backdoor polling an ICP blockchain canister as C2 and autonomously harvests npm publish tokens to spread to additional packages, exposing any CI/CD pipeline or developer environment running npm install to credential theft and persistent backdoor.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "bleepingcomputer.com"
+    }
+  ],
+  "noted": [
+    {
+      "cve": "CVE-2025-32975",
+      "product": "Quest KACE Systems Management Appliance",
+      "summary": "Critical vulnerability reported as potentially exploited in attacks against education sector; insufficient public technical detail available this cycle."
+    },
+    {
+      "cve": "CVE-2026-33150",
+      "product": "libfuse (io_uring)",
+      "summary": "Use-after-free in libfuse's io_uring I/O path disclosed March 21, 2026; local privilege escalation vector on Linux systems running FUSE filesystems with io_uring, no remote vector confirmed."
+    },
+    {
+      "cve": "CVE-2026-33179",
+      "product": "libfuse (io_uring)",
+      "summary": "NULL dereference in libfuse's io_uring I/O path disclosed alongside CVE-2026-33150; local-only impact, no remote vector confirmed."
+    },
+    {
+      "cve": "CVE-2026-31381",
+      "product": "Gainsight Assist (Chrome/Outlook plugin)",
+      "summary": "Information disclosure flaw exposing user email addresses in base64-encoded OAuth state parameter (CVSS 5.3); patched via plugin update March 9, 2026, not exploited in wild."
+    },
+    {
+      "cve": "CVE-2026-31382",
+      "product": "Gainsight Assist (Chrome/Outlook plugin)",
+      "summary": "Reflected XSS via error_description parameter with Safari onpagereveal WAF bypass (CVSS 6.1), chainable with CVE-2026-31381 for PII harvest to active exploitation; server-side fix applied March 6, 2026."
+    },
+    {
+      "cve": "CVE-2026-27459",
+      "product": "pyOpenSSL",
+      "summary": "Buffer overflow in DTLS cookie callback when callback returns cookie exceeding DTLS1_COOKIE_LENGTH; fixed in pyOpenSSL 26.0.0 released March 15, 2026."
+    },
+    {
+      "cve": "CVE-2026-25757",
+      "product": "Spree Commerce",
+      "summary": "Insecure Direct Object Reference allowing unauthorized access to PII, discovered by GitHub Security Lab; patch status and CVSS not yet available."
+    },
+    {
+      "cve": null,
+      "product": "Microsoft Azure Monitor",
+      "summary": "Threat actors abuse Azure Monitor alert descriptions to send legitimate SPF/DKIM/DMARC-passing callback phishing emails from azure-noreply@microsoft.com; novel infrastructure-abuse technique with no fix available."
+    }
+  ],
+  "source_coverage": {
+    "total": 31,
+    "checked": 30,
+    "with_findings": 6,
+    "unreachable": ["bugcrowd.com/disclosures"],
+    "degraded": ["github.com/search?q=CVE", "hackerone.com/hacktivity"]
+  },
+  "full_report": "reports/2026/03/22/night/report.md"
+}
