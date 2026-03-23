@@ -1,0 +1,98 @@
+{
+  "date": "2026-03-23",
+  "cycle": "night",
+  "findings": [
+    {
+      "type": "news",
+      "title": "CVE-2026-33017: Langflow Unauthenticated RCE Exploited in the Wild",
+      "threat_score": 9,
+      "cve": "CVE-2026-33017",
+      "cvss": 9.3,
+      "affected_technology": "Langflow AI Workflow Builder <= 1.8.1",
+      "summary": "Unauthenticated attackers can send attacker-controlled flow data to the public build endpoint, triggering exec() without sandboxing; Sysdig documented active exploitation within 20 hours of disclosure, with three PoC repos appearing overnight.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "securityweek.com"
+    },
+    {
+      "type": "news",
+      "title": "CVE-2026-20127: Cisco Catalyst SD-WAN Auth Bypass Actively Exploited by Chinese APT UAT-8616",
+      "threat_score": 9,
+      "cve": "CVE-2026-20127",
+      "cvss": 10.0,
+      "affected_technology": "Cisco Catalyst SD-WAN Controller (vSmart)",
+      "summary": "Unauthenticated remote attackers bypass authentication and gain administrative privileges via crafted vdaemon requests; UAT-8616 has chained this with CVE-2022-20775 for root access, with Cisco Talos and ACSC attributing activity back at least three years.",
+      "discovery_latency": "late",
+      "first_seen_at": "attackerkb.com"
+    },
+    {
+      "type": "news",
+      "title": "CVE-2026-22200: osTicket PHP Filter Chain + CNEXT RCE Chain (Horizon3.ai PoC)",
+      "threat_score": 8,
+      "cve": "CVE-2026-22200",
+      "cvss": 9.1,
+      "affected_technology": "osTicket < 1.18.3 / 1.17.7",
+      "summary": "Anonymous attackers abuse mPDF PHP filter chain injection in ticket-to-PDF export to exfiltrate arbitrary server files, then chain with CVE-2024-2961 (CNEXT) for remote code execution; Horizon3.ai published a full PoC targeting thousands of internet-exposed SLED and SMB helpdesk instances.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "github.com/0xMarcio/cve"
+    },
+    {
+      "type": "news",
+      "title": "Chrysalis: Undocumented Lotus Blossom Backdoor Delivered via Notepad++ Update Infrastructure",
+      "threat_score": 8,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Windows (Notepad++ users, government/telecom/aviation/CI sectors)",
+      "summary": "Lotus Blossom (Chinese APT) poisoned Notepad++ update distribution to install Chrysalis, a previously undocumented backdoor using DLL sideloading and a Warbird-protected loader against government and CI targets.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "rapid7.com"
+    },
+    {
+      "type": "news",
+      "title": "VoidStealer: First In-the-Wild Chrome ABE Bypass via Hardware Debugger Breakpoints",
+      "threat_score": 7,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Google Chrome / Microsoft Edge (Application-Bound Encryption)",
+      "summary": "VoidStealer v2.0 MaaS extracts Chrome's v20_master_key directly from process memory by attaching as a debugger and using hardware breakpoints during startup decryption, bypassing ABE without privilege escalation or code injection; first in-the-wild adoption of the ElevationKatz/ChromeKatz technique.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "bleepingcomputer.com"
+    },
+    {
+      "type": "news",
+      "title": "CVE-2026-29058: AVideo Encoder Unauthenticated OS Command Injection — Metasploit Module Released",
+      "threat_score": 7,
+      "cve": "CVE-2026-29058",
+      "cvss": 9.8,
+      "affected_technology": "AVideo Encoder (getImage.php)",
+      "summary": "An unauthenticated attacker can inject OS commands via the getImage.php endpoint in AVideo Encoder; Rapid7 released an official Metasploit module in the March 20 wrap-up, significantly lowering the exploitation barrier for mass exploitation.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "rapid7.com"
+    },
+    {
+      "type": "news",
+      "title": "CVE-2026-23745: node-tar < 7.5.3 Arbitrary File Overwrite via Hardlink Path Traversal",
+      "threat_score": 6,
+      "cve": "CVE-2026-23745",
+      "cvss": 7.5,
+      "affected_technology": "npm package node-tar < 7.5.3",
+      "summary": "The library resolves hardlink and symlink targets using path.resolve() on unsanitized attacker-controlled linkpath values, allowing malicious tar archives to overwrite arbitrary files outside the extraction root even with preservePaths: false; patched in v7.5.3.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "github.com/0xMarcio/cve"
+    }
+  ],
+  "noted": [
+    {
+      "cve": "CVE-2026-24516",
+      "product": "DigitalOcean Droplet Agent <= 1.3.2",
+      "summary": "Researcher Cortex Security Research claims pre-auth root RCE (CVSS 10.0) via command injection in the troubleshooting actioner triggered by a port-knocking TCP sequence on port 22; CVE is RESERVED in NVD and no vendor advisory found — treat as unverified pending DigitalOcean confirmation."
+    }
+  ],
+  "source_coverage": {
+    "total": 31,
+    "checked": 30,
+    "with_findings": 8,
+    "unreachable": ["bugcrowd.com/disclosures"],
+    "degraded": ["blog.cloudflare.com/tag/security"]
+  },
+  "full_report": "reports/2026/03/23/night/report.md"
+}

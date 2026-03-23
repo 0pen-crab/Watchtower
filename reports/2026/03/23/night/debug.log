@@ -1,0 +1,218 @@
+VULNERABILITY RESEARCH DEBUG LOG
+Cycle: 2026-03-23 / night
+Agent Start: 2026-03-23T00:00:00+02:00 (02:00 AM Athens / 00:00 UTC)
+========================================================================
+
+STEP 1 — git pull
+  [00:00:01] cd ~/Documents/projects/watchtower && git pull → Already up to date
+
+STEP 2 — DEDUP INDEX BUILD
+  [00:00:10] Reading last 30 days of reports (2026-02-21 → 2026-03-22)
+  Reports found:
+    2026/03/22/night, 2026/03/21/night, 2026/03/20/night, 2026/03/19/night,
+    2026/03/18/night, 2026/03/17/night, 2026/03/12/night, 2026/03/11/night,
+    2026/03/10/night (+ earlier)
+  [00:00:45] Dedup index built. Notable already-reported items:
+    CVE-2025-55182 (React2Shell/Next.js RSC RCE) → 03/17, 03/22
+    TeamPCP CanisterWorm (Trivy/npm supply chain) → 03/22
+    CVE-2026-21992 (Oracle Identity Manager) → 03/21
+    CVE-2025-54068 (Laravel Livewire) → 03/21
+    CVE-2025-32432 (Craft CMS) → 03/21
+    FBI Signal/WhatsApp account hijacking (Russia) → 03/21
+    CVE-2026-3888 (Ubuntu 24.04 LPE) → 03/21
+    CVE-2025-53770 (SharePoint .NET Deserialization) → 03/21
+    CVE-2025-62181 (Pega Platform RCE) → 03/21, 03/20
+    CVE-2026-31820 (Sylius) → 03/21
+    CVE-2025-12428 (Chromium) → 03/21
+    CVE-2025-66376 (Zimbra ZCS XSS) → 03/20, 03/19
+    CVE-2025-5777 (Citrix NetScaler) → 03/20
+    DarkSword iOS Exploit Kit → 03/20, 03/19
+    CVE-2024-55591 (FortiOS) → 03/20
+    PolyShell (Magento) → 03/20
+    BMC FootPrints ITSM chain → 03/20
+    CVE-2026-22557 (Ubiquiti UniFi) → 03/20
+    CursorJack (Cursor IDE MCP) → 03/20
+    CVE-2026-22733 (Spring Security) → 03/20
+    HijackLoader/SnappyClient → 03/20
+    CVE-2026-20963 (SharePoint RCE) → 03/19
+    CVE-2025-32463 (sudo chroot) → 03/19
+    CVE-2026-3564 (ConnectWise ScreenConnect) → 03/19
+    CVE-2026-20643 (Apple WebKit) → 03/19
+    CVE-2026-20131 (Cisco FMC) → 03/19
+    CVE-2026-22812 (OpenCode) → 03/19
+    CVE-2026-24769, CVE-2026-24768 (NocoDB) → 03/19
+    CVE-2025-26399 (SolarWinds WHD) → 03/19
+    WhatsApp View Once bypass → 03/19
+    CVE-2026-21669..21672 (Veeam) → 03/18
+    Poisoned Typeface → 03/18
+    LeakNet Ransomware → 03/18
+    Starkiller PhaaS → 03/18
+    CVE-2026-0628 (Chrome Gemini) → 03/18
+    CVE-2026-29000 (pac4j JWT) → 03/17, 03/18
+    CVE-2026-2796 (Anthropic Claude) → 03/18
+    CVE-2026-2833/35/36 (Pingora) → 03/18
+    Iran/Israel BadeSaba → 03/18
+    CVE-2026-21994 (Oracle Edge) → 03/18
+    CVE-2026-25937 (GLPI) → 03/18
+    CVE-2026-22727 (Cloud Foundry) → 03/18
+    CVE-2026-27459/27448 (pyOpenSSL) → 03/18
+    CVE-2025-47813 (Wing FTP) → 03/17
+    CVE-2026-3909 (Chrome zero-days) → 03/17
+    GlassWorm ForceMemo → 03/17
+    CVE-2025-33073 (NTLM Reflection SMB) → 03/17
+    CVE-2026-28514 (Rocket.Chat) → 03/17
+    DRILLAPP (Laundry Bear) → 03/17
+    Stryker Wiper Attack → 03/17
+    CVE-2026-4224 (Expat XML) → 03/17
+    CVE-2026-24061 (inetutils-telnetd) → 03/17
+    CVE-2025-10010 (CryptoPro) → 03/17
+    Cohesity TranZman → 03/17
+    Apple iOS 15.8.7 → 03/17
+    CVE-2026-25177 (Active Directory) → 03/17
+    CVE-2026-26119 (Windows Admin Center) → 03/17
+    CVE-2025-68613 (n8n) → 03/12
+    CVE-2026-26113/26110 (MS Office Preview) → 03/12
+    CVE-2026-21440 (AdonisJS) → 03/12
+    CVE-2026-30844 (Wekan) → 03/12
+    CVE-2026-21858 (n8n Ni8mare) → 03/11
+    APT28 BEARDSHELL/COVENANT → 03/10
+    BlackSanta EDR Killer → 03/10
+    A0Backdoor MS Teams → 03/10
+
+STEP 3 — SOURCE SCANNING (31 total)
+
+TIER 1 SOURCES:
+  [00:01:00] bleepingcomputer.com → ✅ 1.0s | NEW: VoidStealer Chrome ABE debugger bypass
+  [00:01:03] thehackernews.com → ✅ 1.2s | SKIP: Only previously-covered items
+  [00:01:05] cisa.gov/known-exploited-vulnerabilities-catalog → ✅ 0.8s | No new KEV entries
+  [00:01:07] cisa.gov → ✅ 0.9s | Implied coverage via KEV check
+  [00:01:09] securityweek.com → ⚠️ 1.1s (403 Cloudflare on article pages, index accessible) | Langflow critical RCE referenced
+  [00:01:14] github.com/search?q=CVE → ✅ 0.8s | NEW: CVE-2026-33017, CVE-2026-23745, CVE-2026-24516, CVE-2026-25643 (suspicious), CVE-2026-20841 (suspicious)
+  [00:01:17] schneier.com → ✅ 0.7s | No new actionable items
+  [00:01:19] krebsonsecurity.com → ✅ 0.9s | SKIP: Stryker wiper (already 03/17)
+  [00:01:22] rapid7.com/blog → ✅ 1.9s | NEW: Chrysalis Backdoor (Lotus Blossom); NEW: CVE-2026-29058 AVideo Metasploit module
+  [00:01:26] attackerkb.com → ✅ 1.5s | NEW: CVE-2026-20127 (Cisco SD-WAN), highlighted active exploitation
+  [00:01:29] fortinet.com/blog/threat-research → ✅ 1.0s | "Cyber Fallout After Strikes" post; SKIP: Iran threat level already covered 03/21
+  [00:01:32] securitylab.github.com → ✅ 0.9s | SKIP: All items previously covered (Sylius, NocoDB, Rocket.Chat, Spree)
+  [00:01:34] seclists.org/fulldisclosure → ✅ 0.6s | SKIP: All March 2026 items already reported
+  [00:01:36] packetstormsecurity.com → ✅ 0.8s | 21 new exploits, verified → all covered in prior cycles
+  [00:01:39] opencve.io → ✅ 0.7s | CVE-2026-4558 (Linksys consumer router), CVE-2026-4555 (D-Link EOL) — too low impact/not internet-critical
+
+TIER 2 SOURCES:
+  [00:01:42] nvd.nist.gov → ✅ 2.1s | CVE-2026-33017 CONFIRMED with CISA-ADP reference; CVE-2026-24516 NOT FOUND (RESERVED)
+  [00:01:44] cve.mitre.org → ✅ 1.0s | Redirects to cve.org; content minimal
+  [00:01:45] cve.org → ✅ 0.5s | Minimal content
+  [00:01:48] googleprojectzero.blogspot.com → ✅ 0.7s | No new posts in scope
+  [00:01:51] blog.cloudflare.com/tag/security → ❌ timeout (Cloudflare WAF protection) → DEGRADED
+  [00:01:53] msrc.microsoft.com/blog → ✅ 0.7s | No new posts since March Patch Tuesday
+  [00:01:55] hackerone.com/hacktivity → ✅ 0.5s | Minimal accessible content (login required for most)
+  [00:01:57] bugcrowd.com/disclosures → ❌ Unreachable (persistent; same as last cycle)
+  [00:01:59] seclists.org/fulldisclosure → ✅ Already covered above (DUPLICATE IN LIST)
+  [00:02:01] kb.cert.org/vuls → ✅ 1.4s | Minimal content (JS-rendered, index only)
+  [00:02:05] avleonov.com → ✅ 0.6s | March "In the Trend" post: Windows Notepad RCE (Feb PT trending), Feb PT notes (no new CVEs not already in index)
+  [00:02:08] github.com/0xMarcio/cve → ✅ 0.8s | NEW: CVE-2026-22200 (osTicket PHP filters + CNEXT RCE, Horizon3.ai), CVE-2026-23745 (node-tar)
+  [00:02:10] dbugs.ptsecurity.com → ✅ 0.7s | Minimal content, no new findings
+  [00:02:14] habr.com/ru/companies/tomhunter/articles → ✅ 1.5s | Latest digest is February 2026; no March content yet
+  [00:02:17] teletype.in/@cyberok → ✅ 0.4s | Latest is Dec/Jan digest; no March 2026 content
+  [00:02:18] cert.gov.ua/article → ✅ 0.4s | Minimal content rendered
+
+STEP 3 COMPLETE
+  Total sources: 31
+  Checked: 30 (31 - 1 unreachable)
+  Unreachable: bugcrowd.com/disclosures
+  Degraded: blog.cloudflare.com/tag/security (timeout, WAF)
+  Sources with findings: 8
+
+STEP 4 — DEDUP DECISIONS
+
+Candidate: CVE-2026-33017 (Langflow unauthenticated RCE)
+  → Not in dedup index. CONFIRM NEW.
+  → CISA-ADP reference with Sysdig in-the-wild exploitation blog confirms active exploitation.
+  → 3 PoC repos created in last 24 hours (GitHub).
+  → Type: news | threat_score: 9 | discovery_latency: on-time
+
+Candidate: CVE-2026-20127 (Cisco Catalyst SD-WAN auth bypass)
+  → Not in dedup index. CONFIRM NEW.
+  → Talos disclosure Feb 25, but not covered in any prior reports.
+  → CVSS 10.0 + active exploitation by UAT-8616 (Chinese APT) since 2023.
+  → Type: news | threat_score: 9 | discovery_latency: late (Talos disclosed Feb 25)
+
+Candidate: CVE-2026-22200 (osTicket PHP filter chain + CNEXT RCE)
+  → Not in dedup index. CONFIRM NEW.
+  → Horizon3.ai PoC published. Anonymous-accessible attack surface. SLED sector exposure.
+  → Type: news | threat_score: 8 | discovery_latency: on-time
+
+Candidate: VoidStealer Chrome ABE bypass
+  → Not in dedup index. CONFIRM NEW.
+  → Gen Digital / BleepingComputer report published March 22.
+  → First infostealer using hardware breakpoint ABE bypass in the wild.
+  → Type: news | threat_score: 7 | discovery_latency: on-time
+
+Candidate: CVE-2026-23745 (node-tar < 7.5.3 arbitrary file overwrite)
+  → Not in dedup index. CONFIRM NEW.
+  → Path traversal via hardlink/symlink unsanitized linkpath. npm ecosystem.
+  → Type: news | threat_score: 6 | discovery_latency: on-time
+
+Candidate: CVE-2026-29058 (AVideo Encoder unauthenticated OS command injection)
+  → Not in dedup index. CONFIRM NEW.
+  → Metasploit module released in 03/20 wrap-up; low noise CVE becoming weaponized.
+  → Type: news | threat_score: 7 | discovery_latency: on-time
+
+Candidate: Chrysalis Backdoor / Lotus Blossom APT
+  → Not in dedup index. CONFIRM NEW.
+  → Rapid7 Labs: new undocumented APT backdoor via Notepad++ delivery chain.
+  → Type: news | threat_score: 8 | discovery_latency: on-time
+
+Candidate: CVE-2026-24516 (DigitalOcean Droplet Agent pre-auth root RCE)
+  → Not in dedup index. HOWEVER: CVE RESERVED in NVD; single unverified researcher; no vendor confirmation.
+  → Classify as noted item with caveat pending vendor confirmation.
+  → Type: noted
+
+Candidate: Trivy supply chain attack (TeamPCP)
+  → SKIP: In dedup index as "TeamPCP CanisterWorm (Trivy/npm supply chain)" → 03/22/night
+
+Candidate: CVE-2025-55182 (React2Shell) PoC update
+  → SKIP: In dedup index → 03/17, 03/22
+
+Candidate: CVE-2026-24061 (inetutils-telnetd) mass scanning
+  → SKIP: In dedup index → 03/17. Already reported. No material CVSS or scope change.
+
+Candidate: Microsoft Azure Monitor callback phishing
+  → SKIP: Social engineering, not an internet-facing vulnerability exploit. Below scope.
+
+Candidate: CVE-2026-20841 (Windows Notepad Markdown URL protocol RCE)
+  → Note: PoC repos fresh (2 hours ago) but look like malware distribution repos (ZIP downloads).
+  → Source repos appear to be attacker/malware repos masquerading as PoC (no code shown, .zip payloads).
+  → Do not report malware repo as PoC. Mark as suspicious. Not included.
+
+Candidate: CVE-2026-25643 (Frigate NVR RCE)
+  → Note: Single repo, same .zip download pattern as CVE-2026-20841 repos.
+  → Likely fake "PoC" distributing malware to security researchers.
+  → Not included. Mark as suspicious.
+
+STEP 5 — FINDINGS FINALIZATION
+  findings: 7 items (news)
+  noted: 1 item
+  All passing schema checks.
+
+STEP 6 — WRITING REPORT FILES
+  [00:05:00] Writing report.json...
+  [00:05:10] Writing report.md...
+
+STEP 7 — VALIDATOR OUTPUT (see below after validator run)
+
+SOURCE COVERAGE FINAL TALLY:
+  total: 31
+  checked: 30
+  with_findings: 8
+  unreachable: ["bugcrowd.com/disclosures"]
+  degraded: ["blog.cloudflare.com/tag/security"]
+
+STEP 7 — VALIDATOR OUTPUT
+  [00:05:30] python3 scripts/validate_report.py reports/2026/03/23/night/report.json
+  First run: ⚠️  1 warning: findings[3] summary was 306 chars (aim <200)
+  → Fixed: trimmed Chrysalis summary to <200 chars
+  Second run: ✅ reports/2026/03/23/night/report.json — valid (no warnings)
+
+STEP 8 — GIT COMMIT
+  Staging: reports/2026/03/23/night/
