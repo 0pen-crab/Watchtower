@@ -1,0 +1,105 @@
+DEBUG LOG — 2026-03-24 / night cycle
+Generated: 2026-03-24T02:00 Europe/Athens (2026-03-24T00:09 UTC)
+Agent: vulnerability-researcher
+============================================================
+
+DEDUP INDEX LOADED
+  Source reports scanned: 2026-02 + 2026-03 directories
+  Total dedup entries: 322
+  Last report: 2026-03-23/night
+
+SOURCE COVERAGE (31 sources checked)
+------------------------------------------------------------
+[2026-03-24T00:01Z] bleepingcomputer.com             OK  — new articles found
+[2026-03-24T00:01Z] thehackernews.com                OK  — CVE-2026-32746 article found
+[2026-03-24T00:01Z] cisa.gov/kev-catalog             OK  — no new KEV entries vs 2026-03-23
+[2026-03-24T00:02Z] securityweek.com                 OK  — QNAP/Pwn2Own (403 on article), Oracle (covered)
+[2026-03-24T00:02Z] cisa.gov/alerts                  FAIL — 404
+[2026-03-24T00:02Z] bleepingcomputer DarkSword        OK  — previously covered (CVE-2026-20700 cluster, 2026-03-20)
+[2026-03-24T00:03Z] attackerkb.com                   OK  — no new topics vs prior cycle
+[2026-03-24T00:03Z] packetstormsecurity.com          FAIL — ToS redirect
+[2026-03-24T00:03Z] securityweek QNAP article        FAIL — 403
+[2026-03-24T00:04Z] nvd.nist.gov (API)               OK  — 199 CVEs published 2026-03-23
+[2026-03-24T00:04Z] rapid7.com/blog                  OK  — CVE-2026-3055 Citrix article found (new)
+[2026-03-24T00:04Z] seclists.org/fulldisclosure       OK  — 12 messages, ending Mar 19; no new today
+[2026-03-24T00:04Z] opencve.io                       OK  — recent CVEs browsed; GL-iNet cluster (covered)
+[2026-03-24T00:05Z] googleprojectzero.blogspot.com    OK  — recent posts are research/fuzzing, no new vulns
+[2026-03-24T00:05Z] msrc.microsoft.com/blog           FAIL — blank page
+[2026-03-24T00:05Z] krebsonsecurity.com               OK  — TeamPCP CanisterWorm Iran wiper update found
+[2026-03-24T00:05Z] schneier.com                      OK  — Xbox hardware hack (out of scope); Proton Mail (not CVE)
+[2026-03-24T00:05Z] securitylab.github.com            OK  — GHSL-2026-004/005 Rocket.Chat (covered 2026-03-17/night)
+[2026-03-24T00:05Z] fortinet.com/blog/threat-research OK  — Iran cyber fallout article found; Agent Tesla (old)
+[2026-03-24T00:06Z] github.com/0xMarcio/cve          OK  — new PoCs found: CVE-2026-32746, CVE-2026-25769, CVE-2026-0828
+[2026-03-24T00:06Z] kb.cert.org/vuls                 OK  — minimal content (search only)
+[2026-03-24T00:07Z] rapid7.com Citrix article         OK  — CVE-2026-3055 details confirmed
+[2026-03-24T00:07Z] watchTowr CVE-2026-32746          OK  — extended impact analysis confirmed
+[2026-03-24T00:07Z] avleonov.com                      OK  — March "In the Trend" (#25): all previously covered CVEs
+[2026-03-24T00:08Z] cert.gov.ua                       FAIL — blank page
+[2026-03-24T00:08Z] hackerone.com/hacktivity           FAIL — requires login
+[2026-03-24T00:08Z] nvd.nist.gov (CVE-2026-4368)      OK  — Race condition Citrix (new, paired with 3055)
+[2026-03-24T00:08Z] habr.com/tomhunter               OK  — latest article is February 2026 digest (old)
+[2026-03-24T00:09Z] teletype.in/@cyberok              OK  — no March 2026 articles yet
+[2026-03-24T00:09Z] cve.org                           FAIL — no content returned
+[2026-03-24T00:09Z] bugcrowd.com/disclosures          FAIL — requires login/JS
+[2026-03-24T00:09Z] attackerkb.com/topics              OK  — no new high-value topics
+
+SOURCES CHECKED: 31 (of 31 in SOURCES.md)
+SOURCES OK: 22 | FAILED/EMPTY: 9 (CISA alerts, packetstorm, msrc blog, cert.gov.ua, HackerOne, cve.org, bugcrowd, QNAP article)
+
+============================================================
+CANDIDATE ITEMS EVALUATED
+------------------------------------------------------------
+
+[PASS] CVE-2026-32746 — GNU InetUtils telnetd Pre-Auth RCE
+  Reason: Not in dedup (only appeared in 2026-03-17 as "telnetd" reference for CVE-2026-24061 context, not as own finding)
+  New angle: WatchTowr extended impact analysis (published today), PoC updated 5h ago; adds FreeBSD/NetBSD/Citrix NetScaler/Apple/TrueNAS
+  Score: 8
+
+[PASS] CVE-2026-3055 / CVE-2026-4368 — Citrix NetScaler Advisory
+  Reason: Published 2026-03-23, not in dedup
+  Score: 7
+
+[PASS] CVE-2026-25769 — Wazuh Cluster RCE (Insecure Deserialization)
+  Reason: Not in dedup; PoC published today by Hakai Security (7 hours ago, 30 stars)
+  Score: 7
+
+[PASS] TeamPCP CanisterWorm → Iran Wiper
+  Reason: CanisterWorm/TeamPCP previously covered 2026-03-22, but NEW development: dedicated Iran-targeting wiper
+  payload using same infrastructure. Material enough for Update entry (new wiper variant, new geofencing, FortiGuard intel)
+  Score: 7 (Update; previous 2026-03-22 score was 7, same level but distinct new payload)
+
+[SKIP] Trivy Supply Chain detailed BleepingComputer article
+  Reason: Trivy supply chain covered 2026-03-21 and 2026-03-22; this is detail on same event, not new threat vector
+  No score change.
+
+[SKIP] Rocket.Chat CVE-2026-28514 + CVE-2026-30833
+  Reason: Covered 2026-03-17/night (score: 7). DEDUP HIT.
+
+[SKIP] CISA DarkSword iOS CVE cluster (CVE-2026-20700 etc.)
+  Reason: Covered 2026-03-20/night. DEDUP HIT.
+
+[SKIP] CVE-2026-20127 Cisco SD-WAN PoC update
+  Reason: Covered 2026-03-23/night. DEDUP HIT. PoC refinement only.
+
+[SKIP] avleonov.com March trending CVEs
+  Reason: All 4 CVEs (CVE-2026-21510, 21514, 21533, 21519) previously covered. DEDUP HIT ×4.
+
+[SKIP] QNAP Pwn2Own patches
+  Reason: Article 403 on SecurityWeek; insufficient data to score. NOTE: no CVE IDs obtained.
+
+[NOTED] CVE-2026-32954 — ERPNext SQL injection (CVSS 7.1)
+  Reason: New, but CVSS 7.1 borderline; no known exploitation. Noted.
+
+[NOTED] CVE-2026-0828 — Safetica BYOVD + CVE-2025-7771 ThrottleStop (MedusaLocker)
+  Reason: PoC updated 3 hours ago, 28 stars. BYOVD is a TTPs pattern. No standalone advisory yet.
+
+[NOTED] PEGA Infinity multiple vulns (SEC Consult SA-20260317-0)
+  Reason: Full Disclosure Mar 19 listing; no CVE IDs or CVSS visible in listing.
+
+============================================================
+FINAL COUNTS
+  findings: 4
+  noted: 3
+  sources checked: 31
+  dedup hits suppressed: 7
+============================================================

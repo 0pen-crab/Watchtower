@@ -1,0 +1,86 @@
+{
+  "date": "2026-03-24",
+  "cycle": "night",
+  "findings": [
+    {
+      "type": "news",
+      "title": "CVE-2026-32746: GNU InetUtils / BSD Telnetd Pre-Auth Root RCE — WatchTowr Confirms Blast Radius Extends to Citrix NetScaler, FreeBSD, Apple, TrueNAS",
+      "threat_score": 8,
+      "cve": "CVE-2026-32746",
+      "cvss": 9.8,
+      "affected_technology": "GNU InetUtils telnetd ≤2.7, FreeBSD, NetBSD, Citrix NetScaler, Ubuntu, Debian, Apple Mac Tahoe, TrueNAS Core, DragonFlyBSD",
+      "summary": "Pre-auth BSS buffer overflow in LINEMODE SLC handler (telnetd) enables root RCE before any login prompt; WatchTowr analysis published today confirms the same vulnerable code is present in Citrix NetScaler, all major Linux distros, FreeBSD, and Apple macOS; no patch until April 1, 2026; PoC available; ~3,362 exposed hosts on internet.",
+      "discovery_latency": "late",
+      "first_seen_at": "2026-03-11"
+    },
+    {
+      "type": "news",
+      "title": "CVE-2026-3055 + CVE-2026-4368: Citrix NetScaler ADC/Gateway Dual Advisory — Unauthenticated Memory Leak (CVSS 9.3) and Session Mixup Race Condition",
+      "threat_score": 7,
+      "cve": "CVE-2026-3055",
+      "cvss": 9.3,
+      "affected_technology": "Citrix NetScaler ADC, Citrix NetScaler Gateway (on-prem, SAML IDP or Gateway/AAA configured)",
+      "summary": "CVE-2026-3055 (CVSS 9.3) is an unauthenticated OOB read on SAML IDP-configured NetScaler appliances allowing remote memory disclosure — similar to CitrixBleed; CVE-2026-4368 (CVSS 7.7) is a race condition on Gateway/AAA virtual servers leading to user session mixup; both patched in 14.1-66.59 and 13.1-62.23; no exploitation or PoC observed yet.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-03-23"
+    },
+    {
+      "type": "news",
+      "title": "CVE-2026-25769: Wazuh Cluster Remote Code Execution via Insecure Deserialization — Public PoC Released",
+      "threat_score": 7,
+      "cve": "CVE-2026-25769",
+      "cvss": null,
+      "affected_technology": "Wazuh SIEM/XDR (cluster mode, TCP 1516)",
+      "summary": "Hakai Security released a working PoC (30 GitHub stars, 7h ago) for RCE via insecure deserialization in the Wazuh cluster protocol; Wazuh is widely deployed as a free/open-source SIEM; network access to cluster port TCP 1516 required; patch available per GHSA-3gm7-962f-fxw5; restrict cluster port to cluster IPs immediately.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-03-24"
+    },
+    {
+      "type": "news",
+      "title": "TeamPCP Deploys Geofenced Iran-Targeting Kubernetes Wiper via Compromised Trivy CI/CD Infrastructure",
+      "threat_score": 8,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Kubernetes clusters, Docker environments, GitHub Actions CI/CD pipelines (Trivy users)",
+      "summary": "TeamPCP leveraged its Trivy supply chain compromise infrastructure to deploy a new wiper payload that destroys all data on Kubernetes cluster nodes (or the local machine if no K8s) when Iran timezone or Farsi locale is detected; FortiGuard reports rising regional cyber activity post-Iran strikes; C2 at scan.aquasecurtiy[.]org; rotate all CI/CD secrets from affected Trivy workflows.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-03-23"
+    }
+  ],
+  "noted": [
+    {
+      "cve": "CVE-2026-32954",
+      "product": "ERPNext (Frappe)",
+      "summary": "Blind SQL injection in multiple endpoints due to insufficient parameter validation; CVSS 7.1; fixed in versions 15.100.0 and 16.8.0; no exploitation reported."
+    },
+    {
+      "cve": "CVE-2026-0828",
+      "product": "Safetica DLP / ThrottleStop (BYOVD chain)",
+      "summary": "Public PoC (28 stars, updated ~3h ago) for BYOVD Ring-0 privilege escalation via vulnerable Safetica driver, enabling process termination and physical memory R/W; paired with CVE-2025-7771; associated with MedusaLocker EDR-killer TTPs."
+    },
+    {
+      "cve": null,
+      "product": "PEGA Infinity Platform",
+      "summary": "SEC Consult SA-20260317-0 discloses multiple privilege escalation vulnerabilities in PEGA Infinity; no CVE IDs or CVSS published yet; widely deployed in financial-sector BPM/CRM; monitor vendor advisories."
+    }
+  ],
+  "source_coverage": {
+    "total": 31,
+    "checked": 31,
+    "with_findings": 8,
+    "unreachable": [
+      "cisa.gov/alerts (404)",
+      "msrc.microsoft.com/blog (blank response)",
+      "cert.gov.ua (blank response)",
+      "hackerone.com/hacktivity (login required)",
+      "bugcrowd.com/disclosures (login required)",
+      "cve.org news (no content returned)"
+    ],
+    "degraded": [
+      "packetstormsecurity.com (ToS redirect, no content)",
+      "securityweek.com/qnap article (403 Cloudflare block)",
+      "attackerkb.com/recent (404)"
+    ]
+  },
+  "full_report": "reports/2026/03/24/night/report.md"
+}
