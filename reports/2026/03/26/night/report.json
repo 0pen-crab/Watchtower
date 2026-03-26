@@ -1,0 +1,113 @@
+{
+  "date": "2026-03-26",
+  "cycle": "night",
+  "findings": [
+    {
+      "type": "update",
+      "title": "TeamPCP Trojanizes LiteLLM on PyPI — Persistent .pth Backdoor in 36% of Cloud Envs",
+      "threat_score": 10,
+      "previous_threat_score": 9,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "LiteLLM Python library (PyPI) — present in 36% of cloud environments",
+      "summary": "TeamPCP poisoned LiteLLM 1.82.7/1.82.8 on PyPI (March 24) with a .pth-based backdoor that runs on every Python invocation to exfiltrate cloud creds, SSH keys, and K8s configs; LiteLLM present in 36% of cloud environments.",
+      "first_seen_at": "wiz.io"
+    },
+    {
+      "type": "update",
+      "title": "PolyShell Magento Mass Exploitation — 56.7% of Vulnerable Stores Attacked, WebRTC Skimmer Variant",
+      "threat_score": 9,
+      "previous_threat_score": 8,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Magento / Adobe Commerce (unpatched instances)",
+      "summary": "Active PolyShell exploitation now targets 56.7% of vulnerable Magento stores since March 19 with a newly discovered WebRTC payment skimmer variant enabling stealthy card data exfiltration via WebRTC data channels; no patch yet available for stable Magento releases.",
+      "first_seen_at": "bleepingcomputer.com"
+    },
+    {
+      "type": "update",
+      "title": "CVE-2026-33017 (Langflow RCE) Added to CISA Known Exploited Vulnerabilities Catalog",
+      "threat_score": 9,
+      "previous_threat_score": 9,
+      "cve": "CVE-2026-33017",
+      "cvss": 9.8,
+      "affected_technology": "Langflow AI workflow builder",
+      "summary": "CISA added CVE-2026-33017 (Langflow pre-auth RCE, CVSS 9.8) to the KEV catalog on March 25 with a mandatory federal remediation deadline, requiring all federal agencies and contractors with exposed Langflow instances to patch or disconnect immediately.",
+      "first_seen_at": "cisa.gov"
+    },
+    {
+      "type": "news",
+      "title": "TP-Link Archer NX Critical Auth Bypass — Unauthenticated Firmware Upload (CVE-2025-15517)",
+      "threat_score": 8,
+      "cve": "CVE-2025-15517, CVE-2025-15605, CVE-2025-15518, CVE-2025-15519",
+      "cvss": 9.4,
+      "affected_technology": "TP-Link Archer NX series routers",
+      "summary": "TP-Link disclosed critical auth bypass CVE-2025-15517 in Archer NX routers allowing unauthenticated firmware upload, bundled with hardcoded crypto key (CVE-2025-15605) and two command injection CVEs; mass-exploitation risk is high given TP-Link's ubiquitous SOHO footprint.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "bleepingcomputer.com"
+    },
+    {
+      "type": "news",
+      "title": "BIND 9 Quad-CVE Patch Day — Remote DoS on DNS Resolvers via Malicious DNSSEC Zones",
+      "threat_score": 8,
+      "cve": "CVE-2026-1519, CVE-2026-3104, CVE-2026-3119, CVE-2026-3591",
+      "cvss": 7.5,
+      "affected_technology": "ISC BIND 9 DNS resolver (9.11.0 – 9.21.x)",
+      "summary": "ISC disclosed four BIND 9 flaws on March 25 including CVE-2026-1519 (malicious DNSSEC zone causes excessive CPU) and CVE-2026-3104 (crafted domain causes unbounded memory leak/OOM crash), all remotely exploitable, no auth required on resolvers; patch to BIND 9.18.47, 9.20.21, or 9.21.20.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "openwall.com"
+    },
+    {
+      "type": "news",
+      "title": "Node.js High-Severity Security Releases — HTTP Server Crash via __proto__ Header, TLS SNI DoS",
+      "threat_score": 7,
+      "cve": "CVE-2026-21637, CVE-2026-21710, CVE-2026-21711, CVE-2026-21712",
+      "cvss": null,
+      "affected_technology": "Node.js 20.x, 22.x, 24.x, 25.x",
+      "summary": "Node.js patched two High issues on March 24: CVE-2026-21710 (__proto__ header in HTTP requests crashes any Node.js HTTP server with uncatchable TypeError) and CVE-2026-21637 (TLS SNICallback exception crashes TLS servers), plus five Medium CVEs; all LTS lines (20.x–25.x) affected.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "openwall.com"
+    },
+    {
+      "type": "news",
+      "title": "Apple iOS/macOS 26.4 — 30+ CVEs Including WiFi MITM (KRACK Researcher) and WebKit UAF",
+      "threat_score": 7,
+      "cve": "CVE-2026-28865, CVE-2026-28879",
+      "cvss": null,
+      "affected_technology": "iOS 26.4, iPadOS 26.4, macOS Tahoe 26.4 (March 24, 2026)",
+      "summary": "Apple released iOS/macOS 26.4 on March 24 patching 30+ CVEs; standouts are CVE-2026-28865 (WiFi MITM by KRACK researcher Mathy Vanhoef) and CVE-2026-28879 (WebKit UAF); no in-the-wild exploitation yet but update all devices immediately.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "isc.sans.edu"
+    }
+  ],
+  "noted": [
+    {
+      "cve": "CVE-2026-33526, CVE-2026-32748, CVE-2026-33515",
+      "product": "Squid cache proxy",
+      "summary": "Three Squid ICP request-handling DoS advisories (SQUID-2026:1/2/3) published March 25 — denial of service via malformed ICP packets requiring no authentication; patches released, no active exploitation reported."
+    },
+    {
+      "cve": "CVE-2026-31788",
+      "product": "Xen hypervisor / Linux kernel (privcmd driver)",
+      "summary": "Xen Security Advisory 482 (March 24) — Linux privcmd driver can circumvent kernel lockdown protections in Xen guest environments; patch available, relevant to Xen virtualization infrastructure."
+    },
+    {
+      "cve": "CVE-2026-33150, CVE-2026-33179",
+      "product": "libfuse (io_uring interface)",
+      "summary": "Two memory-safety vulnerabilities in libfuse's io_uring interface disclosed March 25 — use-after-free and NULL dereference; affects Linux systems using FUSE filesystems via io_uring, patch available."
+    },
+    {
+      "cve": "CVE-2026-3608",
+      "product": "ISC Kea DHCP server",
+      "summary": "ISC disclosed CVE-2026-3608 in Kea DHCP server on March 25; technical details limited but patch available and proactive update recommended for organizations running Kea."
+    }
+  ],
+  "source_coverage": {
+    "total": 31,
+    "checked": 30,
+    "with_findings": 9,
+    "unreachable": ["darkreading.com"],
+    "degraded": ["nvd.nist.gov", "msrc.microsoft.com", "cve.mitre.org", "packetstormsecurity.com", "crowdstrike.com", "unit42.paloaltonetworks.com", "cert.gov.ua"]
+  },
+  "full_report": "reports/2026/03/26/night/report.md"
+}

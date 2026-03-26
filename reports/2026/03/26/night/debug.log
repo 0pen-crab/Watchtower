@@ -1,0 +1,104 @@
+=== DEBUG LOG: 2026-03-26 night cycle ===
+Start time: 2026-03-26 02:00 UTC+3 (Athens) / 2026-03-25 23:00 UTC
+
+[00:00] Git pull: Already up to date
+[00:01] Built dedup index from 30-day history (reports/2026/02/23 through reports/2026/03/24)
+
+DEDUP INDEX (key CVEs/threats already reported):
+- CVE-2026-32746 (GNU InetUtils/Telnetd) - 03/24/night
+- CVE-2026-3055, CVE-2026-4368 (Citrix NetScaler) - 03/24/night
+- CVE-2026-25769 (Wazuh Cluster RCE) - 03/24/night
+- TeamPCP Kubernetes Wiper - 03/24/night
+- CVE-2026-33017 (Langflow RCE) - 03/23/night
+- CVE-2026-20127 (Cisco SD-WAN) - 03/23/night (first 03/02)
+- CVE-2026-22200 (osTicket) - 03/23/night (first 03/07)
+- Chrysalis/Lotus Blossom backdoor - 03/23/night (first 03/02)
+- VoidStealer Chrome ABE bypass - 03/23/night
+- CVE-2026-29058 (AVideo Encoder) - 03/23/night
+- CVE-2026-23745 (node-tar) - 03/23/night (first 03/07)
+- CVE-2025-55182 (React2Shell/Next.js) - 03/22/night
+- TeamPCP CanisterWorm - 03/22/night
+- CVE-2026-21992 (Oracle Identity Manager) - 03/21/night
+- CVE-2025-54068 (Laravel Livewire) - 03/21/night
+- CVE-2025-32432 (Craft CMS) - 03/21/night
+- CVE-2026-3888 (Ubuntu LPE) - 03/21/night
+- CVE-2025-53770 (SharePoint .NET) - 03/21/night
+- CVE-2026-20963 (SharePoint RCE) - 03/19/night
+- CVE-2025-32463 (Sudo chroot) - 03/19/night
+- CVE-2025-66376 (Zimbra XSS) - 03/19/night (update 03/20)
+- CVE-2026-3564 (ConnectWise ScreenConnect) - 03/19/night
+- CVE-2026-22557 (Ubiquiti UniFi CVSS 10.0) - 03/20/night
+- CVE-2025-5777 (Citrix NetScaler mass exploitation) - 03/20/night
+- CVE-2026-22733 (Spring Security auth bypass) - 03/20/night
+- CVE-2026-21669 et al (Veeam) - 03/18/night
+- CVE-2026-2796 (Claude Opus Firefox bugs) - 03/18/night
+- CVE-2026-2833/2835/2836 (Pingora HTTP smuggling) - 03/18/night
+- CVE-2025-47813 (Wing FTP) - 03/17/night
+- CVE-2026-3909 (Chrome zero-days) - 03/17/night
+- CVE-2026-28289 (FreeScout RCE) - 03/08/night
+- CVE-2026-20079 (Cisco FMC) - 03/08/night
+- CVE-2026-1492 (WordPress User Registration) - 03/08/night
+- CVE-2026-21858 (n8n Ni8mare) - 03/07/night
+- CVE-2026-1731 (BeyondTrust RS/PRA) - 03/07/night
+- CVE-2026-26127, CVE-2026-21262 (Patch Tuesday) - 03/10/night
+- CVE-2025-32463 (Sudo chroot) - 03/19/night
+- CVE-2026-0628 (Chrome Gemini GlicJack) - 03/18/night
+- CVE-2026-29000 (pac4j JWT bypass) - 03/18/night
+
+[00:02] Starting source scans — 31 sources total
+
+=== SOURCE CHECK LOG ===
+[00:03] bleepingcomputer.com — ✅ findings: TP-Link auth bypass (NEW), PolyShell 56.7% (UPDATE)
+[00:03] thehackernews.com — ✅ findings: TeamPCP LiteLLM context (UPDATE)
+[00:03] cisa.gov/known-exploited-vulnerabilities-catalog — ✅ findings: CVE-2026-33017 added to KEV (UPDATE)
+[00:04] securityweek.com — ✅ findings: TeamPCP Docker Hub/VS Code/PyPI context (UPDATE)
+[00:04] rapid7.com — ✅ checked, no new findings (known items)
+[00:04] krebsonsecurity.com — ✅ checked, TeamPCP context (UPDATE corroboration)
+[00:04] attackerkb.com — ✅ checked, no new findings
+[00:05] packetstormsecurity.com — ⚠️ DEGRADED (TOS redirect, content inaccessible)
+[00:05] seclists.org/fulldisclosure — ✅ checked, no new items after March 19
+[00:05] nvd.nist.gov — ⚠️ DEGRADED (redirect, no content rendered)
+[00:05] fortinet.com/blog/threat-research — ✅ checked, no new findings
+[00:05] securitylab.github.com — ✅ checked, no new findings
+[00:05] opencve.io — ✅ checked, no critical new findings in scope
+[00:05] googleprojectzero.blogspot.com — ✅ checked, no new findings
+[00:05] cloudflare.com/blog — ✅ checked, no security vuln findings
+[00:06] msrc.microsoft.com/blog — ⚠️ DEGRADED (redirect, no content)
+[00:06] kb.cert.org — ✅ checked, no new specific findings
+[00:06] schneier.com — ✅ checked, policy posts only
+[00:06] github.com/0xMarcio/cve — ✅ checked, CVE trends reviewed
+[00:06] cve.mitre.org — ⚠️ DEGRADED (redirect to cve.org, blank)
+[00:06] darkreading.com — ❌ UNREACHABLE (HTTP 403)
+[00:06] isc.sans.edu/diary — ✅ findings: Apple iOS/macOS 26.4 patch details (NEW)
+[00:06] trendmicro.com — ✅ checked, no new in-scope findings
+[00:06] crowdstrike.com/blog — ⚠️ DEGRADED (only 2021-22 archive posts visible)
+[00:07] tenable.com/blog — ✅ checked, CVE-2026-21514/Operation Epic Fury (already in dedup)
+[00:07] talosintelligence.com — ✅ checked, no new in-scope findings
+[00:07] wiz.io/blog — ✅ findings: TeamPCP LiteLLM .pth backdoor FULL DETAILS (UPDATE)
+[00:07] unit42.paloaltonetworks.com — ⚠️ DEGRADED (redirected to 2014 Kuluoz article)
+[00:07] openwall.com/oss-security — ✅ findings: BIND 9 quad-CVE (NEW), Node.js security (NEW), Squid DoS (NOTED), Xen lockdown bypass (NOTED), libfuse io_uring (NOTED), ISC Kea (NOTED)
+[00:09] teletype.in/@cyberok — ✅ checked, only Oct-Jan monthly recaps visible, no new findings
+[00:09] cert.gov.ua — ⚠️ DEGRADED (returns blank 7-byte response)
+
+=== DEDUP DECISIONS ===
+TeamPCP LiteLLM — UPDATE (prior: CanisterWorm 03/22, K8s wiper 03/24; NEW vector: LiteLLM PyPI .pth backdoor)
+PolyShell Magento — UPDATE (prior: first reported 03/20 threat_score 8; now 56.7% mass exploitation + WebRTC skimmer)
+CVE-2026-33017 (Langflow) — UPDATE (prior: first reported 03/23; now CISA KEV addition = material change)
+TP-Link CVE-2025-15517 — NEW (not in dedup index)
+BIND 9 quad-CVE — NEW (not in dedup index)
+Node.js CVEs — NEW (not in dedup index)
+Apple iOS/macOS 26.4 — NEW (prior Apple was DarkSword 03/20 for CVE-2025-43520 et al; 26.4 is a distinct update)
+Squid ICP DoS — NOTED (moderate severity, no active exploitation)
+Xen CVE-2026-31788 — NOTED (relevant but niche)
+libfuse io_uring — NOTED (Linux-only, niche attack surface)
+ISC Kea CVE-2026-3608 — NOTED (details limited)
+
+=== VALIDATOR ===
+[00:11] python3 scripts/validate_report.py reports/2026/03/26/night/report.json
+[00:11] Result: ✅ VALID (0 errors, 0 warnings after summary tightening)
+
+=== COMPLETION ===
+End time: 2026-03-26 02:11 UTC+3 (Athens)
+Total findings: 7 (3 updates, 4 new)
+Noted: 4
+Sources checked: 30/31 (1 unreachable, 7 degraded)
