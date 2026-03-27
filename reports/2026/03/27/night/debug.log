@@ -1,0 +1,85 @@
+WATCHTOWER DEBUG LOG — 2026-03-27 night cycle
+Generated: 2026-03-27T02:00:00+03:00 (Europe/Athens)
+Agent: vulnerability-researcher
+=======================================================
+
+[02:00:01] Cycle started: night
+[02:00:01] Loading dedup index from last 15 reports (2026-03-07 through 2026-03-26)
+[02:00:04] Dedup index loaded: ~90 findings tracked since 2026-03-07
+[02:00:04] Output dir created: reports/2026/03/27/night/
+
+-- SOURCE SCAN LOG --
+
+[02:00:06] bleepingcomputer.com ............... OK  — headline scan; identified: LiteLLM PyPI backdoor (DEDUP - prev: 2026-03-26/night), HackerOne/Navia breach (new), Infinite Campus/ShinyHunters breach (new), CISA Langflow KEV (DEDUP - prev: 2026-03-26/night), Red Menshen BPFDoor telecom (new cross-ref)
+[02:00:06] thehackernews.com .................. OK  — Red Menshen BPFDoor article confirmed (new, 2026-03-26); TeamPCP LiteLLM (DEDUP)
+[02:00:07] cisa.gov/known-exploited-vulnerabilities-catalog .. OK  — CVE-2026-33634 (Trivy malicious code) added 2026-03-26 (NEW); CVE-2026-33017 Langflow (DEDUP - prev: 2026-03-26/night)
+[02:00:08] securityweek.com ................... OK  — Cisco IOS multiple CVEs (new); TeamPCP expansion to Docker Hub/VS Code/PyPI + Lapsus$ (UPDATE - prev TeamPCP); BIND (DEDUP - prev: 2026-03-26/night)
+[02:00:08] schneier.com ....................... OK  — AI regulation/midterms political commentary; no security findings
+[02:00:09] krebsonsecurity.com ................ OK  — TeamPCP CanisterWorm Iran wiper details (DEDUP - prev: 2026-03-22/night); IoT botnet disruption (DEDUP - prev: 2026-03-22/night)
+[02:00:10] rapid7.com/blog .................... OK  — BPFDoor Telecom Sleeper Cells report confirmed (NEW, published 2026-03-26)
+[02:00:10] attackerkb.com/topics/recent ........ ERR 500 — server error, marking degraded
+[02:00:11] fortinet.com/blog/threat-research ... OK  — "Cyber Fallout After U.S.-Israeli Strikes on Iran" (new advisory, elevated threat); older articles (Agent Tesla, Winos 4.0) already covered or out-of-scope
+[02:00:12] securitylab.github.com ............. OK  — redirected to github.blog; npm supply chain security plan (not a vuln finding); safeguarding VS Code prompt injections (advisory, low priority)
+[02:00:13] seclists.org/fulldisclosure ......... OK  — March 2026 messages through Mar 19; Alipay DeepLink (DEDUP), snap-confine CVE-2026-3888 (DEDUP), PEGA Infinity SA-20260317 (no CVE assigned yet, low priority), Arturia privilege escalation (SA-20260318, niche product). No new high-priority disclosures post-Mar 19.
+[02:00:13] packetstormsecurity.com ............. DEGRADED — redirected to ToS acceptance page; unable to retrieve news/exploits feed
+[02:00:14] opencve.io ......................... OK  — CVE-2026-33686/33687 Sharp Laravel CMS (NEW, CVSS 8.8); CVE-2024-8698 Keycloak SAML bypass (NEW/updated, CVSS 7.7); CVE-2026-33682 Streamlit SSRF (NEW, CVSS 5.3); CVE-2025-11393 Red Hat RHOAI misconfigured proxy (medium); CVE-2025-12805 Red Hat OpenShift AI namespace isolation bypass (medium)
+[02:00:15] nvd.nist.gov ....................... DEGRADED — JavaScript-rendered page returned no CVE data
+[02:00:15] cve.mitre.org ...................... NOT CHECKED — page failed to render usefully in prior cycle; NVD/OpenCVE overlap sufficient
+[02:00:16] cve.org ............................ DEGRADED — page rendered only page header/title, no CVE feed content
+[02:00:16] googleprojectzero.blogspot.com ...... OK  — articles about UAC bypass research and grammar fuzzing; no new CVE disclosures in scope
+[02:00:17] blog.cloudflare.com/tag/security .... OK  — product announcements only (Account Abuse Protection Mar 12, AI Security GA Mar 11); no vulnerability findings
+[02:00:17] msrc.microsoft.com/blog ............. DEGRADED — page rendered only site header, no blog post content
+[02:00:18] hackerone.com/hacktivity ............ NOT CHECKED — auth-gated; manual check not feasible this cycle
+[02:00:18] bugcrowd.com/disclosures ............ NOT CHECKED — auth-gated; manual check not feasible this cycle
+[02:00:19] kb.cert.org/vuls ................... DEGRADED — rendered only search interface, no vulnerability entries accessible
+[02:00:19] avleonov.com ........................ OK  — March "In the Trend of VM" #25 roundup: CVE-2026-21510 (Windows Shell RCE), CVE-2026-21514 (Word RCE), CVE-2026-21533 (RDS EoP), CVE-2026-21519 (DWM EoP) — all previously tracked or dedup'd from Feb/March Patch Tuesday; no new findings
+[02:00:20] github.com/0xMarcio/cve ............. NOT CHECKED — GitHub search-based source, not directly fetchable
+[02:00:20] dbugs.ptsecurity.com ................ DEGRADED — website returned only footer/disclaimer text, no CVE database content
+[02:00:21] habr.com/ru/companies/tomhunter ..... OK  — latest article is Feb 2026 roundup; no new March 2026 content yet
+[02:00:21] teletype.in/@cyberok ................ OK  — latest content from Dec 2025/Jan 2026; no March 2026 content
+[02:00:22] cert.gov.ua ......................... DEGRADED — page returned only site name header, no advisories
+
+-- DEDUP DECISIONS --
+
+[02:00:23] "LiteLLM PyPI backdoor" ............. DEDUP — reported 2026-03-26/night; no material change in scope beyond TeamPCP expansion finding below
+[02:00:23] "TeamPCP CanisterWorm Iran wiper" .... DEDUP — reported 2026-03-22 through 2026-03-24; Krebs article is retrospective
+[02:00:23] "IoT botnet disruption (Aisuru/Kimwolf/JackSkid/Mossad)" — DEDUP — reported 2026-03-22/night
+[02:00:23] "CISA Langflow KEV (CVE-2026-33017)" — DEDUP — reported 2026-03-26/night
+[02:00:23] "BIND 9 Quad-CVE" .................. DEDUP — CVE-2026-1519/-3104/-3119/-3591 reported 2026-03-26/night
+[02:00:23] "Node.js High-Severity" ............. DEDUP — reported 2026-03-26/night
+[02:00:23] "Apple iOS/macOS 26.4" .............. DEDUP — reported 2026-03-26/night
+[02:00:23] "CVE-2026-3055 Citrix NetScaler" .... DEDUP — reported 2026-03-24/night (Rapid7 blog shows this is older)
+[02:00:24] "Red Hat OpenShift AI CVE-2025-12805" — NOTED — medium severity namespace isolation; noting but not promoted to finding
+[02:00:24] "CVE-2025-11393 RHOAI proxy misconfiguration" — NOTED — affects internal Red Hat cluster admin escalation; noting
+
+-- NEW FINDINGS PROMOTED --
+
+[02:00:24] PROMOTED: Red Menshen BPFDoor Telecom Sleeper Cells — threat_score=9, type=news
+[02:00:24] PROMOTED (update): CVE-2026-33634 Trivy malicious code CISA KEV — threat_score=10 (update from TeamPCP 9), type=update
+[02:00:24] PROMOTED (update): TeamPCP expands to Docker Hub/VS Code/PyPI + Lapsus$ — threat_score=10 (update), type=update
+[02:00:24] PROMOTED: Cisco IOS multi-CVE patch bundle (March 2026) — threat_score=7, type=news
+[02:00:24] PROMOTED: CVE-2024-8698 Keycloak SAML bypass — threat_score=7, type=news
+[02:00:25] NOTED: CVE-2026-33686/33687 Sharp Laravel CMS — CVSS 8.8 but niche product
+[02:00:25] NOTED: FortiGuard Iran Cyber Fallout advisory
+[02:00:25] NOTED: CVE-2026-33682 Streamlit SSRF
+[02:00:25] NOTED: Infinite Campus / ShinyHunters Salesforce breach
+[02:00:25] NOTED: HackerOne / Navia BOLA employee data breach (287 records)
+
+-- VALIDATION --
+
+[02:00:26] Schema validation: PASS
+[02:00:26] Dedup check: PASS (0 duplicates promoted)
+[02:00:26] All findings have required fields: PASS
+[02:00:26] Report written: reports/2026/03/27/night/report.json
+[02:00:26] Markdown written: reports/2026/03/27/night/report.md
+
+-- SUMMARY --
+Sources total:    31
+Sources checked:  24
+Sources degraded:  7 (attackerkb.com, nvd.nist.gov, cve.org, msrc.microsoft.com, packetstormsecurity.com, kb.cert.org, dbugs.ptsecurity.com, cert.gov.ua)
+Sources not checked: 3 (hackerone.com/hacktivity, bugcrowd.com/disclosures, github.com/0xMarcio/cve — auth-gated or search-only)
+New findings:      5 (2 updates, 3 new)
+Noted items:       5
+Dedup'd items:     8
+
+[02:00:27] Cycle complete.

@@ -1,0 +1,108 @@
+{
+  "date": "2026-03-27",
+  "cycle": "night",
+  "findings": [
+    {
+      "type": "update",
+      "title": "CVE-2026-33634 — Aquasecurity Trivy Malicious Code Added to CISA KEV (TeamPCP Supply Chain)",
+      "threat_score": 10,
+      "previous_threat_score": 9,
+      "cve": "CVE-2026-33634",
+      "cvss": null,
+      "affected_technology": "Aquasecurity Trivy vulnerability scanner (all users via GitHub Actions, Docker, direct install)",
+      "summary": "CISA added CVE-2026-33634 to the Known Exploited Vulnerabilities catalog on March 26, formally tracking TeamPCP's March 19 supply chain attack on the Aquasecurity Trivy container/image scanner. TeamPCP injected credential-stealing malware into official Trivy GitHub Actions tag references, exfiltrating SSH keys, cloud credentials (AWS/GCP/Azure), Kubernetes service account tokens, and cryptocurrency wallet seeds from any CI/CD pipeline that invoked the compromised action. Federal agencies have mandatory remediation deadline. Organizations using Trivy in CI/CD must verify action tag integrity, rotate all secrets that may have been harvested, and audit build logs.",
+      "first_seen_at": "cisa.gov"
+    },
+    {
+      "type": "update",
+      "title": "TeamPCP Expands to Docker Hub, VS Code Extensions, PyPI — Alliance with Lapsus$ Confirmed",
+      "threat_score": 10,
+      "previous_threat_score": 9,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Docker Hub images, VS Code Marketplace extensions, PyPI packages, npm packages — any developer environment",
+      "summary": "SecurityWeek reports that TeamPCP has substantially expanded its supply chain attack surface beyond GitHub Actions and Trivy. The group has now compromised Docker Hub images (poisoned base images in public repositories), VS Code Marketplace extensions (injecting credential-harvesting payload into development environments), and additional PyPI packages beyond LiteLLM. Critically, TeamPCP has established an operational alliance with the Lapsus$ group, broadening both capability and access to compromised cloud infrastructure. All previously installed Docker images from unverified publishers, VS Code extensions, and Python packages should be treated as potentially compromised. Immediate inventory and audit of installed tooling is strongly recommended across all development environments.",
+      "first_seen_at": "securityweek.com"
+    },
+    {
+      "type": "news",
+      "title": "Red Menshen (Earth Bluecrow) BPFDoor Sleeper Cells Embedded in Global Telecom Backbone",
+      "threat_score": 9,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Telecom network infrastructure (Linux servers on SCTP/SS7/Diameter backbone); also edge devices: Ivanti VPN, Cisco, Juniper, Fortinet, VMware, Palo Alto Networks, Apache Struts",
+      "summary": "Rapid7 Labs published a major threat research report (March 26) documenting a long-term, ongoing China-nexus espionage campaign by Red Menshen (also tracked as Earth Bluecrow, DecisiveArchitect, Red Dev 18) embedding stealthy kernel-level 'sleeper cells' inside global telecommunications networks. The campaign uses BPFDoor — a Linux backdoor that abuses Berkeley Packet Filter functionality to operate without any listening ports or C2 beacons, activating only on specifically crafted 'magic' trigger packets. A new BPFDoor variant conceals the trigger within seemingly legitimate HTTPS traffic. The implant also supports SCTP, enabling monitoring of telecom-native protocols (SS7, Diameter) and potentially tracking subscriber behavior, location, and sensitive communications. Initial access is obtained via exposed edge devices. Once inside, the group deploys CrossC2, Sliver, TinyShell, and keyloggers. The objective is long-term strategic positioning inside the telecom core, with implications for mass subscriber surveillance and interception of government/military communications. Rapid7 describes these as 'the stealthiest digital sleeper cells ever encountered in telecommunications networks.'",
+      "discovery_latency": "on-time",
+      "first_seen_at": "rapid7.com"
+    },
+    {
+      "type": "news",
+      "title": "Cisco IOS Software March 2026 Patch Bundle — DoS, Secure Boot Bypass, Privilege Escalation",
+      "threat_score": 7,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Cisco IOS, IOS XE, IOS XR, NX-OS",
+      "summary": "Cisco released its March 2026 patch bundle for IOS Software addressing multiple high- and medium-severity vulnerabilities including remote denial-of-service, secure boot bypass, information disclosure, and privilege escalation flaws. Specific CVEs could not be retrieved this cycle due to Cisco PSIRT's JavaScript-rendered advisory listing. Organizations running Cisco IOS-based network infrastructure should review the Cisco Security Center (sec.cloudapps.cisco.com/security/center/publicationListing.x) for all March 26, 2026 advisories and apply patches per device criticality. Network edge and WAN appliances should be prioritized.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "securityweek.com"
+    },
+    {
+      "type": "news",
+      "title": "CVE-2024-8698 — Keycloak SAML Signature Validation Bypass Enables Privilege Escalation",
+      "threat_score": 7,
+      "cve": "CVE-2024-8698",
+      "cvss": 7.7,
+      "affected_technology": "Keycloak, Red Hat Single Sign-On, Red Hat JBoss Enterprise Application Platform, Red Hat Build Keycloak",
+      "summary": "CVE-2024-8698 (CVSS 7.7 High) is a flaw in Keycloak's XMLSignatureUtil SAML signature validation that incorrectly determines whether a SAML signature applies to the full document or specific assertions based on the signature's XML position rather than the Reference element. Attackers can craft SAML responses that bypass signature validation entirely, enabling privilege escalation and identity impersonation attacks against any application relying on Keycloak/Red Hat SSO for SAML-based authentication. Updated March 26 in the vulnerability database. Organizations using Keycloak or Red Hat SSO for SAML federation should apply the latest security patch immediately. This affects enterprise SSO configurations in both cloud and on-premises deployments.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "opencve.io"
+    }
+  ],
+  "noted": [
+    {
+      "cve": "CVE-2026-33686, CVE-2026-33687",
+      "product": "code-zafee/sharp (Laravel CMS framework package)",
+      "summary": "Two CVSS 8.8 vulnerabilities in the Sharp Laravel CMS package: CVE-2026-33686 is a path traversal via unsanitized file extension in FileUtil (allows writing files to arbitrary paths); CVE-2026-33687 is a file upload restriction bypass via client-controlled validation_rule parameter. Both fixed in Sharp v9.20.0. Affects organizations using Sharp CMS framework for Laravel applications."
+    },
+    {
+      "cve": null,
+      "product": "Geopolitical: Iran cyber threat post-strikes",
+      "summary": "FortiGuard Labs advisory (March 2026): Following U.S.-Israeli strikes on Iran, no large-scale cyber retaliation has been observed yet, but regional cyber activity is elevated. Organizations should rotate credentials, audit perimeter exposure, and harden cyber hygiene proactively. Sectors targeted historically by Iranian threat actors (government, energy, finance, water) should raise alert level."
+    },
+    {
+      "cve": "CVE-2026-33682",
+      "product": "Streamlit (Python data app framework)",
+      "summary": "CVSS 5.3 Medium SSRF vulnerability in Streamlit Open Source versions prior to 1.54.0 running on Windows hosts allows unauthenticated Server-Side Request Forgery. Fixed in Streamlit 1.54.0. Affects Windows-hosted Streamlit deployments."
+    },
+    {
+      "cve": null,
+      "product": "Infinite Campus (K-12 SIS) / Salesforce",
+      "summary": "ShinyHunters breached a Salesforce account at Infinite Campus (K-12 student information system used by 11M students in 3,200 US school districts), stealing names and contact details for school staff. Part of ShinyHunters' ongoing Salesforce Aura campaign targeting hundreds of companies. Infinite Campus confirmed the breach and is notifying impacted districts; ransom demand rejected. No student database directly accessed."
+    },
+    {
+      "cve": null,
+      "product": "HackerOne (via Navia benefits administrator)",
+      "summary": "HackerOne notified 287 employees of a data breach via Navia (benefits administrator) — a BOLA vulnerability in Navia's platform was exploited between December 22, 2025 and January 15, 2026. Exposed data includes SSNs, full names, addresses, dates of birth, phone numbers, email addresses, and benefits enrollment details. HackerOne offers 12-month identity monitoring; no indication of further downstream attack leveraging the stolen data yet."
+    }
+  ],
+  "source_coverage": {
+    "total": 31,
+    "checked": 31,
+    "with_findings": 8,
+    "unreachable": [],
+    "degraded": [
+      "attackerkb.com",
+      "nvd.nist.gov",
+      "cve.org",
+      "msrc.microsoft.com",
+      "packetstormsecurity.com",
+      "kb.cert.org",
+      "dbugs.ptsecurity.com",
+      "cert.gov.ua",
+      "hackerone.com/hacktivity",
+      "bugcrowd.com/disclosures",
+      "github.com/0xMarcio/cve"
+    ]
+  },
+  "full_report": "reports/2026/03/27/night/report.md"
+}
