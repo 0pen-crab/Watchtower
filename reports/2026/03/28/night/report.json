@@ -1,0 +1,267 @@
+{
+  "date": "2026-03-28",
+  "cycle": "night",
+  "findings": [
+    {
+      "type": "news",
+      "title": "TeamPCP + Vect RaaS + BreachForums: 300K Affiliates Mass Mobilization",
+      "threat_score": 10,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "PyPI supply chain / ransomware ecosystem",
+      "summary": "TeamPCP has formally partnered with Vect ransomware-as-a-service and BreachForums to distribute personal Vect affiliate keys to all ~300,000 BreachForums users, creating an unprecedented supply-chain-to-RaaS industrialized attack pipeline.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "isc.sans.edu"
+    },
+    {
+      "type": "update",
+      "title": "LAPSUS$ Claims 3GB AstraZeneca Breach via TeamPCP Stolen Credentials",
+      "threat_score": 10,
+      "previous_threat_score": 8,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "AstraZeneca / TeamPCP supply chain victims",
+      "summary": "LAPSUS$ publicly claims a 3GB breach of AstraZeneca using credentials stolen via TeamPCP-compromised packages, representing the first named victim of the TeamPCP/LAPSUS$ partnership and offering access for sale via Session messaging.",
+      "first_seen_at": "securityweek.com"
+    },
+    {
+      "type": "news",
+      "title": "CVE-2026-21858 'Ni8mare' — n8n Unauthenticated RCE CVSS 10.0",
+      "threat_score": 10,
+      "cve": "CVE-2026-21858",
+      "cvss": 10.0,
+      "affected_technology": "n8n workflow automation platform (v1.65.0–1.120.x)",
+      "summary": "A Content-Type confusion bug in n8n's webhook middleware enables unauthenticated remote code execution on an estimated 100,000 globally deployed n8n servers; a public exploit chain (chained with CVE-2025-68613) is live and PoC is trending on GitHub.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "github.com/0xMarcio/cve"
+    },
+    {
+      "type": "news",
+      "title": "TeamPCP Telnyx PyPI Compromise — WAV Steganography Credential Stealer",
+      "threat_score": 9,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "telnyx Python SDK (PyPI) — 670K monthly downloads",
+      "summary": "TeamPCP pushed malicious telnyx versions 4.87.1 and 4.87.2 to PyPI using WAV audio steganography to conceal a cross-platform credential harvester that exfiltrates to 83.142.209[.]203:8080, with Windows persistence via msbuild.exe in the Startup folder.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "thehackernews.com"
+    },
+    {
+      "type": "news",
+      "title": "CVE-2025-53521 — F5 BIG-IP Added to CISA KEV, Federal Patch Deadline March 30",
+      "threat_score": 9,
+      "cve": "CVE-2025-53521",
+      "cvss": null,
+      "affected_technology": "F5 BIG-IP",
+      "summary": "CISA added CVE-2025-53521 affecting F5 BIG-IP to the Known Exploited Vulnerabilities catalog on March 27, 2026, with a mandatory federal patch deadline of March 30 — all organizations with internet-facing BIG-IP appliances should treat this as emergency priority.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "cisa.gov"
+    },
+    {
+      "type": "news",
+      "title": "LangChain + LangGraph: Three Enterprise Data Exposure CVEs (CVSS up to 9.3)",
+      "threat_score": 8,
+      "cve": "CVE-2025-68664",
+      "cvss": 9.3,
+      "affected_technology": "LangChain / LangGraph AI frameworks",
+      "summary": "Three patched CVEs in LangChain/LangGraph expose enterprise secrets and files: CVE-2025-68664 (deser, CVSS 9.3) leaks API keys, CVE-2026-34070 (path traversal) reads arbitrary files, CVE-2025-67644 (SQLi) hits conversation history.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "thehackernews.com"
+    },
+    {
+      "type": "news",
+      "title": "Handala (Iran MOIS) Hacks FBI Director Kash Patel's Personal Email — DOJ Confirmed",
+      "threat_score": 8,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Personal email account / US government official",
+      "summary": "Iran-linked MOIS group Handala leaked photos and emails stolen from FBI Director Kash Patel's personal account as retaliation for domain seizures and a $10M bounty; the FBI and DOJ both confirmed the breach and document authenticity.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "therecord.media"
+    },
+    {
+      "type": "news",
+      "title": "CVE-2025-12548 — Eclipse Che machine-exec Unauthenticated RCE (Metasploit Module Live)",
+      "threat_score": 8,
+      "cve": "CVE-2025-12548",
+      "cvss": null,
+      "affected_technology": "Eclipse Che / Red Hat OpenShift DevSpaces",
+      "summary": "An unauthenticated RCE in Eclipse Che's machine-exec service (WebSocket on port 3333, JSON-RPC command execution without auth) affecting Red Hat OpenShift DevSpaces now has a live Metasploit exploit module as of the 03/27 weekly release.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "rapid7.com"
+    },
+    {
+      "type": "news",
+      "title": "CVE-2026-4681 — PTC Windchill Critical ICS Flaw, CISA Advisory, German Authorities Mobilized",
+      "threat_score": 8,
+      "cve": "CVE-2026-4681",
+      "cvss": null,
+      "affected_technology": "PTC Windchill (industrial PLM platform)",
+      "summary": "CISA flagged a critical vulnerability in PTC Windchill, a widely deployed industrial product lifecycle management platform, with severity significant enough to mobilize German industrial cybersecurity authorities and police in response to suspected exploitation.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "securityweek.com"
+    },
+    {
+      "type": "news",
+      "title": "Coruna / DarkSword — iOS Exploit Kit Likely Successor to Operation Triangulation",
+      "threat_score": 8,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Apple iOS",
+      "summary": "A new iOS exploit kit named Coruna (also referenced as DarkSword) has been identified as a likely evolution of the Operation Triangulation APT campaign, targeting iOS zero-click vulnerabilities with reported Secure Enclave access components silently addressed in iOS 18.4.1.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "securityweek.com"
+    },
+    {
+      "type": "news",
+      "title": "watchTowr: 150 Abandoned AWS S3 Buckets — 8 Million Supply Chain Requests Intercepted",
+      "threat_score": 7,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "AWS S3 / supply chain infrastructure globally",
+      "summary": "watchTowr Labs registered ~150 abandoned AWS S3 buckets previously used by commercial software and government CI/CD pipelines, receiving 8 million requests for unsigned binaries, VM images, and CloudFormation templates — a massive live supply chain attack surface.",
+      "discovery_latency": "late",
+      "first_seen_at": "labs.watchtowr.com"
+    },
+    {
+      "type": "news",
+      "title": "Cisco Talos: 10 TP-Link AX53 Vulns + 19 Canva Affinity Vulns (inc. RCE) + HikVision",
+      "threat_score": 7,
+      "cve": "CVE-2025-66342",
+      "cvss": null,
+      "affected_technology": "TP-Link Archer AX53 / Canva Affinity / HikVision",
+      "summary": "Cisco Talos disclosed 10 vulnerabilities in TP-Link Archer AX53 routers (including a stack-based buffer overflow CVE-2025-62673), 19 in Canva Affinity including a type-confusion RCE via crafted EMF files (CVE-2025-66342), and one in HikVision — all patched by respective vendors.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "blog.talosintelligence.com"
+    },
+    {
+      "type": "news",
+      "title": "European Commission Investigating Breach After Amazon Cloud Account Compromise",
+      "threat_score": 7,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "European Commission AWS cloud infrastructure",
+      "summary": "The European Commission launched a formal investigation after an Amazon Web Services cloud account associated with EU Commission infrastructure was hacked, with potential access to internal EU documents and communications.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "bleepingcomputer.com"
+    },
+    {
+      "type": "news",
+      "title": "CVE-2026-23767 — Epson Network Printer ESC/POS Unauthenticated Command Injection",
+      "threat_score": 6,
+      "cve": "CVE-2026-23767",
+      "cvss": null,
+      "affected_technology": "Epson-compatible networked receipt printers",
+      "summary": "A new Metasploit module (03/27) exploits CVE-2026-23767, an unauthenticated ESC/POS command injection in networked Epson-compatible printers allowing arbitrary print command injection via crafted network packets — primarily targeting retail and POS environments.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "rapid7.com"
+    },
+    {
+      "type": "news",
+      "title": "Port of Vigo (Spain) Disrupted by Ransomware Attack",
+      "threat_score": 6,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Port of Vigo maritime infrastructure",
+      "summary": "A ransomware attack disrupted operations at the Port of Vigo, one of Europe's largest fishing and cargo ports, following a trend of ransomware groups targeting critical maritime infrastructure.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "therecord.media"
+    },
+    {
+      "type": "news",
+      "title": "HackerOne Employee Data Breach via Third-Party Navia HR Platform Hack",
+      "threat_score": 6,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "HackerOne / Navia HR platform",
+      "summary": "HackerOne disclosed that employee personal data was exposed after threat actors hacked Navia, a third-party HR/benefits platform, raising concerns about supply chain targeting of HR vendors to harvest researcher identity data.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "bleepingcomputer.com"
+    },
+    {
+      "type": "news",
+      "title": "Infinite Campus Breach — ShinyHunters Claims Student Data Theft",
+      "threat_score": 6,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Infinite Campus student information system (K-12 US)",
+      "summary": "Infinite Campus, a student information system used across US K-12 schools, warned of a data breach after ShinyHunters claimed to have stolen student and staff data, potentially affecting millions of minors.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "bleepingcomputer.com"
+    },
+    {
+      "type": "news",
+      "title": "Bearlyfy — Pro-Ukraine Hacktivist Group Deploys Custom Ransomware Against Russia",
+      "threat_score": 6,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Russian industrial and financial sector companies",
+      "summary": "A new pro-Ukraine hacktivist group, Bearlyfy, has emerged deploying custom-built ransomware against Russian companies, escalating cyber conflict on both sides of the Russia-Ukraine war.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "therecord.media"
+    },
+    {
+      "type": "news",
+      "title": "RedLine Malware Developer Extradited to US, Faces 30 Years",
+      "threat_score": 5,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "RedLine stealer-as-a-service",
+      "summary": "An alleged developer of RedLine malware — one of the most prolific credential stealers used by ransomware affiliates and cybercriminals globally — has been extradited to the United States where they face up to 30 years in prison.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "therecord.media"
+    },
+    {
+      "type": "news",
+      "title": "LeakBase Cybercrime Forum Admin Arrested in Russia",
+      "threat_score": 5,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "LeakBase dark web credential forum",
+      "summary": "Russian authorities arrested the alleged administrator of LeakBase, a dark web forum specializing in credential data, weeks after a coordinated global law enforcement crackdown on the platform.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "therecord.media"
+    },
+    {
+      "type": "news",
+      "title": "CVE-2026-31381, CVE-2026-31382 — Gainsight Assist Info Disclosure + XSS (Fixed)",
+      "threat_score": 5,
+      "cve": "CVE-2026-31381",
+      "cvss": null,
+      "affected_technology": "Gainsight Assist (enterprise CRM/customer success platform)",
+      "summary": "Rapid7 disclosed and fixed CVE-2026-31381 (information disclosure) and CVE-2026-31382 (XSS) in Gainsight Assist, a widely used enterprise customer success platform browser extension.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "rapid7.com"
+    }
+  ],
+  "noted": [
+    {
+      "cve": null,
+      "product": "Apple iOS (DarkSword / Coruna zero-click)",
+      "summary": "SANS ISC Stormcast 03/27 and BleepingComputer forum discussions reference a 'DarkSword' iOS zero-click exploit involving Secure Enclave theft, reportedly silently patched in iOS 18.4.1, but insufficient primary source confirmation — monitoring next cycle."
+    },
+    {
+      "cve": "CVE-2026-30303",
+      "product": "AI code tools (Axon Code / prompt injection RCE)",
+      "summary": "OpenCVE flagged CVE-2026-30303 and CVE-2026-30304 (CVSS 9.6/9.8 AI prompt injection to arbitrary command execution) but insufficient primary source corroboration this cycle — flagged for next cycle verification."
+    },
+    {
+      "cve": null,
+      "product": "Rapid7 2026 Global Threat Landscape Report",
+      "summary": "Rapid7 published its 2026 Global Threat Landscape Report this cycle confirming 'the attack cycle is accelerating' — full read scheduled for morning cycle analysis."
+    },
+    {
+      "cve": null,
+      "product": "Synacktiv cross-domain/cross-forest RBCD (Active Directory)",
+      "summary": "Synacktiv published detailed research on cross-domain and cross-forest Resource-Based Constrained Delegation (RBCD) attacks in Active Directory environments — valuable for red team and detection engineering."
+    }
+  ],
+  "source_coverage": {
+    "total": 34,
+    "checked": 34,
+    "with_findings": 14,
+    "unreachable": ["darkreading.com", "ncsc.gov.uk"],
+    "degraded": ["packetstormsecurity.com", "crowdstrike.com", "mandiant.com", "msrc.microsoft.com", "otx.alienvault.com", "redcanary.com", "vuldb.com"]
+  },
+  "full_report": "reports/2026/03/28/night/report.md"
+}

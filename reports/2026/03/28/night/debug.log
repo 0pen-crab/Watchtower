@@ -1,0 +1,153 @@
+# Debug Log — 2026-03-28 / night
+Generated: 2026-03-28T00:06:45Z (02:06:45 Europe/Athens)
+
+## Step 1: Git Pull
+- Repo: ~/Documents/projects/watchtower
+- Status: Already up to date.
+
+## Step 2: Dedup Index Build
+Read last 30 days of report.json files. Key items already reported (not to be duplicated):
+- CVE-2025-47813, CVE-2025-47812 (Wing FTP) — 03/01
+- CVE-2026-3909, CVE-2026-3910 (Chrome Zero-Days) — 03/05
+- GlassWorm ForceMemo (Python/PyPI supply chain) — 03/06
+- CVE-2025-33073 (NTLM Reflection SMB) — 03/07
+- CVE-2026-28514, CVE-2026-30833 (Rocket.Chat) — 03/09
+- DRILLAPP (Microsoft Edge backdoor) — 03/10
+- Stryker Wiper (Handala) — 03/11
+- CVE-2026-21669 (Veeam Backup & Replication) — 03/12
+- Poisoned Typeface AI attack — 03/13
+- LeakNet Ransomware (ClickFix + Deno) — 03/14
+- Starkiller PhaaS (AitM headless chrome) — 03/15
+- CVE-2026-0628 (Chrome Gemini Side Panel) — 03/16
+- CVE-2026-29000 (pac4j JWT Auth Bypass) — 03/17
+- Claude Opus 4.6 finds 22 Firefox bugs — 03/18
+- CVE-2026-2833, CVE-2026-2835, CVE-2026-2836 (Pingora OSS) — 03/19
+- CVE-2026-20963 (SharePoint RCE, CISA KEV) — 03/20
+- CVE-2025-32463 (Sudo chroot LPE) — 03/21
+- CVE-2025-66376 (Zimbra ZCS XSS) — 03/22
+- CVE-2026-3564 (ConnectWise ScreenConnect) — 03/22
+- CVE-2026-20643 (Apple WebKit) — 03/23
+- CVE-2026-20131 (Cisco FMC RCE) — 03/23
+- CVE-2025-54068 (Laravel Livewire) — 03/24
+- CVE-2025-32432 (Craft CMS) — 03/24
+- CVE-2026-3888 (Ubuntu LPE snap-confine) — 03/25
+- CVE-2025-53770 (Microsoft SharePoint RCE) — 03/25
+- TeamPCP CanisterWorm (npm/PyPI supply chain) — 03/23
+- CVE-2026-33017 (Langflow RCE, CISA KEV) — 03/26
+- CVE-2026-20127 (Cisco Catalyst SD-WAN) — 03/26
+- Chrysalis (Lotus Blossom/Notepad++ backdoor) — 03/26
+- CVE-2026-25769 (Wazuh cluster RCE) — 03/26
+- TP-Link Archer NX CVE-2025-15517 — 03/26
+- BIND 9 quad-CVE (CVE-2026-1519 etc.) — 03/26
+- Node.js CVE-2026-21637, CVE-2026-21710 — 03/26
+- Apple iOS/macOS 26.4 CVE-2026-28865, CVE-2026-28879 — 03/27
+- CVE-2026-33634 (Trivy supply chain, CISA KEV) — 03/27
+- TeamPCP Docker Hub/VS Code/PyPI expansion + Lapsus$ alliance — 03/27
+- Red Menshen BPFDoor Telecom — 03/26
+- Cisco IOS March 2026 patches — 03/26
+- CVE-2024-8698 (Keycloak SAML bypass) — 03/25
+- CVE-2026-32290 (IP KVM devices) — 03/26
+- CVE-2026-21992 (Oracle Identity Manager) — 03/27
+- CVE-2025-55182 (React2Shell/Next.js RSC RCE) — 03/27
+- CVE-2026-22200 (osTicket RCE chain) — 03/27
+- CVE-2026-29058 (AVideo RCE) — 03/27
+- CVE-2026-23745 (node-tar file overwrite) — 03/27
+- CVE-2026-32746 (GNU InetUtils telnetd RCE) — 03/27
+- CVE-2026-3055, CVE-2026-4368 (Citrix NetScaler) — 03/27
+- CVE-2026-33017 Langflow CISA KEV update — 03/27
+- PolyShell Magento mass exploitation — 03/26
+- VoidStealer Chrome ABE bypass — 03/26
+- TeamPCP LiteLLM PyPI trojan — 03/24
+- Rapid7 Iran cyber playbook (general context) — 03/25
+
+## Step 3: Source Scan
+(~02:00 UTC — batch checking begins)
+
+| # | Source | Status | Notes |
+|---|--------|--------|-------|
+| 1 | bleepingcomputer.com | ✅ | Multiple findings |
+| 2 | thehackernews.com | ✅ | Multiple findings |
+| 3 | cisa.gov/known-exploited-vulnerabilities-catalog | ✅ | CVE-2025-53521 F5 BIG-IP new entry |
+| 4 | securityweek.com | ✅ | Coruna iOS, CISA PTC Windchill, FBI Patel |
+| 5 | krebsonsecurity.com | ✅ | No new findings (same content as prior cycles) |
+| 6 | packetstormsecurity.com | ⚠️ | Redirected to ToS page — degraded |
+| 7 | rapid7.com/blog | ✅ | Metasploit wrap-up 03/27, Gainsight vulns |
+| 8 | attackerkb.com | ✅ | CVE-2026-20127 analysis (already in dedup) |
+| 9 | nvd.nist.gov | ✅ | CVE-2026-21858 confirmed |
+| 10 | seclists.org/fulldisclosure | ✅ | No new posts since 03/19 |
+| 11 | github.com/0xMarcio/cve | ✅ | CVE-2026-21858 n8n (259 stars, 1 day ago) |
+| 12 | opencve.io | ✅ | CVE-2026-30303/30304 AI prompt injection |
+| 13 | securitylab.github.com | ✅ | No new advisories this cycle |
+| 14 | fortinet.com/blog/threat-research | ✅ | No new posts (latest was 03/24) |
+| 15 | isc.sans.edu | ✅ | TeamPCP Update 002 diary — CRITICAL findings |
+| 16 | crowdstrike.com/blog | ⚠️ | JS-heavy, readability failed — degraded |
+| 17 | mandiant.com/resources/blog | ⚠️ | Redirected to Google Cloud blog — degraded |
+| 18 | therecord.media | ✅ | Multiple findings: Handala/Patel, RedLine, Bearlyfy, LeakBase, Port of Vigo |
+| 19 | darkreading.com | ❌ | 403 Forbidden — unreachable |
+| 20 | talosintelligence.com/blog | ✅ | TP-Link/Canva/HikVision vulns (03/26) |
+| 21 | schneier.com | ✅ | Policy content, no new vulns/threats |
+| 22 | googleprojectzero.blogspot.com | ✅ | Research content, nothing new this cycle |
+| 23 | msrc.microsoft.com/blog | ⚠️ | Blank readability extraction — degraded |
+| 24 | wiz.io/blog | ✅ | TeamPCP LiteLLM post (already in dedup 03/24) |
+| 25 | labs.watchtowr.com | ✅ | Abandoned S3 buckets research — NEW |
+| 26 | synacktiv.com/en/publications | ✅ | Kubernetes forensics series, RBCD research |
+| 27 | otx.alienvault.com | ⚠️ | JavaScript SPA, no content extracted — degraded |
+| 28 | cisa.gov/news-events/cybersecurity-advisories | ✅ | Advisory index checked |
+| 29 | github.com/trending | ✅ | n8n-io/n8n trending (confirms CVE-2026-21858 interest) |
+| 30 | cert.europa.eu | ✅ | Cisco CVE-2026-20127 advisory (already in dedup) |
+| 31 | ncsc.gov.uk/news/alerts | ❌ | 404 — unreachable this cycle |
+| 32 | redcanary.com/blog | ⚠️ | Readability failure, minimal content — degraded |
+| 33 | vuldb.com | ⚠️ | Auth wall, minimal content — degraded |
+| 34 | exploit-db.com | ⚠️ | Minimal content returned — degraded |
+
+Total checked: 34 | Unreachable (❌): 2 | Degraded (⚠️): 7 | Clean (✅): 25
+
+## Step 4: Dedup Decisions
+
+### INCLUDE (new findings):
+1. CVE-2026-21858 n8n Ni8mare — NEW (not in any prior report)
+2. CVE-2025-53521 F5 BIG-IP (CISA KEV) — NEW (added 03/27, 3-day deadline)
+3. TeamPCP Telnyx PyPI compromise (versions 4.87.1/4.87.2) — NEW (post-03/27 daily)
+4. TeamPCP + Vect RaaS + BreachForums Mass Affiliate Program — NEW (announced 03/27)
+5. LAPSUS$ AstraZeneca 3GB breach claim using TeamPCP credentials — NEW
+6. LangChain/LangGraph CVE-2026-34070, CVE-2025-68664, CVE-2025-67644 — NEW
+7. Handala hacks FBI Director Kash Patel personal email — NEW
+8. Coruna iOS Exploit Kit (Operation Triangulation successor) — NEW
+9. CVE-2026-4681 PTC Windchill critical (CISA flagged) — NEW
+10. CVE-2025-12548 Eclipse Che machine-exec Unauthenticated RCE — NEW (Metasploit module added)
+11. CVE-2026-23767 Epson ESC/POS printer command injection — NEW (Metasploit module added)
+12. Canva Affinity 19 vulns (CVE-2025-66342 RCE + 18 OOB read) — NEW (Talos)
+13. TP-Link AX53 10 vulns (CVE-2025-62673 etc.) — NEW (Talos, differs from prior TP-Link CVE-2025-15517)
+14. watchTowr abandoned S3 buckets supply chain research — NEW
+15. European Commission Amazon cloud account breach investigation — NEW
+16. HackerOne employee data breach after Navia hack — NEW
+17. Infinite Campus breach (ShinyHunters) — NEW
+18. Bearlyfy Pro-Ukraine ransomware targeting Russia — NEW
+19. Port of Vigo ransomware attack — NEW (03/25)
+20. RedLine developer extradited to US — NEW (03/26, threat actor enforcement)
+21. LeakBase admin arrested in Russia — NEW (03/26)
+22. CVE-2026-31381, CVE-2026-31382 Gainsight Assist info disclosure + XSS — NEW
+23. DarkSword (iOS zero-click, Secure Enclave) — referenced in SANS podcast 03/27, insufficient article confirmation — NOTED only
+
+### SKIP (already in dedup):
+- BPFDoor/Red Menshen Telecom — 03/26
+- LiteLLM compromise (Wiz post) — 03/24
+- Cisco CVE-2026-20127 (CERT-EU) — 03/26
+- AttackerKB CVE-2026-20127 analysis — 03/26
+- Apple iOS 26.4 patches (CVE-2026-28865 etc.) — 03/27
+- Trivy CVE-2026-33634 CISA KEV — 03/27
+- Langflow CVE-2026-33017 — 03/26
+- TeamPCP Lapsus$ alliance (general) — 03/27 (note: today's AstraZeneca claim is an UPDATE)
+
+## Step 5: Final Source Coverage
+total: 34, checked: 34, with_findings: 14, unreachable: 2, degraded: 7
+
+## Validator Output (pre-commit)
+Running: python3 ~/Documents/projects/watchtower/scripts/validate_report.py ...
+[see below after report.json written]
+
+## Validator Results
+Run 1: 2 warnings (findings[5] and findings[10] summaries >200 chars)
+Run 2 (after trim): ✅ reports/2026/03/28/night/report.json — valid (no warnings)
+
+## Commit
