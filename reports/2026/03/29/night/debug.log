@@ -1,0 +1,145 @@
+# Debug Log — 2026-03-29 Night Cycle
+# Started: 2026-03-29T00:00:00+02:00 (Europe/Athens) = 2026-03-28T22:00:00Z
+
+## Step 1: Git Pull
+[00:00] git pull → Already up to date
+
+## Step 2: Dedup Index Built
+[00:01] Reading last 30 days of reports...
+Sources scanned: reports/2026/03/02 through reports/2026/03/28
+Previously reported CVEs/threats (dedup gate):
+- TeamPCP + Vect RaaS 300K (2026-03-28/night)
+- LAPSUS$ AstraZeneca breach (2026-03-28/night)
+- CVE-2026-21858 n8n Ni8mare RCE (2026-03-11/night, 2026-03-28/night)
+- TeamPCP Telnyx WAV steganography (2026-03-28/night)
+- CVE-2025-53521 F5 BIG-IP KEV (2026-03-28/night)
+- CVE-2025-68664 / CVE-2026-34070 / CVE-2025-67644 LangChain (2026-03-28/night)
+- Handala / Kash Patel email breach (2026-03-28/night)
+- CVE-2025-12548 Eclipse Che RCE Metasploit (2026-03-28/night)
+- CVE-2026-4681 PTC Windchill ICS (2026-03-28/night)
+- Coruna/DarkSword iOS (2026-03-19/night, 2026-03-20/night, 2026-03-28/night)
+- watchTowr abandoned AWS S3 buckets (2026-03-28/night)
+- CVE-2025-66342 Canva Affinity/TP-Link Cisco Talos (2026-03-28/night)
+- European Commission AWS breach (2026-03-28/night)
+- CVE-2026-23767 Epson ESC/POS Metasploit (2026-03-28/night)
+- Port of Vigo ransomware (2026-03-28/night)
+- HackerOne Navia HR breach (2026-03-28/night)
+- Infinite Campus ShinyHunters (2026-03-28/night)
+- Bearlyfy pro-Ukraine ransomware (2026-03-28/night)
+- RedLine developer extradited (2026-03-28/night)
+- LeakBase admin arrested (2026-03-28/night)
+- CVE-2026-31381/31382 Gainsight (2026-03-28/night, 2026-03-22/night noted)
+- CVE-2026-33634 Aquasecurity Trivy KEV (2026-03-27/night)
+- CVE-2026-33017 Langflow RCE KEV (2026-03-23/night, 2026-03-26/night)
+- CVE-2026-20127 Cisco Catalyst SD-WAN (2026-03-23/night)
+- BPFDoor Red Menshen (2026-03-27/night)
+- Cisco IOS March 2026 patch bundle (2026-03-27/night)
+- CVE-2024-8698 Keycloak SAML bypass (2026-03-27/night)
+- TeamPCP Docker Hub/VS Code expansion (2026-03-27/night)
+- CVE-2026-26113/CVE-2026-26110 MS Office Preview RCE (2026-03-12/night)
+- CVE-2025-32463 sudo chroot LPE (2026-03-19/night)
+- CVE-2025-66376 Zimbra XSS KEV (2026-03-19/night, update 2026-03-20/night)
+- CVE-2026-3564 ConnectWise ScreenConnect (2026-03-19/night)
+- CVE-2026-20963 SharePoint RCE KEV (2026-03-19/night)
+- CVE-2026-21992 Oracle Identity Manager RCE (2026-03-21/night)
+- CVE-2025-54068 Laravel Livewire KEV (2026-03-21/night)
+- CVE-2025-32432 Craft CMS KEV (2026-03-21/night)
+- CVE-2025-55182/CVE-2025-66478 React2Shell Next.js RSC (2026-03-22/night)
+- TeamPCP CanisterWorm npm supply chain (2026-03-22/night)
+- CVE-2026-22557 Ubiquiti UniFi CVSS 10.0 (2026-03-20/night)
+- CVE-2026-25769 Wazuh RCE deserialization (2026-03-24/night)
+- CVE-2026-32746 GNU InetUtils Telnetd RCE (2026-03-24/night)
+- CVE-2026-3055/CVE-2026-4368 Citrix NetScaler (2026-03-24/night)
+- TeamPCP Trivy Kubernetes wiper (2026-03-24/night)
+- BIND 9 quad-CVE patch day (2026-03-26/night)
+- Node.js high-severity releases (2026-03-26/night)
+- Apple iOS/macOS 26.4 WiFi MITM (2026-03-26/night)
+- TP-Link Archer NX auth bypass (2026-03-26/night)
+- PolyShell Magento mass exploitation (2026-03-26/night, updated)
+- CVE-2025-47813 Wing FTP Server KEV (2026-03-17/night)
+- CVE-2026-3909 Chrome Zero-Days KEV (2026-03-17/night)
+- GlassWorm ForceMemo supply chain (2026-03-17/night)
+- Rocket.Chat auth bypass (2026-03-17/night)
+- Stryker wiper attack (2026-03-11/night, 2026-03-12/night, 2026-03-17/night)
+- CVE-2025-53770 SharePoint deserialization (2026-03-21/night)
+- Veeam 5 CVEs (2026-03-18/night)
+- Pingora HTTP/1 smuggling (2026-03-18/night)
+- CVE-2026-2796 Firefox JIT CVSS 9.8 (2026-03-18/night)
+- CVE-2026-0628 Chrome Gemini side panel (2026-03-18/night)
+- CVE-2026-29000 pac4j JWT bypass (2026-03-18/night)
+- CVE-2026-22200 osTicket PHP filter chain (2026-03-23/night)
+- CVE-2026-29058 AVideo OS command injection (2026-03-23/night)
+- CVE-2026-21440 AdonisJS path traversal (2026-03-12/night)
+
+## Step 3: Source Scanning
+
+## Source Check Log (2026-03-29T00:02Z — 00:14Z)
+
+[00:02] bleepingcomputer.com → ✅ HTTP 200 — Infinity Stealer (NEW), Telnyx PyPI (dedup), Fake VS Code GitHub (NEW), European Commission (dedup), Dutch Police phishing (NEW-noted), Ajax FC (NEW-noted), UK Xinbi sanctions (NEW)
+[00:02] thehackernews.com → ✅ HTTP 200 — TeamPCP/Telnyx (dedup), LangChain (dedup), BPFDoor (dedup) — all in prior dedup
+[00:02] cisa.gov/known-exploited-vulnerabilities-catalog → ✅ HTTP 200 (cached) — 1554 entries, no new since March 27
+[00:03] securityweek.com → ✅ HTTP 200 — Infinity Stealer (NEW, cross-confirm), RSAC 2026, OpenAI bug bounty (out of scope), TP-Link (dedup)
+[00:03] rapid7.com/blog → ✅ HTTP 200 — Metasploit wrap-up 03/27 (dedup), IoT cellular whitepaper (out of scope)
+[00:03] attackerkb.com/topics/recent → ❌ HTTP 500 — ERROR, logged
+[00:04] bleepingcomputer.com/news/security/new-infinity-stealer... → ✅ HTTP 200 — Full article fetched, FINDING #1
+[00:04] bleepingcomputer.com/news/security/fake-vs-code-alerts... → ✅ HTTP 200 — Full article fetched, FINDING #5
+[00:04] kb.cert.org/vuls → ✅ HTTP 200 — No new advisories relevant
+[00:05] packetstormsecurity.com → ✅ HTTP 200 — Stats only (250 advisories 7d), no new critical items
+[00:05] opencve.io/cve → ✅ HTTP 200 — March 28 entries: elecV2P (niche), Wavlink (IoT), HTTP::Session (low) — below threshold
+[00:05] krebsonsecurity.com → ✅ HTTP 200 — CanisterWorm/Trivy (dedup), DDoS botnets (dedup)
+[00:05] schneier.com/blog → ✅ HTTP 200 — AI politics post (out of scope)
+[00:06] googleprojectzero.blogspot.com → ✅ HTTP 200 — macOS fuzzing posts (older, out of scope)
+[00:06] therecord.media → ✅ HTTP 200 — No new critical items vs prior dedup
+[00:06] blog.cloudflare.com/tag/security → ✅ HTTP 200 — Latest: March 12 (Account Abuse) — no new
+[00:06] msrc.microsoft.com/blog → ✅ HTTP 200 (JS-rendered, minimal content) — No new March blog posts
+[00:06] nvd.nist.gov (CVE-2026-30303) → ✅ HTTP 200 — NVD confirmed, FINDING #3
+[00:06] nvd.nist.gov (CVE-2026-30304) → ✅ HTTP 200 — NVD confirmed, FINDING #3 
+[00:07] zerodayinitiative.com/advisories/published → ✅ HTTP 200 — ZDI-26-226 spotted (CVSS 9.8, 0-day, March 24) — NEW CRITICAL
+[00:07] zerodayinitiative.com/advisories/ZDI-26-226 → ✅ HTTP 200 — Full advisory fetched, FINDING #1
+[00:07] synacktiv.com/advisories → ✅ HTTP 200 — Only 2023 entries, no new relevant
+[00:07] about.gitlab.com/releases → ✅ HTTP 200 — 18.10.1 patch (March 25) spotted, FINDING #4
+[00:07] fortinet.com/blog/psirt-advisories → ❌ HTTP 404 — ERROR, logged
+[00:08] about.gitlab.com/releases/2026/03/25/patch-release... → ✅ HTTP 200 — Full advisory, CVE-2026-2370/3857/2995/3988
+[00:08] securityaffairs.com → ✅ HTTP 200 — EU Commission (dedup), Kash Patel (dedup), F5 KEV (dedup), TikTok AITM (NEW), Coruna update (noted-confirm), BPFDoor (dedup), Langflow KEV (dedup)
+[00:08] darkreading.com → ❌ HTTP 403 — Blocked (Cloudflare)
+[00:08] securityaffairs.com/190058 (TikTok AITM) → ✅ HTTP 200 — Full article, FINDING #7
+[00:08] cve.org/CVE-2026-2370 → ✅ HTTP 200 — Minimal content
+[00:08] theregister.com/security → ✅ HTTP 200 — Microsoft kernel driver trust (out of scope/policy), no new vulns
+[00:09] sec.cloudapps.cisco.com/security → ✅ HTTP 200 (JS-rendered) — Could not parse dynamic listing; referenced prior cycle's full Cisco scan
+[00:09] msrc.microsoft.com/update-guide/releaseNote/2026-Mar → ✅ HTTP 200 (JS-rendered) — No additional patches since March Patch Tuesday (already in dedup)
+[00:09] paloaltonetworks.com/blog/cloud-security/trivy... → ✅ HTTP 200 — TeamPCP Update 003 cross-confirm, behavioral detection rules, FINDING #6 update
+[00:09] isc.sans.edu/diary/rss → ✅ HTTP 200 — SANS ISC March 28 TeamPCP Update 003, FINDING #6
+[00:09] f5.com/labs → ❌ HTTP 404 — not found (URL deprecated)
+[00:09] labs.watchtowr.com → ✅ HTTP 200 — No new posts since abandoned S3 buckets (already dedup)
+[00:10] securityaffairs.com/190010 (Coruna) → ✅ HTTP 200 — Kaspersky confirmation of Operation Triangulation link, NOTED
+[00:10] bleepingcomputer.com/news/security/uk-sanctions-xinbi... → ✅ HTTP 200 — Full article, FINDING #8
+[00:10] nvd.nist.gov (pub_start=2026-03-28) → ✅ HTTP 200 — Range search, cross-check for missed CVEs (none critical not already found)
+[00:10] seclists.org/fulldisclosure/2026/Mar → ✅ HTTP 200 — Entries through March 19 visible, no new relevant full disclosures
+[00:11] github.blog/security → ✅ HTTP 200 — "Secure npm supply chain" response to TeamPCP, "VS Code prompt injection safeguards" — noted for monitoring
+[00:11] exploit-db.com → ✅ HTTP 200 (minimal rendering) — Checked, no new critical PoCs beyond prior dedup
+[00:11] vmware/broadcom advisories → ✅ HTTP 200 — No new VMware advisories this cycle
+
+## Dedup Decisions (items seen but excluded):
+- European Commission AWS breach (ShinyHunters): DEDUP — reported 2026-03-28/night
+- Kash Patel / Handala email breach: DEDUP — reported 2026-03-28/night
+- Telnyx PyPI backdoor (TeamPCP): DEDUP — reported 2026-03-28/night
+- F5 BIG-IP CVE-2025-53521 KEV: DEDUP — reported 2026-03-28/night; NOTED with deadline reminder
+- BPFDoor Red Menshen: DEDUP — reported 2026-03-27/night
+- LangChain/LangGraph CVEs: DEDUP — reported 2026-03-28/night
+- RSAC 2026 announcements: OUT-OF-SCOPE — conference news
+- OpenAI bug bounty program: BELOW-THRESHOLD — operational policy, no exploitable vuln
+- TP-Link HIGH patches: CROSS-CHECKED — appears to be same Talos disclosure from 2026-03-28/night
+- elecV2P CVEs: BELOW-THRESHOLD — niche IoT proxy tool, CVSS < 7.5
+- Wavlink WL-WN579X3-C: BELOW-THRESHOLD — consumer IoT, no enterprise relevance
+
+## New Findings Summary:
+1. ZDI-26-226 Azure MCP AzureCliService 0-Day (CVSS 9.8) → CRITICAL [NEW]
+2. Infinity Stealer macOS ClickFix infostealer → HIGH [NEW]
+3. CVE-2026-30303/30304 AI code tool RCE (NVD confirmed) → HIGH [PROMOTED FROM NOTED]
+4. GitLab 18.10.1 four HIGH CVEs → HIGH [NEW]
+5. Fake VS Code GitHub Discussions campaign → MEDIUM [NEW]
+6. TeamPCP Update 003 (monetization phase, behavioral detections) → MEDIUM [UPDATE]
+7. AITM TikTok Business phishing (Push Security) → MEDIUM [NEW]
+8. UK Xinbi sanctions ($19.9B Telegram crime) → MEDIUM [NEW]
+
+## Validator Check

@@ -1,0 +1,137 @@
+{
+  "date": "2026-03-29",
+  "cycle": "night",
+  "full_report": "reports/2026/03/29/night/report.md",
+  "findings": [
+    {
+      "type": "news",
+      "title": "ZDI-26-226 — Microsoft Azure MCP AzureCliService Command Injection 0-Day (CVSS 9.8)",
+      "threat_score": 10,
+      "cve": null,
+      "cvss": 9.8,
+      "affected_technology": "Microsoft Azure (azure-cli-mcp / MCP server for AI agents)",
+      "summary": "ZDI published a 0-day advisory for an unauthenticated command injection vulnerability in azure-cli-mcp. Microsoft received the report September 2025, rated it Moderate, declined to patch. ZDI...",
+      "discovery_latency": "late",
+      "first_seen_at": "zerodayinitiative.com"
+    },
+    {
+      "type": "news",
+      "title": "Infinity Stealer — New macOS Infostealer Delivered via Cloudflare ClickFix Lure (Nuitka/Python)",
+      "threat_score": 8,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "macOS (all versions, user-side campaign via fake Cloudflare CAPTCHA)",
+      "summary": "A new macOS infostealer 'Infinity Stealer' is spreading through Cloudflare-themed fake CAPTCHA / ClickFix pages. Payload is Python packaged with Nuitka compiler, evading most AV. Steals: browser...",
+      "discovery_latency": "on-time",
+      "first_seen_at": "bleepingcomputer.com"
+    },
+    {
+      "type": "update",
+      "title": "CVE-2026-30303 + CVE-2026-30304 — AI Code Tool Prompt Injection to Arbitrary OS Command Execution (NVD Confirmed)",
+      "threat_score": 9,
+      "previous_threat_score": 7,
+      "cve": "CVE-2026-30303",
+      "cvss": 9.6,
+      "affected_technology": "Axon Code (Windows); AI Code VS Code Extension 'claude-dev-china'",
+      "summary": "NVD confirmed both CVEs. CVE-2026-30303 (Axon Code, Windows, CWE-78): Command whitelist uses Unix shell-quote on Windows, creating parser discrepancy. Payload 'git log ^\" & malicious_cmd ^\"' bypasses...",
+      "first_seen_at": "nvd.nist.gov"
+    },
+    {
+      "type": "news",
+      "title": "GitLab 18.10.1 / 18.9.3 / 18.8.7 — Four HIGH-Severity Security Fixes (Jira CSRF, HTML Injection, WebAuthn, GraphQL DoS)",
+      "threat_score": 7,
+      "cve": "CVE-2026-2370",
+      "cvss": null,
+      "affected_technology": "GitLab CE/EE 18.8.x, 18.9.x, 18.10.x (self-managed installations)",
+      "summary": "GitLab released three patch versions on March 25 fixing four HIGH-severity vulnerabilities: CVE-2026-2370 (Jira Connect improper parameter handling), CVE-2026-3857 (CSRF in GLQL API), CVE-2026-2995...",
+      "discovery_latency": "late",
+      "first_seen_at": "about.gitlab.com"
+    },
+    {
+      "type": "news",
+      "title": "Mass GitHub Discussions Campaign — Fake VS Code Security Alerts Deliver Developer-Targeted Malware",
+      "threat_score": 7,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "GitHub Discussions / Developer workstations (cross-platform)",
+      "summary": "Large-scale spam campaign floods GitHub Discussions with fake VS Code security alerts citing fabricated CVE IDs. Google Drive links deliver a JavaScript payload that profiles victims (OS, tools,...",
+      "discovery_latency": "late",
+      "first_seen_at": "bleepingcomputer.com"
+    },
+    {
+      "type": "update",
+      "title": "TeamPCP Update 003 — Campaign Enters Monetization Phase; First 48-Hour Window Without New Supply Chain Compromise",
+      "threat_score": 9,
+      "previous_threat_score": 10,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "npm, PyPI, GitHub Actions, Docker Hub, CI/CD pipelines globally",
+      "summary": "SANS ISC Update 003 (March 28): First 48 hours without new supply chain compromise since March 19. Analysts assess TeamPCP has pivoted from supply chain expansion to monetization of ~300 GB stolen...",
+      "first_seen_at": "isc.sans.edu"
+    },
+    {
+      "type": "news",
+      "title": "AITM Phishing Kit Hijacks TikTok for Business Accounts for Malvertising and Ad Fraud",
+      "threat_score": 6,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "TikTok for Business / Google Workspace (campaign targeting advertisers)",
+      "summary": "Push Security uncovered AITM phishing campaign targeting TikTok for Business accounts. Chain: email -> legitimate Google Storage redirect (trust anchor) -> Cloudflare Turnstile bot check -> fake...",
+      "discovery_latency": "late",
+      "first_seen_at": "securityaffairs.com"
+    },
+    {
+      "type": "news",
+      "title": "UK FCDO Sanctions Xinbi — $19.9B Telegram Crime Marketplace Linked to DPRK Crypto Laundering and Asian Scam Compounds",
+      "threat_score": 6,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Xinbi / #8 Park / Telegram-based illicit marketplace infrastructure",
+      "summary": "UK FCDO sanctioned Xinbi (March 26), a Telegram-based Chinese-language marketplace processing $19.9B in illicit transactions 2021-2025, including stolen data sales, OTC crypto, and satellite internet...",
+      "discovery_latency": "late",
+      "first_seen_at": "bleepingcomputer.com"
+    }
+  ],
+  "noted": [
+    {
+      "cve": "CVE-2025-53521",
+      "product": "F5 BIG-IP",
+      "summary": "CISA KEV remediation deadline TOMORROW March 30, 2026. Unauthenticated RCE in F5 BIG-IP AMP. Federal agencies must remediate or discontinue. No new public PoC this cycle."
+    },
+    {
+      "cve": null,
+      "product": "Coruna / DarkSword iOS Exploit Kit (Operation Triangulation Evolution)",
+      "summary": "Kaspersky Securelist (via SecurityAffairs March 26) confirmed Coruna uses updated version of the Operation Triangulation kernel exploit. Five exploit chains, 23 total exploits targeting iOS 13.0-17.2.1, all patched in iOS 18.4.1. GTIG confirmed UNC6353 (watering hole) and UNC6691 (Chinese financial TA) usage. Finding fully reported across prior cycles; removing from active monitoring queue."
+    },
+    {
+      "cve": null,
+      "product": "Ajax Football Club",
+      "summary": "Dutch researcher disclosed API key exposure enabling access to 300K fan accounts, transfer of 42K season tickets, modification of 538 stadium bans. All patched; DPA and police notified. No malicious exploitation. Low operational relevance."
+    },
+    {
+      "cve": null,
+      "product": "Dutch National Police",
+      "summary": "Successful phishing against Dutch Police internal systems (March 27). No citizen data or operational data exposed. DPA notified. Limited impact documented for completeness."
+    },
+    {
+      "cve": null,
+      "product": "Rapid7 2026 Global Threat Landscape Report",
+      "summary": "Third cycle unable to access full report content (URL variants 404). Key headline: 'attack cycle accelerating.' Retry with direct PDF URL next morning cycle."
+    }
+  ],
+  "source_coverage": {
+    "total": 36,
+    "checked": 34,
+    "with_findings": 10,
+    "unreachable": [
+      "attackerkb.com",
+      "fortinet.com/blog"
+    ],
+    "degraded": [
+      "darkreading.com",
+      "msrc.microsoft.com",
+      "cisco-psirt.cisco.com",
+      "rapid7.com/research"
+    ]
+  }
+}
