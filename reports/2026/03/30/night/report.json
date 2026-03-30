@@ -1,0 +1,206 @@
+{
+  "date": "2026-03-30",
+  "cycle": "night",
+  "full_report": "reports/2026/03/30/night/report.md",
+  "findings": [
+    {
+      "type": "news",
+      "title": "CVE-2026-32922 — OpenClaw device.token.rotate Scope Overminting → RCE on Nodes (CVSS 9.9, THIS INSTANCE VULNERABLE)",
+      "threat_score": 10,
+      "cve": "CVE-2026-32922",
+      "cvss": 9.9,
+      "affected_technology": "OpenClaw < 2026.3.11 (current instance: v2026.2.21-2)",
+      "summary": "Callers with operator.pairing scope can call device.token.rotate to mint tokens with any scope — including operator.admin — enabling full RCE on connected nodes via system.run or unauthorized gateway-admin access; THIS instance is running v2026.2.21-2 and is confirmed vulnerable.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "app.opencve.io"
+    },
+    {
+      "type": "news",
+      "title": "CVE-2026-32987 — OpenClaw Bootstrap Code Replay → operator.admin Privilege Escalation (CVSS 9.3, THIS INSTANCE VULNERABLE)",
+      "threat_score": 10,
+      "cve": "CVE-2026-32987",
+      "cvss": 9.3,
+      "affected_technology": "OpenClaw < 2026.3.13 (current instance: v2026.2.21-2)",
+      "summary": "Bootstrap setup codes can be replayed before approval in device-bootstrap.ts (CWE-294) to escalate pending pairing scope to operator.admin; THIS instance is running v2026.2.21-2 and is confirmed vulnerable.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "app.opencve.io"
+    },
+    {
+      "type": "news",
+      "title": "GHSA-4749-wr9h-9qxx — OpenClaw MEDIA: Protocol Zero-Auth File Exfiltration (API Keys, Session History, System Prompts — THIS INSTANCE FULLY VULNERABLE)",
+      "threat_score": 10,
+      "cve": "Not yet assigned",
+      "cvss": null,
+      "affected_technology": "OpenClaw <= 2026.3.13; partial fix in 2026.3.22 (workspace/ still accessible)",
+      "summary": "Any group chat member injects MEDIA: tokens to exfiltrate LLM API keys, session history, and system prompts; bypasses tools.deny:['*'] and all approval controls; partial fix in v2026.3.22 still leaves workspace/ files readable; THIS instance (v2026.2.21-2) has zero mitigation.",
+      "discovery_latency": "late",
+      "first_seen_at": "seclists.org/fulldisclosure"
+    },
+    {
+      "type": "news",
+      "title": "CVE-2026-32973 — OpenClaw exec Allowlist Glob Bypass via ? Wildcard Across Path Separators (CVSS 9.8, THIS INSTANCE VULNERABLE)",
+      "threat_score": 9,
+      "cve": "CVE-2026-32973",
+      "cvss": 9.8,
+      "affected_technology": "OpenClaw < 2026.3.11 (current instance: v2026.2.21-2)",
+      "summary": "matchesExecAllowlistPattern lowercases and applies ? glob matching that spans path segments, allowing operators' exec allowlist rules to be bypassed and unintended commands executed; THIS instance is vulnerable.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "app.opencve.io"
+    },
+    {
+      "type": "news",
+      "title": "CVE-2026-32975 + CVE-2026-32924 — OpenClaw Zalo & Feishu Group Authorization Bypasses (CVSS 9.8, THIS INSTANCE VULNERABLE)",
+      "threat_score": 9,
+      "cve": "CVE-2026-32975, CVE-2026-32924",
+      "cvss": 9.8,
+      "affected_technology": "OpenClaw < 2026.3.12 Zalo/Feishu integrations (current instance: v2026.2.21-2)",
+      "summary": "Two critical group auth bypasses: CVE-2026-32975 matches mutable Zalo group display names so cloned groups bypass allowlists; CVE-2026-32924 misclassifies Feishu reaction events with missing chat_type as p2p, bypassing groupAllowFrom and requireMention; both affect THIS instance.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "app.opencve.io"
+    },
+    {
+      "type": "news",
+      "title": "CVE-2026-32914 + CVE-2026-32915 — OpenClaw /config Access Control Bypass + Subagent Sandbox Escape (CVSS 8.8, THIS INSTANCE VULNERABLE)",
+      "threat_score": 8,
+      "cve": "CVE-2026-32914, CVE-2026-32915",
+      "cvss": 8.8,
+      "affected_technology": "OpenClaw < 2026.3.12 (current instance: v2026.2.21-2)",
+      "summary": "CVE-2026-32914: command-authorized non-owner users access owner-only /config and /debug to read/modify privileged settings; CVE-2026-32915: sandboxed leaf subagents resolve against parent requester scope, enabling sibling session control and broader tool policy execution; both affect THIS instance.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "app.opencve.io"
+    },
+    {
+      "type": "news",
+      "title": "CVE-2026-32974 — OpenClaw Feishu Webhook Auth Bypass — Forged Event Injection to Tool Execution (CVSS 8.6, THIS INSTANCE VULNERABLE)",
+      "threat_score": 8,
+      "cve": "CVE-2026-32974",
+      "cvss": 8.6,
+      "affected_technology": "OpenClaw < 2026.3.12 Feishu webhook mode (current instance: v2026.2.21-2)",
+      "summary": "Feishu webhook with only verificationToken (no encryptKey) accepts forged events, allowing unauthenticated attackers to inject arbitrary Feishu events and trigger downstream tool execution; THIS instance is vulnerable.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "app.opencve.io"
+    },
+    {
+      "type": "news",
+      "title": "CVE-2025-30189 — Dovecot Auth Cache Regression: Users Authenticated as Wrong Account (CVSS 7.4)",
+      "threat_score": 7,
+      "cve": "CVE-2025-30189",
+      "cvss": 7.4,
+      "affected_technology": "OX Dovecot CE core <= 2.4.0 / OX Dovecot Pro core <= 3.1.0 (IMAP/LMTP servers)",
+      "summary": "v2.4 regression breaks auth cache with several passdb/userdb drivers: all users with the same cache key are authenticated as the same cached user, constituting an authentication bypass; fixed in CE 2.4.1 / Pro 3.1.2; no public exploits.",
+      "discovery_latency": "late",
+      "first_seen_at": "seclists.org/fulldisclosure"
+    },
+    {
+      "type": "news",
+      "title": "CVE-2025-59032 — Dovecot ManageSieve AUTHENTICATE Panic — Repeated Remote DoS (CVSS 7.5)",
+      "threat_score": 6,
+      "cve": "CVE-2025-59032",
+      "cvss": 7.5,
+      "affected_technology": "OX Dovecot CE 2.4.x / OX Dovecot Pro 3.1.x (ManageSieve service)",
+      "summary": "ManageSieve AUTHENTICATE command crashes when a literal is used as SASL initial response (as sent by sieve-connect), enabling repeated crash/DoS of the ManageSieve service; fixed in CE 2.4.3 / Pro 3.1.3; no public exploits.",
+      "discovery_latency": "late",
+      "first_seen_at": "seclists.org/fulldisclosure"
+    },
+    {
+      "type": "news",
+      "title": "CVE-2026-3098 — Smart Slider 3 WordPress Plugin Arbitrary File Read — 800K Sites, ~500K Still Unpatched",
+      "threat_score": 5,
+      "cve": "CVE-2026-3098",
+      "cvss": null,
+      "affected_technology": "Smart Slider 3 WordPress plugin <= 3.5.1.33 (800K+ active installations)",
+      "summary": "Subscriber-level authenticated WordPress users can read any server-side file including wp-config.php (DB credentials and secret keys); patch in v3.5.1.34 released March 24; approximately 500K sites estimated still unpatched.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "bleepingcomputer.com"
+    },
+    {
+      "type": "news",
+      "title": "MailEnable <= 10.54 — Three Reflected XSS in Webmail (KIS-2026-05, PoC Public, No CVE Assigned)",
+      "threat_score": 5,
+      "cve": "Not yet assigned",
+      "cvss": null,
+      "affected_technology": "MailEnable Windows Mail Server <= 10.54 (webmail interface)",
+      "summary": "Three reflected XSS vulnerabilities in MailEnable webmail (ManageShares.aspx?SelectedIndex, FreeBusy.aspx?Attendees, FreeBusy.aspx?StartDate) allow arbitrary JavaScript execution; full PoC URLs publicly disclosed by Egidio Romano; fixed in MailEnable 10.55 (released March 2).",
+      "discovery_latency": "late",
+      "first_seen_at": "seclists.org/fulldisclosure"
+    }
+  ],
+  "noted": [
+    {
+      "cve": "CVE-2026-32918",
+      "product": "OpenClaw < 2026.3.11 (THIS INSTANCE VULNERABLE)",
+      "summary": "session_status sandbox escape: sandboxed subagents supply arbitrary sessionKey to read/modify parent or sibling session state, including persisted model overrides (CVSS 8.4). Fix: upgrade to >= 2026.3.11."
+    },
+    {
+      "cve": "CVE-2026-32978",
+      "product": "OpenClaw < 2026.3.11 (THIS INSTANCE VULNERABLE)",
+      "summary": "system.run approval TOCTOU: tsx/jiti script runners don't bind file operands at approval time; rewrite script after approval to execute modified code under approved context (CVSS 8.0). Fix: upgrade to >= 2026.3.11."
+    },
+    {
+      "cve": "CVE-2026-32980",
+      "product": "OpenClaw < 2026.3.13 (THIS INSTANCE VULNERABLE)",
+      "summary": "Telegram webhook buffers full POST body before validating x-telegram-bot-api-secret-token, enabling unauthenticated memory/socket exhaustion DoS (CVSS 7.5). Fix: upgrade to >= 2026.3.13."
+    },
+    {
+      "cve": "CVE-2026-32919",
+      "product": "OpenClaw < 2026.3.11 (THIS INSTANCE VULNERABLE)",
+      "summary": "Write-scoped callers issue /new or /reset slash commands to reset targeted sessions without operator.admin (CVSS 6.1). Fix: upgrade to >= 2026.3.11."
+    },
+    {
+      "cve": "CVE-2026-0394",
+      "product": "OX Dovecot Pro >= 2.3.0 (fixed in CE 2.4.0 / Pro 3.1.0)",
+      "summary": "Pre-auth path traversal: %d domain escape in passwd-file passdb escapes base directory and reads /etc/passwd (CVSS 5.3). Fix: upgrade or avoid passwd-file passdb with user-controlled domain input."
+    },
+    {
+      "cve": "CVE-2025-59028",
+      "product": "OX Dovecot CE 2.4.0 / Pro 3.1.0",
+      "summary": "Invalid base64 SASL data disconnects auth server process, causing all concurrent authentication sessions to fail — targeted DoS (CVSS 5.3). Fix: upgrade to CE 2.4.3 / Pro 3.1.2."
+    },
+    {
+      "cve": "CVE-2026-28514, CVE-2026-30833",
+      "product": "Rocket.Chat",
+      "summary": "Authentication bypass listed by GitHub Security Lab; details pending full disclosure. Monitoring for PoC and severity confirmation."
+    },
+    {
+      "cve": "CVE-2025-12548",
+      "product": "Eclipse Che machine-exec / Red Hat OpenShift DevSpaces",
+      "summary": "ESCALATION: Unauthenticated WebSocket RCE on port 3333 (JSON-RPC) now has a public Metasploit module as of the March 27 wrap-up. Previously noted; operators who have not yet patched face significantly elevated risk."
+    },
+    {
+      "cve": "CVE-2026-23767",
+      "product": "Epson-compatible networked receipt/POS printers",
+      "summary": "New Metasploit module (March 27 wrap-up) for unauthenticated ESC/POS command injection over TCP; allows arbitrary print commands and potential RCE on networked printers in retail/POS environments."
+    },
+    {
+      "cve": null,
+      "product": "Iran Regional Cyber Activity",
+      "summary": "FortiGuard Labs: No large-scale Iranian cyber retaliation observed following US-Israeli strikes as of March 2026. Regional activity is rising; recommend credential rotation, reduced internet exposure, and heightened monitoring for affected organizations."
+    },
+    {
+      "cve": null,
+      "product": "Rapid7 2026 Global Threat Landscape Report",
+      "summary": "Key stats: exploitation of CVSS 7-10 vulns increased 105% YoY; median time from disclosure to CISA KEV fell from 8.5 to 5.0 days; ransomware in 42% of incidents; stolen credentials without MFA in 43.9% of incidents. AI accelerating attacker tradecraft."
+    }
+  ],
+  "source_coverage": {
+    "total": 36,
+    "checked": 32,
+    "with_findings": 8,
+    "unreachable": [
+      "cve.mitre.org",
+      "cve.org",
+      "bugcrowd.com/disclosures",
+      "teletype.in/@cyberok"
+    ],
+    "degraded": [
+      "nvd.nist.gov",
+      "msrc.microsoft.com/blog",
+      "hackerone.com/hacktivity",
+      "kb.cert.org/vuls",
+      "cert.gov.ua",
+      "dbugs.ptsecurity.com",
+      "habr.com/ru/companies/tomhunter/articles",
+      "isc.org/blogs"
+    ]
+  }
+}

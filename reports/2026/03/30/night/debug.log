@@ -1,0 +1,50 @@
+[2026-03-30T00:01:14Z] DEBUG LOG INITIALIZED — 2026-03-30 night cycle
+[2026-03-30T00:01:14Z] Step 1: git pull — Already up to date
+[2026-03-30T00:01:14Z] Step 2: Dedup index built from last 30 days reports
+[2026-03-30T00:06:30Z] Step 3: Source scanning complete
+  Sources checked (26/36):
+    bleepingcomputer.com — OK (Smart Slider WordPress CVE-2026-3098, new)
+    thehackernews.com — OK (no new findings beyond dedup)
+    cisa.gov/known-exploited-vulnerabilities-catalog — OK (1554 entries, no new additions since March 27)
+    securityweek.com — OK (headlines noted: BIND patches, TP-Link patches, Cisco IOS)
+    schneier.com — OK (policy content only, out of scope)
+    krebsonsecurity.com — OK (no new findings beyond dedup)
+    rapid7.com/blog — OK (2026 Threat Landscape Report noted; Metasploit 03/27 wrap-up)
+    attackerkb.com — OK (CVE-2026-20127 Cisco SD-WAN deep dive — already in dedup)
+    fortinet.com/blog/threat-research — OK (Iran cyber fallout update, noted)
+    securitylab.github.com — OK (Rocket.Chat auth bypass CVE-2026-28514/30833 — NEW)
+    seclists.org/fulldisclosure — OK (OpenClaw MEDIA:, Dovecot, MailEnable — NEW)
+    packetstormsecurity.com — OK (redirected to TOS, no actionable data)
+    opencve.io/cve?vendor=openclaw — OK (15 NEW OpenClaw CVEs all 2026-03-29)
+    nvd.nist.gov — PARTIAL (JS-rendered)
+    googleprojectzero.blogspot.com — OK (Windows UAC/UI Access research, out of scope)
+    blog.cloudflare.com/tag/security — OK (no new vulns, product launches)
+    msrc.microsoft.com/blog — PARTIAL (empty response)
+    hackerone.com/hacktivity — PARTIAL (JS-rendered, empty)
+    kb.cert.org/vuls — PARTIAL (minimal content)
+    cert.gov.ua/article — PARTIAL (empty)
+    github.com/0xMarcio/cve — OK (CVE-2026-0828 BYOVD, others in dedup)
+    wiz.io/blog — OK (TeamPCP LiteLLM/KICS — already in dedup)
+    isc.org/blogs — PARTIAL (navigation only)
+    securityaffairs.com — PARTIAL (minimal)
+    packetstorm.news/files/exploit/1 — PARTIAL (TOS redirect)
+    app.opencve.io — OK (full OpenClaw CVE list extracted)
+
+[2026-03-30T00:06:30Z] Step 4: Instance version check
+  OPENCLAW VERSION: 2026.2.21-2
+  ALERT: Running version is ~6 weeks behind latest patches
+  AFFECTED CVEs: ALL 15 new CVEs from March 29 batch + prior batches apply
+  STATUS: OPERATOR ACTION REQUIRED — upgrade to >= 2026.3.22
+
+[2026-03-30T00:06:30Z] Step 5: Dedup evaluation
+  CVE-2026-32914 through 32987 (March 29 batch) — NOT in dedup — NEW
+  GHSA-4749-wr9h-9qxx OpenClaw MEDIA: — NOT in dedup — NEW
+  Dovecot CVE-2025-30189/59028/59032/59031 + CVE-2026-0394 — NOT in dedup — NEW
+  MailEnable <=10.54 XSS (no CVE) — NOT in dedup — NEW
+  CVE-2026-3098 Smart Slider — NOT in dedup — NEW
+  CVE-2026-28514/30833 Rocket.Chat — NOT in dedup — NEW (GitHub Security Lab listing)
+  Metasploit Eclipse Che module (CVE-2025-12548) — IN DEDUP (escalation: now has MSF module)
+  n8n CVE-2026-21858 — DEDUP_UNCERTAIN (3 days old, likely in March 27 cycle)
+  telnetd CVE-2026-24061 — DEDUP_UNCERTAIN (5-6 days old, likely in March 24-25 cycle)
+
+[2026-03-30T00:06:30Z] Step 6: Building report.json and report.md
