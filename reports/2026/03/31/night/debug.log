@@ -1,0 +1,97 @@
+# Debug Log — 2026-03-31 night cycle
+# Started: 2026-03-31T00:00:00Z
+
+## Step 1: Git Pull
+- 00:00:30 — `git pull` → Already up to date
+
+## Step 2: Dedup Index Build
+- 00:01:00 — Read 23 report.json files from March 2026
+- Built index of all CVEs/threats reported in last 30 days
+- Total unique CVEs/findings indexed: ~130+
+
+## Step 3: Source Scanning
+
+### Tier 1 Sources
+| # | Source | Status | Time | Notes |
+|---|--------|--------|------|-------|
+| 1 | bleepingcomputer.com | ✅ | 1.2s | FortiClient EMS exploitation, Citrix exploitation, F5 BIG-IP RCE, RoadK1ll implant, CareCloud breach |
+| 2 | thehackernews.com | ✅ | 1.0s | Weekly recap, Citrix CVE-2026-3055, CTRL toolkit, China clusters |
+| 3 | cisa.gov/kev | ✅ | 0.8s | CVE-2026-3055 added March 30 (due April 2), confirmed latest entries |
+| 4 | cisa.gov | ✅ | 0.8s | (same catalog as above) |
+| 5 | securityweek.com | ✅ | 1.9s | Star Blizzard DarkSword adoption, CareCloud, Citrix exploitation, F5 BIG-IP |
+| 6 | github.com/search?q=CVE | ✅ | 1.9s | CVE-2026-26111 RRAS bypass claim, CVE-2026-0766 OpenWebUI, CVE-2026-3055 PoC |
+| 7 | schneier.com | ✅ | 1.9s | Apple camera indicators, AI politics — nothing in scope |
+| 8 | krebsonsecurity.com | ✅ | 0.9s | TeamPCP CanisterWorm Iran wiper (already covered), botnet dismantling (already covered), Stryker (covered) |
+| 9 | rapid7.com | ✅ | 2.2s | CVE-2026-3055 analysis, BPFDoor report, Metasploit wraps — Citrix analysis confirms exploitation |
+| 10 | attackerkb.com | ✅ | 2.0s | CVE-2026-20127 deep analysis with Rapid7 PoC (already covered March 23) |
+| 11 | fortinet.com/blog/threat-research | ✅ | 1.3s | Cyber fallout Iran/Israel, Agent Tesla, Winos — nothing net-new in scope |
+| 12 | securitylab.github.com | ✅ | 0.3s | Sylius CVE-2026-31820, Chromium CVE-2025-12428, Spree CVE-2026-25757 — all low-interest |
+| 13 | seclists.org/fulldisclosure | ✅ | 2.3s | 26 messages in March 2026 — archive listing only, no new critical disclosures |
+| 14 | packetstormsecurity.com | ✅ | 4.5s | 41 exploits, 301 advisories in last 7 days — covered via other sources |
+| 15 | opencve.io | ✅ | 1.4s | Platform page only (requires auth for CVE feeds) — confirmed operational |
+
+### Tier 2 Sources
+| # | Source | Status | Time | Notes |
+|---|--------|--------|------|-------|
+| 16 | nvd.nist.gov | ✅ | 1.9s | Search page loaded, no specific new critical CVEs beyond what other sources surfaced |
+| 17 | cve.mitre.org | ❌ | 0.5s | Extraction failed — no readable content returned |
+| 18 | cve.org | ❌ | 0.5s | Extraction failed — no readable content returned |
+| 19 | googleprojectzero.blogspot.com | ✅ | 1.7s | Grammar fuzzing, Windows Admin Protection research — not new vulns |
+| 20 | blog.cloudflare.com/tag/security | ✅ | 2.0s | Client-side security, Account Abuse Protection, Pingora smuggling (already covered March 18) |
+| 21 | msrc.microsoft.com/blog | ✅ | 0.9s | Minimal content extracted — blog framework loaded |
+| 22 | hackerone.com/hacktivity | ⚠️ | 0.7s | JS-rendered only, no content extracted |
+| 23 | bugcrowd.com/disclosures | ❌ | 1.0s | 404 Not Found |
+| 24 | seclists.org/fulldisclosure | ✅ | — | (duplicate of #13, counted once) |
+| 25 | kb.cert.org/vuls | ✅ | 1.3s | No new VU notes in scope |
+| 26 | avleonov.com | ✅ | 0.8s | March Linux Patch Wednesday, trending CVEs — confirms CVE-2026-3909 Chrome, CVE-2026-3888 snapd |
+| 27 | github.com/0xMarcio/cve | ✅ | 1.1s | Top PoCs: CVE-2025-55182 (1393★), CVE-2026-21858 (259★), CVE-2026-24061 (200★) — all previously reported |
+| 28 | dbugs.ptsecurity.com | ✅ | 0.9s | Platform operational, no specific new findings extracted |
+| 29 | habr.com/ru/companies/tomhunter/articles | ✅ | 1.3s | February 2026 CVE roundup, January 2026 news — retrospective, nothing net-new |
+| 30 | teletype.in/@cyberok | ✅ | 0.4s | Dec/Jan vulnerability roundups — retrospective |
+| 31 | cert.gov.ua | ⚠️ | 0.3s | Page loaded but no extractable content (JS-rendered) |
+
+### Additional Searches
+| Query | Status | Notes |
+|-------|--------|-------|
+| CVE-2026-21643 FortiClient EMS | ✅ | Confirmed active exploitation per Defused, HelpNetSecurity, CSO Online, CyberSecurityNews |
+| CVE-2026-3055 Citrix CISA KEV | ✅ | Confirmed CISA KEV addition March 30, due April 2 |
+| Star Blizzard DarkSword | ✅ | SecurityWeek confirms FSB-linked group now using DarkSword kit |
+| New vulns March 30-31 2026 | ✅ | No additional critical findings beyond those identified |
+| CVE-2026-26111 RRAS bypass | ✅ | Interesting GitHub claim but unconfirmed, no exploitation evidence |
+| CareCloud breach | ✅ | Healthcare data breach — out of scope (breach, not vulnerability) |
+
+## Step 4: Dedup Decisions
+
+| Finding | Decision | Reason |
+|---------|----------|--------|
+| CVE-2026-21643 FortiClient EMS SQLi | 📰 NEW | Not previously reported. Critical SQLi, CVSS 9.1, actively exploited since March 26 |
+| CVE-2026-3055 Citrix NetScaler KEV | 🔄 UPDATE | Reported March 24 as disclosure (score ~7). Now CISA KEV + confirmed active exploitation → score 9 |
+| CVE-2025-53521 F5 BIG-IP RCE | 🔄 UPDATE | Reported March 28 as CISA KEV addition (score ~8). Now reclassified DoS→RCE, webshells deployed → score 9 |
+| DarkSword iOS kit — Star Blizzard | 🔄 UPDATE | Reported March 20 attributed to UNC6353. Star Blizzard (FSB) adoption expands threat scope |
+| RoadK1ll WebSocket implant | SKIP | Malware tool, not a vulnerability in scope software |
+| CTRL toolkit Russia | SKIP | Malware toolkit, not a vulnerability |
+| CareCloud breach | SKIP | Data breach, not a vulnerability disclosure |
+| CVE-2026-26111 RRAS bypass claim | NOTED | Unconfirmed GitHub claim of patch bypass, no exploitation evidence |
+| CVE-2026-0766 OpenWebUI RCE | NOTED | AI tool RCE, PoC on GitHub — in scope (AI world) but low deployment |
+| Sylius CVE-2026-31820 IDOR | SKIP | Niche ecommerce platform, low exposure |
+| Chromium CVE-2025-12428 type confusion | SKIP | Already patched, desktop-only |
+
+## Step 5: Report Generation
+- 00:15:00 — Writing report.md and report.json
+- Findings: 1 News + 3 Updates = 4 findings
+- Noted: 2 items
+
+## Step 6: Validation
+- Running validate_report.py...
+
+## Source Coverage Summary
+- Total sources listed: 31 (30 unique after dedup)
+- Checked: 30
+- With findings: 8
+- Unreachable: cve.mitre.org, cve.org, bugcrowd.com
+- Degraded: hackerone.com, cert.gov.ua
+## Step 6: Validation
+- validate_report.py: ✅ PASSED
+
+## Step 7: Git Commit
+- 2026-03-31T00:06:19Z — committing and pushing

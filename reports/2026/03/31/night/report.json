@@ -1,0 +1,70 @@
+{
+  "date": "2026-03-31",
+  "cycle": "night",
+  "findings": [
+    {
+      "type": "news",
+      "title": "CVE-2026-21643 — FortiClient EMS SQL Injection Under Active Exploitation",
+      "threat_score": 8,
+      "cve": "CVE-2026-21643",
+      "cvss": 9.1,
+      "affected_technology": "Fortinet FortiClient EMS",
+      "summary": "Critical SQL injection in FortiClient EMS 7.4.4 allows unauthenticated RCE via HTTP Site header; actively exploited since March 26 with ~2,000 instances exposed globally.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "bleepingcomputer.com"
+    },
+    {
+      "type": "update",
+      "title": "CVE-2026-3055 — Citrix NetScaler SAML Memory Overread Added to CISA KEV",
+      "threat_score": 9,
+      "previous_threat_score": 7,
+      "cve": "CVE-2026-3055",
+      "cvss": 9.3,
+      "affected_technology": "Citrix NetScaler ADC / Gateway",
+      "summary": "CISA added CVE-2026-3055 to KEV on March 30 with 3-day deadline; active exploitation confirmed leaking admin session IDs from SAML IDP appliances, public PoC available.",
+      "first_seen_at": "cisa.gov"
+    },
+    {
+      "type": "update",
+      "title": "CVE-2025-53521 — F5 BIG-IP Reclassified from DoS to Critical RCE, Webshells Deployed",
+      "threat_score": 9,
+      "previous_threat_score": 7,
+      "cve": "CVE-2025-53521",
+      "cvss": null,
+      "affected_technology": "F5 BIG-IP APM",
+      "summary": "F5 reclassified CVE-2025-53521 from high-severity DoS to critical RCE; attackers are now deploying webshells on unpatched BIG-IP devices in the wild.",
+      "first_seen_at": "bleepingcomputer.com"
+    },
+    {
+      "type": "update",
+      "title": "DarkSword iOS Exploit Kit — Russian APT Star Blizzard (FSB) Now Adopted",
+      "threat_score": 9,
+      "previous_threat_score": 8,
+      "cve": "CVE-2026-20700",
+      "cvss": null,
+      "affected_technology": "Apple iOS",
+      "summary": "FSB-linked Star Blizzard APT adopted the DarkSword iOS exploit kit, expanding its use from Ukraine-targeted UNC6353 operations to broader Western intelligence collection against government, education, and financial targets.",
+      "first_seen_at": "securityweek.com"
+    }
+  ],
+  "noted": [
+    {
+      "cve": "CVE-2026-0766",
+      "product": "OpenWebUI",
+      "summary": "Remote code execution in OpenWebUI AI tool with ZDI-published PoC on GitHub; limited enterprise deployment currently."
+    },
+    {
+      "cve": "CVE-2026-26111",
+      "product": "Windows RRAS",
+      "summary": "Integer overflow RCE patched in March Patch Tuesday; unconfirmed GitHub claim suggests exploitation on fully patched systems."
+    }
+  ],
+  "source_coverage": {
+    "total": 30,
+    "checked": 30,
+    "with_findings": 8,
+    "unreachable": ["cve.mitre.org", "cve.org", "bugcrowd.com"],
+    "degraded": ["hackerone.com", "cert.gov.ua"]
+  },
+  "full_report": "reports/2026/03/31/night/report.md"
+}
