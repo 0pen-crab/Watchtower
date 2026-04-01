@@ -1,0 +1,118 @@
+{
+  "date": "2026-04-01",
+  "cycle": "night",
+  "findings": [
+    {
+      "type": "news",
+      "title": "Axios npm Supply Chain Attack — North Korean BlueNoroff Delivers Cross-Platform RAT via 100M+/Week Package",
+      "threat_score": 10,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Axios (npm package)",
+      "summary": "North Korean UNC1069/BlueNoroff hijacked the Axios npm maintainer account and published malicious versions delivering cross-platform RATs to Windows, macOS, and Linux, affecting a package with 400 million monthly downloads during a 3-hour exposure window.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "bleepingcomputer.com"
+    },
+    {
+      "type": "update",
+      "title": "TeamPCP Supply Chain Campaign — Cisco Breached via Trivy Credentials, 300+ Repos and AI Source Code Stolen",
+      "threat_score": 10,
+      "previous_threat_score": 10,
+      "cve": "CVE-2026-33634",
+      "cvss": null,
+      "affected_technology": "Cisco (AI Assistants, AI Defense, customer repos)",
+      "summary": "TeamPCP's Trivy supply chain compromise led to Cisco's dev environment breach with 300+ GitHub repos stolen including AI product source code and government/bank customer repositories, plus unauthorized AWS account access.",
+      "first_seen_at": "bleepingcomputer.com"
+    },
+    {
+      "type": "news",
+      "title": "Vim and GNU Emacs RCE via Crafted File — AI-Discovered Zero-Days Affect Default Linux Installs",
+      "threat_score": 8,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Vim (<=9.2.0271) and GNU Emacs (all versions)",
+      "summary": "Claude AI discovered zero-day RCE vulnerabilities in Vim (modeline sandbox bypass) and Emacs (vc-git config execution) that trigger on file open; Vim is patched but Emacs remains unpatched as maintainers defer to Git.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "bleepingcomputer.com"
+    },
+    {
+      "type": "news",
+      "title": "CrewAI Multi-Vulnerability Chain — RCE, SSRF, and File Read via Prompt Injection in AI Agent Framework",
+      "threat_score": 7,
+      "cve": "CVE-2026-2275",
+      "cvss": null,
+      "affected_technology": "CrewAI (multi-agent AI framework)",
+      "summary": "CERT/CC disclosed four chained vulnerabilities in CrewAI enabling prompt injection to sandbox escape, RCE, SSRF, and arbitrary file read on hosts with the Code Interpreter Tool enabled, with no complete patch available.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "kb.cert.org"
+    },
+    {
+      "type": "news",
+      "title": "StrongSwan CVE-2026-25075 — 15-Year-Old VPN DoS Enables Unauthenticated Remote Service Crash",
+      "threat_score": 7,
+      "cve": "CVE-2026-25075",
+      "cvss": null,
+      "affected_technology": "StrongSwan (versions 4.5.0 through 6.0.4)",
+      "summary": "A 15-year-old integer underflow in StrongSwan's EAP-TTLS AVP parser allows unauthenticated remote attackers to crash VPN services with a single malformed packet, with delayed triggering making forensic analysis extremely difficult.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "securityweek.com"
+    },
+    {
+      "type": "news",
+      "title": "CVE-2026-4415 — GIGABYTE Control Center Remote Arbitrary File Write to Code Execution",
+      "threat_score": 6,
+      "cve": "CVE-2026-4415",
+      "cvss": 9.2,
+      "affected_technology": "GIGABYTE Control Center (<=25.07.21.01)",
+      "summary": "GIGABYTE Control Center's network pairing feature allows unauthenticated remote attackers to write arbitrary files to any OS location, enabling code execution on all GIGABYTE laptops and motherboards with the feature enabled.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "bleepingcomputer.com"
+    },
+    {
+      "type": "news",
+      "title": "OpenAI Codex Command Injection — GitHub Token Compromise Across Shared Repositories",
+      "threat_score": 7,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "OpenAI Codex (cloud-based AI coding agent)",
+      "summary": "A critical command injection vulnerability in OpenAI's Codex coding agent allowed attackers to steal GitHub authentication tokens from multiple users interacting with a shared repository, now patched by OpenAI.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "securityweek.com"
+    }
+  ],
+  "noted": [
+    {
+      "cve": "CVE-2026-33989",
+      "product": "Mobile Next MCP Server",
+      "summary": "Path traversal in screenshot and screen recording tools allows arbitrary file write on niche mobile development MCP server."
+    },
+    {
+      "cve": "CVE-2026-33442",
+      "product": "Kysely TypeScript SQL Query Builder",
+      "summary": "SQL injection via backslash escape bypass on MySQL due to incomplete string literal sanitization."
+    },
+    {
+      "cve": "CVE-2026-33438",
+      "product": "Stirling-PDF",
+      "summary": "DoS vulnerability in watermark functionality of self-hosted PDF tool."
+    },
+    {
+      "cve": null,
+      "product": "Venom Stealer (MaaS)",
+      "summary": "Licensed malware-as-a-service with built-in persistence and continuous credential harvesting gaining adoption."
+    },
+    {
+      "cve": null,
+      "product": "Silver Fox / AtlasCross RAT",
+      "summary": "Chinese cybercrime campaign using typosquatted VPN and messenger domains to deliver new AtlasCross RAT to Asian targets."
+    }
+  ],
+  "source_coverage": {
+    "total": 31,
+    "checked": 29,
+    "with_findings": 14,
+    "unreachable": ["cve.org", "bugcrowd.com"],
+    "degraded": ["hackerone.com", "cert.gov.ua"]
+  },
+  "full_report": "reports/2026/04/01/night/report.md"
+}

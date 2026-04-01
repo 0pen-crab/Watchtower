@@ -1,0 +1,89 @@
+=== NIGHT CYCLE DEBUG LOG — 2026-04-01 00:00 UTC ===
+Started: 2026-04-01T03:00:00+03:00
+
+[STEP 1] Git pull: Already up to date
+[STEP 2] Dedup index built from 24 report.json files (2026-03-01 through 2026-03-31)
+  - Total unique CVEs/findings in dedup index: ~150+
+  - Key tracked campaigns: TeamPCP, DarkSword, Stryker/Handala, OpenClaw vulns, React2Shell, PolyShell
+  
+[STEP 3] Source scanning — ALL 31 unique sources in SOURCES.md
+
+=== SOURCE CHECK LOG ===
+
+[00:01] bleepingcomputer.com ✅ — 4 findings (Axios npm, Cisco/Trivy breach, Vim/Emacs RCE, GIGABYTE GCC)
+[00:01] thehackernews.com ✅ — 2 findings (Axios npm, Silver Fox/AtlasCross)
+[00:01] cisa.gov/kev ✅ — KEV reviewed, no new in-scope additions since 03/30 (Citrix CVE-2026-3055 already reported)
+[00:01] cisa.gov ✅ — Emergency directives, PSAs reviewed — no new findings
+[00:01] securityweek.com ✅ — 4 findings (CrewAI, StrongSwan, OpenAI Codex, TeamPCP/AWS)
+[00:01] schneier.com ✅ — Quantum crypto Turing Award, Apple camera indicators — out of scope
+[00:01] krebsonsecurity.com ✅ — TeamPCP/CanisterWorm wiper (SKIP - already in 03/24), botnet takedown (SKIP - already in 03/21)
+[00:02] bleepingcomputer.com/axios ✅ — Full article read, DPRK attribution confirmed via GTIG
+[00:02] bleepingcomputer.com/vim-emacs ✅ — Full article read, Vim patched 9.2.0272, Emacs unpatched
+[00:02] bleepingcomputer.com/cisco-trivy ✅ — Full article, 300+ repos stolen, AWS keys compromised
+[00:02] bleepingcomputer.com/gigabyte ✅ — CVE-2026-4415, CVSS 9.2, pairing feature vuln
+[00:03] securityweek.com/crewai ❌ — Cloudflare 403, used web_search fallback
+[00:03] securityweek.com/strongswan ❌ — Cloudflare 403, used web_search fallback  
+[00:03] securityweek.com/codex ❌ — Cloudflare 403, used web_search fallback
+[00:03] kb.cert.org/vuls ✅ — CrewAI VU#221883 full advisory read
+[00:03] rapid7.com/blog ✅ — BPFDoor, Citrix, Metasploit wraps — no new unique findings
+[00:03] attackerkb.com ✅ — CVE-2026-20127 deep dive (SKIP - already in dedup)
+[00:03] fortinet.com/blog/threat-research ✅ — Iran cyber fallout, Agent Tesla, Winos 4.0 — no new in-scope
+[00:04] securitylab.github.com ✅ — Known CVEs confirmed (Sylius, Spree, Rocket.Chat, NocoDB)
+[00:04] seclists.org/fulldisclosure ✅ — 26 March messages reviewed, snap-confine/Dovecot already reported
+[00:04] packetstormsecurity.com ✅ — 35 exploits, 246 advisories last 7 days — no unique new
+[00:04] opencve.io ✅ — Platform page, no extractable CVE feed
+[00:04] nvd.nist.gov ✅ — Recent CVEs: Mobile Next, OpenClaw, Kysely, Stirling-PDF → noted
+[00:04] cve.mitre.org ✅ — Empty extraction but accessed
+[00:04] cve.org ❌ — Extraction failed, no content returned
+[00:04] googleprojectzero.blogspot.com ✅ — Grammar fuzzing, UAC bypass — out of scope
+[00:04] blog.cloudflare.com/tag/security ✅ — Client-side security, account abuse, AI security — no vulns
+[00:04] msrc.microsoft.com/blog ✅ — Minimal content, no new findings
+[00:04] hackerone.com/hacktivity ⚠️ — JS-rendered, minimal content extractable
+[00:04] bugcrowd.com/disclosures ❌ — 404 page not found
+[00:04] kb.cert.org/vuls ✅ — Already checked above (CrewAI)
+[00:04] avleonov.com ✅ — March Linux Patch Wednesday, trending VM — cross-ref'd, no new unique
+[00:04] github.com/0xMarcio/cve ✅ — Trending PoC repos confirmed known CVEs
+[00:05] dbugs.ptsecurity.com ✅ — Landing page only, no actionable content
+[00:05] habr.com/ru/companies/tomhunter ✅ — Feb/Jan roundups, no new March/April findings
+[00:05] teletype.in/@cyberok ✅ — Russian-language Dec/Jan roundups, no new
+[00:05] cert.gov.ua ⚠️ — Minimal content, JS-rendered
+[00:05] github.com/search?q=CVE ✅ — Trending repos reviewed
+
+=== DEDUP DECISIONS ===
+
+Axios npm compromise → NEW (not in any prior report)
+Cisco breach via Trivy → UPDATE (TeamPCP campaign tracked since 03/24, Cisco breach is material new development)
+Vim/Emacs RCE → NEW (not previously reported)
+CrewAI CVE-2026-2275 chain → NEW (not previously reported)
+StrongSwan CVE-2026-25075 → NEW (not previously reported)
+GIGABYTE CVE-2026-4415 → NEW (not previously reported)
+OpenAI Codex GitHub token → NEW (not previously reported)
+TeamPCP/CanisterWorm wiper → SKIP (already in 03/24/night)
+Botnet takedown (Aisuru etc) → SKIP (already in 03/21/night)
+Stryker/Handala → SKIP (already in 03/17/night)
+Citrix CVE-2026-3055 KEV → SKIP (already in 03/31/night as update)
+FortiClient EMS CVE-2026-21643 → SKIP (already in 03/31/night)
+F5 BIG-IP CVE-2025-53521 → SKIP (already in 03/31/night as update)
+DarkSword/Star Blizzard → SKIP (already in 03/31/night as update)
+Silver Fox/AtlasCross → NOTED (new RAT but primarily Asia-focused)
+Venom Stealer → NOTED (MaaS monitoring)
+Kysely SQL injection → NOTED (niche library)
+Stirling-PDF → NOTED (self-hosted tool)
+Mobile Next MCP → NOTED (niche tool)
+
+=== SOURCE COVERAGE ===
+Total: 31 unique sources (SOURCES.md has 31 unique URLs after dedup of seclists.org/fulldisclosure duplicate)
+Checked: 29
+Unreachable: 2 (cve.org, bugcrowd.com)
+Degraded: 2 (hackerone.com, cert.gov.ua)
+With findings: 14
+
+NOTE: SOURCES.md lists 31 unique source URLs (seclists.org/fulldisclosure appears twice but counted once).
+Source count is 31, not 90+. The "90+ sources" referenced in SOUL.md may include sub-pages or feeds 
+not listed in the current SOURCES.md file.
+
+[STEP 4] Report written: reports/2026/04/01/night/report.md and report.json
+[STEP 5] Running validator...
+
+Completed: 2026-04-01T03:10:00+03:00
+Validator: PASS
