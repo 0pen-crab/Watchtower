@@ -1,0 +1,95 @@
+{
+  "date": "2026-04-02",
+  "cycle": "night",
+  "findings": [
+    {
+      "type": "news",
+      "title": "CVE-2026-5281 — Chrome Dawn WebGPU Zero-Day Actively Exploited, Added to CISA KEV",
+      "threat_score": 8,
+      "cve": "CVE-2026-5281",
+      "cvss": null,
+      "affected_technology": "Google Chrome / Chromium-based browsers (Dawn WebGPU)",
+      "summary": "A use-after-free in Chrome's Dawn WebGPU implementation (CVE-2026-5281) is being actively exploited in the wild and was added to CISA KEV on April 1 with a 14-day patch deadline, marking the fourth Chrome zero-day of 2026.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "bleepingcomputer.com"
+    },
+    {
+      "type": "news",
+      "title": "CVE-2026-3502 — TrueConf Zero-Day 'Operation TrueChaos' — Chinese Espionage via Update Supply Chain",
+      "threat_score": 7,
+      "cve": "CVE-2026-3502",
+      "cvss": 7.8,
+      "affected_technology": "TrueConf Video Conferencing (versions 8.1.0–8.5.2)",
+      "summary": "Check Point disclosed Operation TrueChaos, a Chinese-nexus espionage campaign exploiting a missing integrity check in TrueConf's update mechanism to deliver Havoc C2 to Southeast Asian government targets since early 2026.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "bleepingcomputer.com"
+    },
+    {
+      "type": "news",
+      "title": "Hasbro Confirms Cyberattack — Multi-Week Recovery Expected",
+      "threat_score": 6,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Hasbro corporate network",
+      "summary": "Hasbro disclosed via SEC filing that unauthorized access to its network was detected on March 28, with some systems taken offline and recovery expected to take several weeks.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "securityweek.com"
+    },
+    {
+      "type": "news",
+      "title": "AGEWHEEZE RAT — CERT-UA Impersonation Campaign Targets Ukrainian Organizations",
+      "threat_score": 6,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Ukrainian government, medical, financial, and educational organizations",
+      "summary": "Threat actors tracked as UAC-0255 impersonated CERT-UA to distribute AGEWHEEZE, a Go-based RAT with WebSocket C2, targeting over 1 million email addresses across Ukrainian state and private sector organizations.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "thehackernews.com"
+    }
+  ],
+  "noted": [
+    {
+      "cve": null,
+      "product": "EvilTokens PhaaS (Microsoft 365)",
+      "summary": "Device code phishing-as-a-service platform targeting Microsoft 365 accounts, 340+ organizations impacted since February 2026."
+    },
+    {
+      "cve": null,
+      "product": "CrystalRAT MaaS",
+      "summary": "New Telegram-promoted malware-as-a-service with RAT, stealer, and keylogging capabilities."
+    },
+    {
+      "cve": null,
+      "product": "NoVoice Android malware (Google Play)",
+      "summary": "Found in 50+ Google Play apps with 2.3 million device infections; mobile-only, out of primary scope."
+    },
+    {
+      "cve": null,
+      "product": "DeepLoad malware",
+      "summary": "New credential stealer with USB spreading capability dropped via ClickFix attacks."
+    },
+    {
+      "cve": null,
+      "product": "Claude Code (Anthropic)",
+      "summary": "Anthropic accidentally published Claude Code source code in npm package v2.1.88; packaging error, no credentials exposed."
+    },
+    {
+      "cve": "CVE-2026-4675",
+      "product": "Google Chrome (WebGL)",
+      "summary": "Heap buffer overflow in Chrome WebGL fixed alongside CVE-2026-5281, reported by the same researcher."
+    },
+    {
+      "cve": "CVE-2026-4676",
+      "product": "Google Chrome (Dawn)",
+      "summary": "Additional use-after-free in Chrome Dawn fixed alongside CVE-2026-5281, reported by the same researcher."
+    }
+  ],
+  "source_coverage": {
+    "total": 31,
+    "checked": 31,
+    "with_findings": 8,
+    "unreachable": ["bugcrowd.com"],
+    "degraded": ["cve.mitre.org", "cve.org"]
+  },
+  "full_report": "reports/2026/04/02/night/report.md"
+}
