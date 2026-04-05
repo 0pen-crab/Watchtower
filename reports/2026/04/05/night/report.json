@@ -1,0 +1,107 @@
+{
+  "date": "2026-04-05",
+  "cycle": "night",
+  "findings": [
+    {
+      "type": "news",
+      "title": "Cisco IMC and SSM On-Prem Dual Critical — Unauthenticated Admin Bypass and Root RCE",
+      "threat_score": 8,
+      "cve": "CVE-2026-20093",
+      "cvss": 9.8,
+      "affected_technology": "Cisco Integrated Management Controller (IMC) and Smart Software Manager On-Prem",
+      "summary": "Cisco disclosed CVE-2026-20093 (IMC auth bypass) and CVE-2026-20160 (SSM root RCE), both CVSS 9.8, allowing unauthenticated attackers to take full administrative control of server management infrastructure with no workaround available.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "thehackernews.com"
+    },
+    {
+      "type": "news",
+      "title": "FortiClientEMS Unauthenticated RCE — CVE-2026-35616",
+      "threat_score": 8,
+      "cve": "CVE-2026-35616",
+      "cvss": 9.1,
+      "affected_technology": "Fortinet FortiClientEMS 7.4.5–7.4.6",
+      "summary": "Fortinet disclosed an improper access control vulnerability in FortiClientEMS allowing unauthenticated remote code execution via crafted requests, with two public PoC exploits appearing on GitHub within hours of disclosure.",
+      "discovery_latency": "early",
+      "first_seen_at": "cvefeed.io"
+    },
+    {
+      "type": "news",
+      "title": "TA416 Resumes European Government Espionage with PlugX via OAuth Abuse",
+      "threat_score": 7,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "European government and diplomatic organizations (EU, NATO)",
+      "summary": "China-aligned APT TA416 has resumed targeting EU and NATO diplomatic entities using OAuth redirects through Microsoft Entra ID and cloud storage for PlugX backdoor delivery via DLL side-loading.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "thehackernews.com"
+    },
+    {
+      "type": "news",
+      "title": "Signal Android Intent Redirection Enables Decrypted Attachment Exfiltration",
+      "threat_score": 6,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Signal Android",
+      "summary": "GitHub Security Lab disclosed GHSL-2026-102, an intent redirection vulnerability in Signal for Android allowing a malicious app on the same device to exfiltrate decrypted message attachments, bypassing end-to-end encryption at the device level.",
+      "discovery_latency": "early",
+      "first_seen_at": "securitylab.github.com"
+    },
+    {
+      "type": "update",
+      "title": "React2Shell (CVE-2025-55182) — UAT-10608 Mass Credential Harvesting, 766+ Hosts Compromised",
+      "threat_score": 10,
+      "previous_threat_score": 9,
+      "cve": "CVE-2025-55182",
+      "cvss": 10.0,
+      "affected_technology": "Next.js / React Server Components",
+      "summary": "Cisco Talos attributes mass exploitation of React2Shell to UAT-10608, confirming 766+ compromised hosts with automated NEXUS Listener framework stealing database credentials, SSH keys, AWS secrets, and Kubernetes tokens at industrial scale.",
+      "first_seen_at": "thehackernews.com"
+    },
+    {
+      "type": "update",
+      "title": "TrueConf CVE-2026-3502 — Added to CISA KEV, Chinese APT Exploitation Confirmed",
+      "threat_score": 8,
+      "previous_threat_score": 7,
+      "cve": "CVE-2026-3502",
+      "cvss": null,
+      "affected_technology": "TrueConf Client",
+      "summary": "CISA added CVE-2026-3502 to KEV on April 2 with April 16 deadline after SecurityWeek confirmed Chinese APT exploitation against Asian government organizations for reconnaissance and payload deployment.",
+      "first_seen_at": "cisa.gov"
+    }
+  ],
+  "noted": [
+    {
+      "cve": "CVE-2026-4370",
+      "product": "Canonical Juju",
+      "summary": "CVSS 10.0 vulnerability disclosed April 2; limited enterprise exposure but critical for Juju-based cloud orchestration environments."
+    },
+    {
+      "cve": "CVE-2026-27636",
+      "product": "FreeScout",
+      "summary": "Unauthenticated RCE via ZWSP .htaccess bypass; Metasploit module released April 3."
+    },
+    {
+      "cve": "CVE-2026-28397",
+      "product": "NocoDB",
+      "summary": "Two stored XSS vulnerabilities disclosed by GitHub Security Lab enabling potential account takeover."
+    },
+    {
+      "cve": null,
+      "product": "OWASP Core Rule Set",
+      "summary": "Whitespace padding bypass vulnerability disclosed on Full Disclosure mailing list April 2."
+    },
+    {
+      "cve": null,
+      "product": "Open WebUI",
+      "summary": "Broken access control vulnerability disclosed by SEC Consult on Full Disclosure April 2."
+    }
+  ],
+  "source_coverage": {
+    "total": 31,
+    "checked": 31,
+    "with_findings": 14,
+    "unreachable": ["cve.mitre.org", "bugcrowd.com"],
+    "degraded": ["cve.org", "msrc.microsoft.com", "hackerone.com", "teletype.in/@cyberok", "cert.gov.ua"]
+  },
+  "full_report": "reports/2026/04/05/night/report.md"
+}

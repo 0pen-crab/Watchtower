@@ -1,0 +1,103 @@
+[2026-04-05T00:06:00Z] === NIGHT CYCLE START ===
+[2026-04-05T00:06:00Z] Step 1: git pull — Already up to date
+[2026-04-05T00:06:01Z] Step 2: Building dedup index from 26 report.json files (2026-03-01 through 2026-04-02)
+[2026-04-05T00:06:05Z] Dedup index built: ~180 findings, ~120 noted items across 30 days
+
+[2026-04-05T00:06:19Z] === SOURCE SCANNING START ===
+
+--- Batch 1 (Tier 1 - Major sources) ---
+[2026-04-05T00:06:19Z] ✅ bleepingcomputer.com — 1248ms — Headlines: Axios npm postmortem, device code phishing 37x, LinkedIn BrowserGate, Hims & Hers breach
+[2026-04-05T00:06:19Z] ✅ thehackernews.com — 690ms — Headlines: TA416 PlugX, cookie PHP web shells, SparkCat, React2Shell exploitation, Cisco IMC/SSM
+[2026-04-05T00:06:19Z] ✅ cisa.gov/kev — 1162ms — Top entries: TrueConf CVE-2026-3502 (added Apr 2), Dawn CVE-2026-5281, Citrix CVE-2026-3055, F5 CVE-2025-53521
+
+--- Batch 2 ---
+[2026-04-05T00:06:25Z] ✅ securityweek.com — 1446ms — Headlines: EU Commission Trivy breach, TrueConf zero-day, ShareFile RCE, React2Shell campaign, Claude Code vuln
+[2026-04-05T00:06:24Z] ✅ schneier.com — 367ms — Coruna iOS toolkit, US router ban, Zoom recording company
+[2026-04-05T00:06:24Z] ✅ krebsonsecurity.com — 431ms — TeamPCP/CanisterWorm Iran wiper, DDoS botnet takedowns, Stryker wiper
+
+--- Batch 3 ---
+[2026-04-05T00:06:32Z] ✅ rapid7.com — 1934ms — Metasploit wrap-up: FreeScout RCE, Grav CMS RCE, BPFDoor research
+[2026-04-05T00:06:32Z] ✅ attackerkb.com — 1593ms — CVE-2026-20127 deep analysis (already reported)
+[2026-04-05T00:06:31Z] ✅ fortinet.com/blog/threat-research — 599ms — DPRK LNK+GitHub C2, Agent Tesla, Winos 4.0
+
+--- Batch 4 ---
+[2026-04-05T00:06:42Z] ✅ securitylab.github.com — 513ms — Signal Android GHSL-2026-102, NocoDB XSS, Sentry priv esc, PraisonAI code injection
+[2026-04-05T00:06:44Z] ✅ seclists.org/fulldisclosure — 1976ms — 5 posts in April: OWASP CRS bypass, MetInfo CMS, Apple OHTTP, Vienna Assistant LPE, Open WebUI BAC
+[2026-04-05T00:06:44Z] ✅ packetstormsecurity.com — 1903ms — 34 exploits, 248 advisories in last 7 days
+
+--- Batch 5 ---
+[2026-04-05T00:06:50Z] ✅ opencve.io — 1036ms — Platform checked, marketing page (requires auth for CVE data)
+[2026-04-05T00:06:50Z] ✅ nvd.nist.gov — 1775ms — Search page loaded but JS-heavy, limited data
+[2026-04-05T00:06:50Z] ❌ cve.mitre.org — extraction failed, no content
+
+--- Batch 6 ---
+[2026-04-05T00:06:58Z] ⚠️ cve.org — extraction failed, no content
+[2026-04-05T00:06:58Z] ✅ googleprojectzero.blogspot.com — 1805ms — Grammar fuzzing research, GetProcessHandleFromHwnd, Sound Barrier part 2
+[2026-04-05T00:06:58Z] ✅ blog.cloudflare.com/tag/security — 1165ms — Client-Side Security, Account Abuse Protection, AI Security for Apps
+
+--- Batch 7 ---
+[2026-04-05T00:07:03Z] ⚠️ msrc.microsoft.com/blog — 561ms — Minimal content, footer only
+[2026-04-05T00:07:04Z] ⚠️ hackerone.com/hacktivity — 905ms — JS-rendered SPA, no content extracted
+[2026-04-05T00:07:04Z] ❌ bugcrowd.com/disclosures — 404 error
+
+--- Batch 8 ---
+[2026-04-05T00:07:11Z] ✅ kb.cert.org/vuls — 1340ms — No new in-scope advisories
+[2026-04-05T00:07:10Z] ✅ avleonov.com — 686ms — March Linux Patch Wednesday, trending VM vulns
+[2026-04-05T00:07:11Z] ✅ github.com/0xMarcio/cve — 992ms — Tracked CVE-2026-35616, CVE-2026-21643, CVE-2026-25769 PoCs
+
+--- Batch 9 ---
+[2026-04-05T00:07:17Z] ✅ dbugs.ptsecurity.com — 688ms — No new in-scope content
+[2026-04-05T00:07:18Z] ✅ habr.com/ru/companies/tomhunter/articles — 1564ms — Feb 2026 roundup (old)
+[2026-04-05T00:07:16Z] ⚠️ cert.gov.ua — 335ms — Minimal content extracted (JS-rendered)
+
+--- Batch 10 ---
+[2026-04-05T00:07:25Z] ⚠️ teletype.in/@cyberok — 350ms — Dec/Jan content only, no April updates
+
+--- Additional searches ---
+[2026-04-05T00:07:25Z] ✅ web_search: "new critical vulnerability CVE April 2026" — 10 results — CVE-2026-4370 Juju, CVE-2026-20093 Cisco, CVE-2026-35616 Fortinet
+[2026-04-05T00:07:25Z] ✅ web_search: "CISA KEV new additions April 3-5 2026" — 10 results — TrueConf CVE-2026-3502 confirmed
+[2026-04-05T00:07:32Z] ✅ nomadicsoft.io/blog — April 2026 vuln roundup confirming CVE-2026-4370, CVE-2026-20093, CVE-2026-20160
+[2026-04-05T00:07:39Z] ✅ thehackernews.com (TA416 article) — Full campaign details
+[2026-04-05T00:07:39Z] ✅ thehackernews.com (React2Shell article) — UAT-10608 NEXUS Listener details
+[2026-04-05T00:07:52Z] ✅ thehackernews.com (Cisco IMC article) — CVE-2026-20093, CVE-2026-20160 details
+[2026-04-05T00:07:52Z] ✅ bleepingcomputer.com (device code phishing) — EvilTokens and 10+ phishing kits
+[2026-04-05T00:08:00Z] ✅ bleepingcomputer.com (LinkedIn BrowserGate) — 6,236 extensions scanned
+[2026-04-05T00:08:06Z] ✅ seclists.org/fulldisclosure/2026/Apr — 5 posts
+[2026-04-05T00:08:06Z] ✅ github.com/search?q=CVE-2026 — PoC tracker
+[2026-04-05T00:08:12Z] ✅ cvefeed.io (CVE-2026-35616) — FortiClientEMS details, 2 PoCs
+[2026-04-05T00:08:13Z] ✅ rapid7.com (Metasploit wrap-up) — FreeScout, Grav CMS modules
+
+[2026-04-05T00:08:15Z] === SOURCE SCANNING COMPLETE ===
+Total: 31 | Checked: 31 | Unreachable: 2 | Degraded: 5
+
+=== DEDUP DECISIONS ===
+[FINDING] CVE-2026-20093 + CVE-2026-20160 Cisco IMC/SSM — NEW (not in any prior report)
+[FINDING] CVE-2026-35616 FortiClientEMS RCE — NEW (not in any prior report)
+[FINDING] TA416 EU/NATO PlugX campaign — NEW (not in any prior report)
+[FINDING] GHSL-2026-102 Signal Android — NEW (not in any prior report)
+[FINDING] CVE-2025-55182 React2Shell mass exploitation — UPDATE (previously reported 03/22, score 9; now mass exploitation confirmed by Talos, 766+ hosts → score 10)
+[FINDING] CVE-2026-3502 TrueConf — UPDATE (previously reported 04/02 as news, score 7; now added to CISA KEV + Chinese APT confirmed → score 8)
+[SKIP] Axios npm supply chain — already reported 04/01 cycle
+[SKIP] Chrome CVE-2026-5281 — already reported 04/02 cycle
+[SKIP] TrueConf CVE-2026-3502 initial disclosure — reported 04/02 (updating only)
+[SKIP] TeamPCP/CanisterWorm — extensively covered 03/26-03/29 cycles
+[SKIP] Stryker wiper — covered 03/11-03/17 cycles
+[SKIP] DDoS botnet takedowns — covered 03/21 cycle
+[SKIP] SparkCat iOS/Android — mobile-only, out of scope
+[SKIP] Microsoft cookie-controlled PHP shells — technique advisory, no specific CVE
+[SKIP] Coruna/DarkSword iOS kit — covered 03/28-03/31 cycles
+[NOTED] CVE-2026-4370 Canonical Juju CVSS 10 — niche deployment, noting only
+[NOTED] CVE-2026-27636 FreeScout RCE — Metasploit module, low deployment
+[NOTED] CVE-2026-28397 NocoDB XSS — medium severity
+[NOTED] OWASP CRS bypass — WAF bypass technique
+[NOTED] Open WebUI BAC — niche AI tool
+
+=== REPORT GENERATION ===
+[2026-04-05T00:08:30Z] Writing report.md (4 news + 2 updates + 5 noted)
+[2026-04-05T00:08:31Z] Writing report.json
+[2026-04-05T00:08:32Z] source_coverage: total=31, checked=31, with_findings=14, unreachable=2, degraded=5
+
+=== VALIDATION ===
+[2026-04-05T00:08:33Z] Running validator...
+[2026-04-05T00:08:35Z] Validator: PASS — report.json valid
+[2026-04-05T00:08:36Z] === COMMITTING ===
