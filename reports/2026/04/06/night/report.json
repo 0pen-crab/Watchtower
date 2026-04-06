@@ -1,0 +1,101 @@
+{
+  "date": "2026-04-06",
+  "cycle": "night",
+  "findings": [
+    {
+      "type": "news",
+      "title": "Progress ShareFile Pre-Auth RCE Chain — CVE-2026-2699 + CVE-2026-2701",
+      "threat_score": 8,
+      "cve": "CVE-2026-2699",
+      "cvss": 9.8,
+      "affected_technology": "Progress ShareFile Storage Zones Controller",
+      "summary": "watchTowr disclosed two chained vulnerabilities (auth bypass + arbitrary file upload) in ShareFile Storage Zones Controller enabling unauthenticated remote code execution on customer-managed deployments.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "securityweek.com"
+    },
+    {
+      "type": "news",
+      "title": "CVE-2026-0331 — Claude Code Context Poisoning Vulnerability",
+      "threat_score": 7,
+      "cve": "CVE-2026-0331",
+      "cvss": null,
+      "affected_technology": "Anthropic Claude Code",
+      "summary": "Adversa AI discovered a critical context poisoning vulnerability in Claude Code days after Anthropic accidentally leaked 512,000 lines of source code via npm, enabling potential arbitrary command execution on developer machines.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "securityweek.com"
+    },
+    {
+      "type": "news",
+      "title": "36 Malicious npm Packages Disguised as Strapi Plugins Deploy Redis/PostgreSQL Implants",
+      "threat_score": 6,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "npm / Strapi CMS ecosystem",
+      "summary": "SafeDep discovered 36 malicious npm packages by four sock-puppet accounts impersonating Strapi CMS plugins, deploying eight payload variants including Redis crontab injection, PostgreSQL credential theft, reverse shells, and persistent implants.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "thehackernews.com"
+    },
+    {
+      "type": "update",
+      "title": "EvilTokens Device Code Phishing — 37x Surge in OAuth Account Takeover",
+      "threat_score": 7,
+      "previous_threat_score": 5,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Microsoft 365 / OAuth 2.0 Device Authorization Grant",
+      "summary": "Push Security documented a 37.5x surge in device code phishing pages attributed to the EvilTokens PhaaS platform, commoditizing an MFA-bypassing OAuth attack technique against Microsoft 365 accounts.",
+      "first_seen_at": "bleepingcomputer.com"
+    },
+    {
+      "type": "update",
+      "title": "FortiClientEMS CVE-2026-35616 — Zero-Day Window Confirmed, Easter Weekend Exploitation",
+      "threat_score": 9,
+      "previous_threat_score": 8,
+      "cve": "CVE-2026-35616",
+      "cvss": 9.1,
+      "affected_technology": "Fortinet FortiClient EMS",
+      "summary": "CSA research confirms CVE-2026-35616 was actively exploited as a zero-day starting March 31 — four days before Fortinet's April 4 emergency disclosure — with the attack window deliberately timed to Easter weekend staffing gaps.",
+      "first_seen_at": "labs.cloudsecurityalliance.org"
+    }
+  ],
+  "noted": [
+    {
+      "cve": "CVE-2026-4747",
+      "product": "FreeBSD",
+      "summary": "AI-discovered vulnerability found by Claude Code in FreeBSD demonstrating autonomous vulnerability research capabilities."
+    },
+    {
+      "cve": "CVE-2026-5201",
+      "product": "gdk-pixbuf",
+      "summary": "Heap-based buffer overflow in JPEG loader (CVSS 7.5) with public PoC on GitHub affecting Linux systems processing untrusted images."
+    },
+    {
+      "cve": "CVE-2026-27636",
+      "product": "FreeScout",
+      "summary": "Metasploit module now live for unauthenticated RCE via ZWSP .htaccess bypass, making exploitation trivial."
+    },
+    {
+      "cve": "CVE-2025-50286",
+      "product": "Grav CMS",
+      "summary": "Authenticated RCE via Direct Install feature with Metasploit module released April 3."
+    },
+    {
+      "cve": null,
+      "product": "LinkedIn (BrowserGate)",
+      "summary": "LinkedIn using hidden JavaScript to scan 6,000+ installed Chrome extensions and collect device data from visitors."
+    },
+    {
+      "cve": null,
+      "product": "Microsoft PHP Web Shells",
+      "summary": "Microsoft details stealth technique using HTTP cookies as control channel for PHP web shells persisting via cron on Linux servers."
+    }
+  ],
+  "source_coverage": {
+    "total": 31,
+    "checked": 28,
+    "with_findings": 14,
+    "unreachable": ["cve.mitre.org", "cve.org", "bugcrowd.com"],
+    "degraded": []
+  },
+  "full_report": "reports/2026/04/06/night/report.md"
+}
