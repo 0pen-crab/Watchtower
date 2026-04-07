@@ -1,0 +1,85 @@
+{
+  "date": "2026-04-07",
+  "cycle": "night",
+  "findings": [
+    {
+      "type": "news",
+      "title": "AI Agent Traps — Google DeepMind Maps Web Attacks Against Visiting AI Agents",
+      "threat_score": 7,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "AI browsing agents (Anthropic, OpenAI, Google, Claude Code-style tools)",
+      "summary": "Google DeepMind researchers published a taxonomy of web-based attacks against visiting AI agents, demonstrating prompt injection, tool-abuse and data-exfiltration primitives that let malicious sites hijack an agent's workflow.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "securityweek.com"
+    },
+    {
+      "type": "news",
+      "title": "LiteLLM Supply Chain Attack Turns Developer Machines Into Credential Vaults",
+      "threat_score": 8,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "LiteLLM (Python AI proxy library)",
+      "summary": "TeamPCP threat actor compromised LiteLLM — a widely deployed AI proxy downloaded millions of times — harvesting plaintext API keys, cloud tokens and local secrets from developer workstations and CI runners.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "thehackernews.com"
+    },
+    {
+      "type": "news",
+      "title": "European Commission Confirms 300GB Breach Linked to Trivy Supply Chain Compromise",
+      "threat_score": 7,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Aqua Security Trivy (vulnerability scanner)",
+      "summary": "The European Commission confirmed attackers stole over 300GB of data including PII from its AWS environment via the previously disclosed Trivy supply chain compromise, demonstrating real-world enterprise impact.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "securityweek.com"
+    },
+    {
+      "type": "news",
+      "title": "North Korean Axios-Linked Actor Targets High-Profile Node.js Maintainers",
+      "threat_score": 7,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Node.js / npm maintainer ecosystem",
+      "summary": "The DPRK cluster behind the Axios npm supply chain attack is now running targeted social-engineering campaigns against additional high-profile Node.js maintainers, signaling an expanding supply-chain offensive.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "securityweek.com"
+    }
+  ],
+  "noted": [
+    {
+      "cve": null,
+      "product": "Microsoft Windows (BlueHammer)",
+      "summary": "Disgruntled researcher 'Chaotic Eclipse' publicly leaked a working local privilege escalation zero-day exploit on GitHub after MSRC handling dispute; out of primary scope but watch for remote chaining."
+    },
+    {
+      "cve": null,
+      "product": "NVIDIA GPU / GDDR6 (GPUBreach)",
+      "summary": "University of Toronto demonstrated Rowhammer-based GPU page table corruption giving unprivileged CUDA kernels arbitrary GPU memory access and CPU-side privilege escalation, to be presented at IEEE S&P April 13."
+    },
+    {
+      "cve": null,
+      "product": "Microsoft 365 (Iran password spraying)",
+      "summary": "Check Point reports Iran-nexus actor conducted three-wave password spraying campaign against 300+ Israeli and 25+ UAE M365 tenants on March 3/13/23, 2026."
+    },
+    {
+      "cve": "CVE-2026-25994",
+      "product": "PJSIP",
+      "summary": "Public buffer overflow PoC published on GitHub for PJSIP, affecting VoIP stacks widely embedded in communications platforms."
+    },
+    {
+      "cve": "CVE-2026-31802",
+      "product": "npm tar",
+      "summary": "Path traversal via symlink extract enabling arbitrary file overwrite; PoC published on GitHub with detailed analysis."
+    }
+  ],
+  "source_coverage": {
+    "total": 31,
+    "checked": 27,
+    "with_findings": 11,
+    "unreachable": ["attackerkb.com", "hackerone.com", "cve.mitre.org", "cve.org"],
+    "degraded": ["msrc.microsoft.com", "nvd.nist.gov"]
+  },
+  "full_report": "reports/2026/04/07/night/report.md"
+}

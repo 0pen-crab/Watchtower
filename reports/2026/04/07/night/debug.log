@@ -1,0 +1,28 @@
+[2026-04-07 01:27 UTC] Night cycle started
+[01:27] git pull watchtower — OK
+[01:27] Built dedup index from reports/2026/03 + 04 (~141 CVEs, last entry 2026-04-06/night)
+[01:28] Fetched tier-1: bleepingcomputer.com ✅, thehackernews.com ✅, cisa.gov KEV ✅, securityweek.com ✅, packetstormsecurity.com ✅
+[01:28] attackerkb.com/recent ❌ 404
+[01:28] Fetched rapid7/blog ✅, seclists.org/fulldisclosure ✅, opencve.io ✅, krebsonsecurity.com ✅
+[01:29] github.com/search CVE-2026 ✅, msrc.microsoft.com/blog ⚠️ (landing only), cloudflare sec ✅, fortinet threat research ✅
+[01:33] Deep-dives: GPUBreach ✅, BlueHammer ✅, schneier ✅, hackerone ❌ (JS-only)
+[01:33] nvd.nist.gov search ⚠️ (no direct feed), securitylab.github.com ✅, kb.cert.org/vuls ✅, projectzero ✅
+[01:34] Dedup decisions:
+  - GPUBreach: NEW, but LPE-only / out of primary scope → Noted
+  - BlueHammer: NEW, LPE-only → Noted
+  - AI Agent Traps (DeepMind): NEW → News (AI scope, 7)
+  - LiteLLM / TeamPCP: NEW → News (supply chain, 8)
+  - European Commission Trivy breach: NEW (Trivy campaign itself not in prior index) → News (7)
+  - DPRK Node.js maintainer targeting: NEW → News (7)
+  - Iran password spraying M365: NEW, campaign not vuln → Noted
+  - PJSIP CVE-2026-25994: NEW, PoC-only → Noted
+  - npm tar CVE-2026-31802: NEW, PoC-only → Noted
+  - REvil/GandCrab attribution: not a vuln → SKIP
+  - Strapi/Guardarian npm: ALREADY REPORTED 2026-04-06/night → SKIP
+  - ShareFile RCE: ALREADY REPORTED 2026-04-06/night → SKIP
+  - TrueConf zero-day: ALREADY REPORTED 2026-04-05/06 → SKIP
+  - FortiClient EMS CVE-2026-35616: ALREADY REPORTED → SKIP
+[01:35] source_coverage: total=31 checked=27 unreachable=4 degraded=2
+[01:35] Wrote report.md + report.json
+[01:35] Running validator...
+✅ reports/2026/04/07/night/report.json — valid
