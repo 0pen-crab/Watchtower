@@ -1,0 +1,147 @@
+WATCHTOWER DEBUG LOG — 2026-03-21 night cycle
+Generated: 2026-03-21T00:02:00+02:00 (Europe/Athens)
+Agent: vulnerability-researcher
+Cycle: night
+
+===========================================================
+STEP 0 — GIT PULL
+===========================================================
+[00:02:01] cd ~/Documents/projects/watchtower && git pull
+Result: Already up to date.
+
+===========================================================
+STEP 1 — DEDUP INDEX (last 30 days)
+===========================================================
+[00:02:05] Scanning reports/2026/02/* and reports/2026/03/* for known CVEs and threats
+
+Found reports:
+  2026-02-16 morning through 2026-02-25 night (Feb)
+  2026-03-07 night through 2026-03-20 night (Mar)
+
+Key items in dedup index (CVEs/titles already reported):
+  CVE-2026-20963  (SharePoint) — 2026-03-19/night
+  CVE-2025-32463  (sudo chroot) — 2026-03-19/night
+  CVE-2025-66376  (Zimbra XSS) — 2026-03-19/night + 2026-03-20/night update
+  CVE-2026-3564   (ConnectWise) — 2026-03-19/night
+  CVE-2026-20643  (Apple WebKit) — 2026-03-19/night
+  CVE-2026-20131  (Cisco FMC) — reported + KEV update
+  CVE-2025-5777   (Citrix NetScaler) — 2026-03-20/night
+  CVE-2026-20700 et al (DarkSword iOS) — 2026-03-20/night
+  CVE-2024-55591  (Fortinet FortiOS) — prior report
+  CVE-2026-22557  (Ubiquiti UniFi) — 2026-03-20/night
+  CVE-2026-22733  (Spring Security) — 2026-03-20/night
+  CVE-2025-71257-71260 (BMC FootPrints) — 2026-03-20/night
+  CursorJack — 2026-03-20/night
+  PolyShell (Magento) — 2026-03-20/night
+  CVE-2026-21669-21672 (Veeam) — 2026-03-18/night
+  CVE-2026-0628 (Chrome) — 2026-03-18/night
+  CVE-2026-2796/2833/2835/2836 (Firefox/Pingora) — 2026-03-18/night
+  CVE-2026-29000 (pac4j JWT) — 2026-03-18/night
+  Poisoned Typeface — 2026-03-18/night
+  LeakNet RaaS — 2026-03-18/night
+  Starkiller PhaaS — 2026-03-18/night
+  BadeSaba/Iran — 2026-03-18/night
+  CVE-2026-21858 (n8n AFR) — CISA KEV added 2026-03-11/night
+  CVE-2025-68613 (n8n RCE) — prior reports
+  CVE-2025-55182 (Next.js RSC) — prior reports
+  CVE-2025-33073 (NTLM SMB) — prior reports
+  CVE-2026-24061 (GNU telnetd) — 2026-02-24, 2026-03-07, 2026-03-17
+  CVE-2026-28514/30833 (Rocket.Chat) — 2026-03-17/night
+  CVE-2026-22200 (osTicket) — 2026-02-24, 2026-03-07
+  CVE-2026-21440 (AdonisJS bodyparser) — 2026-03-12
+  CVE-2026-21519 (DWM EoP) — avleonov/February Patch Tuesday
+  Alipay DeepLink attack chain — noted 2026-03-17/night
+  Stryker/Handala wiper — reported 2026-03-11, 2026-03-17
+  Russian Signal/WhatsApp hijacking — 2026-03-10/night (Dutch gov warning)
+  Kimwolf botnet — 2026-02-23 (I2P context, different from today's DOJ takedown)
+
+===========================================================
+STEP 2 — SOURCE CHECKS
+===========================================================
+[00:02:10] Beginning source checks (31 total, batching 3 per turn)
+
+TIER 1:
+[00:02:15] bleepingcomputer.com ✅ — 8s — FINDINGS: CVE-2026-21992 Oracle IDM emergency patch (NEW); FBI Signal PSA (new attribution angle)
+[00:02:16] thehackernews.com ✅ — 9s — FINDINGS: CVE-2026-3888 Ubuntu snap-confine LPE (NEW)
+[00:02:17] cisa.gov/known-exploited-vulnerabilities-catalog ✅ — 4s — FINDINGS: CVE-2025-54068 Laravel Livewire (NEW to KEV); CVE-2025-32432 Craft CMS (NEW to KEV); Apple DarkSword CVEs (SKIP — 2026-03-20/night)
+[00:02:18] cisa.gov/news-events/alerts ❌ — 404 (funding lapse, page redirected) — UNREACHABLE
+[00:02:25] securityweek.com ⚠️ — degraded — some article snippets visible; no new findings beyond confirmed CVEs
+[00:02:26] github.com/search?q=CVE ✅ — 7s — FINDINGS via 0xMarcio list: CVE-2025-53770 SharePoint WebPart PoC (311★, NEW); CVE-2026-21858 Ni8mare chain PoC (222★, SKIP — already in KEV reports); CVE-2026-24061 batch scanner (SKIP — 2026-03-17)
+[00:02:30] schneier.com ✅ — 6s — No vulnerability findings; Proton Mail/FBI metadata story (privacy, not a CVE) — noted for completeness
+[00:02:31] krebsonsecurity.com ✅ — 3s — FINDINGS: DOJ takedown of Aisuru/Kimwolf/JackSkid/Mossad botnets (NEW — different from 2026-02-23 Kimwolf I2P event); Stryker/Handala update (SKIP — already reported)
+[00:02:35] rapid7.com ❌ — 404 (blog path changed) — UNREACHABLE
+[00:02:36] attackerkb.com ⚠️ — degraded (500 on /topics/recent, landing page only) — No actionable content
+[00:02:37] fortinet.com/blog/threat-research ✅ — 3s — FINDINGS: Post-Iran-strike cyber risk advisory (NEW — Iran actor staging expected for financial/critical infrastructure)
+[00:02:40] securitylab.github.com ✅ — 2s — FINDINGS: CVE-2026-31820 Sylius PII (noted); CVE-2025-12428 Chromium type confusion (noted); CVE-2026-25757 Spree IDOR (noted); CVE-2026-28514/30833 Rocket.Chat (SKIP — 2026-03-17)
+[00:02:41] seclists.org/fulldisclosure ✅ — 8s — FINDINGS: Alipay 6 CVEs update (UPDATE from noted 2026-03-17); PEGA Platform CVE-2025-62181/CVE-2025-9559 (noted); CVE-2026-3888 snap-confine (NEW); Arturia MacOS LPE (noted)
+[00:02:45] packetstormsecurity.com ⚠️ — degraded (ToS redirect) — No actionable findings
+[00:02:46] opencve.io ✅ — 5s — CISA KEV listings confirmed: CVE-2025-54068, CVE-2025-32432; general CVE feed, no new critical beyond confirmed
+
+TIER 2:
+[00:03:00] nvd.nist.gov ⚠️ — degraded — Advanced search loaded but no listing rendered in fetch
+[00:03:01] cve.mitre.org ✅ — 8s — Redirects to cve.org; minimal JS-rendered content
+[00:03:02] cve.org ✅ — 6s — Minimal JS-rendered content; no new CVE details beyond confirmed
+[00:03:10] googleprojectzero.blogspot.com ✅ — 14s — Recent posts on grammar fuzzing and GetProcessHandleFromHwnd UAC bypass research (Windows, fixed); no new 0-day drops
+[00:03:12] blog.cloudflare.com/tag/security ✅ — 15s — Account Abuse Protection launch (2026-03-12), AI Security GA; no new CVEs
+[00:03:13] msrc.microsoft.com/blog ⚠️ — minimal rendered content — No actionable content
+[00:03:15] hackerone.com/hacktivity ⚠️ — JS-only page, no rendered hacktivity — No actionable content
+[00:03:16] bugcrowd.com/disclosures ❌ — 404 — UNREACHABLE
+[00:03:17] seclists.org/fulldisclosure (dup) ✅ — already checked above
+[00:03:35] kb.cert.org/vuls ⚠️ — degraded (minimal content, search-only UI) — No listings rendered
+[00:03:36] avleonov.com ✅ — 11s — n8n CVE-2025-68613/CVE-2026-21858 coverage (SKIP — 2026-03-11/night KEV report); CVE-2026-21519 DWM EoP (SKIP — Feb Patch Tuesday prior report)
+[00:03:37] github.com/0xMarcio/cve ✅ — 8s — CVE-2025-53770 SharePoint PoC (311★ NEW); Ni8mare n8n chain (SKIP); CVE-2026-24061 batch tool (SKIP); CVE-2026-21440 AdonisJS (SKIP — 2026-03-12); CVE-2026-22200 osTicket (SKIP — 2026-03-07)
+[00:04:16] dbugs.ptsecurity.com ⚠️ — degraded (minimal JS-rendered content) — No actionable content
+[00:04:17] habr.com/ru/companies/tomhunter/articles ⚠️ — degraded (Feb/Jan digests only, no March content yet) — No new findings
+[00:04:18] teletype.in/@cyberok ⚠️ — degraded (Dec/Jan digests, no March content) — No new findings
+[00:04:19] cert.gov.ua ⚠️ — degraded (minimal JS-rendered content) — No actionable content
+
+[00:05:38] Additional deep-dives:
+  - bleepingcomputer.com/oracle-idm — confirmed CVE-2026-21992 details ✅
+  - qualys.com blog — confirmed CVE-2026-3888 snap-confine details ✅
+  - github.com/Chocapikk/CVE-2026-21858 — SKIP (n8n already reported)
+  - github.com/soltanali0/CVE-2025-53770 — confirmed SharePoint WebPart RCE details ✅
+  - seclists.org/fulldisclosure/2026/Mar/4 — confirmed Alipay attack chain details ✅
+  - seclists.org/fulldisclosure/2026/Mar/8 — confirmed PEGA Platform details ✅
+  - fortinet.com/blog/... post-strikes advisory — confirmed Iran cyber advisory details ✅
+
+===========================================================
+STEP 3 — DEDUP DECISIONS
+===========================================================
+
+CVE-2026-21992 (Oracle IDM RCE) → NEW — not in any prior report
+CVE-2025-54068 (Laravel Livewire CISA KEV) → NEW — not in any prior report
+CVE-2025-32432 (Craft CMS CISA KEV) → NEW — not in any prior report
+CVE-2026-3888 (Ubuntu snap-confine LPE) → NEW — not in any prior report (published March 17-19, first coverage tonight)
+CVE-2025-53770 (SharePoint WebPart injection) → NEW — not in any prior report
+FBI Signal/Russian intel PSA → UPDATE (from 2026-03-10/night Dutch gov warning)
+DOJ botnet takedown (Aisuru/Kimwolf/JackSkid/Mossad) → NEW — different from 2026-02-23 Kimwolf I2P disruption event
+Fortinet Iran post-strike cyber advisory → NEW
+Alipay 6 CVEs update → UPDATE (from noted in 2026-03-17/night)
+
+CVE-2026-21858 (n8n AFR) → SKIP — CISA KEV, reported 2026-03-11/night
+CVE-2025-68613 (n8n RCE) → SKIP — prior reports
+CVE-2026-24061 (GNU telnetd) → SKIP — reported 2026-02-24, 2026-03-07, 2026-03-17
+Stryker/Handala — SKIP — 2026-03-11/night, 2026-03-17/night
+Rocket.Chat CVE-2026-28514/30833 — SKIP — 2026-03-17/night
+osTicket CVE-2026-22200 — SKIP — 2026-02-24, 2026-03-07
+AdonisJS CVE-2026-21440 — SKIP — 2026-03-12
+Kimwolf botnet I2P context — SKIP — 2026-02-23 (DOJ takedown framing is new but noted above)
+
+===========================================================
+STEP 4 — SOURCE COVERAGE FINAL COUNT
+===========================================================
+Total sources: 31
+Checked: 31
+With findings: 10 (bleepingcomputer, thehackernews, cisa.gov/kev, github/CVE, krebsonsecurity,
+                   fortinet, securitylab.github.com, seclists.org, opencve.io, avleonov)
+Unreachable: 3 (cisa.gov/news-events/alerts, bugcrowd.com/disclosures, rapid7.com)
+Degraded: 11 (securityweek.com, attackerkb.com, nvd.nist.gov, msrc.microsoft.com,
+              hackerone.com, packetstormsecurity.com, kb.cert.org, dbugs.ptsecurity.com,
+              habr.com/tomhunter, teletype.in/@cyberok, cert.gov.ua)
+
+===========================================================
+STEP 5 — VALIDATOR OUTPUT
+===========================================================
+Running: python3 ~/Documents/projects/watchtower/scripts/validate_report.py reports/2026/03/21/night/report.json
+
+[logged after validation run — see below]

@@ -1,0 +1,146 @@
+{
+  "date": "2026-03-21",
+  "cycle": "night",
+  "findings": [
+    {
+      "type": "news",
+      "title": "CVE-2026-21992 — Oracle Identity Manager and Web Services Manager Unauthenticated RCE",
+      "threat_score": 9,
+      "cve": "CVE-2026-21992",
+      "cvss": 9.8,
+      "affected_technology": "Oracle Identity Manager, Oracle Web Services Manager 12.2.1.4.0 / 14.1.2.1.0",
+      "summary": "Oracle released an emergency out-of-band patch for a CVSS 9.8 unauthenticated RCE vulnerability in Oracle Identity Manager and Web Services Manager; exploitation status is undisclosed but Oracle is urgently recommending immediate patching of all affected instances.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "bleepingcomputer.com"
+    },
+    {
+      "type": "news",
+      "title": "CVE-2025-54068 — Laravel Livewire Code Injection Added to CISA KEV",
+      "threat_score": 9,
+      "cve": "CVE-2025-54068",
+      "cvss": 9.2,
+      "affected_technology": "Laravel Livewire",
+      "summary": "CISA added CVE-2025-54068 (code injection in Laravel Livewire, CVSS 9.2) to the Known Exploited Vulnerabilities catalog confirming active exploitation, with mature public exploit tooling including a 125-star Synacktiv proof-of-concept already available.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "cisa.gov/known-exploited-vulnerabilities-catalog"
+    },
+    {
+      "type": "news",
+      "title": "CVE-2025-32432 — Craft CMS Code Injection Added to CISA KEV",
+      "threat_score": 8,
+      "cve": "CVE-2025-32432",
+      "cvss": 9.0,
+      "affected_technology": "Craft CMS",
+      "summary": "CISA added CVE-2025-32432 (code injection in Craft CMS) to the Known Exploited Vulnerabilities catalog, confirming active exploitation against internet-exposed Craft CMS installations.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "cisa.gov/known-exploited-vulnerabilities-catalog"
+    },
+    {
+      "type": "update",
+      "title": "FBI Officially Attributes Signal and WhatsApp Account-Hijacking Campaign to Russian Intelligence",
+      "threat_score": 8,
+      "previous_threat_score": 7,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Signal, WhatsApp (encrypted messaging apps)",
+      "summary": "The FBI issued a public service announcement making the first official US attribution of the ongoing Signal and WhatsApp account-hijacking phishing campaign to Russian intelligence services, noting thousands of compromised accounts primarily targeting current and former government officials, military personnel, and journalists.",
+      "first_seen_at": "bleepingcomputer.com"
+    },
+    {
+      "type": "news",
+      "title": "CVE-2026-3888 — Ubuntu 24.04+ Local Privilege Escalation via snap-confine and systemd-tmpfiles",
+      "threat_score": 7,
+      "cve": "CVE-2026-3888",
+      "cvss": 7.8,
+      "affected_technology": "Ubuntu Desktop 24.04 and later (default installations)",
+      "summary": "Qualys TRU disclosed a local privilege escalation (CVSS 7.8) in default Ubuntu 24.04+ installations exploiting a race condition between the snap-confine setuid binary and systemd-tmpfiles cleanup to achieve full root access, with exploitation requiring a 10-30 day wait window for the timing condition.",
+      "discovery_latency": "late",
+      "first_seen_at": "seclists.org/fulldisclosure"
+    },
+    {
+      "type": "news",
+      "title": "CVE-2025-53770 — Microsoft SharePoint On-Premises .NET Deserialization RCE via WebPart Injection",
+      "threat_score": 7,
+      "cve": "CVE-2025-53770",
+      "cvss": 8.8,
+      "affected_technology": "Microsoft SharePoint Server 2016 / 2019 (on-premises)",
+      "summary": "A new 311-star exploit tool demonstrates authenticated .NET deserialization RCE in Microsoft SharePoint Server 2016 and 2019 on-premises via malicious GZIP-compressed WebPart injection through the ToolPane.aspx MSOTlPn_DWP parameter, with a multi-threaded scanning and exploitation script publicly released.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "github.com/0xMarcio/cve"
+    },
+    {
+      "type": "news",
+      "title": "US-Led Operation Disrupts Four Major DDoS Botnets: Aisuru, Kimwolf, JackSkid, Mossad",
+      "threat_score": 6,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "IoT devices globally (3M+ compromised hosts)",
+      "summary": "US, German, and Canadian law enforcement dismantled four major DDoS botnets (Aisuru, Kimwolf, JackSkid, Mossad) in a coordinated operation, seizing infrastructure responsible for record-breaking attacks against DoD targets and issuing over 200,000 documented attack commands before disruption.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "krebsonsecurity.com"
+    },
+    {
+      "type": "news",
+      "title": "FortiGuard Advisory: Elevated Iranian Cyber Threat Following US-Israeli Strikes",
+      "threat_score": 7,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Global critical infrastructure, financial services, enterprise networks",
+      "summary": "FortiGuard Labs issued a threat advisory warning of elevated Iranian cyber retaliation risk following US-Israeli kinetic strikes, noting current hacktivist activity and media intrusions inside Iran and warning that Iranian operators historically stage access weeks in advance before launching disruptive campaigns against financial and critical infrastructure.",
+      "discovery_latency": "early",
+      "first_seen_at": "fortinet.com/blog/threat-research"
+    },
+    {
+      "type": "update",
+      "title": "Alipay DeepLink+JSBridge Attack Chain — Six CVEs Formally Submitted to MITRE",
+      "threat_score": 7,
+      "previous_threat_score": 5,
+      "cve": null,
+      "cvss": 9.3,
+      "affected_technology": "Alipay v10.x (Android and iOS, 1B+ users)",
+      "summary": "Researcher Jiqiang Feng formally submitted 6 CVEs to MITRE for the Alipay DeepLink+JSBridge attack chain (CVSS up to 9.3) enabling silent GPS exfiltration and payment UI abuse on 1B+ user accounts, after Ant Group dismissed all findings as normal functionality and their law firm filed a takedown complaint.",
+      "first_seen_at": "seclists.org/fulldisclosure"
+    }
+  ],
+  "noted": [
+    {
+      "cve": "CVE-2025-62181",
+      "product": "Pega Platform (Infinity 25.1.0 and prior)",
+      "summary": "SEC Consult disclosed weak brute-force protection (CVE-2025-62181) and IDOR file read (CVE-2025-9559) in PEGA Infinity; medium severity but affects large enterprise BPM deployments."
+    },
+    {
+      "cve": "CVE-2026-31820",
+      "product": "Sylius e-commerce",
+      "summary": "GitHub Security Lab credited unauthorized access to PII in Sylius; scope and CVSS not yet published."
+    },
+    {
+      "cve": "CVE-2025-12428",
+      "product": "Chromium",
+      "summary": "GitHub Security Lab reported a type confusion vulnerability in Chromium; details pending full advisory."
+    }
+  ],
+  "source_coverage": {
+    "total": 31,
+    "checked": 31,
+    "with_findings": 10,
+    "unreachable": [
+      "cisa.gov/news-events/alerts (404 — funding lapse redirect)",
+      "bugcrowd.com/disclosures (404)",
+      "rapid7.com (404 — blog path changed)"
+    ],
+    "degraded": [
+      "securityweek.com (partial content)",
+      "attackerkb.com (500 on /topics/recent)",
+      "nvd.nist.gov (no CVE listing rendered)",
+      "msrc.microsoft.com/blog (minimal rendered content)",
+      "hackerone.com/hacktivity (JS-only)",
+      "packetstormsecurity.com (ToS redirect)",
+      "kb.cert.org/vuls (search UI only)",
+      "dbugs.ptsecurity.com (minimal content)",
+      "habr.com/tomhunter (Feb/Jan digests only)",
+      "teletype.in/@cyberok (Dec/Jan content only)",
+      "cert.gov.ua (minimal JS-rendered)"
+    ]
+  },
+  "full_report": "reports/2026/03/21/night/report.md"
+}

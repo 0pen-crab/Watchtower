@@ -1,0 +1,41 @@
+# Debug Log — 2026-03-16 night cycle
+# Started: 2026-03-16T02:06:00+02:00 (00:06 UTC)
+
+## Dedup Index (from last 30 days)
+- CVE-2026-28289 (FreeScout Mail2Shell RCE) — 2026-03-08/night
+- CVE-2026-20079 (Cisco Secure FMC) — 2026-03-08/night
+- CVE-2026-1492 (WordPress User Registration Privilege Escalation) — 2026-03-08/night
+- Coruna iOS Exploit Kit — 2026-03-08/night
+- CISA KEV: Rockwell/Hikvision/Apple iOS (CVE-2021-22681, CVE-2017-7921) — 2026-03-08/night
+- UAT-9244 Chinese APT (TernDoor/PeerTime/BruteEntry) — 2026-03-08/night
+- Velvet Tempest CastleRAT ClickFix — 2026-03-09/night
+- AirSnitch Wi-Fi MitM — 2026-03-09/night
+- Phishing via .arpa DNS/IPv6 — 2026-03-09/night
+- Transparent Tribe AI malware — 2026-03-09/night
+- CL-UNK-1068 Chinese espionage — 2026-03-09/night
+- BoryptGrab NPM stealer — 2026-03-09/night
+- MS March 2026 Patch Tuesday (CVE-2026-26127, CVE-2026-21262) — 2026-03-10/night
+- KadNap Botnet (ASUS routers) — 2026-03-10/night
+- APT28 BEARDSHELL/COVENANT — 2026-03-10/night
+- FortiGate NGFW credential theft — 2026-03-10/night
+- Ivanti EPM CISA KEV — 2026-03-10/night
+- HPE Aruba AOS-CX critical flaw — 2026-03-10/night
+- BlackSanta EDR Killer — 2026-03-10/night
+- A0Backdoor Teams phishing — 2026-03-10/night
+- Russian Signal/WhatsApp hijacking campaign — 2026-03-10/night
+- Stryker wiper attack (Handala) — 2026-03-11/night
+- CVE-2026-21858 n8n RCE — 2026-03-11/night
+- Elementor Ally SQLi (250K+ WordPress sites) — 2026-03-11/night
+- PhantomRaven NPM supply chain — 2026-03-11/night
+- BeatBanker Android malware — 2026-03-11/night
+- Perplexity Comet AI Browser phishing — 2026-03-11/night
+- CVE-2025-68613 n8n second RCE — 2026-03-12/night
+- ICS Patch Tuesday (Siemens/Schneider/Moxa/Mitsubishi) — 2026-03-12/night
+- Michelin Oracle EBS breach (300GB) — 2026-03-12/night
+- Zombie ZIP evasion technique — 2026-03-12/night
+- CVE-2026-26113/CVE-2026-26110 MS Office Preview Pane RCE — 2026-03-12/night
+- Fortinet/Ivanti/Intel patches — 2026-03-12/night
+- CVE-2026-21440 AdonisJS path traversal — 2026-03-12/night
+- Stryker update (5000 workers sent home) — 2026-03-12/night
+
+## Source Scanning Log

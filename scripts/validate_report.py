@@ -10,8 +10,7 @@ import json
 import sys
 import os
 
-REQUIRED_TOP_KEYS = {"date", "cycle", "findings", "noted", "source_coverage", "full_report"}
-VALID_CYCLES = {"morning", "day", "evening", "night"}
+REQUIRED_TOP_KEYS = {"date", "findings", "noted", "source_coverage", "full_report"}
 VALID_FINDING_TYPES = {"news", "update"}
 
 NEWS_KEYS = {"type", "title", "threat_score", "cve", "cvss", "affected_technology", "summary", "discovery_latency", "first_seen_at"}
@@ -39,15 +38,10 @@ def validate(data, filepath=""):
     if not (isinstance(date, str) and len(date) == 10 and date[4] == "-" and date[7] == "-"):
         errors.append(f"'date' must be YYYY-MM-DD string, got: {repr(date)}")
 
-    # cycle
-    cycle = data.get("cycle", "")
-    if cycle not in VALID_CYCLES:
-        errors.append(f"'cycle' must be one of {VALID_CYCLES}, got: {repr(cycle)}")
-
     # full_report
     fr = data.get("full_report", "")
     if not (isinstance(fr, str) and fr.startswith("reports/") and fr.endswith("/report.md")):
-        errors.append(f"'full_report' must be repo-relative path like 'reports/YYYY/MM/DD/cycle/report.md', got: {repr(fr)}")
+        errors.append(f"'full_report' must be repo-relative path like 'reports/YYYY/MM/DD/report.md', got: {repr(fr)}")
 
     # findings
     findings = data.get("findings", [])
