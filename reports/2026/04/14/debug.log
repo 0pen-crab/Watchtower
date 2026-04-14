@@ -1,0 +1,108 @@
+Watchtower Daily Run — 2026-04-14
+==================================
+
+[06:00:00 UTC] Starting daily workflow
+[06:00:01 UTC] Step 1: git pull — Already up to date
+[06:00:02 UTC] Step 2: Building dedup index from reports 2026-03-17 through 2026-04-07
+
+Dedup index built: 19 report files scanned covering 2026-03-17 to 2026-04-07
+Key CVEs already reported:
+  - CVE-2026-5281 (Chrome Dawn zero-day) — 2026-04-02
+  - CVE-2025-55182 (React2Shell/Next.js) — 2026-03-22, 2026-04-05
+  - CVE-2026-21858 (n8n RCE) — 2026-03-28
+  - CVE-2026-20127 (Cisco SD-WAN) — 2026-03-23
+  - CVE-2026-3055 (Citrix NetScaler) — 2026-03-24, 2026-03-31
+  - CVE-2026-35616 (FortiClientEMS) — 2026-04-05, 2026-04-06
+  - CVE-2026-33634 (Trivy/TeamPCP) — 2026-03-27, 2026-04-01
+  - CVE-2026-0331 (Claude Code) — 2026-04-06
+  - CVE-2026-2699 (Progress ShareFile) — 2026-04-06
+
+[06:01:00 UTC] Step 3: Checking ALL sources from SOURCES.md (30 unique sources)
+
+=== TIER 1 SOURCES ===
+
+[06:01:05 UTC] bleepingcomputer.com ✅ (findings: Adobe CVE-2026-34621, wolfSSL CVE-2026-5194, Marimo CVE-2026-39987, CPUID supply chain) — 4.2s
+[06:01:06 UTC] thehackernews.com ✅ (findings: Adobe CVE-2026-34621 detail, CPUID supply chain, Chrome CVE-2026-5281 [SKIP]) — 3.8s
+[06:01:08 UTC] cisa.gov/known-exploited-vulnerabilities-catalog ⚠️ DEGRADED (HTTP 403 Forbidden) — 2.1s
+[06:01:09 UTC] cisa.gov ⚠️ DEGRADED (HTTP 403 Forbidden) — 1.9s
+[06:01:10 UTC] securityweek.com ✅ (findings: Adobe CVE-2026-34621, Juniper Junos OS critical, Orthanc DICOM, Chrome 147, CPUID) — 3.5s
+[06:01:12 UTC] github.com/search?q=CVE ✅ (findings: CVE-2026-2406, CVE-2026-24061 [SKIP], CVE-2026-2991, CVE-2026-31802, CVE-2026-2472, CVE-2026-25643) — 5.1s
+[06:01:14 UTC] schneier.com ✅ (findings: Anthropic Mythos Preview AI security, LiteLLM supply chain [SKIP]) — 3.2s
+[06:01:16 UTC] krebsonsecurity.com ✅ (no new findings in window — latest April 7) — 2.8s
+[06:01:18 UTC] rapid7.com ✅ (findings: Metasploit wrap-up 04/10 with CVE-2026-20127 [SKIP], CVE-2026-22200 [SKIP]; FortiGate CVE-2025-59718 IR findings) — 4.0s
+[06:01:20 UTC] attackerkb.com ⚠️ DEGRADED (HTTP 403 Forbidden) — 1.5s
+[06:01:22 UTC] fortinet.com/blog/threat-research ✅ (no new findings — latest April 2) — 3.1s
+[06:01:24 UTC] securitylab.github.com ✅ (no new in-scope findings — latest April 3: Signal, NocoDB [SKIP]) — 3.4s
+[06:01:26 UTC] seclists.org/fulldisclosure ✅ (no new April 10-14 disclosures) — 2.9s
+[06:01:28 UTC] packetstormsecurity.com → redirected to packetstorm.news ✅ (243 advisories/72 exploits noted, no individual details rendered) — 4.5s
+[06:01:30 UTC] opencve.io ⚠️ DEGRADED (marketing page only, no CVE data without auth) — 2.2s
+
+=== TIER 2 SOURCES ===
+
+[06:02:00 UTC] nvd.nist.gov ⚠️ DEGRADED (navigation only, no CVE data rendered) — 3.0s
+[06:02:02 UTC] cve.mitre.org → redirect to cve.org ✅ (counted as cve.org check) — 1.8s
+[06:02:03 UTC] cve.org ⚠️ DEGRADED (JS required, no content) — 2.0s
+[06:02:05 UTC] projectzero.google (was googleprojectzero.blogspot.com) ✅ (no new posts — latest March 5) — 2.5s
+[06:02:07 UTC] blog.cloudflare.com/tag/security ✅ (no new posts — latest April 7) — 2.8s
+[06:02:09 UTC] msrc.microsoft.com/blog → redirected ⚠️ DEGRADED (no content at redirect target) — 3.2s
+[06:02:11 UTC] hackerone.com/hacktivity ⚠️ DEGRADED (JS required) — 1.5s
+[06:02:13 UTC] bugcrowd.com/disclosures ❌ UNREACHABLE (HTTP 404) — 1.2s
+[06:02:15 UTC] kb.cert.org/vuls ✅ (findings: VU#536588 Orthanc DICOM heap overflows, April 9) — 3.0s
+[06:02:17 UTC] avleonov.com ✅ (no new posts — latest March 30) — 2.5s
+[06:02:19 UTC] github.com/0xMarcio/cve ✅ (findings: CVE-2026-21858 [SKIP], CVE-2026-1731 BeyondTrust, CVE-2026-21852, CVE-2026-5201 [SKIP]) — 3.8s
+[06:02:21 UTC] dbugs.ptsecurity.com ✅ (findings: PraisonAI CVE-2026-40289/40288/40287, Talend CVE-2026-6264) — 4.1s
+[06:02:23 UTC] habr.com/ru/companies/tomhunter/articles ✅ (no new posts — latest March 6) — 2.8s
+[06:02:25 UTC] teletype.in/@cyberok ✅ (no new posts — latest February 4) — 2.2s
+[06:02:27 UTC] cert.gov.ua ⚠️ DEGRADED (no content rendered) — 1.8s
+
+[06:03:00 UTC] Source check complete.
+
+Source Coverage Summary:
+  total: 30
+  checked: 29
+  with_findings: 9
+  unreachable: 1 (bugcrowd.com/disclosures)
+  degraded: 9 (cisa.gov/kev, cisa.gov, attackerkb.com, hackerone.com/hacktivity, cve.org, nvd.nist.gov, opencve.io, msrc.microsoft.com/blog, cert.gov.ua)
+
+[06:03:30 UTC] Step 4: Dedup decisions
+
+  CVE-2026-34621 (Adobe Acrobat Reader) → NEW (not in any previous report)
+  CVE-2026-39987 (Marimo pre-auth RCE) → NEW
+  CVE-2026-5194 (wolfSSL ECDSA bypass) → NEW
+  Juniper Junos OS critical → NEW
+  CVE-2026-1731 (BeyondTrust RCE) → NEW
+  CPUID supply chain attack → NEW
+  PraisonAI CVE-2026-40289/40288/40287 → NEW
+  Chrome 147 (60 vulns) → NEW (note: CVE-2026-5281 from Chrome was in 2026-04-02, but Chrome 147 is a new release)
+  CVE-2026-6264 (Talend JobServer) → NEW (noted)
+  CVE-2025-59718 (FortiGate) → NEW (noted)
+  Orthanc DICOM VU#536588 → NEW (noted)
+  CVE-2026-25643 (Frigate NVR) → NEW (noted)
+  CVE-2026-2472 (Vertex AI SDK) → NEW (noted)
+  CVE-2026-21852 → NEW (noted)
+
+  SKIP (already in previous reports):
+  CVE-2026-5281 (Chrome Dawn zero-day) → SKIP (already in 2026-04-02)
+  CVE-2025-55182 (React2Shell/Next.js) → SKIP (already in 2026-03-22, 2026-04-05)
+  CVE-2026-21858 (n8n CVSS 10.0) → SKIP (already in 2026-03-28)
+  CVE-2026-20127 (Cisco SD-WAN) → SKIP (already in 2026-03-23)
+  CVE-2026-22200 (osTicket) → SKIP (already in 2026-03-23)
+  CVE-2026-24061 (telnetd) → SKIP (already in 2026-03-17)
+  CVE-2026-31802 (npm tar) → SKIP (already in 2026-04-07)
+  CVE-2026-5201 (gdk-pixbuf) → SKIP (already in 2026-04-06 noted)
+
+[06:04:00 UTC] Step 5: Writing report.md and report.json to reports/2026/04/14/
+
+  8 findings: 1 CRITICAL, 4 HIGH, 3 MEDIUM
+  6 noted items
+
+[06:05:00 UTC] Step 6: Writing debug.log
+
+[06:05:30 UTC] Step 7: Running validator...
+
+Validator output:
+  ✅ reports/2026/04/14/report.json — valid
+
+[06:05:35 UTC] Validation PASSED. No errors.
+
+[06:06:00 UTC] Step 8: git add, commit, push

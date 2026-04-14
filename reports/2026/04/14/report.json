@@ -1,0 +1,133 @@
+{
+  "date": "2026-04-14",
+  "findings": [
+    {
+      "type": "news",
+      "title": "CVE-2026-34621 — Adobe Acrobat Reader Prototype Pollution Zero-Day Actively Exploited Since December 2025",
+      "threat_score": 8,
+      "cve": "CVE-2026-34621",
+      "cvss": 8.6,
+      "affected_technology": "Adobe Acrobat / Adobe Reader (DC, 2024)",
+      "summary": "Prototype pollution in Adobe Acrobat/Reader allows malicious PDFs to bypass sandbox restrictions and execute arbitrary code via privileged JavaScript APIs, actively exploited since December 2025 with Russian oil/gas themed lures, patched April 13.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-04-13"
+    },
+    {
+      "type": "news",
+      "title": "CVE-2026-39987 — Marimo Python Notebook Pre-Auth RCE via Unauthenticated WebSocket Terminal",
+      "threat_score": 7,
+      "cve": "CVE-2026-39987",
+      "cvss": 9.3,
+      "affected_technology": "Marimo <= 0.20.4",
+      "summary": "Unauthenticated WebSocket terminal endpoint in Marimo grants full shell access, actively exploited within 10 hours of disclosure for credential theft across 125+ attacking IPs.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-04-08"
+    },
+    {
+      "type": "news",
+      "title": "CVE-2026-5194 — wolfSSL ECDSA Signature Verification Bypass Enables Certificate Forgery Across 5 Billion Devices",
+      "threat_score": 7,
+      "cve": "CVE-2026-5194",
+      "cvss": 9.8,
+      "affected_technology": "wolfSSL < 5.9.1",
+      "summary": "Missing hash digest size and OID checks in wolfSSL ECDSA verification allow forged TLS certificates to be accepted as genuine, affecting an estimated 5 billion IoT and embedded devices worldwide.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-04-08"
+    },
+    {
+      "type": "news",
+      "title": "Juniper Junos OS — Critical Unauthenticated Device Takeover Patched Among Dozens of Vulnerabilities",
+      "threat_score": 7,
+      "cve": "Not yet assigned",
+      "cvss": 9.8,
+      "affected_technology": "Juniper Junos OS",
+      "summary": "Juniper patched dozens of Junos OS vulnerabilities including a critical flaw exploitable remotely without authentication to fully take over network devices.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-04-10"
+    },
+    {
+      "type": "news",
+      "title": "CVE-2026-1731 — BeyondTrust Remote Support Command Injection via WebSocket with Public PoC",
+      "threat_score": 7,
+      "cve": "CVE-2026-1731",
+      "cvss": 9.8,
+      "affected_technology": "BeyondTrust Remote Support / Privileged Remote Access",
+      "summary": "Command injection via unsafe Bash arithmetic in a WebSocket-reachable script in BeyondTrust remote access products, with a public PoC exploit gaining traction on GitHub.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-04-07"
+    },
+    {
+      "type": "news",
+      "title": "CPUID Supply Chain Attack — Trojanized CPU-Z and HWMonitor Deliver STX RAT",
+      "threat_score": 6,
+      "cve": "Not yet assigned",
+      "cvss": null,
+      "affected_technology": "CPUID CPU-Z, HWMonitor",
+      "summary": "Attackers compromised CPUID's API and redirected official download links to serve trojanized executables containing STX RAT for approximately 19 hours on April 9-10.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-04-10"
+    },
+    {
+      "type": "news",
+      "title": "PraisonAI Agent Framework — Three Critical Vulnerabilities Enable Unauthenticated RCE and Session Hijacking",
+      "threat_score": 6,
+      "cve": "CVE-2026-40289, CVE-2026-40288, CVE-2026-40287",
+      "cvss": 9.8,
+      "affected_technology": "PraisonAI / PraisonAI Agents",
+      "summary": "Three critical vulnerabilities in the PraisonAI AI agent framework allow unauthenticated WebSocket session hijacking, arbitrary code execution via YAML, and code injection via unsanitized imports.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-04-10"
+    },
+    {
+      "type": "news",
+      "title": "Chrome 147 Patches 60 Vulnerabilities Including Two Critical WebML Flaws",
+      "threat_score": 5,
+      "cve": "Multiple",
+      "cvss": 9.0,
+      "affected_technology": "Google Chrome 147",
+      "summary": "Google released Chrome 147 with fixes for 60 security vulnerabilities including two critical flaws in the WebML component earning $86,000 in combined bounties.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-04-11"
+    }
+  ],
+  "noted": [
+    {
+      "cve": "CVE-2026-6264",
+      "product": "Talend JobServer / Talend Runtime",
+      "summary": "Unauthenticated RCE via JMX monitoring port (CVSS 9.8); enterprise ETL platform but JMX ports typically not internet-facing."
+    },
+    {
+      "cve": "CVE-2025-59718",
+      "product": "FortiGate / FortiOS",
+      "summary": "Rapid7 published incident response findings confirming active exploitation; limited technical details available."
+    },
+    {
+      "cve": "Not yet assigned",
+      "product": "Orthanc DICOM Server",
+      "summary": "Multiple heap buffer overflows enabling RCE (CERT/CC VU#536588); niche medical imaging server relevant to healthcare orgs."
+    },
+    {
+      "cve": "CVE-2026-25643",
+      "product": "Frigate NVR",
+      "summary": "Remote command execution in Frigate <= 0.16.3 with public PoC on GitHub; IoT/home automation NVR with limited enterprise exposure."
+    },
+    {
+      "cve": "CVE-2026-2472",
+      "product": "Google Cloud Vertex AI SDK",
+      "summary": "Stored XSS in versions 1.98.0-1.130.9; limited direct impact but notable for AI platform security tracking."
+    },
+    {
+      "cve": "CVE-2026-21852",
+      "product": "Unknown",
+      "summary": "PoC exploit with 21 GitHub stars published; insufficient details to classify severity. Monitoring."
+    }
+  ],
+  "source_coverage": {
+    "total": 30,
+    "checked": 29,
+    "with_findings": 9,
+    "unreachable": ["bugcrowd.com/disclosures"],
+    "degraded": ["cisa.gov/kev", "cisa.gov", "attackerkb.com", "hackerone.com/hacktivity", "cve.org", "nvd.nist.gov", "opencve.io", "msrc.microsoft.com/blog", "cert.gov.ua"]
+  },
+  "full_report": "reports/2026/04/14/report.md"
+}
