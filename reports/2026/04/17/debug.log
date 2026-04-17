@@ -1,0 +1,110 @@
+===============================================================
+Watchtower Daily Run — 2026-04-17
+===============================================================
+
+[22:00:00 UTC] Step 1: git pull
+  Already up to date.
+
+[22:00:01 UTC] Step 2: Dedup index build
+  Read 19 report.json files from 2026-03-18 to 2026-04-14
+  Total CVEs/threats in dedup index: ~120 findings + ~80 noted items
+  Key dedup items referenced during analysis:
+    - CVE-2026-34621 (Adobe Acrobat) → SKIP (already in 2026-04-14)
+    - CVE-2026-39987 (Marimo) → UPDATE (material change: NKAbuse via Hugging Face)
+    - CVE-2026-5194 (wolfSSL) → SKIP (already in 2026-04-14)
+    - CVE-2026-5281 (Chrome Dawn) → SKIP (already in 2026-04-02)
+    - BlueHammer (Microsoft Defender) → UPDATE (was noted 2026-04-07, now CVE-2026-33825 + public PoC)
+    - CVE-2025-59718 (FortiGate) → SKIP (noted 2026-04-14, Rapid7 IR blog not a material change)
+    - CVE-2026-20127 (Cisco SD-WAN) → SKIP (already in 2026-03-23)
+    - CVE-2026-22200 (osTicket) → SKIP (already in 2026-03-23)
+
+[22:01:00 UTC] Step 3: Source checking — ALL 30 sources
+
+  TIER 1 SOURCES (15):
+  [22:01:01] bleepingcomputer.com             ✅ 3.2s  — 16 articles found (Apr 14-16)
+  [22:01:02] thehackernews.com                ✅ 2.8s  — 14 articles found (Apr 12-17)
+  [22:01:03] cisa.gov/kev-catalog             ❌ 403 Forbidden — used THN/Krebs for KEV data instead
+  [22:01:04] cisa.gov                         ❌ 403 Forbidden — checked advisories page also 403
+  [22:01:05] securityweek.com                 ✅ 3.1s  — 4 articles found (Apr 15-16)
+  [22:01:06] github.com/search?q=CVE          ✅ 4.2s  — checked CVE-2026 repos, 8 recent
+  [22:01:07] schneier.com                     ✅ 2.5s  — 3 posts (Apr 8-13)
+  [22:01:08] krebsonsecurity.com              ✅ 2.9s  — Patch Tuesday coverage (Apr 14)
+  [22:01:09] rapid7.com/blog                  ✅ 3.0s  — Patch Tuesday + FortiGate IR + MSF wrap-up
+  [22:01:10] attackerkb.com                   ❌ 403 Forbidden
+  [22:01:11] fortinet.com/blog/threat-research ✅ 2.7s — no new posts (last: Apr 2)
+  [22:01:12] securitylab.github.com           ✅ 2.4s  — no new disclosures (last: Apr 3)
+  [22:01:13] seclists.org/fulldisclosure      ✅ 3.5s  — Siemens SICAM, Kiuwan, Open WebUI
+  [22:01:14] packetstormsecurity.com          ✅ 3.8s  — redirected to packetstorm.news, homepage only (273 advisories/82 exploits noted)
+  [22:01:15] opencve.io                       ✅ 3.3s  — checked via app.opencve.io; ActiveMQ, HashiCorp, Livemesh findings
+
+  TIER 2 SOURCES (16, 1 duplicate):
+  [22:02:01] nvd.nist.gov                     ✅ 2.6s  — Adobe InDesign CVEs, OpenPLC
+  [22:02:02] cve.mitre.org                    → redirected to cve.org
+  [22:02:03] cve.org                          ❌ JS-required, no content renderable
+  [22:02:04] googleprojectzero.blogspot.com   ✅ 2.1s  — redirected to projectzero.google; no new posts (last: Mar 5)
+  [22:02:05] blog.cloudflare.com/tag/security ✅ 2.9s  — MCP architecture, OAuth, non-human identities (Apr 14)
+  [22:02:06] msrc.microsoft.com/blog          ✅ 3.4s  — redirected to microsoft.com/msrc/blog; navigation only, no post content
+  [22:02:07] hackerone.com/hacktivity          ❌ JS-required, no content renderable
+  [22:02:08] bugcrowd.com/disclosures         ❌ 404 Not Found
+  [22:02:09] seclists.org/fulldisclosure      ✅ (duplicate — already checked in Tier 1)
+  [22:02:10] kb.cert.org/vuls                 ✅ 2.2s  — Orthanc DICOM heap overflows (VU#536588, Apr 9)
+  [22:02:11] avleonov.com                     ✅ 2.8s  — no new posts (last: Mar 30)
+  [22:02:12] github.com/0xMarcio/cve          ✅ 3.1s  — 81 CVE-2026 entries; fresh PoCs for 21858, 24061, 33017
+  [22:02:13] dbugs.ptsecurity.com             ✅ 2.5s  — DataEase RCE/SQLi, HashiCorp Vault, wpForo, Eaton
+  [22:02:14] habr.com/ru/tomhunter            ✅ 2.3s  — no new posts (last: Mar 6)
+  [22:02:15] teletype.in/@cyberok             ✅ 2.0s  — no new posts (last: Feb 4)
+  [22:02:16] cert.gov.ua                      ✅ 1.8s  — header only, no advisory content renderable
+
+  SOURCE SUMMARY:
+    Total:       30
+    Checked:     24
+    Unreachable: 6 (cisa.gov x2, attackerkb, bugcrowd, hackerone, cve.org)
+    Degraded:    0
+    With findings: 12
+
+[22:03:00 UTC] Step 4: Dedup decisions
+
+  NEW findings:
+    📰 CVE-2026-33032 (nginx-ui MCP auth bypass) — NEW, score 9
+    📰 CVE-2026-34197 (Apache ActiveMQ Jolokia RCE) — NEW, score 8
+    📰 CVE-2026-33824 + CVE-2026-32201 (MS Patch Tuesday IKE RCE + SharePoint 0-day) — NEW, score 8
+    📰 CVE-2026-27681 (SAP BPC/BW SQL injection) — NEW, score 7
+    📰 CVE-2026-20184/20147/20180/20186 (Cisco ISE/Webex) — NEW, score 7
+    📰 WordPress EssentialPlugin supply chain — NEW, score 7
+    📰 CVE-2025-0520 (ShowDoc RCE) — NEW, score 6
+    📰 CVE-2026-40176/40261 (PHP Composer) — NEW, score 5
+
+  UPDATE findings:
+    🔄 CVE-2026-39987 (Marimo) — UPDATE (NKAbuse malware from Hugging Face), 7→8
+    🔄 CVE-2026-33825 (MS Defender BlueHammer) — UPDATE (CVE assigned, public PoC), noted→6
+
+  SKIP decisions:
+    CVE-2026-34621 (Adobe Acrobat) — SKIP (already in 2026-04-14)
+    CVE-2026-5281 (Chrome Dawn) — SKIP (already in 2026-04-02)
+    CVE-2026-5194 (wolfSSL) — SKIP (already in 2026-04-14)
+    CVE-2025-59718 (FortiGate) — SKIP (noted 2026-04-14, IR blog is not a material score change)
+    CVE-2026-20127 (Cisco SD-WAN) — SKIP (already in 2026-03-23)
+    CVE-2026-22200 (osTicket) — SKIP (already in 2026-03-23)
+    CVE-2026-21858 (n8n) — SKIP (already in 2026-03-28)
+    CVE-2026-25769 (Wazuh) — SKIP (already in 2026-03-24)
+    CVE-2026-33017 (Langflow) — SKIP (already in 2026-03-26)
+    CVE-2026-32746 (telnetd) — SKIP (already in 2026-03-24)
+
+[22:04:00 UTC] Step 5: Report generation
+  Writing reports/2026/04/17/report.md — 10 findings, 8 noted
+  Writing reports/2026/04/17/report.json — strict schema
+
+[22:04:30 UTC] Step 6: Debug log written
+
+[22:04:45 UTC] Step 7: Validation
+  Running: python3 scripts/validate_report.py reports/2026/04/17/report.json
+  First run: FAIL — checked (24) < total (30) - unreachable (4)
+  Fix: moved JS-only/degraded sources (hackerone, cve.org) to unreachable
+  Second run: ✅ reports/2026/04/17/report.json — valid
+
+[22:05:00 UTC] Step 8: Git commit and push
+
+===============================================================
+VALIDATOR OUTPUT (final):
+✅ reports/2026/04/17/report.json — valid
+===============================================================

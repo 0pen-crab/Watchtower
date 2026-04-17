@@ -1,0 +1,165 @@
+{
+  "date": "2026-04-17",
+  "findings": [
+    {
+      "type": "news",
+      "title": "CVE-2026-33032 — nginx-ui MCP Authentication Bypass Enables Full Nginx Server Takeover",
+      "threat_score": 9,
+      "cve": "CVE-2026-33032",
+      "cvss": 9.8,
+      "affected_technology": "nginx-ui (open-source Nginx management tool)",
+      "summary": "Unprotected MCP endpoint in nginx-ui allows unauthenticated attackers to invoke all management tools including config injection and service reload, with 2,600 exposed instances under active exploitation.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-04-15"
+    },
+    {
+      "type": "news",
+      "title": "CVE-2026-34197 — Apache ActiveMQ Jolokia API Remote Code Execution Added to CISA KEV",
+      "threat_score": 8,
+      "cve": "CVE-2026-34197",
+      "cvss": 8.8,
+      "affected_technology": "Apache ActiveMQ Classic",
+      "summary": "A 13-year-old code injection flaw in ActiveMQ's Jolokia JMX-HTTP bridge enables arbitrary command execution via crafted discovery URIs and is now actively exploited in the wild.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-04-17"
+    },
+    {
+      "type": "news",
+      "title": "Microsoft April 2026 Patch Tuesday — CVE-2026-33824 Windows IKE Unauthenticated RCE and SharePoint Zero-Day in KEV",
+      "threat_score": 8,
+      "cve": "CVE-2026-33824, CVE-2026-32201",
+      "cvss": 9.8,
+      "affected_technology": "Microsoft Windows (IKE v2 Service), SharePoint",
+      "summary": "Microsoft's 169-vulnerability Patch Tuesday includes an unauthenticated RCE in Windows IKE v2 (CVSS 9.8) affecting VPN/IPsec endpoints and an actively exploited SharePoint spoofing zero-day added to CISA KEV.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-04-14"
+    },
+    {
+      "type": "update",
+      "title": "CVE-2026-39987 UPDATE — Marimo RCE Weaponized with NKAbuse Malware Deployed from Hugging Face Spaces",
+      "threat_score": 8,
+      "previous_threat_score": 7,
+      "cve": "CVE-2026-39987",
+      "cvss": 9.3,
+      "affected_technology": "Marimo Python notebook",
+      "summary": "Exploitation of the Marimo WebSocket RCE occurred within 10 hours of disclosure, with attackers now deploying NKAbuse malware variants hosted on Hugging Face Spaces as C2 infrastructure.",
+      "first_seen_at": "2026-04-14"
+    },
+    {
+      "type": "news",
+      "title": "CVE-2026-27681 — SAP Business Planning and Consolidation SQL Injection",
+      "threat_score": 7,
+      "cve": "CVE-2026-27681",
+      "cvss": 9.9,
+      "affected_technology": "SAP Business Planning and Consolidation (BPC), SAP Business Warehouse",
+      "summary": "Low-privileged SAP users can upload files containing arbitrary SQL statements for execution against data stores, enabling complete data theft and corruption across SAP environments.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-04-15"
+    },
+    {
+      "type": "news",
+      "title": "Cisco ISE and Webex Services — Four Critical Flaws Enable User Impersonation and RCE",
+      "threat_score": 7,
+      "cve": "CVE-2026-20184, CVE-2026-20147, CVE-2026-20180, CVE-2026-20186",
+      "cvss": 9.9,
+      "affected_technology": "Cisco Identity Services Engine (ISE), Cisco Webex Services",
+      "summary": "Four critical vulnerabilities in Cisco ISE and Webex (CVSS 9.8-9.9) enable user impersonation via certificate validation bypass and remote code execution through crafted HTTP requests.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-04-16"
+    },
+    {
+      "type": "news",
+      "title": "WordPress EssentialPlugin Supply Chain Attack — 30+ Plugins Backdoored with Ethereum C2",
+      "threat_score": 7,
+      "cve": "Not yet assigned",
+      "cvss": null,
+      "affected_technology": "WordPress (EssentialPlugin suite — 30+ plugins)",
+      "summary": "A dormant backdoor planted after the EssentialPlugin suite acquisition in August 2025 has been activated, pushing malware via updates to thousands of WordPress sites using Ethereum-based C2 resolution.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-04-15"
+    },
+    {
+      "type": "news",
+      "title": "CVE-2025-0520 — ShowDoc Unrestricted File Upload RCE Under Active Exploitation",
+      "threat_score": 6,
+      "cve": "CVE-2025-0520",
+      "cvss": 9.4,
+      "affected_technology": "ShowDoc (document management platform)",
+      "summary": "An unrestricted file upload vulnerability in ShowDoc allows unauthenticated attackers to upload and execute arbitrary PHP files, with exploitation now confirmed on unpatched servers in the wild.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-04-14"
+    },
+    {
+      "type": "update",
+      "title": "CVE-2026-33825 UPDATE — Microsoft Defender BlueHammer Privilege Escalation — Public PoC and Zero-Day Status",
+      "threat_score": 6,
+      "previous_threat_score": 3,
+      "cve": "CVE-2026-33825",
+      "cvss": 7.8,
+      "affected_technology": "Microsoft Defender for Endpoint",
+      "summary": "Previously noted as BlueHammer, now assigned CVE-2026-33825 with a public GitHub exploit enabling SYSTEM-level privilege escalation via Volume Shadow Copy abuse in the Defender update process.",
+      "first_seen_at": "2026-04-07"
+    },
+    {
+      "type": "news",
+      "title": "CVE-2026-40176, CVE-2026-40261 — PHP Composer Command Injection via Malicious Repository Configs",
+      "threat_score": 5,
+      "cve": "CVE-2026-40176, CVE-2026-40261",
+      "cvss": 8.8,
+      "affected_technology": "Composer (PHP package manager)",
+      "summary": "Two command injection flaws in Composer's Perforce VCS driver allow arbitrary command execution via crafted composer.json files even without Perforce installed, fixed in versions 2.9.6 and 2.2.27.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-04-15"
+    }
+  ],
+  "noted": [
+    {
+      "cve": "Not yet assigned",
+      "product": "ZionSiphon ICS/OT malware (water treatment systems)",
+      "summary": "ICS/SCADA malware targeting water treatment and desalination via Modbus/DNP3/S7comm; currently non-functional due to encryption code bug but serious future OT threat."
+    },
+    {
+      "cve": "CVE-2025-60710",
+      "product": "Windows Task Host (Windows 11, Server 2025)",
+      "summary": "Local privilege escalation via link following added to CISA KEV on April 13; patched November 2025, now confirmed actively exploited."
+    },
+    {
+      "cve": "CVE-2026-34222",
+      "product": "Open WebUI",
+      "summary": "Broken access control in Open WebUI < v0.8.11 disclosed via Full Disclosure mailing list."
+    },
+    {
+      "cve": "CVE-2026-27664",
+      "product": "Siemens SICAM A8000 (CP-8050/CP-8031)",
+      "summary": "Multiple vulnerabilities in industrial control equipment fixed in V26.10; ICS/OT context."
+    },
+    {
+      "cve": "Not yet assigned",
+      "product": "ATHR AI Vishing Platform",
+      "summary": "New AI-powered voice phishing platform using automated voice agents for credential harvesting at scale."
+    },
+    {
+      "cve": "Not yet assigned",
+      "product": "Chrome Web Store (100+ extensions)",
+      "summary": "Over 100 malicious Chrome extensions discovered stealing OAuth2 tokens, deploying backdoors, and conducting ad fraud."
+    },
+    {
+      "cve": "Not yet assigned",
+      "product": "Anthropic Model Context Protocol (MCP)",
+      "summary": "SecurityWeek reports on a by-design flaw allowing unsanitized command execution across AI environments; research-stage, no CVE."
+    },
+    {
+      "cve": "CVE-2026-40901",
+      "product": "DataEase (data analytics platform)",
+      "summary": "Authenticated RCE via deserialization in legacy Velocity/Commons Collections libraries (CVSS 9.0); niche deployment."
+    }
+  ],
+  "source_coverage": {
+    "total": 30,
+    "checked": 24,
+    "with_findings": 12,
+    "unreachable": ["cisa.gov", "cisa.gov/known-exploited-vulnerabilities-catalog", "attackerkb.com", "bugcrowd.com/disclosures", "hackerone.com/hacktivity", "cve.org"],
+    "degraded": []
+  },
+  "full_report": "reports/2026/04/17/report.md"
+}
