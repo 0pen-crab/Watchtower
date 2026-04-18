@@ -1,0 +1,138 @@
+{
+  "date": "2026-04-18",
+  "findings": [
+    {
+      "type": "update",
+      "title": "Microsoft Defender Zero-Day Trilogy — RedSun + UnDefend Join BlueHammer in Active Exploitation",
+      "threat_score": 8,
+      "previous_threat_score": 6,
+      "cve": "CVE-2026-33825",
+      "cvss": null,
+      "affected_technology": "Microsoft Windows Defender",
+      "summary": "Two additional Microsoft Defender zero-days (RedSun LPE to SYSTEM, UnDefend definition update blocker) are now confirmed actively exploited alongside BlueHammer, with Huntress Labs observing hands-on-keyboard activity across all three — only BlueHammer is patched.",
+      "first_seen_at": "2026-04-17"
+    },
+    {
+      "type": "news",
+      "title": "CVE-2026-21962 — Oracle WebLogic Server Proxy Plug-in Unauthenticated RCE via HTTP (CVSS 10.0)",
+      "threat_score": 7,
+      "cve": "CVE-2026-21962",
+      "cvss": 10.0,
+      "affected_technology": "Oracle HTTP Server / Oracle WebLogic Server Proxy Plug-in",
+      "summary": "An easily exploitable unauthenticated vulnerability in Oracle WebLogic Server Proxy Plug-in allows complete system compromise via HTTP with no user interaction required.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-04-18"
+    },
+    {
+      "type": "news",
+      "title": "Cursor AI Vulnerability Chain — Prompt Injection + Sandbox Bypass Enables Shell Access on Developer Machines",
+      "threat_score": 7,
+      "cve": "Not yet assigned",
+      "cvss": null,
+      "affected_technology": "Cursor AI",
+      "summary": "An indirect prompt injection in Cursor AI can be chained with a sandbox bypass and remote tunnel feature to obtain full shell access on developer machines, representing a critical AI coding assistant attack surface.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-04-17"
+    },
+    {
+      "type": "news",
+      "title": "Payouts King Ransomware — QEMU VM Evasion Bypasses All Host Endpoint Security via SonicWall VPN Entry",
+      "threat_score": 7,
+      "cve": "CVE-2025-26399",
+      "cvss": null,
+      "affected_technology": "Windows endpoints (SonicWall VPN, SolarWinds WHD initial access)",
+      "summary": "Payouts King ransomware operators deploy hidden QEMU Alpine Linux VMs with SYSTEM privileges to bypass all host-based EDR, entering via exposed SonicWall VPNs and SolarWinds WHD, linked to GOLD ENCOUNTER / former BlackBasta affiliates.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-04-17"
+    },
+    {
+      "type": "news",
+      "title": "CVE-2026-0933 — Cloudflare Wrangler CI/CD Command Injection via --commit-hash (CVSS 9.9)",
+      "threat_score": 6,
+      "cve": "CVE-2026-0933",
+      "cvss": 9.9,
+      "affected_technology": "Cloudflare Wrangler (Pages deploy CLI)",
+      "summary": "A command injection flaw in Cloudflare Wrangler's pages deploy --commit-hash parameter enables arbitrary shell command execution in CI/CD pipelines where the parameter derives from untrusted sources.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-04-18"
+    },
+    {
+      "type": "news",
+      "title": "ClickFix Phishing Campaign Impersonating Claude AI Installer — Staged PowerShell + Process Injection",
+      "threat_score": 6,
+      "cve": "Not yet assigned",
+      "cvss": null,
+      "affected_technology": "Anthropic Claude (impersonated)",
+      "summary": "Rapid7 Labs identified a ClickFix phishing campaign using a fake Claude MSIX installer that delivers staged malware via mshta, AMSI bypass, XOR-encrypted shellcode, and process injection targeting EU and US developers.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-04-16"
+    },
+    {
+      "type": "news",
+      "title": "CVE-2026-40351 — FastGPT NoSQL Injection Authentication Bypass (CVSS 9.8)",
+      "threat_score": 5,
+      "cve": "CVE-2026-40351",
+      "cvss": 9.8,
+      "affected_technology": "Labring FastGPT",
+      "summary": "A TypeScript type assertion without runtime validation in FastGPT allows MongoDB query operators in login credentials, bypassing authentication for administrator accounts on this open-source AI knowledge base platform.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-04-18"
+    },
+    {
+      "type": "news",
+      "title": "CVE-2026-32105 — xrdp Missing MAC Signature Verification Enables MITM on RDP Sessions (CVSS 9.3)",
+      "threat_score": 5,
+      "cve": "CVE-2026-32105",
+      "cvss": 9.3,
+      "affected_technology": "Neutrinolabs xrdp",
+      "summary": "The xrdp remote desktop server silently ignores MAC signatures in classic RDP mode, allowing man-in-the-middle attackers to intercept and modify encrypted RDP session traffic without detection.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-04-18"
+    }
+  ],
+  "noted": [
+    {
+      "cve": "CVE-2026-23500",
+      "product": "Dolibarr ERP/CRM",
+      "summary": "OS command injection via unsanitized configuration constants in shell exec() calls (CVSS 9.4, requires admin access)."
+    },
+    {
+      "cve": "CVE-2026-35546",
+      "product": "Anviz CX2 Lite / CX7 access control",
+      "summary": "Unauthenticated firmware upload enables attacker code execution and reverse shell on physical access control devices (CVSS 9.8)."
+    },
+    {
+      "cve": "CVE-2026-40525",
+      "product": "Volcengine OpenViking",
+      "summary": "Authentication check fails when API key is unset, exposing bot control and downstream integrations to unauthenticated access (CVSS 9.1)."
+    },
+    {
+      "cve": "Not yet assigned",
+      "product": "TBK DVRs (Nexcorium Mirai variant)",
+      "summary": "FortiGuard reports new Mirai variant Nexcorium targeting TBK DVRs via CVE-2024-3721 with multi-architecture DDoS and brute-force capabilities."
+    },
+    {
+      "cve": "CVE-2026-40492, CVE-2026-40493, CVE-2026-40494",
+      "product": "HappySeaFox SAIL image library",
+      "summary": "Critical heap buffer overflows in PSD, TGA, and XWD codecs enable RCE via crafted image files (CVSS 9.8)."
+    },
+    {
+      "cve": "CVE-2026-40484",
+      "product": "ChurchCRM",
+      "summary": "Backup restore functionality lacks file filtering, enabling PHP webshell upload and execution (CVSS 9.1)."
+    },
+    {
+      "cve": "Not yet assigned",
+      "product": "McGraw Hill Education (Salesforce environment)",
+      "summary": "ShinyHunters exfiltrated 13.5M user accounts from McGraw Hill's Salesforce environment; contact data now public, creating spear-phishing risk."
+    }
+  ],
+  "source_coverage": {
+    "total": 35,
+    "checked": 28,
+    "with_findings": 8,
+    "unreachable": ["cisa.gov", "cisa.gov/known-exploited-vulnerabilities-catalog", "attackerkb.com", "bugcrowd.com/disclosures", "hackerone.com/hacktivity", "cve.org", "cve.mitre.org"],
+    "degraded": []
+  },
+  "full_report": "reports/2026/04/18/report.md"
+}

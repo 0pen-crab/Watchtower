@@ -1,0 +1,94 @@
+Watchtower Debug Log — 2026-04-18 Night Cycle
+================================================
+
+[06:00] START — Daily workflow initiated
+[06:00] Step 1: git pull — Already up to date
+[06:01] Step 2: Dedup index built from 19 reports (2026-03-19 through 2026-04-17)
+
+=== DEDUP INDEX (CVEs from last 30 days) ===
+Total unique CVEs tracked: ~120+
+Key recent: CVE-2026-33032 (nginx-ui, 04/17), CVE-2026-34197 (ActiveMQ, 04/17),
+CVE-2026-33824/32201 (MS Patch Tuesday, 04/17), CVE-2026-33825 (BlueHammer, 04/17),
+CVE-2026-39987 (Marimo, 04/14→04/17), CVE-2026-34621 (Adobe Reader, 04/14),
+CVE-2026-5194 (wolfSSL, 04/14), CVE-2025-0520 (ShowDoc, 04/17)
+
+[06:02] Step 3: Source checking — 35 total sources
+
+=== SOURCE CHECK RESULTS ===
+[06:02] bleepingcomputer.com          ✅ (2s) — Multiple findings: RedSun 0-day, Payouts King, McGraw Hill, Windows 0-day exploitation
+[06:02] thehackernews.com             ✅ (2s) — Defender 0-days, ActiveMQ (dedup), Cisco (dedup)
+[06:02] cisa.gov/kev-catalog          ❌ (1s) — 403 Forbidden (persistent)
+[06:02] cisa.gov                      ❌ (1s) — 403 Forbidden (persistent)
+[06:02] securityweek.com              ✅ (2s) — Splunk RCE, Cursor AI, ZionSiphon, ActiveMQ (dedup)
+[06:03] github.com/search?q=CVE       ✅ (3s) — CVE-2026 repos, no significant new PoCs beyond known
+[06:03] schneier.com                  ✅ (2s) — No vulnerability articles April 17-18
+[06:03] krebsonsecurity.com           ✅ (2s) — Patch Tuesday recap (dedup), no new findings
+[06:03] rapid7.com/blog               ✅ (2s) — ClickFix Claude campaign, nginx-ui ETR (dedup)
+[06:04] attackerkb.com                ❌ (1s) — 403 Forbidden (persistent)
+[06:04] fortinet.com/blog             ✅ (3s) — Nexcorium Mirai variant (April 17)
+[06:04] securitylab.github.com        ✅ (2s) — No new disclosures since April 3
+[06:04] seclists.org/fulldisclosure   ✅ (2s) — Siemens SICAM (dedup), Kiuwan SAST; no new April 16-18
+[06:05] packetstormsecurity.com       ✅ (2s) — Redirect to packetstorm.news; 298 advisories, 67 exploits (summary only)
+[06:05] opencve.io                    ✅ (2s) — Landing page only, no CVE data
+[06:05] app.opencve.io                ✅ (3s) — CVE-2026-21962 (Oracle CVSS 10.0), CVE-2026-0933 (Wrangler CVSS 9.9)
+[06:06] nvd.nist.gov                  ⚠️ (2s) — Homepage only, search results not accessible via WebFetch
+[06:06] cve.mitre.org                 ❌ (1s) — Redirects to cve.org (JS required)
+[06:06] cve.org                       ❌ (1s) — Requires JavaScript
+[06:06] googleprojectzero.blogspot.com ✅ (2s) — Redirects to projectzero.google; no April posts
+[06:07] blog.cloudflare.com/tag/security ✅ (2s) — No posts April 16-18; latest April 14 (MCP architecture)
+[06:07] msrc.microsoft.com/blog       ⚠️ (2s) — Redirect to microsoft.com/msrc/blog; content not accessible
+[06:07] hackerone.com/hacktivity       ❌ (1s) — Requires JavaScript (persistent)
+[06:07] bugcrowd.com/disclosures       ❌ (1s) — 404 Not Found (persistent)
+[06:08] seclists.org/fulldisclosure   ✅ (dup) — Same as above (duplicate entry in SOURCES.md)
+[06:08] kb.cert.org/vuls              ✅ (2s) — No new notes since April 9 (VU#536588)
+[06:08] avleonov.com                  ✅ (2s) — April MS Patch Tuesday analysis; CVE-2026-33826 (AD RCE), CVE-2026-33827 (TCP/IP wormable)
+[06:09] github.com/0xMarcio/cve       ✅ (2s) — n8n CVE-2026-21858 (dedup), telnetd CVE-2026-24061 (dedup), Langflow (dedup)
+[06:09] dbugs.ptsecurity.com          ✅ (3s) — FastGPT CVE-2026-40351, xrdp CVE-2026-32105, Dolibarr CVE-2026-23500, Anviz CVE-2026-35546, SAIL CVEs, ChurchCRM CVEs, others
+[06:09] habr.com/ru/.../tomhunter     ✅ (2s) — No April 2026 articles visible
+[06:10] teletype.in/@cyberok          ✅ (2s) — No April 2026 articles visible
+[06:10] cert.gov.ua                   ⚠️ (1s) — Minimal content returned
+
+=== DEDUP DECISIONS ===
+[06:11] CVE-2026-33032 (nginx-ui)              → SKIP (already in 2026-04-17)
+[06:11] CVE-2026-34197 (ActiveMQ)              → SKIP (already in 2026-04-17)
+[06:11] CVE-2026-20184 etc (Cisco ISE/Webex)   → SKIP (already in 2026-04-17)
+[06:11] CVE-2026-33824 (Windows IKE)           → SKIP (already in 2026-04-17)
+[06:11] CVE-2026-32201 (SharePoint)            → SKIP (already in 2026-04-17)
+[06:11] CVE-2026-5281 (Chrome Dawn)            → SKIP (already in 2026-04-02)
+[06:11] WordPress EssentialPlugin               → SKIP (already in 2026-04-17)
+[06:11] CVE-2025-0520 (ShowDoc)                → SKIP (already in 2026-04-17)
+[06:11] CVE-2026-21858 (n8n)                   → SKIP (already in 2026-03-28)
+[06:11] ZionSiphon ICS/OT                      → SKIP (noted in 2026-04-17, SecurityWeek article but no material change)
+[06:11] ATHR AI Vishing                        → SKIP (noted in 2026-04-17)
+[06:12] CVE-2026-33825 (BlueHammer)            → UPDATE: RedSun + UnDefend now also actively exploited (material change: exploitation confirmed for all three, 2 remain unpatched)
+[06:12] CVE-2026-21962 (Oracle WebLogic)       → NEW: CVSS 10.0, unauthenticated RCE via HTTP
+[06:12] Cursor AI chain                        → NEW: Prompt injection + sandbox bypass + tunnel = shell
+[06:12] Payouts King ransomware                → NEW: QEMU VM evasion technique, SonicWall VPN entry
+[06:12] CVE-2026-0933 (Cloudflare Wrangler)    → NEW: CI/CD command injection, CVSS 9.9
+[06:12] ClickFix Claude installer              → NEW: Phishing campaign impersonating Claude AI
+[06:12] CVE-2026-40351 (FastGPT)               → NEW: NoSQL injection auth bypass in AI platform
+[06:12] CVE-2026-32105 (xrdp)                  → NEW: MITM on RDP via missing MAC verification
+
+=== FINDINGS SUMMARY ===
+Updates: 1 (Defender RedSun/UnDefend escalation)
+News: 7 (Oracle WebLogic, Cursor AI, Payouts King, Cloudflare Wrangler, ClickFix Claude, FastGPT, xrdp)
+Noted: 7 (Dolibarr, Anviz, OpenViking, Nexcorium, SAIL, ChurchCRM, McGraw Hill)
+Skipped: 12 (already reported)
+
+=== SOURCE COVERAGE (final) ===
+Total: 35
+Checked: 28
+With findings: 8
+Unreachable: 7 (cisa.gov x2, attackerkb.com, bugcrowd.com, hackerone.com, cve.org, cve.mitre.org)
+Degraded: 0
+
+[06:15] Step 5: Reports written to reports/2026/04/18/
+[06:15] Step 6: Debug log written
+[06:16] Step 7: Validation
+
+=== VALIDATOR OUTPUT ===
+✅ reports/2026/04/18/report.json — valid
+
+[06:16] Step 8: Git commit and push (pending)
+
+=== END DEBUG LOG ===
