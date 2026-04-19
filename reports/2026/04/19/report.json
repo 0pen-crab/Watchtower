@@ -1,0 +1,71 @@
+{
+  "date": "2026-04-19",
+  "findings": [
+    {
+      "type": "news",
+      "title": "CVE-2026-41242 — Protobuf.js Code Injection RCE Affects Millions of Node.js Applications (CVSS 9.4)",
+      "threat_score": 7,
+      "cve": "CVE-2026-41242",
+      "cvss": 9.4,
+      "affected_technology": "protobufjs (protobuf.js)",
+      "summary": "Critical code injection in protobuf.js allows RCE via malicious protobuf type definitions exploiting unsafe Function() constructor usage, with public PoC and patches available in versions 7.5.5 and 8.0.1.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-04-18"
+    }
+  ],
+  "noted": [
+    {
+      "cve": "CVE-2026-6518",
+      "product": "CMP Coming Soon & Maintenance WordPress Plugin",
+      "summary": "Arbitrary file upload and RCE via improper validation of downloaded ZIP files in theme update functionality (CVSS 8.8)."
+    },
+    {
+      "cve": "CVE-2026-41253",
+      "product": "iTerm2",
+      "summary": "Code execution through terminal output parsing of SSH conductor protocol from untrusted sources (CVSS 6.9)."
+    },
+    {
+      "cve": "CVE-2026-40489",
+      "product": "EditorConfig-Core-C",
+      "summary": "Stack buffer overflow in glob function via crafted directory structures and .editorconfig files (CVSS 8.6)."
+    },
+    {
+      "cve": "CVE-2026-35465",
+      "product": "SecureDrop Client",
+      "summary": "Compromised server exploits improper gzip filename validation to overwrite critical files on journalist workstations (CVSS 7.5)."
+    },
+    {
+      "cve": "CVE-2026-30898, CVE-2026-30912, CVE-2026-32228, CVE-2026-32690, CVE-2026-40948",
+      "product": "Apache Airflow",
+      "summary": "Five authorization and information disclosure issues including improper variable redaction and DAG access controls."
+    },
+    {
+      "cve": "CVE-2024-3721",
+      "product": "TBK DVRs / TP-Link EOL routers (Nexcorium Mirai variant)",
+      "summary": "THN and FortiGuard published full analysis of Nexcorium Mirai variant targeting legacy IoT devices with multi-architecture DDoS capabilities."
+    },
+    {
+      "cve": "None",
+      "product": "AVideo, openDCIM, ChurchCRM, Selenium Grid (Metasploit modules)",
+      "summary": "Metasploit 04/17 wrap-up adds four new RCE exploit modules; Selenium Grid exposure in CI/CD environments is most notable."
+    },
+    {
+      "cve": "None",
+      "product": "DDoS-for-hire infrastructure (Operation PowerOFF)",
+      "summary": "International law enforcement seized 53 DDoS domains across 21 countries, arrested 4 individuals, and obtained 3M+ criminal user accounts."
+    },
+    {
+      "cve": "None",
+      "product": "NIST NVD",
+      "summary": "NIST now prioritizes CVE enrichment for CISA KEV entries and critical infrastructure due to 263% surge in submissions."
+    }
+  ],
+  "source_coverage": {
+    "total": 30,
+    "checked": 23,
+    "with_findings": 6,
+    "unreachable": ["cisa.gov", "cisa.gov/known-exploited-vulnerabilities-catalog", "attackerkb.com", "bugcrowd.com/disclosures", "hackerone.com/hacktivity", "cve.org", "cve.mitre.org"],
+    "degraded": ["packetstormsecurity.com", "opencve.io", "nvd.nist.gov", "msrc.microsoft.com", "cert.gov.ua"]
+  },
+  "full_report": "reports/2026/04/19/report.md"
+}

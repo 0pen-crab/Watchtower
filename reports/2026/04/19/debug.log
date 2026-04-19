@@ -1,0 +1,88 @@
+Watchtower Debug Log — 2026-04-19
+===================================
+
+[06:00:00 UTC] Starting daily workflow
+[06:00:01 UTC] Step 1: git pull — Already up to date.
+[06:00:02 UTC] Step 2: Building dedup index from last 30 days (16 report.json files: 2026-03-20 through 2026-04-18)
+
+Dedup index built. Key CVEs/threats already reported:
+  - CVE-2026-41242: NOT IN INDEX (protobuf.js)
+  - CVE-2026-33825 (MS Defender BlueHammer/RedSun/UnDefend): 04/17, 04/18
+  - CVE-2026-34197 (Apache ActiveMQ): 04/17
+  - CVE-2026-33032 (nginx-ui MCP): 04/17
+  - CVE-2026-39987 (Marimo RCE): 04/14, 04/17
+  - Cursor AI vuln chain: 04/18
+  - Payouts King ransomware: 04/18
+  - CVE-2026-0933 (Cloudflare Wrangler): 04/18
+  - ClickFix Claude phishing: 04/18
+  - CVE-2026-40351 (FastGPT): 04/18
+  - CVE-2026-32105 (xrdp): 04/18
+  - Nexcorium Mirai (TBK DVRs): NOTED in 04/18
+
+[06:00:05 UTC] Step 3: Checking ALL sources from SOURCES.md (30 unique sources)
+
+=== TIER 1 SOURCES ===
+[06:00:10 UTC] bleepingcomputer.com — ✅ (3.2s) — FINDINGS: Protobuf.js RCE (CVE-2026-41242), MS Defender RedSun (SKIP: already in 04/18)
+[06:00:10 UTC] thehackernews.com — ✅ (2.8s) — FINDINGS: MS Defender trilogy (SKIP: 04/17-18), ActiveMQ KEV (SKIP: 04/17), Nexcorium Mirai (NOTED in 04/18), Grinex hack, NIST CVE changes, Operation PowerOFF, PowMix botnet, PHANTOMPULSE RAT
+[06:00:10 UTC] securityweek.com — ✅ (3.1s) — FINDINGS: Tycoon 2FA (not a vuln), ActiveMQ (SKIP: 04/17), Cursor AI (SKIP: 04/18), Chrome $90K bug bounty (not enough detail)
+[06:00:10 UTC] krebsonsecurity.com — ✅ (2.5s) — No new articles since April 14 (Patch Tuesday roundup)
+[06:00:10 UTC] schneier.com — ✅ (2.2s) — No security vulnerability posts since April 17 (Mythos article)
+[06:00:15 UTC] rapid7.com — ✅ (3.0s) — FINDINGS: Metasploit wrap-up 04/17 (new modules: AVideo, openDCIM, ChurchCRM, Selenium Grid/Selenoid), ClickFix Claude campaign (SKIP: 04/18)
+[06:00:15 UTC] fortinet.com/blog/threat-research — ✅ (2.7s) — FINDINGS: Nexcorium Mirai analysis (was NOTED in 04/18)
+[06:00:15 UTC] securitylab.github.com — ✅ (2.4s) — No new advisories since April 3 batch
+[06:00:15 UTC] seclists.org/fulldisclosure — ✅ (2.6s) — No new posts since April 14 (Siemens, Open WebUI, OWASP CRS — all already covered)
+[06:00:15 UTC] github.com/search?q=CVE — ✅ (3.5s) — New repos: CVE-2026-XNU (iOS kernel), CVE-2026-2991 (KiviCare auth bypass), CVE-2026-31802 (npm tar), CVE-2026-24291 (Windows LPE), CVE-2026-2441 (Chrome Blink UAF). None critical for our scope.
+[06:00:20 UTC] cisa.gov/known-exploited-vulnerabilities-catalog — ❌ 403 Forbidden (persistent)
+[06:00:20 UTC] cisa.gov — ❌ 403 Forbidden (persistent)
+[06:00:20 UTC] attackerkb.com — ❌ 403 Forbidden (persistent)
+[06:00:22 UTC] packetstormsecurity.com — ⚠️ DEGRADED (2.1s) — 301 redirect to packetstorm.news, only got ToS page, no advisory/exploit data
+[06:00:24 UTC] opencve.io — ⚠️ DEGRADED (2.3s) — Marketing page only, no CVE data (need app.opencve.io login)
+
+=== TIER 2 SOURCES ===
+[06:00:28 UTC] nvd.nist.gov — ⚠️ DEGRADED (3.0s) — Search results page returned no data
+[06:00:28 UTC] cve.mitre.org — ❌ Redirects to cve.org, requires JavaScript
+[06:00:28 UTC] cve.org — ❌ Requires JavaScript
+[06:00:30 UTC] projectzero.google — ✅ (2.5s) — No new posts (latest: March 5, 2026)
+[06:00:30 UTC] blog.cloudflare.com/tag/security — ✅ (2.2s) — No new posts since April 14 (MCP architecture, OAuth)
+[06:00:32 UTC] msrc.microsoft.com/blog — ⚠️ DEGRADED (2.8s) — Redirect to microsoft.com/en-us/msrc/blog, empty content
+[06:00:32 UTC] hackerone.com/hacktivity — ❌ Requires JavaScript (persistent)
+[06:00:32 UTC] bugcrowd.com/disclosures — ❌ 404 Not Found (persistent)
+[06:00:34 UTC] kb.cert.org/vuls — ✅ (2.4s) — Latest: VU#536588 (Orthanc, April 9). No new notes in window.
+[06:00:34 UTC] avleonov.com — ✅ (2.1s) — FINDINGS: April Patch Tuesday analysis (CVE-2026-33824 IKE wormable, CVE-2026-33825 Defender — already reported)
+[06:00:36 UTC] github.com/0xMarcio/cve — ✅ (2.8s) — Notable: CVE-2026-21858 n8n (257 stars, already reported 03/28), CVE-2026-0740 Ninja Forms, CVE-2026-24061 telnetd (already reported)
+[06:00:38 UTC] dbugs.ptsecurity.com — ✅ (3.2s) — FINDINGS: CVE-2026-41242 (protobuf.js CVSS 9.4), CVE-2026-6518 (CMP WP plugin CVSS 8.8), CVE-2026-41253 (iTerm2 CVSS 6.9), CVE-2026-40489 (EditorConfig CVSS 8.6), CVE-2026-35465 (SecureDrop CVSS 7.5), Apache Airflow multi-CVE, SAIL image library (already noted 04/18)
+[06:00:40 UTC] habr.com/ru/companies/tomhunter/articles — ✅ (2.5s) — No articles since March 6
+[06:00:42 UTC] teletype.in/@cyberok — ✅ (2.3s) — No articles since February 4
+[06:00:44 UTC] cert.gov.ua — ⚠️ DEGRADED (3.0s) — Returned empty page content
+
+[06:00:45 UTC] Source coverage summary:
+  Total unique sources: 30
+  Checked: 23
+  Unreachable: 7 (cisa.gov, cisa.gov/kev, attackerkb.com, bugcrowd.com, hackerone.com, cve.org, cve.mitre.org)
+  Degraded: 5 (packetstormsecurity.com, opencve.io, nvd.nist.gov, msrc.microsoft.com, cert.gov.ua)
+  With findings: 6
+
+[06:00:46 UTC] Step 4: Dedup decisions:
+  CVE-2026-41242 (protobuf.js) — NEW (not in any prior report)
+  MS Defender RedSun/UnDefend — SKIP (already in 2026-04-17, 2026-04-18)
+  Apache ActiveMQ CVE-2026-34197 — SKIP (already in 2026-04-17)
+  Nexcorium Mirai variant — SKIP (already NOTED in 2026-04-18; THN/FortiGuard coverage is new but no material technical change)
+  Cursor AI vuln chain — SKIP (already in 2026-04-18)
+  Metasploit wrap-up 04/17 — NEW as NOTED (new modules for openDCIM, Selenium Grid)
+  CVE-2026-6518 (CMP WP plugin) — NEW as NOTED
+  CVE-2026-41253 (iTerm2) — NEW as NOTED (client-only, out of primary scope)
+  CVE-2026-40489 (EditorConfig-Core-C) — NEW as NOTED
+  CVE-2026-35465 (SecureDrop Client) — NEW as NOTED
+  Apache Airflow multi-CVE — NEW as NOTED
+  Operation PowerOFF — NEW as NOTED (law enforcement, not vuln)
+  NIST CVE enrichment changes — NEW as NOTED (policy change)
+  Grinex $13.74M hack — SKIP (crypto exchange breach, not in scope)
+  PowMix botnet (Czech) — SKIP (geographic, desktop-only, April 16)
+  PHANTOMPULSE RAT — SKIP (desktop-only, social engineering via Obsidian)
+  UAC-0247 Ukraine — SKIP (regional campaign, ongoing)
+
+[06:00:50 UTC] Step 5: Writing report.md and report.json to reports/2026/04/19/
+[06:01:00 UTC] Step 6: Writing debug.log
+[06:01:05 UTC] Step 7: Running validator...
+[06:01:06 UTC] Validator output: ✅ reports/2026/04/19/report.json — valid
+[06:01:07 UTC] Step 8: git add, commit, push
