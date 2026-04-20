@@ -1,0 +1,67 @@
+{
+  "date": "2026-04-20",
+  "findings": [
+    {
+      "type": "news",
+      "title": "Vercel Breached via Compromised Context AI Tool — Customer Environment Variables Exposed",
+      "threat_score": 7,
+      "cve": "Not yet assigned",
+      "cvss": null,
+      "affected_technology": "Vercel (cloud deployment platform)",
+      "summary": "Vercel disclosed a breach after attackers compromised third-party AI tool Context.ai to pivot into a Vercel employee's Google Workspace account, accessing non-encrypted environment variables of a limited subset of customers.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-04-19"
+    },
+    {
+      "type": "news",
+      "title": "Splunk Enterprise RCE via Upload Endpoint — CVE-2026-20163 (CVSS 8.0)",
+      "threat_score": 5,
+      "cve": "CVE-2026-20163",
+      "cvss": 8.0,
+      "affected_technology": "Splunk Enterprise 9.3–10.0, Splunk Cloud Platform",
+      "summary": "High-privileged Splunk users with edit_cmd capability can execute arbitrary shell commands via the unsanitized unarchive_cmd parameter in the upload/indexing/preview REST endpoint.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-04-16"
+    }
+  ],
+  "noted": [
+    {
+      "cve": "N/A",
+      "product": "NIST NVD",
+      "summary": "NIST stopped scoring non-priority CVEs effective April 15 due to 263% volume increase; only CISA KEV, federal software, and EO 14028 critical software will receive enrichment."
+    },
+    {
+      "cve": "CVE-2026-20205",
+      "product": "Splunk MCP Server",
+      "summary": "Session and auth tokens exposed in cleartext logs to users with _internal index access (CVSS 7.2); fixed in MCP Server 1.0.3."
+    },
+    {
+      "cve": "CVE-2026-32956",
+      "product": "Silex Technology SD-330AC / AMC Manager",
+      "summary": "Heap-based buffer overflow in redirect URL processing allows arbitrary code execution (CVSS 9.8); niche IoT product with limited enterprise deployment."
+    },
+    {
+      "cve": "CVE-2026-6596, CVE-2026-6599, CVE-2026-6600",
+      "product": "Langflow AI",
+      "summary": "New lower-severity vulnerabilities including unrestricted file upload (7.5), MCP config API injection (6.5), and frontend XSS (4.0); less critical than previously reported CVE-2026-33017."
+    },
+    {
+      "cve": "CVE-2026-6576, CVE-2026-6577, CVE-2026-6578, CVE-2026-6580",
+      "product": "DjangoBlog",
+      "summary": "Command injection in WeChat bot interface, missing authentication on logtracks, and hard-coded secrets; niche blogging platform."
+    },
+    {
+      "cve": "CVE-2026-5121",
+      "product": "Libarchive / Red Hat Enterprise Linux",
+      "summary": "Integer overflow in zisofs block pointer allocation on 32-bit systems via crafted ISO9660 images (CVSS 7.5); limited to 32-bit systems."
+    }
+  ],
+  "source_coverage": {
+    "total": 30,
+    "checked": 26,
+    "with_findings": 8,
+    "unreachable": ["cisa.gov", "cisa.gov/kev", "attackerkb.com", "bugcrowd.com/disclosures"],
+    "degraded": ["cve.org", "hackerone.com/hacktivity", "cert.gov.ua", "msrc.microsoft.com/blog"]
+  },
+  "full_report": "reports/2026/04/20/report.md"
+}

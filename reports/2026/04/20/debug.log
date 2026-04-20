@@ -1,0 +1,100 @@
+============================================================
+WATCHTOWER DEBUG LOG — 2026-04-20
+============================================================
+
+[12:00:00 UTC] === STEP 1: git pull ===
+Result: Already up to date.
+
+[12:00:01 UTC] === STEP 2: Build dedup index ===
+Read 19 report.json files from 2026-03-21 to 2026-04-19.
+Total CVEs in dedup index: ~140+ distinct CVEs
+Total findings: ~85 (news + updates)
+Total noted items: ~90
+
+[12:00:30 UTC] === STEP 3: Source checking ===
+
+--- Tier 1 Sources ---
+[12:01:00] bleepingcomputer.com           ✅ OK      — Vercel breach, NIST scoring change, protobuf.js (already reported)
+[12:01:05] thehackernews.com              ✅ OK      — Vercel breach via Context AI, WhatsApp VBS malware
+[12:01:10] cisa.gov/kev                   ❌ 403     — Forbidden (persistent known issue)
+[12:01:12] cisa.gov                       ❌ 403     — Forbidden (persistent known issue)
+[12:01:15] securityweek.com               ✅ OK      — Splunk Enterprise RCE, Tycoon 2FA, ActiveMQ (already reported)
+[12:01:20] github.com/search?q=CVE        ✅ OK      — 858 repos for CVE-2026; ActiveMQ tools, XNU PoC, KiviCare bypass
+[12:01:25] schneier.com                   ✅ OK      — No new articles since Apr 17 (AI/cybersecurity posts)
+[12:01:30] krebsonsecurity.com            ✅ OK      — Most recent Apr 14 (Patch Tuesday). No Apr 19-20 content.
+[12:01:35] rapid7.com/blog                ✅ OK      — Metasploit wrap-up 04/17 (already reported), nginx-ui CVE analysis
+[12:01:40] attackerkb.com                 ❌ 403     — Forbidden (persistent known issue)
+[12:01:45] fortinet.com/blog              ✅ OK      — Nexcorium Mirai variant (already reported)
+[12:01:50] securitylab.github.com         ✅ OK      — Most recent Apr 3 (Signal, NocoDB, Sentry). No new content.
+[12:01:55] seclists.org/fulldisclosure    ✅ OK      — Most recent through Apr 14 (Siemens, Open WebUI). No new content.
+[12:02:00] packetstormsecurity.com        ✅ OK      — Redirects to packetstorm.news. Homepage only, no individual advisories.
+[12:02:05] opencve.io                     ✅ OK      — Marketing/pricing page only. Used app.opencve.io instead.
+
+--- Tier 2 Sources ---
+[12:02:10] nvd.nist.gov                   ✅ OK      — Last scored CVEs from Apr 10 visible. Immutable.js, Vikunja, Chamilo.
+[12:02:15] cve.mitre.org                  ⚠️ REDIR   — Redirects to cve.org
+[12:02:18] cve.org                        ⚠️ JS-ONLY — "doesn't work properly without JavaScript enabled"
+[12:02:20] projectzero.google             ✅ OK      — Most recent: Mar 5 (grammar fuzzing). No Apr content.
+[12:02:25] blog.cloudflare.com/security   ✅ OK      — Apr 14: NHI security, MCP architecture, managed OAuth. No vulns.
+[12:02:30] msrc.microsoft.com/blog        ⚠️ DEGRADED — Redirect to microsoft.com/en-us/msrc/blog returned empty content.
+[12:02:35] hackerone.com/hacktivity        ⚠️ JS-ONLY — "JavaScript is disabled" message
+[12:02:38] bugcrowd.com/disclosures       ❌ 404     — Not Found (persistent known issue)
+[12:02:40] seclists.org/fulldisclosure    ✅ OK      — (duplicate entry in SOURCES.md, same as Tier 1)
+[12:02:45] kb.cert.org/vuls               ✅ OK      — Most recent: VU#536588 (Orthanc DICOM, Apr 9). No new content.
+[12:02:50] avleonov.com                   ✅ OK      — Apr 17: April Patch Tuesday analysis. CVE-2026-32201/33825/33826/33824/33827.
+[12:02:55] github.com/0xMarcio/cve        ✅ OK      — Latest: n8n, telnetd, Ninja Forms, Langflow PoCs. No new critical.
+[12:03:00] dbugs.ptsecurity.com           ✅ OK      — Silex CVE-2026-32956 (9.8), Langflow new CVEs, DjangoBlog CVEs.
+[12:03:05] habr.com/tomhunter             ✅ OK      — Most recent: Mar 2026 (Feb CVE roundup). No Apr content.
+[12:03:10] teletype.in/@cyberok           ✅ OK      — Most recent: Feb 2026. No Apr content.
+[12:03:15] cert.gov.ua                    ⚠️ DEGRADED — Returned "CERT-UA" header only, no advisory content.
+
+--- Additional research ---
+[12:03:20] app.opencve.io                 ✅ OK      — Silex CVE-2026-32956/32955, Libarchive CVE-2026-5121/4424
+[12:03:25] advisory.splunk.com            ✅ OK      — CVE-2026-20163 (RCE 8.0), CVE-2026-20205 (MCP token 7.2), 6 more advisories
+[12:03:30] bleepingcomputer (deep dive)   ✅ OK      — Full Vercel breach article with ShinyHunters, Context.ai, $2M ransom
+
+[12:03:35 UTC] === Source Coverage Summary ===
+Total sources in SOURCES.md: 30 (after dedup of seclists.org)
+Checked: 26
+Unreachable (403/404): 4 (cisa.gov, cisa.gov/kev, attackerkb.com, bugcrowd.com/disclosures)
+Degraded (JS/empty): 4 (cve.org, hackerone.com, cert.gov.ua, msrc.microsoft.com)
+With findings: 8
+
+Validation: checked (26) >= total (30) - unreachable (4) = 26. ✅ PASS
+
+[12:04:00 UTC] === STEP 4: Dedup decisions ===
+- Vercel breach via Context AI          → NEW (not in dedup index)
+- Splunk Enterprise CVE-2026-20163      → NEW (not in dedup index)
+- Splunk MCP CVE-2026-20205             → NEW → Noted (requires high privileges)
+- Silex CVE-2026-32956                  → NEW → Noted (niche IoT product)
+- NIST NVD scoring policy               → SKIP (partially in 04-19 noted as "NIST NVD now prioritizing KEV"; expanded to Noted with more detail)
+- Langflow CVE-2026-6596/6599/6600      → NEW → Noted (lower severity than 33017)
+- DjangoBlog CVEs                       → NEW → Noted (niche product)
+- Libarchive CVE-2026-5121              → NEW → Noted (32-bit only)
+- protobuf.js CVE-2026-41242            → SKIP (already in 2026-04-19)
+- Chrome CVE-2026-5281                  → SKIP (already in 2026-04-02)
+- Next.js CVE-2025-55182                → SKIP (already in 2026-03-22, updated 2026-04-05)
+- FortiClientEMS CVE-2026-35616         → SKIP (already in 2026-04-05/06)
+- ActiveMQ CVE-2026-34197               → SKIP (already in 2026-04-17)
+- nginx-ui CVE-2026-33032               → SKIP (already in 2026-04-17)
+- Cursor AI prompt injection            → SKIP (already in 2026-04-18)
+- Grinex exchange hack                  → SKIP (out of scope - crypto exchange)
+- Apple account phishing                → SKIP (client-side phishing)
+- WhatsApp VBS malware                  → SKIP (client-side malware, no remote infra vector)
+
+[12:04:30 UTC] === STEP 5: Report written ===
+reports/2026/04/20/report.md — 2 findings (1 HIGH, 1 MEDIUM), 6 noted items
+reports/2026/04/20/report.json — machine-readable
+
+[12:04:45 UTC] === STEP 6: debug.log written ===
+
+[12:05:00 UTC] === STEP 7: Validation ===
+$ python3 scripts/validate_report.py reports/2026/04/20/report.json
+✅ reports/2026/04/20/report.json — valid
+
+[12:05:05 UTC] === STEP 8: git commit & push ===
+(proceeding)
+
+============================================================
+END DEBUG LOG
+============================================================
