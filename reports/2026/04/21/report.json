@@ -1,0 +1,129 @@
+{
+  "date": "2026-04-21",
+  "findings": [
+    {
+      "type": "news",
+      "title": "CVE-2026-5760 — SGLang LLM Serving Framework RCE via Malicious GGUF Chat Template Injection (CVSS 9.8)",
+      "threat_score": 7,
+      "cve": "CVE-2026-5760",
+      "cvss": 9.8,
+      "affected_technology": "SGLang (open-source LLM serving framework)",
+      "summary": "SGLang's reranking endpoint renders unsandboxed Jinja2 chat templates from GGUF model files, allowing attackers who publish malicious models to achieve arbitrary Python code execution on the server with no patch available.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-04-21"
+    },
+    {
+      "type": "news",
+      "title": "MCP STDIO Transport Command Injection — OX Security Identifies Systemic RCE Across Major AI Frameworks (10 CVEs)",
+      "threat_score": 7,
+      "cve": "Multiple",
+      "cvss": 9.8,
+      "affected_technology": "Anthropic MCP SDK (Python, TypeScript, Java, Rust), LiteLLM, LangChain, LangFlow, Flowise",
+      "summary": "OX Security research reveals Anthropic MCP's STDIO transport enables arbitrary OS command injection across all four SDK implementations, with 10 CVEs in downstream AI frameworks affecting 7,000+ servers and 150M+ downloads.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-04-21"
+    },
+    {
+      "type": "update",
+      "title": "Vercel Breach Update — ShinyHunters Claims Data Sale, Unencrypted Environment Variables Confirmed",
+      "threat_score": 8,
+      "previous_threat_score": 7,
+      "cve": "Not yet assigned",
+      "cvss": null,
+      "affected_technology": "Vercel (cloud development platform)",
+      "summary": "Vercel breach escalates as ShinyHunters claims data sale with $2M ransom demand, root cause confirmed as compromised Context.ai OAuth app, and CEO acknowledges environment variables were stored unencrypted.",
+      "first_seen_at": "2026-04-20"
+    },
+    {
+      "type": "news",
+      "title": "CVE-2025-7444 — LoginPress Pro WordPress Authentication Bypass (CVSS 9.8)",
+      "threat_score": 6,
+      "cve": "CVE-2025-7444",
+      "cvss": 9.8,
+      "affected_technology": "LoginPress Pro (WordPress plugin)",
+      "summary": "Critical authentication bypass in the LoginPress Pro WordPress plugin allows unauthenticated attackers to log in as any existing user including administrators.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-04-21"
+    },
+    {
+      "type": "news",
+      "title": "CVE-2026-0740 — Ninja Forms WordPress Unauthenticated Arbitrary File Upload (PoC Public)",
+      "threat_score": 6,
+      "cve": "CVE-2026-0740",
+      "cvss": null,
+      "affected_technology": "Ninja Forms WordPress Plugin (versions <= 3.3.26)",
+      "summary": "Unauthenticated arbitrary file upload in the popular Ninja Forms WordPress plugin with a public PoC exploit gaining traction on GitHub, enabling remote code execution on affected sites.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-04-21"
+    },
+    {
+      "type": "news",
+      "title": "CVE-2026-32135 — NanoMQ MQTT Broker Remote Heap Buffer Overflow (CVSS 8.7)",
+      "threat_score": 5,
+      "cve": "CVE-2026-32135",
+      "cvss": 8.7,
+      "affected_technology": "NanoMQ MQTT Broker (before v0.24.11)",
+      "summary": "Off-by-one memory allocation error in NanoMQ's REST API query parameter parsing enables remote unauthenticated heap buffer overflow via crafted HTTP requests.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-04-21"
+    }
+  ],
+  "noted": [
+    {
+      "cve": "CVE-2026-39861",
+      "product": "Claude Code (Anthropic)",
+      "summary": "Sandbox escape via symlink creation allowing writes outside workspace (CVSS 7.7); patched in v2.1.64."
+    },
+    {
+      "cve": "CVE-2026-40497",
+      "product": "FreeScout Help Desk",
+      "summary": "CSS injection in mailbox signature field enables CSRF token exfiltration and agent-to-admin privilege escalation (CVSS 8.1); fixed in v1.8.213."
+    },
+    {
+      "cve": "CVE-2025-7696, CVE-2025-7697",
+      "product": "WordPress CF7 Pipedrive/Google Sheets Integrations",
+      "summary": "PHP Object Injection via untrusted input deserialization (CVSS 9.8) potentially leading to RCE; limited deployment of these specific integration plugins."
+    },
+    {
+      "cve": "CVE-2026-39377, CVE-2026-39378",
+      "product": "Jupyter nbconvert",
+      "summary": "Unsanitized attachment filenames and image references enable arbitrary file reads/writes outside intended directories (CVSS 6.5); fixed in v7.17.1."
+    },
+    {
+      "cve": "CVE-2026-28684",
+      "product": "python-dotenv",
+      "summary": "Symlink following during .env file rewriting permits local file overwrite (CVSS 6.6); fixed in v1.2.2, local-only vector."
+    },
+    {
+      "cve": "N/A",
+      "product": "Serial-to-IP converters (Lantronix, Silex)",
+      "summary": "Forescout discovered 20 new vulnerabilities in serial-to-IP devices used in OT and healthcare; theoretical attack scenarios only, no active exploitation."
+    },
+    {
+      "cve": "N/A",
+      "product": "Apple account notifications",
+      "summary": "Threat actors inject phishing messages into Apple ID name fields to trigger legitimate notifications passing SPF/DKIM/DMARC; social engineering technique, active in the wild."
+    }
+  ],
+  "source_coverage": {
+    "total": 29,
+    "checked": 21,
+    "with_findings": 9,
+    "unreachable": [
+      "cisa.gov/known-exploited-vulnerabilities-catalog",
+      "cisa.gov",
+      "attackerkb.com",
+      "hackerone.com/hacktivity",
+      "cve.org",
+      "bugcrowd.com/disclosures",
+      "cve.mitre.org",
+      "cert.gov.ua"
+    ],
+    "degraded": [
+      "packetstormsecurity.com",
+      "nvd.nist.gov",
+      "msrc.microsoft.com/blog"
+    ]
+  },
+  "full_report": "reports/2026/04/21/report.md"
+}

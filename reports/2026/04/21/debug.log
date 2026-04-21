@@ -1,0 +1,109 @@
+============================================================
+WATCHTOWER DEBUG LOG — 2026-04-21
+============================================================
+
+[08:00:00 UTC] === STEP 1: Repository sync ===
+  git pull → Already up to date.
+
+[08:00:05 UTC] === STEP 2: Dedup index build ===
+  Read 19 report.json files from 2026-03-22 to 2026-04-20
+  Total findings indexed: ~95 findings + ~110 noted items
+  Key recent CVEs tracked: CVE-2026-41242 (protobuf.js, Apr 19), CVE-2026-20163 (Splunk, Apr 20),
+    Vercel breach (Apr 20), CVE-2026-33032 (nginx-ui MCP, Apr 17), CVE-2026-33825 (Defender, Apr 17-18)
+
+[08:00:30 UTC] === STEP 3: Source checking (29 total) ===
+
+--- TIER 1 SOURCES ---
+  [✅] bleepingcomputer.com          — 4 articles found (protobuf.js, Windows Server OOB, Vercel breach, Apple phishing)
+  [✅] thehackernews.com             — 3 articles found (SGLang CVE-2026-5760, MCP vuln, Nexcorium)
+  [❌] cisa.gov/kev                  — 403 Forbidden (persistent, known issue)
+  [❌] cisa.gov                      — 403 Forbidden (persistent, known issue)
+  [✅] securityweek.com              — 5 articles found (serial-to-IP, ActiveMQ, TP-Link, Chrome, Axios)
+  [✅] github.com/search?q=CVE       — 8 repos found (XNU UAF, KiviCare, npm tar, RegPwn, Vertex AI, Frigate, Chrome Blink, Notepad)
+  [✅] schneier.com                  — No new findings (latest: Apr 20 Satoshi, Apr 17 Mythos)
+  [✅] krebsonsecurity.com           — No new findings (latest: Apr 14 Patch Tuesday)
+  [✅] rapid7.com/blog               — Metasploit 04/17 wrap-up (already covered), nginx-ui (already covered)
+  [❌] attackerkb.com                — 403 Forbidden (persistent, known issue)
+  [✅] fortinet.com/blog             — Nexcorium article (Apr 17, already noted Apr 19)
+  [✅] securitylab.github.com        — No new findings (latest: Apr 3)
+  [✅] seclists.org/fulldisclosure   — No new findings (latest: Apr 14)
+  [⚠️] packetstormsecurity.com      — DEGRADED: ToS page only, could not retrieve actual advisories
+  [✅] app.opencve.io                — 6 CVEs found (LoginPress Pro, CF7 integrations, WordPress plugins)
+
+--- TIER 2 SOURCES ---
+  [⚠️] nvd.nist.gov                 — DEGRADED: Navigation only, no actual CVE data rendered
+  [❌] cve.mitre.org                 — Redirects to cve.org (JS required)
+  [❌] cve.org                       — JS required, empty content
+  [✅] projectzero.google            — No new findings (latest: Mar 5)
+  [✅] blog.cloudflare.com/security  — No new findings (latest: Apr 14)
+  [⚠️] msrc.microsoft.com/blog      — DEGRADED: Redirect to microsoft.com/en-us/msrc/blog, empty content
+  [❌] hackerone.com/hacktivity       — JS required (persistent, known issue)
+  [❌] bugcrowd.com/disclosures      — 404 (persistent, known issue)
+  [NOTE] seclists.org/fulldisclosure — Duplicate of Tier 1 entry, already checked
+  [✅] kb.cert.org/vuls              — 1 finding: VU#915947 SGLang RCE (Apr 20)
+  [✅] avleonov.com                  — No new findings (latest: Apr 17 Patch Tuesday analysis)
+  [✅] github.com/0xMarcio/cve       — 3 entries: n8n (258 stars), telnetd, Ninja Forms (17 stars)
+  [✅] dbugs.ptsecurity.com          — 10 findings (SGLang, NanoMQ, FreeScout, Claude Code, OpenEXR, Jupyter, python-dotenv, etc.)
+  [✅] habr.com/tomhunter            — No new findings (latest: Mar 6)
+  [✅] teletype.in/@cyberok          — No new findings (latest: Feb 4)
+  [❌] cert.gov.ua                   — Empty content returned
+
+[08:05:00 UTC] === Source coverage summary ===
+  Total: 29 unique sources (seclists counted once despite Tier 1+2 listing)
+  Checked: 21
+  Unreachable: 8 (cisa.gov/kev, cisa.gov, attackerkb, hackerone, cve.org, bugcrowd, cve.mitre.org, cert.gov.ua)
+  Degraded: 3 (packetstorm, nvd.nist.gov, msrc.microsoft.com)
+  With findings: 9
+
+[08:05:30 UTC] === STEP 4: Dedup decisions ===
+
+  NEW — CVE-2026-5760 (SGLang RCE CVSS 9.8)
+    Reason: Not in any previous report. CERT/CC VU#915947 published Apr 20.
+
+  NEW — MCP STDIO Transport Command Injection (10 CVEs, OX Security)
+    Reason: Previously only in "noted" on Apr 17 as "Anthropic Model Context Protocol (MCP) — SecurityWeek reports on a by-design flaw." OX Security published comprehensive research on Apr 20 via THN with 10 specific CVEs, exploitation details, and scope (7K servers, 150M downloads). Material promotion from noted to full finding.
+
+  UPDATE — Vercel Breach (ShinyHunters, env vars unencrypted)
+    Reason: Previously reported Apr 20 score 7. Material changes: ShinyHunters identified as TA, $2M ransom demand, Context.ai OAuth confirmed as root cause, CEO confirms env vars unencrypted. Score 7→8.
+
+  NEW — CVE-2025-7444 (LoginPress Pro WP Auth Bypass CVSS 9.8)
+    Reason: Not in any previous report. Appeared on OpenCVE Apr 21.
+
+  NEW — CVE-2026-0740 (Ninja Forms Unauth File Upload)
+    Reason: Not in any previous report. PoC on GitHub (17 stars) found via 0xMarcio/cve.
+
+  NEW — CVE-2026-32135 (NanoMQ Heap Overflow CVSS 8.7)
+    Reason: Not in any previous report. Published on dbugs.ptsecurity.com.
+
+  SKIP — CVE-2026-41242 (protobuf.js RCE)
+    Reason: Already reported Apr 19 as full finding.
+
+  SKIP — Microsoft Defender zero-days (RedSun, UnDefend)
+    Reason: Already reported Apr 18 as update.
+
+  SKIP — Nexcorium Mirai variant (CVE-2024-3721)
+    Reason: Already noted Apr 19.
+
+  SKIP — Windows Server OOB patches
+    Reason: Stability-related, not security vulnerabilities. Out of scope.
+
+  SKIP — Axios npm supply chain
+    Reason: Already reported Apr 1 as full finding.
+
+  SKIP — Apache ActiveMQ CVE-2026-34197
+    Reason: Already reported Apr 17 as full finding.
+
+[08:06:00 UTC] === STEP 5: Report writing ===
+  Wrote reports/2026/04/21/report.md (6 findings: 5 news + 1 update, 7 noted)
+  Wrote reports/2026/04/21/report.json
+
+[08:06:30 UTC] === STEP 7: Validation ===
+  python3 scripts/validate_report.py reports/2026/04/21/report.json
+  Result: ✅ reports/2026/04/21/report.json — valid
+
+[08:07:00 UTC] === STEP 8: Commit and push ===
+  (pending)
+
+============================================================
+END DEBUG LOG
+============================================================
