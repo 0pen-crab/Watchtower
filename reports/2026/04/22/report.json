@@ -1,0 +1,111 @@
+{
+  "date": "2026-04-22",
+  "findings": [
+    {
+      "type": "news",
+      "title": "CISA Adds 8 Exploited Flaws to KEV — Quest KACE CVSS 10.0, PaperCut, TeamCity, Cisco SD-WAN",
+      "threat_score": 8,
+      "cve": "CVE-2025-32975, CVE-2023-27351, CVE-2024-27199, CVE-2026-20133",
+      "cvss": 10.0,
+      "affected_technology": "Quest KACE Systems Management Appliance, PaperCut NG/MF, JetBrains TeamCity, Cisco Catalyst SD-WAN Manager, Kentico CMS, Zimbra",
+      "summary": "CISA added 8 actively exploited vulnerabilities to the KEV catalog with federal patch deadlines, headlined by Quest KACE Systems Management Appliance (CVSS 10.0) and a new Cisco SD-WAN Manager info disclosure flaw distinct from previously reported CVE-2026-20127.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-04-22"
+    },
+    {
+      "type": "news",
+      "title": "Progress MOVEit WAF and LoadMaster — RCE, OS Command Injection, and WAF Detection Bypass",
+      "threat_score": 6,
+      "cve": "Not yet assigned",
+      "cvss": null,
+      "affected_technology": "Progress MOVEit WAF, Progress LoadMaster",
+      "summary": "Progress Software patched critical vulnerabilities in MOVEit WAF and LoadMaster enabling remote code execution, OS command injection, and WAF detection bypass in widely deployed enterprise infrastructure.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-04-22"
+    },
+    {
+      "type": "news",
+      "title": "Firefox 150 / ESR 140.10 Patches 34+ Vulnerabilities Including Critical DOM Security Bypass (CVE-2026-6771, CVSS 9.8)",
+      "threat_score": 6,
+      "cve": "CVE-2026-6771, CVE-2026-6761, CVE-2026-6746, CVE-2026-6747, CVE-2026-6754",
+      "cvss": 9.8,
+      "affected_technology": "Mozilla Firefox, Mozilla Thunderbird",
+      "summary": "Mozilla released Firefox 150 and ESR 140.10 fixing 34+ vulnerabilities including a critical CVSS 9.8 DOM security mitigation bypass and nine high-severity use-after-free and memory corruption flaws.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-04-22"
+    },
+    {
+      "type": "update",
+      "title": "Apache ActiveMQ CVE-2026-34197 — 6,400 Exposed Servers Quantified, Exploitation Scope Confirmed",
+      "threat_score": 8,
+      "previous_threat_score": 8,
+      "cve": "CVE-2026-34197",
+      "cvss": 8.6,
+      "affected_technology": "Apache ActiveMQ Classic",
+      "summary": "Shadowserver confirmed 6,400+ exposed ActiveMQ servers across Asia, North America, and Europe with active exploitation ongoing, and Horizon3 published detection guidance for the 13-year-old code injection flaw.",
+      "first_seen_at": "2026-04-17"
+    },
+    {
+      "type": "news",
+      "title": "Terrarium CVE-2026-5752 — AI Code Sandbox Escape to Root via JavaScript Prototype Chain (Vendor Unresponsive)",
+      "threat_score": 5,
+      "cve": "CVE-2026-5752",
+      "cvss": null,
+      "affected_technology": "Terrarium (Cohere AI sandbox platform)",
+      "summary": "CERT/CC disclosed a sandbox escape in Cohere's Terrarium platform allowing arbitrary command execution as root via JavaScript prototype chain traversal in the Pyodide WebAssembly environment, with vendor coordination failed.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-04-22"
+    }
+  ],
+  "noted": [
+    {
+      "cve": "N/A",
+      "product": "Lotus Data Wiper (Venezuela energy sector)",
+      "summary": "Previously undocumented wiper malware targeting Venezuelan energy and utility organizations; Kaspersky analysis published April 21; geopolitically motivated, no general enterprise remote vector."
+    },
+    {
+      "cve": "CVE-2026-5754",
+      "product": "Radware Alteon",
+      "summary": "Reflected XSS in login ReturnTo parameter on Alteon load balancers; patch expected in v34.5.7.0 but unclear if shipped."
+    },
+    {
+      "cve": "CVE-2026-40520",
+      "product": "FreePBX API Module",
+      "summary": "GraphQL mutation input fields passed to shell exec() enabling OS command injection (CVSS 7.2); requires authentication."
+    },
+    {
+      "cve": "CVE-2026-40938",
+      "product": "Tekton Pipeline",
+      "summary": "Git revision parameter argument injection enables arbitrary binary execution in CI/CD pipelines using Tekton trusted resources (CVSS 7.5)."
+    },
+    {
+      "cve": "N/A",
+      "product": "Perforce P4 Server",
+      "summary": "Over 1,500 unsecured Perforce instances discovered allowing file reads from major organizations; misconfiguration issue, not a vulnerability."
+    },
+    {
+      "cve": "N/A",
+      "product": "The Gentlemen RaaS / SystemBC",
+      "summary": "1,570+ victims tracked via compromised C2 panel; RC4-encrypted SOCKS5 tunneling with 320+ claimed victims since July 2025; ransomware operations intelligence."
+    }
+  ],
+  "source_coverage": {
+    "total": 31,
+    "checked": 21,
+    "with_findings": 8,
+    "unreachable": [
+      "cisa.gov/known-exploited-vulnerabilities-catalog",
+      "cisa.gov",
+      "attackerkb.com",
+      "hackerone.com/hacktivity",
+      "cve.org",
+      "bugcrowd.com/disclosures",
+      "cve.mitre.org",
+      "cert.gov.ua",
+      "packetstormsecurity.com",
+      "msrc.microsoft.com/blog"
+    ],
+    "degraded": []
+  },
+  "full_report": "reports/2026/04/22/report.md"
+}

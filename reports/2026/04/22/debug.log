@@ -1,0 +1,91 @@
+================================================================================
+WATCHTOWER DEBUG LOG — 2026-04-22
+================================================================================
+
+[06:00:00 UTC] === STEP 1: GIT PULL ===
+git pull: Already up to date.
+
+[06:00:01 UTC] === STEP 2: DEDUP INDEX ===
+Read report.json from 18 dates (March 23 - April 21, 2026).
+Total findings indexed: ~85 findings + ~80 noted items.
+
+Key dedup entries relevant to today:
+- CVE-2026-20127 (Cisco SD-WAN): March 23 — SKIP (CVE-2026-20133 is different)
+- CVE-2026-34197 (Apache ActiveMQ): April 17 — UPDATE (6,400 servers quantified)
+- CVE-2026-5760 (SGLang): April 21 — SKIP
+- MCP STDIO injection: April 21 — SKIP
+- Vercel breach: April 20-21 — SKIP
+- Lantronix/Silex BRIDGE:BREAK: April 21 noted — SKIP
+
+[06:00:05 UTC] === STEP 3: SOURCE CHECKING ===
+
+--- Tier 1 Sources ---
+[06:00:10] bleepingcomputer.com         ✅ (2s) — Findings: SD-WAN KEV, Lotus wiper, ActiveMQ 6,400, French govt breach
+[06:00:12] thehackernews.com            ✅ (2s) — Findings: CISA KEV 8, BRIDGE:BREAK, SGLang, Antigravity, SystemBC, NGate
+[06:00:14] cisa.gov/kev                 ❌ 403 Forbidden — Known issue
+[06:00:14] cisa.gov                     ❌ 403 Forbidden — Known issue
+[06:00:16] securityweek.com             ✅ (2s) — Findings: MOVEit WAF/LoadMaster, Perforce P4, CISA KEV, Lantronix
+[06:00:18] github.com/search?q=CVE      ✅ (2s) — Findings: CVE-2026-6355, CVE-2026-25604, CVE-2026-2991 PoCs (low-star)
+[06:00:20] schneier.com                 ✅ (2s) — No vulnerability findings (Mexican surveillance article only)
+[06:00:22] krebsonsecurity.com          ✅ (2s) — Findings: Scattered Spider plea, April Patch Tuesday recap
+[06:00:24] rapid7.com/blog              ✅ (2s) — No new findings (latest was nginx-ui April 16)
+[06:00:26] attackerkb.com               ❌ 403 Forbidden — Known issue
+[06:00:28] fortinet.com/blog            ✅ (2s) — No new findings (latest: Nexcorium Mirai April 17)
+[06:00:30] securitylab.github.com       ✅ (2s) — No new findings (latest: April 3 advisories)
+[06:00:32] seclists.org/fulldisclosure  ✅ (2s) — No new findings since April 14 (Siemens SICAM)
+[06:00:34] packetstormsecurity.com      ❌ Redirect to packetstorm.news, content inaccessible
+[06:00:36] opencve.io                   ⚠️ (2s) — Marketing page only, no CVE data without app login
+
+--- Tier 2 Sources ---
+[06:00:38] nvd.nist.gov                 ⚠️ (2s) — Homepage only, search results not accessible
+[06:00:40] cve.mitre.org                ❌ Redirects to cve.org (JS-only)
+[06:00:42] cve.org                      ❌ JS-only, no content
+[06:00:44] projectzero.google           ✅ (2s) — No new posts (latest: March 5)
+[06:00:46] blog.cloudflare.com/security ✅ (2s) — No new posts (latest: April 14 MCP/OAuth)
+[06:00:48] msrc.microsoft.com/blog      ❌ Redirect to microsoft.com, content JS-gated
+[06:00:50] hackerone.com/hacktivity      ❌ JS-only
+[06:00:52] bugcrowd.com/disclosures     ❌ 404
+[06:00:54] seclists.org/fulldisclosure  ✅ (duplicate, same as Tier 1)
+[06:00:56] kb.cert.org/vuls             ✅ (2s) — Findings: VU#414811 Terrarium, VU#890999 Radware Alteon, VU#915947 SGLang
+[06:00:58] avleonov.com                 ✅ (2s) — Findings: April Patch Tuesday analysis (CVE-2026-33824 IKE wormable)
+[06:01:00] github.com/0xMarcio/cve      ✅ (2s) — Findings: CVE-2026-21858 n8n PoC (258 stars), CVE-2026-0740 Ninja Forms PoC
+[06:01:02] dbugs.ptsecurity.com         ✅ (2s) — Findings: Firefox CVE-2026-6771 (9.8), CVE-2026-6761 (8.8), FreePBX, Tekton
+[06:01:04] habr.com/tomhunter           ✅ (2s) — No new content (latest: March 2026)
+[06:01:06] teletype.in/@cyberok         ✅ (2s) — No new content (latest: February 2026)
+[06:01:08] cert.gov.ua                  ❌ Unreachable
+
+Source check complete.
+Total: 31 | Checked: 21 | Unreachable: 10 | Degraded: 0 | With findings: 8
+
+[06:01:10 UTC] === STEP 4: DEDUP DECISIONS ===
+
+NEW: CISA KEV 8 additions (CVE-2025-32975 Quest KACE CVSS 10.0, CVE-2026-20133 Cisco SD-WAN, PaperCut, TeamCity, Kentico, Zimbra) — not previously reported
+NEW: Progress MOVEit WAF + LoadMaster RCE/command injection — not previously reported
+NEW: Firefox 150 / ESR 140.10 security release (CVE-2026-6771 CVSS 9.8) — not previously reported
+UPDATE: Apache ActiveMQ CVE-2026-34197 — previously reported April 17 (score 8). Material change: 6,400 exposed servers quantified by Shadowserver, detection guidance published by Horizon3.
+NEW: Terrarium CVE-2026-5752 AI sandbox escape — not previously reported
+SKIP: SGLang CVE-2026-5760 — already in 2026-04-21
+SKIP: MCP STDIO command injection — already in 2026-04-21
+SKIP: Vercel breach / ShinyHunters — already in 2026-04-20, updated 2026-04-21
+SKIP: Lantronix/Silex BRIDGE:BREAK — already noted 2026-04-21
+SKIP: Cisco SD-WAN CVE-2026-20127 — already in 2026-03-23
+SKIP: Google Antigravity IDE — patched February 2026, old news
+SKIP: n8n CVE-2026-21858 PoC — already in 2026-03-28
+SKIP: Ninja Forms CVE-2026-0740 — already in 2026-04-21
+
+[06:01:15 UTC] === STEP 5: REPORT WRITING ===
+Wrote reports/2026/04/22/report.md (5 findings: 3 news, 1 update, 1 news; 6 noted items)
+Wrote reports/2026/04/22/report.json
+
+[06:01:20 UTC] === STEP 6: DEBUG LOG ===
+Writing this file.
+
+[06:01:25 UTC] === STEP 7: VALIDATION ===
+source_coverage: total=31, checked=21, unreachable=10, degraded=0
+Constraint check: checked (21) >= total (31) - unreachable (10) = 21 ✓
+
+Running validator:
+$ python3 scripts/validate_report.py reports/2026/04/22/report.json
+✅ reports/2026/04/22/report.json — valid
+
+[06:01:30 UTC] === COMPLETE ===
