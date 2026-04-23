@@ -1,0 +1,135 @@
+{
+  "date": "2026-04-23",
+  "findings": [
+    {
+      "type": "news",
+      "title": "CanisterSprawl — Self-Propagating npm Supply Chain Worm Steals Developer Tokens",
+      "threat_score": 8,
+      "cve": "Not yet assigned",
+      "cvss": null,
+      "affected_technology": "npm ecosystem (multiple packages including @automagik/genie, pgserve, @fairwords)",
+      "summary": "A self-replicating worm spreads through npm by stealing developer publish tokens via postinstall hooks, exfiltrating credentials through ICP canisters for takedown resilience.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-04-21"
+    },
+    {
+      "type": "news",
+      "title": "CVE-2026-40372 — Microsoft ASP.NET Core Emergency Privilege Escalation (CVSS 9.1)",
+      "threat_score": 7,
+      "cve": "CVE-2026-40372",
+      "cvss": 9.1,
+      "affected_technology": "Microsoft ASP.NET Core (Microsoft.AspNetCore.DataProtection 10.0.6)",
+      "summary": "Out-of-band emergency patch for a cryptographic signature verification flaw in ASP.NET Core Data Protection that allows remote attackers to gain SYSTEM privileges.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-04-22"
+    },
+    {
+      "type": "news",
+      "title": "Malicious KICS Docker Images — Checkmarx Supply Chain Compromise",
+      "threat_score": 7,
+      "cve": "Not yet assigned",
+      "cvss": null,
+      "affected_technology": "Checkmarx KICS (Infrastructure-as-Code Scanner)",
+      "summary": "Docker Hub KICS repository compromised with modified binaries that exfiltrate scan reports containing credentials from infrastructure-as-code files.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-04-22"
+    },
+    {
+      "type": "news",
+      "title": "CVE-2026-3844 — Breeze WordPress Cache Plugin Unauthenticated RCE (CVSS 9.8)",
+      "threat_score": 7,
+      "cve": "CVE-2026-3844",
+      "cvss": 9.8,
+      "affected_technology": "Cloudways Breeze Cache Plugin (WordPress)",
+      "summary": "Unrestricted file upload in the Gravatar caching feature of the Breeze WordPress plugin allows unauthenticated remote code execution when the feature is enabled.",
+      "discovery_latency": "early",
+      "first_seen_at": "2026-04-22"
+    },
+    {
+      "type": "news",
+      "title": "BRIDGE:BREAK — 22 Vulnerabilities in Lantronix and Silex Serial-to-IP Converters",
+      "threat_score": 6,
+      "cve": "Multiple",
+      "cvss": null,
+      "affected_technology": "Lantronix EDS3000PS, Silex serial-to-Ethernet converters",
+      "summary": "Forescout disclosed 22 vulnerabilities in serial-to-IP converters enabling full device hijacking across approximately 20,000 internet-exposed industrial control system bridges.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-04-21"
+    },
+    {
+      "type": "news",
+      "title": "CVE-2025-29635 — D-Link DIR-823X Mirai Botnet Exploitation",
+      "threat_score": 6,
+      "cve": "CVE-2025-29635",
+      "cvss": null,
+      "affected_technology": "D-Link DIR-823X routers (firmware 240126, 24082)",
+      "summary": "Active Mirai-based botnet campaign exploiting a command injection flaw in end-of-life D-Link routers with no patch available.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-04-22"
+    }
+  ],
+  "noted": [
+    {
+      "cve": "N/A",
+      "product": "Kyber Ransomware",
+      "summary": "New ransomware operation using Kyber1024 post-quantum key encapsulation on Windows and ChaCha8/RSA-4096 on ESXi; compromised a US defense contractor."
+    },
+    {
+      "cve": "CVE-2026-41229, CVE-2026-41231, CVE-2026-41228, CVE-2026-41230",
+      "product": "Froxlor Server Administration",
+      "summary": "Four critical flaws (CVSS 9.1-9.9) including PHP code injection and symlink attacks in server management panel."
+    },
+    {
+      "cve": "CVE-2026-41679",
+      "product": "Paperclip AI Server",
+      "summary": "Unauthenticated RCE (CVSS 10.0) and privilege escalation chain in AI platform with low deployment footprint."
+    },
+    {
+      "cve": "N/A",
+      "product": "Ollama",
+      "summary": "VU#518910: Remote memory leak in Ollama GGUF quantization handling could expose model data or host memory."
+    },
+    {
+      "cve": "N/A",
+      "product": "GoGra Linux Backdoor (Harvester APT)",
+      "summary": "Linux backdoor variant using Microsoft Graph API and Outlook C2 targeting South Asian entities in espionage campaign."
+    },
+    {
+      "cve": "CVE-2026-34415",
+      "product": "Xerte Online Toolkits",
+      "summary": "Unauthenticated RCE (CVSS 9.8) via .php4 extension bypass in elFinder component; education sector deployment."
+    },
+    {
+      "cve": "CVE-2026-41196",
+      "product": "Luanti (Minetest fork)",
+      "summary": "Lua sandbox escape enabling filesystem access (CVSS 9.0) in open-source game engine."
+    },
+    {
+      "cve": "N/A",
+      "product": "Lotus Wiper",
+      "summary": "Novel data destruction malware targeting Venezuelan energy and utilities sector with systematic file and recovery mechanism destruction."
+    }
+  ],
+  "source_coverage": {
+    "total": 31,
+    "checked": 24,
+    "with_findings": 7,
+    "unreachable": [
+      "cisa.gov",
+      "cisa.gov/known-exploited-vulnerabilities-catalog",
+      "attackerkb.com",
+      "bugcrowd.com/disclosures",
+      "hackerone.com/hacktivity",
+      "cve.org",
+      "cve.mitre.org"
+    ],
+    "degraded": [
+      "packetstormsecurity.com",
+      "opencve.io",
+      "nvd.nist.gov",
+      "msrc.microsoft.com/blog",
+      "cert.gov.ua"
+    ]
+  },
+  "full_report": "reports/2026/04/23/report.md"
+}

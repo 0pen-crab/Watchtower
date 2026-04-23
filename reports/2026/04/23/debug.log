@@ -1,0 +1,98 @@
+Watchtower Debug Log — 2026-04-23
+===================================
+
+[06:00:00 UTC] Starting daily workflow
+[06:00:01 UTC] Step 1: git pull — Already up to date
+[06:00:02 UTC] Step 2: Dedup index built from 19 reports (2026-03-24 to 2026-04-22)
+  - Total CVEs indexed: ~180 findings + ~120 noted items
+
+[06:00:10 UTC] Step 3: Source checking begins (31 unique sources)
+
+--- TIER 1 SOURCES ---
+[06:00:15 UTC] bleepingcomputer.com            ✅ checked (findings: 8 articles Apr 22, incl. ASP.NET, D-Link, npm worm, SharePoint)
+[06:00:18 UTC] thehackernews.com               ✅ checked (findings: 11 articles Apr 21-22, incl. KICS, CanisterSprawl, BRIDGE:BREAK, ASP.NET)
+[06:00:21 UTC] cisa.gov/kev                    ❌ unreachable (403 Forbidden — persistent)
+[06:00:22 UTC] cisa.gov                        ❌ unreachable (403 Forbidden — persistent)
+[06:00:25 UTC] securityweek.com                ✅ checked (findings: 9 articles Apr 21-22, incl. Oracle CPU, D-Link, Google Antigravity)
+[06:00:28 UTC] github.com/search?q=CVE         ✅ checked (findings: 10 recent repos with PoCs)
+[06:00:31 UTC] schneier.com                    ✅ checked (empty — ICE Graphite spyware article, no in-scope vulns)
+[06:00:34 UTC] krebsonsecurity.com             ✅ checked (empty — most recent is Apr 21 Scattered Spider plea)
+[06:00:37 UTC] rapid7.com                      ✅ checked (findings: Metasploit wrap-up, nginx-ui MCP, FortiGate exploitation)
+[06:00:40 UTC] attackerkb.com                  ❌ unreachable (403 Forbidden — persistent)
+[06:00:43 UTC] fortinet.com/blog/threat-research ✅ checked (empty for Apr 22-23, latest is Apr 17 Nexcorium)
+[06:00:46 UTC] securitylab.github.com          ✅ checked (findings: Signal GHSL-2026-102, NocoDB XSS — already covered or out of scope)
+[06:00:49 UTC] seclists.org/fulldisclosure     ✅ checked (empty for Apr 21-23, latest is Apr 14)
+[06:00:52 UTC] packetstormsecurity.com         ⚠️ degraded (redirects to packetstorm.news, returned ToS page)
+[06:00:55 UTC] opencve.io                      ⚠️ degraded (marketing/pricing page only, no vuln data)
+
+--- TIER 2 SOURCES ---
+[06:01:00 UTC] nvd.nist.gov                    ⚠️ degraded (navigation shell only, no vuln data returned)
+[06:01:03 UTC] cve.mitre.org                   ❌ unreachable (redirects to cve.org → JS required)
+[06:01:05 UTC] cve.org                         ❌ unreachable (JavaScript required)
+[06:01:08 UTC] googleprojectzero.blogspot.com  ✅ checked via redirect to projectzero.google (empty — latest is Mar 5)
+[06:01:11 UTC] blog.cloudflare.com/tag/security ✅ checked (empty for Apr 17-23)
+[06:01:14 UTC] msrc.microsoft.com/blog         ⚠️ degraded (redirects to microsoft.com/en-us/msrc/blog, empty content)
+[06:01:17 UTC] hackerone.com/hacktivity         ❌ unreachable (JavaScript required)
+[06:01:19 UTC] bugcrowd.com/disclosures        ❌ unreachable (404 Not Found — persistent)
+[06:01:22 UTC] kb.cert.org/vuls                ✅ checked (findings: VU#518910 Ollama, VU#890999 Radware, VU#414811 Terrarium, VU#915947 SGLang)
+[06:01:25 UTC] avleonov.com                    ✅ checked (findings: Apr 17 Patch Tuesday analysis — already covered)
+[06:01:28 UTC] github.com/0xMarcio/cve         ✅ checked (findings: 94 CVEs tracked, recent PoCs for n8n, Wazuh — already reported)
+[06:01:31 UTC] dbugs.ptsecurity.com            ✅ checked (findings: Froxlor critical chain, Breeze RCE, Paperclip AI, Xerte RCE, + more)
+[06:01:34 UTC] habr.com/ru/companies/tomhunter ✅ checked (empty — latest is Mar 6)
+[06:01:37 UTC] teletype.in/@cyberok            ✅ checked (empty — latest is Feb 4)
+[06:01:40 UTC] cert.gov.ua                     ⚠️ degraded (empty content returned)
+
+[06:01:45 UTC] Source checking complete.
+  Total: 31 | Checked: 24 | Unreachable: 7 | Degraded: 5 | With findings: 7
+
+[06:02:00 UTC] Step 4: Dedup decisions
+
+--- NEW ---
+[06:02:01 UTC] NEW: CanisterSprawl npm worm (not in any prior report)
+[06:02:02 UTC] NEW: CVE-2026-40372 ASP.NET Core emergency patch (not in any prior report)
+[06:02:03 UTC] NEW: KICS Docker Hub compromise (not in any prior report)
+[06:02:04 UTC] NEW: CVE-2026-3844 Breeze WordPress RCE (not in any prior report)
+[06:02:05 UTC] NEW: BRIDGE:BREAK serial-to-IP converter vulns (not in any prior report)
+[06:02:06 UTC] NEW: CVE-2025-29635 D-Link DIR-823X Mirai exploitation (not in any prior report)
+
+--- SKIP (already reported) ---
+[06:02:10 UTC] SKIP: CVE-2026-5752 Terrarium sandbox escape (already in 2026-04-22)
+[06:02:11 UTC] SKIP: CVE-2026-34197 Apache ActiveMQ exploitation (already in 2026-04-22)
+[06:02:12 UTC] SKIP: CVE-2026-32201 SharePoint spoofing (already in 2026-04-22, 1300 servers is exposure quant, not material change)
+[06:02:13 UTC] SKIP: CVE-2026-20133 Cisco SD-WAN KEV (already in 2026-04-22 as part of CISA 8-CVE batch)
+[06:02:14 UTC] SKIP: CVE-2026-33032 nginx-ui MCP (already in 2026-04-17)
+[06:02:15 UTC] SKIP: CVE-2026-21858 n8n RCE (already in 2026-03-28)
+[06:02:16 UTC] SKIP: CVE-2026-25769 Wazuh RCE (already in 2026-03-24)
+[06:02:17 UTC] SKIP: Signal Android intent redirect (already in 2026-04-05)
+[06:02:18 UTC] SKIP: CVE-2026-28397 NocoDB XSS (already in 2026-04-05 as noted)
+[06:02:19 UTC] SKIP: Apple iOS notification bug (minor privacy fix, not in-scope severity)
+[06:02:20 UTC] SKIP: Oracle April CPU 450 patches (no specific critical CVE identified beyond already-reported)
+[06:02:21 UTC] SKIP: Progress MOVEit WAF / LoadMaster (already in 2026-04-22)
+[06:02:22 UTC] SKIP: FortiGate CVE-2025-59718 (already noted in 2026-04-14)
+
+--- NOTED ---
+[06:02:30 UTC] NOTED: Kyber ransomware (post-quantum encryption, first-of-kind, monitoring)
+[06:02:31 UTC] NOTED: Froxlor 4 critical CVEs (niche deployment)
+[06:02:32 UTC] NOTED: CVE-2026-41679 Paperclip AI Server RCE (low deployment)
+[06:02:33 UTC] NOTED: VU#518910 Ollama GGUF memory leak (AI infra, not RCE)
+[06:02:34 UTC] NOTED: GoGra/Harvester APT backdoor (espionage, not vulnerability)
+[06:02:35 UTC] NOTED: CVE-2026-34415 Xerte Online Toolkits RCE (education niche)
+[06:02:36 UTC] NOTED: CVE-2026-41196 Luanti sandbox escape (gaming niche)
+[06:02:37 UTC] NOTED: Lotus Wiper Venezuela (regional, not internet-facing vuln)
+
+[06:03:00 UTC] Step 5: Writing report.md and report.json to reports/2026/04/23/
+[06:03:30 UTC] Step 6: Writing debug.log
+
+[06:03:45 UTC] Step 7: Validator output
+[06:03:46 UTC] $ python3 scripts/validate_report.py reports/2026/04/23/report.json
+[06:03:46 UTC] ✅ reports/2026/04/23/report.json — valid
+
+[06:04:00 UTC] source_coverage before commit:
+  total: 31
+  checked: 24
+  with_findings: 7
+  unreachable: ["cisa.gov", "cisa.gov/known-exploited-vulnerabilities-catalog", "attackerkb.com", "bugcrowd.com/disclosures", "hackerone.com/hacktivity", "cve.org", "cve.mitre.org"]
+  degraded: ["packetstormsecurity.com", "opencve.io", "nvd.nist.gov", "msrc.microsoft.com/blog", "cert.gov.ua"]
+  Validation: checked (24) >= total (31) - unreachable (7) = 24 ✅
+
+[06:04:10 UTC] Step 8: git add, commit, push
