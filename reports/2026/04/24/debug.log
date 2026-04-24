@@ -1,0 +1,110 @@
+================================================================================
+WATCHTOWER DEBUG LOG — 2026-04-24
+================================================================================
+
+[2026-04-24T03:00:00Z] === STEP 1: Repository sync ===
+git pull: Already up to date.
+
+[2026-04-24T03:01:00Z] === STEP 2: Build dedup index ===
+Read 19 report.json files from 2026-03-26 to 2026-04-23.
+Dedup index built: ~120 CVEs and threat identifiers tracked.
+Key recent items for dedup: CanisterSprawl npm worm (Apr 23), CVE-2026-40372 ASP.NET (Apr 23),
+Checkmarx KICS Docker (Apr 23), CVE-2026-3844 Breeze WP (Apr 23), CISA KEV 8 additions (Apr 22),
+Apache ActiveMQ update (Apr 22), Firefox 150 (Apr 22), CVE-2026-5760 SGLang (Apr 21),
+MCP STDIO injection (Apr 21), Vercel breach update (Apr 21).
+
+[2026-04-24T03:02:00Z] === STEP 3: Source checking ===
+
+--- Tier 1 Sources ---
+[03:02:30Z] bleepingcomputer.com             ✅ OK         ~3s   FINDINGS: Firestarter Cisco, Bitwarden CLI npm, Zimbra XSS ref, ASP.NET ref, Breeze WP ref, Pack2TheRoot, Kyber ransomware ref
+[03:02:31Z] thehackernews.com                ✅ OK         ~3s   FINDINGS: Firestarter Cisco (CVE-2025-20333/20362), CVE-2026-33626 LMDeploy SSRF, Bitwarden CLI, PHP Composer, GopherWhisper APT, UNC6692
+[03:02:32Z] cisa.gov/kev                     ❌ UNREACHABLE ~1s   HTTP 403 Forbidden (consistent with prior runs)
+[03:02:33Z] cisa.gov                         ❌ UNREACHABLE ~1s   HTTP 403 Forbidden (consistent with prior runs)
+[03:02:34Z] securityweek.com                 ✅ OK         ~3s   FINDINGS: CrowdStrike LogScale critical, Tenable Nessus high, MS Defender zero-day ref, Firestarter ref
+[03:02:35Z] github.com/search?q=CVE          ✅ OK         ~4s   FINDINGS: CVE-2026-25895 FUXA PoC (36min old!), CVE-2026-2991 KiviCare, CVE-2026-31802 npm tar, CVE-2026-XNU (OOS), CVE-2026-24291 (OOS local)
+[03:02:36Z] schneier.com                     ✅ OK         ~2s   EMPTY (for scope): FBI Signal forensics (OOS), Bluetooth naval tracker (OOS)
+[03:02:37Z] krebsonsecurity.com              ✅ OK         ~2s   EMPTY: Most recent post Apr 21 (Scattered Spider plea), no new content for Apr 23-24
+[03:03:00Z] rapid7.com                       ✅ OK         ~3s   REFS: FortiGate CVE-2025-59718 incident response, ClickFix Claude installer campaign
+[03:03:01Z] attackerkb.com                   ❌ UNREACHABLE ~1s   HTTP 403 Forbidden
+[03:03:02Z] fortinet.com/blog/threat-research ✅ OK         ~2s   EMPTY: Most recent post Apr 17 (Nexcorium Mirai variant)
+[03:03:03Z] securitylab.github.com           ✅ OK         ~3s   FINDINGS: CVE-2026-33193 Docmost XSS, CVE-2026-39351 Frappe data exposure, CVE-2026-28397/28401 NocoDB XSS
+[03:03:04Z] seclists.org/fulldisclosure      ✅ OK         ~2s   EMPTY: Most recent post Apr 14 (Siemens SICAM)
+[03:03:05Z] packetstormsecurity.com          ⚠️ DEGRADED   ~3s   Redirected to packetstorm.news/; returned ToS page, not file listings
+[03:03:06Z] opencve.io                       ⚠️ DEGRADED   ~2s   Returned marketing/pricing page, not CVE database (requires auth)
+
+--- Tier 2 Sources ---
+[03:04:00Z] nvd.nist.gov                     ⚠️ DEGRADED   ~3s   Returned navigation structure only, no CVE data via WebFetch
+[03:04:01Z] cve.mitre.org                    ❌ UNREACHABLE ~1s   301 redirect to cve.org → JS-only
+[03:04:02Z] cve.org                          ❌ UNREACHABLE ~1s   JS-only, no usable content
+[03:04:03Z] googleprojectzero.blogspot.com   ✅ OK         ~2s   EMPTY: Redirected to projectzero.google/; most recent post Mar 5
+[03:04:04Z] blog.cloudflare.com/tag/security ✅ OK         ~2s   EMPTY: Most recent security post Apr 14
+[03:04:05Z] msrc.microsoft.com/blog          ⚠️ DEGRADED   ~2s   301 redirect to microsoft.com/en-us/msrc/blog; JS-heavy, no content extracted
+[03:04:06Z] hackerone.com/hacktivity          ❌ UNREACHABLE ~1s   JS-only, returned page title only
+[03:04:07Z] bugcrowd.com/disclosures         ❌ UNREACHABLE ~1s   HTTP 404 Not Found
+[03:04:08Z] kb.cert.org/vuls                 ✅ OK         ~2s   FINDINGS: VU#748485 Central Office Services (Apr 23)
+[03:04:09Z] avleonov.com                     ✅ OK         ~2s   EMPTY: Most recent post Apr 22 (Linux Patch Wednesday)
+[03:04:10Z] github.com/0xMarcio/cve          ✅ OK         ~3s   REFS: n8n CVE-2026-21858, CVE-2026-24061, CVE-2026-32746 (all already in dedup)
+[03:04:11Z] dbugs.ptsecurity.com             ✅ OK         ~3s   FINDINGS: CVE-2026-41478 Saltcorn 9.9, CVE-2026-21515 Azure IoT 9.9, CVE-2026-41473 CyberPanel 8.8
+[03:04:12Z] habr.com/ru/tomhunter            ⚠️ DEGRADED   ~2s   Stale: most recent post Mar 6, 2026
+[03:04:13Z] teletype.in/@cyberok             ✅ OK         ~2s   EMPTY: Most recent post Feb 4, 2026
+[03:04:14Z] cert.gov.ua                      ⚠️ DEGRADED   ~1s   JS-only, no usable content extracted
+
+[2026-04-24T03:05:00Z] === SOURCE COVERAGE SUMMARY ===
+Total:        30
+Checked:      23
+With findings: 7 (bleepingcomputer, thehackernews, securityweek, github/search, securitylab.github, dbugs.ptsecurity, kb.cert.org)
+Unreachable:   7 (cisa.gov, cisa.gov/kev, attackerkb.com, bugcrowd.com, hackerone.com, cve.org, cve.mitre.org)
+Degraded:      5 (opencve.io, nvd.nist.gov, msrc.microsoft.com, packetstormsecurity.com, cert.gov.ua)
+Validation: checked (23) >= total (30) - unreachable (7) = 23 ✓
+
+[2026-04-24T03:06:00Z] === STEP 4: Dedup decisions ===
+
+NEW — Firestarter Cisco ASA/FTD backdoor (CVE-2025-20333, CVE-2025-20362)
+  Reason: Not in any prior report. Joint CISA+NCSC alert issued today. Threat score: 9.
+
+UPDATE — TeamPCP → Bitwarden CLI npm (via Checkmarx GitHub Action)
+  Reason: Material change from Apr 23 Checkmarx KICS report (threat 7). New victim (Bitwarden), self-propagation mechanism confirmed, TeamPCP attribution. Upgrade to 8.
+
+NEW — CVE-2026-33626 LMDeploy SSRF
+  Reason: Not in any prior report. AI/ML framework SSRF exploited within 13 hours. Threat score: 6.
+
+NEW — CVE-2026-25895 FUXA SCADA HMI RCE
+  Reason: Not in any prior report. PoC just published on GitHub. SCADA/HMI, internet-facing. Threat score: 6. Discovery: EARLY (found via GitHub search before mainstream outlets).
+
+SKIP — CVE-2026-40372 ASP.NET Core (already in 2026-04-23)
+SKIP — CVE-2026-3844 Breeze WordPress (already in 2026-04-23)
+SKIP — CVE-2026-33032 nginx-ui (already in 2026-04-17)
+SKIP — Microsoft Defender zero-days (already in 2026-04-18)
+SKIP — Apache ActiveMQ CVE-2026-34197 (already in 2026-04-17, updated 2026-04-22)
+SKIP — Firefox 150 (already in 2026-04-22)
+SKIP — CanisterSprawl npm (already in 2026-04-23)
+SKIP — PHP Composer flaws (THN headline only, no material detail beyond existing coverage)
+SKIP — GopherWhisper APT campaign (China-linked, but government/diplomatic target, not internet-facing infrastructure)
+SKIP — UNC6692 Teams impersonation (social engineering campaign, not a vulnerability)
+SKIP — FakeWallet iOS apps (mobile-only, out of scope)
+SKIP — Pack2TheRoot PackageKit (local privilege escalation only, out of scope)
+SKIP — FortiGate CVE-2025-59718 (Rapid7 incident response reference, not new disclosure)
+SKIP — CVE-2026-33193 Docmost XSS (low severity, niche product)
+SKIP — CVE-2026-39351 Frappe data exposure (moderate severity, niche)
+SKIP — CVE-2026-28397/28401 NocoDB XSS (moderate severity, self-hosted)
+
+NOTED — CVE-2026-41478 Saltcorn (CVSS 9.9, dbugs only, no details)
+NOTED — CVE-2026-21515 Azure IoT Central (CVSS 9.9, dbugs only)
+NOTED — CVE-2026-41473 CyberPanel (CVSS 8.8, dbugs only)
+NOTED — CVE-2026-2991 KiviCare WP auth bypass (niche WordPress plugin)
+NOTED — CVE-2026-31802 npm tar path traversal (supply chain, monitoring)
+NOTED — CrowdStrike LogScale critical (no public details)
+NOTED — Tenable Nessus high (no public details)
+NOTED — VU#748485 Central Office Services (limited detail)
+
+[2026-04-24T03:10:00Z] === STEP 5: Write report files ===
+Wrote reports/2026/04/24/report.md
+Wrote reports/2026/04/24/report.json
+
+[2026-04-24T03:11:00Z] === STEP 7: Validation ===
+Running: python3 scripts/validate_report.py reports/2026/04/24/report.json
+Result: ✅ reports/2026/04/24/report.json — valid
+
+================================================================================
+END OF DEBUG LOG
+================================================================================

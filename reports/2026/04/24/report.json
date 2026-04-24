@@ -1,0 +1,113 @@
+{
+  "date": "2026-04-24",
+  "findings": [
+    {
+      "type": "news",
+      "title": "Firestarter Backdoor — Cisco ASA/FTD Firmware-Level Persistence Survives Patches (CISA+NCSC Joint Alert)",
+      "threat_score": 9,
+      "cve": "CVE-2025-20333, CVE-2025-20362",
+      "cvss": 9.9,
+      "affected_technology": "Cisco Adaptive Security Appliance (ASA), Cisco Firepower Threat Defense (FTD)",
+      "summary": "CISA and NCSC issued a joint alert after discovering that threat actor UAT-4356 deployed firmware-level backdoor malware on Cisco ASA/FTD firewalls that survives security patches, requiring full device reimaging for remediation.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-04-24"
+    },
+    {
+      "type": "update",
+      "title": "TeamPCP Supply Chain Expands — Bitwarden CLI npm Package Compromised via Checkmarx GitHub Action",
+      "threat_score": 8,
+      "previous_threat_score": 7,
+      "cve": "Not yet assigned",
+      "cvss": null,
+      "affected_technology": "@bitwarden/cli (npm), Checkmarx CI/CD tooling",
+      "summary": "TeamPCP leveraged a compromised Checkmarx GitHub Action to inject credential-stealing malware with self-propagation capabilities into the Bitwarden CLI npm package for 90 minutes on April 22.",
+      "first_seen_at": "2026-03-26"
+    },
+    {
+      "type": "news",
+      "title": "CVE-2026-33626 — LMDeploy Vision-Language Module SSRF Exploited Within 13 Hours of Disclosure",
+      "threat_score": 6,
+      "cve": "CVE-2026-33626",
+      "cvss": 7.5,
+      "affected_technology": "LMDeploy (open-source LLM serving toolkit, versions <= 0.12.0)",
+      "summary": "Server-side request forgery in LMDeploy's vision-language module enables unauthenticated access to cloud metadata services and internal networks, with exploitation observed within 13 hours of disclosure.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-04-24"
+    },
+    {
+      "type": "news",
+      "title": "CVE-2026-25895 — FUXA SCADA HMI Unauthenticated Path Traversal to RCE (PoC Public)",
+      "threat_score": 6,
+      "cve": "CVE-2026-25895",
+      "cvss": null,
+      "affected_technology": "FUXA (web-based SCADA/HMI platform)",
+      "summary": "Public exploit chains unauthenticated path traversal with arbitrary file write to achieve remote code execution on internet-facing FUXA SCADA HMI servers.",
+      "discovery_latency": "early",
+      "first_seen_at": "2026-04-24"
+    }
+  ],
+  "noted": [
+    {
+      "cve": "CVE-2026-41478",
+      "product": "Saltcorn",
+      "summary": "Critical flaw (CVSS 9.9) in open-source no-code database application builder; details from dbugs.ptsecurity.com only, awaiting vendor advisory."
+    },
+    {
+      "cve": "CVE-2026-21515",
+      "product": "Microsoft Azure IoT Central",
+      "summary": "Critical vulnerability (CVSS 9.9) reported by PT Security; no vendor advisory or technical details published yet."
+    },
+    {
+      "cve": "CVE-2026-41473",
+      "product": "CyberPanel",
+      "summary": "Web hosting control panel vulnerability (CVSS 8.8); internet-facing by design, limited details available."
+    },
+    {
+      "cve": "CVE-2026-2991",
+      "product": "KiviCare WordPress Plugin",
+      "summary": "Authentication bypass via patient social-login REST endpoint in versions up to 4.1.2; PoC on GitHub."
+    },
+    {
+      "cve": "CVE-2026-31802",
+      "product": "npm tar",
+      "summary": "Path traversal via symlink extraction enabling arbitrary file overwrite; supply chain implications for pipelines using npm tar."
+    },
+    {
+      "cve": "N/A",
+      "product": "CrowdStrike LogScale",
+      "summary": "Critical vulnerability patched with no public technical details; monitor for advisory disclosure."
+    },
+    {
+      "cve": "N/A",
+      "product": "Tenable Nessus",
+      "summary": "High-severity flaw patched with no public technical details; monitor for advisory disclosure."
+    },
+    {
+      "cve": "N/A",
+      "product": "Central Office Services (Content Hosting)",
+      "summary": "VU#748485: Unauthenticated configuration modification vulnerability published by CERT/CC on April 23."
+    }
+  ],
+  "source_coverage": {
+    "total": 30,
+    "checked": 23,
+    "with_findings": 7,
+    "unreachable": [
+      "cisa.gov",
+      "cisa.gov/known-exploited-vulnerabilities-catalog",
+      "attackerkb.com",
+      "bugcrowd.com/disclosures",
+      "hackerone.com/hacktivity",
+      "cve.org",
+      "cve.mitre.org"
+    ],
+    "degraded": [
+      "opencve.io",
+      "nvd.nist.gov",
+      "msrc.microsoft.com/blog",
+      "packetstormsecurity.com",
+      "cert.gov.ua"
+    ]
+  },
+  "full_report": "reports/2026/04/24/report.md"
+}
