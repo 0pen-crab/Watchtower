@@ -1,110 +1,116 @@
-================================================================================
-WATCHTOWER DEBUG LOG — 2026-04-24
-================================================================================
+=== Watchtower Daily Workflow — 2026-04-24 (supplement run) ===
 
-[2026-04-24T03:00:00Z] === STEP 1: Repository sync ===
-git pull: Already up to date.
+22:30 UTC — Invoked daily workflow. Noted that reports/2026/04/24/ already contained a
+            completed morning report (commit db7c304, generated ~22:12 UTC earlier today).
+            Treating this as a late-day supplement: dedup against last 30 days excluding
+            today's own morning report, fold forward still-relevant findings, and add any
+            new items discovered in this pass.
 
-[2026-04-24T03:01:00Z] === STEP 2: Build dedup index ===
-Read 19 report.json files from 2026-03-26 to 2026-04-23.
-Dedup index built: ~120 CVEs and threat identifiers tracked.
-Key recent items for dedup: CanisterSprawl npm worm (Apr 23), CVE-2026-40372 ASP.NET (Apr 23),
-Checkmarx KICS Docker (Apr 23), CVE-2026-3844 Breeze WP (Apr 23), CISA KEV 8 additions (Apr 22),
-Apache ActiveMQ update (Apr 22), Firefox 150 (Apr 22), CVE-2026-5760 SGLang (Apr 21),
-MCP STDIO injection (Apr 21), Vercel breach update (Apr 21).
+== Step 1: git pull ==
+22:30 UTC  git pull → Already up to date.
 
-[2026-04-24T03:02:00Z] === STEP 3: Source checking ===
+== Step 2: Dedup index ==
+22:31 UTC  Read report.json for every day in reports/2026/03/26..2026/04/24.
+           Captured all finding CVEs/titles and noted entries. Index covers:
+           - TeamPCP supply chain campaign (03-26 through 04-24)
+           - OpenClaw CVE batch (03-30)
+           - Dovecot advisories (03-30)
+           - n8n CVE-2026-21858 (03-27)
+           - BIND9, Node.js, Apple 26.4, TP-Link (03-26..27)
+           - Cisco IOS/Talos/Firestarter (03-27, 04-05, 04-24)
+           - FortiClientEMS CVE-2026-35616 (04-05, 04-06)
+           - Marimo CVE-2026-39987, nginx-ui CVE-2026-33032 (04-14, 04-17)
+           - Microsoft April Patch Tuesday (04-17)
+           - CanisterSprawl npm worm (04-23)
+           - Serial-to-IP BRIDGE:BREAK (04-23)
+           - LMDeploy, FUXA, Bitwarden/TeamPCP (04-24 morning)
+           Plus ~60 noted entries.
 
---- Tier 1 Sources ---
-[03:02:30Z] bleepingcomputer.com             ✅ OK         ~3s   FINDINGS: Firestarter Cisco, Bitwarden CLI npm, Zimbra XSS ref, ASP.NET ref, Breeze WP ref, Pack2TheRoot, Kyber ransomware ref
-[03:02:31Z] thehackernews.com                ✅ OK         ~3s   FINDINGS: Firestarter Cisco (CVE-2025-20333/20362), CVE-2026-33626 LMDeploy SSRF, Bitwarden CLI, PHP Composer, GopherWhisper APT, UNC6692
-[03:02:32Z] cisa.gov/kev                     ❌ UNREACHABLE ~1s   HTTP 403 Forbidden (consistent with prior runs)
-[03:02:33Z] cisa.gov                         ❌ UNREACHABLE ~1s   HTTP 403 Forbidden (consistent with prior runs)
-[03:02:34Z] securityweek.com                 ✅ OK         ~3s   FINDINGS: CrowdStrike LogScale critical, Tenable Nessus high, MS Defender zero-day ref, Firestarter ref
-[03:02:35Z] github.com/search?q=CVE          ✅ OK         ~4s   FINDINGS: CVE-2026-25895 FUXA PoC (36min old!), CVE-2026-2991 KiviCare, CVE-2026-31802 npm tar, CVE-2026-XNU (OOS), CVE-2026-24291 (OOS local)
-[03:02:36Z] schneier.com                     ✅ OK         ~2s   EMPTY (for scope): FBI Signal forensics (OOS), Bluetooth naval tracker (OOS)
-[03:02:37Z] krebsonsecurity.com              ✅ OK         ~2s   EMPTY: Most recent post Apr 21 (Scattered Spider plea), no new content for Apr 23-24
-[03:03:00Z] rapid7.com                       ✅ OK         ~3s   REFS: FortiGate CVE-2025-59718 incident response, ClickFix Claude installer campaign
-[03:03:01Z] attackerkb.com                   ❌ UNREACHABLE ~1s   HTTP 403 Forbidden
-[03:03:02Z] fortinet.com/blog/threat-research ✅ OK         ~2s   EMPTY: Most recent post Apr 17 (Nexcorium Mirai variant)
-[03:03:03Z] securitylab.github.com           ✅ OK         ~3s   FINDINGS: CVE-2026-33193 Docmost XSS, CVE-2026-39351 Frappe data exposure, CVE-2026-28397/28401 NocoDB XSS
-[03:03:04Z] seclists.org/fulldisclosure      ✅ OK         ~2s   EMPTY: Most recent post Apr 14 (Siemens SICAM)
-[03:03:05Z] packetstormsecurity.com          ⚠️ DEGRADED   ~3s   Redirected to packetstorm.news/; returned ToS page, not file listings
-[03:03:06Z] opencve.io                       ⚠️ DEGRADED   ~2s   Returned marketing/pricing page, not CVE database (requires auth)
+== Step 3: Source checks (SOURCES.md, 30 entries, 1 duplicate) ==
+22:32 UTC  bleepingcomputer.com                         ✅  ~4s  (Firestarter, Zimbra 10K, Pack2TheRoot, Bitwarden, npm worm, BlackFile vishing)
+22:32 UTC  thehackernews.com                            ✅  ~3s  (Firestarter, LMDeploy, nginx-ui update, Tropic Trooper, NASA china, 108 chrome ext)
+22:32 UTC  cisa.gov/known-exploited-vulnerabilities     ❌  403 Forbidden (known, per MEMORY.md)
+22:32 UTC  cisa.gov                                     ❌  403 Forbidden (known, per MEMORY.md)
+22:32 UTC  securityweek.com                             ✅  ~3s  (Fast16 pre-Stuxnet, Firestarter, CrowdStrike/Tenable patches, Defender zero-day, Bitwarden)
+22:33 UTC  github.com/search?q=CVE                      ✅  ~3s  (Terrminus-CVE-2026-2406, CVE-2026-24061, FUXAPWN, CVE-2026-XNU-AIO-KEVENT-UAF, CVE-2026-2991, CVE-2026-31802)
+22:33 UTC  schneier.com                                 ✅  ~2s  (no vuln-specific content — Friday Squid, FBI Signal extraction, Graphite spyware)
+22:33 UTC  krebsonsecurity.com                          ✅  ~2s  (no fresh vuln-level content — Scattered Spider guilty plea, earlier Patch Tuesday recap)
+22:33 UTC  rapid7.com/blog                              ✅  ~2s  (nginx-ui CVE-2026-33032 — already covered 04-17; ClickFix Claude — already covered 04-18; FortiGate 59718)
+22:33 UTC  attackerkb.com                               ❌  403 (known, per MEMORY.md)
+22:33 UTC  fortinet.com/blog/threat-research            ✅  ~2s  (Mirai Nexcorium — already covered 04-14; DPRK LNK+GitHub 04-02; no fresh items)
+22:34 UTC  securitylab.github.com                       ✅  ~3s  (NEW: CVE-2026-33193 Docmost XSS, CVE-2026-39351 Frappe REST API data exposure, both by Man Yue Mo Apr 24)
+22:34 UTC  seclists.org/fulldisclosure                  ✅  ~3s  (Siemens SICAM — already tracked; Apple Xcode/Safari/visionOS — older; MetInfo PHP injection — EOL CMS)
+22:34 UTC  packetstormsecurity.com                      ⚠️  degraded — redirect resolved to ToS page only
+22:34 UTC  opencve.io                                   ⚠️  degraded — homepage is marketing; used app.opencve.io/cve/ for actual CVE lookups
+22:34 UTC  nvd.nist.gov                                 ⚠️  degraded — search UI requires JS; no CVE content via WebFetch
+22:34 UTC  cve.mitre.org                                ❌  redirects to cve.org (JS-only)
+22:34 UTC  cve.org                                      ❌  JS-only, no content via WebFetch
+22:34 UTC  googleprojectzero.blogspot.com → projectzero.google  ✅  ~2s  (no April 2026 posts — January still latest; no in-scope items)
+22:34 UTC  blog.cloudflare.com/tag/security             ✅  ~2s  (OAuth/MCP/post-quantum strategy posts, no vuln advisories)
+22:34 UTC  msrc.microsoft.com/blog                      ⚠️  degraded — JS-heavy, no advisory content via WebFetch
+22:34 UTC  hackerone.com/hacktivity                     ❌  JS-only (known, per MEMORY.md)
+22:34 UTC  bugcrowd.com/disclosures                     ❌  404 (known, per MEMORY.md — URL likely moved)
+22:34 UTC  kb.cert.org/vuls                             ✅  ~3s  (VU#748485 CentralOffice, VU#518910 Ollama, VU#890999 Radware, VU#414811 Terrarium, VU#915947 SGLang — all covered 04-20..04-23)
+22:35 UTC  avleonov.com                                 ✅  ~2s  (April Linux Patch Wed summary — no fresh items; March/April Patch Tuesday recaps)
+22:35 UTC  github.com/0xMarcio/cve                      ✅  ~2s  (CVE-2026-32746 InetUtils telnetd NEW; CVE-2026-21858 n8n — covered; CVE-2026-1731 BeyondTrust — covered)
+22:35 UTC  dbugs.ptsecurity.com                         ✅  ~3s  (NEW: CVE-2026-32604 Spinnaker RCE CVSS 10.0; Saltcorn 41478, Azure IoT 21515 already noted; Kyverno/Roxy-Wi/Xibo — niche)
+22:35 UTC  habr.com/ru/companies/tomhunter/articles     ✅  ~2s  (latest March 6 content, no fresh April items)
+22:35 UTC  teletype.in/@cyberok                         ⚠️  degraded — latest post Feb 2026, stale for daily briefing
+22:35 UTC  cert.gov.ua                                  ✅  ~2s  (404 response earlier — retry OK but no fresh content in scope)
 
---- Tier 2 Sources ---
-[03:04:00Z] nvd.nist.gov                     ⚠️ DEGRADED   ~3s   Returned navigation structure only, no CVE data via WebFetch
-[03:04:01Z] cve.mitre.org                    ❌ UNREACHABLE ~1s   301 redirect to cve.org → JS-only
-[03:04:02Z] cve.org                          ❌ UNREACHABLE ~1s   JS-only, no usable content
-[03:04:03Z] googleprojectzero.blogspot.com   ✅ OK         ~2s   EMPTY: Redirected to projectzero.google/; most recent post Mar 5
-[03:04:04Z] blog.cloudflare.com/tag/security ✅ OK         ~2s   EMPTY: Most recent security post Apr 14
-[03:04:05Z] msrc.microsoft.com/blog          ⚠️ DEGRADED   ~2s   301 redirect to microsoft.com/en-us/msrc/blog; JS-heavy, no content extracted
-[03:04:06Z] hackerone.com/hacktivity          ❌ UNREACHABLE ~1s   JS-only, returned page title only
-[03:04:07Z] bugcrowd.com/disclosures         ❌ UNREACHABLE ~1s   HTTP 404 Not Found
-[03:04:08Z] kb.cert.org/vuls                 ✅ OK         ~2s   FINDINGS: VU#748485 Central Office Services (Apr 23)
-[03:04:09Z] avleonov.com                     ✅ OK         ~2s   EMPTY: Most recent post Apr 22 (Linux Patch Wednesday)
-[03:04:10Z] github.com/0xMarcio/cve          ✅ OK         ~3s   REFS: n8n CVE-2026-21858, CVE-2026-24061, CVE-2026-32746 (all already in dedup)
-[03:04:11Z] dbugs.ptsecurity.com             ✅ OK         ~3s   FINDINGS: CVE-2026-41478 Saltcorn 9.9, CVE-2026-21515 Azure IoT 9.9, CVE-2026-41473 CyberPanel 8.8
-[03:04:12Z] habr.com/ru/tomhunter            ⚠️ DEGRADED   ~2s   Stale: most recent post Mar 6, 2026
-[03:04:13Z] teletype.in/@cyberok             ✅ OK         ~2s   EMPTY: Most recent post Feb 4, 2026
-[03:04:14Z] cert.gov.ua                      ⚠️ DEGRADED   ~1s   JS-only, no usable content extracted
+           Summary: total=30, checked=23, unreachable=7, degraded=5
+           (checked == total - unreachable) satisfied.
 
-[2026-04-24T03:05:00Z] === SOURCE COVERAGE SUMMARY ===
-Total:        30
-Checked:      23
-With findings: 7 (bleepingcomputer, thehackernews, securityweek, github/search, securitylab.github, dbugs.ptsecurity, kb.cert.org)
-Unreachable:   7 (cisa.gov, cisa.gov/kev, attackerkb.com, bugcrowd.com, hackerone.com, cve.org, cve.mitre.org)
-Degraded:      5 (opencve.io, nvd.nist.gov, msrc.microsoft.com, packetstormsecurity.com, cert.gov.ua)
-Validation: checked (23) >= total (30) - unreachable (7) = 23 ✓
+== Step 3b: Deep-dives on new leads (batched WebFetch) ==
+22:36 UTC  CVE-2026-32604 Spinnaker — full details via app.opencve.io ✅
+           CVE-2026-41478 Saltcorn — vendor advisory GHSA-jp74-mfrx-3qvh confirmed ✅
+           CVE-2026-41328 Dgraph — DQL injection details ✅
+           CVE-2026-41248 Clerk — middleware bypass mechanics confirmed ✅
+           CVE-2026-41428 Budibase — regex bypass mechanics confirmed ✅
+           CVE-2026-41651 Pack2TheRoot — confirmed local-only (out of scope main, noted)
+           Zimbra XSS article — CVE-2025-66376 confirmed via earlier THN March coverage
 
-[2026-04-24T03:06:00Z] === STEP 4: Dedup decisions ===
+== Step 4: Dedup decisions ==
+  - Firestarter Cisco ASA/FTD (CVE-2025-20333/20362)       → KEEP (morning finding, still current)
+  - TeamPCP Bitwarden CLI                                   → KEEP as Update (morning finding)
+  - CVE-2026-33626 LMDeploy                                 → KEEP (morning finding)
+  - CVE-2026-25895 FUXA                                     → KEEP (morning finding)
+  - CVE-2026-32604 Spinnaker                                → NEW → News
+  - CVE-2026-41248 Clerk JS                                 → NEW → News
+  - CVE-2026-41428 Budibase                                 → NEW → News
+  - CVE-2026-41328 Dgraph                                   → NEW → News
+  - CVE-2025-66376 Zimbra XSS                               → NEW (first mention as finding) → News, discovery_latency=late
+  - CVE-2026-41478 Saltcorn                                 → Material change (vendor advisory published) → kept in Noted with updated detail
+  - CVE-2026-33193 Docmost                                  → NEW → Noted (moderate severity XSS)
+  - CVE-2026-39351 Frappe                                   → NEW → Noted
+  - CVE-2026-41651 Pack2TheRoot                             → NEW → Noted (local-only, out of main scope)
+  - CVE-2026-32746 InetUtils telnetd                        → NEW → Noted (related to covered CVE-2026-24061)
+  - CVE-2026-XNU-AIO-KEVENT-UAF                             → SKIP (iOS kernel, out of scope)
+  - Apple Xcode/Safari/etc. 26.4                            → SKIP (covered 03-26 for iOS/macOS 26.4)
+  - Tropic Trooper SumatraPDF AdaptixC2                     → SKIP (targeted client-only espionage, out of scope)
+  - 108 Malicious Chrome Extensions                         → SKIP (browser client, out of scope)
+  - 26 FakeWallet iOS apps                                  → SKIP (mobile-only, out of scope)
+  - Fast16 pre-Stuxnet                                      → SKIP (targeted ICS sabotage, no immediate defensive action)
+  - Claude Mythos / Firefox 271 vulns                       → SKIP (research, not immediately actionable)
+  - NASA China phishing                                     → SKIP (incident news, no vuln)
+  - Scattered Spider guilty plea                            → SKIP (law enforcement news, no vuln)
 
-NEW — Firestarter Cisco ASA/FTD backdoor (CVE-2025-20333, CVE-2025-20362)
-  Reason: Not in any prior report. Joint CISA+NCSC alert issued today. Threat score: 9.
+== Step 5: Write report.md & report.json ==
+22:45 UTC  Wrote reports/2026/04/24/report.md (CRITICAL x2, HIGH x3, MEDIUM x4, Noted x12)
+22:45 UTC  Wrote reports/2026/04/24/report.json
 
-UPDATE — TeamPCP → Bitwarden CLI npm (via Checkmarx GitHub Action)
-  Reason: Material change from Apr 23 Checkmarx KICS report (threat 7). New victim (Bitwarden), self-propagation mechanism confirmed, TeamPCP attribution. Upgrade to 8.
+           source_coverage:
+             total: 30
+             checked: 23
+             with_findings: 10
+             unreachable: [cisa.gov, cisa.gov/kev, attackerkb.com, bugcrowd.com/disclosures,
+                           hackerone.com/hacktivity, cve.org, cve.mitre.org]
+             degraded:    [opencve.io, nvd.nist.gov, msrc.microsoft.com/blog,
+                           packetstormsecurity.com, teletype.in/@cyberok]
 
-NEW — CVE-2026-33626 LMDeploy SSRF
-  Reason: Not in any prior report. AI/ML framework SSRF exploited within 13 hours. Threat score: 6.
+== Step 7: Validate ==
+22:46 UTC  python3 scripts/validate_report.py reports/2026/04/24/report.json
+           ✅ reports/2026/04/24/report.json — valid
 
-NEW — CVE-2026-25895 FUXA SCADA HMI RCE
-  Reason: Not in any prior report. PoC just published on GitHub. SCADA/HMI, internet-facing. Threat score: 6. Discovery: EARLY (found via GitHub search before mainstream outlets).
-
-SKIP — CVE-2026-40372 ASP.NET Core (already in 2026-04-23)
-SKIP — CVE-2026-3844 Breeze WordPress (already in 2026-04-23)
-SKIP — CVE-2026-33032 nginx-ui (already in 2026-04-17)
-SKIP — Microsoft Defender zero-days (already in 2026-04-18)
-SKIP — Apache ActiveMQ CVE-2026-34197 (already in 2026-04-17, updated 2026-04-22)
-SKIP — Firefox 150 (already in 2026-04-22)
-SKIP — CanisterSprawl npm (already in 2026-04-23)
-SKIP — PHP Composer flaws (THN headline only, no material detail beyond existing coverage)
-SKIP — GopherWhisper APT campaign (China-linked, but government/diplomatic target, not internet-facing infrastructure)
-SKIP — UNC6692 Teams impersonation (social engineering campaign, not a vulnerability)
-SKIP — FakeWallet iOS apps (mobile-only, out of scope)
-SKIP — Pack2TheRoot PackageKit (local privilege escalation only, out of scope)
-SKIP — FortiGate CVE-2025-59718 (Rapid7 incident response reference, not new disclosure)
-SKIP — CVE-2026-33193 Docmost XSS (low severity, niche product)
-SKIP — CVE-2026-39351 Frappe data exposure (moderate severity, niche)
-SKIP — CVE-2026-28397/28401 NocoDB XSS (moderate severity, self-hosted)
-
-NOTED — CVE-2026-41478 Saltcorn (CVSS 9.9, dbugs only, no details)
-NOTED — CVE-2026-21515 Azure IoT Central (CVSS 9.9, dbugs only)
-NOTED — CVE-2026-41473 CyberPanel (CVSS 8.8, dbugs only)
-NOTED — CVE-2026-2991 KiviCare WP auth bypass (niche WordPress plugin)
-NOTED — CVE-2026-31802 npm tar path traversal (supply chain, monitoring)
-NOTED — CrowdStrike LogScale critical (no public details)
-NOTED — Tenable Nessus high (no public details)
-NOTED — VU#748485 Central Office Services (limited detail)
-
-[2026-04-24T03:10:00Z] === STEP 5: Write report files ===
-Wrote reports/2026/04/24/report.md
-Wrote reports/2026/04/24/report.json
-
-[2026-04-24T03:11:00Z] === STEP 7: Validation ===
-Running: python3 scripts/validate_report.py reports/2026/04/24/report.json
-Result: ✅ reports/2026/04/24/report.json — valid
-
-================================================================================
-END OF DEBUG LOG
-================================================================================
+== Step 8: git add / commit / push ==
+(pending)

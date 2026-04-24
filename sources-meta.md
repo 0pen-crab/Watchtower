@@ -2,7 +2,7 @@
 
 | Source | Findings | Noted | Empty | Last Hit |
 |--------|----------|-------|-------|----------|
-| bleepingcomputer.com | 20 | 5 | 0 | 2026-04-24 |
+| bleepingcomputer.com | 21 | 5 | 0 | 2026-04-24 |
 | thehackernews.com | 16 | 2 | 0 | 2026-04-24 |
 | cisa.gov | 0 | 0 | 8 | — |
 | securityweek.com | 8 | 5 | 1 | 2026-04-24 |
@@ -12,7 +12,7 @@
 | rapid7.com | 1 | 2 | 5 | 2026-04-19 |
 | attackerkb.com | 0 | 0 | 8 | — |
 | fortinet.com/blog/threat-research | 0 | 2 | 6 | 2026-04-19 |
-| securitylab.github.com | 0 | 0 | 8 | — |
+| securitylab.github.com | 0 | 2 | 7 | 2026-04-24 |
 | seclists.org/fulldisclosure | 0 | 2 | 6 | 2026-04-17 |
 | packetstormsecurity.com | 0 | 0 | 8 | — |
 | opencve.io | 4 | 3 | 4 | 2026-04-21 |
@@ -26,8 +26,8 @@
 | bugcrowd.com/disclosures | 0 | 0 | 8 | — |
 | kb.cert.org/vuls | 2 | 4 | 3 | 2026-04-24 |
 | avleonov.com | 0 | 1 | 7 | 2026-04-18 |
-| github.com/0xMarcio/cve | 2 | 1 | 6 | 2026-04-21 |
-| dbugs.ptsecurity.com | 8 | 23 | 0 | 2026-04-24 |
+| github.com/0xMarcio/cve | 2 | 2 | 6 | 2026-04-24 |
+| dbugs.ptsecurity.com | 9 | 23 | 0 | 2026-04-24 |
 | habr.com/ru/companies/tomhunter/articles | 0 | 0 | 8 | — |
 | teletype.in/@cyberok | 0 | 0 | 8 | — |
 | cert.gov.ua | 0 | 0 | 8 | — |
