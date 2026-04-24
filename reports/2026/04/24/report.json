@@ -24,6 +24,17 @@
       "first_seen_at": "2026-04-24"
     },
     {
+      "type": "news",
+      "title": "CVE-2026-3844 — Breeze Cache WordPress Plugin Unauthenticated File Upload Actively Exploited",
+      "threat_score": 7,
+      "cve": "CVE-2026-3844",
+      "cvss": 9.8,
+      "affected_technology": "Breeze Cache (WordPress plugin, versions <= 2.4.4)",
+      "summary": "Missing file-type validation in Breeze Cache's fetch_gravatar_from_remote function lets unauthenticated attackers upload arbitrary PHP files for full site takeover, with Wordfence already documenting 170+ active exploitation attempts against the plugin's roughly 400,000 installs.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-04-24"
+    },
+    {
       "type": "update",
       "title": "TeamPCP Supply Chain Expands — Bitwarden CLI npm Package Compromised via Checkmarx GitHub Action",
       "threat_score": 8,
@@ -161,12 +172,22 @@
       "cve": "CVE-2026-32746",
       "product": "GNU InetUtils telnetd",
       "summary": "Pre-auth buffer overflow RCE (CVSS 9.8) with active PoC on GitHub; sibling of previously-covered CVE-2026-24061."
+    },
+    {
+      "cve": "CVE-2026-40161",
+      "product": "Tekton Pipelines",
+      "summary": "Git resolver in Tekton Pipelines sends system-configured API tokens to user-controlled servers, enabling token exfiltration via malicious repository URLs (CVSS 7.7); CI/CD supply-chain implication for shared-credential clusters."
+    },
+    {
+      "cve": "CVE-2026-6968",
+      "product": "awslabs/tough (TUF library)",
+      "summary": "Path traversal in tough lets authenticated users write files outside intended directories via absolute target names and symlinked paths (CVSS 5.9); two sibling CVEs CVE-2026-6967 (delegated-metadata cache poisoning) and CVE-2026-6966 (signature-threshold bypass) published the same day."
     }
   ],
   "source_coverage": {
     "total": 30,
     "checked": 23,
-    "with_findings": 10,
+    "with_findings": 11,
     "unreachable": [
       "cisa.gov",
       "cisa.gov/known-exploited-vulnerabilities-catalog",

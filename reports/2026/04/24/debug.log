@@ -114,3 +114,68 @@
 
 == Step 8: git add / commit / push ==
 (pending)
+
+=== Third pass — late supplement #2 (post-23:00 UTC) ===
+
+23:30 UTC  Re-invoked daily workflow. Two prior commits today (db7c304 morning, feaf933
+           supplement). Aim of this pass: focused recheck of high-signal sources for
+           anything new since 22:30 UTC, no full re-run of 30-source matrix.
+
+== Step 1: git pull ==
+23:30 UTC  Already up to date.
+
+== Step 2: Dedup index ==
+23:30 UTC  Reused existing dedup index from supplement #1 plus the 9 findings + 12 noted
+           already in today's report.json.
+
+== Step 3: Targeted source recheck ==
+23:31 UTC  bleepingcomputer.com                  ✅  Top-10 list scanned. New: Breeze Cache
+                                                     CVE-2026-3844 (Apr 23, active exploit,
+                                                     ~400K installs). Other items already
+                                                     covered or out of scope (Windows
+                                                     update controls, BlackFile vishing,
+                                                     Entra passkeys, Copilot uninstall).
+23:33 UTC  thehackernews.com                     ✅  SharePoint zero-day article — already
+                                                     covered comprehensively in 04-17 and
+                                                     04-18 reports (CVE-2026-32201,
+                                                     CVE-2026-33824, CVE-2026-33825).
+23:34 UTC  securityweek.com                      ✅  CrowdStrike/Tenable already noted;
+                                                     Defender zero-day variants already
+                                                     covered 04-18; Apple iOS chat recovery
+                                                     out of scope; Claude Mythos / Firefox
+                                                     research not actionable.
+23:36 UTC  app.opencve.io (Apr 24 published)     ✅  Cross-reference against today's report:
+                                                     - 41478, 41428, 41328, 41248 covered
+                                                     - 42171 (NSIS) local-only, skip
+                                                     - 6968/6967/6966 (awslabs/tough) NEW
+                                                       → Noted (TUF library supply-chain)
+                                                     - 40161 (Tekton Pipelines) NEW
+                                                       → Noted (CI/CD token exfil, 7.7)
+                                                     - 39320 (Signal K) niche marine IoT
+                                                     - 40599 (ClearanceKit) Apple-local
+                                                     - 40876 (goshs) niche
+23:38 UTC  seclists.org/fulldisclosure           ✅  No posts after Apr 14 — nothing new.
+
+           Source totals unchanged: total=30, checked=23, unreachable=7, degraded=5.
+
+== Step 4: Dedup decisions (delta vs. supplement #1) ==
+  - CVE-2026-3844 Breeze Cache WordPress              → NEW → HIGH news, score 7
+  - CVE-2026-40161 Tekton Pipelines                   → NEW → Noted (CI/CD)
+  - CVE-2026-6968/6967/6966 awslabs/tough             → NEW → Noted (TUF library trio)
+  - SharePoint zero-day (32201)                       → SKIP (covered 04-17)
+  - Microsoft Defender zero-days                       → SKIP (covered 04-17/04-18)
+  - All other items already covered or out of scope.
+
+== Step 5: Append to existing report.md / report.json ==
+23:42 UTC  Added Breeze Cache as HIGH finding (one entry).
+23:43 UTC  Added Tekton Pipelines + awslabs/tough trio to Noted list.
+23:44 UTC  Updated header (Cycle: late supplement #2; generated time 23:50 UTC).
+23:44 UTC  Bumped source_coverage.with_findings 10 → 11 (Breeze Cache adds new finding;
+           Tekton/tough are noted-only and don't count toward findings).
+
+== Step 7: Validate ==
+23:45 UTC  python3 scripts/validate_report.py reports/2026/04/24/report.json
+           ✅ reports/2026/04/24/report.json — valid
+
+== Step 8: git add / commit / push ==
+(pending)

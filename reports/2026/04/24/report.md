@@ -1,6 +1,6 @@
 # Watchtower Night Report — 2026-04-24
-**Cycle:** Night | **Generated:** 2026-04-24 22:45 UTC (2026-04-24T22:45:00Z)
-**Sources checked:** 23/30 | **CISA KEV total:** N/A (cisa.gov unreachable) | **New KEV additions:** N/A
+**Cycle:** Night (late supplement #2) | **Generated:** 2026-04-24 23:50 UTC (2026-04-24T23:50:00Z)
+**Sources checked:** 23/30 | **CISA KEV total:** N/A (cisa.gov unreachable) | **New KEV additions:** N/A (per secondary reporting, no new KEV additions today)
 
 ---
 
@@ -49,6 +49,26 @@ A critical command injection in Spinnaker's clouddriver pod allows a low-privile
 ---
 
 ## 🟠 HIGH
+
+### CVE-2026-3844 — Breeze Cache WordPress Plugin Unauthenticated File Upload Actively Exploited (CVSS 9.8)
+**Product:** Breeze Cache (WordPress plugin, ≤ 2.4.4) | **CVE:** CVE-2026-3844 | **CVSS:** 9.8 | **First reported:** 2026-04-23
+
+A missing file-type validation in Breeze Cache's `fetch_gravatar_from_remote` function lets unauthenticated attackers upload arbitrary files, including PHP web shells, leading to remote code execution and full site takeover. Wordfence has already documented 170+ in-the-wild exploitation attempts. The plugin has roughly 400,000 active installs; about 138,000 of those have downloaded the patched 2.4.5 release, leaving the remaining ~260,000 sites potentially exposed. Successful exploitation requires the "Host Files Locally - Gravatars" add-on to be enabled — not a default setting, but commonly turned on by privacy-conscious admins, so the practical attack surface is non-trivial.
+
+**Timeline:** Patch (2.4.5) released the week of April 20, 2026 → BleepingComputer/Wordfence reporting April 23, 2026 confirming active exploitation.
+
+**Why it matters:** WordPress sites are part of every large org's external surface (marketing/blog/microsites), and a CVSS 9.8 unauthenticated file upload with confirmed exploitation lands directly in our scope. Compromised WordPress hosts routinely become pivot points for credential phishing, watering-hole attacks against authenticated visitors, and lateral movement into shared hosting environments.
+
+**Mitigation:**
+- Upgrade Breeze Cache to 2.4.5 or later immediately.
+- If immediate upgrade is not possible, disable "Host Files Locally - Gravatars" in plugin settings.
+- Audit `wp-content/uploads/` (and Gravatar cache directory) for unexpected `.php`, `.phtml`, `.phar` files dated since April 1, 2026.
+- Block requests to `/wp-admin/admin-ajax.php?action=*gravatar*` from non-authenticated sessions at the WAF.
+- Rotate any WordPress admin credentials and database secrets if compromise is suspected.
+
+**Sources:** [BleepingComputer](https://www.bleepingcomputer.com/news/security/hackers-exploit-file-upload-bug-in-breeze-cache-wordpress-plugin/) | [Wordfence threat intel](https://www.wordfence.com)
+
+---
 
 ### 🔄 TeamPCP Supply Chain Expands — Bitwarden CLI npm Package Compromised via Checkmarx GitHub Action
 **Product:** @bitwarden/cli (npm) / Checkmarx CI/CD tooling | **CVE:** Not yet assigned | **CVSS:** N/A | **First reported:** 2026-03-26
@@ -170,6 +190,10 @@ An unauthenticated attacker with network access to a Dgraph instance (default po
 **CVE-2026-41651 — PackageKit (Pack2TheRoot)** — Deutsche Telekom Red Team found a 12-year-old auth flaw in pkcon letting local users install packages and escalate to root (CVSS 8.8, Ubuntu/Debian/Rocky/Fedora). Local-only, but a useful lateral-movement primitive after initial foothold. Fixed in PackageKit 1.3.5.
 
 **CVE-2026-32746 — GNU InetUtils telnetd** — Pre-auth buffer overflow RCE (CVSS 9.8) with active PoC on GitHub; sibling of previously-covered CVE-2026-24061.
+
+**CVE-2026-40161 — Tekton Pipelines** — Git resolver in Tekton Pipelines sends system-configured API tokens to user-controlled servers, allowing token exfiltration to a malicious repository URL (CVSS 7.7). CI/CD supply-chain implication for any cluster running Tekton with shared Git credentials. Patch in latest Tekton release.
+
+**CVE-2026-6968 / CVE-2026-6967 / CVE-2026-6966 — awslabs/tough (TUF library)** — Three flaws in the AWS Labs TUF reference implementation: path traversal via symlinked targets, delegated metadata cache poisoning, and signature-threshold bypass via duplicated signatures (CVSS 5.3–5.9). Authenticated, but relevant for any update-distribution pipeline relying on tough — surfaced here as a watch-list item because TUF library bugs propagate widely.
 
 ---
 
