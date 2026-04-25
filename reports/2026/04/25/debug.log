@@ -1,0 +1,110 @@
+Watchtower Daily Run — 2026-04-25 (Night Cycle)
+================================================
+
+[03:00 UTC] git pull → "Already up to date."
+[03:01 UTC] Loaded MEMORY.md, SOURCES.md, sources-meta.md, report.template.md, validate_report.py.
+
+DEDUP INDEX BUILD (last 30 days, 2026-03-26 → 2026-04-24)
+---------------------------------------------------------
+Read 20 daily reports. Built dedup index of all CVEs and titled findings.
+Notable already-covered CVEs (suppress): CVE-2026-33032 nginx-ui, CVE-2026-34197 ActiveMQ Jolokia, CVE-2026-39987 Marimo, CVE-2026-33825 Defender BlueHammer, CVE-2026-33824 Windows IKE, CVE-2026-32201 SharePoint, CVE-2026-21858 n8n, CVE-2026-21962 WebLogic, CVE-2026-32604 Spinnaker, CVE-2026-3844 Breeze Cache, CVE-2025-66376 Zimbra, CVE-2026-41248 Clerk, CVE-2026-33626 LMDeploy, CVE-2026-25895 FUXA, CVE-2026-41428 Budibase, CVE-2026-41328 Dgraph, CVE-2026-32135 NanoMQ, CVE-2026-5760 SGLang, CVE-2026-40372 ASP.NET Core, CVE-2026-3502 TrueConf, CVE-2025-29635 D-Link DIR-823X, CVE-2026-41478 Saltcorn, CVE-2025-20333/20362 Cisco ASA Firestarter. TeamPCP supply chain campaign tracked across multiple days.
+
+SOURCE CHECK (30 unique sources after deduping seclists.org/fulldisclosure between Tier 1 and Tier 2)
+----------------------------------------------------------------------------------------------------
+
+Tier 1:
+[03:05 UTC] ✅ bleepingcomputer.com — 15 headlines extracted, 1.8s. Top items: Samsung MagicINFO KEV, SimpleHelp KEV, ADT breach, Pack2TheRoot, Tropic Trooper SumatraPDF, Mirax Android RAT, 108 malicious Chrome extensions.
+[03:05 UTC] ✅ thehackernews.com — 15 headlines extracted, 2.1s. Top items: Firestarter, Tropic Trooper, Bitwarden CLI/Checkmarx, LMDeploy 13-hr exploitation, Microsoft ASP.NET Core patch, OpenAI GPT-5.4-Cyber.
+[03:05 UTC] ✅ securityweek.com — 15 headlines extracted, 1.7s. Top items: Fast16 sabotage malware, Firestarter, CrowdStrike LogScale + Tenable Nessus patches, Bitwarden NPM, Defender zero-day, AI cloud autonomous hacking, Apple iOS Signal recovery.
+[03:05 UTC] ❌ cisa.gov — 403 Forbidden (consistent with MEMORY.md note).
+[03:05 UTC] ❌ cisa.gov/known-exploited-vulnerabilities-catalog — 403 Forbidden. Used THN + BleepingComputer + WebSearch as KEV proxies.
+[03:08 UTC] ✅ github.com/search?q=CVE — 7 recently updated CVE PoC repos extracted, 2.2s. Mostly already covered (CVE-2026-2991 KiviCare, CVE-2026-31802 npm tar, CVE-2026-2472 Vertex AI, CVE-2026-25643 Frigate NVR).
+[03:08 UTC] ✅ schneier.com — 6 posts last 7 days. Bluetooth tracker maritime, FBI Signal recovery (Apple), ICE Graphite spyware, Mythos cybersecurity post.
+[03:08 UTC] ✅ krebsonsecurity.com — 3 posts last 7 days. Scattered Spider plea (Apr 21), Patch Tuesday April 2026 (Apr 14, already covered), Russia routers (Apr 7, already covered).
+[03:10 UTC] ⚠️ rapid7.com — Page returned content but no publication dates extractable. Featured posts include BPFdoor (already covered), nginx-ui (already covered), ClickFix (already covered), Metasploit Wrap-Ups dated 04/17, 04/10, 04/03.
+[03:10 UTC] ❌ attackerkb.com — 403 Forbidden (consistent with MEMORY.md note).
+[03:10 UTC] ⚠️ fortinet.com/blog/threat-research — Page returned content but no clear last-7-day items; most recent dated post is 2026-04-17 (Mirai Nexcorium, already covered).
+[03:12 UTC] ✅ securitylab.github.com — Most recent: GHSL-2026-052 Docmost XSS (CVE-2026-33193, already noted) and GHSL-2026-012 Frappe (CVE-2026-39351, already noted) on 2026-04-24. No new items.
+[03:12 UTC] ✅ seclists.org/fulldisclosure — Most recent items April 2-14: OWASP CRS bypass (CVE-2026-33691, already noted), MetInfo CMS injection, Apple OHTTP, Vienna macOS LPE, Open WebUI access control, Kiuwan SAST lockout bypass, Siemens SICAM A8000 (already noted). No new items in last 48hrs.
+[03:12 UTC] ⚠️ packetstormsecurity.com — Returns redirect to packetstorm.news per MEMORY.md. Fetched packetstorm.news but only changelog and statistics extractable, no individual post titles.
+[03:14 UTC] ❌ opencve.io — Returns marketing page only. Used app.opencve.io as alternative.
+[03:14 UTC] ✅ app.opencve.io (alternative) — Critical CVE list: CVE-2024-57726 SimpleHelp (9.9), CVE-2026-41478 Saltcorn (10, noted yesterday), CVE-2026-41428 Budibase (9.1, covered yesterday), CVE-2025-14821 libssh (7.8 SSH MITM Windows). 2.0s.
+
+Tier 2:
+[03:16 UTC] ❌ nvd.nist.gov — Search results page returned redirect/no data extractable via WebFetch.
+[03:16 UTC] ❌ cve.mitre.org — Redirects to cve.org (consistent with MEMORY.md note).
+[03:16 UTC] ❌ cve.org — JS-only / empty content via WebFetch (consistent with MEMORY.md note).
+[03:16 UTC] ❌ googleprojectzero.blogspot.com → projectzero.google — Path /2026 returned 404. URL pattern needs investigation.
+[03:18 UTC] ✅ blog.cloudflare.com/tag/security — 3 posts on 2026-04-14: NHI security automation, MCP scaling reference architecture, Managed OAuth for Access. Not vulnerability content but defensive guidance.
+[03:18 UTC] ❌ msrc.microsoft.com/blog — Redirected to www.microsoft.com/en-us/msrc/blog but returned navigation only, no extractable post content.
+[03:18 UTC] ❌ hackerone.com/hacktivity — JS-only / empty content (consistent with MEMORY.md note).
+[03:18 UTC] ❌ bugcrowd.com/disclosures — 404 (consistent with MEMORY.md note).
+[03:20 UTC] ✅ kb.cert.org/vuls — 5 recent VUs (2026-04-20 to 04-23): Central Office Services Content Hosting (already noted), Ollama (already noted), Radware Alteon (already noted), Terrarium (already covered as CVE-2026-5752), SGLang (already covered as CVE-2026-5760). All previously covered.
+[03:20 UTC] ✅ avleonov.com — 1 recent post 2026-04-22 "April Linux Patch Wednesday" — 1,035 vulns; flagged ActiveMQ + Chromium as actively exploited (both already covered).
+[03:20 UTC] ✅ github.com/0xMarcio/cve — 8 trending CVE update commits in last 48hr; CVEs referenced (n8n, BeyondTrust, ShowDoc, etc.) all previously covered.
+[03:22 UTC] ✅ dbugs.ptsecurity.com — Most recent (2026-04-24): CVE-2026-41043 ActiveMQ (6.5, NEW), CVE-2026-40466 ActiveMQ (8.8, NEW), CVE-2026-41907 UUID.js (8.1, NEW), CVE-2026-41430 Frappe Press (1.3, NEW), CVE-2026-23902 Apache DolphinScheduler (8.1, NEW). Linux kernel batch CVE-2026-31584 through CVE-2026-31654 disclosed.
+[03:22 UTC] ⚠️ habr.com/ru/companies/tomhunter/articles — Most recent post 2026-03-06, no last-7-day content.
+[03:22 UTC] ⚠️ teletype.in/@cyberok — Most recent post 2026-02-04, no last-7-day content. Watch — possible source rot.
+[03:22 UTC] ❌ cert.gov.ua — Page returned only header, no advisory content extracted.
+
+WebSearch SUPPLEMENTARY QUERIES
+-------------------------------
+[03:25 UTC] WebSearch: "CISA KEV new addition April 24 2026" → confirmed 4-CVE addition (Samsung MagicINFO, SimpleHelp x2, D-Link), federal patch deadline May 15.
+[03:26 UTC] WebSearch: "Samsung MagicINFO CVE-2024-7399 active exploitation ransomware" → Mirai botnet recruitment, not ransomware; SANS ISC + Arctic Wolf flagged. PoC public last week.
+[03:27 UTC] WebSearch: "SimpleHelp CVE-2024-57726 CVE-2024-57728 actively exploited KEV" → Initial access brokers + ransomware affiliates chaining the pair since early 2025.
+[03:28 UTC] WebSearch: "Tropic Trooper SumatraPDF April 2026" → Zscaler ThreatLabz attribution, military-themed lures, AdaptixC2 over GitHub C2.
+[03:29 UTC] WebSearch: "Pack2TheRoot PackageKit CVE-2026-41651 root Linux exploit" → 12-year TOCTOU, all distros, fixed in 1.3.5, Deutsche Telekom red team disclosure.
+[03:29 UTC] WebSearch: "CanisterSprawl npm worm" → already covered as CanisterSprawl in 2026-04-23 News (no material update today).
+
+DEDUP DECISIONS
+---------------
+NEW: CVE-2024-7399 + CVE-2024-57726 + CVE-2024-57728 (KEV additions, MagicINFO + SimpleHelp). Bundled as one News item per CLAUDE.md grouping rules (single CISA action, related operational guidance).
+UPDATE: CVE-2025-29635 (D-Link DIR-823X) — covered as News on 2026-04-23, KEV addition is a material change (formal exploitation status + federal deadline).
+SKIP (already in scope coverage):
+  - CVE-2026-33824 SharePoint, CVE-2026-32201 IKE — already covered 2026-04-17.
+  - CVE-2026-33825 Defender — already covered 2026-04-17 and 2026-04-18 as updates.
+  - LMDeploy CVE-2026-33626 — already News on 2026-04-24.
+  - Bitwarden CLI / Checkmarx — already update on 2026-04-24.
+  - Saltcorn CVE-2026-41478 — already noted on 2026-04-24.
+  - Budibase CVE-2026-41428 — already News on 2026-04-24.
+  - n8n CVE-2026-21858 — already covered 2026-03-28.
+  - BeyondTrust CVE-2026-1731 — already covered 2026-04-14.
+  - ShowDoc CVE-2025-0520 — already covered 2026-04-17.
+  - CanisterSprawl npm worm — already News 2026-04-23, no material update.
+  - Firestarter / Cisco ASA — already News 2026-04-24.
+NOTED (not Findings):
+  - Tropic Trooper SumatraPDF (desktop client APT, geographic targeting).
+  - Pack2TheRoot CVE-2026-41651 (LPE, no remote component).
+  - Linux kernel batch CVE-2026-31584 through 31654 (CVSS pending).
+  - ActiveMQ CVE-2026-41043, CVE-2026-40466 (new but lower-severity items on already-tracked surface).
+  - UUID.js CVE-2026-41907, DolphinScheduler CVE-2026-23902 (high CVSS but pending detail).
+  - ADT breach (consumer customer data, ShinyHunters cluster).
+  - Fast16 ICS sabotage (geopolitically narrow).
+  - 108 malicious Chrome extensions (browser-ext, mostly out of scope).
+  - Apple iOS CVE-2026-28950 (mobile-only).
+  - Mythos / Project Glasswing (research methodology).
+
+SOURCE COVERAGE FINAL
+---------------------
+total: 30
+checked: 19 (14 returning useful data + 5 degraded but reachable)
+with_findings: 7
+unreachable: 11 (cisa.gov, cisa.gov/KEV, attackerkb.com, bugcrowd.com/disclosures, hackerone.com/hacktivity, cve.org, cve.mitre.org, googleprojectzero.blogspot.com, nvd.nist.gov, msrc.microsoft.com/blog, opencve.io)
+degraded: 6 (packetstormsecurity.com, rapid7.com, fortinet.com/blog/threat-research, habr.com, teletype.in/@cyberok, cert.gov.ua)
+
+Constraint check: checked (19) >= total (30) - unreachable (11) = 19 ✓
+
+VALIDATION
+----------
+[03:33 UTC] python3 scripts/validate_report.py reports/2026/04/25/report.json
+First run: ⚠️ 1 warning(s): findings[0] summary is 336 chars (aim for <200). ✅ valid.
+Trimmed summary to 257 chars.
+Re-run: ✅ valid (no warnings).
+
+Final structure:
+- 1 News finding (Samsung MagicINFO + SimpleHelp KEV bundle, score 8)
+- 1 Update finding (D-Link DIR-823X KEV addition, 6→7)
+- 11 Noted items
+- Source coverage: 30 total, 19 checked, 7 with_findings, 11 unreachable, 6 degraded
+
+[03:35 UTC] Ready for commit.

@@ -1,0 +1,111 @@
+{
+  "date": "2026-04-25",
+  "findings": [
+    {
+      "type": "news",
+      "title": "Samsung MagicINFO + SimpleHelp Added to CISA KEV — Three Enterprise RCE/Path Traversal Flaws Under Active Exploitation",
+      "threat_score": 8,
+      "cve": "CVE-2024-7399, CVE-2024-57726, CVE-2024-57728",
+      "cvss": 9.9,
+      "affected_technology": "Samsung MagicINFO 9 Server (≤21.1050); SimpleHelp RMM (≤5.5.7)",
+      "summary": "CISA added three enterprise flaws to KEV on 2026-04-24: Samsung MagicINFO unauthenticated path-traversal to JSP RCE (Mirai recruitment) and a SimpleHelp RMM key-escalation + zip-slip RCE pair chained by initial access brokers against MSP customer fleets.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-04-24"
+    },
+    {
+      "type": "update",
+      "title": "D-Link DIR-823X CVE-2025-29635 Added to CISA KEV — Mirai Campaign Now Federally Mandated",
+      "threat_score": 7,
+      "previous_threat_score": 6,
+      "cve": "CVE-2025-29635",
+      "cvss": 8.8,
+      "affected_technology": "D-Link DIR-823X consumer/SOHO routers",
+      "summary": "D-Link DIR-823X command-injection flaw covered as Nexcorium Mirai exploitation on 2026-04-23 was added to the CISA KEV catalog on 2026-04-24 with a May 15 federal patch deadline; many affected models are EOL so practical guidance is replacement.",
+      "first_seen_at": "2026-04-23"
+    }
+  ],
+  "noted": [
+    {
+      "cve": "N/A",
+      "product": "Tropic Trooper / SumatraPDF",
+      "summary": "Chinese-speaking APT (APT23 / Earth Centaur) using military-themed ZIP lures with a backdoored SumatraPDF reader to deploy AdaptixC2 over GitHub C2 (Zscaler, 2026-04-24); desktop-client vector keeps it out of News tier."
+    },
+    {
+      "cve": "CVE-2026-41651",
+      "product": "PackageKit (Linux)",
+      "summary": "12-year-old TOCTOU race in PackageKit transaction state machine enables LPE to root across Debian, Ubuntu, Fedora, RHEL ('Pack2TheRoot'); no remote component, fixed in PackageKit 1.3.5."
+    },
+    {
+      "cve": "CVE-2026-31584 through CVE-2026-31654",
+      "product": "Linux kernel",
+      "summary": "Bulk Linux kernel CVE batch disclosed 2026-04-24; CVSS scores not yet populated, watch for individual high-impact items as NVD scoring lands."
+    },
+    {
+      "cve": "CVE-2026-41043, CVE-2026-40466",
+      "product": "Apache ActiveMQ",
+      "summary": "Two new ActiveMQ CVEs (CVSS 6.5 and 8.8) disclosed 2026-04-24, distinct from CVE-2026-34197 Jolokia RCE in KEV but on the same exposed broker surface."
+    },
+    {
+      "cve": "CVE-2026-41907",
+      "product": "UUID.js (JavaScript library)",
+      "summary": "High-severity issue (CVSS 8.1) in widely-imported JS library, technical details pending."
+    },
+    {
+      "cve": "CVE-2026-23902",
+      "product": "Apache DolphinScheduler",
+      "summary": "Workflow scheduler vulnerability (CVSS 8.1); sometimes internet-exposed in data-engineering deployments."
+    },
+    {
+      "cve": "N/A",
+      "product": "ADT (consumer security)",
+      "summary": "ADT confirms data breach following ShinyHunters extortion threat (2026-04-24); part of the same actor cluster behind Vercel, McGraw-Hill, Infinite Campus and HackerOne incidents."
+    },
+    {
+      "cve": "N/A",
+      "product": "Fast16 ICS sabotage malware",
+      "summary": "Pre-Stuxnet-era industrial sabotage tool surfaces in US-Iran tension reporting; targets precision-calculation software with self-propagation, limited deployment scope."
+    },
+    {
+      "cve": "N/A",
+      "product": "Chrome Web Store (108 malicious extensions)",
+      "summary": "20K users impacted by extensions harvesting Google and Telegram credentials; browser-extension surface largely out of standard scope but worth GPO-driven extension allowlisting."
+    },
+    {
+      "cve": "CVE-2026-28950",
+      "product": "Apple iOS / iPadOS",
+      "summary": "Notification database retains 'deleted' Signal messages; enabled FBI iPhone forensic recovery, mobile-only / out of scope but covered widely."
+    },
+    {
+      "cve": "N/A",
+      "product": "Anthropic Mythos / Project Glasswing",
+      "summary": "Restricted internal AI model finds vulnerabilities at scale (271 Firefox + OS kernel issues); methodology disclosure rather than defensive item, false-positive rate undisclosed."
+    }
+  ],
+  "source_coverage": {
+    "total": 30,
+    "checked": 19,
+    "with_findings": 7,
+    "unreachable": [
+      "https://www.cisa.gov",
+      "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+      "https://attackerkb.com",
+      "https://www.bugcrowd.com/disclosures",
+      "https://hackerone.com/hacktivity",
+      "https://cve.org",
+      "https://cve.mitre.org",
+      "https://googleprojectzero.blogspot.com",
+      "https://nvd.nist.gov",
+      "https://msrc.microsoft.com/blog",
+      "https://opencve.io"
+    ],
+    "degraded": [
+      "https://packetstormsecurity.com",
+      "https://rapid7.com",
+      "https://fortinet.com/blog/threat-research",
+      "https://habr.com/ru/companies/tomhunter/articles",
+      "https://teletype.in/@cyberok",
+      "https://cert.gov.ua"
+    ]
+  },
+  "full_report": "reports/2026/04/25/report.md"
+}
