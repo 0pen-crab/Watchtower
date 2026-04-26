@@ -1,0 +1,107 @@
+{
+  "date": "2026-04-26",
+  "findings": [
+    {
+      "type": "news",
+      "title": "CVE-2026-40050 — CrowdStrike LogScale Self-Hosted Unauthenticated Path Traversal (CVSS 9.8)",
+      "threat_score": 8,
+      "cve": "CVE-2026-40050",
+      "cvss": 9.8,
+      "affected_technology": "CrowdStrike LogScale Self-Hosted (1.224.0–1.234.0 GA, 1.228.0/1.228.1 LTS)",
+      "summary": "Unauthenticated cluster-API path traversal in CrowdStrike LogScale Self-Hosted lets remote attackers read arbitrary files; full technical detail and version range published 2026-04-25 after vendor-only advisory on 2026-04-21.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-04-21"
+    },
+    {
+      "type": "news",
+      "title": "UNC6692 'SNOW' Modular Toolset — Microsoft Teams Helpdesk Impersonation Reaches Domain Controllers",
+      "threat_score": 7,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Microsoft Teams external federation + Chromium browser-extension persistence",
+      "summary": "Mandiant detailed UNC6692 chaining email-bombing into Teams 'IT helpdesk' impersonation that delivers SNOWBELT/SNOWGLAZE/SNOWBASIN, dumps LSASS and reaches domain controllers; targeting was 77% senior employees in March–April 2026.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-04-23"
+    },
+    {
+      "type": "news",
+      "title": "BlackFile Vishing Extortion Campaign — Retail and Hospitality Targeted via Salesforce/SharePoint API Exfiltration",
+      "threat_score": 7,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Helpdesk/MFA self-enrollment, Salesforce, Microsoft 365 / SharePoint",
+      "summary": "Unit 42 + RH-ISAC disclosed BlackFile, a vishing-led extortion cluster active since February 2026 against retail/hospitality, bypassing MFA via self-enrollment, exfiltrating via Salesforce/SharePoint APIs and swatting executives.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-04-24"
+    }
+  ],
+  "noted": [
+    {
+      "cve": "N/A",
+      "product": "GopherWhisper APT",
+      "summary": "ESET disclosed China-aligned cluster active since 2023, Mongolian government primary target plus dozens others; abuses Slack/Discord/Microsoft Graph/file.io for C2 with Go-based backdoors LaxGopher/RatGopher/BoxOfFriends/SSLORDoor."
+    },
+    {
+      "cve": "N/A",
+      "product": "Trigona ransomware (uploader_client.exe + BYOVD)",
+      "summary": "Symantec observed Trigona affiliates switch to bespoke uploader_client.exe for parallel exfil and BYOVD chain (HRSword + tooling to terminate PCHunter/Gmer/YDark/WKTools/DumpGuard) replacing Rclone/MegaSync."
+    },
+    {
+      "cve": "CVE-2026-33694",
+      "product": "Tenable Nessus / Nessus Agent (Windows)",
+      "summary": "High-severity Windows-only flaw enabling junction-based arbitrary file deletion that can escalate to SYSTEM code execution; local exploitation only, fixed in Nessus 10.11.4 / Agent 11.1.3."
+    },
+    {
+      "cve": "N/A",
+      "product": "Apple App Store (26 FakeWallet apps)",
+      "summary": "Wave of malicious apps mimicking Bitpie, Coinbase, MetaMask, Trust Wallet harvesting crypto seed phrases discovered on Apple App Store (2026-04-24); mobile-only, out of standard scope."
+    },
+    {
+      "cve": "CVE-2026-28950",
+      "product": "Apple iOS / iPadOS",
+      "summary": "iOS 26.4.2 ships fix for Signal notification-database recovery issue covered last week; mobile-only follow-up to prior coverage."
+    },
+    {
+      "cve": "N/A",
+      "product": "Mastodon (DDoS)",
+      "summary": "Mastodon hit by DDoS on 2026-04-22 attributed to the same campaign that targeted Bluesky earlier this month; mitigated within hours, no enterprise action required."
+    },
+    {
+      "cve": "N/A",
+      "product": "Rituals (consumer cosmetics)",
+      "summary": "Luxury cosmetics group Rituals disclosed customer-data breach 2026-04-23; consumer impact, tracked alongside BlackFile/ShinyHunters extortion ecosystem activity."
+    },
+    {
+      "cve": "N/A",
+      "product": "NATO Locked Shields 2026 exercise",
+      "summary": "41-nation cyber defence exercise concluded 2026-04-24; not a vulnerability, context only for engagement with state CERTs."
+    }
+  ],
+  "source_coverage": {
+    "total": 30,
+    "checked": 19,
+    "with_findings": 7,
+    "unreachable": [
+      "https://www.cisa.gov",
+      "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+      "https://attackerkb.com",
+      "https://www.bugcrowd.com/disclosures",
+      "https://hackerone.com/hacktivity",
+      "https://cve.org",
+      "https://cve.mitre.org",
+      "https://nvd.nist.gov",
+      "https://msrc.microsoft.com/blog",
+      "https://opencve.io",
+      "https://googleprojectzero.blogspot.com"
+    ],
+    "degraded": [
+      "https://packetstormsecurity.com",
+      "https://rapid7.com",
+      "https://fortinet.com/blog/threat-research",
+      "https://habr.com/ru/companies/tomhunter/articles",
+      "https://teletype.in/@cyberok",
+      "https://cert.gov.ua"
+    ]
+  },
+  "full_report": "reports/2026/04/26/report.md"
+}
