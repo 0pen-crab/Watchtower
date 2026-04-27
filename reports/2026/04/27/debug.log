@@ -1,0 +1,90 @@
+Watchtower run 2026-04-27
+=========================
+
+03:00 UTC — Pulled watchtower repo. Already up to date.
+03:01 UTC — Read MEMORY.md (last touched 2026-04-25) for source accessibility notes and dedup history.
+03:02 UTC — Read templates/report.template.md.
+03:03 UTC — Built dedup index from 30-day window (2026-03-28 → 2026-04-26).
+              40 daily reports scanned. ~175 unique CVEs and ~135 unique titles indexed.
+
+03:05 UTC — Source sweep begins. SOURCES.md = 30 unique sources (Tier 1 = 15, Tier 2 = 16, with seclists.org/fulldisclosure double-listed).
+
+  Tier 1
+  ✅  bleepingcomputer.com               (1.2s) — Itron breach Apr 26; Pack2TheRoot, Bitwarden, Snow malware echoes
+  ✅  thehackernews.com                  (1.4s) — fast16 pre-Stuxnet research; Tropic Trooper; LMDeploy follow-up
+  ❌  cisa.gov/known-exploited-vulnerabilities-catalog (403, persistent)
+  ❌  cisa.gov                           (403, persistent)
+  ✅  securityweek.com                   (1.1s) — fast16; Locked Shields; Vuln-Patched-In-CrowdStrike-Tenable echo
+  ✅  github.com/search (?q=CVE-2026)    (1.5s) — CVE-2026-30368 PoC, CVE-2026-2991 (KiviCare auth bypass), CVE-2026-31802 (npm tar)
+  ✅  schneier.com                       (0.8s) — squid extinction (no security findings); FBI Signal recovery (covered)
+  ✅  krebsonsecurity.com                (0.7s) — last post 2026-04-21 (Tylerb pleads guilty); no Apr 24-27 content
+  ✅  rapid7.com                         (0.9s) — Metasploit Wrap-Up 04/25 listed; nginx-ui (covered); 04/25 detail page 404
+  ❌  attackerkb.com                     (403, persistent)
+  ⚠️  fortinet.com/blog/threat-research  (no posts since 2026-04-17)
+  ✅  securitylab.github.com             (0.9s) — GHSL-2026-052 / CVE-2026-33193 Docmost (covered); GHSL-2026-012 / CVE-2026-39351 Frappe (covered)
+  ⚠️  seclists.org/fulldisclosure        (no posts after 2026-04-14)
+  ⚠️  packetstorm.news                   (homepage extract gave only stats; no article list)
+  ✅  app.opencve.io                     (1.6s) — Tenda F456/Fh1202/I9, Totolink A8000RU 10.0, Technitium DNS, MCP-SSH, MCP server CVE batch
+
+  Tier 2
+  ⚠️  nvd.nist.gov                       (no entries newer than 2026-04-15 in extract)
+  ❌  cve.org                            (JS-only; persistent)
+  ❌  cve.mitre.org                      (301 → cve.org, JS-only)
+  ⚠️  projectzero.google                 (latest 2026-03-05; no Apr content)
+  ⚠️  blog.cloudflare.com/tag/security   (latest 2026-04-14; no Apr 24-27)
+  ⚠️  msrc.microsoft.com/blog            (301 → www.microsoft.com/en-us/msrc/blog; only nav scraped)
+  ❌  hackerone.com/hacktivity           (JS-only; empty extract)
+  ❌  bugcrowd.com/disclosures           (404, URL change unverified — flagged again)
+  (seclists.org/fulldisclosure deduplicated above)
+  ✅  kb.cert.org/vuls                   (1.1s) — VU#748485 Central Office Services (CVE-2026-5756) most recent on Apr 23
+  ⚠️  avleonov.com                       (latest 2026-04-22 Linux Patch Wednesday)
+  ✅  github.com/0xMarcio/cve            (1.0s) — CVE-2026-34159 llama.cpp PoC (9 hours ago); CVE-2026-41651 Vozec (entry only); CVE-2026-1731 BeyondTrust (covered)
+  ✅  dbugs.ptsecurity.com               (1.3s) — full PT advisory batch for 2026-04-25/26 (Tenda, Totolink, Technitium, MCP-SSH)
+  ⚠️  habr.com/ru/companies/tomhunter    (latest 2026-03-06; no Apr content)
+  ⚠️  teletype.in/@cyberok                (latest 2026-02-04; no Apr content)
+  ⚠️  cert.gov.ua                         (header-only extract; no advisory body)
+
+03:35 UTC — Source sweep complete.
+              Reached + extracted with content: 16
+              Reached + no Apr 26-27 content (degraded): 7
+              Errored / unreachable: 7
+              checked = total - unreachable = 30 - 7 = 23
+
+03:36 UTC — Deeper investigation for candidate findings:
+  - CVE-2026-34159 llama.cpp RPC: full NVD detail confirms 9.8 / pub 2026-04-01 / fixed b8492.
+                                  TheHackerWire writeup confirms public PoC on pwntricks.com.
+                                  Twitter (@d0tslash) post confirms 0-click PoC for b8487.
+                                  DEDUP: not in last 30 days reports → NEW (late discovery, late latency).
+  - CVE-2026-6951 simple-git: Vulnerability-Lookup confirms 9.8 / advisory 2026-04-25 / fixed 3.36.0.
+                              Incomplete fix for CVE-2022-25912 (--config bypass).
+                              DEDUP: not in last 30 days reports → NEW (on-time latency).
+  - VU#748485 / CVE-2026-5756: KB CERT bulletin confirmed 2026-04-23 publication.
+                                Vista Net advisory page confirms /v0/configuration unauth modification.
+                                DEDUP: not in last 30 days. → NOTED (education sector niche).
+  - Itron 8-K disclosure: BleepingComputer Apr 26 article confirms thin 8-K filing.
+                          DEDUP: no prior Itron coverage → NOTED.
+  - Pre-Stuxnet fast16: Apr 25 THN research piece. Historical context.
+                        DEDUP: not present. → NOTED.
+  - CVE-2026-7037 Totolink A8000RU 10.0: dbugs.ptsecurity 2026-04-25 batch.
+                                          Consumer router. → NOTED.
+  - CVE-2026-42255 Technitium DNS: dbugs.ptsecurity 2026-04-25, CVSS 7.2. → NOTED.
+  - CVE-2026-30368 Lightspeed Classroom: PoC pushed 2026-04-26.
+                                          Education niche. → NOTED.
+  - Tropic Trooper / SumatraPDF / AdaptixC2: Zscaler Apr 24 / THN Apr 24.
+                                              APAC focus. → NOTED.
+  - Pack2TheRoot (CVE-2026-41651): already covered Apr 23-25; LPE only / out of scope.
+                                    Still appearing in dedup; skip a fresh entry, only echo in Noted.
+  - MCP CVE batch (CVE-2026-7061/7062/7064): dbugs.ptsecurity 2026-04-25/26.
+                                              Three small packages. → NOTED group.
+
+03:50 UTC — Drafting report.md per templates/report.template.md.
+03:55 UTC — Drafting report.json per validator schema (NEWS_KEYS / UPDATE_KEYS / NOTED_KEYS / COVERAGE_KEYS).
+              source_coverage: total=30, checked=23, with_findings=7, unreachable=7, degraded=7
+              Validator constraint check: checked (23) >= total (30) - unreachable (7) → 23 >= 23 ✓
+03:56 UTC — Wrote report.md, report.json to reports/2026/04/27/.
+
+03:57 UTC — Running validator.
+              python3 scripts/validate_report.py reports/2026/04/27/report.json
+              [validator output appended below after run]
+
+✅ reports/2026/04/27/report.json — valid

@@ -1,0 +1,93 @@
+{
+  "date": "2026-04-27",
+  "findings": [
+    {
+      "type": "news",
+      "title": "CVE-2026-34159 — llama.cpp RPC Server Unauthenticated 0-Click RCE",
+      "threat_score": 8,
+      "cve": "CVE-2026-34159",
+      "cvss": 9.8,
+      "affected_technology": "ggml-org/llama.cpp RPC backend (rpc-server) prior to b8492",
+      "summary": "Deserialization bypass in llama.cpp's RPC backend allows unauthenticated TCP attackers to read/write arbitrary process memory and achieve RCE; public 0-click PoC against version b8487 has now circulated.",
+      "discovery_latency": "late",
+      "first_seen_at": "2026-04-01"
+    },
+    {
+      "type": "news",
+      "title": "CVE-2026-6951 — simple-git Unauthenticated RCE via --config Bypass",
+      "threat_score": 7,
+      "cve": "CVE-2026-6951",
+      "cvss": 9.8,
+      "affected_technology": "simple-git npm package versions prior to 3.36.0",
+      "summary": "simple-git's incomplete fix for CVE-2022-25912 still permits the equivalent --config option, letting attackers who reach the options argument execute arbitrary code via ext:: clone sources — pervasive in CI/CD and developer tooling.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-04-25"
+    }
+  ],
+  "noted": [
+    {
+      "cve": "None",
+      "product": "Itron (smart utility metering vendor)",
+      "summary": "SEC 8-K disclosure 2026-04-26 of March 2026 unauthorised access to internal systems; details thin, no attribution, no customer-system impact claimed."
+    },
+    {
+      "cve": "CVE-2026-5756",
+      "product": "DRC INSIGHT Central Office Services - Content Hosting Component",
+      "summary": "VU#748485: /v0/configuration admin endpoint accepts unauthenticated config modifications from any on-network attacker; education-sector niche but pattern (admin+content APIs sharing one router) recurs elsewhere."
+    },
+    {
+      "cve": "CVE-2026-7037",
+      "product": "Totolink A8000RU consumer router",
+      "summary": "Pre-auth OS command injection CVSS 10.0 disclosed 2026-04-25 alongside Tenda F456/Fh1202 buffer overflow batch (CVE-2026-7019 → 7036, mostly 9.0); SOHO hardware, Mirai-class risk for ISP edge."
+    },
+    {
+      "cve": "CVE-2026-42255",
+      "product": "Technitium DNS Server",
+      "summary": "PT-2026-35197 high-severity DoS-class flaw (CVSS 7.2) disclosed 2026-04-25; minimal public detail, relevant for anyone running Technitium as a public-facing resolver."
+    },
+    {
+      "cve": "CVE-2026-30368",
+      "product": "Lightspeed Classroom (education sector)",
+      "summary": "Client-side authorization bypass — attackers forge tokens to impersonate users and control student devices; PoC published 2026-04-26, niche to K-12."
+    },
+    {
+      "cve": "None",
+      "product": "Tropic Trooper / Earth Centaur (APT23) — trojanised SumatraPDF + GitHub C2",
+      "summary": "Zscaler details Chinese-speaker espionage cluster delivering custom AdaptixC2 Beacon listener via military-themed lures, then pivoting to VS Code tunnels for stealthy remote access; APAC-targeted but tradecraft is portable."
+    },
+    {
+      "cve": "None",
+      "product": "Pre-Stuxnet 'fast16' Lua sabotage malware",
+      "summary": "Kaspersky published research on Lua-based ICS sabotage tooling from ~2005 that predates Stuxnet; historical / strategic context for ICS-defender briefings, no current threat."
+    },
+    {
+      "cve": "CVE-2026-7061, CVE-2026-7062, CVE-2026-7064",
+      "product": "MCP servers (chatgpt-mcp-server, Intina47 context-sync, AgentDeskAI browser-tools-mcp)",
+      "summary": "Three more MCP-server packages (CVSS 7.3 each) disclosed 2026-04-25/26 with classic OS command injection — pattern of unsanitised tool input into child_process.exec continues in the AI tooling ecosystem."
+    }
+  ],
+  "source_coverage": {
+    "total": 30,
+    "checked": 23,
+    "with_findings": 7,
+    "unreachable": [
+      "cisa.gov",
+      "cisa.gov/known-exploited-vulnerabilities-catalog",
+      "cve.org",
+      "cve.mitre.org",
+      "hackerone.com/hacktivity",
+      "bugcrowd.com/disclosures",
+      "attackerkb.com"
+    ],
+    "degraded": [
+      "msrc.microsoft.com/blog",
+      "nvd.nist.gov",
+      "packetstorm.news",
+      "projectzero.google",
+      "habr.com/ru/companies/tomhunter",
+      "teletype.in/@cyberok",
+      "cert.gov.ua"
+    ]
+  },
+  "full_report": "reports/2026/04/27/report.md"
+}
