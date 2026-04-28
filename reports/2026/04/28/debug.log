@@ -1,0 +1,119 @@
+================================================================
+Watchtower Daily Run — 2026-04-28
+================================================================
+
+[03:00 UTC] STEP 1 — git pull
+  $ cd /home/claude/workspace/watchtower && git pull
+  Result: Already up to date.
+
+[03:01 UTC] STEP 2 — Build dedup index from last 30 days (2026-03-29 → 2026-04-28)
+  Indexed reports: 28 daily reports under reports/2026/03/29..reports/2026/04/27
+  Total ID rows:   256
+  Unique IDs:      217
+  Notable recent items influencing today's classification:
+    - TeamPCP campaign: 2026-03-29, 2026-04-01, 2026-04-23 (KICS Docker), 2026-04-24 (Bitwarden CLI)
+    - Marimo CVE-2026-39987: 2026-04-14 / 2026-04-17 (NKAbuse weaponisation)
+    - llama.cpp CVE-2026-34159: 2026-04-27
+    - simple-git CVE-2026-6951: 2026-04-27
+    - GlassWorm October 2025 campaign — historical baseline (NOT in 30d window, but referenced)
+    - APT28 LNK CVE-2026-21510 / CVE-2026-21513 — historical, not in 30d window
+    - Itron breach: 2026-04-27 (noted, today's confirms / continues)
+
+[03:05 UTC] STEP 3 — Source coverage (SOURCES.md tier 1 + tier 2; total=30)
+  Source                                          Status   Time   Notes
+  bleepingcomputer.com                             ✅       8s    9 articles 04/27, multiple in scope (PyPI elementary, ADT, Medtronic, GlassWorm, Itron)
+  thehackernews.com                                ✅       9s    Confirmed Checkmarx leak, GlassWorm v2 details, PhantomCore TrueConf
+  cisa.gov                                         ❌       2s    HTTP 403 via WebFetch (consistent with MEMORY.md)
+  cisa.gov/known-exploited-vulnerabilities-catalog ❌       2s    HTTP 403; mirrored via THN/SecurityWeek
+  securityweek.com                                 ✅       9s    OpenSSH CVE-2026-35414 + Windows CVE-2026-32202 + Itron + UNC6692
+  github.com/search?q=CVE                          ✅      11s    Recent CVE-2026 PoCs (Notepad RCE CVE-2026-20841, Chrome Blink, Telnet)
+  schneier.com                                     ✅       4s    Only post: medieval encrypted letter — out of scope
+  krebsonsecurity.com                              ✅       4s    No new posts since 2026-04-21 (Tylerb plea)
+  rapid7.com                                       ✅       6s    Metasploit Wrap-Up 04/25 included Langflow CVE-2026-27966
+  attackerkb.com                                   ❌       2s    HTTP 403 (consistent w/ MEMORY.md)
+  fortinet.com/blog/threat-research                ⚠️       4s    No posts since 2026-04-17 (Mirai Nexcorium)
+  securitylab.github.com (via github.blog/security)⚠️       5s    No posts since 2026-04-14
+  seclists.org/fulldisclosure                      ⚠️       4s    No posts since 2026-04-14 (Siemens SICAM)
+  packetstormsecurity.com → packetstorm.news       ⚠️       4s    Returned ToS page; degraded
+  app.opencve.io                                   ✅       6s    Spring Boot CVE-2026-40976, CI4MS CVE-2026-34989, Milesight CVE-2026-27785, iOS CVE-2025-43449
+  nvd.nist.gov                                     ⚠️       3s    Returned navigation only — degraded
+  cve.mitre.org                                    ❌       2s    JS-required redirect (consistent w/ MEMORY.md)
+  cve.org                                          ❌       2s    JS-required (consistent w/ MEMORY.md)
+  googleprojectzero.blogspot.com → projectzero.google ⚠️    3s    Redirect; degraded
+  blog.cloudflare.com/tag/security                 ⚠️       4s    No posts since 2026-04-14
+  msrc.microsoft.com/blog                          ⚠️       3s    Microsoft now serves JS shell via WebFetch — degraded
+  hackerone.com/hacktivity                         ❌       2s    JS required (consistent w/ MEMORY.md)
+  bugcrowd.com/disclosures                         ❌       2s    HTTP 404 (consistent w/ MEMORY.md)
+  kb.cert.org/vuls                                 ✅       5s    No new VU# notes since VU#748485 (2026-04-23)
+  avleonov.com                                     ✅       4s    No posts since 2026-04-22 (Linux Patch Wednesday)
+  github.com/0xMarcio/cve                          ✅       5s    Confirmed PoC tracking activity for n8n, BeyondTrust, Pack2TheRoot
+  dbugs.ptsecurity.com                             ✅       7s    54 entries on 2026-04-27; mostly low-priority Laravel/courier/notepad++ flaws
+  habr.com/ru/companies/tomhunter/articles         ⚠️       4s    No posts since 2026-03-06
+  teletype.in/@cyberok                             ⚠️       4s    No posts since 2026-02-04
+  cert.gov.ua                                      ⚠️       4s    Empty/header-only response
+
+  Summary:
+    total      = 30
+    unreachable= 7   [cisa.gov, cisa.gov/known-exploited-vulnerabilities-catalog, attackerkb.com, cve.mitre.org, cve.org, hackerone.com/hacktivity, bugcrowd.com/disclosures]
+    degraded   = 7   [msrc.microsoft.com/blog, nvd.nist.gov, packetstorm.news, projectzero.google, habr.com/ru/companies/tomhunter, teletype.in/@cyberok, cert.gov.ua]
+    checked    = 23  (= total - unreachable; satisfies validator constraint)
+    with_findings = 7 (bleepingcomputer, thehackernews, securityweek, opencve.io, rapid7.com, github.com/0xMarcio/cve, dbugs.ptsecurity.com)
+
+[03:35 UTC] STEP 4 — Dedup decisions
+
+  CRITICAL/HIGH news candidates:
+  -------------------------------
+  CVE-2026-35414 OpenSSH cert principal      → NEW (not in dedup index)
+  CVE-2026-40976 Spring Boot actuator bypass → NEW
+  CVE-2026-32202 Windows LNK incomplete patch → NEW (CVE-2026-21510/21513 are historical, this is the follow-up CVE)
+  GlassWorm v2 / 73 OpenVSX extensions       → NEW (historical GlassWorm Oct 2025 campaign predates 30d window)
+  PyPI elementary-data 0.23.3 compromise     → NEW
+  CVE-2026-27966 Langflow RCE Metasploit     → NEW (CVE-2026-27966 not in dedup index)
+
+  UPDATE candidates:
+  ------------------
+  TeamPCP / Checkmarx GitHub data leak       → MATERIAL CHANGE (data publication is a new monetisation phase
+                                                following the 2026-03-23 compromise / 2026-04-23 KICS / 2026-04-24 Bitwarden entries)
+
+  SKIP / already covered:
+  -----------------------
+  Itron breach                               → ALREADY NOTED (2026-04-27)
+  Pre-Stuxnet 'fast16'                       → ALREADY NOTED (2026-04-27)
+  Microsoft Snow malware UNC6692             → ALREADY NEWS (2026-04-26 — UNC6692 Microsoft Teams Helpdesk)
+  Pack2TheRoot Linux PackageKit              → ALREADY NOTED (CVE-2026-41651) — out of scope (LPE, no remote)
+  Firestarter Cisco Firewall backdoor        → ALREADY NEWS (2026-04-24)
+  TrueConf CVE-2026-3502 Op TrueChaos        → ALREADY UPDATE (2026-04-05) — today's PhantomCore is DISTINCT (different CVE chain, different actor)
+
+  Noted candidates (not News-worthy today):
+  -----------------------------------------
+  ADT breach (5.5M individuals)              → NOTED (corporate breach, no infra advisory)
+  Medtronic breach (9M records claimed)      → NOTED (same MO as ADT)
+  PhantomCore TrueConf BDU chain             → NOTED (Russian targets, distinct from prior TrueConf Op TrueChaos)
+  Robinhood account-creation phishing        → NOTED (signal: unauth input → email template)
+  Outlook.com sign-in outage                 → NOTED (operational, but historical correlation w/ phishing)
+  CVE-2025-43449 Apple iOS tracking          → NOTED (out of remote-vuln scope, useful CISO context)
+  CVE-2026-27785 Milesight cam hard-coded    → NOTED (embedded scope, scale)
+  CVE-2026-34989 CI4MS stored XSS            → NOTED (niche CMS, CVSS 9.0 unauth-to-ATO)
+
+  Discovery latency assessment for News items:
+    OpenSSH CVE-2026-35414             → on-time (publishing day matches discovery)
+    Spring Boot CVE-2026-40976         → on-time (vendor advisory 04/23, mainstream pickup 04/27)
+    Windows CVE-2026-32202             → on-time (Akamai analysis day matches)
+    GlassWorm v2                       → on-time (Koi/Aikido publication day matches)
+    PyPI elementary-data 0.23.3        → on-time (BleepingComputer published 04/27, Watchtower covers 04/28)
+    Langflow CVE-2026-27966            → on-time (Metasploit module 04/25, public CVE detail trickled into 04/27 cycle)
+
+[04:00 UTC] STEP 5 — Wrote report.md and report.json
+
+[04:05 UTC] STEP 6 — Wrote debug.log
+
+[04:10 UTC] STEP 7 — Validation
+  $ python3 scripts/validate_report.py reports/2026/04/28/report.json
+  ⚠️  3 warning(s):
+     findings[3]: CVE 'None' doesn't start with 'CVE-'   (GlassWorm v2 — no CVE assigned, intentional)
+     findings[4]: CVE 'None' doesn't start with 'CVE-'   (elementary-data — no CVE assigned, intentional)
+     findings[6]: CVE 'None' doesn't start with 'CVE-'   (TeamPCP / Checkmarx update — no CVE assigned, intentional)
+  ✅ reports/2026/04/28/report.json — valid
+  Exit code 0.
+
+[04:12 UTC] STEP 8 — git add / commit / push (next)

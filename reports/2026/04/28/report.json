@@ -1,0 +1,153 @@
+{
+  "date": "2026-04-28",
+  "findings": [
+    {
+      "type": "news",
+      "title": "CVE-2026-35414 — OpenSSH 15-Year-Old Certificate Principal Parsing Bug Yields Root Shell",
+      "threat_score": 8,
+      "cve": "CVE-2026-35414",
+      "cvss": 8.1,
+      "affected_technology": "OpenSSH all releases through 10.2 (certificate-principal handling)",
+      "summary": "Code-reuse error in OpenSSH lets a comma in a certificate principal cross a parser boundary so an attacker holding a CA-signed cert with principal like 'deploy,root' authenticates as root with no auth-failure log entry; patched in 10.3, public technical write-up published today.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-04-27"
+    },
+    {
+      "type": "news",
+      "title": "CVE-2026-40976 — Spring Boot Default Web Security Bypass",
+      "threat_score": 8,
+      "cve": "CVE-2026-40976",
+      "cvss": 9.1,
+      "affected_technology": "Spring Boot 4.0.0 – 4.0.5 (servlet apps with spring-boot-actuator-autoconfigure, no spring-boot-health, no custom Spring Security config)",
+      "summary": "Default-on Spring Security degrades to allow-all when actuator-autoconfigure is on the classpath without spring-boot-health and no custom security configuration, exposing every endpoint (including /actuator/env, /actuator/heapdump) to unauthenticated requests; fix in 4.0.6.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-04-23"
+    },
+    {
+      "type": "news",
+      "title": "CVE-2026-32202 — Windows LNK Zero-Click NTLM Coercion (Incomplete Patch of CVE-2026-21510)",
+      "threat_score": 7,
+      "cve": "CVE-2026-32202",
+      "cvss": null,
+      "affected_technology": "Windows Explorer LNK / icon UNC handler (all currently supported Windows versions pre April 2026 cumulative)",
+      "summary": "Akamai found Microsoft's February 2026 patch for the APT28-exploited CVE-2026-21510 incomplete: Explorer still automatically authenticates to the attacker's SMB host on folder render, leaking Net-NTLMv2 hashes with no user interaction; re-patched in April 2026 cumulative updates.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-04-27"
+    },
+    {
+      "type": "news",
+      "title": "GlassWorm v2 — 73 Sleeper Extensions on Open VSX (320+ Artifacts Since December 2025)",
+      "threat_score": 7,
+      "cve": "None",
+      "cvss": null,
+      "affected_technology": "Open VSX marketplace extensions for VS Code, Cursor, Windsurf, VSCodium",
+      "summary": "73 cloned VS Code extensions on Open VSX (6 active, 67 sleepers); thin Zig loader fetches a secondary VSIX from GitHub at runtime to steal SSH keys, cloud creds, browser sessions, and crypto wallets across VS Code, Cursor, Windsurf, and VSCodium.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-04-27"
+    },
+    {
+      "type": "news",
+      "title": "PyPI elementary-data 0.23.3 Supply Chain Compromise (1.1M Monthly Downloads)",
+      "threat_score": 7,
+      "cve": "None",
+      "cvss": null,
+      "affected_technology": "PyPI package elementary-data 0.23.3 and ghcr.io/elementary-data/elementary:0.23.3 / :latest Docker images",
+      "summary": "GitHub Actions script-injection via PR comments leaked GITHUB_TOKEN, allowing forged commits to ship a backdoored 0.23.3 release whose elementary.pth exfiltrates SSH keys, cloud/k8s creds, .env files, and crypto wallets at Python startup.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-04-27"
+    },
+    {
+      "type": "news",
+      "title": "CVE-2026-27966 — Langflow Pre-Auth RCE via LangChain REPL Now Weaponised in Metasploit",
+      "threat_score": 7,
+      "cve": "CVE-2026-27966",
+      "cvss": null,
+      "affected_technology": "Langflow versions prior to 1.8.0 (LangChain REPL component exposed by default)",
+      "summary": "Langflow's default-exposed LangChain REPL lets unauthenticated attackers submit a flow containing Python code that the runtime executes server-side; Rapid7 shipped a public Metasploit module on 2026-04-25, lowering the exploitation bar to a one-liner.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-04-25"
+    },
+    {
+      "type": "update",
+      "title": "TeamPCP Campaign Update — Checkmarx GitHub Source Code, Employee Data, and Credentials Posted to Dark Web",
+      "threat_score": 8,
+      "previous_threat_score": 8,
+      "cve": "None",
+      "cvss": null,
+      "affected_technology": "Checkmarx GitHub repository (initial vector: TeamPCP supply-chain compromise of 2026-03-23)",
+      "summary": "Checkmarx confirmed that source code, employee data, API keys, and MongoDB/MySQL credentials stolen in the March 23 TeamPCP supply-chain attack have been published on a dark-web marketplace; downstream relay risk for any tenant credentials in the leaked repo.",
+      "first_seen_at": "2026-03-23"
+    }
+  ],
+  "noted": [
+    {
+      "cve": "None",
+      "product": "ADT Inc",
+      "summary": "ShinyHunters compromised an ADT employee Okta SSO via vishing and exfiltrated 11GB of Salesforce data on 5.5M individuals; customer security systems and payment data unaffected, leak published after extortion failed."
+    },
+    {
+      "cve": "None",
+      "product": "Medtronic",
+      "summary": "Medical-device manufacturer confirmed unauthorised access to corporate IT systems; ShinyHunters claimed 9M records and removed the listing post-confirmation, suggesting payment / negotiation. Product networks and manufacturing reportedly segmented."
+    },
+    {
+      "cve": "BDU:2025-10114, BDU:2025-10115, BDU:2025-10116",
+      "product": "TrueConf Server (PhantomCore campaign vs Russian deployments)",
+      "summary": "Pro-Ukrainian hacktivists chained admin auth bypass, arbitrary file read, and OS command injection to land remote shells on Russian TrueConf deployments since mid-September 2025; distinct from the previously-covered Operation TrueChaos CVE-2026-3502 chain."
+    },
+    {
+      "cve": "None",
+      "product": "Robinhood (account-creation phishing abuse)",
+      "summary": "Threat actors abused Robinhood's account-creation flow to inject phishing copy into legitimate Robinhood transactional emails; app-specific abuse, but signals risk for any service whose unauthenticated input reaches transactional email templates."
+    },
+    {
+      "cve": "None",
+      "product": "Microsoft Outlook.com (operational outage 2026-04-27)",
+      "summary": "Multi-hour outage preventing customer sign-ins; operational not security, but historically helpdesk-ticket spikes during outages coincide with credential-phishing waves — flag for SOC awareness."
+    },
+    {
+      "cve": "CVE-2025-43449",
+      "product": "Apple iOS / iPadOS user tracking-between-installs",
+      "summary": "Improper cache handling enables tracking users between app reinstalls; mobile/client-only, out of remote-vulnerability scope but useful CISO context."
+    },
+    {
+      "cve": "CVE-2026-27785",
+      "product": "Milesight AIOT camera firmware",
+      "summary": "Hard-coded credentials in Milesight AIOT camera firmware (CVSS 8.8, 2026-04-27); embedded-device scope, but Milesight is deployed at scale in enterprise physical-security environments — push the firmware update."
+    },
+    {
+      "cve": "CVE-2026-34989",
+      "product": "CI4-CMS-ERP / CI4MS",
+      "summary": "Stored XSS in profile-name field rendered unsafely across multiple views (CVSS 9.0); fixed in v31.0.0.0. Niche CMS but unauth-to-ATO via session theft is plausible."
+    },
+    {
+      "cve": "CVE-2026-21510, CVE-2026-21513",
+      "product": "Windows LNK RCE chain (APT28 December 2025 campaign — original)",
+      "summary": "Restating the originals that today's CVE-2026-32202 incomplete-patch entry derives from: APT28 chained these against Ukraine and EU targets in Dec 2025; patched February 2026 (incompletely)."
+    }
+  ],
+  "source_coverage": {
+    "total": 30,
+    "checked": 23,
+    "with_findings": 7,
+    "unreachable": [
+      "cisa.gov",
+      "cisa.gov/known-exploited-vulnerabilities-catalog",
+      "cve.org",
+      "cve.mitre.org",
+      "hackerone.com/hacktivity",
+      "bugcrowd.com/disclosures",
+      "attackerkb.com"
+    ],
+    "degraded": [
+      "msrc.microsoft.com/blog",
+      "nvd.nist.gov",
+      "packetstorm.news",
+      "projectzero.google",
+      "habr.com/ru/companies/tomhunter",
+      "teletype.in/@cyberok",
+      "cert.gov.ua"
+    ]
+  },
+  "full_report": "reports/2026/04/28/report.md"
+}
