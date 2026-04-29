@@ -1,0 +1,122 @@
+Watchtower run — 2026-04-29 (night cycle)
+
+[00:00:00Z] Pull latest from origin/main → Already up to date
+[00:00:30Z] Built dedup index from reports/2026/03/30 .. 2026/04/28 (last 30 days)
+            → 161 unique CVE/item entries indexed
+[00:01:00Z] Loaded SOURCES.md → 30 unique sources (15 Tier 1 + 16 Tier 2 - 1 dup of seclists)
+
+=== Source check round (parallel WebFetch batches of 4) ===
+[00:01:30Z] bleepingcomputer.com                        ✅ ~3s   → multiple findings (LiteLLM, Vimeo, Itron, Checkmarx update)
+[00:01:30Z] thehackernews.com                            ✅ ~3s   → multiple findings (GitHub RCE, LeRobot, MS Entra, MS confirmation)
+[00:01:30Z] securityweek.com                             ✅ ~3s   → multiple findings (PhantomRPC, Pack2TheRoot, Vimeo, Signal-Russia)
+[00:01:30Z] krebsonsecurity.com                          ✅ ~2s   → only Tylerb post (Apr 21), no new April 28-29 content
+
+[00:02:00Z] app.opencve.io                               ✅ ~3s   → CVE-2026-24178 (NVFlare 9.8), CVE-2026-24186 (FLARE 8.8) — both noted
+[00:02:00Z] rapid7.com/blog                              ✅ ~3s   → ClickFix Claude installer (noted), Metasploit wrap-ups (no new since Apr 25)
+[00:02:00Z] seclists.org/fulldisclosure/2026/Apr/        ✅ ~3s   → No posts after Apr 14 (all pre-existing items already in dedup)
+[00:02:00Z] fortinet.com/blog/threat-research            ✅ ~3s   → Only Mirai variant post (Apr 17, already covered as CVE-2024-3721)
+
+[00:02:30Z] nvd.nist.gov                                 ⚠️ ~3s   → Page returned navigation only, no extractable CVE list — degraded
+[00:02:30Z] github.com/0xMarcio/cve                      ✅ ~3s   → Confirmed PoCs for CVE-2026-3854 and CVE-2026-31802 etc.
+[00:02:30Z] blog.cloudflare.com/tag/security             ✅ ~3s   → Only Apr 14 posts; nothing new
+[00:02:30Z] kb.cert.org/vuls                             ✅ ~3s   → All recent VU# entries already in dedup index
+
+[00:03:00Z] msrc.microsoft.com/blog                      ❌ ~2s   → Redirect to www.microsoft.com/en-us/msrc/blog → only navigation, no posts → unreachable
+[00:03:00Z] schneier.com                                 ✅ ~3s   → Mythos commentary (noted), no vulns
+[00:03:00Z] avleonov.com                                 ✅ ~3s   → April Patch Wednesday (Apr 22) — already covered
+[00:03:00Z] dbugs.ptsecurity.com                         ✅ ~3s   → Spring AI 40978/40980 (noted), Totolink A8000RU CVE-2026-7241 (noted)
+
+[00:03:30Z] github.com/search?q=CVE-2026                 ✅ ~3s   → Confirmed PoCs uploaded for CVE-2026-3854, CVE-2026-39816, CVE-2026-42167
+[00:03:30Z] habr.com/ru/companies/tomhunter/articles     ⚠️ ~3s   → Most recent article Mar 6, no late-April content — degraded
+[00:03:30Z] teletype.in/@cyberok                         ⚠️ ~3s   → Most recent post Feb 4, no April content — degraded
+[00:03:30Z] cert.gov.ua                                  ⚠️ ~3s   → Returned page with no extractable advisory data — degraded
+
+[00:04:00Z] securitylab.github.com (github.blog/security)        ✅ ~3s   → Confirmed GitHub CVE-2026-3854 incident write-up
+[00:04:00Z] github.com/advisories (recent critical/high)         ✅ ~3s   → CoreDNS bundle (5 advisories), GitPython, PhpSpreadsheet
+[00:04:00Z] packetstorm.news                                     ❌ ~3s   → Only aggregate stats visible, no advisory list — unreachable
+[00:04:00Z] projectzero.google                                   ❌ ~2s   → Reachable but no posts after Mar 5 → unreachable for our purposes
+[00:04:00Z] cisa.gov, cisa.gov/known-exploited-vulnerabilities-catalog → ❌ 403 (per memory, consistent — unreachable)
+[00:04:00Z] attackerkb.com                                       → ❌ 403 (per memory — unreachable)
+[00:04:00Z] bugcrowd.com/disclosures                             → ❌ 404 (per memory — unreachable)
+[00:04:00Z] hackerone.com/hacktivity                             → ❌ JS-only (per memory — unreachable)
+[00:04:00Z] cve.org, cve.mitre.org                               → ❌ JS-only (per memory — unreachable)
+
+=== Source coverage summary ===
+total       = 30
+unreachable = 10  (cisa.gov, cisa.gov/KEV, attackerkb, bugcrowd, hackerone, cve.org, cve.mitre.org, packetstormsecurity.com, msrc.microsoft.com/blog, googleprojectzero.blogspot.com)
+degraded    = 4   (nvd.nist.gov, habr.com, teletype.in/@cyberok, cert.gov.ua — content received but no extractable findings)
+checked     = 20  = total - unreachable
+with_findings = 9 (bleepingcomputer, thehackernews, securityweek, opencve.io, rapid7, dbugs.ptsecurity.com, github.com/0xMarcio/cve, github.com/advisories, github.blog/security)
+
+=== Deep-dive WebFetch round ===
+[00:05:00Z] thehackernews.com /2026/04/researchers-discover-critical-github.html  ✅  → CVE-2026-3854 full details (Wiz, 8.7, 88% GHE vuln, patched in 2hrs)
+[00:05:00Z] thehackernews.com /2026/04/critical-cve-2026-25874-leaves-hugging.html ✅ → LeRobot 9.3 unpatched, fix planned 0.6.0
+[00:05:00Z] bleepingcomputer.com .../litellm-pre-auth-sqli-flaw                   ✅  → Sysdig confirmation, exploitation 36hrs after disclosure
+[00:05:00Z] thehackernews.com /2026/04/microsoft-confirms-active-exploitation.html ✅ → MSRC revised 2026-04-27, APT28 attribution by Akamai
+[00:05:30Z] github.com/advisories/GHSA-vp29-5652-4fw9                              ✅  → CVE-2026-35579 details (gRPC/QUIC TSIG bypass)
+[00:05:30Z] github.com/advisories/GHSA-rpm5-65cw-6hj4                              ✅  → GitPython kwargs bypass details (8.8, fixed 3.1.47)
+[00:05:30Z] securityweek.com/no-patch-for-new-phantomrpc-privilege-escalation-technique/ ✅  → local PE only, MS won't patch
+[00:05:30Z] thehackernews.com /2026/04/microsoft-patches-entra-id-role-flaw.html  ✅  → Silverfort, patched 2026-04-09
+[00:05:30Z] bleepingcomputer.com .../itron-discloses-breach                       ✅  → preliminary, no attribution
+[00:05:30Z] securityweek.com/easily-exploitable-pack2theroot                       ✅  → CVE-2026-41651 PackageKit local PE — already covered 2026-04-25 (skip)
+[00:05:30Z] bleepingcomputer.com .../vimeo-anodot-breach                           ✅  → ShinyHunters via stolen Anodot tokens
+[00:05:30Z] bleepingcomputer.com .../checkmarx-confirms-lapsus-leaked              ✅  → 96GB leaked, links to TeamPCP — already covered as update on 2026-04-28 (skip; today's article adds detail but no material new event)
+
+=== Triage (dedup vs new vs update) ===
+SKIP CVE-2025-32975 (already in 2026-04-22)
+SKIP CVE-2026-41651 PackageKit (already in 2026-04-25)
+SKIP CVE-2024-3721 Mirai/TBK (already in 2026-04-19)
+SKIP Checkmarx leak (already covered as update on 2026-04-28; today's BC article adds 96GB detail but no material new event beyond yesterday's report)
+SKIP ADT, Medtronic breaches (already noted on 2026-04-28)
+SKIP Robinhood account flaw (already noted on 2026-04-28)
+SKIP CVE-2025-43449 (Apple iOS, already noted on 2026-04-28)
+SKIP CVE-2026-27785 (Milesight, already noted on 2026-04-28)
+SKIP CVE-2026-34989 (CI4MS, already noted on 2026-04-28)
+SKIP TrueConf BDU (already noted on 2026-04-28)
+SKIP Outlook outage (operational, already noted on 2026-04-28)
+
+NEW (Critical/High → News):
+  - CVE-2026-42208 LiteLLM (score 9, actively exploited)
+  - CVE-2026-3854 GitHub (score 8, multi-product RCE)
+  - CVE-2026-25874 LeRobot (score 7, unpatched)
+  - CoreDNS bundle (CVE-2026-35579/33190/33489/32936/32934, score 7)
+
+UPDATE (material change):
+  - CVE-2026-32202 (was score 7; MS confirmed active APT28 exploitation 2026-04-27 → score 8)
+
+NOTED:
+  - Microsoft Entra ID Agent Admin role flaw (patched 2026-04-09)
+  - PhantomRPC (local PE, MS won't patch — track for EDR rules)
+  - GitPython GHSA-rpm5-65cw-6hj4 (8.8, ci/cd impact)
+  - CVE-2026-7241 Totolink (10.0, consumer router — IoT botnet candidate)
+  - CVE-2026-24178/24186 NVIDIA NVFlare (9.8/8.8 — federated learning niche but watch)
+  - CVE-2026-40978/40980 Spring AI (8.8/6.5)
+  - Vimeo/Anodot breach (SaaS supply-chain pattern)
+  - Itron breach (preliminary)
+  - Signal phishing vs German officials (operational signal)
+  - ClickFix Claude installer (AI installer phishing trend)
+  - VECT 2.0 ransomware (operational — files >131KB unrecoverable)
+  - 108 malicious Chrome extensions (out of scope but logged)
+
+=== Write phase ===
+[00:06:00Z] Wrote reports/2026/04/29/report.md  (~12KB)
+[00:06:30Z] Wrote reports/2026/04/29/report.json
+[00:06:50Z] Validator run:
+            $ python3 scripts/validate_report.py reports/2026/04/29/report.json
+            ✅ reports/2026/04/29/report.json — valid
+
+=== Final source_coverage in report.json ===
+{
+  "total": 30,
+  "checked": 20,
+  "with_findings": 9,
+  "unreachable": [10 entries],
+  "degraded":    [4 entries]
+}
+checked (20) >= total (30) - unreachable (10) ✓
+
+=== Notes for next run ===
+- Watch CVE-2026-25874 LeRobot for the 0.6.0 release (currently unpatched).
+- Watch Spring AI CVE-2026-40978/40980 for vendor write-up — possible compounding with yesterday's CVE-2026-40976 Spring Boot bypass.
+- Watch CVE-2026-32202 for downstream APT28 IOCs from Akamai / CISA.
+- Watch CoreDNS 1.14.3 rollout in major Kubernetes distros (EKS / GKE / AKS) — likely they'll bump default DNS over the next 1-2 weeks.

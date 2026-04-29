@@ -1,0 +1,146 @@
+{
+  "date": "2026-04-29",
+  "findings": [
+    {
+      "type": "news",
+      "title": "LiteLLM Pre-Auth SQL Injection Actively Exploited Within 36 Hours of Disclosure",
+      "threat_score": 9,
+      "cve": "CVE-2026-42208",
+      "cvss": null,
+      "affected_technology": "LiteLLM proxy < 1.83.7",
+      "summary": "Pre-auth SQL injection in LiteLLM's API key verification path is being actively exploited by attackers enumerating provider secrets (OpenAI/Anthropic/Bedrock) directly from the database; patched in 1.83.7.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-04-29"
+    },
+    {
+      "type": "news",
+      "title": "GitHub Enterprise Server Authenticated-Push RCE — 88% of GHE Instances Vulnerable at Disclosure",
+      "threat_score": 8,
+      "cve": "CVE-2026-3854",
+      "cvss": 8.7,
+      "affected_technology": "GitHub.com, GitHub Enterprise Cloud, GitHub Enterprise Server 3.14-3.20",
+      "summary": "Wiz disclosed a command injection in GitHub's git push pipeline where any authenticated user with push access can execute arbitrary commands as the git user, with ~88% of GHE instances vulnerable at coordinated disclosure.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-04-29"
+    },
+    {
+      "type": "news",
+      "title": "Hugging Face LeRobot Unauthenticated Pickle Deserialization RCE — Currently Unpatched",
+      "threat_score": 7,
+      "cve": "CVE-2026-25874",
+      "cvss": 9.3,
+      "affected_technology": "Hugging Face LeRobot <= 0.4.3 (PolicyServer gRPC)",
+      "summary": "LeRobot deserializes pickle payloads on unauthenticated plaintext gRPC channels, allowing any network-reachable attacker to execute code on the policy server or robot client; vendor fix planned for v0.6.0.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-04-29"
+    },
+    {
+      "type": "news",
+      "title": "CoreDNS TSIG Authentication Bypass Bundle Across DoH/DoT/DoQ/QUIC/gRPC Transports",
+      "threat_score": 7,
+      "cve": "CVE-2026-35579, CVE-2026-33190, CVE-2026-33489, CVE-2026-32936, CVE-2026-32934",
+      "cvss": 7.5,
+      "affected_technology": "CoreDNS < 1.14.3 (default Kubernetes DNS)",
+      "summary": "Five CoreDNS advisories on 2026-04-28 include TSIG signature verification bypasses on gRPC/QUIC and on DoT/DoH/DoH3/DoQ/gRPC, plus subzone ACL bypass and DoS amplification, all fixed in 1.14.3.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-04-29"
+    },
+    {
+      "type": "update",
+      "title": "Microsoft Confirms Active Exploitation of Windows Shell CVE-2026-32202 by APT28",
+      "threat_score": 8,
+      "previous_threat_score": 7,
+      "cve": "CVE-2026-32202",
+      "cvss": 4.3,
+      "affected_technology": "Windows Shell (all currently supported)",
+      "summary": "Microsoft revised the advisory on 2026-04-27 to confirm active exploitation; Akamai attributed the LNK-coercion + MSHTML chain to APT28 targeting Ukraine and EU entities, raising urgency for organisations not yet on April Patch Tuesday.",
+      "first_seen_at": "2026-04-29"
+    }
+  ],
+  "noted": [
+    {
+      "cve": "Not yet assigned",
+      "product": "Microsoft Entra ID — Agent ID Administrator role",
+      "summary": "Silverfort disclosed an Entra ID role flaw allowing arbitrary service principal takeover; Microsoft patched 2026-04-09, no active exploitation reported."
+    },
+    {
+      "cve": "None",
+      "product": "Windows RPC (PhantomRPC technique, Kaspersky)",
+      "summary": "Local privilege escalation via fake RPC servers impersonating disabled Windows services; Microsoft classified moderate and declined to patch — out of remote-services scope."
+    },
+    {
+      "cve": "GHSA-rpm5-65cw-6hj4",
+      "product": "GitPython 3.1.30 - 3.1.46",
+      "summary": "Command injection bypass via underscore-form Python kwargs (upload_pack=, receive_pack=) sneaking past safety check before dashification (CVSS 8.8); fixed in 3.1.47."
+    },
+    {
+      "cve": "CVE-2026-7241",
+      "product": "Totolink A8000RU consumer router",
+      "summary": "Critical CVSS 10.0 unauthenticated RCE in consumer router firmware — out of corporate scope but a likely Mirai/IoT botnet candidate."
+    },
+    {
+      "cve": "CVE-2026-24178, CVE-2026-24186",
+      "product": "NVIDIA NVFlare Dashboard / FLARE SDK",
+      "summary": "Unauthenticated authorization bypass (CVSS 9.8) and FOBS deserialization RCE (CVSS 8.8) in NVIDIA federated learning framework — niche deployment but the unauth-bypass + RCE pairing is the FastGPT/Langflow template."
+    },
+    {
+      "cve": "CVE-2026-40978, CVE-2026-40980",
+      "product": "Spring AI",
+      "summary": "Two new Spring AI advisories (CVSS 8.8 / 6.5) published 2026-04-28; details pending — promote next cycle if they intersect with the Spring Boot actuator bypass covered 2026-04-28."
+    },
+    {
+      "cve": "None",
+      "product": "Vimeo / Anodot ShinyHunters breach",
+      "summary": "ShinyHunters used stolen Anodot SaaS authentication tokens to pivot into customer Snowflake/BigQuery instances; video metadata and some customer emails exposed (no video content / credentials / payment data)."
+    },
+    {
+      "cve": "None",
+      "product": "Itron utility-vendor IT breach",
+      "summary": "Energy/water meter vendor disclosed unauthorised access detected 2026-04-13; preliminary, no attribution, no data details, no operational impact reported."
+    },
+    {
+      "cve": "None",
+      "product": "Signal phishing campaign vs German federal officials",
+      "summary": "German federal prosecutors investigating sustained phishing of senior officials' Signal accounts attributed to Russian state actors since February 2026 — operational/political signal."
+    },
+    {
+      "cve": "None",
+      "product": "ClickFix campaign disguised as Claude installer (Rapid7)",
+      "summary": "ClickFix social engineering luring users to fake Claude installer pages that run PowerShell payloads; latest in fake AI-tool installer trend (mirrors Cursor/Windsurf installer phishing)."
+    },
+    {
+      "cve": "None",
+      "product": "VECT 2.0 ransomware (broken encryption acts as wiper)",
+      "summary": "VECT 2.0 has a fatal encryption flaw that destroys files >131KB on Windows/Linux/ESXi targets — files are unrecoverable, do not pay; push IOCs to AV/EDR."
+    },
+    {
+      "cve": "None",
+      "product": "108 malicious Chrome extensions",
+      "summary": "Browser extension campaign harvested credentials from ~20,000 users — client-side, out of corporate-perimeter scope but worth noting if extension allow-list is loose."
+    }
+  ],
+  "source_coverage": {
+    "total": 30,
+    "checked": 20,
+    "with_findings": 9,
+    "unreachable": [
+      "cisa.gov",
+      "cisa.gov/known-exploited-vulnerabilities-catalog",
+      "attackerkb.com",
+      "bugcrowd.com/disclosures",
+      "hackerone.com/hacktivity",
+      "cve.org",
+      "cve.mitre.org",
+      "packetstormsecurity.com",
+      "msrc.microsoft.com/blog",
+      "googleprojectzero.blogspot.com"
+    ],
+    "degraded": [
+      "nvd.nist.gov",
+      "habr.com/ru/companies/tomhunter/articles",
+      "teletype.in/@cyberok",
+      "cert.gov.ua"
+    ]
+  },
+  "full_report": "reports/2026/04/29/report.md"
+}
