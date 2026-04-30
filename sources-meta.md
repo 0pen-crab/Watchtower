@@ -2,35 +2,35 @@
 
 | Source | Findings | Noted | Empty | Last Hit |
 |--------|----------|-------|-------|----------|
-| bleepingcomputer.com | 25 | 11 | 0 | 2026-04-29 |
-| thehackernews.com | 21 | 6 | 0 | 2026-04-29 |
-| cisa.gov | 1 | 0 | 11 | 2026-04-25 |
-| securityweek.com | 11 | 9 | 1 | 2026-04-29 |
-| github.com/search | 3 | 5 | 7 | 2026-04-29 |
-| schneier.com | 0 | 2 | 10 | 2026-04-29 |
-| krebsonsecurity.com | 1 | 0 | 10 | 2026-04-17 |
-| rapid7.com | 2 | 3 | 7 | 2026-04-29 |
-| attackerkb.com | 0 | 0 | 12 | — |
-| fortinet.com/blog/threat-research | 0 | 2 | 10 | 2026-04-19 |
-| securitylab.github.com | 0 | 2 | 10 | 2026-04-29 |
-| seclists.org/fulldisclosure | 0 | 2 | 10 | 2026-04-17 |
-| packetstormsecurity.com | 0 | 0 | 12 | — |
-| opencve.io | 7 | 8 | 4 | 2026-04-29 |
-| nvd.nist.gov | 0 | 0 | 12 | — |
-| cve.mitre.org | 0 | 0 | 12 | — |
-| cve.org | 0 | 0 | 12 | — |
-| googleprojectzero.blogspot.com | 0 | 0 | 12 | — |
-| blog.cloudflare.com/tag/security | 0 | 1 | 10 | 2026-04-17 |
-| msrc.microsoft.com/blog | 0 | 0 | 12 | — |
-| hackerone.com/hacktivity | 0 | 0 | 12 | — |
-| bugcrowd.com/disclosures | 0 | 0 | 12 | — |
-| kb.cert.org/vuls | 2 | 5 | 6 | 2026-04-27 |
-| avleonov.com | 0 | 1 | 11 | 2026-04-22 |
-| github.com/0xMarcio/cve | 3 | 2 | 8 | 2026-04-29 |
-| dbugs.ptsecurity.com | 9 | 32 | 1 | 2026-04-29 |
-| habr.com/ru/companies/tomhunter/articles | 0 | 0 | 12 | — |
-| teletype.in/@cyberok | 0 | 0 | 12 | — |
-| cert.gov.ua | 0 | 0 | 12 | — |
+| bleepingcomputer.com | 27 | 13 | 0 | 2026-04-30 |
+| thehackernews.com | 22 | 6 | 0 | 2026-04-30 |
+| cisa.gov | 1 | 0 | 12 | 2026-04-25 |
+| securityweek.com | 12 | 9 | 1 | 2026-04-30 |
+| github.com/search | 4 | 9 | 7 | 2026-04-30 |
+| schneier.com | 0 | 2 | 11 | 2026-04-30 |
+| krebsonsecurity.com | 1 | 0 | 11 | 2026-04-17 |
+| rapid7.com | 3 | 3 | 7 | 2026-04-30 |
+| attackerkb.com | 0 | 0 | 13 | — |
+| fortinet.com/blog/threat-research | 0 | 2 | 11 | 2026-04-19 |
+| securitylab.github.com | 0 | 2 | 11 | 2026-04-29 |
+| seclists.org/fulldisclosure | 0 | 6 | 10 | 2026-04-30 |
+| packetstormsecurity.com | 0 | 0 | 13 | — |
+| opencve.io | 7 | 8 | 5 | 2026-04-30 |
+| nvd.nist.gov | 0 | 0 | 13 | — |
+| cve.mitre.org | 0 | 0 | 13 | — |
+| cve.org | 0 | 0 | 13 | — |
+| googleprojectzero.blogspot.com | 0 | 0 | 13 | — |
+| blog.cloudflare.com/tag/security | 0 | 1 | 11 | 2026-04-17 |
+| msrc.microsoft.com/blog | 0 | 0 | 13 | — |
+| hackerone.com/hacktivity | 0 | 0 | 13 | — |
+| bugcrowd.com/disclosures | 0 | 0 | 13 | — |
+| kb.cert.org/vuls | 2 | 5 | 7 | 2026-04-27 |
+| avleonov.com | 0 | 1 | 12 | 2026-04-22 |
+| github.com/0xMarcio/cve | 3 | 2 | 9 | 2026-04-30 |
+| dbugs.ptsecurity.com | 11 | 33 | 1 | 2026-04-30 |
+| habr.com/ru/companies/tomhunter/articles | 0 | 0 | 13 | — |
+| teletype.in/@cyberok | 0 | 0 | 13 | — |
+| cert.gov.ua | 0 | 0 | 13 | — |
 
 ## Score Calibration
 *(Updated monthly)*

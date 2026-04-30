@@ -1,0 +1,139 @@
+{
+  "date": "2026-04-30",
+  "findings": [
+    {
+      "type": "news",
+      "title": "CVE-2026-41940 — cPanel & WHM Authentication Bypass via CRLF Injection Used as 0-Day",
+      "threat_score": 10,
+      "cve": "CVE-2026-41940",
+      "cvss": 9.8,
+      "affected_technology": "cPanel & WHM (all currently supported branches) and WP Squared 11.136.1",
+      "summary": "CRLF injection in cPanel/WHM login lets unauthenticated attackers plant arbitrary session properties (e.g. user=root) and seize the management plane; exploited as a 0-day, patched within hours of the 2026-04-29 advisory.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-04-29"
+    },
+    {
+      "type": "news",
+      "title": "Mini Shai-Hulud — SAP CAP npm Supply Chain Compromise with Claude Code SessionStart Persistence",
+      "threat_score": 8,
+      "cve": "None",
+      "cvss": null,
+      "affected_technology": "npm packages mbt@1.2.48, @cap-js/db-service@2.10.1, @cap-js/sqlite@2.2.2, @cap-js/postgres@2.2.2",
+      "summary": "TeamPCP-attributed worm published trojanised SAP CAP packages on 2026-04-29 that harvest GitHub/npm/cloud secrets and propagate by writing .claude/settings.json (abusing Claude Code SessionStart hook) and .vscode/tasks.json into every accessible repo; 1,000+ exfiltration repos already on GitHub.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-04-29"
+    },
+    {
+      "type": "news",
+      "title": "OpenEMR — 38 AISLE-Disclosed CVEs Including Unauth Patient Data Exfiltration (CVE-2026-24898)",
+      "threat_score": 7,
+      "cve": "CVE-2026-24898",
+      "cvss": null,
+      "affected_technology": "OpenEMR (open-source electronic medical records, ~100,000 healthcare-provider deployments)",
+      "summary": "AISLE's autonomous analyzer produced 38 CVE-tagged advisories against OpenEMR, including CVE-2026-24898 (unauth patient-identity disclosure on any internet-reachable instance) and a critical chain to full ePHI exfiltration plus RCE; all patched, public coverage 2026-04-28/29.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-04-28"
+    },
+    {
+      "type": "news",
+      "title": "Qinglong Task Scheduler CVE-2026-3965 / CVE-2026-4047 — Pre-Auth RCE Mass-Exploited for Cryptomining Since February",
+      "threat_score": 6,
+      "cve": "CVE-2026-3965, CVE-2026-4047",
+      "cvss": null,
+      "affected_technology": "Qinglong distributed task-scheduler panel < 2.20.2",
+      "summary": "Two pre-auth bypass + RCE chains in Qinglong's Express.js URL routing (path-rewrite via /open/* and case-insensitive routing to /api/system/command-run) used in the wild since 2026-02 to deploy a cross-platform cryptominer (.fullgc); patch in 2.20.2 and PoC public on 2026-04-29.",
+      "discovery_latency": "late",
+      "first_seen_at": "2026-04-29"
+    }
+  ],
+  "noted": [
+    {
+      "cve": "CVE-2026-27825",
+      "product": "mcp-atlassian MCP server",
+      "summary": "Path traversal via ZIP extraction (CVSS 9.3) — adds to the running list of MCP server unauth-RCE patterns observed across Spring AI, nginx-ui, and chatgpt-mcp-server."
+    },
+    {
+      "cve": "CVE-2026-34940",
+      "product": "KubeAI",
+      "summary": "Command injection via Ollama model URL parameter (CVSS 8.7) — same unsanitised-input-to-child_process.exec pattern as FastGPT/Langflow."
+    },
+    {
+      "cve": "CVE-2026-41653",
+      "product": "BentoPDF (≤2.8.1)",
+      "summary": "Stored XSS to file exfiltration; niche document-portal scope but unauth-to-file-leak pairing is exploitable."
+    },
+    {
+      "cve": "CVE-2026-35029",
+      "product": "LiteLLM proxy ≤1.83.0",
+      "summary": "Broken Access Control on the config endpoint (separate from yesterday's CVE-2026-42208 SQLi); apply the nightly fix in concert with the SQLi patch."
+    },
+    {
+      "cve": "CVE-2026-42523",
+      "product": "Jenkins GitHub Plugin ≤1.46.0",
+      "summary": "Stored XSS in GitHub-hook-trigger validator; Overall/Read auth required, fixed in 1.46.0.1 — apply alongside the rest of the 2026-04-29 Jenkins advisory."
+    },
+    {
+      "cve": "CVE-2026-34975",
+      "product": "Plunk transactional email service",
+      "summary": "Email header injection (CVSS 8.5); risk for any deployer using Plunk for password-reset / OTP emails."
+    },
+    {
+      "cve": "CVE-2026-34160",
+      "product": "Chamilo LMS",
+      "summary": "Unauthenticated SSRF (CVSS 7.5) — internal-network pivot from any internet-exposed Chamilo instance."
+    },
+    {
+      "cve": "CVE-2026-0972",
+      "product": "GoAnywhere MFT (<7.10.0)",
+      "summary": "HTML injection in email templating; lower-severity than historical GoAnywhere chains but worth scheduling."
+    },
+    {
+      "cve": "None",
+      "product": "SAP HANA Cockpit / Database Explorer (<2.18.2)",
+      "summary": "Embedded private X.509 TLS key shipped in the build artifacts; rotate certificates that depended on Cockpit-issued material."
+    },
+    {
+      "cve": "CVE-2026-31431",
+      "product": "Linux Kernel (AF_ALG subsystem)",
+      "summary": "Local privilege escalation; out of remote-services scope but PoC public — schedule a kernel update window for jump hosts and CI runners."
+    },
+    {
+      "cve": "CVE-2026-5166, CVE-2026-5161",
+      "product": "Pardus Software Center / About (Pardus Linux)",
+      "summary": "Critical (9.6 / 8.8) flaws in Turkish government Linux distro components; niche population, mention for distro-watchers."
+    },
+    {
+      "cve": "None",
+      "product": "Roblox (consumer)",
+      "summary": "Ukrainian police arrested three for hijacking 610,000 Roblox accounts and selling them for €225,000; consumer scope, useful as a credential-stuffing data point."
+    },
+    {
+      "cve": "None",
+      "product": "Quick Page/Post Redirect WordPress plugin (70K+ installs)",
+      "summary": "BleepingComputer reports a five-year dormant backdoor; possibly an extension of the EssentialPlugin/Kris campaign covered 2026-04-17 — promote next cycle if confirmed as a separate plugin/family."
+    }
+  ],
+  "source_coverage": {
+    "total": 30,
+    "checked": 23,
+    "with_findings": 11,
+    "unreachable": [
+      "cisa.gov",
+      "cisa.gov/known-exploited-vulnerabilities-catalog",
+      "attackerkb.com",
+      "bugcrowd.com/disclosures",
+      "hackerone.com/hacktivity",
+      "cve.org",
+      "cve.mitre.org"
+    ],
+    "degraded": [
+      "packetstorm.news",
+      "projectzero.google",
+      "msrc.microsoft.com/blog",
+      "habr.com/ru/companies/tomhunter",
+      "teletype.in/@cyberok",
+      "cert.gov.ua"
+    ]
+  },
+  "full_report": "reports/2026/04/30/report.md"
+}
