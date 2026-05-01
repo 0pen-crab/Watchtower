@@ -1,39 +1,59 @@
-# Source Effectiveness — 2026-04
+# Source Effectiveness — 2026-05
 
 | Source | Findings | Noted | Empty | Last Hit |
 |--------|----------|-------|-------|----------|
-| bleepingcomputer.com | 27 | 13 | 0 | 2026-04-30 |
-| thehackernews.com | 22 | 6 | 0 | 2026-04-30 |
-| cisa.gov | 1 | 0 | 12 | 2026-04-25 |
-| securityweek.com | 12 | 9 | 1 | 2026-04-30 |
-| github.com/search | 4 | 9 | 7 | 2026-04-30 |
-| schneier.com | 0 | 2 | 11 | 2026-04-30 |
-| krebsonsecurity.com | 1 | 0 | 11 | 2026-04-17 |
-| rapid7.com | 3 | 3 | 7 | 2026-04-30 |
-| attackerkb.com | 0 | 0 | 13 | — |
-| fortinet.com/blog/threat-research | 0 | 2 | 11 | 2026-04-19 |
-| securitylab.github.com | 0 | 2 | 11 | 2026-04-29 |
-| seclists.org/fulldisclosure | 0 | 6 | 10 | 2026-04-30 |
-| packetstormsecurity.com | 0 | 0 | 13 | — |
-| opencve.io | 7 | 8 | 5 | 2026-04-30 |
-| nvd.nist.gov | 0 | 0 | 13 | — |
-| cve.mitre.org | 0 | 0 | 13 | — |
-| cve.org | 0 | 0 | 13 | — |
-| googleprojectzero.blogspot.com | 0 | 0 | 13 | — |
-| blog.cloudflare.com/tag/security | 0 | 1 | 11 | 2026-04-17 |
-| msrc.microsoft.com/blog | 0 | 0 | 13 | — |
-| hackerone.com/hacktivity | 0 | 0 | 13 | — |
-| bugcrowd.com/disclosures | 0 | 0 | 13 | — |
-| kb.cert.org/vuls | 2 | 5 | 7 | 2026-04-27 |
-| avleonov.com | 0 | 1 | 12 | 2026-04-22 |
-| github.com/0xMarcio/cve | 3 | 2 | 9 | 2026-04-30 |
-| dbugs.ptsecurity.com | 11 | 33 | 1 | 2026-04-30 |
-| habr.com/ru/companies/tomhunter/articles | 0 | 0 | 13 | — |
-| teletype.in/@cyberok | 0 | 0 | 13 | — |
-| cert.gov.ua | 0 | 0 | 13 | — |
+| bleepingcomputer.com | 2 | 4 | 0 | 2026-05-01 |
+| thehackernews.com | 2 | 1 | 0 | 2026-05-01 |
+| cisa.gov | 0 | 0 | 1 | — |
+| securityweek.com | 1 | 4 | 0 | 2026-05-01 |
+| github.com/search | 1 | 0 | 0 | 2026-05-01 |
+| schneier.com | 0 | 1 | 0 | 2026-05-01 |
+| krebsonsecurity.com | 0 | 1 | 0 | 2026-05-01 |
+| rapid7.com | 0 | 0 | 1 | 2026-05-01 |
+| attackerkb.com | 0 | 0 | 1 | — |
+| fortinet.com/blog/threat-research | 0 | 0 | 1 | — |
+| securitylab.github.com | 0 | 0 | 1 | — |
+| seclists.org/fulldisclosure | 0 | 0 | 1 | 2026-05-01 |
+| packetstormsecurity.com | 0 | 0 | 1 | — |
+| opencve.io | 3 | 4 | 0 | 2026-05-01 |
+| nvd.nist.gov | 0 | 0 | 1 | — |
+| cve.mitre.org | 0 | 0 | 1 | — |
+| cve.org | 0 | 0 | 1 | — |
+| googleprojectzero.blogspot.com | 0 | 0 | 1 | — |
+| blog.cloudflare.com/tag/security | 0 | 0 | 1 | — |
+| msrc.microsoft.com/blog | 0 | 0 | 1 | — |
+| hackerone.com/hacktivity | 0 | 0 | 1 | — |
+| bugcrowd.com/disclosures | 0 | 0 | 1 | — |
+| kb.cert.org/vuls | 0 | 0 | 1 | — |
+| avleonov.com | 0 | 0 | 1 | — |
+| github.com/0xMarcio/cve | 0 | 1 | 0 | 2026-05-01 |
+| dbugs.ptsecurity.com | 1 | 4 | 0 | 2026-05-01 |
+| habr.com/ru/companies/tomhunter/articles | 0 | 0 | 1 | — |
+| teletype.in/@cyberok | 0 | 0 | 1 | — |
+| cert.gov.ua | 0 | 0 | 1 | — |
 
 ## Score Calibration
 *(Updated monthly)*
+
+April 2026: pending review — see sources-review-2026-04.md.
+
+## Archive — 2026-04
+
+Top-10 sources by findings (April 2026):
+1. bleepingcomputer.com — 27 findings, 13 noted
+2. thehackernews.com — 22 findings, 6 noted
+3. securityweek.com — 12 findings, 9 noted
+4. dbugs.ptsecurity.com — 11 findings, 33 noted
+5. opencve.io — 7 findings, 8 noted
+6. github.com/search — 4 findings, 9 noted
+7. rapid7.com — 3 findings, 3 noted
+8. github.com/0xMarcio/cve — 3 findings, 2 noted
+9. kb.cert.org/vuls — 2 findings, 5 noted
+10. cisa.gov — 1 finding, 0 noted (relayed; direct fetch 403)
+
+Bottom-10 (zero findings, persistent silence):
+- cve.mitre.org, cve.org, googleprojectzero.blogspot.com, blog.cloudflare.com/tag/security, msrc.microsoft.com/blog, hackerone.com/hacktivity, bugcrowd.com/disclosures, habr.com/ru/companies/tomhunter/articles, teletype.in/@cyberok, cert.gov.ua, attackerkb.com, packetstormsecurity.com, nvd.nist.gov, fortinet.com/blog/threat-research (only 2 noted), securitylab.github.com (only 2 noted)
+- Recommendation: see sources-review-2026-04.md.
 
 ## Archive — 2026-03
 

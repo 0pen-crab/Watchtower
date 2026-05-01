@@ -1,0 +1,180 @@
+{
+  "date": "2026-05-01",
+  "findings": [
+    {
+      "type": "news",
+      "title": "CVE-2026-4670 / CVE-2026-5174 — Progress MOVEit Automation Pre-Auth Authentication Bypass and Privilege Escalation",
+      "threat_score": 8,
+      "cve": "CVE-2026-4670, CVE-2026-5174",
+      "cvss": 9.8,
+      "affected_technology": "Progress MOVEit Automation 2024.0.0 / 2025.0.0 / 2025.1.0 branches",
+      "summary": "Airbus Seclab disclosed pre-auth authentication bypass (CVE-2026-4670, CVSS 9.8) plus auth-to-admin privilege escalation (CVE-2026-5174, 7.7) in Progress MOVEit Automation, patched 2026-04-30 — Cl0p's 2023 MOVEit history makes rapid weaponisation likely.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-04-30"
+    },
+    {
+      "type": "news",
+      "title": "Google Gemini CLI Headless-Mode Pre-Sandbox RCE (CVSS 10.0)",
+      "threat_score": 7,
+      "cve": "None",
+      "cvss": 10.0,
+      "affected_technology": "@google/gemini-cli < 0.39.1 / < 0.40.0-preview.3 and google-github-actions/run-gemini-cli < 0.1.22",
+      "summary": "Gemini CLI in headless mode implicitly trusted workspace .gemini/settings.json and executed attacker-controlled MCP/shell commands pre-sandbox; a malicious PR plants the file and runs code on the GitHub Actions runner with workflow secrets — patched 2026-04-30 by requiring explicit workspace trust.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-04-30"
+    },
+    {
+      "type": "news",
+      "title": "SonicWall SonicOS April 2026 Roll-Up — Eight CVEs Including CVE-2026-0204 Management-Function Access-Control Bypass",
+      "threat_score": 5,
+      "cve": "CVE-2026-0204, CVE-2026-0205, CVE-2026-0206, CVE-2026-0399, CVE-2026-0400, CVE-2026-0401, CVE-2026-0402, CVE-2026-3439",
+      "cvss": 8.0,
+      "affected_technology": "SonicWall NSA / TZ / NSv firewall appliances (SonicOS, 33 product variants)",
+      "summary": "Coordinated 2026-04-30 SonicOS advisory: management access-control bypass (CVE-2026-0204, 8.0), path traversal to restricted management services (CVE-2026-0205, 6.8), and six post-auth DoS / memory-corruption crashes — apply combined firmware update.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-04-30"
+    },
+    {
+      "type": "update",
+      "title": "CVE-2026-41940 cPanel & WHM Authentication Bypass — Public PoC and IOC Scanner Now Circulating",
+      "threat_score": 10,
+      "previous_threat_score": 10,
+      "cve": "CVE-2026-41940",
+      "cvss": 9.8,
+      "affected_technology": "cPanel & WHM (all currently supported branches) + WP Squared 11.136.1",
+      "summary": "≥6 weaponised PoC repos and an IOC scanner for CVE-2026-41940 appeared on GitHub within 24h of disclosure, dropping the bar from researcher-grade to commodity-botnet exploitation — expect mass scanning of TCP/2083 + 2087 imminently.",
+      "first_seen_at": "2026-04-29"
+    },
+    {
+      "type": "update",
+      "title": "Mini Shai-Hulud — Campaign Expands from npm/SAP CAP to PyPI via PyTorch Lightning 2.6.2 / 2.6.3",
+      "threat_score": 9,
+      "previous_threat_score": 8,
+      "cve": "None",
+      "cvss": null,
+      "affected_technology": "PyPI package pytorch-lightning 2.6.2 and 2.6.3 (Python ecosystem extension of yesterday's npm SAP CAP attack)",
+      "summary": "TeamPCP Mini Shai-Hulud extended to PyPI 2026-04-30 with trojanised pytorch-lightning 2.6.2/2.6.3 that runs the Bun stealer on import (not preinstall) and uses commits impersonating Claude Code for blend-in, widening blast radius to ML pipelines.",
+      "first_seen_at": "2026-04-29"
+    },
+    {
+      "type": "update",
+      "title": "CVE-2026-32202 Windows Shell — Added to CISA KEV Catalog 2026-04-29",
+      "threat_score": 8,
+      "previous_threat_score": 8,
+      "cve": "CVE-2026-32202",
+      "cvss": 4.3,
+      "affected_technology": "Windows Shell (all currently supported)",
+      "summary": "CISA added CVE-2026-32202 to KEV on 2026-04-29 (BOD 22-01 21-day federal patching mandate), codifying yesterday's APT28 active-exploitation confirmation as a compliance trigger.",
+      "first_seen_at": "2026-04-28"
+    }
+  ],
+  "noted": [
+    {
+      "cve": "CVE-2026-31431",
+      "product": "Linux kernel (algif_aead) — Copy Fail LPE",
+      "summary": "Out-of-remote-services scope but ≥6 distinct PoC repos updated within the past hour — schedule a kernel-update window for jump hosts, container hosts, and shared CI runners (patched in 5.10.254+ / 5.15.204+ / 6.1.170+ / 6.6.137+)."
+    },
+    {
+      "cve": "CVE-2024-1708",
+      "product": "ConnectWise ScreenConnect",
+      "summary": "Newly added to CISA KEV 2026-04-29 (CVSS 8.4 path traversal); old 2024 bug — confirm the 2024 patch is applied if you still operate ScreenConnect on-prem."
+    },
+    {
+      "cve": "CVE-2026-5403, CVE-2026-5405, CVE-2026-5656",
+      "product": "Wireshark 4.6.x / 4.4.x batch",
+      "summary": "DoS / memory-corruption in SBC codec, RDP dissector, and profile-import path (CVSS 7.0–7.8) — analyst-tool scope, not internet-facing infra; routine update on SOC analyst workstations."
+    },
+    {
+      "cve": "CVE-2026-7551",
+      "product": "HKUDS OpenHarness",
+      "summary": "RCE via malicious slash commands (CVSS 8.8) — yet another AI-agent CLI in the unauth-RCE-via-AI-tooling pattern alongside nginx-ui, mcp-atlassian, chatgpt-mcp-server."
+    },
+    {
+      "cve": "CVE-2026-7510",
+      "product": "OWASP DefectDojo ≤ 2.55.4",
+      "summary": "Authorization bypass (CVSS 6.3) — many security teams self-host DefectDojo for AppSec triage, schedule the patch on internal AppSec tooling."
+    },
+    {
+      "cve": "CVE-2026-7505",
+      "product": "nextlevelbuilder GoClaw / GoClaw Lite ≤ 3.8.5",
+      "summary": "Authorization flaw (CVSS 7.3) in a niche workflow plugin — naming overlap with OpenClaw is incidental (different vendor), mention to avoid confusion."
+    },
+    {
+      "cve": "CVE-2026-7246",
+      "product": "Pallets Click",
+      "summary": "Vulnerability (CVSS 7.2) in the widely used Python CLI library — review what your in-house tooling exposes."
+    },
+    {
+      "cve": "CVE-2026-41882",
+      "product": "JetBrains IntelliJ IDEA",
+      "summary": "Developer-IDE issue (CVSS 7.4); client-only, but worth noting in the AI-IDE / developer-tool security thread alongside Gemini CLI and Mini Shai-Hulud."
+    },
+    {
+      "cve": "CVE-2026-7503",
+      "product": "Code-projects For Plugin 4.1.2cu.5137",
+      "summary": "Buffer overflow in wireless config function (CVSS 8.8); niche IoT/router population."
+    },
+    {
+      "cve": "CVE-2026-7506",
+      "product": "SourceCodester Hotel Management System 1.0",
+      "summary": "SQL injection (CVSS 7.3); very niche, mention for completeness."
+    },
+    {
+      "cve": "CVE-2026-22726",
+      "product": "CloudFoundry route services",
+      "summary": "Routing bypass (CVSS 5.0); lower severity, worth tracking on enterprise PaaS deployments."
+    },
+    {
+      "cve": "None",
+      "product": "Sandhills Medical (healthcare ransomware)",
+      "summary": "Inc Ransom group, 170,000 records, disclosed nearly a year after the breach — useful incident-response reference."
+    },
+    {
+      "cve": "None",
+      "product": "Checkmarx (AppSec vendor GitHub data leak)",
+      "summary": "Data exfiltrated 2026-03-30, malicious code published one week later; if confirmed as a distinct supply-chain vector against AppSec vendor tooling, will promote next cycle."
+    },
+    {
+      "cve": "None",
+      "product": "Anthropic Claude 'Mythos' — 271 Firefox 150 zero-days",
+      "summary": "AI-driven vuln-discovery announcement (Schneier 2026-04-29); track for upcoming Mozilla advisory wave and AI-vulnscan trend."
+    },
+    {
+      "cve": "None",
+      "product": "Bluekit phishing-as-a-service",
+      "summary": "40+ templates with AI campaign generator observed 2026-04-30; brief SOC anti-phishing detection team."
+    },
+    {
+      "cve": "CVE-2023-1389",
+      "product": "TP-Link routers (via Brazilian 'Huge Networks' DDoS-for-hire abuse)",
+      "summary": "Krebs investigation 2026-04-30 — Python attack scripts targeting CVE-2023-1389; trend signal for that CVE plus an example of compromised security-vendor infrastructure."
+    }
+  ],
+  "source_coverage": {
+    "total": 30,
+    "checked": 22,
+    "with_findings": 10,
+    "unreachable": [
+      "cisa.gov",
+      "cisa.gov/known-exploited-vulnerabilities-catalog",
+      "attackerkb.com",
+      "bugcrowd.com/disclosures",
+      "hackerone.com/hacktivity",
+      "cve.org",
+      "cve.mitre.org",
+      "cert.gov.ua"
+    ],
+    "degraded": [
+      "fortinet.com/blog/threat-research",
+      "securitylab.github.com",
+      "projectzero.google",
+      "packetstorm.news",
+      "msrc.microsoft.com/blog",
+      "avleonov.com",
+      "habr.com/ru/companies/tomhunter/articles",
+      "teletype.in/@cyberok",
+      "kb.cert.org/vuls"
+    ]
+  },
+  "full_report": "reports/2026/05/01/report.md"
+}

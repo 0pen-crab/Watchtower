@@ -1,0 +1,155 @@
+# Watchtower Debug Log — 2026-05-01
+
+## Run metadata
+- Start: 2026-05-01 00:00 UTC
+- End:   2026-05-01 00:45 UTC
+- Cycle: night
+
+## Step 1 — git pull
+00:00:51 UTC  cd /home/claude/workspace/watchtower && git pull
+              → Already up to date.
+
+## Step 2 — Dedup index (last 30 days)
+00:01:12 UTC  Walked reports/2026/03/{16..31}/report.json + reports/2026/04/{01..30}/report.json
+              → 197 unique CVEs across last 30 days
+              → 105 unique titles
+              → Indexed CVE → first/last seen date for material-change detection
+
+  Notable already-covered items relevant to today:
+  - CVE-2026-41940 cPanel — covered 2026-04-30 (CRITICAL, threat 10)
+  - Mini Shai-Hulud SAP CAP — covered 2026-04-30 (CRITICAL, threat 8)
+  - CVE-2026-31431 Linux Copy Fail — covered 2026-04-30 (Noted, OOS but PoC public)
+  - CVE-2026-32202 Windows Shell — covered 2026-04-28 (HIGH, then escalated 2026-04-29 to threat 8 for APT28 exploitation)
+  - Qinglong CVE-2026-3965/4047 — covered 2026-04-30 (MEDIUM)
+  - OpenEMR 38 CVE batch — covered 2026-04-30 (HIGH)
+
+## Step 3 — Source checks (every source in SOURCES.md, 30 entries)
+
+### Tier 1
+[00:02:30] bleepingcomputer.com                          ✅ ~2s   findings: cPanel UPDATE, Linux Copy Fail PoC, SAP npm UPDATE, Roblox arrest, Romanian swatting, Bluekit phishing, FBI cargo theft, Sandhills Medical
+[00:02:30] thehackernews.com                             ✅ ~2s   findings: Gemini CLI CVSS 10, PyTorch Lightning Mini Shai-Hulud, Linux Copy Fail, cPanel, KEV add (CVE-2024-1708 + CVE-2026-32202)
+[00:02:30] securityweek.com                              ✅ ~2s   findings: SonicWall batch, cPanel, Linux Copy Fail, Sandhills Medical, Checkmarx breach, Mini Shai-Hulud, Gemini CLI
+[00:02:31] cisa.gov/known-exploited-vulnerabilities-catalog ❌    HTTP 403 (consistent with MEMORY note — relayed via THN/SecurityWeek)
+[00:02:31] cisa.gov                                      ❌      HTTP 403
+[00:02:31] github.com/search?q=CVE-2026                  ✅ ~3s   PoC repos for CVE-2026-31431 (≥6 in last 1h), CVE-2026-41940 IOC scanner (1h), CVE-2026-24061 telnetd refresh
+[00:02:33] schneier.com                                  ✅ ~2s   Fast16 pre-Stuxnet malware (informational), Anthropic Claude "Mythos" 271 Firefox 0-days announcement
+[00:02:33] krebsonsecurity.com                           ✅ ~2s   Brazilian Huge Networks anti-DDoS firm caught running attacks (CVE-2023-1389 trend signal)
+[00:02:33] rapid7.com                                    ✅ ~3s   homepage gave nothing useful; /blog/ returned cPanel ETR + Metasploit Wrap-Up 04/25 + nginx-ui MCP CVE-2026-33032 (already in prior reports)
+[00:02:35] attackerkb.com                                ❌      HTTP 403 (consistent with MEMORY note)
+[00:02:35] fortinet.com/blog/threat-research             ⚠️ ~2s   Latest post 2026-04-17 (Mirai Nexcorium); no new content since
+[00:02:35] securitylab.github.com                        ⚠️ ~2s   Latest entry 2026-04-24 (Docmost CVE-2026-33193, already covered); nothing new
+[00:02:35] seclists.org/fulldisclosure                   ✅ ~2s   ESP-RFID-Tool CRITICAL (niche), DeskTime CVE-2025-10539, Controlio CVE-2025-10549, LiteLLM CVE-2026-35029 (already covered yesterday), SAP HANA Cockpit (already covered)
+[00:02:35] packetstormsecurity.com → packetstorm.news    ⚠️ ~3s   Homepage feedback-loop only, no specific CVE list
+[00:02:35] opencve.io / app.opencve.io                   ✅ ~3s   Wireshark batch CVE-2026-5403/5405/5656, CVE-2026-7503/7505/7506/7510/7551, CVE-2026-22726 CloudFoundry, MOVEit CVE-2026-4670/5174
+
+### Tier 2
+[00:08:00] nvd.nist.gov                                  ✅ ~3s   Returned CVE-2026-7469 Tenda 4G300 (medium); OpenClaw batch already covered
+[00:08:00] cve.mitre.org → cve.org                       ❌      JS-only, returns empty (consistent with MEMORY note)
+[00:08:00] cve.org                                       ❌      JS-only, empty content
+[00:08:00] googleprojectzero.blogspot.com → projectzero.google ⚠️ Latest post 2026-03-05 (mutational grammar fuzzing); no April content
+[00:08:00] blog.cloudflare.com/tag/security              ✅ ~2s   Post-quantum IPsec (2026-04-30) — informational only, no vuln
+[00:08:00] msrc.microsoft.com/blog → microsoft.com/.../msrc/blog ⚠️ Navigation-only content; no posts surfaced for date range
+[00:08:00] hackerone.com/hacktivity                      ❌      JS-only, no data (consistent with MEMORY note)
+[00:08:00] bugcrowd.com/disclosures                      ❌      HTTP 404 (consistent with MEMORY note — URL change pending verification)
+[00:08:00] kb.cert.org/vuls                              ⚠️ ~2s   Latest VU#748485 (2026-04-23) Central Office Services — no new entries in date range
+[00:08:00] avleonov.com                                  ⚠️ ~2s   Latest post 2026-04-22 April Linux Patch Wednesday; no new content
+[00:08:00] github.com/0xMarcio/cve                       ✅ ~2s   Active PoCs: CVE-2026-31431, CVE-2026-41651, CVE-2026-34159, CVE-2026-33725, CVE-2026-41940
+[00:08:00] dbugs.ptsecurity.com                          ✅ ~2s   MOVEit CVE-2026-4670/5174, Wireshark batch, Pallets Click CVE-2026-7246, IntelliJ IDEA CVE-2026-41882, Meware PDKS CVE-2026-7399/7402/7382, JetBrains, Red Hat Multicluster Engine
+[00:08:00] habr.com/ru/companies/tomhunter/articles      ⚠️ ~2s   Latest March 2026 (February analyses); no fresh content
+[00:08:00] teletype.in/@cyberok                          ⚠️ ~2s   Latest February 2026; no fresh content
+[00:08:00] cert.gov.ua                                   ❌      No content returned
+
+### Targeted follow-ups (after first pass identified hot leads)
+[00:15:00] thehackernews.com (Gemini CLI article)        ✅      Got full details: pre-sandbox RCE via .gemini/settings.json in headless mode, Novee Security disclosure
+[00:15:00] thehackernews.com (PyTorch Lightning article) ✅      Got full details: 2.6.2/2.6.3 trojanised, hardcoded git author impersonating Claude Code, attribution to TeamPCP/LAPSUS$ extension of Mini Shai-Hulud
+[00:15:00] OpenCVE — vendor=sonicwall date=2026-04       ✅      Confirmed CVE list: 0204 (8.0), 0205 (6.8), 0206/0399/0400/0401/0402/3439 (each 4.9)
+[00:15:00] OpenCVE — search=moveit                       ✅      Confirmed CVE-2026-4670 (9.8 auth bypass) + CVE-2026-5174 (7.7 priv esc), Airbus Seclab credit
+[00:15:00] OpenCVE — CVE-2026-31431                      ✅      Confirmed Linux algif_aead, patched 5.10.254+/5.15.204+/6.1.170+/6.6.137+, EPSS < 1%
+
+## Step 4 — Dedup decisions
+
+  Promoted to NEWS:
+  + CVE-2026-4670/5174 MOVEit Automation              — NEW (no prior coverage; CRITICAL)
+  + Google Gemini CLI CVSS 10 RCE                     — NEW (no prior coverage; CRITICAL, AI scope)
+  + SonicWall SonicOS batch (CVE-2026-0204 + 7 others) — NEW (no prior coverage; HIGH)
+
+  Promoted to UPDATE (material change to prior coverage):
+  + CVE-2026-41940 cPanel                             — UPDATE (technical detail newly published — public PoC + IOC scanner; threat stays 10)
+  + Mini Shai-Hulud                                   — UPDATE (affected scope expanded — npm → PyPI via PyTorch Lightning; threat 8 → 9)
+  + CVE-2026-32202 Windows Shell                      — UPDATE (KEV addition 2026-04-29; threat stays 8)
+
+  SKIP (already covered, no material change):
+  - SAP CAP npm packages (Mini Shai-Hulud) — covered 2026-04-30 base entry, today is the PyPI extension UPDATE
+  - cPanel base advisory — covered 2026-04-30, today is the PoC UPDATE
+  - Microsoft Windows Shell base — covered 2026-04-28+29, today is the KEV UPDATE
+  - OpenEMR 38 CVE batch — covered 2026-04-30, no new development today
+  - Qinglong CVE-2026-3965/4047 — covered 2026-04-30
+  - nginx-ui CVE-2026-33032 — covered earlier in April
+  - Roblox arrest — already in 2026-04-30 noted
+  - Quick Page/Post Redirect WordPress — already in 2026-04-30 noted (no confirmation update)
+  - Cisco SD-WAN CVE-2026-20127 — March entry, no new development
+  - n8n CVE-2026-21858 — March entry
+  - LiteLLM CVE-2026-35029 / CVE-2026-42208 — covered 2026-04-29/30 noted
+
+  Demoted to NOTED:
+  - CVE-2026-31431 Linux Copy Fail — was in 2026-04-30 noted; today PoC count exploded but still LPE/out-of-scope, keep as noted with updated context
+  - CVE-2024-1708 ScreenConnect — KEV addition only, never previously covered; mention as noted
+  - Wireshark batch (5403/5405/5656)
+  - CVE-2026-7551 OpenHarness, CVE-2026-7510 DefectDojo, CVE-2026-7505 GoClaw, CVE-2026-7246 Pallets Click, CVE-2026-41882 IntelliJ
+  - CVE-2026-7503 Code-projects, CVE-2026-7506 SourceCodester
+  - CVE-2026-22726 CloudFoundry
+  - Sandhills Medical, Checkmarx breach, Anthropic Mythos, Bluekit, Brazilian Huge Networks (CVE-2023-1389), Romanian swatting
+
+  Out of scope / not used:
+  - Fast16 pre-Stuxnet malware (Schneier) — historical/research interest only
+  - FBI cargo theft warning — physical-supply-chain
+  - Cloudflare post-quantum IPsec — feature announcement, not vuln
+  - Joint US-China crypto-fraud takedown — law enforcement
+  - Romanian swatting sentencing — judicial
+
+## Step 5 — Wrote report.md and report.json
+
+  reports/2026/05/01/report.md   — written 00:30 UTC
+  reports/2026/05/01/report.json — written 00:32 UTC
+
+  source_coverage prior to validate:
+    total: 30
+    checked: 22 (10 with findings + 3 returning content but no findings + 9 degraded)
+    with_findings: 10
+    unreachable: 8 — cisa.gov, cisa.gov/KEV, attackerkb, bugcrowd, hackerone, cve.org, cve.mitre.org, cert.gov.ua
+    degraded:    9 — fortinet, securitylab.github, projectzero.google, packetstorm.news, msrc/blog, avleonov, habr/tomhunter, teletype/cyberok, kb.cert
+    constraint check: checked (22) >= total (30) - unreachable (8) → 22 >= 22 ✅
+
+## Step 7 — Validate
+
+[00:35:00] python3 scripts/validate_report.py reports/2026/05/01/report.json
+  First run:
+    ⚠️  7 warning(s):
+       findings[0]: 'summary' is 326 chars (aim for <200)
+       findings[1]: 'summary' is 305 chars (aim for <200)
+       findings[1]: CVE 'None' doesn't start with 'CVE-'
+       findings[2]: 'summary' is 322 chars (aim for <200)
+       findings[3]: 'summary' is 313 chars (aim for <200)
+       findings[4]: 'summary' is 330 chars (aim for <200)
+       findings[4]: CVE 'None' doesn't start with 'CVE-'
+    ✅ reports/2026/05/01/report.json — valid
+
+  Tightened all 5 over-length summaries (Edit tool, ~200 chars each).
+
+  Re-run:
+    ⚠️  2 warning(s):
+       findings[1]: CVE 'None' doesn't start with 'CVE-'   (intentional — Gemini CLI no CVE assigned yet)
+       findings[4]: CVE 'None' doesn't start with 'CVE-'   (intentional — Mini Shai-Hulud campaign, no CVE)
+    ✅ reports/2026/05/01/report.json — valid
+
+  Validator exit code: 0 — clean.
+
+## Step 6 — sources-meta.md update
+  Updated April 2026 month-to-date counts (added today's hits) and last-hit dates.
+
+## Step 8 — git
+  See git log for the commit.
+⚠️  2 warning(s):
+   findings[1]: CVE 'None' doesn't start with 'CVE-'
+   findings[4]: CVE 'None' doesn't start with 'CVE-'
+✅ reports/2026/05/01/report.json — valid
