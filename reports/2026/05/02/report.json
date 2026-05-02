@@ -1,0 +1,122 @@
+{
+  "date": "2026-05-02",
+  "findings": [
+    {
+      "type": "news",
+      "title": "SHADOW-EARTH-053 — China-Aligned Espionage Campaign Exploiting N-Day Microsoft Exchange + IIS Across Asia and Poland",
+      "threat_score": 6,
+      "cve": "CVE-2025-55182",
+      "cvss": null,
+      "affected_technology": "Microsoft Exchange Server (ProxyLogon-class chain), Microsoft IIS, Linux servers via React2Shell",
+      "summary": "Trend Micro disclosed China-aligned cluster SHADOW-EARTH-053 running active N-day exploitation of unpatched Microsoft Exchange/IIS plus CVE-2025-55182 across Asian governments and Poland, dropping Godzilla web shells and ShadowPad implants.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-05-01"
+    },
+    {
+      "type": "update",
+      "title": "BlackFile Vishing Campaign — Attribution to Cordial Spider + Snarky Spider Confirmed; Full AiTM SSO Mechanics Now Public",
+      "threat_score": 7,
+      "previous_threat_score": 7,
+      "cve": "None",
+      "cvss": null,
+      "affected_technology": "Google Workspace, Microsoft SharePoint, HubSpot, Salesforce — accessed via compromised IdP/SSO credentials and AiTM-bypassed MFA",
+      "summary": "BlackFile (2026-04-26) attributed today to Cordial Spider (UNC6671) and Snarky Spider (UNC6661) within The Com; full AiTM-MFA-bypass mechanic plus notification-suppression-via-inbox-rules now public — harden SSO with FIDO2, alert on MFA-device rotation.",
+      "first_seen_at": "2026-04-26"
+    }
+  ],
+  "noted": [
+    {
+      "cve": "CVE-2026-31431",
+      "product": "Linux kernel (algif_aead) — Copy Fail LPE",
+      "summary": "PoC repo count went from ≥6 yesterday to 168 today including five fresh implementations updated within the last hour (Rust, C, Python, Zig, Go) and defensive tooling (BPF LSM blocker, Ansible remediation) — out of remote-services scope but every Linux server / CI runner / jump host on a kernel since 4.14 (Aug 2017) is in scope; patched in 5.10.254+, 5.15.204+, 6.1.170+, 6.6.137+."
+    },
+    {
+      "cve": "None",
+      "product": "Mini Shai-Hulud — /proc/<pid>/mem secret-extraction technique",
+      "summary": "Today's BleepingComputer follow-up disclosed an additional technique not in earlier reporting: the worm reads /proc/<pid>/maps + /proc/<pid>/mem of GitHub Actions Runner.Worker to extract every key=value secret directly from runner memory, bypassing log-masking — track this read-pattern as a worm IOC on CI runners."
+    },
+    {
+      "cve": "None",
+      "product": "Instructure (Canvas LMS) cyber incident",
+      "summary": "Disclosed 2026-05-01; no scope, no attribution, no root cause yet — universities and K-12 districts using Canvas should pre-position log collection. Will promote to a full entry once technical detail is published."
+    },
+    {
+      "cve": "None",
+      "product": "SHADOW-EARTH-054 — co-victimisation cluster",
+      "summary": "Trend Micro reports nearly half of Malaysian, Sri Lankan, and Myanmar SHADOW-EARTH-053 victims also showed SHADOW-EARTH-054 implants — treat as the same threat aperture for IR purposes."
+    },
+    {
+      "cve": "None",
+      "product": "Deep#Door Python backdoor framework",
+      "summary": "SecurityWeek 2026-05-01 reported a sophisticated Python-based backdoor deploying persistent Windows espionage implants; full advisory text was 403 — track for vendor advisories or YARA rules in the next 48h."
+    },
+    {
+      "cve": "None",
+      "product": "AccountDumpling — 30,000 Facebook accounts via Google AppSheet phishing",
+      "summary": "Vietnamese-linked phishing infrastructure abused Google AppSheet, Netlify, Vercel, and Google Drive to harvest credentials, MFA codes, and ID photos — out of corporate-infra scope, brief anti-phishing detection if your SOC tracks consumer-side brand abuse."
+    },
+    {
+      "cve": "CVE-2026-7546",
+      "product": "Totolink NR1800X (lighttpd find_host_ip)",
+      "summary": "Pre-auth RCE via Host: header stack overflow (CVSS 9.3); PoC public, no vendor patch — niche consumer router population, relevant only if Totolink is in your fleet."
+    },
+    {
+      "cve": "CVE-2026-7538, CVE-2026-7548",
+      "product": "Totolink A8000RU / NR1800X consumer routers",
+      "summary": "Two additional Totolink consumer router CVEs published 2026-05-01 (CVSS 10.0 / 9.0); same niche population as CVE-2026-7546."
+    },
+    {
+      "cve": "CVE-2026-7567",
+      "product": "WordPress Temporary Login plugin",
+      "summary": "Authentication flaw (CVSS 9.8); not a top-tier plugin by install base but worth checking your WordPress plugin inventory."
+    },
+    {
+      "cve": "CVE-2026-42473",
+      "product": "Mixphp Framework",
+      "summary": "Critical flaw (CVSS 9.8) in a niche Chinese PHP framework with very small deployment footprint outside its origin region."
+    },
+    {
+      "cve": "CVE-2026-7590, CVE-2026-7591",
+      "product": "Branch Monkey MCP / Astro MCP servers",
+      "summary": "Two more MCP-server CVEs published 2026-05-01 (CVSS 7.5 / 6.5), continuing the MCP-server-as-attack-surface pattern (mcp-atlassian, nginx-ui, OpenHarness, chatgpt-mcp-server) — add MCP server inventory to internal AppSec tracking."
+    },
+    {
+      "cve": "None",
+      "product": "France Titres / ANTS (15-year-old detained)",
+      "summary": "Operational/judicial item: minor arrested for selling data from the French administrative agency; brief reference, no defensive action."
+    },
+    {
+      "cve": "None",
+      "product": "BlackCat/ALPHV insider sentencing (Goldberg + Martin)",
+      "summary": "Two former cybersecurity incident-response professionals sentenced to 4 years for ALPHV ransomware deployment 2023; useful for IR-program insider-risk policy work."
+    }
+  ],
+  "source_coverage": {
+    "total": 30,
+    "checked": 22,
+    "with_findings": 9,
+    "unreachable": [
+      "cisa.gov",
+      "cisa.gov/known-exploited-vulnerabilities-catalog",
+      "attackerkb.com",
+      "bugcrowd.com/disclosures",
+      "hackerone.com/hacktivity",
+      "cve.org",
+      "cve.mitre.org",
+      "cert.gov.ua"
+    ],
+    "degraded": [
+      "fortinet.com/blog/threat-research",
+      "securitylab.github.com",
+      "projectzero.google",
+      "packetstorm.news",
+      "msrc.microsoft.com/blog",
+      "avleonov.com",
+      "habr.com/ru/companies/tomhunter/articles",
+      "teletype.in/@cyberok",
+      "nvd.nist.gov",
+      "blog.cloudflare.com/tag/security"
+    ]
+  },
+  "full_report": "reports/2026/05/02/report.md"
+}

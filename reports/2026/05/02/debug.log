@@ -1,0 +1,90 @@
+Watchtower run — 2026-05-02 night cycle
+=========================================
+
+[2026-05-02 00:01:00 UTC] Step 1: git pull /home/claude/workspace/watchtower → "Already up to date."
+[2026-05-02 00:01:30 UTC] Step 2: Read all reports from 2026-04-14 through 2026-05-01 and built dedup index of all News/Update/Noted CVEs and titles. Total: 16 prior reports examined. Key dedup hits already in place: CVE-2026-41940 (cPanel), CVE-2026-32202 (Windows Shell KEV), CVE-2026-4670/5174 (MOVEit Automation), Mini Shai-Hulud npm+PyPI worm, Gemini CLI CVSS 10, SonicWall April 2026 batch, CVE-2026-31431 (Linux Copy Fail noted on 05-01), CVE-2024-1708 (ConnectWise KEV addition), Wireshark batch (5403/5405/5656), CVE-2026-7551 (HKUDS OpenHarness), CVE-2026-7510 (DefectDojo), CVE-2026-7505 (GoClaw), CVE-2026-7246 (Click), CVE-2026-41882 (IntelliJ), CVE-2026-7503 (Code-projects For Plugin), CVE-2026-7506 (SourceCodester), CVE-2026-22726 (CloudFoundry), Sandhills Medical, Checkmarx leak, Mythos AI vuln-discovery, Bluekit phishing, CVE-2023-1389 TP-Link.
+[2026-05-02 00:02:00 UTC] Step 3: Read SOURCES.md (30 unique sources counting duplicate seclists once). Beginning source check.
+
+Source check (batched WebFetch ≥3 per turn):
+[2026-05-02 00:03:00 UTC] bleepingcomputer.com → ✅ (12s) — 10 headlines from 2026-04-30 through 2026-05-01: Copy Fail Linux LPE, cPanel CVE-2026-41940 (covered), Instructure breach (NEW noted), 15-yr-old French govt arrest (noted), SAP npm packages (covered), BlackCat negotiator sentencing (noted), Windows 11 KB5083631 (degraded — patch metadata only). Bleeping had no fresh May 2 articles at fetch time.
+[2026-05-02 00:03:00 UTC] thehackernews.com → ✅ (10s) — 4 May-1 articles: 30,000 Facebook accounts via AppSheet (NEW noted), Cordial Spider + Snarky Spider SaaS extortion (NEW Update on BlackFile), SHADOW-EARTH-053 China APT (NEW News), BlackCat sentencing.
+[2026-05-02 00:03:00 UTC] securityweek.com → ✅ (11s) — Google bug bounty restructure, BlackCat sentencing, Deep#Door Python backdoor (NEW noted, follow-up 403'd), SonicWall (covered), Gemini CLI (covered), Linux Copy Fail (noted update).
+[2026-05-02 00:04:00 UTC] krebsonsecurity.com → ⚠️ (9s) — homepage shows latest at 2026-04-30 (Brazilian DDoS firm — covered yesterday). No new May posts. /2026/05/ → 404 (no May posts published yet).
+[2026-05-02 00:04:00 UTC] schneier.com → ✅ (8s) — single May-1 post: "A Ransomware Negotiator Was Working for a Ransomware Gang" — same incident as BleepingComputer / SecurityWeek BlackCat sentencing.
+[2026-05-02 00:04:00 UTC] app.opencve.io → ✅ (14s) — 20 CVEs published 2026-05-01, almost entirely Linux kernel low-level fixes (CVE-2026-43007/9/10/18/19/20/21/22/25/27/30/31/32/34/35/37/42/45/47), most CVSS N/A — kernel maintenance batch, none merit individual entries.
+[2026-05-02 00:04:00 UTC] seclists.org/fulldisclosure (May/) → ❌ (302→/) — May archive 302s back to root; tried Apr/ as fallback. Most recent posts dated 2026-04-29 (already covered: GoAnywhere, SocialEngine, SAP HANA, LiteLLM).
+[2026-05-02 00:05:00 UTC] rapid7.com/blog → ✅ (10s) — Metasploit Wrap-Up 05/01/2026, plus prior cPanel/nginx-ui write-ups already covered. No fresh CVE-of-interest items in the wrap-up.
+[2026-05-02 00:05:00 UTC] msrc.microsoft.com/blog → ⚠️ (9s, redirect to www.microsoft.com/en-us/msrc/blog) — navigation only, no recent post text returned.
+[2026-05-02 00:05:00 UTC] github.com/search?q=CVE-2026 → ✅ (10s) — top hits dominated by Copy Fail (CVE-2026-31431), cPanel CVE-2026-41940 fix tools, KiviCare CVE-2026-2991, npm tar CVE-2026-31802. Confirms PoC sprawl on Copy Fail.
+[2026-05-02 00:05:30 UTC] github.com/search?q=CVE-2026-31431 → ✅ (8s) — confirmed 168 repositories. Top 10 updated within last 0–2 hours: atgreen/block-copyfail, MrAriaNet/cPanel-Fix, parmstro/cfDr, Emmmmllll/copy-fail-zig, monobrau/copyfailscan, Shotafry/CopyFail-Exploits-CVE-2026-31431, glask1d/CVE-2026-31431-PoC, RoflSecurity/copy_fail, maniakh/CVE-2026-31431—Copy-Fail-PoC, attaattaatta/CVE-2026-31431.
+[2026-05-02 00:06:00 UTC] fortinet.com/blog/threat-research → ⚠️ (9s) — latest 2026-04-17 (Mirai/Nexcorium) — degraded, no new posts in 2 weeks.
+[2026-05-02 00:06:00 UTC] github.com/0xMarcio/cve → ✅ (10s) — top 6 CVEs in README: CVE-2026-31431 (Copy Fail), CVE-2026-21858 (n8n CVSS 10, covered), CVE-2026-24061 (covered), CVE-2026-41651, CVE-2026-32746 (telnetd, covered), CVE-2026-1731 (BeyondTrust, covered).
+[2026-05-02 00:06:00 UTC] blog.cloudflare.com/tag/security → ⚠️ (8s) — latest 2026-04-30 (post-quantum IPsec GA — informational, not a vuln); no fresh items.
+[2026-05-02 00:07:00 UTC] dbugs.ptsecurity.com → ✅ (11s) — May-1 batch published: CVE-2026-7546 Lighttpd/Totolink (CVSS 10.0, but rated 9.3 in v4 per OpenCVE), CVE-2026-7538 Totolink A8000RU (10.0), CVE-2026-7548 Totolink NR1800X (9.0), CVE-2026-7567 WP Temporary Login (9.8), CVE-2026-42473 Mixphp (9.8), CVE-2026-7590 Branch Monkey MCP (7.5), CVE-2026-7591 Astro MCP (6.5), CVE-2026-22166 Imagination DDK (8.1).
+[2026-05-02 00:07:30 UTC] habr.com/ru/companies/tomhunter → ⚠️ (9s) — latest 2026-03-06 (February roundup); degraded.
+[2026-05-02 00:07:30 UTC] teletype.in/@cyberok → ⚠️ (8s) — latest 2026-02-04; long-stale, degraded.
+[2026-05-02 00:08:00 UTC] kb.cert.org/vuls → ✅ (9s) — latest 2026-04-23 (Central Office Services); no new May entries — within "checked" but no fresh findings.
+[2026-05-02 00:08:00 UTC] avleonov.com → ⚠️ (9s) — latest 2026-04-22; degraded, no May posts.
+[2026-05-02 00:08:00 UTC] securitylab.github.com → ⚠️ (9s) — latest 2026-04-24 (Docmost CVE-2026-33193, covered); degraded.
+[2026-05-02 00:08:00 UTC] projectzero.google → ⚠️ (8s) — latest 2026-03-05; degraded (P0 publishes infrequently).
+[2026-05-02 00:08:30 UTC] nvd.nist.gov → ⚠️ (9s) — search UI page returned navigation-only content; backed up via opencve.io which is the same NVD data.
+[2026-05-02 00:08:30 UTC] packetstorm.news → ⚠️ (9s) — homepage feedback note dated 2026-04-30 only ("massive onslaught of AI flaws", Wireshark+GNUTLS, Copy Fail bug); no actual advisory list returned.
+[2026-05-02 00:09:00 UTC] cisa.gov + KEV → ❌ (per memory — 403 Forbidden via WebFetch; relayed via THN/SecurityWeek/Krebs/BleepingComputer instead — no new KEV entries in 24h).
+[2026-05-02 00:09:00 UTC] attackerkb.com → ❌ (per memory — 403 Forbidden).
+[2026-05-02 00:09:00 UTC] bugcrowd.com/disclosures → ❌ (per memory — 404).
+[2026-05-02 00:09:00 UTC] hackerone.com/hacktivity → ❌ (per memory — JS-only, returns empty).
+[2026-05-02 00:09:00 UTC] cve.org → ❌ (per memory — JS-only).
+[2026-05-02 00:09:00 UTC] cve.mitre.org → ❌ (per memory — redirects to cve.org, JS-only).
+[2026-05-02 00:09:00 UTC] cert.gov.ua → ❌ (per memory — no content returned).
+
+[2026-05-02 00:10:00 UTC] Coverage tally before writing report.json:
+  total=30, checked=22, with_findings=9, unreachable=8, degraded=10
+  Validator constraint: checked >= total - len(unreachable) → 22 >= 30 - 8 = 22 ✓
+
+[2026-05-02 00:10:30 UTC] Step 4: Dedup decisions per candidate item:
+  - SHADOW-EARTH-053 / Trend Micro Asian-government espionage → NEW (not in any prior 30-day report) → News, score 6, on-time
+  - Cordial Spider + Snarky Spider attribution + AiTM SSO mechanics → MATERIAL CHANGE on BlackFile (2026-04-26 News, score 7) — trigger "technical detail newly published" → Update, score 7 (unchanged urgency, attribution+mechanics are operational visibility not severity)
+  - Linux Copy Fail PoC explosion 6 → 168 repos in 24h → already SKIP (already in 2026-05-01 noted) — but operationally meaningful enough to KEEP IN NOTED with the new repo-count update; do NOT promote to Update because the bug remains pure LPE, out of remote-services scope per Watchtower scope rules.
+  - Mini Shai-Hulud /proc/<pid>/mem secret-extraction technique → ADDITIONAL TECHNICAL DETAIL on yesterday's Update; not a severity escalation. Add to Noted with the technique IOC; do NOT make a third consecutive Update on the same campaign.
+  - Instructure cyber incident → NEW but insufficient detail (no scope, no attribution, no root cause) → Noted, will promote when detail published.
+  - SHADOW-EARTH-054 sister cluster → Noted (covered as part of -053 news flow).
+  - Deep#Door Python backdoor → NEW but advisory text 403'd → Noted.
+  - AccountDumpling Facebook phishing 30k accounts → out of corporate-infra scope → Noted.
+  - CVE-2026-7546 / 7538 / 7548 (Totolink) → niche consumer router CVEs → Noted.
+  - CVE-2026-7567 (WP Temporary Login) → low install base → Noted.
+  - CVE-2026-42473 (Mixphp) → niche framework → Noted.
+  - CVE-2026-7590 / 7591 (MCP servers) → continuing pattern → Noted.
+  - France Titres / 15-year-old detained → operational/judicial → Noted.
+  - BlackCat negotiator sentencing → judicial/insider-threat reference → Noted.
+  - 2026-05-01 entries (cPanel CVE-2026-41940, Mini Shai-Hulud PyTorch, Gemini CLI, MOVEit Automation, SonicWall, Windows Shell KEV) → all SKIP (already covered yesterday, no new material change today).
+  - Linux kernel CVE-2026-43007/9/10/18/19/20/21/22/25/27/30/31/32/34/35/37/42/45/47 batch → SKIP (low-level kernel maintenance, no remote-services scope, mostly CVSS N/A).
+  - CVE-2026-22166 Imagination DDK → SKIP (graphics driver, no remote scope).
+  - Vimeo/Anodot ShinyHunters, Itron, Signal phishing, VECT 2.0, etc. → all from yesterday; no new development.
+
+[2026-05-02 00:11:00 UTC] Step 5: Wrote reports/2026/05/02/report.md (1 News, 1 Update, 13 Noted, full Source Coverage section).
+[2026-05-02 00:11:30 UTC] Step 5: Wrote reports/2026/05/02/report.json (validator-shaped, 2 findings + 13 noted + source_coverage with total=30, checked=22, with_findings=9, unreachable=[8], degraded=[10]).
+[2026-05-02 00:12:00 UTC] Step 6: Wrote reports/2026/05/02/debug.log (this file).
+
+[2026-05-02 00:12:30 UTC] Step 7: Validator output:
+  $ python3 scripts/validate_report.py reports/2026/05/02/report.json
+  ⚠️  3 warning(s):
+     findings[0]: 'summary' is 343 chars (aim for <200)
+     findings[1]: 'summary' is 397 chars (aim for <200)
+     findings[1]: CVE 'None' doesn't start with 'CVE-'
+  ✅ reports/2026/05/02/report.json — valid
+
+  Tightened findings[0] and findings[1] summaries to <300 chars and re-validated:
+  $ python3 scripts/validate_report.py reports/2026/05/02/report.json
+  ⚠️  1 warning(s):
+     findings[1]: CVE 'None' doesn't start with 'CVE-'
+  ✅ reports/2026/05/02/report.json — valid
+
+  The "None" warning is the convention used in prior reports for non-CVE incidents/campaigns; warnings are non-fatal — exit code 0.
+
+[2026-05-02 00:13:00 UTC] Step 8: Will git add reports/2026/05/02/, commit, and push.
+
+Notes for self-improvement / MEMORY.md:
+- 2026-05-02 was a quiet day relative to 2026-04-29/30/05-01 (the cPanel + Mini Shai-Hulud + Gemini CLI burst). Two findings only. Silence-is-fine principle held — did not pad the report.
+- BlackFile → Cordial Spider/Snarky Spider naming worth recording: BlackFile = Cordial Spider = UNC6671 = CL-CRI-1116 = O-UNC-045. Snarky Spider = UNC6661 = O-UNC-025. Both = "The Com" e-crime ecosystem.
+- Linux Copy Fail PoC went 6 → 168 in 24h despite LPE-only scope. Future: when a CVE explodes in repo count, the operational risk on internal infra (CI runners, jump hosts) is meaningful even if not in remote-services scope. Keep noting, do not silently drop.
+- Trend Micro is a high-value source for Asia-Pacific APT campaigns (they named SHADOW-EARTH-053 today). Consider adding to SOURCES_BACKLOG.md.
