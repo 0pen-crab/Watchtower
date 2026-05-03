@@ -1,0 +1,154 @@
+{
+  "date": "2026-05-03",
+  "findings": [
+    {
+      "type": "update",
+      "title": "CVE-2026-41940 cPanel & WHM Authentication Bypass — 'Sorry' Ransomware Mass-Encrypts 44,000 cPanel Servers, KEV Deadline Today",
+      "threat_score": 9,
+      "previous_threat_score": 9,
+      "cve": "CVE-2026-41940",
+      "cvss": 9.8,
+      "affected_technology": "cPanel & WHM (web hosting control panel) — millions of internet-facing instances; 'Sorry' Go-based Linux ransomware (ChaCha20+RSA-2048) layered on top of the auth bypass",
+      "summary": "Shadowserver confirms 44,000+ cPanel IPs compromised since CVE-2026-41940 disclosure with attackers now deploying 'Sorry' ransomware on top of the auth-bypass foothold; KEV federal-remediation deadline is today 2026-05-03.",
+      "first_seen_at": "2026-04-30"
+    },
+    {
+      "type": "news",
+      "title": "BufferZoneCorp Supply-Chain Campaign — 7 Ruby Gems + 9 Go Modules Hijack GitHub Actions, Append SSH Keys, Tamper go.sum",
+      "threat_score": 7,
+      "cve": "None",
+      "cvss": null,
+      "affected_technology": "RubyGems ecosystem (knot-* prefix gems) + Go module ecosystem (github.com/BufferZoneCorp/*); CI runners, GitHub Actions, self-hosted runner persistence",
+      "summary": "Socket disclosed a sleeper-package campaign by BufferZoneCorp/knot-theory: 7 Ruby gems plus 9 Go modules that tamper with go.sum, wrap the real go binary, and append the attacker's SSH key to authorized_keys on every CI runner that pulls them.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-05-01"
+    },
+    {
+      "type": "update",
+      "title": "CVE-2026-31431 Linux Kernel CopyFail — Added to CISA KEV 2026-05-01, 168+ Public PoC Repos, Active Exploitation Confirmed",
+      "threat_score": 7,
+      "previous_threat_score": 4,
+      "cve": "CVE-2026-31431",
+      "cvss": 7.8,
+      "affected_technology": "Linux kernel algif_aead (AF_ALG socket / crypto subsystem); kernels 4.14+ since Aug 2017 across all major distros (Ubuntu, RHEL, SUSE, Amazon Linux, Debian)",
+      "summary": "CISA added Linux kernel CopyFail LPE to the KEV catalog 2026-05-01 after active in-the-wild exploitation; 168+ public PoC repos in Rust/C/Python/Zig/Go now exist, escalating from 'noted/out-of-scope LPE' to a fleet-wide privilege-escalation pivot for any landed-shell adversary.",
+      "first_seen_at": "2026-04-30"
+    },
+    {
+      "type": "news",
+      "title": "CVE-2026-42167 ProFTPD mod_sql SQL Injection → Pre-Auth RCE / Auth Bypass / Privilege Escalation",
+      "threat_score": 6,
+      "cve": "CVE-2026-42167",
+      "cvss": 8.1,
+      "affected_technology": "ProFTPD <1.3.9a with mod_sql extension; PostgreSQL-backed FTPS/SFTP appliances; SQLAuthenticate-configured deployments",
+      "summary": "Logic flaw in ProFTPD mod_sql is_escaped_text() bypasses SQL sanitization via single-quote-bracketed usernames, yielding pre-auth RCE when PostgreSQL DB user is superuser (COPY TO PROGRAM) or auth-bypass under SQLAuthenticate; two public PoCs.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-04-27"
+    },
+    {
+      "type": "news",
+      "title": "Trellix Source Code Repository Breach — 'Portion' of Internal Code Accessed; No Exploitation Evidence Yet",
+      "threat_score": 5,
+      "cve": "None",
+      "cvss": null,
+      "affected_technology": "Trellix internal source-code repository (EDR/XDR vendor merging former McAfee Enterprise + FireEye assets)",
+      "summary": "Trellix confirmed unauthorised access to a portion of its internal source-code repository 2026-05-02 with no current exploitation evidence, but the access has obvious EDR-bypass-development potential — watch the next 30 days for downstream Trellix-process abuse.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-05-02"
+    }
+  ],
+  "noted": [
+    {
+      "cve": "None",
+      "product": "ConsentFix v3 — Microsoft Azure CLI device-code phishing toolkit refinement (Push Security)",
+      "summary": "Phishing/OAuth toolkit v3 automates Azure CLI device-code abuse via Pipedream webhooks for real-time refresh-token exchange; Push notes 'unclear if v3 has gained any traction yet' — track for adoption and tune device-code-flow detection."
+    },
+    {
+      "cve": "None",
+      "product": "EtherRAT — SEO-poisoning + GitHub-facade campaign (Atos TRC)",
+      "summary": "44 fake GitHub repos spoofing PsExec/AzCopy/Sysmon/LAPS/KustoExplorer redirect to a hidden secondary GitHub account hosting MSI installers carrying EtherRAT (Ethereum-blockchain-resolved C2); targets enterprise admins — block direct GitHub→endpoint admin-tool downloads outside curated artifact stores."
+    },
+    {
+      "cve": "None",
+      "product": "FIRESTARTER backdoor — federal Cisco Firepower / ASA campaign (CISA ED 25-03)",
+      "summary": "CISA Emergency Directive ED 25-03 deadline for federal agencies to inventory all Firepower / Secure Firewall devices was 2026-05-01 23:59 EST (yesterday); FIRESTARTER (LINE VIPER post-exploit) persists on ASA/FTD even after patching CVE-2025-20333 / CVE-2025-20362 — if you operate ASA/Firepower edge devices and have not done a forensic check, do it now."
+    },
+    {
+      "cve": "None",
+      "product": "Harvester / GoGra Linux backdoor (Symantec)",
+      "summary": "Linux variant of Harvester APT's GoGra backdoor uses Microsoft Graph API + hard-coded Outlook mailbox folder ('Zomato Pizza') for C2; targets observed in India/Afghanistan via VirusTotal artefacts; ELF disguised as PDF — hunt for Graph API calls from Linux servers without legitimate Microsoft 365 integration."
+    },
+    {
+      "cve": "GHSA-rcmw-7mc7-3rj7",
+      "product": "Sentry self-hosted multi-organisation SAML SSO account-takeover",
+      "summary": "Critical GitHub Security Advisory affecting sentry 21.12.0–26.4.0 self-hosted multi-org deployments published in past 48h (Sentry SaaS already patched 2026-02-18) — patch self-hosted to current and verify SENTRY_SINGLE_ORGANIZATION posture."
+    },
+    {
+      "cve": "CVE-2026-30922",
+      "product": "pyasn1 ASN.1 decoder DoS",
+      "summary": "Uncontrolled recursion in pyasn1 ≤0.6.2 enables denial of service with sub-100KB input; wide indirect dependency surface (cryptography tooling, LDAP libs) — bump pinned versions."
+    },
+    {
+      "cve": "CVE-2026-7668",
+      "product": "MikroTik RouterOS 6.49.8 SCEP endpoint OOB read",
+      "summary": "Out-of-bounds read in SCEP endpoint of RouterOS 6.49.8 (CVSS 7.3) with public exploit; niche but check internet-exposed MikroTik fleets for SCEP exposure."
+    },
+    {
+      "cve": "CVE-2026-7644",
+      "product": "ChatGPTNextWeb / NextChat MCP server authorization bypass",
+      "summary": "Continues the MCP-server-as-attack-surface pattern (mcp-atlassian, nginx-ui, OpenHarness, chatgpt-mcp-server, Branch Monkey MCP, Astro MCP, NextChat); CVSS 7.3 — add to MCP server inventory tracking."
+    },
+    {
+      "cve": "CVE-2026-2554",
+      "product": "WCFM WordPress multivendor marketplace plugin",
+      "summary": "Insecure direct object reference allowing user deletion (CVSS 8.1); requires authenticated vendor-level access but WCFM is a popular multivendor marketplace plugin — patch to latest."
+    },
+    {
+      "cve": "Multiple",
+      "product": "npm malware wave (apple-pay-trust/cancelled, apple-internal-security-library-v99, gunpowder-ghost, sirens-lament, blackbeards-navigator)",
+      "summary": "Multiple typo-/look-alike npm malware packages flagged in GitHub Security Advisories 2026-05-01/02; no distribution numbers but worth a registry-wide scan and lockfile audit."
+    },
+    {
+      "cve": "PT-2026-36569, PT-2026-36566, PT-2026-36582, PT-2026-36572, PT-2026-36568",
+      "product": "WordPress plugin batch (User Verification, User Registration Advanced Fields, Profile Builder, Export/Import Users, WP Mail Gateway)",
+      "summary": "Five WordPress registration/auth-adjacent plugin advisories from Positive Technologies dbugs (CVSS 9.8 / 9.8 / 8.1 / 8.8 / 8.8) published 2026-04-30 → 2026-05-02 — high-risk on any membership-style site."
+    },
+    {
+      "cve": "PT-2026-36586",
+      "product": "Trendnet TEW-821DAP consumer/SOHO router",
+      "summary": "Critical (CVSS 9.0) router vulnerability disclosed 2026-05-02; out of corporate-infra scope but worth flagging if your remote-worker fleet has Trendnet."
+    },
+    {
+      "cve": "CVE-2024-1708",
+      "product": "ConnectWise ScreenConnect (KEV reminder)",
+      "summary": "Reminder: KEV addition 2026-04-29; if any ScreenConnect installs are still <23.9.8 in your environment you are now non-compliant with the federal remediation deadline."
+    },
+    {
+      "cve": "None",
+      "product": "BlackCat (ALPHV) insider sentencing — Goldberg + Martin",
+      "summary": "Ryan Goldberg + Kevin Martin sentenced to 4 years 2026-05-01 for deploying BlackCat against US victims while employed at Sygnia / DigitalMint; useful policy reference for IR-program insider-risk language."
+    }
+  ],
+  "source_coverage": {
+    "total": 30,
+    "checked": 19,
+    "with_findings": 10,
+    "unreachable": [
+      "cisa.gov",
+      "cisa.gov/known-exploited-vulnerabilities-catalog",
+      "attackerkb.com",
+      "bugcrowd.com/disclosures",
+      "hackerone.com/hacktivity",
+      "cve.org",
+      "cve.mitre.org",
+      "securitylab.github.com",
+      "msrc.microsoft.com/blog",
+      "nvd.nist.gov",
+      "cert.gov.ua"
+    ],
+    "degraded": [
+      "packetstorm.news"
+    ]
+  },
+  "full_report": "reports/2026/05/03/report.md"
+}
