@@ -1,0 +1,112 @@
+Watchtower run — 2026-05-04 night cycle
+=======================================
+
+[00:00 UTC] Step 1 — git pull /home/claude/workspace/watchtower → "Already up to date."
+[00:01 UTC] Step 2 — Build 30-day dedup index (cutoff 2026-04-04 → 2026-05-04, inclusive of yesterday's 2026-05-03 report).
+            Loaded 23 report.json files (2026-04-05 through 2026-05-03).
+            Indexed 195 distinct CVE strings + finding/noted titles. Dedup index used to classify everything below.
+            Notable existing coverage that I deliberately did not republish:
+              - cPanel CVE-2026-41940 (covered as update 2026-05-03; no material change in 24h besides PoC repo growth → noted only)
+              - Linux CopyFail CVE-2026-31431 (covered as update 2026-05-03 with KEV+168 PoCs; new PoC repos in 24h not material → noted only)
+              - BufferZoneCorp Ruby/Go supply-chain (covered as news 2026-05-03; no new packages today → not republished)
+              - Trellix breach (covered as news 2026-05-03; no scope update today → not republished)
+              - PyTorch Lightning Mini Shai-Hulud (covered 2026-05-01; not republished)
+              - SonicWall SonicOS April roll-up (covered 2026-05-01; SCWorld follow-on coverage today → noted reminder only)
+              - ConnectWise ScreenConnect KEV (covered 2026-05-03 noted; SCWorld re-headlined → noted reminder only)
+
+[00:02 UTC] Step 3 — Source coverage (SOURCES.md = 30 unique sources):
+            Tier 1 (15):
+              ✅ bleepingcomputer.com (homepage + /news/microsoft/ + /news/security/page/2/) — 3 distinct hits (Instructure, DigiCert FP, follow-on cPanel)
+              ✅ thehackernews.com (homepage + /search/label/Vulnerability + /2026/05/) — 2 distinct hits (CopyFail KEV update, Trellix breach reminder)
+              ❌ cisa.gov — 403
+              ❌ cisa.gov/known-exploited-vulnerabilities-catalog — 403
+              ✅ securityweek.com — checked, no fresh in-scope content for 05-03/04
+              ✅ github.com/search?q=CVE — fresh repos for already-covered CVEs (CopyFail x4, cPanel x2, KiviCare, npm tar) → noted in PoC bullet
+              ✅ schneier.com — checked, no posts in window
+              ✅ krebsonsecurity.com — checked, latest is 2026-04-30
+              ✅ rapid7.com/blog — checked, only Metasploit Wrap-Up 05/01 in window (no new content captured)
+              ❌ attackerkb.com — 403
+              ✅ fortinet.com/blog/threat-research — checked, no posts in window
+              ⚠️ securitylab.github.com — page loaded but stale (latest disclosure 2026-04-24)
+              ✅ seclists.org/fulldisclosure (via redirect to seclists.org/) — yielded oss-security archive route
+              ⚠️ packetstormsecurity.com (redirected → packetstorm.news/) — front-page loaded; advisory section not loaded (TOS page)
+              ✅ opencve.io / app.opencve.io — checked; CVE-2026-43003 (OpenStack Ironic) and CVE-2026-22165/166 (Imagination GPU/WebGPU) noted but out-of-scope (local-only / GPU client)
+            Tier 2 (15 unique — seclists/fulldisclosure dedup):
+              ⚠️ nvd.nist.gov — page loaded but stale (no 05-02→04 high-severity entries found via summary endpoint)
+              ❌ cve.mitre.org — redirects to cve.org JS-only
+              ❌ cve.org — JS-only (empty content)
+              ✅ projectzero.google — no posts in window
+              ✅ blog.cloudflare.com/tag/security — no posts in window (latest 2026-04-30 PQ-IPsec)
+              ⚠️ msrc.microsoft.com/blog → www.microsoft.com/en-us/msrc/blog — empty; backfilled via microsoft.com/en-us/security/blog (Wiz CopyFail post + Microsoft Agent 365 GA — already-covered themes)
+              ❌ hackerone.com/hacktivity — JS-only (empty)
+              ❌ bugcrowd.com/disclosures — 404
+              ⚠️ kb.cert.org/vuls — only stale entries (latest VU#748485 from 2026-04-23 already covered)
+              ✅ avleonov.com — only April Patch summaries visible (already covered themes)
+              ✅ github.com/0xMarcio/cve — fresh PoC commits (CopyFail, cPanel, KiviCare, etc.) → consolidated noted item
+              ✅ dbugs.ptsecurity.com — 4 fresh WordPress plugin advisories → noted bullet (Gravity Forms, Widget Options, WCFM, Nex-Forms)
+              ✅ habr.com/ru/companies/tomhunter — no posts in window (latest March 2026)
+              ✅ teletype.in/@cyberok — no posts in window (latest February 2026)
+              ❌ cert.gov.ua — empty content via WebFetch
+
+            Off-list backfill sources used (per MEMORY.md guidance):
+              ✅ openwall.com/lists/oss-security/ — primary source for today's news (Apache OpenNLP triple, Apache Polaris quad, Apache Atlas, Starlet Perl, ProFTPD reminder, io_uring kernel)
+              ✅ helpnetsecurity.com — confirmed CopyFail and cPanel coverage
+              ✅ wiz.io/blog — CopyFail technical analysis (already-covered theme)
+              ✅ snyk.io/blog — Mini Shai-Hulud confirmation (already covered)
+              ✅ socket.dev/blog — BufferZoneCorp confirmation (already covered)
+              ✅ aikido.dev/blog — Mini Shai-Hulud + tanstack typosquat (already covered)
+              ✅ scworld.com — Microsoft Entra ID AI-agent fix surfaced here (logged as Noted; thin detail)
+              ⚠️ theregister.com/security — only May 2 article; no May 3-4 content surfaced
+              ❌ google.com search / duckduckgo.com search / cisa.gov/news-events/* — all 403 or empty
+
+            Coverage tally for report.json:
+              total = 30
+              unreachable = 8: cisa.gov, cisa.gov/known-exploited-vulnerabilities-catalog, attackerkb.com, bugcrowd.com/disclosures, hackerone.com/hacktivity, cve.org, cve.mitre.org, cert.gov.ua
+              degraded   = 4: msrc.microsoft.com/blog, nvd.nist.gov, packetstorm.news, securitylab.github.com
+              checked    = 22 (= 30 - 8); validator constraint checked >= total - unreachable → 22 >= 22 ✅
+              with_findings = 7
+
+[00:03 UTC] Step 4 — Dedup decisions per candidate:
+            CANDIDATES → DECISIONS
+            - cPanel CVE-2026-41940 (BleepingComputer page-2 follow-on)        SKIP (already update 2026-05-03; no material change)
+            - Linux CopyFail CVE-2026-31431 (multiple sources today)           SKIP-AS-FINDING (already update 2026-05-03; new PoC repos noted in PoC bullet only)
+            - Trellix source-code breach (THN reminder)                         SKIP (already news 2026-05-03)
+            - BufferZoneCorp Ruby/Go (THN/Aikido confirmation)                  SKIP (already news 2026-05-03)
+            - Mini Shai-Hulud / PyTorch Lightning (Snyk/Aikido confirmation)    SKIP (already news 2026-05-01)
+            - SAP CAP / Mini Shai-Hulud (Aikido)                                SKIP (already covered 2026-04-29 / 04-30)
+            - SonicWall April roll-up (SC Media)                                SKIP-AS-FINDING; reminder noted only
+            - ConnectWise ScreenConnect (SC Media re-headline)                  SKIP-AS-FINDING; reminder noted only
+            - Instructure / Canvas data breach (BleepingComputer + THN)         NEW → news (HIGH)
+            - Apache OpenNLP CVE-2026-42027/40682/42440 (oss-security 05-01)    NEW → news (HIGH; grouped triple)
+            - Apache Polaris CVE-2026-42809-12 (oss-security 05-02)             NEW → news (MEDIUM)
+            - Microsoft Defender DigiCert FP (BleepingComputer 05-03)           NEW → news (MEDIUM)
+            - Apache Atlas CVE-2026-40563 (oss-security 05-03)                  NEW → noted (technical detail thin)
+            - Starlet Perl CVE-2026-40561 (oss-security 05-02)                  NEW → noted (niche)
+            - Linux io_uring zcrx OOB write (oss-security 05-03)                NEW → noted (LPE, watch for KEV)
+            - Vim 9.2.0435 OS command injection                                 NEW → noted (local desktop, out of scope)
+            - Vietnamese Facebook AppSheet phishing (~30k accounts)             NEW → noted (SaaS-as-relay theme)
+            - Microsoft Entra ID AI-agent priv-esc (SCWorld)                    NEW → noted (CVE not surfaced; thin)
+            - WordPress plugin batch (dbugs.ptsecurity)                         NEW → noted (recurring batch source)
+            - Telegram Mini Apps abuse                                          SKIP (mobile out-of-scope)
+            - OpenStack Ironic CVE-2026-43003                                    SKIP (chroot grub-install, niche; deferred)
+            - Imagination GPU CVE-2026-22165/166                                SKIP (client browser GPU, out-of-scope)
+            - YunaiV CVE-2026-7710 (Ruoyi-Vue-Pro JWT bypass)                    SKIP (low-deployment niche framework)
+
+[00:14 UTC] Step 5 — Wrote reports/2026/05/04/report.md and reports/2026/05/04/report.json.
+
+[00:15 UTC] Step 7 — Validator output:
+            $ python3 scripts/validate_report.py reports/2026/05/04/report.json
+            ⚠️  4 warning(s):
+               findings[0]: CVE 'None' doesn't start with 'CVE-'   (Instructure breach — no CVE assigned, expected)
+               findings[2]: 'summary' is 309 chars (aim for <200)  (trimmed)
+               findings[3]: 'summary' is 301 chars (aim for <200)  (trimmed)
+               findings[3]: CVE 'None' doesn't start with 'CVE-'   (DigiCert FP — no CVE, expected)
+            ✅ reports/2026/05/04/report.json — valid
+
+            After trimming summaries:
+            ⚠️  2 warning(s):
+               findings[0]: CVE 'None' doesn't start with 'CVE-'
+               findings[3]: CVE 'None' doesn't start with 'CVE-'
+            ✅ reports/2026/05/04/report.json — valid
+
+[00:16 UTC] Step 8 — git add reports/2026/05/04 sources-meta.md → commit → push.

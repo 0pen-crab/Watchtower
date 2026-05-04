@@ -1,0 +1,118 @@
+{
+  "date": "2026-05-04",
+  "findings": [
+    {
+      "type": "news",
+      "title": "Instructure / Canvas LMS Data Breach — ShinyHunters Claims ~275M Records Across 9,000 Schools, Vulnerability-Driven",
+      "threat_score": 6,
+      "cve": "None",
+      "cvss": null,
+      "affected_technology": "Instructure Canvas Learning Management System (dominant North-American higher-ed LMS plus widespread K-12 and corporate-training tenants); third-party Canvas integrators (LTI / OAuth bridges)",
+      "summary": "Instructure confirmed a vulnerability-driven breach and ShinyHunters is now extorting the company on its leak site, claiming ~275M records across ~9,000 schools / 15,000 institutions including names, emails, student IDs, and private user-to-user messages.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-05-01"
+    },
+    {
+      "type": "news",
+      "title": "Apache OpenNLP Triple Advisory — Arbitrary Class Instantiation, XXE, and OOM via Malicious Model Files (CVE-2026-42027 / CVE-2026-40682 / CVE-2026-42440)",
+      "threat_score": 5,
+      "cve": "CVE-2026-42027, CVE-2026-40682, CVE-2026-42440",
+      "cvss": null,
+      "affected_technology": "Apache OpenNLP (Java NLP toolkit) <2.5.9 and 3.0 <3.0.0-M3 — embedded across data pipelines, Solr/Elasticsearch enrichment, Spark NLP wrappers, search-relevance harnesses, ML-as-a-Service products",
+      "summary": "Apache OpenNLP shipped 2.5.9 / 3.0.0-M3 fixing three independent bugs all reachable via a malicious model archive: arbitrary-class instantiation in ExtensionLoader (static initializers run pre-allowlist), XXE in DictionaryEntryPersistor, and OOM-DoS in AbstractModelReader unsigned-int allocations.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-05-01"
+    },
+    {
+      "type": "news",
+      "title": "Apache Polaris Metadata Path Validation Bypass — CVE-2026-42809 / 42810 / 42811 / 42812 (Iceberg Catalog)",
+      "threat_score": 5,
+      "cve": "CVE-2026-42809, CVE-2026-42810, CVE-2026-42811, CVE-2026-42812",
+      "cvss": null,
+      "affected_technology": "Apache Polaris <1.4.1 (open-source REST catalog brokering IAM-authenticated Iceberg-table access on S3/GCS/Azure cloud-object storage; multi-tenant data-lake trust boundary)",
+      "summary": "ALTER TABLE updates touching only write.metadata.path bypass Polaris commit-time location validation under allow.unstructured.table.location=true, letting a table-modify attacker redirect metadata writes plus issued cloud credentials to attacker-chosen storage.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-05-02"
+    },
+    {
+      "type": "news",
+      "title": "Microsoft Defender Wrongly Flags DigiCert Root Certificates as Trojan:Win32/Cerdigent.A!dha — Mass Cert Removal on Windows Fleets",
+      "threat_score": 4,
+      "cve": "None",
+      "cvss": null,
+      "affected_technology": "Microsoft Defender (consumer + Defender for Endpoint) on Windows; any Windows-side service validating against affected DigiCert root/intermediate CA certificates (browsers, .NET apps, OS update channels, signed-binary verification, smart-card flows)",
+      "summary": "Defender's signature update misclassifies legitimate DigiCert root/intermediate CAs as a trojan and removes them from the Windows certificate store — pure operational disruption (failed updates, broken TLS chains) at fleet scale; pause autoroll on a control group.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-05-03"
+    }
+  ],
+  "noted": [
+    {
+      "cve": "CVE-2026-40563",
+      "product": "Apache Atlas (0.8 → 2.4.0) DSL search endpoint script injection",
+      "summary": "Script injection in Apache Atlas DSL search endpoint disclosed via oss-security 2026-05-03; technical detail thin on public list — Atlas is the Hadoop-ecosystem metadata governance system and DSL-evaluated query injection is a familiar pattern, watch for the upstream advisory and patch."
+    },
+    {
+      "cve": "CVE-2026-40561",
+      "product": "Starlet Perl PSGI server HTTP request smuggling (≤0.31)",
+      "summary": "Content-Length is incorrectly prioritised over Transfer-Encoding: chunked, violating RFC 7230 §3.3.3 — niche Perl PSGI server but classic request-smuggling primitive; anyone running a reverse proxy in front of Starlet is exposed, patch shipped, upgrade."
+    },
+    {
+      "cve": "Not yet assigned",
+      "product": "Linux kernel io_uring zcrx freelist OOB write",
+      "summary": "Reported on oss-security 2026-05-03; LPE-class — adding to watchlist alongside the recently-KEV'd CopyFail (CVE-2026-31431) since io_uring continues to be a fertile LPE source, track for KEV addition."
+    },
+    {
+      "cve": "Not yet assigned",
+      "product": "Vim < 9.2.0435 — OS command injection via 'path' completion",
+      "summary": "Local-only desktop-tool issue; out of remote-services scope but worth flagging because Vim is everywhere on Linux ops boxes and any chain that lands shell on a developer/ops workstation can pivot via vim."
+    },
+    {
+      "cve": "None",
+      "product": "Vietnamese-linked Facebook account compromise via Google AppSheet (~30,000 accounts)",
+      "summary": "Vietnamese threat actors used Google AppSheet as a phishing-relay platform to harvest ~30,000 Facebook accounts — adds Google's no-code automation surface to the SaaS-as-phishing-relay pattern (Pipedream/Zapier/Power Automate); tune phishing-URL rules to include *.appsheet.com redirects."
+    },
+    {
+      "cve": "None",
+      "product": "Microsoft Entra ID — AI-agent role privilege-escalation patched",
+      "summary": "Microsoft patched a flaw in the Entra ID AI-agent role enabling privilege escalation / role takeover (per SCWorld 2026-05-02); CVE not surfaced in observed snippet, MSRC source returned no detail via WebFetch — track for formal MSRC advisory."
+    },
+    {
+      "cve": "Multiple (SonicWall April roll-up follow-on)",
+      "product": "SonicWall firmware roll-up referenced on SC Media 2026-05-02",
+      "summary": "Three CVEs patched; appears to be follow-on coverage of the SonicOS April 2026 roll-up already covered 2026-05-01 (CVE-2026-0204 et al.) — no material new info, flagged in case yesterday's report was missed."
+    },
+    {
+      "cve": "CVE-2024-1708",
+      "product": "ConnectWise ScreenConnect (KEV reminder, re-headlined 2026-05-02)",
+      "summary": "Federal remediation deadline already past (KEV addition 2026-04-29); re-flagging because SC Media headlined it again 2026-05-02 — if any unpatched ScreenConnect <23.9.8 remains in your fleet, treat as compromised."
+    },
+    {
+      "cve": "PT-2026-36577, PT-2026-36588, PT-2026-36617, PT-2026-36681",
+      "product": "WordPress plugin batch — Gravity Forms 7.2 / Widget Options 8.8 / WCFM Frontend Manager 8.1 / Nex-Forms Ultimate 7.2 (dbugs.ptsecurity)",
+      "summary": "Latest Positive Technologies dbugs advisories in past 48h; Gravity Forms in particular is a high-deployment commercial plugin used widely on enterprise WordPress sites — check the dbugs feed for fix versions and patch."
+    }
+  ],
+  "source_coverage": {
+    "total": 30,
+    "checked": 22,
+    "with_findings": 7,
+    "unreachable": [
+      "cisa.gov",
+      "cisa.gov/known-exploited-vulnerabilities-catalog",
+      "attackerkb.com",
+      "bugcrowd.com/disclosures",
+      "hackerone.com/hacktivity",
+      "cve.org",
+      "cve.mitre.org",
+      "cert.gov.ua"
+    ],
+    "degraded": [
+      "msrc.microsoft.com/blog",
+      "nvd.nist.gov",
+      "packetstorm.news",
+      "securitylab.github.com"
+    ]
+  },
+  "full_report": "reports/2026/05/04/report.md"
+}

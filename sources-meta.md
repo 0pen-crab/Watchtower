@@ -2,36 +2,38 @@
 
 | Source | Findings | Noted | Empty | Last Hit |
 |--------|----------|-------|-------|----------|
-| bleepingcomputer.com | 3 | 7 | 0 | 2026-05-02 |
-| thehackernews.com | 5 | 4 | 0 | 2026-05-02 |
-| cisa.gov | 0 | 0 | 3 | — |
-| securityweek.com | 1 | 6 | 0 | 2026-05-02 |
-| github.com/search | 1 | 1 | 0 | 2026-05-03 |
-| schneier.com | 0 | 3 | 0 | 2026-05-01 |
-| krebsonsecurity.com | 0 | 1 | 2 | 2026-05-01 |
-| rapid7.com | 0 | 0 | 3 | 2026-05-01 |
-| attackerkb.com | 0 | 0 | 3 | — |
-| fortinet.com/blog/threat-research | 0 | 0 | 3 | — |
-| securitylab.github.com | 0 | 0 | 3 | — |
-| seclists.org/fulldisclosure | 0 | 1 | 2 | 2026-05-02 |
-| packetstormsecurity.com | 0 | 0 | 3 | — |
-| opencve.io | 4 | 6 | 0 | 2026-05-03 |
-| nvd.nist.gov | 0 | 0 | 3 | — |
-| cve.mitre.org | 0 | 0 | 3 | — |
-| cve.org | 0 | 0 | 3 | — |
-| googleprojectzero.blogspot.com | 0 | 0 | 3 | — |
-| blog.cloudflare.com/tag/security | 0 | 0 | 3 | — |
-| msrc.microsoft.com/blog | 0 | 0 | 3 | — |
-| hackerone.com/hacktivity | 0 | 0 | 3 | — |
-| bugcrowd.com/disclosures | 0 | 0 | 3 | — |
-| kb.cert.org/vuls | 0 | 0 | 3 | — |
-| avleonov.com | 0 | 0 | 3 | — |
-| github.com/0xMarcio/cve | 0 | 2 | 1 | 2026-05-03 |
-| dbugs.ptsecurity.com | 1 | 14 | 0 | 2026-05-03 |
-| habr.com/ru/companies/tomhunter/articles | 0 | 0 | 3 | — |
-| teletype.in/@cyberok | 0 | 0 | 3 | — |
-| cert.gov.ua | 0 | 0 | 3 | — |
-| socket.dev/blog (NEW for 2026-05) | 1 | 0 | 0 | 2026-05-03 |
+| bleepingcomputer.com | 5 | 8 | 0 | 2026-05-04 |
+| thehackernews.com | 5 | 5 | 0 | 2026-05-04 |
+| cisa.gov | 0 | 0 | 4 | — |
+| securityweek.com | 1 | 6 | 1 | 2026-05-02 |
+| github.com/search | 1 | 2 | 0 | 2026-05-04 |
+| schneier.com | 0 | 3 | 1 | 2026-05-01 |
+| krebsonsecurity.com | 0 | 1 | 3 | 2026-05-01 |
+| rapid7.com | 0 | 0 | 4 | 2026-05-01 |
+| attackerkb.com | 0 | 0 | 4 | — |
+| fortinet.com/blog/threat-research | 0 | 0 | 4 | — |
+| securitylab.github.com | 0 | 0 | 4 | — |
+| seclists.org/fulldisclosure (incl. openwall oss-security) | 3 | 4 | 2 | 2026-05-04 |
+| packetstormsecurity.com | 0 | 0 | 4 | — |
+| opencve.io | 4 | 6 | 1 | 2026-05-03 |
+| nvd.nist.gov | 0 | 0 | 4 | — |
+| cve.mitre.org | 0 | 0 | 4 | — |
+| cve.org | 0 | 0 | 4 | — |
+| googleprojectzero.blogspot.com | 0 | 0 | 4 | — |
+| blog.cloudflare.com/tag/security | 0 | 0 | 4 | — |
+| msrc.microsoft.com/blog | 0 | 0 | 4 | — |
+| hackerone.com/hacktivity | 0 | 0 | 4 | — |
+| bugcrowd.com/disclosures | 0 | 0 | 4 | — |
+| kb.cert.org/vuls | 0 | 0 | 4 | — |
+| avleonov.com | 0 | 0 | 4 | — |
+| github.com/0xMarcio/cve | 0 | 3 | 1 | 2026-05-04 |
+| dbugs.ptsecurity.com | 1 | 15 | 0 | 2026-05-04 |
+| habr.com/ru/companies/tomhunter/articles | 0 | 0 | 4 | — |
+| teletype.in/@cyberok | 0 | 0 | 4 | — |
+| cert.gov.ua | 0 | 0 | 4 | — |
+| socket.dev/blog (NEW for 2026-05) | 1 | 0 | 1 | 2026-05-03 |
+| openwall.com/lists/oss-security (off-list, primary OSS source) | 3 | 4 | 0 | 2026-05-04 |
+| scworld.com (off-list) | 0 | 1 | 0 | 2026-05-04 |
 
 ## Score Calibration
 *(Updated monthly)*
