@@ -1,0 +1,156 @@
+{
+  "date": "2026-05-05",
+  "findings": [
+    {
+      "type": "update",
+      "title": "CVE-2026-31431 Linux Kernel CopyFail — CISA Confirms Active Exploitation; Theori Publishes 100% Reliable Cross-Distro Exploit (Ubuntu 24.04 / Amazon Linux 2023 / RHEL 10.1 / SUSE 16)",
+      "threat_score": 8,
+      "previous_threat_score": 7,
+      "cve": "CVE-2026-31431",
+      "cvss": 7.8,
+      "affected_technology": "Linux kernel algif_aead (kernels 2017 → patch); Ubuntu 24.04 LTS, Amazon Linux 2023, RHEL 10.1, SUSE 16, every modern cloud base image",
+      "summary": "CISA confirmed active in-the-wild exploitation of CopyFail and Theori published a 100%-reliable Python exploit working across Ubuntu 24.04, Amazon Linux 2023, RHEL 10.1, and SUSE 16 ahead of the 2026-05-15 KEV deadline.",
+      "first_seen_at": "2026-04-30"
+    },
+    {
+      "type": "news",
+      "title": "Apache HTTP Server 9-CVE Patch Batch — HTTP/2 Double-Free RCE-Class (CVE-2026-23918) + 8 Others; Fixed in 2.4.67",
+      "threat_score": 7,
+      "cve": "CVE-2026-23918, CVE-2026-24072, CVE-2026-29169, CVE-2026-33006, CVE-2026-33007, CVE-2026-33523, CVE-2026-33857, CVE-2026-34032, CVE-2026-34059",
+      "cvss": null,
+      "affected_technology": "Apache HTTP Server (httpd) 2.4.0 through 2.4.66; mod_proxy_ajp, mod_auth_digest, HTTP/2, mod_rewrite/ap_expr, mod_authn_socache, mod_dav_lock",
+      "summary": "Apache shipped httpd 2.4.67 fixing nine CVEs led by CVE-2026-23918 (Important — HTTP/2 double-free with possible RCE on early reset) plus a mod_auth_digest timing-attack auth bypass and a .htaccess-author file-read primitive — patch within 7 days for internet-facing httpd.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-05-04"
+    },
+    {
+      "type": "news",
+      "title": "DigiCert Code-Signing Compromise — 60 Certificates Revoked, 11 Used to Sign Zhong Stealer Malware (Support-Portal Pivot via Customer-Chat Malware)",
+      "threat_score": 6,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "DigiCert internal support portal; Code Signing certificate issuance; trust chain for any binaries signed by the 60 revoked certs",
+      "summary": "Attackers used a customer-chat malware payload to compromise DigiCert support analysts, pivoted to the internal portal, and fraudulently issued 60 Code Signing certificates — 11 of which were used to sign Zhong Stealer before revocation 2026-04-17.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-05-04"
+    },
+    {
+      "type": "news",
+      "title": "VENOMOUS#HELPER — Phishing-Delivered SimpleHelp / ScreenConnect IAB Campaign Targeting 80+ U.S. Organizations",
+      "threat_score": 5,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "SimpleHelp Remote Support, ConnectWise ScreenConnect (legitimate RMM tools weaponised); user endpoints across U.S. enterprises",
+      "summary": "Securonix-tracked financially-motivated cluster VENOMOUS#HELPER is running an active Initial-Access-Broker campaign that uses phishing to trick users into installing customised SimpleHelp / ScreenConnect agents — bypassing EDR because the RMM binaries are legitimately signed and on most allowlists.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-05-04"
+    },
+    {
+      "type": "news",
+      "title": "CVE-2026-29200 Webpros Comet Backup — Cross-Tenant End-User Account Impersonation IDOR (CVSS 9.9)",
+      "threat_score": 5,
+      "cve": "CVE-2026-29200",
+      "cvss": 9.9,
+      "affected_technology": "Webpros Comet Backup multi-tenant deployments; versions 20.11.0 → 26.1.0 / 26.2.0 (fixed 26.1.1 / 26.2.1)",
+      "summary": "A vulnerable API call in multi-tenant Comet Backup lets a tenant administrator impersonate any end-user account belonging to any other tenant on the same server (CVSS 4.0 = 9.9, no auth required from the attacker tenant's admin) — backups across hosting / MSP customers are the exposure.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-05-04"
+    },
+    {
+      "type": "news",
+      "title": "Trellix Discloses Source-Code Repository Breach — Latest in 2026 Security-Vendor Source-Code-Theft Cluster",
+      "threat_score": 4,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Trellix XDR / EDR product line (~50,000 customers / 200M+ endpoints)",
+      "summary": "Trellix disclosed unauthorized access to part of its source-code repository; the 2026 string of security-vendor source-code thefts (Checkmarx, Cisco, now Trellix) suggests EDR-bypass research will follow in weeks.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-05-04"
+    },
+    {
+      "type": "news",
+      "title": "Apache Thrift Triple Advisory — Rust DoS Pattern, Java SSL Hostname-Verification Bypass, Node.js web_server.js Multi-Vuln (CVE-2026-43868 / 43869 / 43870)",
+      "threat_score": 4,
+      "cve": "CVE-2026-43868, CVE-2026-43869, CVE-2026-43870",
+      "cvss": null,
+      "affected_technology": "Apache Thrift Rust, Java (TSSLTransportFactory), and Node.js (web_server.js) implementations; internal microservice / RPC meshes",
+      "summary": "Apache shipped three Thrift CVEs: the Rust port reproduces the 2020 DoS pattern, Java TSSLTransportFactory skips hostname verification (MITM enabler), and Node.js web_server.js has multiple unspecified flaws.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-05-05"
+    }
+  ],
+  "noted": [
+    {
+      "cve": "CVE-2026-41940",
+      "product": "cPanel & WHM (ongoing) — Now confirmed weaponized against Southeast Asian government, military, and MSP targets per The Hacker News; rfxn/cpanel-sessionscribe published as fleet-triage IOC scanner",
+      "summary": "Mass-exploitation continues with no score change vs. 2026-05-03 ransomware UPDATE; flagging because activity broadened to government/military/MSP victim profile."
+    },
+    {
+      "cve": null,
+      "product": "Amazon SES phishing abuse (operational pattern)",
+      "summary": "Kaspersky reports a steep rise in attackers harvesting leaked AWS keys (TruffleHog scans of public GitHub / .env / Docker / S3) and sending DocuSign / BEC phishing through Amazon SES, bypassing reputation filters because all SES traffic shares legitimate AWS infrastructure."
+    },
+    {
+      "cve": null,
+      "product": "Microsoft Windows April 2026 updates breaking 3rd-party backup software (psmounterex.sys driver compatibility)",
+      "summary": "Operational fault rather than a vulnerability; affects Veeam / Acronis / similar drivers binding the psmounterex.sys driver structure — Microsoft confirmed and a fix is expected in the next 7-14 days."
+    },
+    {
+      "cve": "CVE-2026-29199",
+      "product": "phpBB — Host Header Injection → Password-Reset Poisoning (CVSS 8.1)",
+      "summary": "Patched. Pre-auth via the password-reset flow; attacker poisons the Host header so reset-link email points to attacker-controlled URL → captures reset token → account takeover."
+    },
+    {
+      "cve": "CVE-2026-7723",
+      "product": "Prefect — Missing Authentication on WebSocket Endpoint (CVSS 7.3)",
+      "summary": "Fixed in Prefect 3.6.14; DevOps workflow-orchestration platform's WebSocket endpoint exposed runs/logs without authentication — patch any self-hosted Prefect."
+    },
+    {
+      "cve": "CVE-2026-37459",
+      "product": "FRRouting — BGP UPDATE Integer Underflow → Daemon DoS (CVSS 7.5)",
+      "summary": "Routing-disruption-class flaw; a peer in the BGP path can induce daemon crash via crafted UPDATE message — patch in next maintenance window."
+    },
+    {
+      "cve": "CVE-2026-7776",
+      "product": "HashiCorp Boundary — TLS Handshake DoS Locks Worker Connections (CVSS 7.5)",
+      "summary": "Workers can be locked up via crafted TLS handshakes; impactful for any internet-reachable Boundary worker."
+    },
+    {
+      "cve": "CVE-2026-22679",
+      "product": "Weaver E-cology — Unauthenticated RCE Active Since March (predominantly Chinese-deployed OA suite)",
+      "summary": "Vendor patched 2026-03-12; exploitation observed 2026-03-17 with whoami/ipconfig/tasklist recon and Goby-linked callbacks — limited Western footprint, included for completeness."
+    },
+    {
+      "cve": null,
+      "product": "Bluekit phishing kit (under development, AI-assistant + auto domain registration)",
+      "summary": "New phishing-as-a-service kit advertised with AI conversation steering and automated domain registration; not yet in active campaigns but represents the helpdesk-pretext attack class evolution."
+    },
+    {
+      "cve": null,
+      "product": "Mutt 2.3.2 release announcement (oss-security 2026-05-04)",
+      "summary": "Release announcement; specific CVE details not yet broken out — track for any MUA-side issue assigned a CVE in coming days."
+    }
+  ],
+  "source_coverage": {
+    "total": 30,
+    "checked": 22,
+    "with_findings": 7,
+    "unreachable": [
+      "cisa.gov",
+      "cisa.gov/known-exploited-vulnerabilities-catalog",
+      "attackerkb.com",
+      "bugcrowd.com/disclosures",
+      "hackerone.com/hacktivity",
+      "cve.org",
+      "cve.mitre.org",
+      "cert.gov.ua"
+    ],
+    "degraded": [
+      "msrc.microsoft.com/blog",
+      "nvd.nist.gov",
+      "packetstorm.news",
+      "googleprojectzero.blogspot.com"
+    ]
+  },
+  "full_report": "reports/2026/05/05/report.md"
+}

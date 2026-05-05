@@ -1,0 +1,96 @@
+Watchtower Debug Log — 2026-05-05
+=================================
+
+[2026-05-05T00:00:00Z] Run start. cd /home/claude/workspace/watchtower && git pull → "Already up to date."
+[2026-05-05T00:00:30Z] Read CLAUDE.md, MEMORY.md, SOURCES.md, sources-meta.md, validator script.
+[2026-05-05T00:01:00Z] Built dedup index from last 30 days (2026-04-05 → 2026-05-04). 268 unique CVE/title keys covered.
+[2026-05-05T00:01:30Z] Latest report (2026-05-04): 4 findings, 9 noted, source_coverage 22/30. Yesterday's headline items: Instructure/Canvas LMS breach (HIGH), Apache OpenNLP triple, Apache Polaris metadata-path bypass, Microsoft Defender DigiCert CA false-positive.
+
+Source check log
+================
+
+[2026-05-05T00:02:00Z] bleepingcomputer.com  ✅  ~3s — multiple May 4-5 items: cPanel ransomware update, Trellix breach, Copy Fail KEV, Weaver E-cology CVE-2026-22679, Amazon SES abuse, PyTorch Lightning backdoor, Microsoft April update backup failures, DigiCert support portal hack
+[2026-05-05T00:02:00Z] thehackernews.com  ✅  ~3s — VENOMOUS#HELPER (RMM phishing campaign, May 4), MOVEit Automation CVE-2026-4670/5174 follow-on, cPanel CVE-2026-41940 weaponized against SE Asian government/military, Linux CopyFail
+[2026-05-05T00:02:00Z] securityweek.com  ✅  ~3s — Trellix breach, DigiCert support portal hack details, Copy Fail update, cPanel ransomware, Bluekit phishing kit (May 2), Cisco→Astrix acquisition (skip)
+[2026-05-05T00:03:00Z] krebsonsecurity.com  ✅  ~3s — most recent April 30 (Brazilian ISP DDoS-firm story), no May items
+[2026-05-05T00:03:00Z] schneier.com  ✅  ~3s — May 4 "Hacking Polymarket" (skip), May 1 "Ransomware Negotiator" (skip)
+[2026-05-05T00:03:00Z] rapid7.com/blog  ✅  ~3s — Metasploit Wrap-Up 05/01 (no specific high-impact CVEs called out)
+[2026-05-05T00:03:00Z] seclists.org/fulldisclosure  ✅  ~3s — most recent batch is April 29 (DeskTime CVE-2025-10539, Controlio CVE-2025-10549, LiteLLM CVE-2026-35029, SAP HANA private key exposure, Apple iOS patches); no May items yet on the index
+[2026-05-05T00:04:00Z] openwall.com/lists/oss-security/2026/05/04/  ✅  ~3s — Apache HTTP Server 9-CVE batch (CVE-2026-23918 HTTP/2 double-free Important + 8 others), Mutt 2.3.2 release, Nix/Lix daemon LPE, continued CopyFail discussion, Postfix releases
+[2026-05-05T00:04:00Z] openwall.com/lists/oss-security/2026/05/05/  ✅  ~3s — Apache Thrift triple advisory (CVE-2026-43868 Rust / 43869 Java SSL hostname / 43870 Node.js multi), systemd-journald terminal escape discussion
+[2026-05-05T00:04:30Z] app.opencve.io  ✅  ~3s — phpBB CVE-2026-29199 (8.1) host header injection, Prefect CVE-2026-7723 (7.3) WebSocket missing auth, FRRouting CVE-2026-37459 (7.5) BGP DoS, HashiCorp Boundary CVE-2026-7776 (7.5) TLS handshake DoS, Amazon WorkSpaces CVE-2026-7791 (7.8) priv-esc (out-of-scope LPE)
+[2026-05-05T00:04:30Z] github.com/0xMarcio/cve  ✅  ~3s — CopyFail multiple PoC repos (Silent4Labs check script, Python/Rust/minimal-ELF impls), CVE-2026-41940 cpanel-sessionscribe (rfxn) tooling, CVE-2026-24061 telnetd (existing), CVE-2026-41651 Vozec (unfamiliar — not in scope inventory)
+[2026-05-05T00:04:30Z] github.com/search?q=CVE-2026  ✅  ~3s — same picture as 0xMarcio aggregation
+[2026-05-05T00:05:00Z] dbugs.ptsecurity.com  ✅  ~3s — PT-2026-36737 (CVE-2026-42369 GV-VMS V20, 10.0, niche); PT-2026-36771 (CVE-2026-29200 Webpros Comet Backup, 9.9 cross-tenant IDOR — IN SCOPE); PT-2026-36732 (CVE-2026-42364 Geovision LPC, 9.9 niche IoT); PT-2026-36789 (CVE-2025-14320 Tegsoft, 9.8 niche); PT-2026-36795 (CVE-2026-7750 Totolink N300Rh, 9.0); PT-2026-36792 (CVE-2026-33846 RHEL10, 7.5); PT-2026-36796 (CVE-2026-3120 Profelis Sambabox, 7.2)
+[2026-05-05T00:05:30Z] socket.dev/blog  ✅  ~3s — covered already in last cycle (PyPI audit fixes, BufferZoneCorp Ruby+Go) — no new items beyond yesterday
+[2026-05-05T00:05:30Z] labs.watchtowr.com  ✅  ~3s — most recent post April 29 cPanel CVE-2026-41940; nothing new for May
+[2026-05-05T00:05:30Z] fortinet.com/blog/threat-research  ✅ but stale — most recent April 17 Mirai/Nexcorium; no May items
+[2026-05-05T00:06:00Z] securitylab.github.com  ⚠️ degraded — most recent April 24 (Docmost XSS, Frappe REST API); no May items
+[2026-05-05T00:06:00Z] kb.cert.org/vuls  ⚠️ degraded — most recent April 23 (VU#748485 Central Office Services config); no May items
+[2026-05-05T00:06:00Z] avleonov.com  ⚠️ degraded — only April monthly summaries
+[2026-05-05T00:06:00Z] habr.com/ru/companies/tomhunter/articles  ⚠️ degraded — most recent March 6
+[2026-05-05T00:06:00Z] teletype.in/@cyberok  ⚠️ degraded — most recent February 4
+[2026-05-05T00:06:00Z] blog.cloudflare.com/tag/security  ⚠️ degraded — most recent April 30 (post-quantum IPsec)
+[2026-05-05T00:06:00Z] googleprojectzero.blogspot.com / projectzero.google  ⚠️ degraded — most recent March 5 (mutational grammar fuzzing)
+[2026-05-05T00:06:30Z] msrc.microsoft.com/blog (→ microsoft.com/en-us/msrc/blog)  ⚠️ degraded — page renders no actual blog content via WebFetch
+[2026-05-05T00:06:30Z] nvd.nist.gov  ⚠️ degraded — change-timeline page only; CVE listings via NVD API not via simple WebFetch
+[2026-05-05T00:06:30Z] packetstormsecurity.com → packetstorm.news  ⚠️ degraded — feedback-loop page; advisory listings require deeper traversal
+[2026-05-05T00:07:00Z] cisa.gov  ❌ unreachable — 403 Forbidden via WebFetch (KEV info pulled via THN/BleepingComputer relay)
+[2026-05-05T00:07:00Z] cisa.gov/known-exploited-vulnerabilities-catalog  ❌ unreachable — 403
+[2026-05-05T00:07:00Z] attackerkb.com  ❌ unreachable — 403 (skipped per MEMORY.md)
+[2026-05-05T00:07:00Z] bugcrowd.com/disclosures  ❌ unreachable — 404 (URL changed; skipped per MEMORY.md)
+[2026-05-05T00:07:00Z] hackerone.com/hacktivity  ❌ unreachable — JS-required, returns empty
+[2026-05-05T00:07:00Z] cve.org  ❌ unreachable — JS-required
+[2026-05-05T00:07:00Z] cve.mitre.org  ❌ unreachable — JS-required (redirects to cve.org)
+[2026-05-05T00:07:00Z] cert.gov.ua  ❌ unreachable — header only, no advisory body via WebFetch
+
+Source totals
+=============
+SOURCES.md unique sources: 30
+unreachable: 8 (cisa.gov, cisa.gov/known-exploited-vulnerabilities-catalog, attackerkb.com, bugcrowd.com/disclosures, hackerone.com/hacktivity, cve.org, cve.mitre.org, cert.gov.ua)
+degraded: 4 (msrc.microsoft.com/blog, nvd.nist.gov, packetstorm.news, googleprojectzero.blogspot.com)
+checked = 30 - 8 unreachable = 22 (degraded counted as checked-but-stale per yesterday's convention)
+
+Dedup decisions
+===============
+[NEW] Apache HTTP Server 9-CVE batch CVE-2026-23918 / 24072 / 29169 / 33006 / 33007 / 33523 / 33857 / 34032 / 34059 → none in dedup index → NEWS, group as one entry, lead on CVE-2026-23918 (HTTP/2 double-free, Important)
+[NEW] Apache Thrift CVE-2026-43868 / 43869 / 43870 → none in dedup index → NEWS (group)
+[NEW] DigiCert support portal compromise (no CVE) → not in dedup → NEWS (distinct from yesterday's MS Defender / DigiCert CA false-positive)
+[NEW] VENOMOUS#HELPER phishing+RMM campaign → not in dedup → NEWS
+[NEW] CVE-2026-29200 Webpros Comet Backup IDOR → not in dedup → NEWS
+[NEW] Trellix source code repo breach → not in dedup → NEWS
+[UPDATE] CVE-2026-31431 Linux CopyFail → in dedup at 2026-05-03 (score 7); material change: CISA confirmed exploitation + Theori 100% reliable Python exploit on Ubuntu 24.04/Amazon Linux 2023/RHEL 10.1/SUSE 16 + KEV deadline 2026-05-15 → UPDATE prev=7 new=8
+[NOTED] CVE-2026-41940 cPanel → in dedup at 2026-05-03 (score 9 ransomware); new: SE Asian government/military targeting + cpanel-sessionscribe scanner; no Δ ≥ 2, no genuinely new tooling beyond what was Noted yesterday → NOTED (ongoing)
+[NOTED] Amazon SES phishing abuse → operational pattern, not advisory
+[NOTED] Microsoft April Windows updates breaking 3rd-party backups (psmounterex.sys) → operational; no CVE
+[NOTED] Bluekit phishing kit (in development, AI assistant)
+[NOTED] CVE-2026-29199 phpBB host header injection (8.1) → in scope (web framework)
+[NOTED] CVE-2026-7723 Prefect WebSocket missing auth (7.3) → in scope (DevOps)
+[NOTED] CVE-2026-37459 FRRouting BGP UPDATE integer underflow DoS (7.5)
+[NOTED] CVE-2026-7776 HashiCorp Boundary TLS handshake DoS (7.5)
+[NOTED] CVE-2026-22679 Weaver E-cology RCE (active since March, primarily Chinese orgs)
+[NOTED] CVE-2026-29200 was already promoted to NEWS — skip from noted
+[NOTED] Mutt 2.3.2 release (no CVE specifics surfaced yet)
+[SKIP] CVE-2026-7791 Amazon WorkSpaces priv-esc — out of scope (LPE on workspace, not internet-facing)
+[SKIP] Nix/Lix daemon LPE — out of scope
+[SKIP] Cisco→Astrix acquisition — business news, not vuln
+[SKIP] PyTorch Lightning re-confirmation — already in 2026-05-01 dedup, no Δ
+[SKIP] OpenAI Advanced Account Security rollout — not a vuln
+[SKIP] PyPI security audit fixes (May 1) — already covered
+
+source_coverage to write
+========================
+total: 30
+checked: 22
+with_findings: 8 (bleepingcomputer, thehackernews, securityweek, openwall.com/lists/oss-security, app.opencve.io, github.com/0xMarcio/cve, dbugs.ptsecurity.com, socket.dev/blog (off-list))
+unreachable: 8
+degraded: 4
+
+
+Validator output (post-summary-tightening)
+==========================================
+$ python3 /home/claude/workspace/watchtower/scripts/validate_report.py /home/claude/workspace/watchtower/reports/2026/05/05/report.json
+✅ /home/claude/workspace/watchtower/reports/2026/05/05/report.json — valid
+exit 0
+
+[2026-05-05T00:35:00Z] Run complete. 7 findings (1 update, 6 news), 10 noted, source_coverage 22/30 (8 unreachable / 4 degraded). Update sources-meta.md → commit → push.
