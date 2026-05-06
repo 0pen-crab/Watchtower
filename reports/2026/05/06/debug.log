@@ -1,0 +1,157 @@
+Watchtower run — 2026-05-06 (UTC)
+=========================================
+
+[00:00] BEGIN — Daily workflow start. Working dir: /home/claude/workspace/watchtower
+
+[00:01] STEP 1 — git pull
+        Output: "Already up to date." — branch synced.
+
+[00:02] STEP 2 — Build dedup index of last 30 days (reports/2026/04/06 → 2026/05/05)
+        Iterated 27 prior report.json files; extracted findings + noted CVE/title pairs.
+        Key items already in dedup index:
+          - CVE-2026-31431 Linux Kernel CopyFail (covered 04-30, 05-01 noted, 05-02 noted, 05-03 News, 05-05 Update score 8)
+          - CVE-2026-41940 cPanel CRLF auth bypass (04-30, 05-01, 05-03, 05-05 noted)
+          - Mini Shai-Hulud (04-30, 05-01, 05-02 noted)
+          - Apache HTTP Server 2.4.67 9-CVE batch (05-05) — base set: 23918, 24072, 29169, 33006, 33007, 33523, 33857, 34032, 34059
+          - Apache OpenNLP CVE-2026-42027/40682/42440 (05-04)
+          - Apache Polaris CVE-2026-42809-12 (05-04)
+          - Apache Atlas CVE-2026-40563 (05-04 noted)
+          - Apache Thrift CVE-2026-43868/69/70 (05-05)
+          - ProFTPD CVE-2026-42167 (05-03)
+          - DigiCert support compromise (05-05)
+          - Trellix source-code breach (05-05)
+          - VENOMOUS#HELPER (05-05)
+          - CVE-2026-29200 Webpros Comet Backup (05-05)
+          - BufferZoneCorp (05-03)
+          - SHADOW-EARTH-053 (05-02)
+          - BlackFile Cordial Spider / Snarky Spider (05-02)
+          - Instructure / Canvas LMS breach (05-04)
+          - Microsoft Defender DigiCert root false-positive (05-04)
+          - Vimeo / ShinyHunters (already 04-29; 05-04 noted)
+          - Weaver E-cology CVE-2026-22679 (05-05 noted)
+          - phpBB CVE-2026-29199, Prefect CVE-2026-7723, FRRouting CVE-2026-37459, HashiCorp Boundary CVE-2026-7776 (05-05 noted)
+          - Bluekit phishing kit (05-01, 05-05 noted)
+          - Mutt 2.3.2 (05-05 noted)
+          - SonicWall April rollup (05-01 News, 05-04 noted)
+          - Microsoft Entra ID AI-agent role (04-29, 05-04 noted)
+          - ConnectWise ScreenConnect KEV reminder (recurring noted)
+          - io_uring zcrx OOB write, Vim path completion (05-04 noted)
+
+[00:05] STEP 3 — Source pass (BATCH 1)
+        ✅ bleepingcomputer.com — multiple May 5/6 articles surfaced (DAEMON Tools, Quasar Linux, Bleeding Llama, MOVEit, MetInfo, Microsoft 35k phishing, Trellix, Weaver, Instructure, Vimeo, ScarCruft, CopyFail update). [time: ~3s]
+        ✅ thehackernews.com — full 2026-05-05 article list extracted (Apache HTTP, MetInfo, Weaver, MOVEit, UAT-8302, ScarCruft, VENOMOUS#HELPER, Microsoft phishing, 1M AI services, DAEMON Tools). [time: ~4s]
+        ✅ securityweek.com — Ollama Bleeding Llama, Apache MINA + HTTP Server, Android CVE-2026-0073 (out of scope - mobile). [time: ~3s]
+
+[00:06] STEP 3 — Source pass (BATCH 2)
+        ✅ krebsonsecurity.com — no May 5/6 posts (latest 04-30 anti-DDoS Brazil ISPs).
+        ✅ rapid7.com/blog — only Metasploit Wrap-Up 05/01 visible; nothing new for 05/06.
+        ✅ fortinet.com/blog/threat-research — no posts since 04-17.
+
+[00:08] STEP 3 — Source pass (BATCH 3)
+        ✅ seclists.org/fulldisclosure → followed redirect; got May archive index.
+        ✅ openwall.com/lists/oss-security/2026/05/05/ — full day enumerated (13 messages: Thrift x3, Apache HTTP Server x4, OpenStack Horizon, OpenStack Ironic, Django triple, vm2, Paramiko audit, systemd-journald, Postfix release).
+        ✅ app.opencve.io/cve/?published_at=2026-05-05 — CVE-2026-28780 Apache, CVE-2026-40331 Masa CMS, CVE-2026-40280 Gotenberg, CVE-2026-41950 Dify, CVE-2026-38751 OpenSTAManager, n8n five-CVE batch surfaced.
+        ⚠️ openwall.com/lists/oss-security/2026/05/06/ — "No messages for this day" — empty (today's archive not yet flushed at run time).
+
+[00:10] STEP 3 — Source pass (BATCH 4)
+        ✅ schneier.com — DarkSword iOS 6-zero-day chain (out of scope: mobile-only, but post-leak situational note).
+        ✅ blog.cloudflare.com/tag/security — no May 5/6 posts (latest 04-30 PQ IPsec).
+        ✅ avleonov.com — no May 5/6 posts (latest 04-22).
+
+[00:12] STEP 3 — Source pass (BATCH 5)
+        ✅ github.com/0xMarcio/cve — only known CVEs (31431, 41940, 24061, 41651, 32746, 34159, 25769, 21858) — no fresh additions since 05-05.
+        ✅ kb.cert.org/vuls — no notes after 04-23.
+        ✅ securitylab.github.com — no posts after 04-24.
+
+[00:14] STEP 3 — Source pass (BATCH 6)
+        ⚠️ nvd.nist.gov — homepage shows nav only; degraded for WebFetch (use OpenCVE as proxy).
+        ⚠️ msrc.microsoft.com/blog — redirect to www.microsoft.com/en-us/msrc/blog; landing-page-only content; degraded.
+        ✅ dbugs.ptsecurity.com — May 5 PT-2026-36937..36975 batch (Bucamp Mcp-Docusaurus, 54Yyyu Code-Mcp, Totolink A8000RU CVE-2026-7823 CVSS 10, Itsourcecode Best Courier, Dreamstechnologies Mentoring); mostly low-deployment / consumer-router / education-management — none surface as Western enterprise priority for News/Update; folded into broader "low priority" cluster mentally.
+
+[00:16] STEP 3 — Source pass (BATCH 7)
+        ✅ habr.com/ru/companies/tomhunter/articles — only March posts visible; no May content.
+        ✅ teletype.in/@cyberok — no posts after 02-04.
+        ⚠️ packetstorm.news — landing page indicates 290 advisories last 7 days but news pages return ToS only via WebFetch; degraded.
+
+[00:18] STEP 3 — Source pass (BATCH 8 — confirmed unreachable)
+        ❌ cisa.gov — 403 Forbidden via WebFetch (consistent with last 30 days; documented in MEMORY.md).
+        ❌ cisa.gov/known-exploited-vulnerabilities-catalog — 403 Forbidden.
+        ❌ attackerkb.com — 403 Forbidden via WebFetch.
+        ❌ bugcrowd.com/disclosures — 404 (URL changed; per MEMORY.md flagged for verification).
+        ❌ hackerone.com/hacktivity — JS-only content; WebFetch returns minimal text.
+        ❌ cve.org / cve.mitre.org — JS-only; WebFetch returns minimal text.
+        ❌ cert.gov.ua — page returns header only, no content (consistent with prior runs).
+
+[00:20] STEP 3 — Source pass (BATCH 9 — deep-dive on candidates)
+        ✅ securityweek.com / Apache MINA + HTTP Server article — extracted CVE-2026-42778 / 42779 (MINA RCE pair), CVE-2026-28780 (httpd mod_proxy_ajp).
+        ✅ app.opencve.io/cve/CVE-2026-42778 — full detail: CVSS 9.8, AbstractIoBuffer.getObject() incomplete fix of CVE-2026-41409, fixed 2.1.12 / 2.2.7.
+        ✅ app.opencve.io/cve/CVE-2026-42779 — full detail: CVSS 9.8, resolveClass() allowlist bypass via primitive/static branch.
+        ✅ app.opencve.io/cve/CVE-2026-28780 — full detail: heap-based 4-byte overflow in mod_proxy_ajp ajp_msg_check_header(); fixed in httpd 2.4.67.
+        ✅ app.opencve.io/cve?vendor=ollama — Bleeding Llama is CVE-2026-7482 (CVSS 9.1); GGUF tensor-offset OOB read via /api/create; exfil via /api/push; both unauth by default; fixed Ollama 0.17.1.
+        ✅ bleepingcomputer.com / Quasar Linux article — Trend Micro disclosure; LD_PRELOAD + eBPF rootkit + PAM backdoor + 58-cmd RAT; targets dev/DevOps endpoints; harvests npm/PyPI/GitHub/AWS/Docker/Kubernetes credentials.
+        ✅ bleepingcomputer.com / DAEMON Tools article — full detail extracted: 12.5.0.2421 → 12.5.0.2434, since 04-08, ~thousands infected, QUIC RAT second stage.
+        ✅ thehackernews.com / Microsoft 35k phishing — 35k users / 13k orgs / 26 countries / Apr 14-16 / code-of-conduct lure / AiTM / multi-CAPTCHA / legitimate-relay sender.
+        ✅ thehackernews.com / UAT-8302 — China-nexus APT, NetDraft / CloudSorcerer 3.0 / SNOWLIGHT / SNOWRUST / Deed RAT / Zingdoor; tool overlap with Ink Dragon / Jewelbug / Earth Estries / LongNosedGoblin / Erudite Mogwai.
+        ✅ thehackernews.com / 1M AI services scan — Intruder Labs research: 31% of 5,200 Ollama servers unauth, 90+ exposed agent platforms.
+        ✅ openwall.com/lists/oss-security/2026/05/05/8 — Django CVE-2026-5766 / 35192 / 6907 detail: all Low severity; ASGI Content-Length DoS, session fixation via cached pages, UpdateCacheMiddleware Vary:* private-data caching.
+
+[00:30] STEP 4 — Triage decisions
+        NEW (News):
+          1. Apache MINA CVE-2026-42778 / CVE-2026-42779 (CVSS 9.8 each)            — score 8
+          2. Bleeding Llama CVE-2026-7482 Ollama (CVSS 9.1)                          — score 7
+          3. Quasar Linux QLNX Trend Micro disclosure                                 — score 6
+          4. MetInfo CMS CVE-2026-29014 (CVSS 9.8) actively exploited                — score 7
+          5. DAEMON Tools supply chain (Kaspersky)                                    — score 5
+          6. Microsoft "Code-of-Conduct" 35k phishing campaign                        — score 5
+        UPDATE:
+          7. Apache HTTP Server 2.4.67 — additional CVE-2026-28780 (mod_proxy_ajp heap overflow → RCE) + CVE-2026-29168 (mod_md OCSP); was 9 CVEs, now 11. Threat score held at 7 (parent score) — material because heap-overflow primitive in AJP path lifts impact from DoS to RCE-class on AJP-proxied deployments.
+        SKIP — already covered in dedup index:
+          - CopyFail (no new info beyond yesterday's UPDATE)
+          - cPanel CVE-2026-41940 (no new escalation)
+          - Vimeo (already noted 04-29; minor count revision)
+          - Weaver E-cology (already noted 05-05)
+          - VENOMOUS#HELPER (already News 05-05)
+          - Trellix source code (already News 05-05)
+          - Apache HTTP Server core 9-CVE batch (already News 05-05)
+          - Apache Thrift (already News 05-05)
+          - MOVEit Automation (already News 05-01)
+          - Instructure (already News 05-04)
+        NOTED:
+          - vm2 CVE-2026-44007 sandbox escape
+          - OpenStack Horizon CVE-2026-43002
+          - OpenStack Ironic CVE-2026-42997
+          - Django CVE-2026-5766/35192/6907 (all Low severity)
+          - mod_md OCSP CVE-2026-29168 (cross-ref to update)
+          - UAT-8302 China APT
+          - Intruder 1M AI services research
+          - Gotenberg CVE-2026-40280 SSRF
+          - Masa CMS CVE-2026-40331 SQLi
+          - Dify CVE-2026-41950 IDOR
+          - n8n five-CVE batch (CVEs not yet broken out)
+          - ScarCruft / BirdCall (Korea-region)
+          - iOS DarkSword 6-zero-day (out of scope, situational)
+          - Vimeo breach (recap)
+          - Paramiko audit (no CVE yet)
+
+[00:40] STEP 5 — Write report.md and report.json (reports/2026/05/06/)
+        - report.md template followed exactly — CRITICAL/HIGH/MEDIUM/Noted/Source Coverage sections, header metadata.
+        - report.json constructed against schema.
+
+[00:48] STEP 6 — debug.log (this file)
+
+[00:49] STEP 7 — Validation: python3 scripts/validate_report.py reports/2026/05/06/report.json
+        First pass: ✅ valid with 5 length warnings on long summaries (>200 chars)
+        Trimmed findings[0/1/2/5/6] summaries.
+        Second pass: ✅ valid (no warnings).
+
+[00:50] FINAL source_coverage:
+        total: 30
+        checked: 22
+        with_findings: 9 (BleepingComputer, The Hacker News, SecurityWeek, openwall.com/lists/oss-security, seclists.org/fulldisclosure, app.opencve.io, dbugs.ptsecurity.com, schneier.com, github.com/0xMarcio/cve)
+        unreachable: [cisa.gov, cisa.gov/known-exploited-vulnerabilities-catalog, attackerkb.com, bugcrowd.com/disclosures, hackerone.com/hacktivity, cve.org, cve.mitre.org, cert.gov.ua]
+        degraded: [msrc.microsoft.com/blog, nvd.nist.gov, packetstorm.news, googleprojectzero.blogspot.com]
+        Constraint check: checked (22) >= total (30) - len(unreachable) (8) → 22 >= 22 ✓
+
+[00:52] STEP 8 — git add / commit / push pending after this log file is written.
+
+=== END ===

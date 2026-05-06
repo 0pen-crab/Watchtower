@@ -1,0 +1,181 @@
+{
+  "date": "2026-05-06",
+  "findings": [
+    {
+      "type": "news",
+      "title": "Apache MINA Pre-Auth RCE Pair — CVE-2026-42778 / CVE-2026-42779 (CVSS 9.8 each); Incomplete Fix of Prior CVE-2026-41409 Plus Second Allowlist Bypass Path",
+      "threat_score": 8,
+      "cve": "CVE-2026-42778, CVE-2026-42779",
+      "cvss": 9.8,
+      "affected_technology": "Apache MINA 2.1.0–2.1.11 and 2.2.0–2.2.6 (fixed in 2.1.12 / 2.2.7); any application calling IoBuffer.getObject() on untrusted bytes — Java networking/RPC stacks, Apache Sshd, Kafka client transports, Asterix, Karaf SSHD",
+      "summary": "Two CVSS 9.8 deserialization gadgets in Apache MINA AbstractIoBuffer enable pre-auth RCE — CVE-2026-42778 is an incomplete fix of CVE-2026-41409 (allowlist applied after static initializer), CVE-2026-42779 is a parallel resolveClass() branch that skips the allowlist.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-05-05"
+    },
+    {
+      "type": "news",
+      "title": "CVE-2026-7482 'Bleeding Llama' — Ollama GGUF Loader Heap OOB Read Leaks Env Vars / API Keys / Conversation Memory (CVSS 9.1) Across ~300,000 Public Deployments",
+      "threat_score": 7,
+      "cve": "CVE-2026-7482",
+      "cvss": 9.1,
+      "affected_technology": "Ollama < 0.17.1 — /api/create and /api/push endpoints unauthenticated by default; ~300,000 internet-exposed instances, 31% of sampled servers reachable without auth (Intruder Labs)",
+      "summary": "Ollama /api/create accepts attacker GGUF models with tensor offsets past file length, causing heap-OOB read during quantisation that leaks env vars / API keys / conversation memory; /api/push exfiltrates the model to attacker registries — both endpoints unauthenticated by default.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-05-05"
+    },
+    {
+      "type": "news",
+      "title": "Quasar Linux (QLNX) — Trend Micro Discloses Stealth Linux Implant Targeting Developer & DevOps Workstations for Supply-Chain Pivots (npm / PyPI / GitHub / AWS / Docker / Kubernetes)",
+      "threat_score": 6,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Linux developer / DevOps endpoints; CI runners; Docker / Kubernetes hosts; any Linux system with gcc and cached publish credentials for npm / PyPI / GitHub / cloud accounts",
+      "summary": "Trend Micro disclosed QLNX, a Linux implant that dynamically compiles LD_PRELOAD+eBPF rootkit and PAM backdoor on-host, runs a 58-command in-memory RAT with seven persistence mechanisms, and harvests npm/PyPI/GitHub/cloud credentials for supply-chain pivots.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-05-05"
+    },
+    {
+      "type": "news",
+      "title": "CVE-2026-29014 — MetInfo CMS Unauthenticated PHP Code Injection in WeChat-Reply Handler Actively Exploited (CVSS 9.8)",
+      "threat_score": 7,
+      "cve": "CVE-2026-29014",
+      "cvss": 9.8,
+      "affected_technology": "MetInfo CMS 7.9, 8.0, 8.1 — all currently supported branches",
+      "summary": "VulnCheck reported active exploitation of an unauthenticated PHP code-injection vulnerability in MetInfo CMS's WeChat-reply handler that yields full pre-auth RCE on every supported MetInfo branch (7.9, 8.0, 8.1).",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-05-05"
+    },
+    {
+      "type": "update",
+      "title": "Apache HTTP Server 2.4.67 Patch Set Now 11 CVEs (was 9): mod_proxy_ajp Heap Overflow CVE-2026-28780 + mod_md OCSP CVE-2026-29168 Added",
+      "threat_score": 7,
+      "previous_threat_score": 7,
+      "cve": "CVE-2026-28780, CVE-2026-29168",
+      "cvss": null,
+      "affected_technology": "Apache HTTP Server 2.4.0 → 2.4.66 (fixed 2.4.67); mod_proxy_ajp + mod_md ACME-managed certificate validation",
+      "summary": "Two additional CVEs joined the 2.4.67 patch set: CVE-2026-28780 is a heap-based 4-byte buffer overflow in mod_proxy_ajp via ajp_msg_check_header() (RCE-class on AJP-proxy deployments), and CVE-2026-29168 weakens mod_md OCSP-response handling for ACME-managed certificates.",
+      "first_seen_at": "2026-05-04"
+    },
+    {
+      "type": "news",
+      "title": "DAEMON Tools Supply-Chain Compromise — Official Installers Trojanised Since 2026-04-08, Thousands Infected Across 100+ Countries (Kaspersky, Likely Chinese-Speaking Actor)",
+      "threat_score": 5,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "DAEMON Tools 12.5.0.2421 → 12.5.0.2434 (digitally-signed Windows installers) — DTHelper.exe, DiscSoftBusServiceLite.exe, DTShellHlp.exe carry malicious payload; QUIC-RAT second stage targeted",
+      "summary": "Kaspersky disclosed DAEMON Tools' official signed installers were trojanised since 2026-04-08 by a likely Chinese-speaking actor; first-stage stealer in three binaries with a selectively-deployed QUIC RAT second stage hitting retail / scientific / government / manufacturing victims.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-05-05"
+    },
+    {
+      "type": "news",
+      "title": "Microsoft 'Code-of-Conduct' AiTM Phishing Campaign — 35,000 Users Across 13,000 Orgs / 26 Countries (92% U.S.) Targeted in 72-Hour Window",
+      "threat_score": 5,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Microsoft 365 / Entra ID credentials and refresh tokens; healthcare/life sciences (19%), financial services (18%), professional services (11%) sectors",
+      "summary": "Microsoft detailed a 35,000-user / 13,000-org / 26-country credential-theft campaign Apr 14–16 using 'code-of-conduct review' lures, multi-CAPTCHA evasion, and AiTM proxy pages to bypass MFA via stolen session tokens — same playbook as BlackFile / SNOW / Cordial Spider.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-05-05"
+    }
+  ],
+  "noted": [
+    {
+      "cve": "CVE-2026-44007",
+      "product": "vm2 NodeVM Sandbox Escape (with nesting enabled)",
+      "summary": "Latest in a long line of vm2 sandbox-escape findings; vm2 is widely treated as deprecated/unsafe — migrate to isolated-vm or an OS-level sandbox and treat any nested-vm2 invocation as RCE-equivalent."
+    },
+    {
+      "cve": "CVE-2026-43002",
+      "product": "OpenStack Horizon (OSSA-2026-009)",
+      "summary": "Unauthenticated session flood via login-redirect storage; public attackers can exhaust the Horizon session table for DoS — patched in OSSA-2026-009."
+    },
+    {
+      "cve": "CVE-2026-42997",
+      "product": "OpenStack Ironic (OSSA-2026-010)",
+      "summary": "Credentials forwarded to attacker-controlled endpoints via iDrac configuration; multi-tenant private clouds with mixed-trust hardware should patch promptly."
+    },
+    {
+      "cve": "CVE-2026-5766, CVE-2026-35192, CVE-2026-6907",
+      "product": "Django 6.0.5 / 5.2.14 (triple advisory — all Low severity)",
+      "summary": "ASGI Content-Length upload-limit bypass DoS, session fixation via cached pages when SESSION_SAVE_EVERY_REQUEST is enabled, and UpdateCacheMiddleware caching Vary:* responses leading to private-data exposure — bundle into the next Django dependency-bump cycle."
+    },
+    {
+      "cve": null,
+      "product": "Apache MINA mod_md OCSP CVE-2026-29168",
+      "summary": "See HTTP Server update; called out separately because the affected primitive is ACME-managed certificate validation, not the request path."
+    },
+    {
+      "cve": null,
+      "product": "UAT-8302 China-nexus APT (Cisco Talos)",
+      "summary": "South American + southeastern European government targeting using NetDraft (.NET FINALDRAFT variant), CloudSorcerer 3.0, SNOWLIGHT/SNOWRUST, Deed RAT, Zingdoor; tool overlap with Ink Dragon / Jewelbug / Earth Estries / LongNosedGoblin / Erudite Mogwai."
+    },
+    {
+      "cve": null,
+      "product": "Intruder Labs — 'We Scanned 1 Million Exposed AI Services' research",
+      "summary": "31% of ~5,200 sampled Ollama servers reachable without auth; 90+ exposed agent platforms (n8n, Flowise) leaking business logic and credentials; 518 instances wrapping frontier-model APIs without auth — reinforces Bleeding Llama and the n8n exposure pattern."
+    },
+    {
+      "cve": "CVE-2026-40280",
+      "product": "Gotenberg ≤8.30.1 SSRF via Case-Sensitive Regex Bypass",
+      "summary": "Server-side request forgery to internal network / cloud metadata endpoints; affects PDF-generation services widely deployed behind internal APIs."
+    },
+    {
+      "cve": "CVE-2026-40331",
+      "product": "Masa CMS 7.2 → 7.5.2 Unauthenticated SQL Injection",
+      "summary": "Pre-auth SQLi via altTable parameter exposing administrative credentials; uncommon CMS but in-scope for any deployments."
+    },
+    {
+      "cve": "CVE-2026-41950",
+      "product": "Dify <1.14.0 IDOR-Style File Access (CVSS 6.5)",
+      "summary": "Authenticated tenant can read other tenants' files via arbitrary UUID submission — relevant for any Dify multi-tenant deployment."
+    },
+    {
+      "cve": null,
+      "product": "n8n Five-CVE Batch (OpenCVE 2026-05-05)",
+      "summary": "Credential exfiltration / project-access bypass / prototype-pollution → RCE / SQL injection in DB nodes — individual CVE numbers not yet broken out; track for self-hosted n8n upgrade once fix versions published."
+    },
+    {
+      "cve": null,
+      "product": "ScarCruft (APT37) — BirdCall multi-platform backdoor via trojanised sqgame[.]net Korean game platform",
+      "summary": "Korea-region targeting (ethnic Koreans in China's Yanbian); included for situational awareness, not in-scope for Western enterprise asset surface."
+    },
+    {
+      "cve": null,
+      "product": "iOS DarkSword 6-zero-day exploit chain (Schneier 2026-05-05)",
+      "summary": "Out of scope (mobile-only); chain has leaked onto the internet post-disclosure — MDM teams should enforce forced-update policies on iOS 18.4–18.7 fleets."
+    },
+    {
+      "cve": null,
+      "product": "Vimeo data breach (119,000 users; ShinyHunters)",
+      "summary": "Already covered 2026-04-29 in the Anodot/Vimeo intrusion item; victim count revised on 2026-05-05 — operational impact remains consumer-only."
+    },
+    {
+      "cve": null,
+      "product": "Paramiko security audit completed; fixes scheduled for 5.0",
+      "summary": "No CVEs assigned yet; pin the announcement and track for CVE batch when Paramiko 5.0 ships."
+    }
+  ],
+  "source_coverage": {
+    "total": 30,
+    "checked": 22,
+    "with_findings": 9,
+    "unreachable": [
+      "cisa.gov",
+      "cisa.gov/known-exploited-vulnerabilities-catalog",
+      "attackerkb.com",
+      "bugcrowd.com/disclosures",
+      "hackerone.com/hacktivity",
+      "cve.org",
+      "cve.mitre.org",
+      "cert.gov.ua"
+    ],
+    "degraded": [
+      "msrc.microsoft.com/blog",
+      "nvd.nist.gov",
+      "packetstorm.news",
+      "googleprojectzero.blogspot.com"
+    ]
+  },
+  "full_report": "reports/2026/05/06/report.md"
+}
