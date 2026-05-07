@@ -1,0 +1,228 @@
+{
+  "date": "2026-05-07",
+  "findings": [
+    {
+      "type": "news",
+      "title": "Palo Alto Networks PAN-OS Captive Portal Pre-Auth RCE — CVE-2026-0300 (CVSS 9.3) — Active 0-Day Across PA-Series and VM-Series Firewalls, Patches Not Until 2026-05-13",
+      "threat_score": 10,
+      "cve": "CVE-2026-0300",
+      "cvss": 9.3,
+      "affected_technology": "Palo Alto Networks PAN-OS 12.1/11.2/11.1/10.2 — User-ID Authentication Portal (Captive Portal) on PA-Series hardware and VM-Series firewalls",
+      "summary": "Pre-auth buffer overflow in PAN-OS Captive Portal yields root RCE on PA-Series and VM-Series firewalls; vendor-confirmed limited exploitation, PoC public on GitHub, no patch until 2026-05-13, 5,800+ exposed VM-Series tracked by Shadowserver.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-05-06"
+    },
+    {
+      "type": "news",
+      "title": "nginx-ui Unauthenticated RCE Via Backup Restore — CVE-2026-42238 (CVSS 9.0) — Third Pre-Auth RCE in This Project Inside Two Months",
+      "threat_score": 8,
+      "cve": "CVE-2026-42238",
+      "cvss": 9.0,
+      "affected_technology": "nginx-ui (Go-based web management UI for nginx) — all versions before 2.3.8",
+      "summary": "Three-bug chain (auth bypass during 10-min startup window, arbitrary file write to app.ini/SQLite, OS command injection via TestConfigCmd) on /api/backup/restore yields root RCE in default Docker deployments; patched in 2.3.8.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-05-06"
+    },
+    {
+      "type": "news",
+      "title": "fast-jwt JWT Auth Bypass Via Empty HMAC Secret — CVE-2026-44351 (CVSS 9.1) — Async Key Resolver Returning Empty String Lets Anyone Mint Valid Tokens",
+      "threat_score": 7,
+      "cve": "CVE-2026-44351",
+      "cvss": 9.1,
+      "affected_technology": "fast-jwt npm library ≤ 6.2.3 (Node.js JWT verification)",
+      "summary": "Empty string returned by async key resolver is silently accepted by crypto.createSecretKey, letting unauthenticated attackers forge JWTs with arbitrary claims when the standard JWKS function-resolver pattern is used and HMAC algorithms remain enabled.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-05-06"
+    },
+    {
+      "type": "news",
+      "title": "vm2 Sandbox Escape — Second Public RCE in 48 Hours (CVE-2026-26956 + CVE-2026-44007) Across 1.3M Weekly-Download Library Used By Online Code Sandboxes and AI Coding Platforms",
+      "threat_score": 7,
+      "cve": "CVE-2026-26956, CVE-2026-44007",
+      "cvss": null,
+      "affected_technology": "vm2 npm library < 3.10.5 (sandbox escape via WebAssembly exception handling on Node.js 25); vm2 NodeVM nesting (CVE-2026-44007 from 2026-05-05); patched in 3.11.2",
+      "summary": "Two independent vm2 sandbox escapes in 48 hours both yielding host RCE; CVE-2026-26956 leaks unsanitised host-side error objects via crafted TypeError under WebAssembly exception handling, public PoC published, 1.3M weekly downloads.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-05-06"
+    },
+    {
+      "type": "news",
+      "title": "ShinyHunters → Anodot SaaS Token Theft → Vimeo + Dozens of Customers Compromised — New SaaS-Vendor-Token-as-Initial-Access Cluster",
+      "threat_score": 7,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Anodot (SaaS data anomaly detection) — used as supply-chain pivot to its customer base; Vimeo confirmed (119k records, 106 GB on leak site); ShinyHunters claims dozens of additional victims across multiple industries",
+      "summary": "Stolen Anodot authentication tokens let ShinyHunters query customer systems via the trusted Anodot integration; Vimeo confirmed but the same tokens were used against dozens of other Anodot customers, establishing SaaS-vendor-token theft as a reusable initial-access pattern.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-04-27"
+    },
+    {
+      "type": "news",
+      "title": "MuddyWater (Iran/MOIS) Uses Microsoft Teams Social Engineering and Chaos Ransomware as Decoy — Custom Game.exe Backdoor + Stagecomp/Darkcomp + Code-Signed Tooling",
+      "threat_score": 6,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Enterprise Microsoft Teams external chat surface + endpoints with weak MFA-tamper detection; Iran-aligned MuddyWater (alias Static Kitten / Mango Sandstorm / Seedworm)",
+      "summary": "MuddyWater chains Teams helpdesk impersonation, MFA tampering, RDP/AnyDesk persistence, and a custom Game.exe backdoor while running Chaos ransomware purely as decoy — seventh enterprise intrusion this month using the Teams-helpdesk SE chain.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-05-06"
+    },
+    {
+      "type": "update",
+      "title": "DAEMON Tools Trojanised Installers — Vendor Confirms Breach, Releases Clean Version; QUIC RAT Deployed To 'Dozen' Government & Scientific Hosts",
+      "threat_score": 6,
+      "previous_threat_score": 7,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "DAEMON Tools Windows installer v12.5.0.2421-2434 (signed); QUIC-protocol second-stage RAT against government / scientific endpoints globally",
+      "summary": "Developers publicly confirmed the supply-chain trojanisation, identified affected build IDs, and released a malware-free version; SecurityWeek attributes the targeted QUIC RAT second-stage to a dozen government/scientific hosts, narrowing the campaign profile from broad to targeted.",
+      "first_seen_at": "2026-05-06"
+    },
+    {
+      "type": "news",
+      "title": "Apache Wicket — Four-CVE Batch (Session Fixation, JS-Sequence Escape XSS, ResourceGuard Bypass, Path Traversal) — CVE-2026-40010 / 42509 / 43646 / 43975",
+      "threat_score": 5,
+      "cve": "CVE-2026-40010, CVE-2026-42509, CVE-2026-43646, CVE-2026-43975",
+      "cvss": null,
+      "affected_technology": "Apache Wicket 8.0.0–8.17.0 / 9.0.0–9.22.0 / 10.0.0–10.8.0; fixed in 10.9.0 and corresponding 8.x/9.x backports",
+      "summary": "Coordinated Wicket batch covers AuthenticatedWebSession fixation, stored-XSS via JS-sequence escape, PackageResourceGuard bypass via crafted URLs, and FolderUploadsFileManager path traversal — the path traversal is the most directly weaponisable on internet-facing endpoints.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-05-06"
+    },
+    {
+      "type": "news",
+      "title": "Quarkus Authorization Bypass — CVE-2026-39852 (GHSL-2026-099)",
+      "threat_score": 5,
+      "cve": "CVE-2026-39852",
+      "cvss": null,
+      "affected_technology": "Quarkus (Red Hat / IBM Java cloud-native framework) — affected version range pending upstream advisory",
+      "summary": "GitHub Security Lab disclosed an authorization bypass in Quarkus on 2026-05-06; full technical detail and version range pending the upstream advisory, but Quarkus's footprint on OpenShift/serverless makes this front-of-queue once details land.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-05-06"
+    },
+    {
+      "type": "news",
+      "title": "Tor 0.4.9.7 — Six Security Fixes (TROVE-2026-006 → -011) Across Cell Handling, Conflux, Pathbias, and Onion Service Code Paths",
+      "threat_score": 4,
+      "cve": "TROVE-2026-006, TROVE-2026-007, TROVE-2026-008, TROVE-2026-009, TROVE-2026-010, TROVE-2026-011",
+      "cvss": null,
+      "affected_technology": "Tor 0.1.1.1-alpha through 0.4.8.1-alpha (effectively every release prior to 0.4.9.7) — relays, clients, and onion services",
+      "summary": "Tor 0.4.9.7 ships fixes for OOB reads in END/TRUNCATE/TRUNCATED + BEGIN cell handling, null-pointer deref on out-of-sequence CERT cells, conflux misuse / queue accounting, and a pathbias double-close client crash; relevant to anyone running a relay, onion service, or product that bundles Tor.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-05-06"
+    }
+  ],
+  "noted": [
+    {
+      "cve": "CVE-2026-20188",
+      "product": "Cisco Crosswork Network Controller / NSO",
+      "summary": "Inadequate connection rate limiting in CNC ≤ 7.1 / NSO ≤ 6.3 enables unauthenticated DoS requiring manual reboot; not internet-facing in most deployments. Patches: CNC 7.2 / NSO 6.4.1.3 / 6.5."
+    },
+    {
+      "cve": "None",
+      "product": "Mirai-based xlabs_v1 botnet",
+      "summary": "DDoS-for-hire variant exploiting exposed Android Debug Bridge on TCP/5555; out of public-facing infrastructure scope but firewall ADB egress for any embedded Android devices on the corporate net."
+    },
+    {
+      "cve": "None",
+      "product": "UAT-8302 China-aligned APT (Cisco Talos)",
+      "summary": "Government targeting in South America (since late 2024) and southeastern Europe with NetDraft/NosyDoor (.NET FINALDRAFT variant), shared infra with Ink Dragon / CL-STA-0049 / Earth Alux / Jewelbug / REF7707, plus CloudSorcerer, SNOWLIGHT/SNOWRUST, Deed RAT, Zingdoor, Draculoader."
+    },
+    {
+      "cve": "None",
+      "product": "pnpm 11 supply-chain protection defaults",
+      "summary": "pnpm 11 ships with a 1-day Minimum Release Age default and blocks exotic subdeps, directly countering the Mini Shai-Hulud / TeamPCP rapid-publish pattern; recommend rolling out across CI/dev environments."
+    },
+    {
+      "cve": "None",
+      "product": "PyPI security audit fixes (2026-05-01)",
+      "summary": "PyPI resolved permission bugs, stale access following package transfers, and authorization bypass weaknesses surfaced in a security audit; defensive ecosystem update — no consumer action required."
+    },
+    {
+      "cve": "None",
+      "product": "Oracle monthly Critical Patch Updates",
+      "summary": "Oracle moves from quarterly to monthly CPU cadence; reduces n-day window from up to 90 days to ~30 but increases patch-cycle volume — plan operational impact."
+    },
+    {
+      "cve": "None",
+      "product": "CISA 'CI Fortify' critical-infrastructure resilience program",
+      "summary": "New CISA guidance and exercises preparing OT operators for geopolitical cyber conflict; worth pulling for any team running OT-adjacent assets."
+    },
+    {
+      "cve": "None",
+      "product": "Google Android Binary Transparency",
+      "summary": "Google launches public cryptographic logs for shipped APKs (Certificate-Transparency-style) as a structural defence against Play Store supply-chain tampering; ecosystem improvement, no immediate action."
+    },
+    {
+      "cve": "None",
+      "product": "Rowhammer attack against NVIDIA GPUs (Schneier 2026-05-06)",
+      "summary": "Research demonstration of rowhammer on NVIDIA GDDR memory enabling host compromise; out of immediate scope but watch for SKU/firmware-specific disclosures relevant to data-centre GPU clusters."
+    },
+    {
+      "cve": "None",
+      "product": "DarkSword iOS exploit chain leaked (Schneier 2026-05-05)",
+      "summary": "Six-zero-day iOS chain originally used by a commercial spyware vendor leaked publicly; out of scope (mobile only) but iOS fleet management should accelerate the next OS update."
+    },
+    {
+      "cve": "CVE-2026-44364",
+      "product": "misp-modules (pip)",
+      "summary": "Missing CSRF protection in the website home blueprint; MISP threat-intel platform users only."
+    },
+    {
+      "cve": "CVE-2026-42555",
+      "product": "valtimo (Maven, BPM platform)",
+      "summary": "SpEL injection enabling RCE by admin users on the Valtimo BPM platform; admin-only attack surface limits impact to internal threat models."
+    },
+    {
+      "cve": "None",
+      "product": "phpmyfaq (Composer / PHP)",
+      "summary": "Two critical GHSAs: unauthenticated SQL injection via User-Agent header in BuiltinCaptcha + unauthenticated 2FA brute-force on /admin/check; phpmyfaq users only."
+    },
+    {
+      "cve": "CVE-2026-44262",
+      "product": "scramble (Composer / PHP)",
+      "summary": "Eval of user-controlled input in validation rules yields RCE on PHP stacks running scramble."
+    },
+    {
+      "cve": "CVE-2026-43948",
+      "product": "wger (pip, fitness/gym software) ≤ 2.5",
+      "summary": "Django ORM `gym=None != gym=None` evaluating False enables cross-tenant password reset with plaintext disclosure in the response body; patched in 2.6."
+    },
+    {
+      "cve": "CVE-2026-5081",
+      "product": "Apache::Session::Generate::ModUniqueId (Perl/CPAN)",
+      "summary": "Session IDs generated with insufficient entropy by the mod_unique_id derivative; Perl-only impact, patch via CPAN."
+    },
+    {
+      "cve": "CVE-2026-40562",
+      "product": "Gazelle (Perl reverse-proxy library)",
+      "summary": "HTTP request smuggling via header precedence handling in Gazelle; narrow Perl-stack reverse-proxy impact."
+    },
+    {
+      "cve": "None",
+      "product": "axonflow (Go, multi-tenant SaaS framework)",
+      "summary": "Critical-rated GHSA fix implementing multi-tenant isolation and access-control enhancements; no CVE assigned, relevant only to axonflow adopters."
+    }
+  ],
+  "source_coverage": {
+    "total": 30,
+    "checked": 18,
+    "with_findings": 10,
+    "unreachable": [
+      "cisa.gov",
+      "cisa.gov/known-exploited-vulnerabilities-catalog",
+      "attackerkb.com",
+      "packetstormsecurity.com",
+      "nvd.nist.gov",
+      "cve.mitre.org",
+      "cve.org",
+      "googleprojectzero.blogspot.com",
+      "msrc.microsoft.com/blog",
+      "hackerone.com/hacktivity",
+      "bugcrowd.com/disclosures",
+      "cert.gov.ua"
+    ],
+    "degraded": []
+  },
+  "full_report": "reports/2026/05/07/report.md"
+}

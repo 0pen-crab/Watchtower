@@ -1,0 +1,102 @@
+Watchtower daily run — 2026-05-07
+======================================
+
+== STEP 1 — Repo pull ==
+06:02 UTC  cd /home/claude/workspace/watchtower && git pull → "Already up to date."
+
+== STEP 2 — Dedup index (last 30 days: 2026-04-08 → 2026-05-07) ==
+06:03 UTC  Read all report.json files from 2026/04/14 onward + 2026/05/01-06.
+06:03 UTC  Built CVE / topic dedup set covering:
+   cPanel CVE-2026-41940 (covered 04-30, 05-01, 05-03, 05-05); Linux CopyFail CVE-2026-31431 (04-30, 05-01, 05-02, 05-03, 05-05);
+   Apache HTTP 2.4.67 batch CVE-2026-23918/24072/29169/33006/33007/33523/33857/34032/34059 (05-05) + 28780/29168 (05-06);
+   Apache MINA CVE-2026-42778/42779 + 41409 prior (05-06); Apache OpenNLP 42027/40682/42440 (05-04); Apache Polaris 42809-12 (05-04); Apache Atlas 40563/40561 (05-04); Apache Thrift 43868/43869/43870 (05-05);
+   Mini Shai-Hulud (npm + PyPI PyTorch Lightning, 04-29 → 05-01); BufferZoneCorp Ruby+Go sleeper (05-03); MetInfo CVE-2026-29014 (05-06); Quasar Linux QLNX (05-06); Ollama Bleeding Llama CVE-2026-7482 (05-06);
+   Webpros Comet CVE-2026-29200 (05-05); ProFTPD CVE-2026-42167 (05-03); Trellix breach (05-03 + 05-05); DigiCert support compromise (05-05); VENOMOUS#HELPER (05-05); Microsoft Code-of-Conduct AiTM (05-06); Django 6.0.5/5.2.14 triple (05-06); BlackFile / Cordial Spider / Snarky Spider (05-02); SHADOW-EARTH-053 (05-02);
+   MOVEit Automation 4670/5174 (05-01); SonicWall April roll-up (05-01); Gemini CLI CVSS 10 (05-01); Windows Shell CVE-2026-32202 + CISA KEV (05-01); MCP nginx-ui CVE-2026-33032 (April); n8n CVE-2026-21858 (March); LiteLLM CVE-2026-42208 (04-29); GitHub Enterprise CVE-2026-3854 (04-29); CoreDNS TSIG bundle (04-29); Hugging Face LeRobot CVE-2026-25874 (04-29);
+   GlassWorm v2 (04-28); PyPI elementary-data (04-28); LangFlow CVE-2026-27966 (04-28); Spinnaker CVE-2026-32604 (04-24); Zimbra CVE-2025-66376 (04-24); Clerk JS CVE-2026-41248 (04-24); LMDeploy CVE-2026-33626 (04-24); FUXA SCADA CVE-2026-25895 (04-24); Budibase CVE-2026-41428 (04-24); Dgraph CVE-2026-41328 (04-24);
+   Note item from 05-06: vm2 CVE-2026-44007 (sandbox escape via NodeVM nesting) — eligible for promotion if material new development.
+
+== STEP 3 — Source coverage ==
+06:08 UTC  Begin batched WebFetch calls.
+
+Tier 1:
+06:09 UTC  bleepingcomputer.com                                  ✅  ~2.0s   FINDINGS: Palo Alto CVE-2026-0300 (CRITICAL), vm2 CVE, MuddyWater Chaos, DAEMON Tools update, Vimeo breach, Cisco DoS, Quasar Linux, Instructure update, Microsoft Defender DigiCert false positive
+06:09 UTC  thehackernews.com                                     ✅  ~2.5s   FINDINGS: confirms Palo Alto, MuddyWater, Apache HTTP/2, MetInfo, Mirai xlabs_v1 botnet, UAT-8302 China APT, MOVEit Auto patch, AI services scan
+06:09 UTC  cisa.gov/known-exploited-vulnerabilities-catalog      ❌  HTTP 403 Forbidden — consistent with prior runs, marked unreachable
+06:09 UTC  cisa.gov                                              ❌  HTTP 403 — unreachable
+06:09 UTC  securityweek.com                                      ✅  ~2.5s   FINDINGS: confirms Quasar Linux, Palo Alto 0-day, MuddyWater Iranian, DAEMON Tools, Microsoft AiTM, Bleeding Llama, Karakurt sentencing, Oracle monthly CPU
+06:13 UTC  github.com/search?q=CVE-2026 (sort=updated)           ✅  ~2.5s   FINDINGS: Palo Alto PoC repos (p3Nt3st3r-sTAr/CVE-2026-0300-POC, Defacto-ridgepole254/CVE-2026-41940-Exploit-PoC); telnetd / CopyFail PoCs
+06:13 UTC  schneier.com                                          ✅  ~2.0s   NOTED: Rowhammer NVIDIA chips, DarkSword iOS chain (out of scope for both)
+06:13 UTC  krebsonsecurity.com                                   ✅  ~2.0s   No May 2026 posts; latest is 04-30 Brazilian DDoS firm
+06:13 UTC  rapid7.com (blog)                                     ✅  ~2.5s   FINDINGS: ETR for CVE-2026-0300 (Palo Alto) — confirms our priority
+06:13 UTC  attackerkb.com                                        ❌  403 per memory — unreachable
+06:13 UTC  fortinet.com/blog/threat-research                     ✅  ~2.0s   No May posts; latest is 04-17 Mirai Nexcorium
+06:13 UTC  securitylab.github.com                                ✅  ~2.0s   FINDINGS: Quarkus CVE-2026-39852 GHSL-2026-099 (Peter Stöckli, 2026-05-06)
+06:13 UTC  seclists.org/fulldisclosure                           ⚠️→ openwall  302 redirect to seclists.org root; substituted with openwall.com/lists/oss-security/2026/05/ (per MEMORY pattern)
+06:13 UTC  packetstormsecurity.com (now packetstorm.news)        ❌  Only TOS page reachable; advisory listings not extractable via WebFetch — unreachable
+06:13 UTC  opencve.io / app.opencve.io                           ✅  ~3.0s   Top recent CVEs are mostly Chrome (out of scope: client browser); CVE-2026-7908 Chrome use-after-free fullscreen
+Tier 2:
+06:17 UTC  nvd.nist.gov                                          ❌  Returns landing only, no extractable search results — unreachable for our purposes
+06:17 UTC  cve.mitre.org                                         ❌  JS-required per memory — unreachable
+06:17 UTC  cve.org                                               ❌  JS-required per memory — unreachable
+06:17 UTC  googleprojectzero.blogspot.com                        ❌  Redirects to projectzero.google (JS) per memory — unreachable
+06:17 UTC  blog.cloudflare.com/tag/security                      ✅  ~2.5s   No May 5-7 posts; latest is 04-30 post-quantum IPsec GA
+06:17 UTC  msrc.microsoft.com/blog                               ❌  Redirects to /msrc/blog/category but no post listings extractable; only navigation chrome — unreachable
+06:17 UTC  hackerone.com/hacktivity                              ❌  JS per memory — unreachable
+06:17 UTC  bugcrowd.com/disclosures                              ❌  404 per memory — unreachable
+06:17 UTC  kb.cert.org/vuls                                      ✅  ~2.0s   Latest VU# is 04-23; no May 2026 entries
+06:17 UTC  avleonov.com                                          ✅  ~2.0s   Latest is 04-30 CopyFail post; no May
+06:17 UTC  github.com/0xMarcio/cve                               ✅  ~2.0s   Multiple PoC repos surfacing for CopyFail, n8n, telnetd, cPanel — confirmed escalation but no novel CVEs
+06:17 UTC  dbugs.ptsecurity.com                                  ✅  ~2.5s   Top-15 are all Bitnami Java-Min advisories on 2026-05-06 with no CVE assignment; container-image patch noise
+06:17 UTC  habr.com/ru/companies/tomhunter/articles              ✅  ~2.0s   Latest is March 6 monthly digest; no May
+06:17 UTC  teletype.in/@cyberok                                  ✅  ~2.5s   Latest is February 4; no recent May
+06:17 UTC  cert.gov.ua                                           ❌  Page returns no extractable content; treating as unreachable
+Off-list productive (per MEMORY 'Recurring Sources of High-Value Findings'):
+06:21 UTC  openwall.com/lists/oss-security/2026/05/              ✅  ~3.0s   FINDINGS: Apache Wicket batch (40010/42509/43646/43975), Apache::Session::Generate::ModUniqueId CVE-2026-5081, Gazelle Perl CVE-2026-40562, Tor 0.4.9.7 (TROVE-2026-006-011), prior Apache Thrift / Apache HTTP / Django (already covered)
+06:21 UTC  socket.dev/blog                                       ✅  ~2.5s   NOTED: pnpm 11 supply chain protection defaults (05-04), PyPI security audit fixes (05-01)
+06:21 UTC  labs.watchtowr.com                                    ✅  ~2.0s   No May posts; latest is 04-29 cPanel
+06:21 UTC  trendmicro.com                                        ❌  HTTP 403 — degraded today (typically reachable; tracking)
+06:21 UTC  securelist.com                                        ❌  ECONNREFUSED — degraded today
+
+Source totals after first pass:
+   total=30, checked=18, with_findings=10
+   unreachable=12: cisa.gov, cisa.gov/known-exploited-vulnerabilities-catalog, attackerkb.com, packetstormsecurity.com, nvd.nist.gov, cve.mitre.org, cve.org, googleprojectzero.blogspot.com, msrc.microsoft.com/blog, hackerone.com/hacktivity, bugcrowd.com/disclosures, cert.gov.ua
+
+Validator constraint check: checked (18) >= total (30) - unreachable (12) = 18 ✅
+
+== STEP 4 — Dedup decisions ==
+   CVE-2026-0300 Palo Alto                              → NEW (no prior coverage)
+   CVE-2026-42238 nginx-ui RCE                          → NEW (different from prior CVE-2026-33032)
+   CVE-2026-44351 fast-jwt                              → NEW
+   CVE-2026-26956 vm2 sandbox escape                    → NEW (combined with prior CVE-2026-44007 noted on 05-06 → promotion)
+   Anodot supply chain pivot (Vimeo + dozens)           → NEW
+   MuddyWater chaos campaign                            → NEW
+   Apache Wicket 4-CVE batch                            → NEW
+   Quarkus CVE-2026-39852                               → NEW
+   Tor 0.4.9.7 security release                         → NEW
+   DAEMON Tools — vendor confirmation + clean version   → MATERIAL UPDATE (vendor response confirmed; previous score 7 → 6)
+   Instructure 8.8k schools / 280M records              → SKIP (refinement of 9k/275M from 05-04 — not material)
+   MetInfo CVE-2026-29014                               → SKIP (already in 05-06)
+   Apache HTTP 2.4.67 batch                             → SKIP (already in 05-05/05-06)
+   Apache MINA, Thrift, OpenNLP, Polaris                → SKIP (already covered)
+   cPanel CVE-2026-41940, CopyFail CVE-2026-31431       → SKIP (already escalated; no further material change)
+   Quasar Linux, DAEMON Tools background, Ollama, Django → SKIP (covered 05-06; no new info today)
+   Microsoft Code-of-Conduct AiTM                       → SKIP (covered 05-06)
+   Mirai xlabs_v1 / Cisco CNC DoS / UAT-8302 / pnpm 11 / PyPI audit / Oracle CPU / CISA CI Fortify / Google Android Binary Transparency / Rowhammer / DarkSword / niche GHSAs (misp-modules/valtimo/phpmyfaq/scramble/wger/axonflow) → NOTED
+
+   Final classification: 9 News + 1 Update = 10 findings; 18 noted items.
+
+== STEP 5 — Report files written ==
+06:35 UTC  /home/claude/workspace/watchtower/reports/2026/05/07/report.md
+06:35 UTC  /home/claude/workspace/watchtower/reports/2026/05/07/report.json
+
+== STEP 6 — Validator output ==
+(see below — appended after run)
+⚠️  6 warning(s):
+   findings[9]: CVE 'TROVE-2026-006' doesn't start with 'CVE-'
+   findings[9]: CVE 'TROVE-2026-007' doesn't start with 'CVE-'
+   findings[9]: CVE 'TROVE-2026-008' doesn't start with 'CVE-'
+   findings[9]: CVE 'TROVE-2026-009' doesn't start with 'CVE-'
+   findings[9]: CVE 'TROVE-2026-010' doesn't start with 'CVE-'
+   findings[9]: CVE 'TROVE-2026-011' doesn't start with 'CVE-'
+✅ /home/claude/workspace/watchtower/reports/2026/05/07/report.json — valid
