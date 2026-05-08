@@ -1,0 +1,112 @@
+[2026-05-08T05:30:00Z] Watchtower daily run — START
+[2026-05-08T05:30:01Z] Step 1: git pull /home/claude/workspace/watchtower → "Already up to date."
+[2026-05-08T05:30:05Z] Step 2: Build dedup index from reports 2026-04-08 → 2026-05-07 (22 reports)
+[2026-05-08T05:30:08Z]   Total unique CVEs/IDs in 30-day window: 273
+[2026-05-08T05:30:08Z]   Total findings titles in 30-day window: 120
+[2026-05-08T05:30:08Z]   Latest covered: 2026-05-07 (PAN-OS CVE-2026-0300, vm2 CVE-2026-26956+44007, fast-jwt 44351, nginx-ui 42238, Anodot/Vimeo, MuddyWater, DAEMON Tools UPDATE, Apache Wicket 4-CVE, Quarkus 39852, Tor 0.4.9.7)
+[2026-05-08T05:30:08Z]   Dedup index saved to /tmp/dedup_index.txt
+[2026-05-08T05:30:10Z] Step 3: Read SOURCES.md → 30 distinct sources to check (15 Tier 1 + 15 Tier 2; seclists appears twice, counted once)
+
+[2026-05-08T05:31:00Z] Source 1: bleepingcomputer.com → ✅ 20 articles surfaced (May 6-8); time ~7s
+[2026-05-08T05:31:08Z] Source 2: thehackernews.com → ✅ 7 articles (May 6-7); time ~6s
+[2026-05-08T05:31:16Z] Source 3: securityweek.com → ✅ 18+ articles (May 1-7); time ~8s
+[2026-05-08T05:31:25Z] Source 4: openwall.com/lists/oss-security/2026/05/ → ✅ 12 messages on May 7; 2026/05/08 returned "No messages for this day"; time ~4s
+
+[2026-05-08T05:32:00Z] Source 5: rapid7.com/blog → ✅ no posts dated May 7-8; latest ETR remains cPanel 41940 (covered); time ~5s
+[2026-05-08T05:32:10Z] Source 6: github.com/advisories?type:reviewed severity:critical → ✅ 17 GHSAs surfaced on May 6-7 incl. Argo CD, vm2 batch, Gotenberg pair, Fleet, filebrowser, intercom-client/php, PyTorch Lightning, etc.; time ~8s
+[2026-05-08T05:32:25Z] Source 7: app.opencve.io → ✅ confirmed CVE-2026-42880 (Argo CD CVSS 9.6) + several mediums; time ~6s
+[2026-05-08T05:32:30Z] Source 8: krebsonsecurity.com → ✅ no posts dated May 7-8; latest 2026-04-30 (Brazilian DDoS); time ~3s
+[2026-05-08T05:32:35Z] Source 9: schneier.com → ✅ 1 post 2026-05-07 ("Smart Glasses for the Authorities" — out of scope); time ~3s
+[2026-05-08T05:32:40Z] Source 10: github.com/0xMarcio/cve → ⚠️ JS-rendered, partial data; main directory returned 404 for tree subdir; time ~4s
+
+[2026-05-08T05:33:00Z] Source 11: fortinet.com/blog/threat-research → ✅ no posts May 7-8; latest 2026-04-17 (Mirai Nexcorium); time ~5s
+[2026-05-08T05:33:10Z] Source 12: securitylab.github.com → ✅ no fresh posts May 7-8; latest GHSL-2026-099 Quarkus 2026-05-06 (covered); time ~4s
+[2026-05-08T05:33:15Z] Source 13: blog.cloudflare.com/tag/security → ✅ 1 post 2026-05-07 (Cloudflare Copy Fail mitigation case study — added to Noted); time ~4s
+[2026-05-08T05:33:20Z] Source 14: kb.cert.org/vuls → ✅ no notes May 7-8; latest 2026-04-23; time ~3s
+
+[2026-05-08T05:34:00Z] Source 15: dbugs.ptsecurity.com → ✅ 14 CVEs published 2026-05-07 incl. vm2 batch, filebrowser 42542, math.js 41139, Hexpm Decimal 32686, Bricks Builder 41554, Wallos 41688; time ~5s
+[2026-05-08T05:34:10Z] Source 16: avleonov.com → ✅ no posts May 7-8; latest 2026-04-30 (Copy Fail covered); time ~3s
+[2026-05-08T05:34:15Z] Source 17: habr.com/ru/companies/tomhunter → ✅ no posts May 7-8; latest March 2026; time ~3s
+[2026-05-08T05:34:20Z] Source 18: teletype.in/@cyberok → ✅ no posts May 7-8; latest 2026-02-04; time ~3s
+[2026-05-08T05:34:25Z] Source 19: socket.dev/blog → ✅ no posts May 7-8; latest 2026-05-04 pnpm 11 (covered); time ~3s
+
+[2026-05-08T05:34:35Z] Source 20: labs.watchtowr.com → ✅ no posts May 7-8; latest 2026-04-29 cPanel 41940 (covered); time ~3s
+[2026-05-08T05:34:40Z] Source 21: seclists.org/fulldisclosure → ⚠️ redirect to seclists.org/; secondary fetch also redirected; treating as unreachable; time ~3s
+[2026-05-08T05:34:45Z] Source 22: cisa.gov → ❌ 403 Forbidden (consistent with 30-day pattern); time ~2s
+[2026-05-08T05:34:50Z] Source 23: cisa.gov/known-exploited-vulnerabilities-catalog → ❌ 403 (consistent); KEV additions confirmed via THN/BleepingComputer relays for CVE-2026-0300 + CVE-2026-6973
+[2026-05-08T05:34:55Z] Source 24: attackerkb.com → ❌ 403 (consistent)
+
+[2026-05-08T05:35:00Z] Source 25: trendmicro.com (off-list) → ❌ 403 (consistent)
+[2026-05-08T05:35:05Z] Source 26: securelist.com (Kaspersky, off-list) → ❌ ECONNREFUSED (consistent)
+[2026-05-08T05:35:10Z] Source 27: msrc.microsoft.com/blog → ❌ no extractable blog data (JS-rendered)
+[2026-05-08T05:35:15Z] Source 28: nvd.nist.gov → ❌ JS-rendered, no extractable data
+[2026-05-08T05:35:20Z] Source 29: cve.mitre.org / cve.org → ❌ JS-rendered (consistent)
+[2026-05-08T05:35:25Z] Source 30: googleprojectzero.blogspot.com → ❌ redirect to projectzero.google/, JS-rendered
+[2026-05-08T05:35:30Z] Source 31: hackerone.com/hacktivity → ❌ JS-rendered, no extractable data
+[2026-05-08T05:35:35Z] Source 32: bugcrowd.com/disclosures → ❌ 404 (URL stale; flagged in MEMORY.md)
+[2026-05-08T05:35:40Z] Source 33: cert.gov.ua → ❌ empty response
+[2026-05-08T05:35:45Z] Source 34: packetstormsecurity.com / packetstorm.news → ❌ only TOS-equivalent reachable; advisory listings not extractable
+[2026-05-08T05:35:50Z] Source 35: github.com/search?q=CVE-2026 → ⚠️ 429 rate limit on first attempt; ✅ second attempt returned 5 fresh PoCs (CVE-2026-25643 Frigate, CVE-2026-2441 Chrome Blink, CVE-2026-31431 Copy Fail, CVE-2026-20841 Notepad, BYOVD)
+
+[2026-05-08T05:36:00Z] Source totals: total=30, checked=19, with_findings=12, unreachable=11, degraded=0
+  (Note: github.com/0xMarcio/cve and seclists.org partial data — counted as checked since some data was extracted; cisa/cve.org/nvd/etc consistently unreachable as in prior runs.)
+
+[2026-05-08T05:36:05Z] Step 4: Dedup decisions
+  PAN-OS CVE-2026-0300 — already covered 2026-05-07 → MATERIAL UPDATE (KEV addition, attribution to CL-STA-1132, exploitation-since-April-9 confirmed, post-exploit AD enumeration)
+  Argo CD CVE-2026-42880 — NEW (not in dedup index; first surfaced via GHSA 2026-05-07)
+  Gotenberg CVE-2026-42589 + 42596 — NEW
+  vm2 CVE-2026-43997/43999/44005/44006/44008/44009 + 24118/24120/24781/26332 — MATERIAL UPDATE (yesterday 2 CVEs, today 12 total with 3x CVSS 10.0; maintainer concession)
+  Axios npm 1.14.1/0.30.4 (UNC1069) — NEW (March 31 compromise, only publicly disclosed today)
+  PCPJack worm — NEW
+  Ivanti EPMM CVE-2026-6973 — NEW
+  Instructure / Canvas — covered 2026-05-04 → MATERIAL UPDATE (login portal defacement = new attack vector, victim count finalised, ransom deadline)
+  Claude Code MCP hijacking + TrustFall — NEW (related to but distinct from prior Gemini CLI / Mini Shai-Hulud SessionStart items)
+  Cisco Unity Connection batch — NEW (CVE-2026-20188 already noted but Unity Connection RCEs are new headlines)
+  OpenStack Cyborg OSSA-2026-011 — NEW
+  Postorius (Mailman 3) XSS — NEW
+  filebrowser CVE-2026-42542 — NEW
+  Linux KTLS+sockmap UAF — NEW
+  Copy Fail CVE-2026-31431 — covered multiple days → SKIP main, NOTED with Copy Fail 2 / Dirty Frag PoC reference
+  Cloudflare Copy Fail mitigation — NEW NOTED (defensive case study)
+  Dirty Frag (no CVE) — NEW NOTED (LPE-only, embargo broken pre-patch)
+  TCLBanker — NEW NOTED (Brazilian banking, mostly out of scope)
+  Beagle backdoor via fake Claude AI — NEW NOTED (continuation of 2026-04-18 ClickFix)
+  Australia ACSC ClickFix → Vidar Stealer — NEW NOTED
+  Google Ads → ManageWP phishing — NEW NOTED
+  ZiChatBot PyPI — NEW NOTED (ecosystem-niche supply chain)
+  intercom-client + intercom-php (Mini Shai-Hulud) — UPDATE NOTED (April 30 incidents; campaign reach now confirmed multi-ecosystem)
+  note-mark JWT secret weakness — NEW NOTED
+  Gotenberg SSRF CVE-2026-42596 — companion to RCE in CRITICAL → NOTED
+  Fleet CVE-2026-41050 — NEW NOTED
+  PyTorch Lightning CVE-2026-44484 — UPDATE NOTED (covered as Mini Shai-Hulud campaign 2026-05-01; CVE now formal)
+  Linux io_uring zcrx OOB — NEW NOTED (CVE pending, AI-generated reporter concerns)
+  Vim spell file overflow — NEW NOTED (local DoS only)
+  Chrome 148 / 127 fixes — NEW NOTED (out of scope but cadence indicator)
+  Microsoft April backup failure — NEW NOTED (operational only)
+  Schneier "Smart Glasses for ICE" — NEW NOTED (surveillance trend, out of scope)
+  Taiwan TETRA rail hack — NEW NOTED (OT-adjacent, out of scope)
+  EnOcean SmartServer — NEW NOTED (OT-adjacent, sparse details)
+  TeamPCP → AWS — NEW NOTED (companion to PCPJack)
+  math.js / Hexpm Decimal / Bricks Builder / Wallos / Docling-Graph / gittuf / Weblate — NEW NOTED (ecosystem-niche)
+  Karakurt sentencing / Goldberg+Martin sentencing / DPRK laptop-farm sentencing — NEW NOTED (legal updates only)
+
+[2026-05-08T05:38:00Z] Step 5: Drafting report.md (template: /home/claude/prompts/watchtower/templates/report.template.md)
+[2026-05-08T05:42:00Z] Step 5: Drafting report.json (top-level keys: date, findings, noted, source_coverage, full_report)
+[2026-05-08T05:43:00Z] Step 6: Writing this debug.log
+
+[2026-05-08T05:43:05Z] Step 7: Validate report.json
+$ python3 /home/claude/workspace/watchtower/scripts/validate_report.py reports/2026/05/08/report.json
+⚠️  9 warning(s):
+   findings[0]: 'summary' is 327 chars (aim for <200)
+   findings[2]: 'summary' is 324 chars (aim for <200)
+   findings[4]: 'summary' is 324 chars (aim for <200)
+   findings[5]: 'summary' is 347 chars (aim for <200)
+   findings[6]: 'summary' is 365 chars (aim for <200)
+   findings[7]: 'summary' is 382 chars (aim for <200)
+   findings[8]: 'summary' is 436 chars (aim for <200)
+   findings[10]: 'summary' is 316 chars (aim for <200)
+   findings[13]: 'summary' is 391 chars (aim for <200)
+✅ reports/2026/05/08/report.json — valid
+
+[2026-05-08T05:43:30Z] Step 8: Commit + push (next)
+[2026-05-08T05:43:30Z] Watchtower daily run — END

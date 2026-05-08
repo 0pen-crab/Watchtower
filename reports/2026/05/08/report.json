@@ -1,0 +1,336 @@
+{
+  "date": "2026-05-08",
+  "findings": [
+    {
+      "type": "update",
+      "title": "Palo Alto Networks PAN-OS CVE-2026-0300 Added to CISA KEV With May 9 Federal Deadline; Attribution to CL-STA-1132 (Likely Chinese State); Successful Exploitation Confirmed Since 2026-04-16",
+      "threat_score": 10,
+      "previous_threat_score": 10,
+      "cve": "CVE-2026-0300",
+      "cvss": 9.3,
+      "affected_technology": "Palo Alto Networks PAN-OS 12.1/11.2/11.1/10.2 — User-ID Authentication Portal (Captive Portal) on PA-Series hardware and VM-Series firewalls",
+      "summary": "CISA added CVE-2026-0300 to KEV on 2026-05-07 with a Federal deadline of 2026-05-09 (patches not until 2026-05-13); Unit 42 attributed exploitation to CL-STA-1132 cluster using Earthworm + ReverseSocks5 (Volt Typhoon / APT41 historical TTPs), with successful RCE observed since 2026-04-16 plus AD enumeration post-exploitation.",
+      "first_seen_at": "2026-05-06"
+    },
+    {
+      "type": "news",
+      "title": "Argo CD CVE-2026-42880 (CVSS 9.6) — Plaintext Kubernetes Secret Extraction via ServerSideDiff Endpoint With Read-Only RBAC",
+      "threat_score": 9,
+      "cve": "CVE-2026-42880",
+      "cvss": 9.6,
+      "affected_technology": "Argo CD (declarative GitOps for Kubernetes) — ≥3.2.0 <3.2.11 and ≥3.3.0 <3.3.9; fixed in 3.2.11 and 3.3.9",
+      "summary": "ServerSideDiff endpoint fails to mask Kubernetes Secret data unlike sibling endpoints, letting any user with read-only Argo RBAC extract plaintext service-account tokens, TLS keys, database creds, and API keys from etcd; the IncludeMutationWebhook annotation bypasses the partial defense entirely.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-05-07"
+    },
+    {
+      "type": "news",
+      "title": "Gotenberg CVE-2026-42589 (CVSS 9.8) — Unauthenticated RCE via ExifTool Metadata Key Injection (Plus CVE-2026-42596 Unauth SSRF) — No Patch Available",
+      "threat_score": 8,
+      "cve": "CVE-2026-42589, CVE-2026-42596",
+      "cvss": 9.8,
+      "affected_technology": "Gotenberg v8 ≤ 8.29.1 (Docker-based Chromium / LibreOffice / PDF / ExifTool conversion microservice)",
+      "summary": "JSON metadata keys passed to go-exiftool without control-character validation enable newline-injected ExifTool flags including -if (Perl expression evaluation), yielding pre-auth OS RCE as Gotenberg user; companion CVE-2026-42596 is an unauth SSRF in downloadFrom/webhook parameters; no vendor patch available at disclosure.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-05-07"
+    },
+    {
+      "type": "update",
+      "title": "vm2 Sandbox Escape Disclosure Expands From 2 to 12 Total CVEs (Three CVSS 10.0); Maintainer Acknowledges Library Is Structurally Unsalvageable",
+      "threat_score": 8,
+      "previous_threat_score": 7,
+      "cve": "CVE-2026-43997, CVE-2026-43999, CVE-2026-44005, CVE-2026-44006, CVE-2026-44008, CVE-2026-44009, CVE-2026-26956, CVE-2026-44007, CVE-2026-24118, CVE-2026-24120, CVE-2026-24781, CVE-2026-26332",
+      "cvss": 10.0,
+      "affected_technology": "vm2 npm library (1.3M weekly downloads) — versions ≤ 3.11.1 collectively affected; all 12 CVEs addressed in 3.11.2",
+      "summary": "Coordinated 12-CVE sandbox-escape disclosure with three CVSS 10.0 entries (CVE-2026-43997 host Object access, CVE-2026-44005 prototype pollution, CVE-2026-44006 BaseHandler.getPrototypeOf) — all yield host RCE; maintainer publicly conceded future bypasses remain likely given JavaScript complexity.",
+      "first_seen_at": "2026-05-06"
+    },
+    {
+      "type": "news",
+      "title": "Axios npm Supply-Chain Compromise (1.14.1, 0.30.4) Attributed to North Korea / UNC1069; ~3% of 100M-Weekly-Downloads User Base Pulled Backdoored Build",
+      "threat_score": 8,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "axios npm package versions 1.14.1 and 0.30.4 (published 2026-03-31, removed ~3 hours later); phantom dependency plain-crypto-js delivers cross-platform RAT for Windows / macOS / Linux",
+      "summary": "Two backdoored axios releases were live for ~3 hours on 2026-03-31, captured an estimated 3% of 100M weekly downloads via a phantom plain-crypto-js dependency carrying a cross-platform RAT dropper; Google Threat Intelligence attributes to North Korean cluster UNC1069 with macOS payload overlapping prior WaveShaper samples.",
+      "discovery_latency": "late",
+      "first_seen_at": "2026-05-07"
+    },
+    {
+      "type": "news",
+      "title": "PCPJack Cloud Credential Worm — Exploits 5 CVEs to Spread Across Docker / Kubernetes / Redis / MongoDB / RayML; Telegram-Only Exfil; Actively Cleans TeamPCP Infections to Take Over the Niche",
+      "threat_score": 7,
+      "cve": "CVE-2025-29927, CVE-2025-55182, CVE-2026-1357, CVE-2025-9501, CVE-2025-48703",
+      "cvss": null,
+      "affected_technology": "Cloud control planes (Docker, Kubernetes, Redis, MongoDB, RayML) reachable from the internet; web stacks running Next.js, React Server Actions, WPVivid Backup, W3 Total Cache, CentOS Web Panel",
+      "summary": "Self-propagating credential-stealer leverages five CVEs across web frameworks and cloud control planes, harvests credentials with X25519+ChaCha20-Poly1305 exfil over Telegram REST APIs, lacks the standard cryptominer (suggesting former-TeamPCP-operator authorship), and includes 100% TeamPCP-eviction logic to monopolise the cloud-cred-worm niche.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-05-07"
+    },
+    {
+      "type": "news",
+      "title": "Ivanti EPMM CVE-2026-6973 (CVSS 7.2) — Authenticated-Admin RCE Actively Exploited; Added to CISA KEV With 2026-05-10 Federal Deadline",
+      "threat_score": 7,
+      "cve": "CVE-2026-6973, CVE-2026-5786, CVE-2026-5787, CVE-2026-5788, CVE-2026-7821",
+      "cvss": 7.2,
+      "affected_technology": "Ivanti Endpoint Manager Mobile (on-premises EPMM) ≤12.8.0.0; patched in 12.6.1.1 / 12.7.0.1 / 12.8.0.1; Ivanti Neurons for MDM unaffected",
+      "summary": "Improper input validation in EPMM admin interface lets authenticated administrators execute arbitrary code; very limited active exploitation reported, ~850 internet-exposed instances; CISA KEV added 2026-05-07 with Federal deadline 2026-05-10. Prior January chain (CVE-2026-1281+1340) was admin-RCE plus auth-bypass — assume an unauth companion is in private hands.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-05-07"
+    },
+    {
+      "type": "update",
+      "title": "Instructure / Canvas LMS — ShinyHunters Defaces 330 Login Portals; Final Tally 8,809 Institutions / 280M Records / 2026-05-12 Ransom Deadline",
+      "threat_score": 7,
+      "previous_threat_score": 6,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Instructure Canvas LMS (cloud SaaS — K-12, higher-ed, online learning) — affected: 8,809 educational institutions, 280M records",
+      "summary": "ShinyHunters published institution-by-institution record counts confirming 8,809 affected institutions and 280M records, then escalated to direct defacement of ~330 Canvas login portals (visible in mobile app) demanding ransom by 2026-05-12; the portal-defacement vulnerability is separate from the data-export abuse, indicating Instructure has at least two independent issues open.",
+      "first_seen_at": "2026-05-04"
+    },
+    {
+      "type": "news",
+      "title": "Claude Code MCP Hijacking + TrustFall Auto-Trust Folder Bypass (Adversa.AI) — Cross-Vendor AI-Coding-Agent Attack Chain Affects Claude Code, Gemini CLI, Cursor CLI, Copilot CLI",
+      "threat_score": 7,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Anthropic Claude Code, Google Gemini CLI, Cursor CLI, GitHub Copilot CLI — all four default to 'Yes/Trust' on folder-trust dialog and auto-spawn MCP servers from in-repo config",
+      "summary": "Two adjacent disclosures: (a) malicious npm postinstall writes pre-approved trust entries to ~/.claude.json and injects an attacker-controlled MCP proxy URL to silently harvest OAuth tokens; (b) Adversa TrustFall demonstrates a single-click folder-trust dialog auto-spawns MCP servers across all four major AI coding agents, yielding RCE-equivalent on dev workstations and CI runners. Anthropic declined the OAuth issue as out-of-scope.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-05-07"
+    },
+    {
+      "type": "news",
+      "title": "Cisco Unity Connection CVE-2026-20034 / CVE-2026-20035 — Authenticated SSRF Yields RCE as Root; Multi-Product Patch Batch",
+      "threat_score": 7,
+      "cve": "CVE-2026-20034, CVE-2026-20035, CVE-2026-20185, CVE-2026-20167, CVE-2026-20188",
+      "cvss": null,
+      "affected_technology": "Cisco Unity Connection (enterprise unified messaging / voicemail), SG350/SG350X switches (CVE-2026-20185 SNMP DoS), IoT Field Network Director (CVE-2026-20167 web DoS), CNC/NSO (CVE-2026-20188 unauth DoS — covered 2026-05-07)",
+      "summary": "Unity Connection authenticated SSRF allows arbitrary code execution as root via crafted HTTP requests; companion fixes for SG350 SNMP DoS and IoT FND web DoS in the same May 7 release wave; no active exploitation reported on any item.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-05-07"
+    },
+    {
+      "type": "news",
+      "title": "OpenStack Cyborg CVE-2026-40213 / CVE-2026-40214 — Unconditional-Allow Policy Default + Cross-Tenant ARQ Manipulation",
+      "threat_score": 5,
+      "cve": "CVE-2026-40213, CVE-2026-40214",
+      "cvss": null,
+      "affected_technology": "OpenStack Cyborg (accelerator-management service) — ≥3.0.0 <14.0.1, ≥15.0.0 <15.0.1, ≥16.0.0 <16.0.1; patches landed in 14.0.1 / 15.0.1 / 16.0.1",
+      "summary": "OSSA-2026-011 — default policy on device/deployable/attribute API endpoints uses unconditional-allow grants for any authenticated user (CVE-2026-40213, v5.0.0+), and Accelerator Request resources lack project-ownership validation enabling cross-tenant enumeration / modification / deletion (CVE-2026-40214, v3.0.0+).",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-05-07"
+    },
+    {
+      "type": "news",
+      "title": "Postorius (Mailman 3) ≤1.3.13 — Admin UI XSS Reported as Actively Exploited; No Patched Release Available",
+      "threat_score": 5,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Postorius — web admin UI for GNU Mailman 3 mailing-list software, versions ≤1.3.13 (latest tagged release)",
+      "summary": "Reflected/stored XSS in the Postorius admin UI is reported as actively exploited; the upstream fix was merged in January 2025 but no official Postorius release containing the patch exists, leaving any distribution that ships 1.3.13 vulnerable unless they backport.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-05-07"
+    },
+    {
+      "type": "news",
+      "title": "filebrowser CVE-2026-42542 (CVSS 9.1) — Unauth Path Traversal via Public Share DELETE API Enables Arbitrary File Deletion",
+      "threat_score": 5,
+      "cve": "CVE-2026-42542",
+      "cvss": 9.1,
+      "affected_technology": "filebrowser (Go-based self-hosted file management UI) — all versions before commit 0.0.0-20260501183844-112740bdd41d",
+      "summary": "Public-share DELETE API joins attacker-controlled path with a trusted base path before sanitization, allowing ../ traversal out of the shared directory; an unauthenticated attacker with a valid public-share hash and delete permissions can delete arbitrary files within the owner's storage scope.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-05-07"
+    },
+    {
+      "type": "news",
+      "title": "Linux Kernel KTLS + Sockmap Reverse-Order Use-After-Free (CVE Pending) — Container-Escape-Class With CAP_BPF + CAP_NET_ADMIN",
+      "threat_score": 4,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Linux kernel — KTLS + BPF sockmap interaction; confirmed on 6.12.77 (LTS), likely all kernels with both KTLS and sockmap support",
+      "summary": "Reverse-order setup (sockmap first, then tls_init) bypasses the existing forward-order guard; TCP receive queue is drained without sequence-number updates, leading to stale-data handling, kernel WARN_ON_ONCE crashes, and a UAF that may yield privesc following the CVE-2025-37756 exploitation pattern. Requires CAP_BPF + CAP_NET_ADMIN — privileged-container or limited-but-elevated user only.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-05-07"
+    }
+  ],
+  "noted": [
+    {
+      "cve": "CVE-2026-31431",
+      "product": "Linux kernel CopyFail / Copy Fail 2 / Dirty Frag (n-day)",
+      "summary": "SiCk (afflicted.sh) published an independent n-day weaponisation derived from the public netdev fix commit on 2026-05-07; explicitly without linux-distros embargo. Combined with Theori's prior 100%-reliable exploit, the Copy Fail family now has at least three public exploits; CISA Federal deadline remains 2026-05-15."
+    },
+    {
+      "cve": "None",
+      "product": "Cloudflare Copy Fail mitigation case study (2026-05-07)",
+      "summary": "Defensive case study on rolling Copy Fail mitigation across Cloudflare infrastructure with zero customer impact and no malicious exploitation in their fleet — useful template for any large Linux fleet that has not yet completed CVE-2026-31431 patching."
+    },
+    {
+      "cve": "None",
+      "product": "Dirty Frag Universal Linux LPE (no CVE)",
+      "summary": "Two-bug chain (xfrm ESP4/ESP6 + RxRPC/RxKAD) yields root via /usr/bin/su overwrite or /etc/passwd empty-password edit; PoC + 192-byte minimal ELF + fcrypt brute-force tool published at dirtyfrag.io; embargo broke pre-patch. LPE-only so out-of-immediate-scope, but watch for a CVE assignment in the next 14 days."
+    },
+    {
+      "cve": "None",
+      "product": "TCLBanker Brazilian banking trojan",
+      "summary": "Distributed via trojanised Logitech AI Prompt Builder MSI installer; self-spreads through WhatsApp web hijack and Outlook COM automation; targets 59 banking/fintech/crypto platforms but checks Brazilian timezone/keyboard/locale. LATAM-confined for now but historical pattern is geo-expansion within 6 months."
+    },
+    {
+      "cve": "None",
+      "product": "Microsoft Beagle backdoor via fake Claude AI website",
+      "summary": "Same ClickFix-class campaign as the 2026-04-18 fake-Claude-Installer disclosure, now with a dedicated Beagle Windows backdoor as second stage. Same defensive playbook: alert on claude.ai-impersonating domains in DNS / proxy logs."
+    },
+    {
+      "cve": "None",
+      "product": "Australia ACSC ClickFix → Vidar Stealer warning",
+      "summary": "Australian national advisory on ongoing ClickFix social engineering campaigns distributing Vidar Stealer; same SE class as BlackFile / SNOW / Cordial Spider. Vidar Stealer harvests browser creds and crypto wallets."
+    },
+    {
+      "cve": "None",
+      "product": "Google Ads → GoDaddy ManageWP login phishing",
+      "summary": "Sponsored-search-result poisoning targeting WordPress-management-plane creds; same general legitimate-channel-trust class as the Anodot SaaS-token theft pattern."
+    },
+    {
+      "cve": "None",
+      "product": "ZiChatBot PyPI supply-chain (uuid32-utils, colorinal, termncolor)",
+      "summary": "Three malicious PyPI packages uploaded July 2025 with combined ~2.5k downloads; uses Zulip REST API as C2 (novel channel — same defensive pattern as Telegram-API-as-C2); Kaspersky reports 64% similarity to OceanLotus / APT32 dropper."
+    },
+    {
+      "cve": "None",
+      "product": "intercom-client npm v7.0.4 + intercom-php Composer (Mini Shai-Hulud)",
+      "summary": "Compromised intercom-client release on 2026-04-30 15:00-17:00 UTC harvested cloud creds, env vars, .env files, GitHub/npm tokens, SSH keys; companion intercom-php Composer tag compromised same window. Already covered as part of Mini Shai-Hulud campaign — flagged here for explicit IOC reference and confirmation of multi-ecosystem reach (npm + PyPI + Composer)."
+    },
+    {
+      "cve": "CVE-2026-44523",
+      "product": "note-mark/backend (Go)",
+      "summary": "JWT secret weakness (CVSS 10.0) — backend accepts any base64-decodable string as JWT secret without minimum length / entropy enforcement, allowing offline brute-force of short keys to forge admin tokens. Niche application."
+    },
+    {
+      "cve": "CVE-2026-42596",
+      "product": "Gotenberg v8 (companion SSRF to CVE-2026-42589)",
+      "summary": "Same Gotenberg release adds an unauth SSRF in downloadFrom and webhook parameters via default deny-list bypass — less severe than the RCE but same defensive footing: put Gotenberg behind an authenticated reverse proxy."
+    },
+    {
+      "cve": "CVE-2026-41050",
+      "product": "Fleet (Helm impersonation)",
+      "summary": "GitOps Fleet operator allows Helm impersonation that retains cluster-admin during template rendering; niche but combines-with-Argo CD for K8s-native shops."
+    },
+    {
+      "cve": "CVE-2026-44484",
+      "product": "PyTorch Lightning 2.6.2 / 2.6.3",
+      "summary": "Already covered 2026-05-01 as Mini Shai-Hulud Python-ecosystem expansion; Lightning AI advisory now formalised as CVE on 2026-05-07 (CVSS 9.3)."
+    },
+    {
+      "cve": "None",
+      "product": "Linux io_uring zcrx freelist OOB write",
+      "summary": "CVE pending; Linux 6.15+ vulnerability with upstream fix landed 2026-04-21 (770594e) but not yet in stable; reporter behaviour suggests AI-generated disclosure with maintainer skepticism. Watch for CVE assignment."
+    },
+    {
+      "cve": "None",
+      "product": "Vim heap buffer overflow in spell file loading",
+      "summary": "Vim < 9.2.0450; integer overflow → heap-based buffer overflow on crafted .spl file. Requires modeline + crafted spell file in runtimepath OR explicit setlocal action. Practical impact is local DoS, not RCE; patched in 9.2.0450."
+    },
+    {
+      "cve": "None",
+      "product": "Chrome 148 stable — 127 security fixes",
+      "summary": "Critical integer overflow + use-after-free fixes among 127 — browser sandbox out of scope per Watchtower scope rules but worth tracking as a baseline-cadence indicator (127 fixes is unusually large)."
+    },
+    {
+      "cve": "None",
+      "product": "Microsoft April updates causing backup failures",
+      "summary": "Microsoft confirmed April patches blocked a vulnerable driver that some backup software depended on; workaround / hotfix expected. Operational only — no security impact in either direction."
+    },
+    {
+      "cve": "None",
+      "product": "Smart glasses for ICE (Schneier 2026-05-07)",
+      "summary": "ICE building face-recognition smart glasses linked to government databases. Out of scope but worth surfacing because surveillance-capability normalisation has secondary impacts on threat models for sensitive employees."
+    },
+    {
+      "cve": "None",
+      "product": "Taiwan High-Speed Rail TETRA replay attack",
+      "summary": "University student decoded TETRA radio parameters with SDR and transmitted General Alarm signal halting four trains for 48 minutes on 2026-04-05; OT-adjacent / out of scope but reinforces the pattern that long-deployed (19-year) TETRA networks with un-rotated parameters are exposed to hobbyist-level RF attacks."
+    },
+    {
+      "cve": "None",
+      "product": "EnOcean SmartServer building-automation flaws",
+      "summary": "Building-automation vulnerabilities exposing buildings to remote hacking; CVEs not enumerated in the headline; OT-adjacent."
+    },
+    {
+      "cve": "None",
+      "product": "TeamPCP moves from OSS to AWS environments",
+      "summary": "Threat-tracker update; primarily an attribution / scope item. Companion to the PCPJack-as-eviction-rival news (HIGH)."
+    },
+    {
+      "cve": "CVE-2026-41139",
+      "product": "math.js npm",
+      "summary": "Mathematical-library vulnerability (CVSS 8.8); ecosystem niche — relevant if you run math.js in a server context with untrusted input."
+    },
+    {
+      "cve": "CVE-2026-32686",
+      "product": "Hexpm Decimal (Erlang/Elixir)",
+      "summary": "Decimal-arithmetic library vulnerability; ecosystem niche."
+    },
+    {
+      "cve": "CVE-2026-41554",
+      "product": "WordPress Bricks Builder plugin",
+      "summary": "WP page-builder plugin vulnerability (CVSS 7.1); relevant to any WordPress fleet running Bricks."
+    },
+    {
+      "cve": "CVE-2026-41688",
+      "product": "Wallos (self-hosted subscription tracker)",
+      "summary": "Self-hosted subscription-tracker vulnerability (CVSS 7.7); narrow user base."
+    },
+    {
+      "cve": "CVE-2026-44520",
+      "product": "PyPI Docling-Graph",
+      "summary": "Python library vulnerability; medium severity; niche."
+    },
+    {
+      "cve": "CVE-2026-44544",
+      "product": "Go gittuf",
+      "summary": "Git-trust framework vulnerability; niche."
+    },
+    {
+      "cve": "CVE-2026-44264",
+      "product": "Weblate (translation platform)",
+      "summary": "Medium-severity Weblate vulnerability; niche."
+    },
+    {
+      "cve": "None",
+      "product": "Karakurt ransomware negotiator sentencing (Deniss Zolotarjovs)",
+      "summary": "Convicted for orchestrating extortion negotiations; legal-action item, not a finding."
+    },
+    {
+      "cve": "None",
+      "product": "Two US security experts sentenced for helping ransomware gang",
+      "summary": "Insider-threat ground-truth: practitioners-turning-criminal still happens (Goldberg + Martin, 4-year sentences each)."
+    },
+    {
+      "cve": "None",
+      "product": "Two Americans sentenced for North Korean laptop-farm operation",
+      "summary": "DPRK-IT-worker insider-risk pattern; the laptop-farm-as-service model is becoming a recurring criminal-justice case. Worth bookmarking for HR/IT teams running developer-hire pipelines."
+    }
+  ],
+  "source_coverage": {
+    "total": 30,
+    "checked": 19,
+    "with_findings": 12,
+    "unreachable": [
+      "cisa.gov",
+      "cisa.gov/known-exploited-vulnerabilities-catalog",
+      "attackerkb.com",
+      "packetstormsecurity.com",
+      "nvd.nist.gov",
+      "cve.mitre.org",
+      "cve.org",
+      "googleprojectzero.blogspot.com",
+      "msrc.microsoft.com/blog",
+      "hackerone.com/hacktivity",
+      "bugcrowd.com/disclosures"
+    ],
+    "degraded": []
+  },
+  "full_report": "reports/2026/05/08/report.md"
+}
