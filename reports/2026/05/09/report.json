@@ -1,0 +1,229 @@
+{
+  "date": "2026-05-09",
+  "findings": [
+    {
+      "type": "news",
+      "title": "ClaudeBleed — Claude Chrome Extension Multi-App Takeover (LayerX, Partial Patch)",
+      "threat_score": 9,
+      "cve": "Not yet assigned",
+      "cvss": null,
+      "affected_technology": "Anthropic Claude for Chrome browser extension",
+      "summary": "Claude for Chrome extension trusts page origin rather than execution context, letting any installed extension drive the Claude AI agent to exfiltrate from Gmail, GitHub, Drive, Notion; Anthropic's partial fix is bypassable via privileged mode.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-05-08"
+    },
+    {
+      "type": "news",
+      "title": "Polish ABW Reports ICS Breaches at Five Water-Treatment Plants — APT28 / APT29 / UNC1151",
+      "threat_score": 8,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Industrial Control Systems (water-treatment SCADA)",
+      "summary": "Poland's Internal Security Agency confirmed Russian APT28/APT29 and Belarusian UNC1151 modified equipment operational parameters at five water-treatment facilities in 2024-2025 via weak passwords and direct internet exposure.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-05-08"
+    },
+    {
+      "type": "news",
+      "title": "OpenClaw 9-CVE Batch — 3 Critical (Auth Bypass, LPE, CDP Exposure) — VulnCheck",
+      "threat_score": 8,
+      "cve": "CVE-2026-43575, CVE-2026-43576, CVE-2026-43577, CVE-2026-43578, CVE-2026-43579, CVE-2026-43580, CVE-2026-43581, CVE-2026-43582, CVE-2026-43583",
+      "cvss": null,
+      "affected_technology": "OpenClaw browser-automation platform",
+      "summary": "VulnCheck disclosed 9 OpenClaw vulnerabilities including critical noVNC auth bypass, async-event privilege escalation, and CDP-relay exposure that chain together for full sandbox escape; patched in 2026.4.10/2026.4.14.",
+      "discovery_latency": "late",
+      "first_seen_at": "2026-05-06"
+    },
+    {
+      "type": "news",
+      "title": "Open WebUI CVE-2026-44551 — LDAP Empty-Password Authentication Bypass",
+      "threat_score": 8,
+      "cve": "CVE-2026-44551",
+      "cvss": 9.1,
+      "affected_technology": "Open WebUI self-hosted AI front-end (versions ≤0.8.12)",
+      "summary": "Open WebUI fails to validate non-empty password before LDAP bind, so a single POST with valid username and empty password yields a full session token against default OpenLDAP / AD configurations; fixed in 0.9.0.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-05-08"
+    },
+    {
+      "type": "news",
+      "title": "FastGPT CVE-2026-42302 — Agent-Sandbox Unauth RCE on Port 8080",
+      "threat_score": 7,
+      "cve": "CVE-2026-42302",
+      "cvss": 9.8,
+      "affected_technology": "FastGPT AI orchestration platform",
+      "summary": "FastGPT agent-sandbox component disables authentication by default on port 8080, enabling unauthenticated remote code execution; second unauth-impact FastGPT CVE in 30 days.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-05-08"
+    },
+    {
+      "type": "news",
+      "title": "Braintrust SaaS-Token Theft — Third AI-Vendor-as-Credential-Warehouse Incident in 14 Days",
+      "threat_score": 7,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Braintrust AI evaluation/observability SaaS platform",
+      "summary": "Attacker accessed Braintrust's internal AWS account and harvested customer-stored org-level AI provider keys (OpenAI/Anthropic) with confirmed customer impact; third SaaS-token-theft incident in 14 days after Anodot and DigiCert.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-05-08"
+    },
+    {
+      "type": "news",
+      "title": "Postiz-app CVE-2026-42298 — Workflow Docker-Build RCE via PR (CVSS 10.0)",
+      "threat_score": 6,
+      "cve": "CVE-2026-42298",
+      "cvss": 10.0,
+      "affected_technology": "Postiz social-media scheduler open-source project",
+      "summary": "Postiz CI workflow trusts PR-submitted Dockerfile during build, allowing unauthenticated external contributors to execute arbitrary code in the build runner with workflow secrets in scope.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-05-08"
+    },
+    {
+      "type": "news",
+      "title": "PamDOORa — Linux PAM-Based SSH Backdoor Sold on Russian Forum",
+      "threat_score": 5,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Linux x86_64 (any OpenSSH-using distribution)",
+      "summary": "Flare.io published analysis of PamDOORa, a PAM-based post-exploitation backdoor advertised by 'darkworm' on Rehub forum since March 2026 with credential harvesting, magic-password SSH, log tampering, and anti-debugging.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-05-08"
+    },
+    {
+      "type": "news",
+      "title": "5 Malicious NuGet Packages Impersonate Chinese UI Libraries — Socket.dev",
+      "threat_score": 5,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "NuGet (.NET) ecosystem",
+      "summary": "Socket.dev disclosed five malicious NuGet packages posing as Chinese .NET UI libraries that deploy credential stealer plus cryptocurrency-wallet-theft tooling; first significant 2026 NuGet supply-chain wave after npm/PyPI/RubyGems/Go.",
+      "discovery_latency": "late",
+      "first_seen_at": "2026-05-06"
+    },
+    {
+      "type": "news",
+      "title": "electerm CVE-2026-43940 / 43944 — Path Traversal Arbitrary Code Execution",
+      "threat_score": 5,
+      "cve": "CVE-2026-43940, CVE-2026-43944",
+      "cvss": null,
+      "affected_technology": "electerm cross-platform Electron-based SSH/SFTP/Telnet terminal client",
+      "summary": "Two vulnerabilities in electerm allow arbitrary code execution via path traversal and via dangerous link/CLI handling; widely used by sysadmins/devs across Windows, Mac, Linux.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-05-08"
+    },
+    {
+      "type": "news",
+      "title": "MailEnable CVE-2026-44400 — WebAdmin Authorization Bypass",
+      "threat_score": 5,
+      "cve": "CVE-2026-44400",
+      "cvss": null,
+      "affected_technology": "MailEnable Windows-based mail server",
+      "summary": "Authorization bypass in MailEnable WebAdmin interface grants administrative access to mail-server management plane without proper authentication; full mail-flow / mailbox compromise from a single bypass.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-05-08"
+    },
+    {
+      "type": "update",
+      "title": "Ivanti EPMM CVE-2026-6973 — Vendor Patches Released, KEV Deadline 2026-05-10",
+      "threat_score": 8,
+      "previous_threat_score": 8,
+      "cve": "CVE-2026-6973",
+      "cvss": null,
+      "affected_technology": "Ivanti Endpoint Manager Mobile (versions ≤12.8.0.0)",
+      "summary": "Ivanti shipped 12.6.1.1/12.7.0.1/12.8.0.1 patches on 2026-05-08; CISA KEV-added the same day with 4-day federal deadline 2026-05-10; Shadowserver tracks 800+ exposed appliances and chain depends on prior CVE-2026-1281+1340 credential theft.",
+      "first_seen_at": "2026-05-07"
+    },
+    {
+      "type": "update",
+      "title": "Trellix Source-Code Breach — RansomHouse Claims Responsibility",
+      "threat_score": 6,
+      "previous_threat_score": 6,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Trellix XDR / EDR vendor source-code repository",
+      "summary": "RansomHouse publicly claimed the Trellix breach 2026-05-08 with stated intrusion date 2026-04-17 (3+ weeks before disclosure); screenshots indicate access to appliance management system; Fortune 100 supply-chain integrity concern.",
+      "first_seen_at": "2026-05-03"
+    },
+    {
+      "type": "update",
+      "title": "Dirty Frag Linux LPE — CVEs Assigned (CVE-2026-43284, CVE-2026-43500)",
+      "threat_score": 8,
+      "previous_threat_score": 8,
+      "cve": "CVE-2026-43284, CVE-2026-43500",
+      "cvss": null,
+      "affected_technology": "Linux kernel (Ubuntu, RHEL, CentOS Stream, AlmaLinux, openSUSE Tumbleweed, Fedora)",
+      "summary": "Wiz published Dirty Frag analysis with formal CVE assignments for the xfrm/ESP and RxRPC page-cache writes that chain for root via single command; Cloudflare published mitigation case study; embargo broken with public PoC, no upstream patch yet.",
+      "first_seen_at": "2026-05-08"
+    }
+  ],
+  "noted": [
+    {
+      "cve": null,
+      "product": "NVIDIA GeForce NOW Armenia (GFN.am) regional partner",
+      "summary": "Third-party partner breach exposing names/emails/phones/DOB/2FA-status of Armenian-region users; NVIDIA core infrastructure unaffected, regional/consumer scope only."
+    },
+    {
+      "cve": "CVE-2026-41928, CVE-2026-41929, CVE-2026-41930, CVE-2026-41931, CVE-2026-41934, CVE-2026-41936, CVE-2026-41938",
+      "product": "Vvveb CMS",
+      "summary": "VulnCheck 7-CVE batch 2026-05-06/07; small-deployment CMS with media-upload RCE and XXE-via-import worth attention if deployed."
+    },
+    {
+      "cve": "CVE-2022-50994",
+      "product": "DrayTek mainfunction.cgi",
+      "summary": "VulnCheck re-issued 2026-05-08; older OS command injection in DrayTek routers/VPN devices; verify against patched firmware levels."
+    },
+    {
+      "cve": "CVE-2026-7807",
+      "product": "SmarterTools",
+      "summary": "Local file inclusion via /api/v1/report/summary/{type} API endpoint; small-deployment mail/help-desk vendor, verify presence in fleet."
+    },
+    {
+      "cve": "CVE-2026-44326, CVE-2026-44327, CVE-2026-44329, CVE-2026-44330, CVE-2026-44315",
+      "product": "free5gc 5G Core (NEF + SMF)",
+      "summary": "Multiple unauthenticated NEF + SMF API exposures; primarily research/lab software with limited production deployment, telecom/lab tagging only."
+    },
+    {
+      "cve": "CVE-2026-20841",
+      "product": "Windows Notepad",
+      "summary": "RCE via markdown links in Windows Notepad <11.2510; multiple PoC repos surfaced; out of scope (desktop-only client) but noted for IR awareness."
+    },
+    {
+      "cve": "CVE-2026-2991",
+      "product": "KiviCare WordPress plugin",
+      "summary": "Auth bypass via patient-social-login REST endpoint; overlaps with prior 04-30 KiviCare batch coverage; PoC repo update only."
+    },
+    {
+      "cve": null,
+      "product": "Vim < 9.2.0450",
+      "summary": "Heap buffer overflow in spell-file loading disclosed 2026-05-07 on oss-security; local file-handling vector, not internet-facing."
+    },
+    {
+      "cve": "CVE-2025-70795, CVE-2026-0828",
+      "product": "STProcessMonitor BYOVD",
+      "summary": "Defender-evasion process-termination technique via vulnerable driver; out of scope (LPE / EDR-bypass only)."
+    }
+  ],
+  "source_coverage": {
+    "total": 30,
+    "checked": 21,
+    "with_findings": 11,
+    "unreachable": [
+      "cisa.gov",
+      "cisa.gov/known-exploited-vulnerabilities-catalog",
+      "attackerkb.com",
+      "bugcrowd.com/disclosures",
+      "cve.mitre.org",
+      "cve.org",
+      "hackerone.com/hacktivity",
+      "googleprojectzero.blogspot.com",
+      "cert.gov.ua"
+    ],
+    "degraded": [
+      "packetstorm.news",
+      "nvd.nist.gov",
+      "msrc.microsoft.com/blog",
+      "dbugs.ptsecurity.com"
+    ]
+  },
+  "full_report": "reports/2026/05/09/report.md"
+}
