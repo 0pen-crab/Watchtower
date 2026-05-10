@@ -1,0 +1,202 @@
+{
+  "date": "2026-05-10",
+  "findings": [
+    {
+      "type": "news",
+      "title": "xrdp CVE-2025-68670 — Pre-Auth Stack-Buffer-Overflow RCE on Widely Deployed RDP Server (Kaspersky, In-the-Wild)",
+      "threat_score": 8,
+      "cve": "CVE-2025-68670",
+      "cvss": null,
+      "affected_technology": "xrdp open-source RDP server (versions <0.10.5; backports <0.9.27, <0.10.4.1)",
+      "summary": "Kaspersky disclosed an unauthenticated stack-based buffer overflow in xrdp's user-domain processing during the initial RDP connect-sequence; attackers are using it for pre-auth RCE, privilege escalation, and lateral movement.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-05-09"
+    },
+    {
+      "type": "news",
+      "title": "JDownloader Official Site Compromise — Trojanised Windows Installer Drops Python RAT, Linux Installer Drops SUID-Root ELF",
+      "threat_score": 8,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "JDownloader 2 download manager — Windows .exe and Linux shell installers downloaded from official site 2026-05-06 00:01 UTC → 2026-05-07",
+      "summary": "Attackers compromised the JDownloader CMS and replaced Windows + Linux installers with a Python RAT loader and SUID-root ELF persistence kit; trojanised binaries signed by spoofed publishers; IOCs published.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-05-09"
+    },
+    {
+      "type": "update",
+      "title": "Open WebUI Multi-CVE Batch — Path Traversal RCE + Authorization Bypass + Stored XSS (Same Product, 24 Hours After LDAP Empty-Password Bypass)",
+      "threat_score": 8,
+      "previous_threat_score": 8,
+      "cve": "CVE-2026-44566, CVE-2026-44567, CVE-2026-44549",
+      "cvss": null,
+      "affected_technology": "Open WebUI self-hosted ChatGPT-style front-end",
+      "summary": "Three new High-severity Open WebUI advisories shipped 2026-05-09 (path-traversal RCE, improper authorization, Excel-preview stored XSS), 24 hours after CVE-2026-44551 LDAP empty-password bypass — fourth high-severity Open WebUI CVE in 30 days.",
+      "first_seen_at": "2026-05-09"
+    },
+    {
+      "type": "news",
+      "title": "cPanel & WHM CVE-2026-29201/29202/29203 — Second Emergency TSR in 10 Days",
+      "threat_score": 6,
+      "cve": "CVE-2026-29201, CVE-2026-29202, CVE-2026-29203",
+      "cvss": 8.8,
+      "affected_technology": "cPanel & WHM (multiple support branches across 11.86 → 11.136)",
+      "summary": "cPanel shipped a second TSR (after CVE-2026-41940 on 2026-04-28) fixing arbitrary file read (4.3), authenticated Perl RCE via plugin parameter (8.8), and symlink chmod LPE/DoS (8.8); requires authenticated context but second emergency batch in 10 days signals quality storm.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-05-09"
+    },
+    {
+      "type": "news",
+      "title": "Apache CloudStack 4.20.3.0 / 4.22.0.1 — 7-CVE Batch Including CVE-2026-25077 Direct Download Template RCE on KVM Hosts",
+      "threat_score": 6,
+      "cve": "CVE-2025-66170, CVE-2025-66171, CVE-2025-66172, CVE-2025-66467, CVE-2025-69233, CVE-2026-25077, CVE-2026-25199",
+      "cvss": null,
+      "affected_technology": "Apache CloudStack (versions <4.20.3.0 / <4.22.0.1)",
+      "summary": "Apache CloudStack LTS 4.20.3.0 / 4.22.0.1 patches 7 CVEs including account-user template-registration command injection that executes on KVM hypervisor hosts plus multiple cross-tenant authorization bypasses across backups, MinIO bucket policy, and Proxmox extension.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-05-09"
+    },
+    {
+      "type": "news",
+      "title": "Termix CVE-2026-42454 — Docker Container Management Endpoint Command Injection (CVSS 9.9)",
+      "threat_score": 5,
+      "cve": "CVE-2026-42454",
+      "cvss": 9.9,
+      "affected_technology": "Termix web-based SSH/SFTP/Docker terminal (versions <2.1.0)",
+      "summary": "Termix interpolates the containerId parameter directly into shell commands executed via ssh2.Client.exec() against managed hosts without sanitisation, letting an authenticated attacker inject OS commands and gain RCE on every Docker host the Termix instance manages.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-05-08"
+    },
+    {
+      "type": "news",
+      "title": "Hugging Face Open-OSS/privacy-filter Typosquat — OpenAI-Impersonating Repo Pushes Rust Infostealer (244k Downloads, Trending)",
+      "threat_score": 5,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Hugging Face platform — typosquat repository impersonating OpenAI's Privacy Filter release",
+      "summary": "HiddenLayer disclosed a Hugging Face typosquat reaching trending status with 244k downloads that delivered a Rust infostealer harvesting browsers, Discord, crypto wallets, SSH/FTP/VPN credentials, and screenshots; second Hugging Face supply-chain incident in 11 days after CVE-2026-25874 LeRobot.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-05-09"
+    }
+  ],
+  "noted": [
+    {
+      "cve": "CVE-2026-20188",
+      "product": "Cisco Crosswork Network Controller / Network Services Orchestrator",
+      "summary": "Unauth network DoS via inadequate connection rate-limiting; manual reboot required to recover; no exploitation reported."
+    },
+    {
+      "cve": null,
+      "product": "TCLBANKER LATAM Windows banking trojan (Elastic Security Labs)",
+      "summary": "Trojanised Logitech AI Prompt Builder MSI delivers Brazilian banking trojan targeting 59 financial platforms and self-spreads via WhatsApp + Outlook worm modules."
+    },
+    {
+      "cve": "CVE-2026-6664, CVE-2026-6665",
+      "product": "PgBouncer (Postgres connection pooler)",
+      "summary": "Integer overflow in packet parsing (6664) plus missing strlcat() return-value check in SCRAM code (6665) in PgBouncer <1.25.2; widely deployed Postgres pooler."
+    },
+    {
+      "cve": "CVE-2026-44843",
+      "product": "LangChain-core (pip)",
+      "summary": "Unsafe deserialization through overly permissive allowlists; adds to ML-pipeline-deserialization pattern (Apache OpenNLP, HuggingFace LeRobot/Marimo)."
+    },
+    {
+      "cve": "CVE-2026-42271",
+      "product": "BerriAI/LiteLLM MCP server",
+      "summary": "MCP server test endpoint accepts stdio-transport configurations enabling authenticated arbitrary command execution; another MCP-server authorisation issue."
+    },
+    {
+      "cve": "CVE-2026-44895",
+      "product": "@yoda.digital/gitlab-mcp-server (npm)",
+      "summary": "SSE transport with no authentication and wildcard CORS exposes GitLab tools to any caller; same auth-defaults pattern as prior MCP-server CVEs."
+    },
+    {
+      "cve": "CVE-2026-44588",
+      "product": "siyuan-note (Go)",
+      "summary": "Electron Renderer RCE via XSS in aria-label sink; incomplete fix for prior CVE-2026-34585 — second iteration on same code path."
+    },
+    {
+      "cve": "CVE-2026-42215",
+      "product": "GitPython (pip)",
+      "summary": "Newline injection in config_writer() section parameter bypasses prior CVE-2026-42215 patch enabling RCE; incomplete fix, third major GitPython advisory in 2026."
+    },
+    {
+      "cve": "CVE-2026-44966",
+      "product": "Velocity.js (npm)",
+      "summary": "Prototype pollution via #set path assignment in widely-embedded Node.js templating engine."
+    },
+    {
+      "cve": "CVE-2026-44983",
+      "product": "smallbitvec (Rust)",
+      "summary": "Integer overflow in safe API triggers heap buffer overflow; relevant to Rust projects pulling smallbitvec as a transitive dependency."
+    },
+    {
+      "cve": "CVE-2026-41705",
+      "product": "Spring AI MilvusVectorStore",
+      "summary": "Filter-expression vulnerability in doDelete; another instance of the Spring AI / vector-DB weakness class."
+    },
+    {
+      "cve": "CVE-2026-44832",
+      "product": "Snipe-IT (Composer)",
+      "summary": "Privilege escalation via API permissions in commonly self-hosted IT-asset tracker."
+    },
+    {
+      "cve": "CVE-2026-42605, CVE-2026-42606",
+      "product": "AzuraCast web-radio management",
+      "summary": "Path-traversal media-upload RCE (8.8) plus ApplyXForwarded middleware password-reset poisoning (8.1); fixed 0.23.6, internet-facing niche."
+    },
+    {
+      "cve": "CVE-2026-42569",
+      "product": "phpVMS PHP airline-simulation app",
+      "summary": "Unauthenticated access to legacy import feature (CVSS 9.4); niche but unauth — fixed in 7.0.6."
+    },
+    {
+      "cve": null,
+      "product": "Linux io_uring zcrx freelist (oss-security 2026-05-08)",
+      "summary": "Out-of-bounds write in io_uring zero-copy receive freelist; CVE pending — chains naturally with Dirty Frag / Copy Fail for container-host LPE."
+    },
+    {
+      "cve": "Multiple",
+      "product": "Go 1.26.3 / Go 1.25.10 security release",
+      "summary": "11 security fixes shipped 2026-05-08 in Go runtime; review service-rebuild plan."
+    },
+    {
+      "cve": "CVE-2026-42189",
+      "product": "Eugeny russh SSH library",
+      "summary": "Pre-authentication DoS in russh via malformed packets (CVSS 7.5); track if russh is embedded in your stack."
+    },
+    {
+      "cve": "CVE-2025-68463",
+      "product": "BioPython <1.87",
+      "summary": "XXE plus SSRF in bioinformatics library; relevant if pipelines accept user-supplied XML."
+    },
+    {
+      "cve": "CVE-2026-43125",
+      "product": "Linux kernel dlm subsystem",
+      "summary": "OpenCVE claims out-of-bounds write in dlm_dump_rsb_name() (CVSS 9.8); verify against upstream kernel.org advisories."
+    }
+  ],
+  "source_coverage": {
+    "total": 30,
+    "checked": 21,
+    "with_findings": 12,
+    "unreachable": [
+      "cisa.gov",
+      "cisa.gov/known-exploited-vulnerabilities-catalog",
+      "attackerkb.com",
+      "bugcrowd.com/disclosures",
+      "cve.mitre.org",
+      "cve.org",
+      "hackerone.com/hacktivity",
+      "googleprojectzero.blogspot.com",
+      "trendmicro.com"
+    ],
+    "degraded": [
+      "packetstorm.news",
+      "nvd.nist.gov",
+      "msrc.microsoft.com/blog",
+      "dbugs.ptsecurity.com"
+    ]
+  },
+  "full_report": "reports/2026/05/10/report.md"
+}

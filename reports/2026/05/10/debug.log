@@ -1,0 +1,121 @@
+==== Watchtower run debug log — 2026-05-10 ====
+
+00:00 UTC  Run started.
+00:00 UTC  Step 1 — git pull. Already up to date. Working dir clean.
+
+00:01 UTC  Step 2 — Build dedup index from last 30 days.
+           Range: 2026-04-10 → 2026-05-09. 415 prior advisory/noted entries indexed (reports/2026/04/14..30 + reports/2026/05/01..09).
+           Index saved to /tmp/dedup_index.txt (in-session memory).
+
+00:02 UTC  Step 3 — Source coverage. SOURCES.md = 30 unique sources after de-duplicating seclists/fulldisclosure (listed twice).
+
+00:02 UTC  --- Tier 1 ---
+00:02 UTC  bleepingcomputer.com           ✅  ~3s   15 stories surfaced; JDownloader hack and Hugging Face OpenAI typosquat are net-new.
+00:02 UTC  thehackernews.com              ✅  ~3s   cPanel/WHM 3-CVE batch (29201/29202/29203) — net-new (vendor TSR May 8).
+00:02 UTC  securityweek.com               ✅  ~3s   May 9-10 page slow to refresh; relied on May 8 articles for Trellix / Canvas / Polish ICS dedup.
+00:03 UTC  cisa.gov / KEV                 ❌  403   Persistent block — relayed via THN/SecurityWeek for any KEV mention.
+00:03 UTC  github.com/search?q=CVE        ✅  ~4s   Most-active repos: Dirty Frag (43284/43500), Copy Fail (31431) — both already covered.
+00:03 UTC  schneier.com                   ✅  ~2s   No vuln-relevant content (squid blog, smart glasses, polymarket).
+00:03 UTC  krebsonsecurity.com            ✅  ~3s   Canvas extortion (5/7) covered; nothing new in last 24h.
+00:03 UTC  rapid7.com/blog                ✅  ~3s   Metasploit 5/8 wrap-up = anonymous-FTP scanner update only (no new module CVEs).
+00:04 UTC  attackerkb.com                 ❌  403   Persistent block.
+00:04 UTC  fortinet.com/blog/threat-research ✅ ~3s  No May 2026 posts; latest April 17.
+00:04 UTC  securitylab.github.com         ✅  ~3s   Quarkus CVE-2026-39852 (May 6) already in 2026-05-07 reports — no new May 9-10 advisories.
+00:04 UTC  seclists.org/fulldisclosure    ⚠️  redirect to seclists.org root; archive shows April content only — no May posts disclosed via this channel yet.
+00:05 UTC  packetstormsecurity.com → packetstorm.news  ⚠️  Homepage only (no listing detail accessible via WebFetch).
+00:05 UTC  opencve.io                     ⚠️  Homepage degraded (marketing page); reachable via app.opencve.io subpaths — used CWE-78 + critical filters for fresh CVEs.
+
+00:05 UTC  --- Tier 2 ---
+00:05 UTC  nvd.nist.gov                   ⚠️  Homepage only (search-results page requires form post; degraded).
+00:05 UTC  cve.mitre.org / cve.org        ❌  JS-required pages, redirect / empty content.
+00:05 UTC  googleprojectzero.blogspot.com ❌  Redirect to projectzero.google/, JS-required.
+00:05 UTC  blog.cloudflare.com/tag/security ✅ ~2s  One May post (5/7 Copy Fail mitigation case study) — already covered.
+00:05 UTC  msrc.microsoft.com/blog        ⚠️  Empty page via WebFetch (degraded).
+00:05 UTC  hackerone.com/hacktivity       ❌  JS-required.
+00:05 UTC  bugcrowd.com/disclosures       ❌  404 (URL change unresolved since 2026-04-14).
+00:05 UTC  kb.cert.org/vuls               ✅  ~2s   Only May entry: VU#260001 Dirty Frag (5/8) — already covered.
+00:06 UTC  avleonov.com                   ✅  ~2s   No May posts.
+00:06 UTC  github.com/0xMarcio/cve        ✅  ~3s   Most-active: Dirty Frag + Copy Fail PoCs — already covered. cPanel CVE-2026-41940 PoC active.
+00:06 UTC  dbugs.ptsecurity.com           ⚠️  Stats only (no listing detail accessible via WebFetch).
+00:06 UTC  habr/tomhunter                 ⚠️  No May 2026 posts visible (latest March 2025).
+00:06 UTC  teletype/cyberok               ⚠️  No May 2026 posts visible (latest February 2026).
+00:06 UTC  cert.gov.ua                    ❌  Empty content via WebFetch.
+
+00:07 UTC  --- Off-list (SOURCES_BACKLOG / pattern-derived) ---
+00:07 UTC  openwall.com/lists/oss-security/2026/05/  ✅ ~3s  Apache CloudStack 7-CVE batch (2026-05-09) is the headline new disclosure.
+00:07 UTC  github.com/advisories                       ✅ ~4s  May 9 critical/high batch: free5gc additions, PgBouncer, Open WebUI multi-CVE follow-up, GitPython incomplete-fix, smallbitvec, Velocity.js, LangChain-core, Snipe-IT, siyuan-note, MilvusVectorStore, Termix.
+00:07 UTC  vulncheck.com/advisories                    ✅ ~3s  Mostly relays of yesterday's content; CVE-2026-7875 NanoClaw container/host boundary noted.
+00:07 UTC  wiz.io/blog                                 ✅ ~3s  Dirty Frag analysis (5/8) already covered.
+00:07 UTC  socket.dev/blog                             ✅ ~3s  No new May 9 entries beyond yesterday's NuGet wave.
+00:08 UTC  aikido.dev/blog                             ✅ ~3s  Latest is 2026-05-07 Telegram-RAT npm post — already noted.
+00:08 UTC  safedep.io                                  ✅ ~3s  martinez-polygon-clipping-tony npm Telegram RAT (5/7); node-env-resolve full RAT (5/3) — both noted.
+00:08 UTC  snyk.io/blog                                ✅ ~2s  No May 9-10 posts visible; latest April 30.
+00:08 UTC  trendmicro.com/research                     ❌  403 via WebFetch.
+00:08 UTC  kaspersky/securelist.com                    ✅ ~3s  CVE-2025-68670 xrdp pre-auth RCE — KEY finding for today's report.
+
+00:10 UTC  Step 4 — Triage decisions.
+
+           NEW (sufficient material change):
+             - xrdp CVE-2025-68670                                    NEW   score 8 (pre-auth RCE, ITW exploitation)
+             - JDownloader official-site CMS hijack                   NEW   score 8 (cross-platform, IOCs published)
+             - Open WebUI multi-CVE batch (44566/44567/44549)         UPDATE on yesterday's 44551 LDAP bypass — same product, 24h apart, additional High-severity CVE batch
+             - cPanel/WHM 29201/29202/29203 (second TSR in 10 days)   NEW   score 6 (auth required, but quality-storm signal)
+             - Apache CloudStack 4.20.3.0/4.22.0.1 7-CVE batch        NEW   score 6 (CVE-2026-25077 KVM-host RCE + cross-tenant)
+             - Termix CVE-2026-42454                                  NEW   score 5 (CVSS 9.9, niche product)
+             - Hugging Face Open-OSS/privacy-filter typosquat         NEW   score 5 (Rust infostealer, 244k DLs)
+
+           SKIP (already covered in last 30d):
+             - Dirty Frag CVE-2026-43284/43500           SKIP (already in 2026-05-09)
+             - Copy Fail CVE-2026-31431 PoC churn        SKIP (already covered through 2026-05-08)
+             - cPanel CVE-2026-41940                     SKIP (covered 2026-04-30 → 2026-05-04)
+             - PamDOORa Linux backdoor                   SKIP (already in 2026-05-09)
+             - Polish ICS APT28/APT29 disclosure         SKIP (already in 2026-05-09)
+             - Trellix RansomHouse claim                 SKIP (already in 2026-05-09)
+             - Ivanti EPMM CVE-2026-6973                 SKIP (already in 2026-05-09; today is the federal deadline — noted only)
+             - ClaudeBleed                               SKIP (already in 2026-05-09)
+             - Canvas/Instructure portal-defacement      SKIP (already in 2026-05-08; deadline is May 12, no new tech detail)
+             - NVIDIA GeForce NOW Armenia                SKIP (already in 2026-05-09 noted)
+             - PCPJack worm                              SKIP (already in 2026-05-08)
+             - Quasar Linux RAT                          SKIP (already in 2026-05-06)
+             - PyTorch Lightning Mini Shai-Hulud         SKIP (already in 2026-05-01..03)
+             - Microsoft Code-of-Conduct AiTM            SKIP (already in 2026-05-06)
+             - DAEMON Tools supply chain                 SKIP (already in 2026-05-04..07)
+             - Postorius CVE                             SKIP (already in 2026-05-08)
+             - GitPython newline-injection bypass        NOTE-ONLY (incomplete-fix flagged for pattern tripwire — not a fresh News)
+             - Quarkus CVE-2026-39852                    SKIP (already in 2026-05-07 noted)
+             - free5gc bulk CVEs                         SKIP (already in 2026-05-09 noted)
+
+           NOTED tier additions (low-impact-but-tracked):
+             - Cisco Crosswork CNC/NSO DoS CVE-2026-20188
+             - TCLBANKER LATAM banking trojan
+             - PgBouncer CVE-2026-6664/6665
+             - LangChain-core CVE-2026-44843
+             - LiteLLM CVE-2026-42271 MCP test endpoint
+             - @yoda.digital/gitlab-mcp-server CVE-2026-44895
+             - siyuan-note CVE-2026-44588 (incomplete-fix #34585)
+             - GitPython CVE-2026-42215 incomplete-fix
+             - Velocity.js CVE-2026-44966 prototype-pollution
+             - smallbitvec CVE-2026-44983 Rust integer-overflow → heap-overflow
+             - Spring AI MilvusVectorStore CVE-2026-41705
+             - Snipe-IT CVE-2026-44832 priv-esc
+             - AzuraCast CVE-2026-42605/42606
+             - phpVMS CVE-2026-42569 (CVSS 9.4 unauth)
+             - io_uring zcrx OOB write (CVE pending)
+             - Go 1.26.3 / 1.25.10 11-CVE security release
+             - Russh CVE-2026-42189 SSH lib DoS
+             - BioPython 1.87 CVE-2025-68463
+             - Linux kernel CVE-2026-43125 (verify with upstream)
+
+00:25 UTC  Step 5 — write reports/2026/05/10/report.md (template-conformant) and report.json.
+
+00:33 UTC  Step 6 — write debug.log (this file).
+
+00:34 UTC  Step 7 — validation:
+           Source coverage tally before write: total=30, checked=21, with_findings=12, unreachable=9, degraded=4.
+           Constraint: checked >= total - len(unreachable) → 21 >= 30 - 9 = 21 ✓.
+           $ python3 scripts/validate_report.py reports/2026/05/10/report.json
+           ✅ reports/2026/05/10/report.json — valid
+
+00:35 UTC  Step 8 — git add + commit + push (after this log written).
+
+==== End of run ====
