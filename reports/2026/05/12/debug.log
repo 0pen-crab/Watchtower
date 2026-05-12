@@ -1,0 +1,127 @@
+==== Watchtower run debug log — 2026-05-12 ====
+
+00:00 UTC  Run started.
+00:00 UTC  Step 1 — git pull. Already up to date. Working dir clean.
+
+00:01 UTC  Step 2 — Build dedup index from last 30 days.
+           Range: 2026-04-12 → 2026-05-11. 406 prior advisory/noted entries indexed across reports/2026/04/14..30 and reports/2026/05/01..10.
+           Unique CVE count: 353 (saved to /tmp/dedup_cves.txt).
+           Dedup hits applicable to today's candidates:
+             - CVE-2026-31431  → covered (Copy Fail) — base; today's Dirty Frag UPDATE is on the chained CVEs.
+             - CVE-2026-41940  → covered (cPanel) — 2026-05-11 active-exploitation note relayed but no new defensive update beyond prior CRITICAL.
+             - CVE-2026-42208  → covered 2026-04-29 (LiteLLM SQLi CRITICAL) — today's KEV addition triggers UPDATE.
+             - CVE-2026-43284  → covered 2026-05-08 (Dirty Frag) — today's MS Defender ITW confirmation triggers UPDATE.
+             - CVE-2026-43500  → covered 2026-05-08 (Dirty Frag) — same UPDATE.
+             - CVE-2026-44008/44009 → covered 2026-05-07/08 (vm2 escapes) — no material change.
+             - CVE-2026-44315/26/27/29/30 → covered 2026-05-09 (free5gc 5G core) — no material change.
+             - CVE-2026-44351 → covered 2026-05-07 (fast-jwt) — no material change.
+             - CVE-2026-44983 → covered (npm-related earlier note) — no change.
+
+00:02 UTC  Step 3 — Source coverage. SOURCES.md = 30 unique sources after de-duplicating seclists/fulldisclosure (listed twice).
+
+00:02 UTC  --- Tier 1 ---
+00:02 UTC  bleepingcomputer.com           ✅  ~3s   May 11 stories: Checkmarx Jenkins plugin compromise, GhostLock PoC, Instructure XSS root-cause, Google AI 0-day, TrickMo Android — net-new entries.
+00:02 UTC  thehackernews.com              ✅  ~3s   TeamPCP Checkmarx attribution + cPanel 41940 active-exploitation update + Google GTIG AI 0-day + LiteLLM KEV add — net-new.
+00:03 UTC  securityweek.com               ✅  ~3s   Dirty Frag ITW evidence, SailPoint disclosure, Google AI 0-day, Frame Security funding, Crimenetwork takedown — net-new.
+00:03 UTC  cisa.gov / KEV                 ❌  403   Persistent block; relayed LiteLLM KEV via Security Affairs and Help Net Security.
+00:03 UTC  github.com/search?q=CVE        ✅  ~4s   Most-active PoC repos: Dirty Frag, Copy Fail, cPanel 41940, Telnet (CVE-2026-24061) — Dirty Frag PoC activity confirms ITW context.
+00:03 UTC  schneier.com                   ✅  ~2s   2026-05-11 post on LLM text-in-text steganography — research note, no defensive urgency. Noted.
+00:03 UTC  krebsonsecurity.com            ✅  ~3s   Latest post is 2026-05-07 (Canvas) — no May 11/12 content; nothing new.
+00:03 UTC  rapid7.com/blog                ✅  ~3s   No May 11 Metasploit wrap-up yet (Friday 2026-05-08 was last); nothing new beyond cover-page listings.
+00:04 UTC  attackerkb.com                 ❌  403   Persistent block.
+00:04 UTC  fortinet.com/blog/threat-research ⚠️ ~3s  No May 2026 posts; latest April 17 — degraded.
+00:04 UTC  securitylab.github.com         ✅  ~3s   Only May 2026 advisory is GHSL-2026-099 Quarkus CVE-2026-39852 (2026-05-06) — already in dedup.
+00:04 UTC  seclists.org/fulldisclosure    ⚠️  ~3s   No May 11/12 archive entries visible; archive still shows April content — degraded.
+00:05 UTC  packetstormsecurity.com → packetstorm.news  ⚠️  Homepage only (no listing detail accessible via WebFetch).
+00:05 UTC  opencve.io / app.opencve.io    ✅  ~3s   Top CVE published 2026-05-11/12: CVE-2026-43186 Linux IPv6 IOAM CVSS 9.8 — noted (IOAM rarely enabled). Pi-hole 41489 LPE noted. LiteLLM vendor query confirms 42208 / 42271 baseline.
+
+00:05 UTC  --- Tier 2 ---
+00:05 UTC  nvd.nist.gov                   ⚠️  Search-results page requires form post; only last-20 scored page visible — degraded.
+00:05 UTC  cve.mitre.org / cve.org        ❌  JS-required pages, redirect / empty content.
+00:05 UTC  googleprojectzero.blogspot.com ❌  Redirect to projectzero.google/, JS-required.
+00:05 UTC  blog.cloudflare.com/tag/security ✅ ~2s  Only May post is 2026-05-07 Copy Fail mitigation case study (already covered).
+00:06 UTC  msrc.microsoft.com/blog        ⚠️  Page renders only footer/nav via WebFetch (degraded). Patch Tuesday is 2026-05-12 evening UTC — content arrives outside this report cycle window.
+00:06 UTC  hackerone.com/hacktivity       ❌  JS-required.
+00:06 UTC  bugcrowd.com/disclosures       ❌  404 (URL change unresolved since 2026-04-14).
+00:06 UTC  kb.cert.org/vuls               ✅  ~3s   VU#937808 Casdoor file-write, VU#471747 dnsmasq multi-CVE — both 2026-05-11 — net-new noted.
+00:06 UTC  avleonov.com                   ✅  ~2s   2026-05-08 Dirty Frag analysis (already covered as base; today's MS-Defender ITW is the UPDATE).
+00:07 UTC  github.com/0xMarcio/cve        ✅  ~3s   Most-active PoC repos = Dirty Frag, Copy Fail, cPanel 41940, Telnet — all in dedup.
+00:07 UTC  dbugs.ptsecurity.com           ⚠️  Top entries: Deepchat CVE-2026-43899/43900 (9.6/9.3), Vaultwarden CVE-2026-43912/13/14 — all noted-tier.
+00:07 UTC  habr/tomhunter                 ⚠️  No May 2026 posts (latest March 2026) — degraded.
+00:07 UTC  teletype/cyberok               ⚠️  No May 2026 posts (latest February 2026) — degraded.
+00:07 UTC  cert.gov.ua                    ❌  Empty content via WebFetch.
+
+00:08 UTC  --- Off-list (high-value sources from MEMORY) ---
+00:08 UTC  openwall.com/lists/oss-security/2026/05/11/  ✅ ~3s
+           Day's posts:
+             - CVE-2026-44931 malcontent D-Bus DoS — noted.
+             - CVE-2026-8177 XML::LibXML OOB read — niche Perl, skip.
+             - CVE-2026-5084 WebDyne::Session insecure ID — niche Perl, skip.
+             - Linux KTLS+sockmap UAF (3 follow-ups) — already covered 2026-05-08.
+             - CVE-2026-44916 Ironic Anaconda RCE — noted.
+             - CVE-2026-7210 CPython expat hash-flood — noted.
+             - hathor-wallet-headless fail-open auth — wallet-only, skip.
+             - dnsmasq multi-CVE — noted (also via CERT VU#471747).
+             - OpenSSL ARM64 SM2 timing side-channel — niche, skip.
+             - CVE-2026-6146 Amazon::Credentials weak rand() — niche Perl, skip.
+             - CVE-2026-45186 libexpat DoS — noted.
+             - CVE-2026-7010 HTTP::Tiny CRLF — noted.
+00:08 UTC  openwall.com/lists/oss-security/2026/05/12/  — empty (no posts for today yet at run time).
+00:09 UTC  github.com/advisories (critical + high, 2026-05-11)  ✅ ~5s
+           Critical (May 11–12 window): CVE-2026-43898 sandboxjs, CVE-2026-27478 Unity Catalog, CVE-2026-25244 WebdriverIO BrowserStack, CVE-2026-44643 angular-expressions, CVE-2026-44477 cloudnative-pg, CVE-2026-44336 PraisonAI, free5gc 5-CVE batch (already dedup), vm2 CVE-2026-44008/44009 (already dedup), CVE-2026-44523 note-mark (already dedup), siyuan/electerm RCE batch (44588/44670/43944/43940), CVE-2026-37709 snipe-it.
+           High (May 11–12 window): Next.js 6-CVE batch (44573/74/75/78/79, 45109) — promoted to HIGH section; CVE-2026-45033 GitHub Copilot CLI nested-bare-repo — promoted to HIGH section; CVE-2026-40217 LiteLLM custom-code guardrail (noted, separate from KEV); CVE-2026-45061 budibase, CVE-2026-45047 bird-lg-go, CVE-2026-44543 local-path-provisioner, CVE-2026-44521 elFinder, CVE-2026-39850 Yii2, mantisbt XSS cluster (multiple), CVE-2026-44211 cline WebSocket hijacking.
+00:09 UTC  vulncheck.com/advisories                    ✅ ~3s  OpenClaw 16-CVE batch (CVE-2026-44991 → CVE-2026-45006, 2026-05-11) — UPDATE. Bitwarden Server 3-CVE batch (CVE-2026-43638/39/40) — noted. CVE-2026-45222 Summarize daemon — noted.
+00:09 UTC  labs.watchtowr.com                          ⚠️ ~2s  No May 2026 posts; latest April 29 — degraded.
+00:09 UTC  wiz.io/blog                                 ✅ ~3s  2026-05-11 Service Ownership post (marketing); 2026-05-08 Dirty Frag (covered); 2026-05-08 AI Threat Readiness framework (research note).
+00:10 UTC  socket.dev/blog                             ✅ ~3s  No new May 11/12 entries; 2026-05-08 TanStack 84-artifact post relevant to Mini Shai-Hulud UPDATE context.
+00:10 UTC  aikido.dev/blog                             ✅ ~3s  HEADLINE: Mini Shai-Hulud Is Back — 169-package count, TanStack + UiPath inclusion confirmed 2026-05-12. UPDATE primary source.
+00:10 UTC  safedep.io/blog                             ⚠️ ~3s  Latest is 2026-05-10 noon-contracts npm DeFi RAT — published before window; not a today-cycle item.
+00:10 UTC  securityaffairs.com                         ✅ ~3s  LiteLLM CISA KEV addition (CVE-2026-42208 CVSS 9.3); Google AI exploit warning; Crimenetwork takedown — net-new.
+00:10 UTC  helpnetsecurity.com                         ✅ ~3s  South Staffordshire Water 2-year intrusion; Google AI 0-day; Linux kernel killswitch debate — net-new (Skoda, S Staffordshire noted).
+
+00:11 UTC  Step 4 — Dedup triage decisions:
+           Findings retained:
+             - Mini Shai-Hulud 169-package wave         → UPDATE (escalation, prev_score=9, curr_score=9 — held flat; escalation expressed via scope, not numeric).
+             - LiteLLM CVE-2026-42208 KEV add           → UPDATE (prev=9, curr=10).
+             - Checkmarx Jenkins AST plugin             → NEWS (new attack vector, distinct distribution channel; TeamPCP attribution explicit).
+             - Google GTIG AI-built 0-day               → NEWS (first ITW AI-built exploit; pattern signal).
+             - Dirty Frag MS-Defender ITW + GLPI chain  → UPDATE (prev=8, curr=9; ITW confirmation is material).
+             - GitHub Copilot CLI CVE-2026-45033        → NEWS (5th AI-agent surface; nested-bare-repo mechanism distinct from prior).
+             - Next.js 6-CVE batch                      → NEWS (coordinated CVE batch; first Next.js MW-bypass cluster of 2026).
+             - VulnCheck OpenClaw 16-CVE batch          → UPDATE (prev=8, curr=8 — second batch in 72h, escalation by volume not numeric).
+             - GhostLock Windows file-lock PoC          → NEWS (disruption-class, score 5).
+           Items skipped or kept in Noted:
+             - cPanel CVE-2026-41940 active exploitation note (THN) → SKIP for separate UPDATE (prior coverage already at score 10 with KEV + ransomware monetisation; no defensive change beyond prior reports).
+             - Bitwarden Server 3-CVE batch → NOTED (self-hosted only).
+             - All other GHSA critical/high advisories from 2026-05-11/12 not directly load-bearing → NOTED.
+             - VU#937808 Casdoor + VU#471747 dnsmasq → NOTED.
+             - Skoda, NVIDIA GeForce NOW Armenian, South Staffordshire Water, Crimenetwork → NOTED (breach/operational reporting).
+             - Schneier LLM-stego, TrickMo Android → NOTED (research / out-of-scope).
+             - Instructure root-cause XSS → NOTED (incident already covered; root-cause confirmation is not a new advisory).
+             - SailPoint GitHub hack → NOTED (no customer-data impact per vendor; track vendor-source-code-theft cluster).
+
+00:12 UTC  Step 5 — Writing report.md and report.json.
+           Findings count: 9 (3 update, 6 news, 1 medium-tier news, 1 noted-class news → 9 total). Severity tiers: 3 CRITICAL, 5 HIGH, 1 MEDIUM, 32 NOTED.
+           Counting check: findings = [update Mini-Shai-Hulud, update LiteLLM KEV, news Checkmarx, news Google-AI, update Dirty-Frag, news Copilot-CLI, news Next.js, update OpenClaw, news GhostLock] = 9 total (5 news, 4 update).
+           Source coverage numbers: total=30, checked=23, with_findings=14, unreachable=9, degraded=10.
+           Validator constraint: checked >= total - len(unreachable) → 23 >= 30 - 9 = 21. ✓ pass.
+
+00:13 UTC  Step 6 — Writing debug.log (this file).
+
+00:14 UTC  Step 7 — Running validator: python3 scripts/validate_report.py reports/2026/05/12/report.json
+[validator output appended below after run]
+
+00:14 UTC  Validator output:
+           ✅ reports/2026/05/12/report.json — valid
+           No errors, no warnings. Source-coverage constraint satisfied (23 >= 30 - 9).
+
+00:15 UTC  Run complete. Pre-commit summary:
+             findings: 9 (5 news, 4 update)
+             noted: 32
+             critical-tier: 3
+             high-tier: 5
+             medium-tier: 1
+             unreachable: 9, degraded: 10
+             KEV addition tracked: CVE-2026-42208 LiteLLM (2026-05-11)
+             Most material campaign-scope item: Mini Shai-Hulud 169-package wave (Aikido 2026-05-12)
+             Most material vendor-action item: LiteLLM KEV addition + Dirty Frag MS-Defender ITW.
