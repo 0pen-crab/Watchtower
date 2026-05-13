@@ -1,0 +1,170 @@
+================================================================================
+WATCHTOWER DEBUG LOG — 2026-05-13/night
+================================================================================
+
+[00:00 UTC] STEP 1: git pull
+  cd /home/claude/workspace/watchtower && git pull
+  Result: Already up to date.
+
+[00:01 UTC] STEP 2: Build dedup index from last 30 days of report.json
+  Scanned reports/2026/04/01 → reports/2026/05/12 (35 prior reports incl. apr 1, 2, 5-7, 14, 17-30 + may 1-12)
+  Captured: ~1,200+ unique CVE/title/product entries
+  Notable already-covered items in last 14 days (focus window):
+    - Mini Shai-Hulud (4/30, 5/1, 5/8, 5/12 — now resurges)
+    - cPanel CVE-2026-41940 (4/30 → 5/3 ransomware → ongoing exploitation)
+    - LiteLLM CVE-2026-42208 (4/29 → KEV 5/11)
+    - Dirty Frag CVE-2026-43284/43500 (5/8 disclosure → MS Defender ITW 5/12)
+    - OpenClaw 9-CVE (5/9) + 16-CVE (5/12) — pre-2026.4.10 baseline
+    - Open WebUI CVE-2026-44551 + 44566/567/549 (5/9 → 5/10)
+    - PAN-OS CVE-2026-0300 (5/7 → KEV 5/8)
+    - cPanel CVE-2026-29201/02/03 (5/10)
+    - JDownloader CMS compromise (5/10)
+    - vm2 12-CVE batch (5/7-08, lib structurally broken)
+    - GitHub Copilot CLI CVE-2026-45033 (5/12)
+    - Next.js 6-CVE batch (5/12)
+    - GhostLock disruption tool (5/12)
+    - Checkmarx Jenkins compromise (5/12)
+    - Google GTIG AI-generated 0-day (5/12)
+  Dedup index complete.
+
+[00:02 UTC] STEP 3: Source check (parallel WebFetch batches, ≥3 per turn)
+  ─── Tier 1 batch 1 ─────────────────────────────────────────────────────
+  ✅ bleepingcomputer.com (5s) → 16 May 12 headlines incl. Shai-Hulud + Fortinet + Patch Tuesday + SAP + BWH + CheckMarx + GhostLock + Skoda + UK water fine
+  ✅ thehackernews.com (5s) → 10 May 12 headlines incl. Exim Dead.Letter + RubyGems + TrickMo + Shai-Hulud + Instructure + OpenAI Daybreak + iOS 26.5 + Checkmarx + cPanel Mr_Rot13 + AI 0-day
+  ✅ securityweek.com (5s) → Microsoft 137 + Adobe 52 + Apple + SAP + BWH + Canvas + West Pharma + CRPx0 + TanStack/Mistral
+  ✅ krebsonsecurity.com (5s) → Patch Tuesday May 2026 (118 CVEs / first zero-day-free in 2 years) + 5/7 Canvas Breach
+
+  ─── Tier 1 batch 2 ────────────────────────────────────────────────────
+  ✅ schneier.com (5s) → 2 May posts: Copy Fail Linux + LLM text-in-text steganography
+  ✅ rapid7.com/blog (after redirect to www.rapid7.com/blog) → 2 Metasploit wrap-ups (5/1, 5/8); no specific Emergent Threat Reports surfaced this week
+  ⚠️ fortinet.com/blog/threat-research → degraded; latest content is 4/17 Mirai Variant Nexcorium, no May items
+  ✅ securitylab.github.com → 1 advisory (GHSL-2026-099 Quarkus CVE-2026-39852) only
+
+  ─── Tier 1 batch 3 (extras + redirects) ──────────────────────────────
+  ✅ github.com/advisories?published:2026-05-12+severity:critical → 10 critical advisories (SillyTavern x2, esm.sh, OpenClaude, sealed-env-core, dalfox, @tanstack/arktype-adapter, sandboxjs, unitycatalog, browserstack-service)
+  ✅ github.com/advisories?published:2026-05-13+severity:critical → same 10 critical advisories (multi-day window overlap)
+  ✅ github.com/advisories?published:2026-05-12+severity:high → UltraJSON, SillyTavern session, esm.sh-Go, dalfox x3, protobuf.js x6, MantisBT, Next.js 45109, Budibase
+  ✅ github.com/advisories?published:2026-05-13+severity:high → confirms same set
+  ✅ github.com/search?q=CVE-2026&sort:updated → top 10 recently-updated repos (Mini Shai-Hulud scan, Copy Fail Rust/Python, Mr_Rot13 cPanel PoC, Dead.Letter Exim detection, KiviCare auth bypass, npm tar path traversal)
+
+  ─── Tier 1 batch 4 (additional research aids) ─────────────────────────
+  ✅ app.opencve.io/cve (CVSS:critical+date filters) → CVE-2026-44183 Cleanuparr + CVE-2026-34660 Adobe Connect surfaced as critical for 2026-05-11 → 2026-05-13
+  ✅ openwall.com/lists/oss-security/2026/05/ → archive index (25 posts May 12, 17 May 11, 8 May 10)
+  ✅ openwall.com/lists/oss-security/2026/05/12/ → Mark Thomas Tomcat 7-CVE thread + Exim 4.99.3 release + Dovecot OXDC-2026-0002 + Xen XSA-490 + CVE-2026-8368 LWP::UserAgent + CVE-2026-5089 YAML::Syck + OpenSearch npm compromise + dnsmasq + EXIM followup
+  ✅ openwall.com/lists/oss-security/2026/05/11/ → CVE-2026-44931 malcontent + XML::LibXML CVE-2026-8177 + WebDyne::Session + KTLS+sockmap UAF + OSSA-2026-012 Ironic CVE-2026-44916 + CVE-2026-7210 CPython expat + hathor-wallet auth bypass + dnsmasq + OpenSSL SM2 timing + CVE-2026-6146 + libexpat 2.8.1 CVE-2026-45186 + CVE-2026-7010 HTTP::Tiny
+  ✅ openwall.com/lists/oss-security/2026/05/10/ → uriparser 1.0.2 CVE-2026-44927+44928 + Airflow Providers CVE-2026-43826+41018 + Plack/Catalyst Statsd CVE-2026-45179+45180 + Net::CIDR::Lite CVE-2026-45190+45191 + XML::LibXML CVE-2026-8177
+  ❌ openwall.com/lists/oss-security/2026/05/13/ → "No messages for this day" (expected — UTC alignment, late-night cycle)
+  ❌ seclists.org/fulldisclosure → redirect to seclists.org root failed
+
+  ─── Tier 1 batch 5 (failures) ──────────────────────────────────────────
+  ❌ cisa.gov → 403 Forbidden (known persistent issue per MEMORY)
+  ❌ cisa.gov/known-exploited-vulnerabilities-catalog → 403 Forbidden
+  ❌ attackerkb.com → 403 Forbidden
+  ⚠️ packetstormsecurity.com → redirects to packetstorm.news; gives only aggregated counts (380 advisories last 7d) but no individual items
+  ✅ opencve.io → confirmed Cleanuparr + Adobe Connect as critical-class May 11-13
+
+  ─── Tier 2 batch 1 ───────────────────────────────────────────────────
+  ⚠️ nvd.nist.gov → only timeline/API retirement docs, no CVE listings via WebFetch
+  ❌ cve.mitre.org → redirects to cve.org (JS required)
+  ❌ cve.org → JS only, empty content
+  ❌ googleprojectzero.blogspot.com → redirects to projectzero.google
+  ✅ blog.cloudflare.com/tag/security → most recent is 5/7 Copy Fail mitigation; no 5/8-13 posts
+
+  ─── Tier 2 batch 2 ───────────────────────────────────────────────────
+  ❌ msrc.microsoft.com/blog → redirects to www.microsoft.com/en-us/msrc/blog, empty content via WebFetch
+  ❌ hackerone.com/hacktivity → JS required, empty
+  ❌ bugcrowd.com/disclosures → 404
+  ✅ kb.cert.org/vuls → VU#471747 dnsmasq + VU#937808 Casdoor + VU#260001 Linux kernel Copy Fail (5/8)
+  ✅ avleonov.com → 1 post: 5/8 Dirty Frag analysis (already covered)
+
+  ─── Tier 2 batch 3 ───────────────────────────────────────────────────
+  ⚠️ github.com/0xMarcio/cve → only early-2026 entries surface via WebFetch (degraded); manually checked github.com/search proxies confirm fresh PoCs (Mr_Rot13, Dead.Letter detection)
+  ✅ dbugs.ptsecurity.com → CVE-2026-8072 Ingeteam Sun EMS (9.2) + CVE-2026-7428 AlloyDB (9.2) + CVE-2026-41713 VMware Spring AI (8.2) + CVE-2026-35227 CODESYS Modbus (8.2) — mostly ICS/cloud-DB, niche
+  ⚠️ habr.com/ru/companies/tomhunter → degraded; latest visible is March 2026
+  ⚠️ teletype.in/@cyberok → degraded; latest visible is Feb 4 2026
+  ❌ cert.gov.ua → empty content via WebFetch
+
+  ─── Extras outside SOURCES.md but per MEMORY high-value list ──────────
+  ✅ securityaffairs.com → KEV proxy: LiteLLM 5/11 KEV addition, no new May 12-13 KEV adds confirmed
+  ✅ msrc.microsoft.com (Patch Tuesday) → captured via BleepingComputer aggregation (direct fetch failed)
+  ✅ fortiguard.com/psirt → 5 May 12 PSIRT advisories — captured FG-IR-26-136 CVE-2026-26083 FortiSandbox critical + FG-IR-26-100 CVE-2026-39808 FortiSandbox API critical + medium/high companion items; FortiAuthenticator CVE-2026-44277 captured via BleepingComputer article fetch (cross-confirmed)
+  ✅ labs.watchtowr.com → most recent is 4/29 cPanel post; no May posts
+  ✅ thehackernews.com per-article fetches → Dead.Letter / RubyGems / Mr_Rot13 / OpenAI Daybreak details captured
+  ✅ bleepingcomputer.com per-article fetches → Microsoft Patch Tuesday detail / Shai-Hulud TanStack-Mistral / Fortinet SAP captured
+  ✅ github.com/advisories per-CVE fetches → GHSA-m77w-p5jj-xmhg OpenClaude + GHSA-3636-h3vx-6465 esm.sh + GHSA-66ff-xgx4-vchm protobuf.js detail captured
+
+[00:18 UTC] STEP 4: Dedup decisions
+
+  ── News items (new) ──────────────────────────────────────────────────
+  NEW: Fortinet FortiSandbox CVE-2026-26083 + FortiAuthenticator CVE-2026-44277 (no prior coverage)
+  NEW: Apache Tomcat 7-CVE batch CVE-2026-43512/13/14/15/41284/41293/42498 (no prior coverage)
+  NEW: Exim CVE-2026-45185 Dead.Letter (no prior coverage)
+  NEW: OpenClaude CVE-2026-42074 (no prior coverage; relates to AI-agent-config pattern in MEMORY)
+  NEW: esm.sh CVE-2026-44593 + CVE-2026-44594 (no prior coverage)
+  NEW: SAP CVE-2026-34260 + CVE-2026-34263 (no prior coverage; SAP not previously covered in May)
+  NEW: Microsoft May 2026 Patch Tuesday — 120 CVEs (no prior coverage)
+  NEW: Adobe Connect CVE-2026-34660 (no prior coverage)
+  NEW: protobuf.js 6-CVE batch (no prior coverage; CVE-2026-44293 et al new)
+  NEW: Cleanuparr CVE-2026-44183 (no prior coverage)
+  NEW: RubyGems mass malicious package upload (no prior coverage)
+
+  ── Update items (material change on prior coverage) ──────────────────
+  UPDATE: Mini Shai-Hulud Wave 2 — bumps from yesterday's coverage with: (a) total 416 versions (was 169), (b) novel TTPs published — pull_request_target + GitHub Actions cache poison + OIDC token theft from runner memory + orphaned-commit optional-dep propagation, (c) cryptographic-trust breakdown via valid SLSA provenance on 84 versions. Threat score stays 9; rationale: ceiling hit yesterday at 9, scope/TTP/signature expansion justifies sustaining CRITICAL category.
+
+  ── SKIP (already covered, no material change) ─────────────────────────
+  SKIP (already in 2026-05-12): GitHub Copilot CLI CVE-2026-45033, Next.js 6-CVE batch, OpenClaw 16-CVE, Dirty Frag MS Defender ITW, Checkmarx Jenkins, Google GTIG AI 0-day, GhostLock, LiteLLM KEV
+  SKIP (already in 2026-05-10/12): cPanel CVE-2026-41940 (the Mr_Rot13 attribution is new context but the underlying CVE has been a major item since 4/29; tracked as Noted)
+  SKIP (already in 2026-05-12): Instructure / Canvas (settlement is followup; tracked as Noted)
+  SKIP (already in 2026-05-12): South Staffordshire Water (UK fine is regulatory followup; tracked as Noted)
+  SKIP (already in 2026-05-12): SailPoint GitHub repo (followup; tracked as Noted)
+  SKIP (already in 2026-05-08 → 05-10): vm2 12-CVE batch (still developing; tracked as Noted)
+
+  ── Noted decisions (not enough yet for News, but seen) ────────────────
+  NOTED: dalfox/v2 quad-CVE — niche scanner tool
+  NOTED: Xen XSA-490 CVE-2025-54518 — hypervisor patch
+  NOTED: uriparser 1.0.2 CVE-2026-44927+44928 — small lib
+  NOTED: Apple May patches — out of scope (client-only)
+  NOTED: West Pharmaceutical / BWH Hotels — sector breach reports, no infrastructure technical detail
+  NOTED: JDownloader followup — no new tech detail
+  NOTED: Signal phishing warning — feature, not vuln
+  NOTED: OpenAI Daybreak — market context, not advisory
+  NOTED: SillyTavern triple-CVE — smaller deployment than Open WebUI
+  NOTED: UltraJSON CVE-2026-44660 — DoS-only
+  NOTED: Apache Tomcat EncryptInterceptor CVE-2026-34486 — n-day PoC surfacing on 0xMarcio
+  NOTED: MantisBT 7-CVE — niche tracker
+  NOTED: Perl/CPAN batch — cumulative low-severity
+  NOTED: Dovecot OXDC-2026-0002 — detail thin pending Open-Xchange advisory
+  NOTED: Mr_Rot13 cPanel attribution — followup on existing cPanel story
+  NOTED: CRPx0 cross-platform — commodity-class
+  NOTED: TrickMo TON-C2 — mobile, out of scope
+  NOTED: LLM steganography research — DLP context only
+  NOTED: oss-security LLM disclosure discussion — scoring-calibration context
+  NOTED: Canvas settlement + congressional inquiry — followup
+  NOTED: Microsoft Beagle followup — IOC enrichment only
+  NOTED: vm2 ongoing — already-covered, no fundamentally new info
+
+[00:24 UTC] STEP 5: Write report.md and report.json
+  Written to reports/2026/05/13/report.md (markdown)
+  Written to reports/2026/05/13/report.json (machine-readable)
+  Findings count: 12 (1 update, 11 news)
+  Noted count: 25
+  Final source_coverage:
+    total: 30
+    checked: 19
+    with_findings: 13
+    unreachable: 11 (cisa x2, attackerkb, seclists.org/fulldisclosure, cve.mitre, cve.org, googleprojectzero, msrc, hackerone, bugcrowd, cert.gov.ua)
+    degraded: 6 (fortinet/blog/threat-research, packetstorm.news, nvd.nist.gov, github.com/0xMarcio/cve, habr.com tomhunter, teletype.in cyberok)
+  Validator constraint check: checked (19) >= total (30) - unreachable (11) = 19 ✅
+
+[00:28 UTC] STEP 6: This debug log (in progress).
+
+[00:29 UTC] STEP 7: Validate report.json
+  Command: python3 scripts/validate_report.py reports/2026/05/13/report.json
+  Output:
+    ✅ reports/2026/05/13/report.json — valid
+
+[00:30 UTC] STEP 8: Git add / commit / push (pending after this log writes).
+
+================================================================================
+END DEBUG LOG
+================================================================================

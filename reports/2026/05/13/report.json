@@ -1,0 +1,191 @@
+{
+  "date": "2026-05-13",
+  "findings": [
+    {
+      "type": "update",
+      "title": "Mini Shai-Hulud npm Worm Wave 2 — 416 Versions / 170+ Packages With Valid SLSA Provenance Attestations Cryptographic-Trust Breakdown",
+      "threat_score": 9,
+      "previous_threat_score": 9,
+      "cve": "CVE-2026-45321",
+      "cvss": null,
+      "affected_technology": "npm + PyPI ecosystem (TanStack, Mistral AI, UiPath, Guardrails AI, OpenSearch, BetterStack + 165 others); GitHub Actions cache + OIDC token theft + orphaned-commit optional-dependency propagation",
+      "summary": "Second Shai-Hulud wave reached 416 malicious package artifacts; 84 of the TanStack versions shipped with valid SLSA provenance attestations from npm's signing infrastructure, breaking cryptographic-attestation defenses defenders had been told were authoritative.",
+      "first_seen_at": "bleepingcomputer.com — Shai Hulud attack ships signed malicious TanStack, Mistral npm packages"
+    },
+    {
+      "type": "news",
+      "title": "Fortinet FortiSandbox CVE-2026-26083 + FortiAuthenticator CVE-2026-44277 — Critical Unauthenticated RCEs On Perimeter Security Appliances",
+      "threat_score": 8,
+      "cve": "CVE-2026-26083, CVE-2026-44277, CVE-2026-39808",
+      "cvss": null,
+      "affected_technology": "FortiSandbox 4.4 / 5.0 + Cloud + PaaS; FortiAuthenticator 6.5.x / 6.6.x / 8.0.x (Cloud IDaaS unaffected)",
+      "summary": "Fortinet shipped two critical unauthenticated-RCE advisories on 2026-05-12: missing authorization in FortiSandbox web UI + API command injection, and improper access control in FortiAuthenticator (the MFA / SAML IdP product).",
+      "discovery_latency": "on-time",
+      "first_seen_at": "bleepingcomputer.com — Fortinet warns of critical RCE flaws in FortiSandbox and FortiAuthenticator"
+    },
+    {
+      "type": "news",
+      "title": "Apache Tomcat 7-CVE Batch — Digest Authenticator Bypass, AJP Secret Timing Attack, Security Constraint Bypass, WebDAV / HTTP2 / WebSocket Protocol Issues",
+      "threat_score": 7,
+      "cve": "CVE-2026-43512, CVE-2026-43513, CVE-2026-43514, CVE-2026-43515, CVE-2026-41284, CVE-2026-41293, CVE-2026-42498",
+      "cvss": null,
+      "affected_technology": "Apache Tomcat (all currently supported branches)",
+      "summary": "Mark Thomas disclosed seven Tomcat CVEs on 2026-05-12 covering digest-authenticator bypass, LockOutRealm case-sensitivity, AJP secret timing attack (Ghostcat-class on success), security constraint bypass, plus WebDAV/HTTP-2/WebSocket protocol issues.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "openwall.com/lists/oss-security 2026/05/12 — Mark Thomas Tomcat CVE thread"
+    },
+    {
+      "type": "news",
+      "title": "Exim CVE-2026-45185 'Dead.Letter' — BDAT-Over-GnuTLS Use-After-Free → Heap Corruption / RCE Primitive On Internet-Facing MTAs",
+      "threat_score": 7,
+      "cve": "CVE-2026-45185",
+      "cvss": null,
+      "affected_technology": "Exim 4.97 → 4.99.2 compiled with USE_GNUTLS=yes (Debian default; OpenSSL builds unaffected); patched 4.99.3",
+      "summary": "Exim use-after-free in BDAT body parsing during TLS close_notify with GnuTLS builds writes one attacker-controlled byte into freed heap memory, a viable RCE primitive class; XBOW characterizes as one of the highest-caliber bugs in Exim's history.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "thehackernews.com — New Exim BDAT Vulnerability Exposes GnuTLS Builds to Code Execution"
+    },
+    {
+      "type": "news",
+      "title": "OpenClaude CVE-2026-42074 Sandbox Bypass Via Model-Controlled dangerouslyDisableSandbox Flag — Sixth AI-Agent Attack Surface In 14 Days",
+      "threat_score": 7,
+      "cve": "CVE-2026-42074",
+      "cvss": 9.3,
+      "affected_technology": "OpenClaude (npm) community Claude CLI / framework < 0.5.1",
+      "summary": "OpenClaude exposes a dangerouslyDisableSandbox boolean parameter to the LLM in its BashTool schema with permissive default, so any prompt-injection that emits the flag yields sandbox-free command execution as the OpenClaude process owner.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "github.com/advisories — GHSA-m77w-p5jj-xmhg"
+    },
+    {
+      "type": "news",
+      "title": "esm.sh CVE-2026-44593 + CVE-2026-44594 — Legacy Route Path Traversal → Arbitrary File Write → RCE On Widely-Used Public JS Module CDN",
+      "threat_score": 7,
+      "cve": "CVE-2026-44593, CVE-2026-44594",
+      "cvss": null,
+      "affected_technology": "esm.sh (Go-based public + self-hostable npm-as-ESM CDN) prior to commit 1960055e1d53 (2026-05-08)",
+      "summary": "esm.sh legacy router concatenates percent-encoded path-traversal sequences into the filesystem path, allowing arbitrary on-disk file writes and overwriting of system binaries — RCE on a CDN that resolves import URLs for an entire org.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "github.com/advisories — GHSA-3636-h3vx-6465"
+    },
+    {
+      "type": "news",
+      "title": "SAP S/4HANA CVE-2026-34260 SQL Injection + Commerce Cloud CVE-2026-34263 Missing-Auth → Code Execution",
+      "threat_score": 7,
+      "cve": "CVE-2026-34260, CVE-2026-34263",
+      "cvss": null,
+      "affected_technology": "SAP Commerce Cloud (Spring Security misconfiguration → unauth RCE); SAP S/4HANA (SQL injection via direct user-input concatenation)",
+      "summary": "SAP May 2026 Patch Day shipped two Critical enterprise-RCE-class advisories: a missing-auth code execution in Commerce Cloud and an SQL injection in S/4HANA reachable with basic privileges.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "securityweek.com — SAP Patches Critical S/4HANA, Commerce Vulnerabilities"
+    },
+    {
+      "type": "news",
+      "title": "Microsoft May 2026 Patch Tuesday — 120 CVEs / 17 Critical, First Zero-Day-Free Patch Tuesday In ~2 Years",
+      "threat_score": 6,
+      "cve": "CVE-2026-41096, CVE-2026-32161, CVE-2026-41089, CVE-2026-40402, CVE-2026-42898, CVE-2026-41103, CVE-2026-26164, CVE-2026-40365, CVE-2026-42831, CVE-2026-40363, CVE-2026-40358, CVE-2026-40361, CVE-2026-40367, CVE-2026-40366, CVE-2026-40364, CVE-2026-35421, CVE-2026-40403",
+      "cvss": null,
+      "affected_technology": "Windows (DNS Client, Native WiFi, Netlogon, Hyper-V, Graphics, GDI), Microsoft Office + Word, SharePoint, Dynamics 365, M365 Copilot, Microsoft SSO Plugin for Jira/Confluence",
+      "summary": "Microsoft addressed 120 CVEs with 17 Critical-class RCEs across Windows networking stacks, Office document handling, Dynamics 365, and the SSO Plugin for Jira/Confluence — first Patch Tuesday in ~2 years with zero in-the-wild zero-days.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "bleepingcomputer.com — Microsoft May 2026 Patch Tuesday fixes 120 flaws, no zero-days"
+    },
+    {
+      "type": "news",
+      "title": "Adobe Connect CVE-2026-34660 — Authorization Vulnerability Enabling Arbitrary Code Execution (CVSS 9.3)",
+      "threat_score": 6,
+      "cve": "CVE-2026-34660",
+      "cvss": 9.3,
+      "affected_technology": "Adobe Connect 2025.9.15 and earlier; 2025.8.157 and earlier",
+      "summary": "Adobe Connect authorization flaw allows arbitrary code execution via script injection in web pages; widely deployed in regulated-industry training stacks; one of 52 Adobe CVEs disclosed 2026-05-12 across 10 products.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "securityweek.com — Adobe Patches 52 Vulnerabilities in 10 Products"
+    },
+    {
+      "type": "news",
+      "title": "protobuf.js 6-CVE Batch — Code Injection / OS Command Injection / Prototype Pollution / DoS",
+      "threat_score": 6,
+      "cve": "CVE-2026-44289, CVE-2026-44290, CVE-2026-44291, CVE-2026-44293, CVE-2026-44295, CVE-2026-42290",
+      "cvss": 7.7,
+      "affected_technology": "protobuf.js (npm) ≤ 7.5.5 and 8.0.0–8.0.1; patched 7.5.6 / 8.0.2",
+      "summary": "Six protobuf.js CVEs cover code injection via bytes-field defaults in toObject generation, OS command injection in CLI static output, code-generation-gadget after prototype pollution, and DoS variants — high-impact for any service that ingests user-supplied .proto schemas.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "github.com/advisories — GHSA-66ff-xgx4-vchm"
+    },
+    {
+      "type": "news",
+      "title": "Cleanuparr CVE-2026-44183 — X-Forwarded-For Spoofing Yields Unauthenticated Administrator Access (CVSS 9.8)",
+      "threat_score": 5,
+      "cve": "CVE-2026-44183",
+      "cvss": 9.8,
+      "affected_technology": "Cleanuparr < 2.9.10 (containerized media-stack cleanup utility commonly run alongside Sonarr/Radarr/Jellyfin)",
+      "summary": "Cleanuparr parses the leftmost X-Forwarded-For header value as the client IP, letting any attacker submit 127.0.0.1 and gain unauthenticated administrator access to the admin UI.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "app.opencve.io — CVE-2026-44183"
+    },
+    {
+      "type": "news",
+      "title": "RubyGems Mass Malicious Package Upload — Sign-Ups Temporarily Suspended",
+      "threat_score": 5,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "RubyGems package registry",
+      "summary": "RubyGems suspended new account registration after hundreds of malicious packages were uploaded in a coordinated campaign primarily targeting Mend.io's research infrastructure, with some carrying broader exploits.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "thehackernews.com — RubyGems Suspends New Signups After Hundreds of Malicious Packages Are Uploaded"
+    }
+  ],
+  "noted": [
+    {"cve": "CVE-2026-45087, CVE-2026-45088, CVE-2026-45089, CVE-2026-45090", "product": "dalfox/v2 (Go XSS scanner)", "summary": "Critical unauth RCE in server mode via found-action, arbitrary file read with OOB exfiltration, arbitrary file write, unauth DoS — patch CI deployments running dalfox --server."},
+    {"cve": "CVE-2025-54518", "product": "Xen Hypervisor (XSA-490)", "summary": "x86 CPU opcode cache corruption disclosed 2026-05-12; patch path per Xen Security Advisory 490."},
+    {"cve": "CVE-2026-44927, CVE-2026-44928", "product": "uriparser (1.0.2)", "summary": "Two issues in widely-used URI parsing library; patch via distro updates."},
+    {"cve": null, "product": "Apple macOS / iOS May 2026 patches", "summary": "Dozens of vulnerabilities incl. backport of iOS deleted-chats-recovery issue; mostly client-only and out of Watchtower scope."},
+    {"cve": null, "product": "West Pharmaceutical Services", "summary": "Disruptive ransomware attack confirmed 2026-05-12 — global systems offline after data exfiltration; pharma-sector incident, ransomware family undisclosed."},
+    {"cve": null, "product": "BWH Hotels", "summary": "6-month dwell-time breach disclosed 2026-05-12 — reservation system access with guest names + contact info exfil; broad PII exposure."},
+    {"cve": null, "product": "JDownloader CMS compromise (followup)", "summary": "Investigation of trojanised Windows/Linux installer incident (2026-05-06 → 05-10) continues; no fundamentally new findings since main coverage."},
+    {"cve": null, "product": "South Staffordshire Water (UK ICO £963k / $1.3M fine)", "summary": "Enforcement action over 2022-2024 breach affecting 664k customers; regulatory cost data-point reinforcing 2026-05-09 Polish ABW water-treatment pre-positioning pattern."},
+    {"cve": null, "product": "Signal in-app phishing / social-engineering warnings", "summary": "Defensive feature addition rather than vulnerability; user-education context not a triage item."},
+    {"cve": null, "product": "SailPoint GitHub repo intrusion followup", "summary": "Vendor reiterated no customer-data impact 2026-05-11; track only if linked to broader vendor-source-code-theft cluster (Checkmarx/Cisco/Trellix)."},
+    {"cve": null, "product": "OpenAI Daybreak vulnerability detection program", "summary": "New AI-powered patch validation + threat-modeling initiative with gpt-5.5-Cyber variant; pilot integrations with Akamai/Cisco/Cloudflare/CrowdStrike/Fortinet/Oracle/PAN/Zscaler — context, not a finding."},
+    {"cve": "CVE-2026-44648, CVE-2026-44649, CVE-2026-44650", "product": "SillyTavern (npm) self-hosted AI chat front-end", "summary": "Session persistence after password change, SSO header-injection auth bypass, path traversal — smaller-deployment self-hosted AI front-end."},
+    {"cve": "CVE-2026-44660", "product": "UltraJSON (pip)", "summary": "Memory leak in ujson.dump() on write failure — Python ecosystem widely deployed but DoS-only."},
+    {"cve": "CVE-2026-34486", "product": "Apache Tomcat EncryptInterceptor (n-day PoC)", "summary": "Public PoC for fail-open bypass surfaced on 0xMarcio CVE repo; older CVE being weaponised — patch latest 9.x/10.x."},
+    {"cve": "CVE-2026-44657, CVE-2026-44655, CVE-2026-42071, CVE-2026-40607, CVE-2026-40597, CVE-2026-40596, CVE-2026-34463", "product": "MantisBT (Composer)", "summary": "Multiple XSS, injection, and access-control issues in MantisBT self-hosted bug tracker."},
+    {"cve": "CVE-2026-8368, CVE-2026-5089, CVE-2026-45179, CVE-2026-45180, CVE-2026-45190, CVE-2026-45191, CVE-2026-8177, CVE-2026-6146, CVE-2026-7010, CVE-2026-5081, CVE-2026-40562, CVE-2026-5084", "product": "Perl/CPAN small-advisory batch (LWP::UserAgent / YAML::Syck / Plack::Middleware::Statsd / Catalyst::Plugin::Statsd / Net::CIDR::Lite / XML::LibXML / Amazon::Credentials / HTTP::Tiny / Apache::Session / Gazelle / WebDyne::Session)", "summary": "Cumulative oss-security 2026-05-10/11/12 Perl batch — mostly low severity but worth a per-distro cpan upgrade audit pass."},
+    {"cve": null, "product": "Dovecot OXDC-2026-0002", "summary": "Second Dovecot security advisory of 2026 announced via oss-security 2026-05-12; detail thin pending full advisory text from Open-Xchange."},
+    {"cve": "CVE-2026-41940", "product": "cPanel (Mr_Rot13 active-exploitation followup)", "summary": "Threat actor active since October 2020 with PHP samples on VT since 2022 — >2,000 attacker source IPs, Filemanager Go backdoor deploys SSH key implantation + credential harvest; reinforces auth-bypass→ransomware monetisation pattern."},
+    {"cve": null, "product": "CRPx0 cross-platform malware", "summary": "macOS/Windows targeting with Linux variants in development; 'Free OnlyFans' lure; commodity but cross-platform pattern worth tracking."},
+    {"cve": null, "product": "TrickMo TON-C2 + SOCKS5 Android banker", "summary": "Uses The Open Network blockchain for C2 + SOCKS5 tunneling pivots — mobile-only and out of Watchtower scope."},
+    {"cve": null, "product": "LLMs and Text-in-Text Steganography (Schneier 2026-05-11)", "summary": "Research demonstrating LLMs are exceptionally effective at concealing covert text-in-text channels; DLP / steganalysis context but not actionable advisory."},
+    {"cve": null, "product": "Coordinated Disclosure in the LLM Age (oss-security 2026-05-12, Tim Shephard)", "summary": "Discussion thread on disclosure norms after Google GTIG AI-generated 0-day (2026-05-11); non-advisory but informs scoring-calibration for AI-found semantic-logic-bug class."},
+    {"cve": null, "product": "Instructure / Canvas ransom settlement + congressional inquiry", "summary": "Vendor reached settlement with ShinyHunters to halt data leak 2026-05-12; US House Homeland Security committee seeks Instructure testimony — incident already in scope, this is followup."},
+    {"cve": null, "product": "Microsoft Beagle backdoor via fake Claude AI website (followup)", "summary": "Original disclosure 2026-05-07; additional Beagle-family IOC enrichment available in this week's writeups — no new compromise discovered."},
+    {"cve": "CVE-2026-26956", "product": "vm2 sandbox WebAssembly exception leak (followup)", "summary": "Public PoC continues to be developed against the 12-CVE batch from 2026-05-07 → 05-08; maintainer remains publicly conceded the library is structurally unsalvageable."}
+  ],
+  "source_coverage": {
+    "total": 30,
+    "checked": 19,
+    "with_findings": 13,
+    "unreachable": [
+      "cisa.gov",
+      "cisa.gov/known-exploited-vulnerabilities-catalog",
+      "attackerkb.com",
+      "seclists.org/fulldisclosure",
+      "cve.mitre.org",
+      "cve.org",
+      "googleprojectzero.blogspot.com",
+      "msrc.microsoft.com/blog",
+      "hackerone.com/hacktivity",
+      "bugcrowd.com/disclosures",
+      "cert.gov.ua"
+    ],
+    "degraded": [
+      "fortinet.com/blog/threat-research",
+      "packetstorm.news",
+      "nvd.nist.gov",
+      "github.com/0xMarcio/cve",
+      "habr.com/ru/companies/tomhunter/articles",
+      "teletype.in/@cyberok"
+    ]
+  },
+  "full_report": "reports/2026/05/13/report.md"
+}
