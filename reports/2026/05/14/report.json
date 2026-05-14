@@ -1,0 +1,290 @@
+{
+  "date": "2026-05-14",
+  "findings": [
+    {
+      "type": "news",
+      "title": "Quest KACE SMA CVE-2025-32975 (CVSS 10.0) Authentication Bypass Actively Exploited Via MSP→60-Org Pivot — 12k+ Internet-Facing Unpatched After 10-Month Vendor-Patch Window",
+      "threat_score": 8,
+      "cve": "CVE-2025-32975",
+      "cvss": 10.0,
+      "affected_technology": "Quest KACE Systems Management Appliance / K1000 on-prem endpoint-management platform",
+      "summary": "Quest KACE SMA SSO handler accepts attacker-supplied identity without credentials, yielding unauthenticated admin impersonation; Hunt.io confirmed ITW exploitation via a Boston MSP pivoting into 60+ downstream organizations.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "securityaffairs.com — Quest KACE SMA flaw CVE-2025-32975"
+    },
+    {
+      "type": "news",
+      "title": "OPNsense Core CVE-2026-44193 — XMLRPC restore_config_section Unauthenticated RCE On Widely-Deployed Open-Source Firewall (CVSS 9.1)",
+      "threat_score": 7,
+      "cve": "CVE-2026-44193",
+      "cvss": 9.1,
+      "affected_technology": "OPNsense (open-source FreeBSD-based firewall platform) prior to 26.1.7",
+      "summary": "OPNsense XMLRPC method opnsense.restore_config_section fails to sanitize user-supplied input, allowing an unauthenticated attacker reaching the management plane to inject configuration that executes as the privileged firewall daemon, yielding RCE on the firewall itself.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "OpenCVE / dbugs.ptsecurity.com — CVE-2026-44193"
+    },
+    {
+      "type": "update",
+      "title": "Microsoft May 2026 Patch Tuesday Update — MDASH Agentic AI Disclosure + CVE-2026-33824 IKEv2 ikeext.dll Pre-Auth RCE (CVSS 9.8) Adds Perimeter-Class Bug Not Previously Enumerated",
+      "threat_score": 7,
+      "previous_threat_score": 6,
+      "cve": "CVE-2026-33824, CVE-2026-33827, CVE-2026-40361",
+      "cvss": 9.8,
+      "affected_technology": "Windows IKEv2/IPSec stack (ikeext.dll), Windows TCP/IP IPSec, Microsoft Outlook",
+      "summary": "Microsoft disclosed that its MDASH agentic AI system found 16 of the May Patch Tuesday CVEs including CVE-2026-33824 — a CVSS 9.8 pre-auth double-free RCE in the Windows IKEv2 IPSec stack reachable on any internet-facing Windows VPN endpoint or RRAS deployment.",
+      "first_seen_at": "thehackernews.com — Microsoft's MDASH AI System Finds 16 Windows Flaws"
+    },
+    {
+      "type": "news",
+      "title": "F5 NGINX Open Source CVE-2026-42945 — ngx_http_rewrite_module Vulnerability (CVSS 8.1) On Core HTTP Module Of Most-Deployed Web Server",
+      "threat_score": 6,
+      "cve": "CVE-2026-42945",
+      "cvss": 8.1,
+      "affected_technology": "F5 NGINX Open Source (and likely NGINX Plus, OpenResty, Tengine, Angie, Kong, NGINX Ingress Controller)",
+      "summary": "Vulnerability in NGINX's ngx_http_rewrite_module disclosed via oss-security with CVSS 8.1; technical details limited but the module is reachable on any production NGINX deployment that uses rewrite/if/return directives, with downstream impact on the entire NGINX-derivative ecosystem.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "openwall.com/lists/oss-security 2026/05/13 — CVE-2026-42945 NGINX"
+    },
+    {
+      "type": "news",
+      "title": "FamousSparrow (UAT-9244, China-Aligned) Targets Azerbaijani Energy Firm Via ProxyNotShell Exchange Chain — Three Intrusion Waves Across 60+ Days Despite Remediation",
+      "threat_score": 5,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Microsoft Exchange Server on-premises (ProxyNotShell chain); Deed RAT (Snappybee) + TernDoor backdoors",
+      "summary": "Bitdefender published TTPs for a FamousSparrow/UAT-9244 multi-wave ProxyNotShell Exchange intrusion (Dec 2025–Feb 2026) re-using the same vector across three waves — confirming unpatched on-prem Exchange as a primary 2026-Q2 PRC initial-access vector.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "thehackernews.com — Azerbaijani Energy Firm Hit by Repeated Microsoft Exchange Exploitation"
+    },
+    {
+      "type": "news",
+      "title": "GemStuffer Campaign — 150+ Malicious RubyGems Used As Data-Exfil Channel For Scraped UK Local Government Portal Data",
+      "threat_score": 5,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "RubyGems ecosystem abused as data-exfil channel (no software vulnerability — abuse-of-feature against public package registry)",
+      "summary": "Socket identified the GemStuffer campaign using RubyGems as a data-exfiltration channel — UK local-government portal content is scraped and republished as valid .gem archives, setting a package-registry-as-exfil-store precedent for npm/PyPI/Hugging Face.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "socket.dev/blog — GemStuffer Campaign Abuses RubyGems"
+    },
+    {
+      "type": "news",
+      "title": "SPIP CVE-2026-8429 + CVE-2026-8430 — Twin Remote Code Execution Vulnerabilities In Widely-Deployed French-Origin CMS",
+      "threat_score": 5,
+      "cve": "CVE-2026-8429, CVE-2026-8430",
+      "cvss": null,
+      "affected_technology": "SPIP CMS < 4.4.14 (open-source PHP-based, French public-sector default CMS)",
+      "summary": "SPIP shipped two distinct RCE primitives: CVE-2026-8429 (RCE via Private Space — reachable from low-privilege editor accounts) and CVE-2026-8430 (RCE chain via default nginx reverse-proxy misconfiguration exposing internal SPIP endpoints); both fixed in 4.4.14.",
+      "discovery_latency": "late",
+      "first_seen_at": "vulncheck.com/advisories — SPIP < 4.4.14"
+    },
+    {
+      "type": "news",
+      "title": "Langflow CVE-2026-3345 — Path Traversal Via File Upload API On Widely-Used Open-Source AI Workflow Builder",
+      "threat_score": 5,
+      "cve": "CVE-2026-3345",
+      "cvss": null,
+      "affected_technology": "Langflow < 1.9.0 (open-source visual workflow builder for LangChain-based AI apps)",
+      "summary": "Langflow file-upload API contains a path traversal allowing arbitrary file writes outside the upload directory; combined with Langflow's default-no-auth posture, chains to RCE on the Langflow host — fourth AI-infrastructure CVE in 30 days following Open WebUI / FastGPT / Ollama.",
+      "discovery_latency": "late",
+      "first_seen_at": "vulncheck.com/advisories — Langflow < 1.9.0"
+    },
+    {
+      "type": "news",
+      "title": "Strapi CVE-2026-22599 — SQL Injection In Content Type Builder (Critical) On Top-3 Open-Source Headless CMS",
+      "threat_score": 5,
+      "cve": "CVE-2026-22599",
+      "cvss": null,
+      "affected_technology": "Strapi headless CMS — @strapi/content-type-builder npm package",
+      "summary": "Strapi Content Type Builder allows SQL injection through a crafted request, yielding database-level read/write on the Strapi instance — direct impact on any application using Strapi as its data layer.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "github.com/advisories — GHSA-3xcq-8mjw-h6mx"
+    },
+    {
+      "type": "news",
+      "title": "Foxconn Confirms North American Factory Compromise By Nitrogen Ransomware — 8TB / 11M Files Exfiltrated, Schematics For Intel / Apple / Google / Dell / Nvidia",
+      "threat_score": 4,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Foxconn (Hon Hai Precision Industry) North American manufacturing infrastructure",
+      "summary": "Foxconn confirmed on 2026-05-13 the cyberattack first listed on Nitrogen's leak site 2026-03-12 — 8TB / 11M files exfiltrated including confidential customer schematics; affected factories resuming normal production. Downstream-customer schematic-leak impact assessment warranted.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "securityweek.com — Foxconn Confirms North American Factories Hit by Cyberattack"
+    },
+    {
+      "type": "news",
+      "title": "OpenLoop Health Confirms January 2026 Data Breach — 716,000 Patients Affected (Telehealth Infrastructure Provider)",
+      "threat_score": 3,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "OpenLoop Health (B2B telehealth infrastructure platform serving multiple consumer-facing telehealth brands)",
+      "summary": "OpenLoop Health confirmed a January 2026 intrusion affecting 716,000 individuals — B2B telehealth infrastructure with records spanning multiple downstream telehealth-service partners; continues the pattern of healthcare-adjacent SaaS infrastructure as high-value target.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "securityaffairs.com — OpenLoop Health confirms January 2026 Data breach"
+    }
+  ],
+  "noted": [
+    {
+      "cve": null,
+      "product": "dnsmasq multi-issue advisory (VU#471747)",
+      "summary": "CERT/CC multi-bug advisory covering DNS redirect, privilege escalation, and heap manipulation in dnsmasq published 2026-05-11; no CVE numbers surfaced yet — track for assignment and distro patches."
+    },
+    {
+      "cve": null,
+      "product": "Casdoor VU#937808",
+      "summary": "CERT/CC arbitrary-file-write advisory on Casdoor open-source IdP/IAM platform 2026-05-11; track for CVE assignment + vendor advisory."
+    },
+    {
+      "cve": null,
+      "product": "Linux kernel 'fragnesia' / copyfail 3.0 LPE",
+      "summary": "oss-security 2026-05-13 disclosure of Linux kernel LPE sequel to the CopyFail family; LPE-only and out-of-scope by default, but the CopyFail lineage previously escalated to KEV — track for escalation signal."
+    },
+    {
+      "cve": "CVE-2026-5958",
+      "product": "GNU sed",
+      "summary": "TOCTOU race in sed -i --follow-symlinks (oss-security 2026-05-13); local-only and niche but the ubiquity of sed warrants distro-tracking note."
+    },
+    {
+      "cve": "CVE-2026-8463",
+      "product": "Crypt::Argon2 Perl module 0.017–0.030",
+      "summary": "Heap out-of-bounds read in argon2_verify on empty input (oss-security 2026-05-13); affects Perl auth stacks at low-severity but auth-library category."
+    },
+    {
+      "cve": "CVE-2026-41326",
+      "product": "Kata Containers",
+      "summary": "CopyFile policy symlink bypass (oss-security 2026-05-13); niche cloud-native isolation stack."
+    },
+    {
+      "cve": "CVE-2026-8500",
+      "product": "Web::Passwd Perl module ≤ 0.03",
+      "summary": "Remote code execution in Web::Passwd Perl module (oss-security 2026-05-13); niche Perl module, low deployment, but RCE class."
+    },
+    {
+      "cve": "CVE-2026-44413",
+      "product": "JetBrains TeamCity",
+      "summary": "Authenticated privilege escalation + API credential exposure in TeamCity self-hosted CI (helpnetsecurity 2026-05-12); not currently exploited but TeamCity is a recurring credential-theft pivot point."
+    },
+    {
+      "cve": "CVE-2026-44403",
+      "product": "Wing FTP Server ≤ 8.1.2",
+      "summary": "Authenticated remote code execution via session serialization (vulncheck 2026-05-12); auth-required but session-serialization class often escalates to unauth via secondary primitives."
+    },
+    {
+      "cve": "CVE-2026-44447",
+      "product": "Frappe / ERPNext < 16.9.0",
+      "summary": "SQL injection through crafted requests on widely-deployed open-source ERP (OpenCVE 2026-05-13, CVSS 8.8); track for downstream Frappe/Bench deployment patches."
+    },
+    {
+      "cve": "CVE-2026-45375, CVE-2026-45371",
+      "product": "siyuan (Go/Electron note-taking app)",
+      "summary": "Bazaar marketplace stored-XSS chain to Electron code execution (CVE-2026-45375) plus publish-mode reader ungated config-write via eight APIs (CVE-2026-45371); GHSA 2026-05-13. Marketplace-rendering vector mirrors supply-chain patterns."
+    },
+    {
+      "cve": "CVE-2026-45134",
+      "product": "langchain (npm)",
+      "summary": "Public prompt pull deserializes untrusted manifests without trust-boundary warnings (GHSA 2026-05-13); matches the Apache OpenNLP model-loading + Hugging Face pickle pattern."
+    },
+    {
+      "cve": "CVE-2026-44724",
+      "product": "systeminformation (npm)",
+      "summary": "Linux command injection via unsanitized NetworkManager connection profile names in networkInterfaces() (GHSA 2026-05-13)."
+    },
+    {
+      "cve": "CVE-2026-44797, CVE-2026-44798",
+      "product": "Nautobot (pip)",
+      "summary": "Webhook SSRF (CVE-2026-44797) plus writable GitRepository.current_head field via REST API (CVE-2026-44798) in Nautobot network-automation DCIM platform (GHSA 2026-05-13)."
+    },
+    {
+      "cve": "CVE-2026-44738",
+      "product": "Grav CMS (Composer)",
+      "summary": "Twig sandbox escape allows editor-role users to exfiltrate plugin secrets via Config::toArray() (GHSA 2026-05-13); in-scope CMS class."
+    },
+    {
+      "cve": "CVE-2026-45152",
+      "product": "uniget CLI",
+      "summary": "Command injection in tool.Check enabling arbitrary code execution (GHSA 2026-05-13); self-hosted tool-installer, niche."
+    },
+    {
+      "cve": "CVE-2026-29205, CVE-2026-29206, CVE-2026-29201",
+      "product": "OPNsense / Webpros companion CVEs",
+      "summary": "Additional adminbin file-read (CVSS 8.6), cpdavd path-traversal/privilege-escalation (CVSS 8.6), and sqloptimizer SQL injection (CVSS 8.1) published alongside the 44193 unauth-RCE umbrella; defenders patching to 26.1.7 fix all together."
+    },
+    {
+      "cve": "CVE-2026-43141",
+      "product": "Linux kernel NTB driver",
+      "summary": "Shift-out-of-bounds in switchtec driver when MW LUT configuration is zero (CVSS 7.1, OpenCVE 2026-05-13); niche hardware path, primarily DoS-class."
+    },
+    {
+      "cve": null,
+      "product": "Sandyaa open-source autonomous bug hunter",
+      "summary": "Newly-released open-source autonomous bug-discovery tool (helpnetsecurity 2026-05-13); defensive-pattern data point in AI-bug-finder column alongside MDASH / Daybreak / Project Glasswing."
+    },
+    {
+      "cve": "CVE-2026-33583",
+      "product": "Arqit Symmetric Key Agreement Platform",
+      "summary": "High-severity issue in cryptographic key-management platform (CVSS 8.7, dbugs.ptsecurity 2026-05-13); niche vendor but key-management classification."
+    },
+    {
+      "cve": "CVE-2026-30905, CVE-2026-30906",
+      "product": "Zoom Workplace VDI Plugin + Zoom Rooms",
+      "summary": "Local-privilege-class issues in widely-deployed conferencing endpoints (CVSS 7.8 each, dbugs 2026-05-13); out-of-scope by severity rules but track for any remote-component pivot."
+    },
+    {
+      "cve": "CVE-2026-44183",
+      "product": "Cleanuparr followup",
+      "summary": "Yesterday's News item — Cleanuparr published `cleanuparr-secure` deployment template with proxy-aware default mitigation; no patch breakthrough yet."
+    },
+    {
+      "cve": "CVE-2026-22677, CVE-2026-45229, CVE-2026-45228",
+      "product": "Hermes WebUI + Quark Drive",
+      "summary": "Path traversal (Hermes WebUI), mass assignment via POST /update + stored XSS via system configuration (Quark Drive) — niche self-hosted web apps (vulncheck 2026-05-13)."
+    },
+    {
+      "cve": null,
+      "product": "Ecommerce Systempay + 12 historic 2020 CVE backfills",
+      "summary": "Backfill of historic 2020 CVEs in old e-commerce / WordPress / Joomla / IoT-router code published this week (vulncheck 2026-05-13); rate of n-day catalog backfills is itself a calibration data point."
+    },
+    {
+      "cve": null,
+      "product": "Chipmaker + ICS Patch Tuesday",
+      "summary": "Intel + AMD ~70 CVEs and ICS Patch Tuesday Siemens/Schneider/CISA advisories published 2026-05-13; most are LPE / DoS class, no immediate internet-facing perimeter exposure."
+    },
+    {
+      "cve": "CVE-2025-53844",
+      "product": "FortiOS CAPWAP",
+      "summary": "Out-of-bounds access in CAPWAP daemon (FG-IR-26-123, HIGH); CAPWAP is the wireless-controller-to-AP protocol so attack surface is internal-AP-tier rather than internet-facing."
+    },
+    {
+      "cve": null,
+      "product": "OpenAI GPT-5.5 / Claude Mythos vuln-discovery parity",
+      "summary": "UK AISI evaluation 2026-05-13 (Schneier relay) found GPT-5.5 on par with Claude Mythos for vulnerability discovery; tracking data point for AI-bug-finder pattern."
+    }
+  ],
+  "source_coverage": {
+    "total": 30,
+    "checked": 19,
+    "with_findings": 14,
+    "unreachable": [
+      "cisa.gov",
+      "cisa.gov/known-exploited-vulnerabilities-catalog",
+      "attackerkb.com",
+      "seclists.org/fulldisclosure",
+      "cve.mitre.org",
+      "cve.org",
+      "googleprojectzero.blogspot.com",
+      "msrc.microsoft.com/blog",
+      "hackerone.com/hacktivity",
+      "bugcrowd.com/disclosures",
+      "cert.gov.ua"
+    ],
+    "degraded": [
+      "fortinet.com/blog/threat-research",
+      "packetstorm.news",
+      "nvd.nist.gov",
+      "habr.com/ru/companies/tomhunter/articles",
+      "teletype.in/@cyberok",
+      "avleonov.com"
+    ]
+  },
+  "full_report": "reports/2026/05/14/report.md"
+}

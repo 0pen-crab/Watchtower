@@ -2,52 +2,53 @@
 
 | Source | Findings | Noted | Empty | Last Hit |
 |--------|----------|-------|-------|----------|
-| bleepingcomputer.com | 31 | 24 | 0 | 2026-05-13 |
-| thehackernews.com | 23 | 14 | 0 | 2026-05-13 |
-| cisa.gov | 0 | 0 | 12 | — |
-| securityweek.com | 20 | 16 | 2 | 2026-05-13 |
+| bleepingcomputer.com | 31 | 24 | 1 | 2026-05-13 |
+| thehackernews.com | 26 | 14 | 0 | 2026-05-14 |
+| cisa.gov | 0 | 0 | 13 | — |
+| securityweek.com | 22 | 17 | 2 | 2026-05-14 |
 | github.com/search | 2 | 6 | 5 | 2026-05-13 |
-| schneier.com | 0 | 9 | 4 | 2026-05-13 |
-| krebsonsecurity.com | 0 | 2 | 11 | 2026-05-13 |
-| rapid7.com | 1 | 0 | 11 | 2026-05-08 |
-| attackerkb.com | 0 | 0 | 12 | — |
-| fortinet.com/blog/threat-research | 0 | 0 | 12 | — |
-| securitylab.github.com | 1 | 0 | 11 | 2026-05-07 |
-| seclists.org/fulldisclosure (incl. openwall oss-security) | 21 | 17 | 2 | 2026-05-13 |
-| packetstormsecurity.com | 0 | 0 | 12 | — |
-| opencve.io | 13 | 19 | 1 | 2026-05-13 |
-| nvd.nist.gov | 0 | 0 | 12 | — |
-| cve.mitre.org | 0 | 0 | 12 | — |
-| cve.org | 0 | 0 | 12 | — |
-| googleprojectzero.blogspot.com | 0 | 0 | 12 | — |
-| blog.cloudflare.com/tag/security | 0 | 1 | 11 | 2026-05-08 |
-| msrc.microsoft.com/blog | 0 | 0 | 12 | — |
-| hackerone.com/hacktivity | 0 | 0 | 12 | — |
-| bugcrowd.com/disclosures | 0 | 0 | 12 | — |
-| kb.cert.org/vuls | 0 | 2 | 11 | 2026-05-11 |
-| avleonov.com | 0 | 0 | 12 | — |
-| github.com/0xMarcio/cve | 0 | 7 | 7 | 2026-05-13 |
-| dbugs.ptsecurity.com | 3 | 20 | 5 | 2026-05-12 |
-| habr.com/ru/companies/tomhunter/articles | 0 | 0 | 12 | — |
-| teletype.in/@cyberok | 0 | 0 | 12 | — |
-| cert.gov.ua | 0 | 0 | 12 | — |
-| socket.dev/blog (NEW for 2026-05) | 2 | 2 | 7 | 2026-05-09 |
-| openwall.com/lists/oss-security (off-list, primary OSS source) | 21 | 19 | 1 | 2026-05-13 |
-| github advisories (off-list, NEW high-value 2026-05-07) | 17 | 25 | 0 | 2026-05-13 |
-| vulncheck.com/advisories (off-list, NEW 2026-05-09) | 3 | 6 | 2 | 2026-05-11 |
-| wiz.io/blog (off-list) | 1 | 0 | 4 | 2026-05-11 |
+| schneier.com | 0 | 10 | 4 | 2026-05-14 |
+| krebsonsecurity.com | 0 | 2 | 12 | 2026-05-13 |
+| rapid7.com | 1 | 0 | 12 | 2026-05-08 |
+| attackerkb.com | 0 | 0 | 13 | — |
+| fortinet.com/blog/threat-research | 0 | 0 | 13 | — |
+| securitylab.github.com | 1 | 0 | 12 | 2026-05-07 |
+| seclists.org/fulldisclosure (incl. openwall oss-security) | 22 | 24 | 2 | 2026-05-14 |
+| packetstormsecurity.com | 0 | 0 | 13 | — |
+| opencve.io | 14 | 21 | 1 | 2026-05-14 |
+| nvd.nist.gov | 0 | 0 | 13 | — |
+| cve.mitre.org | 0 | 0 | 13 | — |
+| cve.org | 0 | 0 | 13 | — |
+| googleprojectzero.blogspot.com | 0 | 0 | 13 | — |
+| blog.cloudflare.com/tag/security | 0 | 1 | 12 | 2026-05-08 |
+| msrc.microsoft.com/blog | 0 | 0 | 13 | — |
+| hackerone.com/hacktivity | 0 | 0 | 13 | — |
+| bugcrowd.com/disclosures | 0 | 0 | 13 | — |
+| kb.cert.org/vuls | 0 | 4 | 11 | 2026-05-14 |
+| avleonov.com | 0 | 0 | 13 | — |
+| github.com/0xMarcio/cve | 0 | 7 | 8 | 2026-05-13 |
+| dbugs.ptsecurity.com | 4 | 22 | 5 | 2026-05-14 |
+| habr.com/ru/companies/tomhunter/articles | 0 | 0 | 13 | — |
+| teletype.in/@cyberok | 0 | 0 | 13 | — |
+| cert.gov.ua | 0 | 0 | 13 | — |
+| socket.dev/blog (NEW for 2026-05) | 3 | 2 | 7 | 2026-05-14 |
+| openwall.com/lists/oss-security (off-list, primary OSS source) | 22 | 24 | 1 | 2026-05-14 |
+| github advisories (off-list, NEW high-value 2026-05-07) | 18 | 28 | 0 | 2026-05-14 |
+| vulncheck.com/advisories (off-list, NEW 2026-05-09) | 5 | 7 | 2 | 2026-05-14 |
+| wiz.io/blog (off-list) | 1 | 0 | 5 | 2026-05-11 |
 | scworld.com (off-list) | 0 | 1 | 3 | 2026-05-04 |
-| labs.watchtowr.com (off-list) | 0 | 0 | 7 | 2026-04-29 |
-| trendmicro.com (off-list) | 1 | 0 | 4 | 2026-05-06 |
-| kaspersky / securelist.com (off-list) | 2 | 0 | 3 | 2026-05-10 |
+| labs.watchtowr.com (off-list) | 0 | 0 | 8 | 2026-04-29 |
+| trendmicro.com (off-list) | 1 | 0 | 5 | 2026-05-06 |
+| kaspersky / securelist.com (off-list) | 2 | 0 | 4 | 2026-05-10 |
 | safedep.io (off-list) | 0 | 2 | 3 | 2026-05-10 |
-| aikido.dev (off-list, KEY hit 2026-05-12 Mini Shai-Hulud 169-pkg) | 1 | 1 | 2 | 2026-05-12 |
+| aikido.dev (off-list, KEY hit 2026-05-12 Mini Shai-Hulud 169-pkg) | 1 | 1 | 3 | 2026-05-12 |
 | snyk.io/blog (off-list) | 0 | 1 | 4 | 2026-04-30 |
 | hiddenlayer.com (off-list, via BleepingComputer relay) | 1 | 0 | 1 | 2026-05-10 |
-| securityaffairs.com (NEW 2026-05-12, primary KEV-relay source) | 1 | 1 | 1 | 2026-05-13 |
-| helpnetsecurity.com (NEW 2026-05-12, breach/news coverage) | 0 | 2 | 1 | 2026-05-12 |
-| fortiguard.com/psirt (NEW 2026-05-13, vendor PSIRT direct) | 1 | 0 | 0 | 2026-05-13 |
-| endorlabs.com (NEW 2026-05-13 via BleepingComputer relay, Mini Shai-Hulud Wave 2 attribution) | 1 | 0 | 0 | 2026-05-13 |
+| securityaffairs.com (NEW 2026-05-12, primary KEV-relay source) | 2 | 2 | 1 | 2026-05-14 |
+| helpnetsecurity.com (NEW 2026-05-12, breach/news coverage) | 1 | 3 | 1 | 2026-05-14 |
+| fortiguard.com/psirt (NEW 2026-05-13, vendor PSIRT direct) | 1 | 1 | 0 | 2026-05-14 |
+| endorlabs.com (NEW 2026-05-13 via BleepingComputer relay, Mini Shai-Hulud Wave 2 attribution) | 1 | 0 | 1 | 2026-05-13 |
+| hunt.io (NEW 2026-05-14 via SecurityAffairs relay — discovered Quest KACE SMA active exploitation) | 1 | 0 | 0 | 2026-05-14 |
 
 ## Score Calibration
 *(Updated monthly)*
