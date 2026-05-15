@@ -1,0 +1,114 @@
+Watchtower run — 2026-05-15
+============================
+
+[Step 1] 2026-05-15 — `git pull` — Already up to date.
+
+[Step 2] 2026-05-15 — Dedup index build complete.
+  - Last 30 days: 213 finding-titles, 577 unique CVEs.
+  - Window covered: 2026/04/01 → 2026/05/14.
+
+[Step 3] Source checks — total = 30 (per SOURCES.md unique tier1+tier2 minus seclists dup).
+
+  ✅ bleepingcomputer.com — primary news front (~30s). Hit: Cisco SD-WAN CVE-2026-20182 0-day, Fragnesia CVE-2026-46300, NGINX 18yo flaw, Burst Statistics WP plugin auth bypass, Exim mailer flaw, node-ipc backdoor, BitLocker YellowKey/GreenPlasma PoC, KongTuke Teams pivot, OpenAI confirmed TanStack breach, Pwn2Own Berlin 24 0-days, TeamPCP advertising Mistral AI code, MuddyWater→S.Korea, West Pharmaceutical ransomware.
+  ✅ thehackernews.com — Hit: Cisco SD-WAN CVE-2026-20182 (CVSS 10.0), PraisonAI CVE-2026-44338 auth-bypass exploited <4h, NGINX CVE-2026-42945, node-ipc 9.1.6/9.2.3/12.0.1 stealer.
+  ❌ cisa.gov/known-exploited-vulnerabilities-catalog — 403 Forbidden via WebFetch (known limitation per MEMORY).
+  ❌ cisa.gov — 403 Forbidden via WebFetch (known limitation per MEMORY).
+  ✅ securityweek.com — Hit: F5 patches 50+ CVEs, Fragnesia CVE-2026-46300, PraisonAI exploitation tempo, VMware Fusion CVE-2026-41702.
+  ⚠️ github.com/search?q=CVE — 429 rate-limited on focused query.
+  ✅ schneier.com — May 14: "How Dangerous Is Anthropic's Mythos AI?" — calibration data point (AI vuln-discovery industry frame).
+  ✅ krebsonsecurity.com — no new entries on 2026-05-14/15. Most recent: May 12 Patch Tuesday wrap.
+  ⚠️ rapid7.com — homepage doesn't surface dated content; Cisco SD-WAN discovery was via Rapid7 (cited in BleepingComputer).
+  ❌ attackerkb.com — 403 Forbidden (known limitation per MEMORY).
+  ⚠️ fortinet.com/blog/threat-research — no May 14-15 dated posts (last dated April).
+  ✅ securitylab.github.com — no new GHSL posts dated May 14-15.
+  ❌ seclists.org/fulldisclosure — redirect to seclists.org root (302); no archive view.
+  ⚠️ packetstormsecurity.com → packetstorm.news — landing has only 2026-05-12 update line; no day-by-day archive accessible.
+  ✅ opencve.io (app.opencve.io) — Hit: LLM CLI CVE-2026-31236 (CVSS 9.8), Chrome batch, dbugs cross-reference.
+  ⚠️ nvd.nist.gov — most recent NVD entries dated 2026-05-13; nothing on 14/15.
+  ❌ cve.mitre.org → cve.org (JS-required, no content via WebFetch).
+  ❌ cve.org — JS-required (known limitation per MEMORY).
+  ❌ googleprojectzero.blogspot.com → projectzero.google/ (JS-required, known limitation per MEMORY).
+  ✅ blog.cloudflare.com/tag/security — no new posts May 14-15.
+  ❌ msrc.microsoft.com/blog → microsoft.com/en-us/msrc/blog (no blog content via WebFetch).
+  ❌ hackerone.com/hacktivity — JS-required (known limitation per MEMORY).
+  ❌ bugcrowd.com/disclosures — URL still 404 (known per MEMORY).
+  ✅ kb.cert.org/vuls — last entries 2026-05-11 (dnsmasq VU#471747, Casdoor VU#937808); no new May 14-15.
+  ✅ avleonov.com — May 14: deep-dive on Apache ActiveMQ CVE-2026-34197 (already covered Apr 17/22/25) — analysis, not new CVE.
+  ⚠️ github.com/0xMarcio/cve — relative timestamps only; no actionable dating.
+  ✅ dbugs.ptsecurity.com — Hit: Cisco SD-WAN CVSS 10.0, Burst Statistics CVE-2026-8181 CVSS 9.8, Microsoft Exchange CVE-2026-42897 CVSS 8.1, Chrome batch.
+  ⚠️ habr.com/ru/companies/tomhunter/articles — last dated post 2026-03-06; no May activity.
+  ⚠️ teletype.in/@cyberok — last dated post 2026-02-04; no May activity.
+  ❌ cert.gov.ua — empty content via WebFetch.
+
+  Supplemental sources checked (not in SOURCES.md totals; high-value per MEMORY):
+  ✅ openwall.com/lists/oss-security/2026/05 — Hit: CPython FTP PASV CVE-2026-8328, Apache Commons Configuration CVE-2026-45205, Vim tar.vim/netrw/spell-file issues, Linux Fragnesia thread.
+  ✅ github.com/advisories — Hit: vm2 CVE-2026-45411, multiple Open WebUI CVEs (45675/45672/45671/45665/45402), deepseek-tui RCE/SSRF batch, electerm CVE-2026-45353.
+  ✅ fortiguard.com/psirt — most recent: 2026-05-12 (already covered yesterday).
+  ✅ socket.dev/blog — Hit: Packagist GitHub-token leak, GemStuffer (already covered), TeamPCP $1k supply-chain contest.
+  ✅ aikido.dev/blog — Mini Shai-Hulud Wave 2 already covered.
+  ✅ securityaffairs.com — Hit: Cisco SD-WAN KEV addition, Fragnesia, VMware Fusion, NGINX Rift, FamousSparrow.
+  ✅ helpnetsecurity.com — Hit: Fragnesia, Microsoft AI RCE batch, Amazon Q authorization bypass.
+
+[Step 4] Dedup decisions:
+
+  NEW (news, not in any prior 30-day report):
+  - CVE-2026-20182 Cisco Catalyst SD-WAN Controller — CVSS 10.0 0-day, KEV-added 2026-05-14, federal due 2026-05-17, Rapid7 disclosure. NEW.
+  - CVE-2026-8181 Burst Statistics WordPress plugin (200k installs) — CVSS 9.8, 7,400 attacks in 24h, ~115k still vulnerable. NEW.
+  - CVE-2026-44338 PraisonAI legacy Flask API auth disabled by default (separate CVE from prior 04/14 batch and 5/12 CVE-2026-44336). Exploited within 4h. NEW.
+  - CVE-2026-46300 Fragnesia Linux kernel LPE — was Noted in 5/14 report ("'fragnesia' / copyfail 3.0 LPE"); now has CVE, public PoC, patches available. PROMOTED Noted→Update (treated as Update on 5/14 noted-item promotion).
+  - node-ipc 9.1.6/9.2.3/12.0.1 credential-stealer supply chain. NEW.
+  - Cisco SD-WAN KEV add same-day. (folded into the SD-WAN finding).
+  - F5 NGINX CVE-2026-42945 — UPDATE: yesterday's report had this at threat_score 6 with limited detail; today F5 published full advisory with CVSS 9.2, named NGINX Rift, 18-year vulnerability window, RCE possible if ASLR disabled, fixed in 1.31.0/1.30.1. UPDATE (prev_score 6 → 7).
+  - OpenAI TanStack confirmation — UPDATE on Mini Shai-Hulud Wave 2 (yesterday's 5/13 threat_score 9 finding); 2 employee devices, code-signing certs rotated. UPDATE.
+  - KongTuke Teams pivot — 8th actor in 30 days in Teams-helpdesk-impersonation pattern. NEW.
+
+  SKIP (already covered, no material change):
+  - CVE-2026-34197 Apache ActiveMQ (covered 04/17, 04/22, 04/25) — avleonov May 14 is analytical retrospective; no new exploitation tempo.
+  - CVE-2026-45185 Exim Dead.Letter (covered 5/13) — additional BleepingComputer coverage; no material change.
+  - CVE-2026-44183 Cleanuparr (covered 5/13, noted 5/14) — no material change.
+  - FamousSparrow Azerbaijan (covered 5/14) — same coverage.
+  - Foxconn ransomware (covered 5/14).
+
+  NOTED (encountered, below news threshold):
+  - VMware Fusion CVE-2026-41702 — TOCTOU LPE, out-of-scope (local-only).
+  - BitLocker YellowKey + GreenPlasma — local/physical-access required, out-of-scope per rules.
+  - simonw LLM CLI CVE-2026-31236 CVSS 9.8 — dev tool, niche.
+  - CPython FTP PASV SSRF CVE-2026-8328 — protocol library, low deployment exposure.
+  - Apache Commons Configuration CVE-2026-45205 — DoS via cyclic YAML.
+  - Vim multiple CVEs — client side, out of scope.
+  - GHSA-vmw2/qwm8 Marten NuGet, deepseek-tui x4, electerm CVE-2026-45353, mcphub auth bypass — niche packages.
+  - Multiple Open WebUI CVEs (45675/45672/45671/45665/45402/3wgj) — repeated code-quality signal already documented in MEMORY pattern library; bundled note.
+  - TeamPCP/BreachForums $1k supply chain contest — concerning incentive but no live compromise.
+  - Pwn2Own Berlin Day 1 — 24 0-days but specifics will land in vendor advisories over days.
+  - vm2 CVE-2026-45411 — continuation of structurally-broken pattern documented in MEMORY.
+  - F5 BIG-IP batch CVE-2026-41225/41957/34176/39459 — authenticated, lower priority.
+  - Mistral AI source code for sale (TeamPCP) — already folded under Mini Shai-Hulud OpenAI/TanStack disclosure.
+  - West Pharmaceutical ransomware — breach disclosure, no novel TTP.
+  - MuddyWater South Korean campaign — already in Teams-helpdesk-impersonation pattern.
+  - Microsoft Exchange CVE-2026-42897 CVSS 8.1 — already part of May Patch Tuesday batch.
+  - Packagist GitHub Actions token leak — npm-side already covered, Composer side new.
+  - Amazon Q authorization bypass — limited detail.
+
+[Step 5/6] Writing report.md and report.json.
+
+[Step 7] Validator output appended at end of file.
+
+source_coverage final:
+  total = 30
+  unreachable = 11 (cisa.gov, cisa.gov/known-exploited-vulnerabilities-catalog, attackerkb.com, seclists.org/fulldisclosure, cve.mitre.org, cve.org, googleprojectzero.blogspot.com, msrc.microsoft.com/blog, hackerone.com/hacktivity, bugcrowd.com/disclosures, cert.gov.ua)
+  degraded = 8 (rapid7.com, fortinet.com/blog/threat-research, packetstorm.news, nvd.nist.gov, github.com/0xMarcio/cve, habr.com/ru/companies/tomhunter/articles, teletype.in/@cyberok, github.com/search?q=CVE)
+  checked = 30 - 11 = 19 (all reachable sources checked; constraint: checked >= total - unreachable)
+  with_findings = 11 (bleepingcomputer, thehackernews, securityweek, schneier, opencve.io, dbugs.ptsecurity.com, avleonov.com, plus supplementals)
+
+[Step 7 — Validator]
+⚠️  9 warning(s):
+   findings[0]: 'summary' is 424 chars (aim for <200)
+   findings[1]: 'summary' is 499 chars (aim for <200)
+   findings[2]: 'summary' is 385 chars (aim for <200)
+   findings[3]: 'summary' is 377 chars (aim for <200)
+   findings[4]: 'summary' is 365 chars (aim for <200)
+   findings[5]: 'summary' is 412 chars (aim for <200)
+   findings[6]: 'summary' is 445 chars (aim for <200)
+   findings[7]: 'summary' is 565 chars (aim for <200)
+   findings[8]: 'summary' is 402 chars (aim for <200)
+✅ reports/2026/05/15/report.json — valid

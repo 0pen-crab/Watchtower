@@ -1,0 +1,235 @@
+{
+  "date": "2026-05-15",
+  "findings": [
+    {
+      "type": "news",
+      "title": "Cisco Catalyst SD-WAN Controller CVE-2026-20182 (CVSS 10.0) — Authentication-Bypass Zero-Day Actively Exploited In The Wild; CISA KEV-Added With 3-Day Federal Deadline",
+      "threat_score": 9,
+      "cve": "CVE-2026-20182",
+      "cvss": 10.0,
+      "affected_technology": "Cisco Catalyst SD-WAN Controller and Cisco Catalyst SD-WAN Manager (on-prem and SD-WAN Cloud deployments)",
+      "summary": "An unauthenticated attacker reaching the SD-WAN management plane can bypass peering authentication via crafted requests and log in as an internal high-privileged non-root user, enabling rogue-peer injection and full SD-WAN fabric configuration manipulation; Rapid7 found the bug while researching the actively-exploited CVE-2026-20127 and Cisco confirmed in-the-wild zero-day exploitation prior to the 2026-05-14 disclosure.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "bleepingcomputer.com / thehackernews.com — Cisco warns of new critical SD-WAN flaw exploited in zero-day attacks (2026-05-14)"
+    },
+    {
+      "type": "update",
+      "title": "F5 NGINX 'NGINX Rift' CVE-2026-42945 — 18-Year-Old Heap Buffer Overflow In ngx_http_rewrite_module (CVSS 9.2) Becomes Pre-Auth RCE With ASLR Disabled; Full F5 Quarterly Advisory Lands With 50+ CVEs",
+      "threat_score": 8,
+      "previous_threat_score": 6,
+      "cve": "CVE-2026-42945, CVE-2026-41225, CVE-2026-41957, CVE-2026-34176, CVE-2026-39459",
+      "cvss": 9.2,
+      "affected_technology": "F5 NGINX Open Source 0.6.27–1.30.0; NGINX Plus R32–R36 + derivatives (OpenResty, Tengine, Angie, Kong, NGINX Ingress Controller)",
+      "summary": "F5's full quarterly advisory raises the NGINX rewrite-module bug from limited-detail oss-security note to CVSS 9.2 named 'NGINX Rift' — heap overflow when configs combine 'rewrite' and 'set' directives because the is_args flag persists across NGINX's two-pass script engine, enabling unauthenticated DoS and (with ASLR disabled or specific gadget chains) remote code execution; discovered April 2026 by DepthFirst AI autonomous code scanning, patched in 1.31.0/1.30.1 and NGINX Plus R36 P4 / R32 P6.",
+      "first_seen_at": "securityweek.com / bleepingcomputer.com — F5 Patches Over 50 Vulnerabilities; 18-Year-Old NGINX Vulnerability (2026-05-14)"
+    },
+    {
+      "type": "news",
+      "title": "Burst Statistics WordPress Plugin CVE-2026-8181 (CVSS 9.8) — Authentication Bypass Actively Exploited Against 115K+ Vulnerable Sites; Wordfence Blocked 7,400 Attacks In 24 Hours",
+      "threat_score": 8,
+      "cve": "CVE-2026-8181",
+      "cvss": 9.8,
+      "affected_technology": "Burst Statistics WordPress plugin 3.4.0 and 3.4.1 (~200,000 active installs; ~115,000 sites unpatched)",
+      "summary": "Burst Statistics misinterprets the wp_authenticate_application_password() return value — WP_Error and null responses are treated as success — letting an unauthenticated attacker impersonate any admin via REST API and create rogue administrator accounts; patched in 3.4.2 (2026-05-12) and exploited in the wild within 48h with Wordfence reporting 7,400+ attack attempts in a 24h window.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "bleepingcomputer.com / dbugs.ptsecurity.com — Hackers exploit auth bypass flaw in Burst Statistics WordPress plugin (2026-05-14)"
+    },
+    {
+      "type": "update",
+      "title": "Linux Kernel 'Fragnesia' CVE-2026-46300 — Public PoC Released With No Race Condition; Dirty-Frag Patch Sequel With LPE-To-Root via Page-Cache Write",
+      "threat_score": 7,
+      "previous_threat_score": 4,
+      "cve": "CVE-2026-46300",
+      "cvss": null,
+      "affected_technology": "Linux kernel — XFRM ESP-in-TCP subsystem (all distributions with pre-2026-05-13 kernels)",
+      "summary": "Yesterday's Noted 'fragnesia / copyfail 3.0' kernel LPE now has CVE-2026-46300, public PoC on GitHub (v12-security repo), and no-race-condition exploitation — unprivileged local users write arbitrary bytes to the kernel page cache of read-only files (demonstrated against /usr/bin/su for root shell); same CopyFail lineage previously escalated into CISA KEV via CVE-2026-31431.",
+      "first_seen_at": "bleepingcomputer.com / securityweek.com / helpnetsecurity.com — New Fragnesia Linux flaw lets attackers gain root privileges (2026-05-14)"
+    },
+    {
+      "type": "news",
+      "title": "PraisonAI CVE-2026-44338 — Legacy Flask API Auth Disabled By Default; First Exploitation Attempts Within 4 Hours Of Public Disclosure",
+      "threat_score": 6,
+      "cve": "CVE-2026-44338",
+      "cvss": 7.3,
+      "affected_technology": "PraisonAI multi-agent orchestration framework — legacy Flask API server",
+      "summary": "The PraisonAI legacy Flask API ships with authentication disabled by default, letting unauthenticated callers invoke protected agent-orchestration API functions; SecurityWeek reports first exploitation attempts observed within 4 hours of public disclosure — third PraisonAI advisory in 30 days after the April batch and 2026-05-12 CVE-2026-44336 path-traversal/RCE.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "thehackernews.com / securityweek.com — Hackers Targeted PraisonAI Vulnerability Hours After Disclosure (2026-05-14)"
+    },
+    {
+      "type": "news",
+      "title": "node-ipc npm Versions 9.1.6 / 9.2.3 / 12.0.1 — Obfuscated Stealer Backdoor Fingerprints Systems And Exfiltrates Developer Credentials + Cloud Secrets",
+      "threat_score": 6,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "node-ipc npm package — malicious versions 9.1.6, 9.2.3, 12.0.1 (transitive in many Electron/Node tooling stacks)",
+      "summary": "Three npm package versions of node-ipc were found to contain obfuscated malware that fingerprints the host, harvests developer credentials and cloud-provider secrets, and exfiltrates to attacker C2 — same broader npm supply-chain pattern as Mini Shai-Hulud Wave 2 but on a separate package and without the trusted-publisher-signing twist; pin to known-good versions and audit CI logs for compromised version IDs.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "thehackernews.com — Stealer Backdoor in Node-IPC Versions (2026-05-14)"
+    },
+    {
+      "type": "update",
+      "title": "Mini Shai-Hulud Wave 2 Update — OpenAI Confirms 2-Employee-Device Breach + Code-Signing Cert Rotation; Mistral AI Source-Code Listed For Sale By TeamPCP; $1K BreachForums Supply-Chain Contest Announced",
+      "threat_score": 9,
+      "previous_threat_score": 9,
+      "cve": "CVE-2026-45321",
+      "cvss": null,
+      "affected_technology": "Mini Shai-Hulud Wave 2 affected ecosystem (npm + PyPI; downstream: OpenAI internal repos, Mistral AI corpus)",
+      "summary": "OpenAI confirmed on 2026-05-14 that two employee devices were compromised in the Wave 2 wave with credential exfil from a limited subset of internal repos plus code-signing certs (macOS/Windows/iOS/Android) rotated as a precaution (mandatory user app update by 2026-06-12); Mistral AI source code listed for sale on BreachForums by TeamPCP; TeamPCP+BreachForums announced a $1,000 prize contest incentivizing the next-largest package compromise.",
+      "first_seen_at": "bleepingcomputer.com — OpenAI confirms security breach in TanStack supply chain attack (2026-05-14)"
+    },
+    {
+      "type": "news",
+      "title": "KongTuke IAB Pivots To Microsoft Teams Helpdesk-Impersonation Chain — 5-Minute Foothold; 8th Actor In 30 Days In The Teams-SE → MFA-Tamper Pattern",
+      "threat_score": 6,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Microsoft Teams external chat surface; ModeloRAT (KongTuke's commodity RAT)",
+      "summary": "KongTuke (initial-access broker) added Microsoft Teams external-chat IT-helpdesk impersonation to its FileFix/CrashFix lure portfolio, abusing Unicode whitespace tricks to spoof display names and rotating five Microsoft 365 tenants for evasion — single chat moves operator from cold outreach to persistent foothold in under 5 minutes; eighth actor in 30 days documented in the Teams-helpdesk-impersonation → MFA-tamper → RMM-persistence chain after BlackFile, SNOW/UNC6692, Cordial Spider, Snarky Spider, Microsoft Code-of-Conduct AiTM, VENOMOUS#HELPER, MuddyWater.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "bleepingcomputer.com — KongTuke hackers now use Microsoft Teams for corporate breaches (2026-05-14)"
+    },
+    {
+      "type": "news",
+      "title": "Pwn2Own Berlin 2026 Day 1 — 24 Unique Zero-Days In Windows 11 / Microsoft Edge / VMware Stack; $523,000 Awarded; VMware Fusion CVE-2026-41702 Proactively Patched Mid-Event",
+      "threat_score": 5,
+      "cve": "CVE-2026-41702",
+      "cvss": null,
+      "affected_technology": "Windows 11, Microsoft Edge, VMware Fusion, additional virtualization and enterprise targets",
+      "summary": "Day 1 of Pwn2Own Berlin (2026-05-14) saw 24 unique zero-days demonstrated against Windows 11, Microsoft Edge, and the VMware stack with $523,000 in awards — Broadcom proactively shipped VMware Fusion CVE-2026-41702 (TOCTOU SETUID LPE to root, reported by Mathieu Farrell) during the event; individual CVE assignments and vendor advisories for the remaining 23 chains will land over the next 60-90 days.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "bleepingcomputer.com / securityweek.com — Windows 11 and Microsoft Edge hacked at Pwn2Own Berlin 2026 (2026-05-14)"
+    }
+  ],
+  "noted": [
+    {
+      "cve": null,
+      "product": "BitLocker YellowKey + GreenPlasma (Windows, unpatched)",
+      "summary": "Researcher 'Chaotic Eclipse' published PoC for two unpatched Windows issues on 2026-05-13: NTFS-transactions BitLocker bypass via FsTx file on USB/EFI + WinRE (TPM-only, original-device only) and CTFMON arbitrary-section-creation LPE; LPE/local-only and out of scope for fleet alerting but relevant for endpoint EDR teams."
+    },
+    {
+      "cve": "CVE-2026-31236",
+      "product": "simonw LLM CLI tool 0.27.1",
+      "summary": "CVSS 9.8 unrestricted Python code execution via unsanitized --functions argument; niche developer-tool RCE but the LLM CLI is widely installed in agentic-AI experimentation environments."
+    },
+    {
+      "cve": "CVE-2026-8328",
+      "product": "CPython FTP PASV SSRF",
+      "summary": "ftpcp() trusts the server-supplied PASV host address instead of the actual peer address (oss-security 2026-05-14); SSRF primitive in Python's FTP module — relevant for any CI pipeline or agent that uses CPython FTP against attacker-controlled servers."
+    },
+    {
+      "cve": "CVE-2026-45205",
+      "product": "Apache Commons Configuration",
+      "summary": "StackOverflowError via YAML cyclic data structures (oss-security 2026-05-14); DoS-class, widely-deployed Apache library."
+    },
+    {
+      "cve": null,
+      "product": "Vim 3-issue batch (tar.vim command injection, netrw NetrwMarkFile() code injection, spell-file heap overflow)",
+      "summary": "Three Vim issues published 2026-05-14 (oss-security); client-side editor issues affecting Vim < 9.2.480 — out of scope for the infrastructure perimeter but relevant for engineering-workstation hardening."
+    },
+    {
+      "cve": "CVE-2026-45411",
+      "product": "vm2 sandbox (npm)",
+      "summary": "Additional vm2 sandbox escape via async generators (GHSA-248r-7h7q-cr24, 2026-05-14) — extends the 'vm2 is structurally broken' pattern documented in MEMORY; recommendation unchanged (migrate to isolated-vm)."
+    },
+    {
+      "cve": "CVE-2026-45675, CVE-2026-45672, CVE-2026-45671, CVE-2026-45665, CVE-2026-45402",
+      "product": "Open WebUI (multi-CVE batch)",
+      "summary": "Five new Open WebUI GHSA advisories on 2026-05-14: LDAP/OAuth first-user race condition allowing multiple admins, Jupyter execution bypass when feature gate disabled, shared-chat branch access-control bypass, banner stored XSS, cross-user file access — extends the 4-high-severity-in-30-days code-quality signal already in MEMORY pattern library."
+    },
+    {
+      "cve": "CVE-2026-45369, CVE-2026-45370",
+      "product": "utcp-cli (pip)",
+      "summary": "Command injection via unsanitized argument substitution + full-process-env exposure to CLI subprocess (GHSA 2026-05-14); niche CLI tool."
+    },
+    {
+      "cve": "CVE-2026-45374, CVE-2026-45311, CVE-2026-45373, CVE-2026-45310",
+      "product": "deepseek-tui (Rust + npm)",
+      "summary": "Four-CVE deepseek-tui batch: RCE via prompt injection in project files + run_tests tool accepting malicious repos + SSRF via IPv6 bypass + SSRF via HTTP redirect bypass — yet another AI-coding-assistant trust-boundary class joining Claude Code MCP / TrustFall / ClaudeBleed."
+    },
+    {
+      "cve": "CVE-2026-45353",
+      "product": "electerm (npm)",
+      "summary": "Local code execution via single-instance socket vulnerability (GHSA 2026-05-14); third electerm advisory in 30 days after the 2026-05-09 CVE-2026-43940/43944 batch — recurring code-quality concern."
+    },
+    {
+      "cve": null,
+      "product": "@samanhappy/mcphub (npm)",
+      "summary": "MCP Hub SSE endpoint accepts arbitrary username without authentication (GHSA-wf8q-wvv8-p8jf, 2026-05-14); fits the broader MCP-server authn-handling pattern documented in MEMORY."
+    },
+    {
+      "cve": "CVE-2026-45288",
+      "product": "Marten (NuGet)",
+      "summary": "Injection vulnerability in full-text search regConfig parameter (GHSA 2026-05-14); .NET data-access library."
+    },
+    {
+      "cve": "CVE-2026-41225, CVE-2026-41957, CVE-2026-34176, CVE-2026-39459",
+      "product": "F5 BIG-IP + iControl REST (companion CVEs in May 2026 quarterly advisory)",
+      "summary": "Four high-severity authenticated-attacker RCE/command-injection issues in BIG-IP shipped alongside the NGINX Rift advisory (CVE-2026-41225 CVSS 8.6 via Manager-permissions iControl REST + 3 additional Auth-RCEs); plus 12 BIG-IP DoS issues in the Traffic Management Microkernel."
+    },
+    {
+      "cve": "CVE-2026-42897",
+      "product": "Microsoft Exchange Server",
+      "summary": "CVSS 8.1 issue in Exchange (dbugs.ptsecurity.com 2026-05-14); part of May Patch Tuesday batch — track for any pivot to on-prem PRC-cluster ProxyNotShell-like chains."
+    },
+    {
+      "cve": null,
+      "product": "TeamPCP + BreachForums $1,000 supply-chain attack contest",
+      "summary": "Socket reported a $1,000 prize contest announced by TeamPCP/BreachForums on 2026-05-14 incentivizing the largest-scale package compromise under the 'Shai-Hulud' banner — incentive-escalation data point, no live compromise yet."
+    },
+    {
+      "cve": null,
+      "product": "Packagist Composer / GitHub Actions token leak",
+      "summary": "Socket reported that a GitHub Actions token format change caused some PHP/Composer-side tokens to be inadvertently logged in CI; Packagist recommending immediate Composer update."
+    },
+    {
+      "cve": null,
+      "product": "Amazon Q authorization bypass",
+      "summary": "Helpnetsecurity 2026-05-14 — users can bypass access controls to reach AI chat agents that should be blocked; limited technical detail published."
+    },
+    {
+      "cve": null,
+      "product": "MuddyWater (Iran/MOIS) South Korean major electronics maker",
+      "summary": "Bleepingcomputer 2026-05-14 — MuddyWater cyber-espionage campaign expanded targeting to a major South Korean electronics manufacturer plus 9 high-profile organizations across sectors; same actor already covered in the Teams-helpdesk-impersonation pattern (2026-05-06)."
+    },
+    {
+      "cve": null,
+      "product": "West Pharmaceutical Services ransomware",
+      "summary": "Bleepingcomputer 2026-05-14 — pharmaceutical packaging vendor disclosed data theft + encryption; ongoing investigation, no public attribution or novel TTP."
+    },
+    {
+      "cve": null,
+      "product": "Apache ActiveMQ CVE-2026-34197 Jolokia RCE retrospective",
+      "summary": "Alexander Leonov published 2026-05-14 deep-dive analysis of Apache ActiveMQ CVE-2026-34197 (covered originally 2026-04-17/22/25) — ~7,000 servers exposed online, public exploits available since early April; no new tempo signal."
+    }
+  ],
+  "source_coverage": {
+    "total": 30,
+    "checked": 19,
+    "with_findings": 11,
+    "unreachable": [
+      "cisa.gov",
+      "cisa.gov/known-exploited-vulnerabilities-catalog",
+      "attackerkb.com",
+      "seclists.org/fulldisclosure",
+      "cve.mitre.org",
+      "cve.org",
+      "googleprojectzero.blogspot.com",
+      "msrc.microsoft.com/blog",
+      "hackerone.com/hacktivity",
+      "bugcrowd.com/disclosures",
+      "cert.gov.ua"
+    ],
+    "degraded": [
+      "rapid7.com",
+      "fortinet.com/blog/threat-research",
+      "packetstorm.news",
+      "nvd.nist.gov",
+      "github.com/0xMarcio/cve",
+      "habr.com/ru/companies/tomhunter/articles",
+      "teletype.in/@cyberok",
+      "github.com/search?q=CVE"
+    ]
+  },
+  "full_report": "reports/2026/05/15/report.md"
+}
