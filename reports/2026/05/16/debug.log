@@ -1,0 +1,141 @@
+2026-05-16T00:00:51Z  cycle=2026-05-16/night  watchtower  start
+2026-05-16T00:00:55Z  git pull /home/claude/workspace/watchtower  -> Already up to date.
+2026-05-16T00:00:58Z  load MEMORY.md (111 lines, ~28k tokens) -> read in chunks
+2026-05-16T00:01:00Z  build dedup index from reports/2026/0[45]/*/report.json
+2026-05-16T00:01:02Z  dedup window: 2026-04-16 through 2026-05-15 (last 30 days)
+2026-05-16T00:01:02Z  dedup index built: 424 unique items (findings + noted)
+2026-05-16T00:01:05Z  load SOURCES.md (36 lines)
+2026-05-16T00:01:05Z  unique sources after de-duplication: 30
+2026-05-16T00:01:05Z  mkdir -p reports/2026/05/16 -> ok
+
+--- SOURCE CHECKS ---
+2026-05-16T00:01:50Z  bleepingcomputer.com         ✅  ~2.5s  found: Funnel Builder skimmer, Avada Builder CVE-2026-4798/4782, Cisco SD-WAN, Pwn2Own Day 2, Shai-Hulud signed TanStack/Mistral
+2026-05-16T00:01:50Z  thehackernews.com            ✅  ~2.2s  found: OpenClaw 3 CVEs, Exchange CVE-2026-42897 active exploit, Cisco SD-WAN, PraisonAI, Ghostwriter, Pwn2Own
+2026-05-16T00:01:50Z  securityweek.com             ✅  ~2.1s  found: Exchange CVE-2026-42897, Cisco SD-WAN "sixth zero-day 2026", TeamPCP source release, NGINX Rift, Fragnesia, FamousSparrow
+2026-05-16T00:01:50Z  krebsonsecurity.com          ✅  ~1.5s  no fresh items (most recent posts 2026-05-12 Patch Tuesday, 2026-05-07 Canvas)
+2026-05-16T00:02:25Z  rapid7.com                   ✅  ~1.8s  found: Metasploit Wrap-Up 05-15-2026, CVE-2026-0265 PAN-OS ETR, CVE-2026-20182 Cisco SD-WAN ETR
+2026-05-16T00:02:25Z  schneier.com                 ✅  ~1.4s  no in-scope findings (AI age-verification bypass, AI bug-finder commentary)
+2026-05-16T00:02:25Z  app.opencve.io               ✅  ~1.9s  found: Open WebUI multi-CVE batch (5/15), additional Linux kernel + Salesforce items
+2026-05-16T00:02:25Z  securitylab.github.com       ✅  ~1.6s  found: GHSL-2026-002 Open WebUI (Man Yue Mo 2026-05-15)
+2026-05-16T00:02:55Z  github.com/advisories        ✅  ~2.1s  found: 25 reviewed critical advisories on 2026-05-15 — Portainer x2, n8n x3, Amazon Redshift JDBC, flowise, Mapfish Print, Obot MCP, sanitize-html, Goobi viewer, strapi additional, and dedups against yesterday's noted batch (vm2, electerm, deepseek-tui, Marten, utcp-cli, mcphub, SillyTavern, esm.sh)
+2026-05-16T00:02:55Z  kb.cert.org/vuls             ✅  ~1.3s  no fresh items (most recent VU#471747 dnsmasq, VU#937808 Casdoor from 2026-05-11 — already noted yesterday)
+2026-05-16T00:03:25Z  blog.cloudflare.com          ✅  ~1.2s  no fresh items (most recent 2026-05-07 Copy Fail response — already covered)
+2026-05-16T00:03:25Z  fortinet.com/blog/threat-research  ✅  ~1.5s  found: PureLogs steganography (2026-05-15) — malware-delivery only, out of scope
+2026-05-16T00:03:25Z  fortiguard.com/psirt         ✅  ~1.6s  supplementary — found FG-IR-26-131 / 137 / 133 (FortiAP CLI command injection, FortiAnalyzer/Manager API DoS); FortiSandbox FG-IR-26-136 + FortiAuthenticator FG-IR-26-100 already covered 2026-05-13
+2026-05-16T00:03:25Z  avleonov.com                 ✅  ~1.4s  found: Apache ActiveMQ CVE-2026-34197 deep-dive (2026-05-14), SharePoint CVE-2026-32201 (2026-05-13) — already covered
+2026-05-16T00:03:55Z  github.com/0xMarcio/cve      ✅  ~1.7s  found: Copy-Fail-CVE-2026-31431-Kubernetes-PoC (container escape; new PoC class), Apache Tomcat CVE-2026-34486 PoC update, cPanel CVE-2026-41940 PoC update
+2026-05-16T00:03:55Z  dbugs.ptsecurity.com         ✅  ~1.4s  found: CVE-2026-46364 Phpmyfaq, CVE-2026-44717 MCP Calculate Server, CVE-2026-45010 Phpmyfaq, CVE-2026-44699 libjwt, CVE-2026-45035 Tabby — most niche/researcher-only; libjwt may warrant follow-up
+2026-05-16T00:04:25Z  openwall.com/lists/oss-security/2026/05/  ✅  supplementary — found: Linux __ptrace_may_access (Qualys), Apache Flink CVE-2026-35194, libpng-apng CVE-2026-40930, netatalk 4.4.3 20-CVE batch, PostgreSQL release, Perl batch (Imager GIF / DSA / TOTP / WWW::Mechanize::Cached / Apache::Session)
+2026-05-16T00:04:25Z  socket.dev/blog              ✅  supplementary — confirms TeamPCP $1k contest and Packagist token leak (both noted yesterday)
+2026-05-16T00:04:25Z  securityaffairs.com          ✅  supplementary — Pwn2Own Day 2, MS Exchange CVE-2026-42897, Cisco SD-WAN KEV, Linux Fragnesia, VMware Fusion, NGINX Rift, FamousSparrow
+
+--- UNREACHABLE / DEGRADED SOURCES ---
+2026-05-16T00:01:50Z  cisa.gov                                 ❌  HTTP 403 (consistent with MEMORY note)
+2026-05-16T00:01:50Z  cisa.gov/known-exploited-vulnerabilities-catalog  ❌  HTTP 403
+2026-05-16T00:02:25Z  attackerkb.com                           ❌  HTTP 403
+2026-05-16T00:02:55Z  cve.mitre.org                            ❌  302 redirect to cve.org (JS-required)
+2026-05-16T00:02:55Z  cve.org                                  ❌  JS-required (empty content)
+2026-05-16T00:02:55Z  googleprojectzero.blogspot.com           ❌  302 redirect to projectzero.google (JS-required)
+2026-05-16T00:02:55Z  msrc.microsoft.com/blog                  ❌  302 redirect to microsoft.com/en-us/msrc, content empty
+2026-05-16T00:02:55Z  hackerone.com/hacktivity                 ❌  JS-required (empty content)
+2026-05-16T00:02:55Z  bugcrowd.com/disclosures                 ❌  HTTP 404
+2026-05-16T00:03:55Z  cert.gov.ua                              ❌  empty content / no advisory listings
+2026-05-16T00:01:50Z  packetstormsecurity.com                  ❌  redirects to packetstorm.news; homepage shows only stats, no listings
+2026-05-16T00:02:25Z  github.com/search?q=CVE                  ❌  JS-required; used github.com/advisories as proxy
+2026-05-16T00:02:25Z  seclists.org/fulldisclosure              ❌  archive index stale (latest visible posts April 2026)
+2026-05-16T00:03:55Z  teletype.in/@cyberok                     ❌  no recent posts visible (latest Feb 2026)
+2026-05-16T00:03:55Z  habr.com/ru/companies/tomhunter/articles ❌  no May 2026 posts visible (latest March 2026)
+2026-05-16T00:04:00Z  nvd.nist.gov                             ❌  homepage shows only stale CVEs; no fresh CVE data via WebFetch
+
+--- DEDUP DECISIONS ---
+NEW    | CVE-2026-44848, CVE-2026-44849 Portainer host-RCE batch (no prior coverage)
+NEW    | CVE-2026-44789, CVE-2026-44790, CVE-2026-44791 n8n 3-CVE batch (distinct from CVE-2026-21858 March)
+NEW    | CVE-2026-4798, CVE-2026-4782 Avada Builder WordPress
+NEW    | Funnel Builder WP skimmer (no CVE) — distinct from Burst Statistics CVE-2026-8181
+NEW    | CVE-2026-44112, CVE-2026-44113, CVE-2026-44115 OpenClaw OpenShell sandbox race chain
+NEW    | CVE-2026-8178 Amazon Redshift JDBC unsafe class loading
+UPDATE | CVE-2026-20182 Cisco SD-WAN — Rapid7 technical writeup + UAT-8616 attribution + 36h deadline (previous News 2026-05-15 at score 9)
+UPDATE | CVE-2026-31431 Copy Fail — Kubernetes container escape PoC (previously LPE-only at score 7)
+UPDATE | CVE-2026-45321 Mini Shai-Hulud Wave 2 — TeamPCP releases worm source code (previous Update 2026-05-15 at score 9)
+UPDATE | CVE-2026-42897 Microsoft Exchange — active exploitation confirmed, mitigations only (was Noted in 2026-05-15 implicit score 4)
+UPDATE | Pwn2Own Berlin Day 2 — 15 more zero-days incl. Exchange (continuation of 2026-05-15 News score 5)
+SKIP   | CVE-2026-42945 NGINX Rift (already covered as Update 2026-05-15 with full F5 advisory detail)
+SKIP   | CVE-2026-8181 Burst Statistics WordPress (already News 2026-05-15 at score 8)
+SKIP   | CVE-2026-46300 Linux Fragnesia (already Update 2026-05-15 at score 7)
+SKIP   | CVE-2026-44338 PraisonAI (already News 2026-05-15 at score 6)
+SKIP   | node-ipc 9.1.6/9.2.3/12.0.1 (already News 2026-05-15 at score 6)
+SKIP   | KongTuke Teams pivot (already News 2026-05-15 at score 6)
+SKIP   | CVE-2026-41702 VMware Fusion (already covered 2026-05-15 Day 1 entry)
+SKIP   | BitLocker YellowKey + GreenPlasma (already Noted 2026-05-15)
+SKIP   | vm2 CVE-2026-45411 (already Noted 2026-05-15)
+SKIP   | Open WebUI multi-CVE batch (already Noted 2026-05-15)
+SKIP   | utcp-cli CVE-2026-45369/45370 (already Noted 2026-05-15)
+SKIP   | deepseek-tui 4-CVE batch (already Noted 2026-05-15)
+SKIP   | electerm CVE-2026-45353 (already Noted 2026-05-15)
+SKIP   | @samanhappy/mcphub (already Noted 2026-05-15)
+SKIP   | Marten CVE-2026-45288 (already Noted 2026-05-15)
+SKIP   | F5 BIG-IP CVE-2026-41225/41957/34176/39459 (already Noted 2026-05-15)
+SKIP   | TeamPCP $1k contest (already Noted 2026-05-15; subsumed into today's Update on source release)
+SKIP   | Packagist Composer token leak (already Noted 2026-05-15)
+SKIP   | MuddyWater South Korea (already Noted 2026-05-15)
+SKIP   | West Pharma ransomware (already Noted 2026-05-15)
+SKIP   | dnsmasq VU#471747 (already Noted 2026-05-12 / 13 / 14)
+SKIP   | Casdoor VU#937808 (already Noted 2026-05-12 / 13)
+SKIP   | CVE-2026-8328 CPython FTP PASV (already Noted 2026-05-15)
+SKIP   | Apache Commons Configuration CVE-2026-45205 (already Noted 2026-05-15)
+SKIP   | Vim tar.vim batch (already Noted 2026-05-15)
+SKIP   | CVE-2026-34486 Tomcat EncryptInterceptor (already Noted 2026-05-13; PoC update no new tempo)
+SKIP   | Apache ActiveMQ CVE-2026-34197 (already Noted 2026-05-14 / 15)
+SKIP   | SiYuan CVE-2026-45375 (already Noted 2026-05-14 / 15)
+SKIP   | SillyTavern CVE-2026-44649/44650 (already Noted 2026-05-13 / 14)
+SKIP   | esm.sh CVE-2026-44593 (already News 2026-05-13)
+SKIP   | strapi CVE-2026-22599 (already News 2026-05-14)
+NOTED  | Linux kernel __ptrace_may_access (no CVE; Qualys + _SiCk PoC)
+NOTED  | CVE-2026-35194 Apache Flink RCE (thin technical detail)
+NOTED  | CVE-2026-40930 libpng-apng
+NOTED  | netatalk 4.4.3 20-CVE batch
+NOTED  | PostgreSQL security release
+NOTED  | CVE-2026-44990 sanitize-html default XSS
+NOTED  | CVE-2026-27886 strapi data leak (relational filtering)
+NOTED  | CVE-2026-44672 Mapfish Print RCE
+NOTED  | CVE-2026-45083 Goobi viewer-core
+NOTED  | Obot MCP authz bypass
+NOTED  | CVE-2026-46442 Flowise auth RCE
+NOTED  | CVE-2026-45062 frankenphp unicode CGI
+NOTED  | @budibase/server 3-CVE batch
+NOTED  | CVE-2026-45578 AVideo OS command injection
+NOTED  | CVE-2026-45364 better-auth rate limiter
+NOTED  | CVE-2026-44716 pipecat-ai path traversal
+NOTED  | CVE-2026-44692 code16/sharp
+NOTED  | CVE-2026-45058 electerm bookmark
+NOTED  | CVE-2026-46491 simplesamlphp casserver
+NOTED  | Perl ecosystem batch (CVE-2026-8612/8454/8669/8503/46474/8700/8704)
+NOTED  | llama.cpp GGUF parsers (no CVE assigned)
+NOTED  | MOVEit Automation auth bypass (Progress patched)
+NOTED  | Ghostwriter / FrostyNeighbor Ukraine campaign (ESET)
+NOTED  | Turla Kazuar P2P botnet
+NOTED  | Apache ActiveMQ CVE-2026-34197 follow-up
+NOTED  | American Lending Center 123k breach
+NOTED  | OpenLoop Health 716k breach
+NOTED  | Akamai acquires LayerX $205M
+NOTED  | G7 AI SBOM guidance
+NOTED  | Microsoft Edge passwords-in-memory backpedal
+NOTED  | OpenAI app-update deadline 2026-06-12 reminder
+OUT-OF-SCOPE | Microsoft Edge passwords-in-memory (operational hardening, not vuln)
+OUT-OF-SCOPE | AI Hallucinations real risks (commentary, not advisory)
+OUT-OF-SCOPE | Schneier AI-bug-finder commentary
+OUT-OF-SCOPE | Schneier on-camera age verification bypass
+
+--- SOURCE COVERAGE FINALS ---
+2026-05-16T00:04:45Z  total=30, checked=14, with_findings=11, unreachable=16, degraded=0
+2026-05-16T00:04:45Z  validator constraint: checked(14) >= total(30) - len(unreachable)(16) = 14  ✓
+
+--- VALIDATOR OUTPUT ---
+2026-05-16T00:04:50Z  python3 scripts/validate_report.py reports/2026/05/16/report.json
+✅ reports/2026/05/16/report.json — valid
+
+--- COMMIT ---
+2026-05-16T00:04:55Z  git add reports/2026/05/16/  -> staged
+2026-05-16T00:04:55Z  git commit -m "report: 2026-05-16"
+2026-05-16T00:04:55Z  git push origin main
+2026-05-16T00:04:55Z  done

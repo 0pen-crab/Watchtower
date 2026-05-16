@@ -1,0 +1,308 @@
+{
+  "date": "2026-05-16",
+  "findings": [
+    {
+      "type": "update",
+      "title": "Cisco Catalyst SD-WAN CVE-2026-20182 — Talos UAT-8616 attribution + Rapid7 technical writeup; federal deadline 2026-05-17",
+      "threat_score": 9,
+      "previous_threat_score": 9,
+      "cve": "CVE-2026-20182",
+      "cvss": 10.0,
+      "affected_technology": "Cisco Catalyst SD-WAN Controller / Manager (on-prem + SD-WAN Cloud)",
+      "summary": "Rapid7 published a full technical writeup of the SD-WAN peering-authentication bypass; Talos / SecurityWeek tied it to UAT-8616 and frame this as the sixth Cisco-perimeter exploited zero-day of 2026, with CISA KEV federal deadline 2026-05-17 (<36h from now).",
+      "first_seen_at": "2026-05-14"
+    },
+    {
+      "type": "update",
+      "title": "Mini Shai-Hulud Wave 2 worm source code publicly released by TeamPCP on BreachForums",
+      "threat_score": 9,
+      "previous_threat_score": 9,
+      "cve": "CVE-2026-45321",
+      "cvss": null,
+      "affected_technology": "npm + PyPI publishing infrastructure (TanStack / UiPath / Mistral / OpenAI publisher chain)",
+      "summary": "TeamPCP released the full Wave 2 worm source code (pull_request_target chain, GitHub Actions cache poisoning, OIDC token theft, orphaned-commit optional-dependency propagation) one day after the $1,000 BreachForums supply-chain contest, converting the worm primitive into commodity tooling.",
+      "first_seen_at": "2026-05-12"
+    },
+    {
+      "type": "update",
+      "title": "Microsoft Exchange Server CVE-2026-42897 — active exploitation confirmed; mitigations only, no permanent patch yet",
+      "threat_score": 8,
+      "previous_threat_score": 4,
+      "cve": "CVE-2026-42897",
+      "cvss": 8.1,
+      "affected_technology": "On-premises Microsoft Exchange Server 2019 / 2016 (OWA component)",
+      "summary": "Microsoft confirmed in-the-wild exploitation of CVE-2026-42897 OWA XSS-via-crafted-email; the company has issued interim mitigations but no permanent patch yet, and the bug chains cleanly with the on-prem Exchange PRC initial-access vector active across 2026-Q2.",
+      "first_seen_at": "2026-05-13"
+    },
+    {
+      "type": "update",
+      "title": "Linux Copy Fail CVE-2026-31431 — Kubernetes container escape PoC published; LPE now a node-compromise primitive",
+      "threat_score": 8,
+      "previous_threat_score": 7,
+      "cve": "CVE-2026-31431",
+      "cvss": null,
+      "affected_technology": "Linux kernel page-cache subsystem (Ubuntu / RHEL / SUSE / Debian / Amazon Linux); Kubernetes nodes",
+      "summary": "New public PoC Percivalll/Copy-Fail-CVE-2026-31431-Kubernetes-PoC converts the Copy Fail kernel page-cache write into a container escape from an unprivileged Kubernetes pod to node-level code execution, broadening the bug from LPE-only to container-escape-class.",
+      "first_seen_at": "2026-05-03"
+    },
+    {
+      "type": "news",
+      "title": "Funnel Builder WordPress plugin — unauthenticated settings modification → active payment-card skimmer campaign on WooCommerce sites",
+      "threat_score": 7,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Funnel Builder by FunnelKit WordPress plugin ≤ 3.15.0.2 (~40,000 active installs); WooCommerce checkout",
+      "summary": "Sansec confirmed active mass exploitation of an unauthenticated settings-modification bug allowing injection of fake-Google-Analytics JavaScript that loads a WebSocket-relayed payment-card skimmer on checkout pages; vendor shipped 3.15.0.3 on 2026-05-14.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-05-14"
+    },
+    {
+      "type": "news",
+      "title": "Avada Builder WordPress plugin CVE-2026-4798 unauth SQL injection (+ CVE-2026-4782 auth file read) — 1M installs",
+      "threat_score": 7,
+      "cve": "CVE-2026-4798, CVE-2026-4782",
+      "cvss": 9.4,
+      "affected_technology": "Avada Builder WordPress plugin ≤ 3.15.2 (~1,000,000 active installs)",
+      "summary": "Time-based blind unauth SQL injection in product_order parameter (when WooCommerce was previously installed then deactivated with residual tables) plus authenticated arbitrary-file-read via custom_svg shortcode allows full site takeover via wp-config.php exfiltration; fixed in 3.15.3 (2026-05-12).",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-05-14"
+    },
+    {
+      "type": "news",
+      "title": "n8n 3-CVE batch — HTTP Request pagination prototype-pollution RCE (CVE-2026-44789), Git Node arbitrary file read (CVE-2026-44790), XML Node prototype-pollution patch bypass (CVE-2026-44791)",
+      "threat_score": 7,
+      "cve": "CVE-2026-44789, CVE-2026-44790, CVE-2026-44791",
+      "cvss": 9.8,
+      "affected_technology": "n8n self-hosted workflow automation (npm n8n) — pre-patched 1.x releases",
+      "summary": "GHSA-published 3-CVE critical batch on n8n: HTTP Request node prototype-pollution → RCE on host, Git Node arbitrary file read, and patch-bypass on a prior XML Node prototype-pollution via attribute-namespace polluted keys — second critical n8n RCE batch in 2026 after March's CVE-2026-21858.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-05-15"
+    },
+    {
+      "type": "news",
+      "title": "Portainer CVE-2026-44848 missing-authz Docker plugin → host RCE + CVE-2026-44849 Swarm endpoint security bypass",
+      "threat_score": 7,
+      "cve": "CVE-2026-44848, CVE-2026-44849",
+      "cvss": 9.9,
+      "affected_technology": "Portainer Community Edition + Business Edition (Go) — pre-patched 2.x releases",
+      "summary": "Any authenticated Portainer user (regardless of role) can install Docker plugins on any managed host via missing-authz on plugin management endpoints, yielding host-level RCE on every Docker host managed by the Portainer instance; companion Swarm-service security-bypass.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-05-15"
+    },
+    {
+      "type": "news",
+      "title": "Amazon Redshift JDBC driver CVE-2026-8178 — RCE via unsafe class loading in redshift-jdbc42",
+      "threat_score": 6,
+      "cve": "CVE-2026-8178",
+      "cvss": 9.6,
+      "affected_technology": "com.amazon.redshift:redshift-jdbc42 (Maven) — affecting BI tools, application servers, data-pipeline runners, analyst notebooks",
+      "summary": "Unsafe class loading in the Redshift JDBC driver allows a malicious JDBC connection string to coerce the driver into loading attacker-controlled JVM classes, yielding RCE in the JVM process loading the driver — affecting every Redshift-connected JVM environment.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-05-15"
+    },
+    {
+      "type": "news",
+      "title": "OpenClaw 3-CVE OpenShell sandbox race-condition chain — sandbox escape, data exfiltration, persistence",
+      "threat_score": 6,
+      "cve": "CVE-2026-44112, CVE-2026-44113, CVE-2026-44115",
+      "cvss": 9.6,
+      "affected_technology": "OpenClaw OpenShell sandbox (all versions ≤ 2026.3.x)",
+      "summary": "Time-of-check / time-of-use race condition in OpenShell sandbox input validation chained with incomplete-validation data-exfiltration and persistence primitives — adds to the 35+ OpenClaw CVEs disclosed in 2026, particularly impactful for stale OpenClaw 2026.2.x deployments documented in MEMORY.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-05-15"
+    },
+    {
+      "type": "update",
+      "title": "Pwn2Own Berlin 2026 Day 2 — 15 additional zero-days including Microsoft Exchange compromise; $385,750 awarded; two-day total $908,750",
+      "threat_score": 5,
+      "previous_threat_score": 5,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Microsoft Exchange Server, Windows 11, additional virtualisation and enterprise targets",
+      "summary": "Day 2 of Pwn2Own Berlin produced 15 more zero-day demonstrations including a Microsoft Exchange compromise on the same day Microsoft confirmed active exploitation of CVE-2026-42897 — chains under ZDI embargo pending vendor coordination.",
+      "first_seen_at": "2026-05-14"
+    }
+  ],
+  "noted": [
+    {
+      "cve": null,
+      "product": "Linux kernel __ptrace_may_access() (Qualys, oss-security 2026-05-15)",
+      "summary": "Logic bug in __ptrace_may_access() with public PoC _SiCk/ssh-keysign-pwn; LPE only, no CVE assigned at disclosure; track for promotion if KEV-added or chained."
+    },
+    {
+      "cve": "CVE-2026-35194",
+      "product": "Apache Flink (oss-security 2026-05-15/20)",
+      "summary": "RCE via SQL injection in code generation in Flink SQL Gateway; stream-processing framework widely deployed in enterprise data pipelines; limited technical detail at disclosure."
+    },
+    {
+      "cve": "CVE-2026-40930",
+      "product": "libpng-apng (oss-security 2026-05-15/21)",
+      "summary": "Push-mode APNG parser chunk smuggling; downstream distribution impact across widely-bundled library; client-side parsing path."
+    },
+    {
+      "cve": null,
+      "product": "netatalk 4.4.3 (oss-security 2026-05-15/22)",
+      "summary": "20-CVE security release on Apple Filing Protocol implementation; affects NAS appliances and Time Machine targets; 18 issues deferred. Out of typical perimeter scope."
+    },
+    {
+      "cve": null,
+      "product": "PostgreSQL 18.4 / 17.10 / 16.14 / 15.18 / 14.23 (oss-security 2026-05-15/23)",
+      "summary": "Multi-CVE PostgreSQL security release; specific CVE list pending; apply via OS package channels."
+    },
+    {
+      "cve": "CVE-2026-44990",
+      "product": "sanitize-html (npm, GHSA 2026-05-15)",
+      "summary": "Critical default XSS via xmp raw-text passthrough in sanitize-html (~2M weekly downloads); affects any application using default config to sanitize untrusted HTML."
+    },
+    {
+      "cve": "CVE-2026-27886",
+      "product": "@strapi/strapi (npm, GHSA 2026-05-15)",
+      "summary": "Sensitive-data leak via relational filtering without query sanitization; companion to CVE-2026-22599 from 2026-05-13."
+    },
+    {
+      "cve": "CVE-2026-44672",
+      "product": "Mapfish Print (Maven, GHSA 2026-05-15)",
+      "summary": "Remote code injection in dynamic table expressions; niche but in-scope where embedded in GIS web stacks."
+    },
+    {
+      "cve": "CVE-2026-45083",
+      "product": "Goobi viewer-core (Maven, GHSA 2026-05-15)",
+      "summary": "Unauthenticated Solr Streaming Expression proxy on digital-library / museum-collection software; SSRF / data extraction primitive."
+    },
+    {
+      "cve": null,
+      "product": "Obot MCP server (Go, GHSA-vw82-7fv8-r6gp 2026-05-15)",
+      "summary": "Authorization bypass on /mcp-connect/{id} — any authenticated user can connect to any registered MCP server; continues the MCP-server authz/authn pattern (8+ MCP issues in MEMORY)."
+    },
+    {
+      "cve": "CVE-2026-46442",
+      "product": "Flowise (npm, GHSA 2026-05-15)",
+      "summary": "Authenticated host RCE via NodeVM sandbox escape on /api/v1/node-custom-function — Flowise's typical default-no-auth posture per MEMORY makes this exploitable in many deployments."
+    },
+    {
+      "cve": "CVE-2026-45062",
+      "product": "frankenphp (Go, GHSA 2026-05-15)",
+      "summary": "Unsafe unicode handling in CGI path splitting allowing execution of non-PHP files; sub-cluster of the Apache HTTP / PHP-FPM path-splitting class."
+    },
+    {
+      "cve": "CVE-2026-45717, CVE-2026-45715, CVE-2026-45548",
+      "product": "@budibase/server (npm, GHSA 2026-05-15)",
+      "summary": "3-CVE batch on Budibase low-code platform — datasource authz, SSRF redirect bypass, SSRF in AI Extract File via missing IP blacklist."
+    },
+    {
+      "cve": "CVE-2026-45578",
+      "product": "WWBN/AVideo (Composer, GHSA 2026-05-15)",
+      "summary": "OS command injection in on_publish.php execAsync via unescaped m3u8 URL parameter; live-streaming platform; companion passwordless admin issue in Meet plugin."
+    },
+    {
+      "cve": "CVE-2026-45364",
+      "product": "better-auth (npm, GHSA 2026-05-15)",
+      "summary": "Rate-limiter keys individual IPv6 addresses; bypassable via 2^64 prefix-rotation space; authentication library."
+    },
+    {
+      "cve": "CVE-2026-44716",
+      "product": "pipecat-ai (pip, GHSA 2026-05-15)",
+      "summary": "Path traversal in /files endpoint enabling arbitrary file read; AI voice-agent framework."
+    },
+    {
+      "cve": "CVE-2026-44692",
+      "product": "code16/sharp (Composer, GHSA 2026-05-15)",
+      "summary": "Authenticated users can download unrelated Laravel Storage objects; Laravel admin panel cross-Storage data exposure."
+    },
+    {
+      "cve": "CVE-2026-45058",
+      "product": "electerm (npm, GHSA 2026-05-15)",
+      "summary": "Unsafe bookmark operation when clicking local-type bookmark; fourth electerm CVE in 30 days — deprecation-candidate cluster signal."
+    },
+    {
+      "cve": "CVE-2026-46491",
+      "product": "simplesamlphp-module-casserver (Composer, GHSA 2026-05-15)",
+      "summary": "Path traversal allowing out-of-ticket-directory read/unserialize chain on federated SSO server library."
+    },
+    {
+      "cve": "CVE-2026-8612, CVE-2026-8454, CVE-2026-8669, CVE-2026-8503, CVE-2026-46474, CVE-2026-8700, CVE-2026-8704",
+      "product": "Perl ecosystem batch (oss-security 2026-05-15)",
+      "summary": "WWW::Mechanize::Cached deserialization, Imager::File::GIF heap OOB (×2), Apache::Session SHA256 weak ID, Trog::TOTP weak random, Crypt::DSA weak seed and file write — niche Perl modules."
+    },
+    {
+      "cve": null,
+      "product": "llama.cpp GGUF parsers (oss-security 2026-05-15/19)",
+      "summary": "Multiple vulnerabilities in llama.cpp GGUF model-file parsers; AI inference engine widely deployed self-hosted; pending CVE assignment."
+    },
+    {
+      "cve": null,
+      "product": "Progress MOVEit Automation (2026-05-15)",
+      "summary": "Critical auth-bypass patched in MOVEit Automation; no public exploit yet, but MOVEit's 2023 supply-chain history makes any auth-bypass a high-priority patch candidate."
+    },
+    {
+      "cve": null,
+      "product": "Ghostwriter / FrostyNeighbor (ESET, 2026-05-15)",
+      "summary": "Belarus-aligned APT resumed campaigns active since March 2026 with geofenced PDF phishing delivering PicassoLoader + Cobalt Strike against Ukrainian government targets."
+    },
+    {
+      "cve": null,
+      "product": "Turla Kazuar P2P botnet (2026-05-15)",
+      "summary": "FSB-aligned Russian APT upgraded Kazuar backdoor to peer-to-peer botnet for stealth + persistent network access; APT-tier IOC pattern, not a vulnerability."
+    },
+    {
+      "cve": "CVE-2026-34197",
+      "product": "Apache ActiveMQ (avleonov.com 2026-05-14)",
+      "summary": "Deep-dive analysis follow-up on CVE-2026-34197 Jolokia RCE; confirms ~7,000 internet-exposed instances; analytical post, no new tempo signal."
+    },
+    {
+      "cve": null,
+      "product": "American Lending Center 123,000 customers (SecurityWeek 2026-05-15)",
+      "summary": "Ransomware breach disclosed nearly a year after the attack; financial-services PII exposure; no novel TTP."
+    },
+    {
+      "cve": null,
+      "product": "OpenLoop Health 716,000 patients (BC 2026-05-15)",
+      "summary": "January 2026 healthcare breach disclosure; standard healthcare PII exfiltration."
+    },
+    {
+      "cve": null,
+      "product": "Akamai acquires LayerX ($205M, 2026-05-15)",
+      "summary": "Industry consolidation — LayerX is the Claude-for-Chrome / ClaudeBleed disclosure org (MEMORY 2026-05-09); track for any disclosure-policy change post-acquisition."
+    },
+    {
+      "cve": null,
+      "product": "G7 AI SBOM guidance (2026-05-15)",
+      "summary": "G7 released AI supply-chain transparency guidance; relevant for AI-platform vendors' future compliance posture."
+    },
+    {
+      "cve": null,
+      "product": "Microsoft Edge passwords-in-memory backpedal (BC 2026-05-15)",
+      "summary": "Microsoft will stop loading saved passwords into Edge memory at startup; operational hardening, not a vulnerability."
+    },
+    {
+      "cve": null,
+      "product": "OpenAI app-update deadline reminder (2026-06-12)",
+      "summary": "From the Mini Shai-Hulud Wave 2 OpenAI breach: users of OpenAI macOS / Windows / iOS / Android apps must update by 2026-06-12 to maintain code-signing chain."
+    }
+  ],
+  "source_coverage": {
+    "total": 30,
+    "checked": 14,
+    "with_findings": 11,
+    "unreachable": [
+      "cisa.gov",
+      "cisa.gov/known-exploited-vulnerabilities-catalog",
+      "attackerkb.com",
+      "cve.mitre.org",
+      "cve.org",
+      "googleprojectzero.blogspot.com",
+      "msrc.microsoft.com/blog",
+      "hackerone.com/hacktivity",
+      "bugcrowd.com/disclosures",
+      "cert.gov.ua",
+      "packetstormsecurity.com",
+      "github.com/search?q=CVE",
+      "seclists.org/fulldisclosure",
+      "teletype.in/@cyberok",
+      "habr.com/ru/companies/tomhunter/articles",
+      "nvd.nist.gov"
+    ],
+    "degraded": []
+  },
+  "full_report": "reports/2026/05/16/report.md"
+}
