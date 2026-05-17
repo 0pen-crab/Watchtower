@@ -1,0 +1,112 @@
+{
+  "date": "2026-05-17",
+  "findings": [
+    {
+      "type": "update",
+      "title": "Microsoft Exchange Server CVE-2026-42897 added to CISA KEV — still no permanent patch, 21-day federal deadline 2026-06-06",
+      "threat_score": 9,
+      "previous_threat_score": 8,
+      "cve": "CVE-2026-42897",
+      "cvss": 8.1,
+      "affected_technology": "On-premises Microsoft Exchange Server 2019 / 2016 (OWA component)",
+      "summary": "CISA formally added Microsoft Exchange CVE-2026-42897 OWA XSS-via-crafted-email to KEV on 2026-05-16 with a 2026-06-06 federal deadline; Microsoft has still shipped only configuration-level mitigations, no permanent code patch, mirroring the operationally-painful ProxyNotShell / ProxyShell pattern.",
+      "first_seen_at": "2026-05-13"
+    },
+    {
+      "type": "news",
+      "title": "Microsoft Azure Backup for AKS — Confused Deputy (Backup Contributor → cluster-admin); Microsoft refused CVE, silently patched (CERT/CC VU#284781)",
+      "threat_score": 6,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Azure Backup for AKS (Azure Kubernetes Service)",
+      "summary": "Backup-Contributor-to-cluster-admin confused-deputy escalation via auto-established AKS Trusted Access; Microsoft refused CVE and silently patched, leaving defenders without a CVE-anchored audit trail (CERT/CC VU#284781).",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-05-16"
+    }
+  ],
+  "noted": [
+    {
+      "cve": "CVE-2026-45411",
+      "product": "vm2 (npm, GHSA-248r-7h7q-cr24 2026-05-16)",
+      "summary": "Sandbox breakout via async generator semantics — yet another vm2 escape reinforcing the structurally-broken pattern; migrate to isolated-vm or container-isolated execution."
+    },
+    {
+      "cve": "CVE-2026-45353",
+      "product": "electerm (npm, GHSA-7p5m-v798-f8vv 2026-05-16)",
+      "summary": "Local code execution via single-instance socket; second electerm CVE in 48h after CVE-2026-45058 — deprecation-candidate cluster signal continuing."
+    },
+    {
+      "cve": "CVE-2026-43884, CVE-2026-45610, CVE-2026-45580",
+      "product": "WWBN/AVideo (Composer, GHSA 2026-05-17)",
+      "summary": "Second-batch CVEs on AVideo — incomplete-fix on isSSRFSafeURL, missing CSRF on 2FA toggle, stored XSS via unescaped stream key, plus a no-CVE passwordless-login-via-filename-manipulation issue."
+    },
+    {
+      "cve": null,
+      "product": "better-auth (npm, GHSA-wxw3-q3m9-c3jr 2026-05-17)",
+      "summary": "OAuth callback accepts mismatched state without PKCE; second better-auth issue in a week after yesterday's IPv6 rate-limiter bypass CVE-2026-45364."
+    },
+    {
+      "cve": null,
+      "product": "rkyv (Rust, GHSA-vfvv-c25p-m7mm 2026-05-17)",
+      "summary": "Panic safety bugs in widely-used Rust zero-copy deserialization library enabling arbitrary code execution under specific conditions."
+    },
+    {
+      "cve": null,
+      "product": "arnika (Go, GHSA-rc6v-5rmx-w5mv 2026-05-17)",
+      "summary": "Multiple issues in UDP source-port rotation, PQC handling, and KMS TLS validation — post-quantum-VPN niche."
+    },
+    {
+      "cve": null,
+      "product": "TeamPCP FIRESCALE Python toolkit C2 resilience (Hunt.io 2026-05-14)",
+      "summary": "Research deep-dive on TeamPCP post-takedown persistence — legitimate GitHub repos as C2 fallback, victim-account-as-relay, FIRESCALE Python loader updated within hours of takedown; IOC value for hunting Mini Shai-Hulud Wave 1/2 residue."
+    },
+    {
+      "cve": "CVE-2026-46719",
+      "product": "Net::Statsd::Lite (Perl, oss-security 2026-05-16)",
+      "summary": "Versions before 0.9.0 allow metric-name injection; niche Perl monitoring library."
+    },
+    {
+      "cve": "CVE-2026-22810",
+      "product": "@joplin/onenote-converter (npm, GHSA 2026-05-17)",
+      "summary": "Path traversal in OneNote importer for Joplin note-taking app; client-side parser-path issue."
+    },
+    {
+      "cve": "CVE-2026-45106",
+      "product": "weblate (pip, GHSA 2026-05-17)",
+      "summary": "Stored HTML injection in editor search preview on the translation-platform; authenticated stored XSS class."
+    },
+    {
+      "cve": "CVE-2026-41147",
+      "product": "nukeviet (Composer, GHSA 2026-05-17)",
+      "summary": "Stored XSS via insufficient input sanitization on widely-deployed Vietnamese-origin CMS."
+    },
+    {
+      "cve": "CVE-2026-45574, CVE-2026-45575",
+      "product": "epa4all-client (Maven, GHSA 2026-05-17)",
+      "summary": "TLS certificate validation disabled in production + improper cryptographic signature verification on German health-records client library; healthcare-data-flow integrity concern."
+    }
+  ],
+  "source_coverage": {
+    "total": 30,
+    "checked": 16,
+    "with_findings": 4,
+    "unreachable": [
+      "cisa.gov",
+      "cisa.gov/known-exploited-vulnerabilities-catalog",
+      "github.com/search?q=CVE",
+      "attackerkb.com",
+      "seclists.org/fulldisclosure",
+      "packetstormsecurity.com",
+      "nvd.nist.gov",
+      "cve.mitre.org",
+      "cve.org",
+      "googleprojectzero.blogspot.com",
+      "msrc.microsoft.com/blog",
+      "hackerone.com/hacktivity",
+      "bugcrowd.com/disclosures",
+      "cert.gov.ua"
+    ],
+    "degraded": []
+  },
+  "full_report": "reports/2026/05/17/report.md"
+}

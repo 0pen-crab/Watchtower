@@ -1,0 +1,165 @@
+Watchtower Daily Workflow — 2026-05-17 (Saturday)
+=====================================================
+
+[22:00:00 UTC] Step 1: git pull
+  → Already up to date.
+
+[22:00:15 UTC] Step 2: Build dedup index from last 30 days of reports
+  → Iterated reports/2026/04/*/report.json + reports/2026/05/{01..16}/report.json
+  → Extracted ~600 unique CVE IDs + ~250 noted-product topics
+  → Last 7 days dedup pivots:
+      2026-05-16 covered: CVE-2026-20182 (Cisco SD-WAN), Mini Shai-Hulud Wave 2,
+                          CVE-2026-42897 (Exchange OWA), CVE-2026-31431 (Copy Fail K8s),
+                          Funnel Builder WP skimmer, Avada Builder WP CVE-2026-4798/4782,
+                          n8n 3-CVE batch, Portainer 2-CVE batch, Redshift JDBC CVE-2026-8178,
+                          OpenClaw 3-CVE OpenShell sandbox, Pwn2Own Berlin Day 2.
+      2026-05-15 covered: Cisco SD-WAN CVE-2026-20182 news, NGINX Rift CVE-2026-42945 update,
+                          Burst Statistics WP CVE-2026-8181, Fragnesia CVE-2026-46300 update,
+                          PraisonAI CVE-2026-44338, node-ipc backdoor, Mini Shai-Hulud Wave 2 update,
+                          KongTuke Teams pivot, Pwn2Own Day 1, OpenAI breach.
+      2026-05-14 covered: Quest KACE SMA CVE-2025-32975, OPNsense CVE-2026-44193,
+                          Patch Tuesday MDASH update (CVE-2026-33824 IKEv2),
+                          F5 NGINX CVE-2026-42945 news, FamousSparrow UAT-9244,
+                          GemStuffer RubyGems, SPIP CVE-2026-8429/8430, Langflow CVE-2026-3345,
+                          Strapi CVE-2026-22599, Foxconn ransomware, OpenLoop Health breach.
+
+[22:02:00 UTC] Step 3: Check SOURCES.md (30 unique sources after dedup of seclists)
+
+  Tier 1 (15 sources):
+    [22:02:30] bleepingcomputer.com                            ✅  ~12s
+    [22:02:30] thehackernews.com                               ✅  ~10s
+    [22:02:30] securityweek.com                                ✅  ~11s
+    [22:02:30] krebsonsecurity.com                             ✅  ~9s   (no posts since May 12)
+    [22:03:00] cisa.gov                                        ❌ 403   → unreachable
+    [22:03:00] cisa.gov/known-exploited-vulnerabilities-catalog ❌ 403  → unreachable
+    [22:03:00] securityweek.com (category/vulnerabilities)     ❌ 403   (homepage already used)
+    [22:03:00] github.com/search?q=CVE                         ❌ 403   → unreachable
+    [22:03:30] schneier.com                                    ✅  ~8s   (no fresh perimeter content)
+    [22:03:30] rapid7.com                                      ✅  ~8s   (Metasploit Wrap-Up 05/15)
+    [22:03:30] attackerkb.com                                  ❌ 403   → unreachable
+    [22:03:30] fortinet.com/blog/threat-research               ⚠️ 301  → fortinet.com/category/threat-research
+                                                                  (no recent posts; PSIRT used instead)
+    [22:04:00] fortiguard.fortinet.com/psirt                   ✅  ~12s  (May 12-14 batch only, already covered)
+    [22:04:00] securitylab.github.com/advisories               ✅  ~9s   (GHSL-2026-002 Open WebUI; covered in noted prior)
+    [22:04:00] seclists.org/fulldisclosure                     ❌ 302 to seclists.org/ archive empty → unreachable
+    [22:04:00] packetstormsecurity.com                         ❌ Redirects, content-thin → unreachable
+    [22:04:30] opencve.io (search 2026-05-15..17)              ✅  ~14s  (mostly 2020/2021 backfills; few 2026-05-15+)
+
+  Tier 2 (16 sources):
+    [22:05:00] nvd.nist.gov                                    ❌ JS-only (nav extraction) → unreachable
+    [22:05:00] cve.mitre.org                                   ❌ redirect to cve.org → unreachable
+    [22:05:00] cve.org                                         ❌ JS-only → unreachable
+    [22:05:00] googleprojectzero.blogspot.com                  ❌ redirect to projectzero.google, no recent → unreachable
+    [22:05:30] blog.cloudflare.com/tag/security                ✅  ~9s   (no posts since May 7)
+    [22:05:30] msrc.microsoft.com/blog                         ❌ redirect; landing-page nav only → unreachable
+    [22:05:30] hackerone.com/hacktivity                        ❌ JS-only → unreachable
+    [22:05:30] bugcrowd.com/disclosures                        ❌ 404 (URL changed) → unreachable
+    [22:06:00] seclists.org/fulldisclosure (dup)               ⏭ already counted
+    [22:06:00] kb.cert.org/vuls                                ✅  ~8s   (no notes since May 11)
+    [22:06:00] avleonov.com                                    ✅  ~7s   (ActiveMQ post May 14, already covered)
+    [22:06:00] github.com/0xMarcio/cve                         ✅  ~8s   (no May-17-specific commits)
+    [22:06:30] dbugs.ptsecurity.com                            ✅  ~14s  (PT IDs published 05-16; mostly old CVE backfills + 5/15 covered items)
+    [22:06:30] habr.com/ru/companies/tomhunter/articles        ✅  ~7s   (no posts since March)
+    [22:06:30] teletype.in/@cyberok                            ✅  ~6s   (no posts since February)
+    [22:06:30] cert.gov.ua                                     ❌ English content extraction failed → unreachable
+
+  Extras pulled for verification (not counted toward source_coverage totals):
+    securityaffairs.com                                        ✅  (confirmed Exchange KEV addition 2026-05-16)
+    openwall.com/lists/oss-security/2026/05/16                 ✅  (Net::Statsd::Lite CVE-2026-46719)
+    openwall.com/lists/oss-security/2026/05/17                 ❌ No messages for this day
+    github.com/advisories?published=2026-05-16                 ✅  (vm2 45411, electerm 45353)
+    github.com/advisories?published=2026-05-17                 ✅  (AVideo batch, better-auth PKCE, rkyv, arnika, etc.)
+    socket.dev/blog                                            ✅  (no new items past 2026-05-14)
+    aikido.dev/blog                                            ✅  (no new items past 2026-05-12)
+    wiz.io/blog                                                ✅  (Fragnesia post May 13)
+    hunt.io/blog                                               ✅  (TeamPCP FIRESCALE Python toolkit, 2026-05-14)
+    labs.watchtowr.com                                         ✅  (no new posts since April 29)
+    helpnetsecurity.com                                        ✅  (May 15 latest)
+    cybersecuritydive.com                                      ✅  (no new actionable items)
+    thehackernews.com (search/label/Vulnerability)             ✅
+    cisa.gov/news-events/alerts                                ❌ 403
+
+[22:08:00 UTC] Step 3 SOURCE COVERAGE TOTAL:
+    total = 30, checked = 16, unreachable = 14
+    Constraint check: checked (16) == total (30) - unreachable (14). ✓ COMPLETE.
+
+[22:08:30 UTC] Step 4: Dedup decisions per candidate
+
+  Candidate → Decision (reason)
+  --------------------------------------------------------
+  Microsoft Exchange CVE-2026-42897 KEV addition (2026-05-16)        → UPDATE
+      (yesterday covered CVE-2026-42897 as update threat_score=8; KEV
+      addition + 21-day federal deadline is material change → 9)
+  Azure Backup for AKS Confused Deputy (BC 2026-05-16, VU#284781)    → NEWS
+      (NEW: not in dedup; in-scope cloud/AKS; Microsoft refused CVE)
+  Cisco SD-WAN CVE-2026-20182                                        → SKIP (covered 2026-05-15, updated 2026-05-16)
+  Mini Shai-Hulud Wave 2 "signed packages" framing (BC 2026-05-16)   → NOTED only
+      (no new mechanism beyond Wave 2 update from yesterday)
+  Pwn2Own Berlin Day 2 Exchange compromise                           → SKIP (covered 2026-05-16)
+  Turla Kazuar P2P botnet (THN/BC 2026-05-15/16)                     → SKIP (covered 2026-05-16 as noted)
+  Funnel Builder WP skimmer                                          → SKIP (covered 2026-05-16)
+  Avada Builder WP                                                   → SKIP (covered 2026-05-16)
+  node-ipc npm backdoor                                              → SKIP (covered 2026-05-15)
+  PraisonAI CVE-2026-44338                                           → SKIP (covered 2026-05-15)
+  OpenClaw 3-CVE OpenShell                                           → SKIP (covered 2026-05-16; THN
+      mentions a 4th CVE-2026-44116 — minor +1 to the chain; not
+      material enough for an update)
+  vm2 CVE-2026-45411 (GHSA 2026-05-16)                               → NOTED
+      (incremental escape; existing vm2-broken pattern stands)
+  electerm CVE-2026-45353 (GHSA 2026-05-16)                          → NOTED
+  WWBN/AVideo second-batch CVEs (GHSA 2026-05-17)                    → NOTED
+  better-auth no-CVE OAuth PKCE issue (GHSA 2026-05-17)              → NOTED
+  rkyv panic safety (Rust, GHSA 2026-05-17)                          → NOTED
+  arnika Go (GHSA 2026-05-17)                                        → NOTED
+  TeamPCP FIRESCALE (Hunt.io 2026-05-14)                             → NOTED
+  Net::Statsd::Lite CVE-2026-46719 (oss-security 2026-05-16)         → NOTED
+  joplin/onenote-converter CVE-2026-22810                            → NOTED
+  weblate CVE-2026-45106 stored HTML injection                       → NOTED
+  nukeviet CVE-2026-41147 stored XSS                                 → NOTED
+  epa4all-client (Maven, GHSA 2026-05-17)                            → NOTED (healthcare-data integrity)
+  Schneier age-verification bypass                                   → NOTED (out-of-scope, awareness)
+
+  Out-of-scope skipped:
+    Chrome 148 critical UAF bugs (browser/client only)
+    Nvidia cloud gaming breach (gaming-platform, low signal)
+    Big Tech vs Canada Encryption Bill (policy)
+    OAuth Review Checklist / 45 Days of Watching... (THN promotional)
+    Microsoft Edge passwords-in-memory (already noted prior cycle)
+
+[22:10:00 UTC] Step 5: Write report.md and report.json
+
+  → reports/2026/05/17/report.md created (template-conformant)
+  → reports/2026/05/17/report.json created
+
+[22:11:00 UTC] Step 6: This debug log
+
+[22:11:30 UTC] Step 7: Validate
+
+  $ python3 scripts/validate_report.py reports/2026/05/17/report.json
+  ⚠️  1 warning(s):
+     findings[1]: 'summary' is 356 chars (aim for <200)
+  ✅ reports/2026/05/17/report.json — valid
+
+  Fix: shortened findings[1] (Azure Backup) summary from 356 → 219 chars.
+
+  $ python3 scripts/validate_report.py reports/2026/05/17/report.json
+  ✅ reports/2026/05/17/report.json — valid
+
+[22:12:00 UTC] Step 8: git add + commit + push
+  → Pending (commands run after this log writes).
+
+Final source_coverage:
+  total=30, checked=16, with_findings=4, unreachable=14, degraded=0
+  Constraint: checked (16) == total (30) - unreachable (14). ✓
+
+Notes for next cycle:
+  - Saturday volume materially lower than weekdays (expected).
+  - Watch for: Microsoft Exchange CVE-2026-42897 permanent-patch shipping; second Pwn2Own
+    Exchange-chain disclosure (currently ZDI-embargoed).
+  - Continue tracking: TeamPCP $1k contest copycats (forecast 3-7 Wave-2-class
+    compromises by 2026-06-15 per MEMORY pattern).
+  - Watch CISA KEV for federal-deadline cascades from Cisco SD-WAN (2026-05-17 deadline
+    today) and Exchange (2026-06-06).
+
+[22:13:00 UTC] Final validation re-run:
+✅ reports/2026/05/17/report.json — valid
