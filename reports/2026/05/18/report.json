@@ -1,0 +1,118 @@
+{
+  "date": "2026-05-18",
+  "findings": [
+    {
+      "type": "news",
+      "title": "Grafana Labs GitHub Codebase Theft — Pwn-Request workflow misconfig → privileged-token theft → 4 private repos exfiltrated → CoinbaseCartel extortion attempt refused",
+      "threat_score": 7,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "GitHub Actions workflows using pull_request_target with secrets (process-level; Grafana Labs was the named victim)",
+      "summary": "Pwn-Request workflow misconfig let attackers exfiltrate privileged tokens from Grafana CI runners, pivot to four private repos, and steal source code; canary-token tripped the alarm and Grafana refused the CoinbaseCartel ransom — same primitive as Mini Shai-Hulud Wave 2.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-05-16"
+    },
+    {
+      "type": "news",
+      "title": "Frigate NVR CVE-2026-25643 — config.yaml exec: directive command-injection → go2rtc shell RCE on internet-exposed video-recorder appliances",
+      "threat_score": 6,
+      "cve": "CVE-2026-25643",
+      "cvss": 9.1,
+      "affected_technology": "Frigate NVR ≤ 0.16.3 (network video recorder for IP cameras, integrating with Home Assistant)",
+      "summary": "Frigate NVR's config.yaml parser passes the exec: directive to go2rtc's shell context without sanitization, enabling admin-or-unauthenticated-if-internet-exposed RCE; patched 0.16.4, two public PoCs on GitHub within hours of advisory.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-05-17"
+    }
+  ],
+  "noted": [
+    {
+      "cve": null,
+      "product": "Apple iOS 26.5 / iPadOS 26.5 / macOS Tahoe 26.5 / Safari 26.5 (Full Disclosure 2026-05-17)",
+      "summary": "Broad Apple multi-OS security update — out of Watchtower scope (mobile / client-only) but noting for fleet-managed-Apple defenders."
+    },
+    {
+      "cve": null,
+      "product": "Vim (oss-security 2026-05-17)",
+      "summary": "Multiple vimscript code-injection bugs disclosed — client-side editor; relevant only where root operators run Vim on production hosts with untrusted modeline/script content."
+    },
+    {
+      "cve": "CVE-2026-40020, CVE-2026-42006",
+      "product": "Dovecot OXDC-2026-0002 (advisory 2026-05-05, FD republication 2026-05-17)",
+      "summary": "IMAP SETACL anyone-ACL injection (CWE-284, CVSS 3.1) plus imap-login memory exhaustion DoS (CVSS 4.3); patched in OX Dovecot Pro 3.1.5 / CE 2.4.4 — low severity."
+    },
+    {
+      "cve": null,
+      "product": "Chaotic Eclipse 'MiniPlasma' Windows Cloud Filter LPE PoC (BleepingComputer 2026-05-17)",
+      "summary": "Fifth Windows zero-day drop in the Chaotic Eclipse spree (after BlueHammer/RedSun/UnDefend/YellowKey/GreenPlasma) abusing cldflt.sys CfAbortHydration; LPE-only and out of scope, but the spree itself is a calibration data point."
+    },
+    {
+      "cve": null,
+      "product": "Tycoon2FA + Trustifi-URL device-code phishing campaign (BleepingComputer 2026-05-17)",
+      "summary": "Microsoft 365 account takeover via device-code phishing wrapped in legitimate Trustifi URLs to defeat link reputation; tighten device-code conditional access and hunt non-interactive device_code sign-ins."
+    },
+    {
+      "cve": null,
+      "product": "Secret Blizzard 'Kazuar' backdoor evolved to P2P botnet (BleepingComputer 2026-05-16)",
+      "summary": "Russian SVR-aligned actor transformed Kazuar into a modular P2P-resilient botnet — IOC value rather than vendor-defensive priority."
+    },
+    {
+      "cve": "CVE-2026-8768",
+      "product": "Vercel AI SDK (OpenCVE / PT-Security 2026-05-17)",
+      "summary": "Server-side request forgery in download functionality ≤ 3.0.97; upgrade if running the Vercel AI SDK on the server."
+    },
+    {
+      "cve": "CVE-2026-31222, CVE-2026-31223, CVE-2026-31224",
+      "product": "Snorkel library (OpenCVE 2026-05-17)",
+      "summary": "Three insecure-deserialization RCEs via malicious model files (CVSS 8.8 each) — joins the broader 'ML library trusting pickle/torch.load on untrusted artifacts' pattern."
+    },
+    {
+      "cve": "CVE-2026-31214",
+      "product": "ml-engineering (OpenCVE 2026-05-17)",
+      "summary": "Unsafe torch.load() of untrusted PyTorch checkpoints (CVSS 9.8) — generic instance of the documented pickle-in-checkpoint RCE pattern."
+    },
+    {
+      "cve": "CVE-2026-1184, CVE-2026-1322",
+      "product": "GitLab EE / CE (NVD 2026-05-14)",
+      "summary": "Unauthenticated DoS via crafted uploads (CVSS 7.5) plus read_api OAuth scope creation bypass (CVSS 8.1); patched in 18.9.7 / 18.10.6 / 18.11.3 — internet-exposed GitLab instances should apply."
+    },
+    {
+      "cve": "CVE-2026-44501",
+      "product": "DataHub frontend (NVD 2026-05-14)",
+      "summary": "Unsafe deserialization of Java objects via HTTP cookie during OIDC callback; patched in 1.5.0.3 — relevant if DataHub OIDC SSO is internet-reachable."
+    },
+    {
+      "cve": "CVE-2024-39847, CVE-2024-13971",
+      "product": "4D Server SOAP + Lobster Pro (Schutzwerk SA-2024-002/005, FD 2026-05-17)",
+      "summary": "Older 2024 XXE advisories getting their public write-ups — file-read + outbound HTTP via XML SOAP endpoint; niche enterprise software."
+    },
+    {
+      "cve": "CVE-2026-46720, CVE-2026-8507, CVE-2026-8721",
+      "product": "Perl Net::Statsd::Tiny + Crypt::OpenSSL::PKCS12 (oss-security 2026-05-17)",
+      "summary": "Metric injection (StatsD) plus OOB write and NULL-truncation in PKCS12 bindings; niche Perl-ecosystem patches — metric-injection class can poison Prometheus/Grafana dashboards."
+    },
+    {
+      "cve": null,
+      "product": "WordPress AI Engine plugin (PT-2026-41513, CVSS 8.8) + WordPress Backup/Restore plugin (PT-2026-41465, CVSS 8.8)",
+      "summary": "Two WordPress plugin Critical-class issues published via PT-Security dbugs 2026-05-17 ahead of Patchstack/Wordfence; AI Engine plugin previously had CVE-2025-11749 MCP bearer-token exposure — treat as second-round exposure."
+    }
+  ],
+  "source_coverage": {
+    "total": 30,
+    "checked": 20,
+    "with_findings": 7,
+    "unreachable": [
+      "cisa.gov",
+      "cisa.gov/known-exploited-vulnerabilities-catalog",
+      "attackerkb.com",
+      "packetstormsecurity.com",
+      "cve.mitre.org",
+      "cve.org",
+      "msrc.microsoft.com/blog",
+      "hackerone.com/hacktivity",
+      "bugcrowd.com/disclosures",
+      "cert.gov.ua"
+    ],
+    "degraded": []
+  },
+  "full_report": "reports/2026/05/18/report.md"
+}

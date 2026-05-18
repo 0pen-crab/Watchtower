@@ -1,0 +1,117 @@
+Watchtower Daily Run — 2026-05-18
+=====================================
+
+02:00:00Z  Step 1 — git pull
+02:00:02Z    cd /home/claude/workspace/watchtower && git pull
+02:00:03Z    Already up to date.
+
+02:00:05Z  Step 2 — Build dedup index from last 30 days (2026-04-18 → 2026-05-17)
+02:00:08Z    Days enumerated: 30 (every report.json present for the window)
+02:00:10Z    Unique CVEs in dedup index: 307
+02:00:10Z    Index saved to /tmp/dedup_cves.txt
+02:00:10Z    Spot-checked: Grafana incident → NEW (not in index); Frigate NVR CVE-2026-25643 → NEW; Dovecot OXDC-2026-0002 → NEW (CVE-2026-40020/42006 not in index); Snorkel/Vercel-AI/ml-engineering → NEW; Apple iOS 26.5 → no prior coverage but OOS; "MiniPlasma" → NEW (related to BlueHammer/RedSun/UnDefend/YellowKey/GreenPlasma cluster already covered as updates).
+
+02:00:30Z  Step 3 — Source check (SOURCES.md, 30 unique entries; seclists listed in both tiers, deduped to 30)
+02:00:31Z    Parallel batch 1 (4 sources):
+02:00:42Z    [✅ 12s] bleepingcomputer.com — MiniPlasma LPE, Tycoon2FA phishing, Azure AKS confused-deputy, Kazuar P2P evolution, Exchange XSS, Cisco SD-WAN, WordPress plugins, node-ipc supply chain
+02:00:43Z    [✅ 13s] thehackernews.com — NGINX CVE-2026-42945, Grafana GitHub Token Breach, Funnel Builder
+02:00:44Z    [✅ 14s] securityweek.com — NGINX OSS critical, Exchange CVE-2026-42897, Chrome 148 (OOS), Cisco SD-WAN UAT-8616
+02:00:46Z    [⚠️ 11s] cisa.gov/known-exploited-vulnerabilities-catalog — 403 Forbidden via WebFetch (long-standing per MEMORY)
+
+02:00:50Z    Parallel batch 2 (4 sources):
+02:01:02Z    [⚠️ 10s] cisa.gov — 403 Forbidden via WebFetch
+02:01:03Z    [✅ 13s] krebsonsecurity.com — most recent 2026-05-12 Patch Tuesday; no 2026-05-17/18 entries
+02:01:04Z    [✅ 14s] rapid7.com/blog — Metasploit wrap-ups (5/8, 5/15); CVE-2026-20182 Cisco SD-WAN write-up
+02:01:06Z    [✅ 11s] schneier.com — most recent 2026-05-15 Friday Squid + age-verification; no 5/17-18 entries
+
+02:01:15Z    Parallel batch 3 (4 sources):
+02:01:28Z    [⚠️ 12s] cisa.gov (re-check) — 403
+02:01:29Z    [✅ 14s] github.com/search?q=CVE-2026 — Frigate NVR CVE-2026-25643 fresh PoCs, Chrome use-after-free CVE-2026-2441 (OOS browser), Notepad markdown RCE CVE-2026-20841 (OOS client), Vertex AI SDK CVE-2026-2472 stored XSS, BYOVD CVE-2026-0828, Telnet CVE-2026-2406
+02:01:30Z    [⚠️  9s] opencve.io — marketing site only; switched to app.opencve.io
+02:01:33Z    [✅ 14s] fortinet.com/blog/threat-research — most recent 2026-05-15 PureLogs/PawsRunner steganography; no 5/17-18
+
+02:01:50Z    Parallel batch 4 (6 sources):
+02:02:05Z    [✅ 12s] app.opencve.io — CVE-2026-8768 Vercel AI SSRF, CVE-2026-8764 H3C Magic B3 buffer overflow, CVE-2026-31222/223/224 Snorkel deserialization, CVE-2026-31214 ml-engineering, CVE-2024-39847 4D Server XXE, CVE-2024-13971 Lobster Pro
+02:02:06Z    [✅ 13s] seclists.org/fulldisclosure — Schutzwerk SA-2024-002/005, Dovecot OXDC-2026-0002, Apple iOS 26.5/iPadOS 26.5/macOS Tahoe 26.5/Safari 26.5, Edupage authz bypass + impersonation
+02:02:07Z    [⚠️ 10s] packetstorm.news — homepage only, no advisory listing in WebFetch render
+02:02:08Z    [✅ 11s] securitylab.github.com — most recent 2026-05-15 Open WebUI GHSL-2026-002; no 5/17-18 entries
+02:02:09Z    [⚠️ 13s] nvd.nist.gov — CVE-2026-1184 GitLab DoS, CVE-2026-1322 GitLab OAuth scope, CVE-2026-44501 DataHub Java deserialization, CVE-2026-22599 Strapi (already covered 5/14)
+02:02:13Z    [⚠️  9s] cve.mitre.org — JS-required (per MEMORY)
+
+02:02:30Z    Parallel batch 5 (6 sources):
+02:02:42Z    [⚠️ 10s] cve.org — JS-required
+02:02:44Z    [✅ 12s] googleprojectzero.blogspot.com → projectzero.google — most recent 2026-05-13 Pixel 10 exploit chain
+02:02:45Z    [✅ 13s] blog.cloudflare.com/tag/security — most recent 2026-05-07 Copy Fail response; no 5/17-18 entries
+02:02:46Z    [⚠️ 10s] msrc.microsoft.com/blog — footer only via WebFetch
+02:02:48Z    [⚠️ 14s] hackerone.com/hacktivity — JS-required, empty content
+02:02:49Z    [⚠️  8s] bugcrowd.com/disclosures — 404 (URL retired per MEMORY)
+
+02:03:00Z    Parallel batch 6 (6 sources):
+02:03:12Z    [✅ 12s] avleonov.com — most recent 2026-05-14 ActiveMQ CVE-2026-34197; no 5/17-18 entries
+02:03:13Z    [✅ 13s] kb.cert.org/vuls — most recent 2026-05-11 dnsmasq + Casdoor; no 5/17-18 entries
+02:03:14Z    [✅ 14s] github.com/0xMarcio/cve — recent additions CVE-2026-31431, CVE-2026-21858, CVE-2026-24061, CVE-2026-41651, CVE-2026-0073, CVE-2026-34486
+02:03:15Z    [✅ 13s] dbugs.ptsecurity.com — PT-2026-41513 WordPress AI Engine 8.8 (Daroo), PT-2026-41465 WordPress backup/restore 8.8 (Murat Demirci), PT-2026-41584 H3C Magic B3 8.3 (Yyy0032), 1469 added this week
+02:03:16Z    [✅ 11s] habr.com/ru/companies/tomhunter/articles — most recent 2026-03-06; no May entries (Russian-language source frequently dormant for weeks)
+02:03:17Z    [✅ 10s] teletype.in/@cyberok — most recent 2026-02-04; no May entries
+
+02:03:30Z    Parallel batch 7 (1 source):
+02:03:42Z    [⚠️ 12s] cert.gov.ua — header only, no advisory listing rendered
+
+02:03:50Z    Extra (per MEMORY: openwall is high-value):
+02:04:02Z    [✅ 12s] openwall.com/lists/oss-security/2026/05/ — 5/17 batch: CVE-2026-46720 Net::Statsd::Tiny, Vim vimscript code injection, CVE-2026-8507 Crypt::OpenSSL::PKCS12 OOB, CVE-2026-8721 Crypt::OpenSSL::PKCS12 NULL truncation. Plus 5/16 CVE-2026-46719 (already in 5/17 noted).
+
+02:04:30Z  Step 4 — Dedup decisions
+02:04:32Z    Grafana GitHub Token Breach: NEW (not in index — 2026-05-16 disclosure)
+02:04:33Z    Frigate NVR CVE-2026-25643: NEW (not in index — 2026-05-17 advisory)
+02:04:33Z    Apple iOS 26.5 / macOS Tahoe 26.5: NEW + OOS (mobile/client-only) → Noted
+02:04:33Z    Vim vimscript injection: NEW + OOS-ish (client editor) → Noted
+02:04:33Z    Dovecot OXDC-2026-0002 (CVE-2026-40020 / 42006): NEW but low CVSS → Noted
+02:04:33Z    Chaotic Eclipse MiniPlasma: SKIP-as-finding (LPE OOS) + Noted as spree-calibration data point
+02:04:33Z    Tycoon2FA/Trustifi M365 device-code phishing: SKIP as primary (phishing TTP) → Noted
+02:04:33Z    Kazuar P2P evolution: SKIP as primary (APT TTP) → Noted
+02:04:33Z    Vercel AI SDK SSRF CVE-2026-8768: NEW → Noted (moderate, AI-platform scope)
+02:04:33Z    Snorkel CVE-2026-31222/223/224: NEW → Noted (ML library deserialization pattern)
+02:04:34Z    ml-engineering CVE-2026-31214: NEW → Noted (generic torch.load pattern)
+02:04:34Z    GitLab CVE-2026-1184 + CVE-2026-1322: NEW → Noted (public-facing dev infra)
+02:04:34Z    DataHub CVE-2026-44501: NEW → Noted (OIDC deserialization)
+02:04:34Z    CVE-2024-39847 4D Server + CVE-2024-13971 Lobster Pro: re-published 2024 → Noted
+02:04:34Z    Perl CVEs (46720/8507/8721): NEW → Noted (niche)
+02:04:34Z    WordPress AI Engine PT-2026-41513 + backup/restore PT-2026-41465: NEW → Noted (CVSS 8.8 but no published CVE yet via Patchstack)
+02:04:34Z    NGINX CVE-2026-42945: SKIP (already news in 5/15)
+02:04:34Z    Cisco SD-WAN CVE-2026-20182: SKIP (covered 5/15 news + 5/16 update)
+02:04:34Z    Exchange CVE-2026-42897: SKIP (covered 5/13 news + 5/15/16/17 updates incl. KEV)
+02:04:34Z    Funnel Builder / Burst Statistics / Avada Builder WordPress plugins: SKIP (covered 5/15-16)
+02:04:34Z    Azure Backup for AKS Confused Deputy: SKIP (covered 5/17 news)
+02:04:34Z    PostgreSQL multi-CVE security release: SKIP (covered 5/16)
+02:04:34Z    Apache Flink CVE-2026-35194: SKIP (covered 5/16)
+02:04:34Z    Apple Pixel 10 exploit chain (Project Zero 5/13): SKIP (mobile OOS, already past)
+
+02:04:45Z  Step 5 — Write report.md and report.json to reports/2026/05/18/
+02:04:48Z    report.md created (markdown, follows template.report structure)
+02:04:50Z    report.json created (strict schema)
+
+02:04:55Z  Step 6 — This file (debug.log) writing in progress.
+
+02:05:00Z  Step 7 — Validate
+02:05:01Z    $ python3 scripts/validate_report.py reports/2026/05/18/report.json
+02:05:02Z    ⚠️  1 warning(s):
+02:05:02Z       findings[0]: 'summary' is 390 chars (aim for <200)
+02:05:02Z    ✅ reports/2026/05/18/report.json — valid
+02:05:05Z    Trimmed Grafana finding summary to 268 chars; re-ran validator:
+02:05:06Z    ✅ reports/2026/05/18/report.json — valid (no warnings)
+
+source_coverage (final, pre-commit):
+    total: 30
+    checked: 20
+    with_findings: 7 (bleeping, hackernews, sw, github-search, app.opencve.io, seclists, dbugs.ptsecurity.com)
+    unreachable: 10 (cisa.gov, cisa.gov/known-exploited-vulnerabilities-catalog, attackerkb.com, packetstormsecurity.com, cve.mitre.org, cve.org, msrc.microsoft.com/blog, hackerone.com/hacktivity, bugcrowd.com/disclosures, cert.gov.ua)
+    degraded: []
+
+02:05:30Z  Step 8 — git add, commit, push (pending after this log write)
+
+NOTES:
+- Sunday-Monday cycle: disclosure volume below weekday baseline (matches 2026-05-17 cycle calibration note).
+- Two-day Pwn-Request pattern reuse signal: TanStack (Mini Shai-Hulud Wave 2, disclosed 5/13) → Grafana Labs (5/16). Branch-class, not incident-class.
+- WordPress AI Engine plugin showed up via PT-Security dbugs ahead of Patchstack/Wordfence — useful early-channel signal worth tracking for the source quality table.
+- Apple has been steady-cadence in 2026 (26.2 → 26.3 → 26.4 → 26.5 spaced ~6-8 weeks) — predictable enough to skip primary coverage absent ITW exploitation.
+- Chaotic Eclipse spree continues to drop fresh PoCs without coordinated disclosure (MiniPlasma 5/17). Watch for any future drops that include a remote vector — would be promoted to News immediately.

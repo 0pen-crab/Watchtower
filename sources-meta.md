@@ -2,38 +2,38 @@
 
 | Source | Findings | Noted | Empty | Last Hit |
 |--------|----------|-------|-------|----------|
-| bleepingcomputer.com | 44 | 32 | 1 | 2026-05-17 |
-| thehackernews.com | 34 | 15 | 0 | 2026-05-17 |
-| cisa.gov | 0 | 0 | 16 | — |
-| securityweek.com | 31 | 21 | 2 | 2026-05-17 |
-| github.com/search | 2 | 6 | 8 | 2026-05-13 |
-| schneier.com | 0 | 12 | 5 | 2026-05-17 |
-| krebsonsecurity.com | 0 | 2 | 15 | 2026-05-13 |
-| rapid7.com | 2 | 0 | 14 | 2026-05-16 |
-| attackerkb.com | 0 | 0 | 16 | — |
-| fortinet.com/blog/threat-research | 0 | 0 | 16 | 2026-05-16 (PureLogs only, out of scope) |
-| securitylab.github.com | 1 | 0 | 15 | 2026-05-16 |
-| seclists.org/fulldisclosure (incl. openwall oss-security) | 28 | 36 | 2 | 2026-05-17 |
-| packetstormsecurity.com | 0 | 0 | 16 | — |
-| opencve.io | 15 | 22 | 3 | 2026-05-17 |
-| nvd.nist.gov | 0 | 0 | 16 | — |
-| cve.mitre.org | 0 | 0 | 16 | — |
-| cve.org | 0 | 0 | 16 | — |
-| googleprojectzero.blogspot.com | 0 | 0 | 16 | — |
-| blog.cloudflare.com/tag/security | 0 | 1 | 15 | 2026-05-08 |
-| msrc.microsoft.com/blog | 0 | 0 | 16 | — |
-| hackerone.com/hacktivity | 0 | 0 | 16 | — |
-| bugcrowd.com/disclosures | 0 | 0 | 16 | — |
-| kb.cert.org/vuls | 1 | 4 | 13 | 2026-05-17 (VU#284781 Azure Backup AKS relay) |
-| avleonov.com | 0 | 1 | 15 | 2026-05-15 |
-| github.com/0xMarcio/cve | 1 | 7 | 10 | 2026-05-16 |
-| dbugs.ptsecurity.com | 5 | 23 | 7 | 2026-05-16 |
-| habr.com/ru/companies/tomhunter/articles | 0 | 0 | 16 | — |
-| teletype.in/@cyberok | 0 | 0 | 16 | — |
-| cert.gov.ua | 0 | 0 | 16 | — |
+| bleepingcomputer.com | 45 | 36 | 1 | 2026-05-18 |
+| thehackernews.com | 35 | 15 | 0 | 2026-05-18 |
+| cisa.gov | 0 | 0 | 17 | — |
+| securityweek.com | 31 | 21 | 3 | 2026-05-18 |
+| github.com/search | 3 | 6 | 8 | 2026-05-18 |
+| schneier.com | 0 | 12 | 6 | 2026-05-17 |
+| krebsonsecurity.com | 0 | 2 | 16 | 2026-05-13 |
+| rapid7.com | 2 | 0 | 15 | 2026-05-16 |
+| attackerkb.com | 0 | 0 | 17 | — |
+| fortinet.com/blog/threat-research | 0 | 0 | 17 | 2026-05-16 (PureLogs only, out of scope) |
+| securitylab.github.com | 1 | 0 | 16 | 2026-05-16 |
+| seclists.org/fulldisclosure (incl. openwall oss-security) | 28 | 41 | 2 | 2026-05-18 |
+| packetstormsecurity.com | 0 | 0 | 17 | — |
+| opencve.io | 15 | 25 | 3 | 2026-05-18 |
+| nvd.nist.gov | 0 | 2 | 16 | 2026-05-18 (GitLab + DataHub via NVD listing) |
+| cve.mitre.org | 0 | 0 | 17 | — |
+| cve.org | 0 | 0 | 17 | — |
+| googleprojectzero.blogspot.com | 0 | 0 | 17 | — |
+| blog.cloudflare.com/tag/security | 0 | 1 | 16 | 2026-05-08 |
+| msrc.microsoft.com/blog | 0 | 0 | 17 | — |
+| hackerone.com/hacktivity | 0 | 0 | 17 | — |
+| bugcrowd.com/disclosures | 0 | 0 | 17 | — |
+| kb.cert.org/vuls | 1 | 4 | 14 | 2026-05-17 (VU#284781 Azure Backup AKS relay) |
+| avleonov.com | 0 | 1 | 16 | 2026-05-15 |
+| github.com/0xMarcio/cve | 1 | 7 | 11 | 2026-05-16 |
+| dbugs.ptsecurity.com | 5 | 25 | 7 | 2026-05-18 (PT-2026-41513 AI Engine + PT-2026-41465 Backup/Restore) |
+| habr.com/ru/companies/tomhunter/articles | 0 | 0 | 17 | — |
+| teletype.in/@cyberok | 0 | 0 | 17 | — |
+| cert.gov.ua | 0 | 0 | 17 | — |
 | socket.dev/blog (NEW for 2026-05) | 4 | 4 | 8 | 2026-05-14 |
-| openwall.com/lists/oss-security (off-list, primary OSS source) | 26 | 36 | 1 | 2026-05-16 |
-| github advisories (off-list, NEW high-value 2026-05-07) | 21 | 62 | 0 | 2026-05-17 |
+| openwall.com/lists/oss-security (off-list, primary OSS source) | 26 | 40 | 1 | 2026-05-18 (Perl CVE-2026-46720/8507/8721 + Vim vimscript) |
+| github advisories (off-list, NEW high-value 2026-05-07) | 21 | 62 | 1 | 2026-05-17 |
 | vulncheck.com/advisories (off-list, NEW 2026-05-09) | 5 | 7 | 4 | 2026-05-14 |
 | wiz.io/blog (off-list) | 1 | 0 | 6 | 2026-05-13 |
 | scworld.com (off-list) | 0 | 1 | 4 | 2026-05-04 |
