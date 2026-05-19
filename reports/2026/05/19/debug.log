@@ -1,0 +1,123 @@
+# Watchtower debug log — 2026-05-19
+
+## Step 1: Pull repo
+[2026-05-19T01:30:00Z] cd /home/claude/workspace/watchtower && git pull → Already up to date.
+
+## Step 2: Dedup index (last 30 days, 2026-04-19 → 2026-05-18)
+[2026-05-19T01:31:00Z] Walked reports/2026/{04,05}, parsed all report.json files within date window.
+- Total reports in window: 30 (no gaps; daily cadence intact)
+- Total unique CVEs / CVE-groups in dedup index: 478
+- Most-active recent topics: Mini Shai-Hulud Wave 2 (multiple 5/12-5/18 entries), Cisco SD-WAN CVE-2026-20182 (5/15, 5/16), Linux Copy Fail CVE-2026-31431 (multiple), Microsoft Exchange CVE-2026-42897 (5/17 KEV, 5/16), OpenClaw CVE batch (5/16 covered 44112/44113/44115)
+
+## Step 3: Source canvassing (SOURCES.md)
+Total sources in SOURCES.md (deduped): 30
+
+| # | Source | Status | Time | Notes |
+|---|--------|--------|------|-------|
+| 1 | bleepingcomputer.com | ✅ | ~5s | Identified Shai-Hulud clones, SHub, Tycoon2FA echo, Grafana echo, MiniPlasma |
+| 2 | thehackernews.com | ✅ | ~5s | NGINX 42945, Exchange 42897, SD-WAN 20182, MiniPlasma, multi-vendor wrap-up (Ivanti/Fortinet/SAP/VMware/n8n), Funnel Builder, Grafana |
+| 3 | cisa.gov/known-exploited-vulnerabilities-catalog | ❌ | 403 | Unreachable per MEMORY — KEV data backstopped via THN/Krebs/SW |
+| 4 | cisa.gov | ❌ | 403 | Unreachable per MEMORY |
+| 5 | securityweek.com | ✅ | ~6s | NGINX exploitation, Claw Chain, MiniPlasma 2020-CVE, Exchange, SD-WAN, 7-Eleven, Grafana, Shai-Hulud clones, Pwn2Own wrap |
+| 6 | github.com/search?q=CVE | ❌ | auth | Search requires login — unreachable |
+| 7 | schneier.com | ✅ | ~4s | Recent posts: BitLocker zero-day, Copy.Fail Linux, GPT-5.5 vs Mythos eval — all previously covered |
+| 8 | krebsonsecurity.com | ✅ | ~4s | NEW: CISA contractor AWS GovCloud key leak via Private-CISA repo |
+| 9 | rapid7.com | ✅ | ~4s | NEW: CVE-2026-0265 PAN-OS auth bypass ETR; recent: SD-WAN 20182 (covered), Metasploit Friday wrap-up |
+| 10 | attackerkb.com | ❌ | 403 | Unreachable per MEMORY |
+| 11 | fortinet.com/blog/threat-research | ✅ | ~3s | Only relevant post in window: PureLogs steganography (2026-05-15) — malware delivery, OOS |
+| 12 | securitylab.github.com | ✅ | ~3s | Only May 14-19 entry: GHSL-2026-002 Open WebUI (2026-05-15) — already covered |
+| 13 | seclists.org/fulldisclosure | ✅ | ~3s | May 17 batch: Schutzwerk SA-2024-002 (4D Server) + SA-2024-005 (Lobster Pro) — both covered as noted 2026-05-18; Dovecot OXDC-2026-0002 — covered 5/18; Edupage authz bypass (educational, narrow); Apple updates (OOS) |
+| 14 | packetstormsecurity.com (→ packetstorm.news) | ❌ | content | Redirected to packetstorm.news but only TOS/empty pages returned via WebFetch — unreachable in practice |
+| 15 | opencve.io / app.opencve.io | ✅ | ~5s | Recent: FacturaScripts (27964 XSS, 27891 zip slip), AutoGPT (30950 IDOR), BC-JAVA (0636 LDAP injection), DumbAssets (45230 path traversal) |
+| 16 | nvd.nist.gov | ✅ | ~3s | Data feeds confirmed accessible; spot-check via opencve as primary |
+| 17 | cve.mitre.org | ❌ | JS | JS-only — unreachable via WebFetch per MEMORY |
+| 18 | cve.org | ❌ | JS | JS-only — unreachable per MEMORY |
+| 19 | googleprojectzero.blogspot.com (→ projectzero.google) | ✅ | ~3s | Only recent post: Pixel 10 0-click exploit chain (2026-05-13) — mobile, OOS |
+| 20 | blog.cloudflare.com/tag/security | ✅ | ~3s | One post in window: Project Glasswing eval of frontier models against live infra code (2026-05-18) — noted as calibration signal |
+| 21 | msrc.microsoft.com/blog | ❌ | redirect | Redirects to /msrc/blog homepage; no content returned via WebFetch |
+| 22 | hackerone.com/hacktivity | ❌ | JS | JS-only — unreachable per MEMORY |
+| 23 | bugcrowd.com/disclosures | ❌ | 404 | Unreachable per MEMORY |
+| 24 | kb.cert.org/vuls | ✅ | ~4s | NEW: VU#777338 SGLang RCE + path traversal (no patch, maintainers unresponsive) |
+| 25 | avleonov.com | ✅ | ~3s | One post in window: Apache ActiveMQ CVE-2026-34197 deep-dive (2026-05-14) — already covered 4/22 and 5/16; no new ITW data |
+| 26 | github.com/0xMarcio/cve | ✅ | ~3s | Recent commits: Copy Fail PoC (covered), n8n 21858 (covered), Tomcat 34486 (covered) — no new items |
+| 27 | dbugs.ptsecurity.com | ✅ | ~6s | NEW: ChromaDB (45829 CVSS 10), Azure Local Disconnected Ops (42822 CVSS 10), lwIP (8836 CVSS 10), Redshift Python (8838 CVSS 9.8), Dokploy (27130 CVSS 9.9) |
+| 28 | habr.com/ru/companies/tomhunter/articles | ⚠️ | stale | Content returned, but most-recent visible post dated 2026-03-06; degraded |
+| 29 | teletype.in/@cyberok | ⚠️ | stale | Content returned, but newest post 2026-02-04; degraded |
+| 30 | cert.gov.ua | ❌ | empty | Page loaded, no advisory data returned via WebFetch |
+
+Additional sources canvassed (not in SOURCES.md formally, used for cross-check):
+- openwall.com/lists/oss-security/2026/05/ → ✅ Net::Statsd/Crypt::OpenSSL Perl module CVEs (noted), Vim filetype CVEs (noted), Copy Fail public multi-language PoC (noted)
+
+Final counts: total=30, checked=19, unreachable=11, degraded=2
+
+## Step 4: Dedup decisions
+- ChromaDB CVE-2026-45829 → NEW (not in dedup index)
+- Microsoft Azure Local Disconnected Operations CVE-2026-42822 → NEW
+- SGLang CVE-2026-7301/7302/3304 → NEW
+- PAN-OS CVE-2026-0265 → NEW (distinct from CVE-2026-0300 which was the captive portal RCE)
+- OpenClaw Claw Chain (4-CVE) → UPDATE on 5/16 entry (was 3-CVE at score 6; now 4-CVE at score 7 with full sandbox-to-owner chain published by Cyera)
+- Shai-Hulud first non-TeamPCP clones → NEW (distinct from existing Mini Shai-Hulud Wave 2 storyline — different actor, different propagation primitive, marks commoditization phase)
+- 7-Eleven Salesforce breach → NEW (not previously covered; same actor cluster as Grafana 5/18)
+- CISA contractor AWS GovCloud leak → NEW
+- Redshift Python Connector CVE-2026-8838 → NEW (distinct from Redshift JDBC CVE-2026-8178 covered 5/16)
+
+- Tycoon2FA + Trustifi device-code → SKIP from findings (covered MEMORY 2026-05-18); add to noted as echo-coverage signal
+- MiniPlasma Windows 0-day → SKIP (covered MEMORY 2026-05-18); LPE-only, OOS
+- Grafana GitHub breach → SKIP (covered 2026-05-18)
+- NGINX CVE-2026-42945 → SKIP (covered 2026-05-15)
+- Microsoft Exchange CVE-2026-42897 → SKIP (covered 2026-05-17)
+- Cisco SD-WAN CVE-2026-20182 → SKIP (covered 2026-05-15, 2026-05-16)
+- Funnel Builder WordPress → SKIP (covered 2026-05-16)
+- Apache ActiveMQ CVE-2026-34197 → SKIP (covered 4/22 and 5/16; avleonov deep-dive adds no new ITW data)
+- Copy Fail public PoC release → NOTED (KEV-listed, multiple prior entries; PoC release is operational urgency only)
+- Pixel 10 0-click (Project Zero) → SKIP (mobile, OOS)
+- PureLogs steganography (Fortinet) → SKIP (delivery research, no defensive action against infrastructure)
+- Pwn2Own Berlin wrap-up → SKIP (covered 5/14, 5/15, 5/16, 5/17 — totals only)
+- Apple iOS/macOS 26.5 updates → SKIP (mobile/client OOS, MEMORY 2026-05-18)
+- INTERPOL Operation Ramz → NOTED (LE-only, no vulnerability)
+- SHub macOS infostealer → NOTED (client-only, OOS)
+- Vim vimscript CVEs → NOTED (client OOS)
+- Perl Net::Statsd/Crypt::OpenSSL CVEs → NOTED (low-impact client)
+- n8n CVE-2026-42231/-42232 (additional context on 5/16 batch) → NOTED (no new defensive action)
+- Ivanti Xtraction CVE-2026-8043 → NOTED (auth-required, narrower)
+- lwIP CVE-2026-8836 → NOTED (embedded/IoT scope)
+- Dokploy CVE-2026-27130 → NOTED (auth-required, small footprint)
+- AutoGPT CVE-2026-30950 → NOTED (auth-required IDOR)
+- FacturaScripts CVE-2026-27891/-27964 → NOTED (SMB ERP)
+- DumbAssets CVE-2026-45230 → NOTED (niche, destructive)
+- BC-JAVA CVE-2026-0636 → NOTED (LDAP injection, app-dependent)
+- Cloudflare Project Glasswing publication → NOTED (calibration signal)
+
+## Step 5-6: Write report.md and report.json
+[2026-05-19T03:25:00Z] Wrote reports/2026/05/19/report.md
+[2026-05-19T03:28:00Z] Wrote reports/2026/05/19/report.json
+
+## Step 7: Validation
+[2026-05-19T03:29:00Z] First validation run:
+```
+⚠️  3 warning(s):
+   findings[5]: 'summary' is 375 chars (aim for <200)
+   findings[6]: 'summary' is 330 chars (aim for <200)
+   findings[8]: 'summary' is 315 chars (aim for <200)
+✅ reports/2026/05/19/report.json — valid
+```
+Tightened the 3 over-long summaries (Shai-Hulud clones, 7-Eleven, Redshift Python).
+[2026-05-19T03:30:00Z] Second validation run:
+```
+✅ reports/2026/05/19/report.json — valid
+```
+
+## Source coverage final
+total=30, checked=19, with_findings=12, unreachable=11, degraded=2
+
+unreachable list: cisa.gov, cisa.gov/known-exploited-vulnerabilities-catalog, attackerkb.com, packetstormsecurity.com, cve.mitre.org, cve.org, msrc.microsoft.com/blog, hackerone.com/hacktivity, bugcrowd.com/disclosures, cert.gov.ua, github.com/search?q=CVE
+
+degraded list: habr.com/ru/companies/tomhunter/articles, teletype.in/@cyberok
+
+Validator constraint: checked (19) >= total (30) - len(unreachable) (11) = 19 ✅
+
+## Findings counts
+- News: 8
+- Updates: 1 (OpenClaw Claw Chain expansion 3→4 CVE)
+- Noted: 15
+- Total entries: 24

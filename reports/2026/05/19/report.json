@@ -1,0 +1,204 @@
+{
+  "date": "2026-05-19",
+  "findings": [
+    {
+      "type": "news",
+      "title": "ChromaDB CVE-2026-45829 — Pre-Auth Code Injection via Trust-Remote-Code in /collections Endpoint",
+      "threat_score": 8,
+      "cve": "CVE-2026-45829",
+      "cvss": 10.0,
+      "affected_technology": "ChromaDB (open-source vector database) >=1.0.0",
+      "summary": "ChromaDB's /api/v2 collections endpoint accepts a model repository with trust_remote_code=true from unauthenticated network clients and executes attacker-controlled Python on the server, providing pre-auth RCE on a widely deployed AI/RAG infrastructure component.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-05-18"
+    },
+    {
+      "type": "news",
+      "title": "Microsoft Azure Local Disconnected Operations CVE-2026-42822 — Unauthenticated Network Privilege Escalation, No Patch Available",
+      "threat_score": 7,
+      "cve": "CVE-2026-42822",
+      "cvss": 10.0,
+      "affected_technology": "Microsoft Azure Local Disconnected Operations",
+      "summary": "Unauthenticated network attacker can elevate privileges over the Azure Local Disconnected Operations control plane (CWE-287), with no patch currently available, exposing on-prem sovereign and regulated-workload deployments to admin-level compromise.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-05-18"
+    },
+    {
+      "type": "news",
+      "title": "SGLang LLM-Serving Framework — Two RCEs + Path Traversal With No Patch (CERT/CC VU#777338)",
+      "threat_score": 7,
+      "cve": "CVE-2026-7301, CVE-2026-7302, CVE-2026-3304",
+      "cvss": null,
+      "affected_technology": "SGLang (open-source LLM-serving framework)",
+      "summary": "CMU CERT/CC disclosed two RCEs (pickle and dill deserialization) plus an unauthenticated path-traversal in SGLang's multimodal pipeline; the scheduler binds to 0.0.0.0 by default, maintainers were unresponsive, and no patch is published.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-05-18"
+    },
+    {
+      "type": "news",
+      "title": "Palo Alto Networks PAN-OS CVE-2026-0265 — Authentication Bypass via Cloud Authentication Service Signature Verification Flaw",
+      "threat_score": 7,
+      "cve": "CVE-2026-0265",
+      "cvss": 7.2,
+      "affected_technology": "PAN-OS on PA-Series, VM-Series, Panorama (virtual/M-Series); CAS-enabled login interfaces",
+      "summary": "PAN-OS Cloud Authentication Service performs incorrect signature verification when attached to a login interface, enabling authentication bypass; researcher Harsh Jaiswal disputes vendor's 7.2 rating and claims GlobalProtect exploitation, with full technical details expected the week of 2026-05-18.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-05-13"
+    },
+    {
+      "type": "update",
+      "title": "OpenClaw 'Claw Chain' Expansion — Cyera Publishes 4-CVE Chain (was 3); MCP Loopback CVE-2026-44118 Completes Sandbox-to-Owner Primitive",
+      "threat_score": 7,
+      "previous_threat_score": 6,
+      "cve": "CVE-2026-44112, CVE-2026-44113, CVE-2026-44115, CVE-2026-44118",
+      "cvss": 9.6,
+      "affected_technology": "OpenClaw AI assistant (60,000+ publicly accessible instances)",
+      "summary": "Cyera's 2026-05-18 'Claw Chain' writeup adds CVE-2026-44118 (MCP loopback → owner-level privilege elevation) to the previously covered 3-CVE OpenShell sandbox race-condition cluster, completing a fully documented sandbox-to-host-takeover primitive against the lagging OpenClaw fleet.",
+      "first_seen_at": "2026-05-16"
+    },
+    {
+      "type": "news",
+      "title": "First Shai-Hulud Worm Clones in the Wild — Non-TeamPCP Actor Publishes 4 Malicious npm Packages Using Leaked Source",
+      "threat_score": 7,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "npm registry (chalk-tempalte, @deadcode09284814/axios-util, axois-utils, color-style-utils); developer machines and CI runners",
+      "summary": "OXsecurity observed the first non-TeamPCP weaponization of the leaked Shai-Hulud source within 72h of the BreachForums release — four malicious npm packages from _deadcode09284814_ (three Axios typosquats) exfiltrating credentials/wallets to 87e0bbc636999.lhr.life.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-05-18"
+    },
+    {
+      "type": "news",
+      "title": "7-Eleven Salesforce Breach — 600K+ Records Stolen by ShinyHunters (CoinbaseCartel Cluster)",
+      "threat_score": 6,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Salesforce CRM at 7-Eleven (franchise applications, corporate data)",
+      "summary": "7-Eleven confirmed 2026-05-18 that ShinyHunters stole 600,000+ Salesforce records (intrusion 2026-04-08, $250,000 demand) — same CoinbaseCartel/Scattered Spider cluster responsible for the 2026-05-18 Grafana GitHub codebase theft.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-05-18"
+    },
+    {
+      "type": "news",
+      "title": "CISA Contractor Leaked AWS GovCloud Credentials via Public 'Private-CISA' GitHub Repo",
+      "threat_score": 6,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "CISA Landing Zone DevSecOps environment (AWS GovCloud) — administrative credentials and artifactory access",
+      "summary": "GitGuardian researcher Guillaume Valadon found a CISA-contractor-owned public GitHub repository 'Private-CISA' exposing AWS GovCloud admin credentials, internal-system passwords, and artifactory tokens until 2026-05-15; the owner had explicitly disabled GitHub's push-protection feature.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-05-18"
+    },
+    {
+      "type": "news",
+      "title": "AWS Amazon Redshift Python Connector CVE-2026-8838 — eval() on Server Data Enables MITM Code Execution in BI Clients",
+      "threat_score": 5,
+      "cve": "CVE-2026-8838",
+      "cvss": 9.8,
+      "affected_technology": "amazon-redshift-python-driver < 2.1.14 (Airflow workers, dbt environments, analyst notebooks, BI tools)",
+      "summary": "The Redshift Python driver's vector in() function passes server-returned data to Python's eval(), letting a MITM-positioned attacker execute arbitrary Python in BI clients/Airflow workers — second Redshift driver code-injection in a week after JDBC CVE-2026-8178.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-05-18"
+    }
+  ],
+  "noted": [
+    {
+      "cve": "CVE-2026-42231, CVE-2026-42232",
+      "product": "n8n (additional CVEs in 5-CVE batch)",
+      "summary": "THN's multi-vendor wrap-up (2026-05-18) reveals the n8n batch is 5 CVEs total — adds xml2js prototype pollution and global prototype pollution via XML Node (both fixed in 1.123.32, earlier than the 1.123.43 patches covered 2026-05-16); documentation alignment only, no new defensive action."
+    },
+    {
+      "cve": "CVE-2026-8043",
+      "product": "Ivanti Xtraction",
+      "summary": "External file-name control allows an authenticated remote attacker to read sensitive files (CVSS 9.6); patched in 2026.2+. Authenticated-only — narrower than recent Ivanti EPMM / Cloud SSA exposures."
+    },
+    {
+      "cve": "CVE-2026-31431",
+      "product": "Linux kernel (Copy Fail public multi-language PoC)",
+      "summary": "Andrei Berestov posted multi-language exploit code (C/Python/Perl/x86_64 NASM) on oss-security 2026-05-18; all stable kernels patched 2026-04-30, item already in KEV — operational urgency rises but already extensively covered."
+    },
+    {
+      "cve": "CVE-2026-8836",
+      "product": "lwIP < 2.2.2",
+      "summary": "Pre-auth stack overflow in SNMPv3 USM handler (snmp_parse_inbound_frame() via msgAuthenticationParameters); primarily embedded/IoT firmware concern (CVSS 10.0)."
+    },
+    {
+      "cve": "CVE-2026-27130",
+      "product": "Dokploy < 0.26.7",
+      "summary": "Authenticated OS-command injection via the application-name parameter — shell metacharacters bypass cleanAppName (CVSS 9.9); self-hosted deployment platform with small footprint but full host RCE post-auth."
+    },
+    {
+      "cve": "CVE-2026-30950",
+      "product": "AutoGPT",
+      "summary": "Authenticated IDOR enables session hijack and message access (CVSS 7.1) — usually internal but exposed instances exist."
+    },
+    {
+      "cve": "CVE-2026-27891, CVE-2026-27964",
+      "product": "FacturaScripts",
+      "summary": "Zip-slip via uploaded archive enables arbitrary file write to RCE (CVSS 7.2) + reflected XSS via fsNick cookie (CVSS 3.9); ERP software for SMBs."
+    },
+    {
+      "cve": "CVE-2026-45230",
+      "product": "DumbAssets",
+      "summary": "Pre-auth path-traversal enables arbitrary file deletion (CVSS 9.1); niche product but no-auth file delete is destructive."
+    },
+    {
+      "cve": "CVE-2026-0636",
+      "product": "Bouncy Castle BC-JAVA 1.74-1.84",
+      "summary": "LDAP injection in LDAPStoreHelper (CVSS 6.5); Bouncy Castle is bundled into many Java enterprise stacks but impact depends on whether the application exposes LDAPStoreHelper to untrusted input."
+    },
+    {
+      "cve": "Multiple",
+      "product": "Vim (netrw bookmark history + cucumber filetype plugin)",
+      "summary": "Multiple vimscript code-injection CVEs (oss-security 2026-05-17) affecting Vim < 9.2.495 / 9.2.496; client-side, out-of-scope for Watchtower, logged for completeness."
+    },
+    {
+      "cve": "CVE-2026-46719, CVE-2026-46720, CVE-2026-8507, CVE-2026-8721, CVE-2026-8788",
+      "product": "Perl Net::Statsd::Lite / Tiny / Crypt::OpenSSL::PKCS12",
+      "summary": "Metric-injection, out-of-bounds write, password truncation issues in Perl modules (oss-security 2026-05-16/17/18); low-impact, client-only."
+    },
+    {
+      "cve": null,
+      "product": "Cloudflare Project Glasswing publication",
+      "summary": "Cloudflare published evaluation of cyber frontier models (Anthropic Mythos, OpenAI gpt-5.5-Cyber, GPT-5.5) against live infrastructure code (2026-05-18); joins MDASH/Daybreak/Glasswing AI vuln-finder disclosure cluster — calibration signal, not a finding."
+    },
+    {
+      "cve": null,
+      "product": "SHub macOS 'Reaper' infostealer variant",
+      "summary": "BleepingComputer 2026-05-18: AppleScript-based fake Apple security-update lure, browser/wallet/iCloud/Telegram data theft; client-side, out-of-scope but worth endpoint-team awareness."
+    },
+    {
+      "cve": null,
+      "product": "INTERPOL Operation Ramz (law-enforcement action)",
+      "summary": "INTERPOL/MENA operation arrested 201 individuals and seized 53 phishing-as-a-service servers (2026-05-18); reduces active phishing-kit operator pool short-term, not a vulnerability."
+    },
+    {
+      "cve": null,
+      "product": "Tycoon2FA + Trustifi device-code phishing (echo coverage)",
+      "summary": "BleepingComputer/THN re-coverage 2026-05-17 of the Tycoon2FA device-code phishing campaign already noted in MEMORY 2026-05-18; eSentire research confirms device-code phishing up 37x year-over-year with 10+ phishing-as-a-service platforms supporting the tactic."
+    }
+  ],
+  "source_coverage": {
+    "total": 30,
+    "checked": 19,
+    "with_findings": 12,
+    "unreachable": [
+      "cisa.gov",
+      "cisa.gov/known-exploited-vulnerabilities-catalog",
+      "attackerkb.com",
+      "packetstormsecurity.com",
+      "cve.mitre.org",
+      "cve.org",
+      "msrc.microsoft.com/blog",
+      "hackerone.com/hacktivity",
+      "bugcrowd.com/disclosures",
+      "cert.gov.ua",
+      "github.com/search?q=CVE"
+    ],
+    "degraded": [
+      "habr.com/ru/companies/tomhunter/articles",
+      "teletype.in/@cyberok"
+    ]
+  },
+  "full_report": "reports/2026/05/19/report.md"
+}
