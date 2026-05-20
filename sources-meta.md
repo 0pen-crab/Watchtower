@@ -2,38 +2,40 @@
 
 | Source | Findings | Noted | Empty | Last Hit |
 |--------|----------|-------|-------|----------|
-| bleepingcomputer.com | 47 | 38 | 1 | 2026-05-19 |
-| thehackernews.com | 36 | 16 | 0 | 2026-05-19 |
-| cisa.gov | 0 | 0 | 18 | — |
-| securityweek.com | 33 | 22 | 3 | 2026-05-19 (Shai-Hulud clones + 7-Eleven + Claw Chain) |
-| github.com/search | 3 | 6 | 9 | 2026-05-18 |
-| schneier.com | 0 | 12 | 7 | 2026-05-17 |
-| krebsonsecurity.com | 1 | 2 | 16 | 2026-05-19 (CISA contractor AWS GovCloud leak) |
-| rapid7.com | 3 | 0 | 15 | 2026-05-19 (PAN-OS CVE-2026-0265 ETR) |
-| attackerkb.com | 0 | 0 | 18 | — |
-| fortinet.com/blog/threat-research | 0 | 0 | 18 | 2026-05-16 (PureLogs only, out of scope) |
-| securitylab.github.com | 1 | 0 | 17 | 2026-05-16 |
-| seclists.org/fulldisclosure (incl. openwall oss-security) | 28 | 43 | 2 | 2026-05-19 (Perl Net::Statsd, Vim filetype, Copy Fail public PoC) |
-| packetstormsecurity.com | 0 | 0 | 18 | — |
-| opencve.io | 19 | 26 | 3 | 2026-05-19 (FacturaScripts, AutoGPT, BC-JAVA, DumbAssets) |
-| nvd.nist.gov | 0 | 2 | 17 | 2026-05-18 (GitLab + DataHub via NVD listing) |
-| cve.mitre.org | 0 | 0 | 18 | — |
-| cve.org | 0 | 0 | 18 | — |
-| googleprojectzero.blogspot.com | 0 | 0 | 18 | — |
-| blog.cloudflare.com/tag/security | 0 | 2 | 16 | 2026-05-19 (Project Glasswing eval) |
-| msrc.microsoft.com/blog | 0 | 0 | 18 | — |
-| hackerone.com/hacktivity | 0 | 0 | 18 | — |
-| bugcrowd.com/disclosures | 0 | 0 | 18 | — |
-| kb.cert.org/vuls | 2 | 4 | 14 | 2026-05-19 (VU#777338 SGLang RCE+path-traversal) |
-| avleonov.com | 0 | 1 | 17 | 2026-05-15 |
-| github.com/0xMarcio/cve | 1 | 7 | 12 | 2026-05-16 |
-| dbugs.ptsecurity.com | 10 | 30 | 7 | 2026-05-19 (ChromaDB 10.0 + Azure Local 10.0 + lwIP 10.0 + Redshift Python 9.8 + Dokploy 9.9) |
-| habr.com/ru/companies/tomhunter/articles | 0 | 0 | 18 | — (degraded — stale content) |
-| teletype.in/@cyberok | 0 | 0 | 18 | — (degraded — stale content) |
-| cert.gov.ua | 0 | 0 | 18 | — |
+| bleepingcomputer.com | 49 | 41 | 1 | 2026-05-20 (Drupal, Fox Tempest, Shai-Hulud Wave 3) |
+| thehackernews.com | 38 | 17 | 0 | 2026-05-20 (SEPPMail, Drupal) |
+| cisa.gov | 0 | 0 | 19 | — |
+| securityweek.com | 35 | 23 | 3 | 2026-05-20 (Drupal, Fox Tempest, Universal Robots PolyScope) |
+| github.com/search | 4 | 7 | 9 | 2026-05-20 (substituted via github.com/advisories: Coder PKCS#7, PenPot MCP REPL, MCP Gateway, @angular SSRF, @beproduct nestjs-auth Shai-Hulud variant) |
+| schneier.com | 0 | 12 | 8 | 2026-05-17 |
+| krebsonsecurity.com | 1 | 2 | 17 | 2026-05-19 (CISA contractor AWS GovCloud leak) |
+| rapid7.com | 3 | 0 | 16 | 2026-05-19 (PAN-OS CVE-2026-0265 ETR) |
+| attackerkb.com | 0 | 0 | 19 | — |
+| fortinet.com/blog/threat-research | 0 | 0 | 19 | 2026-05-16 (PureLogs only, out of scope) |
+| securitylab.github.com | 1 | 0 | 18 | 2026-05-16 |
+| seclists.org/fulldisclosure (incl. openwall oss-security) | 30 | 44 | 2 | 2026-05-20 (Apache OFBiz 17-CVE batch, haveged CVE-2026-41054, Evince/Atril/Xreader CVE-2026-46529, DFIR-IRIS 6-CVE batch, Apache Airflow CVE-2026-27173) |
+| packetstormsecurity.com | 0 | 0 | 19 | — |
+| opencve.io | 20 | 26 | 3 | 2026-05-20 (Panabit PAP-XM320 CVE-2026-36829 CVSS 9.8) |
+| nvd.nist.gov | 0 | 2 | 18 | 2026-05-18 (GitLab + DataHub via NVD listing) |
+| cve.mitre.org | 0 | 0 | 19 | — |
+| cve.org | 0 | 0 | 19 | — |
+| googleprojectzero.blogspot.com | 0 | 0 | 19 | — |
+| blog.cloudflare.com/tag/security | 0 | 2 | 17 | 2026-05-19 (Project Glasswing eval) |
+| msrc.microsoft.com/blog | 0 | 0 | 19 | — |
+| hackerone.com/hacktivity | 0 | 0 | 19 | — |
+| bugcrowd.com/disclosures | 0 | 0 | 19 | — |
+| kb.cert.org/vuls | 2 | 4 | 15 | 2026-05-19 (VU#777338 SGLang RCE+path-traversal) |
+| avleonov.com | 0 | 1 | 18 | 2026-05-15 |
+| github.com/0xMarcio/cve | 2 | 7 | 12 | 2026-05-20 (Apache Tomcat Tribes CVE-2026-34486 PoC, DirtyDecrypt CVE-2026-31635) |
+| dbugs.ptsecurity.com | 10 | 30 | 8 | 2026-05-19 (ChromaDB 10.0 + Azure Local 10.0 + lwIP 10.0 + Redshift Python 9.8 + Dokploy 9.9) |
+| habr.com/ru/companies/tomhunter/articles | 0 | 0 | 19 | — (degraded — stale content) |
+| teletype.in/@cyberok | 0 | 0 | 19 | — (degraded — stale content) |
+| cert.gov.ua | 0 | 0 | 19 | — |
 | socket.dev/blog (NEW for 2026-05) | 4 | 4 | 8 | 2026-05-14 |
-| openwall.com/lists/oss-security (off-list, primary OSS source) | 26 | 40 | 1 | 2026-05-18 (Perl CVE-2026-46720/8507/8721 + Vim vimscript) |
-| github advisories (off-list, NEW high-value 2026-05-07) | 21 | 62 | 1 | 2026-05-17 |
+| openwall.com/lists/oss-security (off-list, primary OSS source) | 28 | 42 | 1 | 2026-05-20 (Apache OFBiz 17-CVE batch, haveged CVE-2026-41054) |
+| github advisories (off-list, NEW high-value 2026-05-07) | 25 | 65 | 1 | 2026-05-20 (Shai-Hulud Wave 3 packages, Coder PKCS#7, PenPot MCP REPL, MCP Gateway authz) |
+| drupal.org/security (off-list, surfaced 2026-05-20 via search) | 1 | 0 | 0 | 2026-05-20 (PSA-2026-05-18 / SA-CORE-2026-004 highly critical pre-announce) |
+| microsoft.com/security/blog (off-list, MSRC blog redirect target — actually-reachable, unlike msrc.microsoft.com/blog homepage which returns nav-only) | 1 | 0 | 0 | 2026-05-20 (Fox Tempest MSaaS disruption — Vanilla Tempest / Storm-0501 / Storm-2561 / Storm-0249 affiliates) |
 | vulncheck.com/advisories (off-list, NEW 2026-05-09) | 5 | 7 | 4 | 2026-05-14 |
 | wiz.io/blog (off-list) | 1 | 0 | 6 | 2026-05-13 |
 | scworld.com (off-list) | 0 | 1 | 4 | 2026-05-04 |

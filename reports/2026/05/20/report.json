@@ -1,0 +1,191 @@
+{
+  "date": "2026-05-20",
+  "findings": [
+    {
+      "type": "news",
+      "title": "Drupal Core SA-CORE-2026-004 Pre-Announced Highly Critical Patch Releasing 2026-05-20 — NIST score 20/25",
+      "threat_score": 9,
+      "cve": "Not yet assigned",
+      "cvss": null,
+      "affected_technology": "Drupal core (11.3.x / 11.2.x / 10.6.x / 10.5.x; manual patches for EOL 8.9 / 9.5)",
+      "summary": "Drupal Security Team pre-announced a highly critical core patch (NIST 20/25) releasing 2026-05-20 17:00-21:00 UTC — trivially easy to exploit, no privileges required, exposes/modifies all non-public data; exploit development expected within hours/days.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-05-18"
+    },
+    {
+      "type": "news",
+      "title": "SEPPMail Secure E-Mail Gateway CVE-2026-2743 (CVSS 10.0) Path-Traversal RCE + CVE-2026-44125 (9.3) Missing-Authz + CVE-2026-7864 (6.9) Info Leak",
+      "threat_score": 7,
+      "cve": "CVE-2026-2743, CVE-2026-44125, CVE-2026-7864",
+      "cvss": 10.0,
+      "affected_technology": "SEPPMail Secure E-Mail Gateway (User Web Interface + GINA UI)",
+      "summary": "InfoGuard Labs disclosed a 3-CVE batch on email gateway widely deployed in DACH enterprise: CVE-2026-2743 path-traversal-to-arbitrary-file-write yields full-appliance Perl reverse shell via /etc/syslog.conf overwrite; patches in 15.0.4.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-05-19"
+    },
+    {
+      "type": "update",
+      "title": "Mini Shai-Hulud Wave 3 — 600+ npm Packages Compromised via @antv/atool Maintainer + Sigstore Provenance Abuse",
+      "threat_score": 9,
+      "previous_threat_score": 8,
+      "cve": "CVE-2026-46412",
+      "cvss": null,
+      "affected_technology": "npm ecosystem (@antv family, timeago.js, third-party transitive dependencies)",
+      "summary": "Socket/Aikido/Wiz disclosed 639 malicious versions across 323 packages published in 1 hour from compromised atool npm maintainer; novel primitive is generation of valid Sigstore provenance attestations via OIDC token abuse, defeating the recommended npm trust-verification layer.",
+      "first_seen_at": "2026-05-19"
+    },
+    {
+      "type": "news",
+      "title": "Apache OFBiz 17-CVE Mass Advisory — Multiple Unauth and Authenticated RCE / Auth-Bypass / SSTI Vulnerabilities",
+      "threat_score": 7,
+      "cve": "CVE-2026-29207, CVE-2026-31986, CVE-2026-35086, CVE-2026-41919, CVE-2026-45434, CVE-2026-46586",
+      "cvss": null,
+      "affected_technology": "Apache OFBiz (ERP/CRM/e-commerce)",
+      "summary": "Apache OFBiz shipped a 17-CVE batch including CVE-2026-31986 unauth RCE via default JWT signing key, CVE-2026-45434 auth-bypass-to-RCE, and CVE-2026-41919 LDAP-injection auth bypass — mirrors prior CVE-2024-45195 KEV pattern.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-05-19"
+    },
+    {
+      "type": "news",
+      "title": "Microsoft DCU Disrupts 'Fox Tempest' Malware-Signing-as-a-Service — 1,000+ Fraudulent Code-Signing Certs Revoked; Ransomware Affiliate Cluster Identified",
+      "threat_score": 7,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Microsoft Artifact Signing service (abused by attacker MSaaS) + downstream Windows code-signing trust",
+      "summary": "Microsoft DCU disrupted Fox Tempest MSaaS abusing Microsoft Artifact Signing; signspace.cloud seized, 1000+ certs revoked, ransomware affiliates Vanilla Tempest / Storm-0501 / Storm-2561 / Storm-0249 confirmed.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-05-19"
+    },
+    {
+      "type": "news",
+      "title": "Apache Tomcat Tribes CVE-2026-34486 EncryptInterceptor Fail-Open Bypass — Public PoC Released 2026-05-19; Unauth RCE via Java Deserialization",
+      "threat_score": 7,
+      "cve": "CVE-2026-34486",
+      "cvss": null,
+      "affected_technology": "Apache Tomcat 11.0.19-11.0.20 / 10.1.53 / 9.0.116 (Tribes clustering EncryptInterceptor)",
+      "summary": "Public PoC for Tomcat Tribes EncryptInterceptor fail-open regression appeared on GitHub 2026-05-19 (striga-ai / 404-src repos); attacker bytes forwarded to Java ObjectInputStream on decryption failure yields unauth RCE on cluster receiver port (default 4000) when gadget chains are on the classpath.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-05-19"
+    },
+    {
+      "type": "news",
+      "title": "Panabit PAP-XM320 CVE-2026-36829 (CVSS 9.8) — Unauthenticated HTTP Server Auth Bypass via Session-Cookie + Directory Traversal",
+      "threat_score": 5,
+      "cve": "CVE-2026-36829",
+      "cvss": 9.8,
+      "affected_technology": "Panabit PAP-XM320 network appliance (v7.7 and earlier)",
+      "summary": "OpenCVE surfaced CVE-2026-36829 — unauth auth-bypass via session-cookie validation failure plus directory-traversal in Panabit (Chinese DPI/traffic-management appliance); deployment skewed to APAC carriers but worth inventory for any organization with the appliance.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-05-19"
+    },
+    {
+      "type": "news",
+      "title": "PenPot MCP REPL CVE-2026-45805 Unauthenticated RCE + MCP Gateway Authority-Injection (GHSA-g53w-w6mj-hrpp)",
+      "threat_score": 5,
+      "cve": "CVE-2026-45805",
+      "cvss": null,
+      "affected_technology": "PenPot MCP REPL (npm) + MCP Gateway (Go)",
+      "summary": "Two more MCP-server-class issues on GitHub Advisory Database 2026-05-19: PenPot MCP REPL exposes unauthenticated /execute endpoint for code execution; MCP Gateway has JWT/session bypass via unauthenticated router — 8+ MCP server CVEs in 60 days.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-05-19"
+    },
+    {
+      "type": "news",
+      "title": "Coder PKCS#7 Signature Bypass CVE-2026-46354 — Azure Instance Identity Validation Yields Unauthenticated Agent Token Theft",
+      "threat_score": 5,
+      "cve": "CVE-2026-46354",
+      "cvss": null,
+      "affected_technology": "Coder (Go-based self-hosted Cloud Development Environment platform)",
+      "summary": "Coder fixed PKCS#7 signature bypass in Azure-instance-identity validation; unauth attackers steal agent tokens granting access to dev workspaces — joins broader dev-platform credential-theft surface (Anodot 05-07, Braintrust 05-08, Anthropic Code MCP 05-07).",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-05-19"
+    }
+  ],
+  "noted": [
+    {
+      "cve": "CVE-2026-31635",
+      "product": "Linux kernel (rxgk subsystem)",
+      "summary": "DirtyDecrypt LPE — public PoC released 2026-05-19 via page-cache corruption in rxgk; LPE-only currently but per MEMORY pattern Linux page-cache LPE bugs become K8s container-escape primitives within 14 days. Watch for KEV add."
+    },
+    {
+      "cve": "CVE-2026-8153",
+      "product": "Universal Robots PolyScope 5",
+      "summary": "Dashboard Server unauth OS command injection (CVSS 9.8) on industrial cobot controller; patched 5.25.1; out of scope for our public-facing inventory but worth noting for OT/industrial-adjacent teams."
+    },
+    {
+      "cve": "CVE-2026-27173",
+      "product": "Apache Airflow (Kubernetes provider)",
+      "summary": "JWT-token exposure via Kubernetes provider; widely deployed Airflow but no confirmed exploitation; monitor for patch adoption and any active scanning."
+    },
+    {
+      "cve": "CVE-2026-46417",
+      "product": "@angular/platform-server (npm)",
+      "summary": "SSRF via hostname hijacking in Angular SSR; in-scope (widely deployed Angular SSR), no exploitation reported; standard SSRF mitigations apply."
+    },
+    {
+      "cve": "CVE-2026-46374, CVE-2026-46373",
+      "product": "SQLFluff (pip)",
+      "summary": "Parser resource-exhaustion and recursive stack overflow; lint/DevOps tooling, narrow blast radius."
+    },
+    {
+      "cve": "CVE-2026-41054",
+      "product": "haveged (Linux entropy daemon)",
+      "summary": "Local root privilege escalation via command socket; LPE-only, present on non-trivial fraction of Linux servers but no remote vector."
+    },
+    {
+      "cve": "CVE-2026-46529",
+      "product": "Evince / Atril / Xreader (document viewers)",
+      "summary": "Command injection in document viewers (oss-security 2026-05-19); client desktop, out of scope per Watchtower scope rules."
+    },
+    {
+      "cve": "Multiple (DFIR-IRIS 6-CVE batch)",
+      "product": "DFIR-IRIS (incident-response platform)",
+      "summary": "6 CVEs including open redirect, file upload, CSRF; narrow deployment, no exploitation reported, monitor."
+    },
+    {
+      "cve": "Not specified",
+      "product": "SHub macOS infostealer",
+      "summary": "New variant spoofing Apple security updates via AppleScript (BleepingComputer 2026-05-19); client-side macOS, out of scope per Watchtower scope rules."
+    },
+    {
+      "cve": "Not specified",
+      "product": "INTERPOL Operation Ramz",
+      "summary": "201 arrests / 53 servers seized in MENA region targeting phishing and malware infrastructure; law-enforcement disruption, not a vulnerability advisory."
+    },
+    {
+      "cve": "Not specified",
+      "product": "Discord default-on E2EE for voice/video calls",
+      "summary": "Product feature rollout enabling default end-to-end encryption for all voice and video calls (BleepingComputer 2026-05-19); defensive positive but not a vulnerability advisory."
+    },
+    {
+      "cve": "Not specified",
+      "product": "B1ack's Stash carding marketplace dump",
+      "summary": "4.6 million stolen credit cards released freely allegedly due to seller misconduct; marketplace dump, not a vulnerability — calibration data point on stolen-card market dynamics."
+    },
+    {
+      "cve": "CVE-2026-44919",
+      "product": "OpenStack Ironic",
+      "summary": "DoS via specially crafted deployment requests; OpenStack Ironic; DoS-only, lower priority than OFBiz RCE batch."
+    }
+  ],
+  "source_coverage": {
+    "total": 30,
+    "checked": 19,
+    "with_findings": 14,
+    "unreachable": [
+      "cisa.gov",
+      "cisa.gov/known-exploited-vulnerabilities-catalog",
+      "attackerkb.com",
+      "bugcrowd.com/disclosures",
+      "hackerone.com/hacktivity",
+      "cve.mitre.org",
+      "cve.org",
+      "googleprojectzero.blogspot.com",
+      "msrc.microsoft.com/blog",
+      "nvd.nist.gov",
+      "packetstormsecurity.com"
+    ],
+    "degraded": []
+  },
+  "full_report": "reports/2026/05/20/report.md"
+}
