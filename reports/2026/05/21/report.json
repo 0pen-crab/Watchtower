@@ -1,0 +1,223 @@
+{
+  "date": "2026-05-21",
+  "findings": [
+    {
+      "type": "update",
+      "title": "Drupal Core SA-CORE-2026-004 / CVE-2026-9082 — PostgreSQL SQL Injection Patches Shipped 2026-05-20 (Highly Critical, NIST 20/25)",
+      "threat_score": 9,
+      "previous_threat_score": 9,
+      "cve": "CVE-2026-9082",
+      "cvss": null,
+      "affected_technology": "Drupal core database abstraction API on PostgreSQL backend (11.3.x / 11.2.x / 11.1.x / 10.6.x / 10.5.x / 10.4.x and EOL 8.9 / 9.5 via manual patches)",
+      "summary": "Drupal SA-CORE-2026-004 patches shipped on schedule 2026-05-20 17:00-21:00 UTC; CVE-2026-9082 assigned and confirmed as anonymous SQL injection in the database abstraction API on PostgreSQL backend with potential RCE, mass-exploitation window opens within 24-72h per historical Drupalgeddon pattern.",
+      "first_seen_at": "2026-05-18"
+    },
+    {
+      "type": "news",
+      "title": "GitHub Confirms 3,800+ Internal Repositories Exfiltrated via Poisoned VS Code Extension — TeamPCP Attribution Includes Copilot, CodeQL, Actions, Dependabot Internals",
+      "threat_score": 8,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "GitHub internal SDLC + VS Code marketplace ecosystem",
+      "summary": "GitHub confirmed TeamPCP exfiltrated ~3,800-4,000 internal repositories via a single employee installing a poisoned VS Code extension; leaked corpus listed for sale at $50K and includes Copilot internals, CodeQL, Dependabot, Actions, Codespaces, internal infrastructure code.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-05-20"
+    },
+    {
+      "type": "news",
+      "title": "DNS Server Coordinated Patches 2026-05-20 — Unbound 11-CVE Batch (CVE-2026-33278 Critical RCE in DNSSEC Validation) + BIND 9 6-CVE Batch (CVE-2026-3593 DoH Heap-UAF → RCE)",
+      "threat_score": 7,
+      "cve": "CVE-2026-33278, CVE-2026-42944, CVE-2026-42959, CVE-2026-3039, CVE-2026-3592, CVE-2026-3593, CVE-2026-5946, CVE-2026-5947, CVE-2026-5950",
+      "cvss": null,
+      "affected_technology": "NLnet Labs Unbound (recursive resolver) + ISC BIND 9 (authoritative + recursive); fixed in Unbound 1.25.1, BIND 9.18.49 / 9.20.23 / 9.21.22",
+      "summary": "Same-day coordinated patches across two of three most-deployed open-source DNS servers; Unbound CVE-2026-33278 is a critical RCE reachable during normal DNSSEC validation, BIND CVE-2026-3593 is a DoH heap-UAF with RCE class impact, plus 9+ lower-severity DoS / cache poisoning issues across both.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-05-20"
+    },
+    {
+      "type": "news",
+      "title": "authentik CVE-2026-40165 — SAML NameID XML Comment Injection Authentication Bypass (CVSS 8.7)",
+      "threat_score": 7,
+      "cve": "CVE-2026-40165",
+      "cvss": 8.7,
+      "affected_technology": "authentik IdP — versions prior to 2025.12.5 (LTS) and 2026.2.3 (current)",
+      "summary": "Widely deployed open-source IdP authentik suffers SAML NameID XML comment injection allowing authentication bypass / user impersonation; classic OneLogin-2018-class bug re-emerges in newer SAML stack and cascades into every downstream SSO-protected application.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-05-20"
+    },
+    {
+      "type": "update",
+      "title": "Microsoft DCU 'Fox Tempest' MSaaS Takedown Expands — 4 New Ransomware Affiliates (INC, Qilin, BlackByte, Akira) + 3 Malware Families (Oyster, Lumma, Vidar)",
+      "threat_score": 7,
+      "previous_threat_score": 7,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Microsoft Artifact Signing (abused by attacker MSaaS) + downstream Authenticode trust",
+      "summary": "Microsoft expanded Fox Tempest MSaaS attribution today — adds INC / Qilin / BlackByte / Akira as ransomware affiliates and Oyster / Lumma / Vidar as malware families distributed via the signed-binary service, widening the retroactive-hunt aperture for revoked-cert thumbprints.",
+      "first_seen_at": "2026-05-19"
+    },
+    {
+      "type": "news",
+      "title": "SonicWall Gen6 SSL-VPN CVE-2024-12802 MFA Bypass — Active Ransomware Exploitation Feb-Mar 2026 Confirmed by ReliaQuest (Incomplete-Patch + Gen6 EOL Convergence)",
+      "threat_score": 6,
+      "cve": "CVE-2024-12802",
+      "cvss": null,
+      "affected_technology": "SonicWall Gen6 SSL-VPN (EOL 2026-04-16); Gen7 / Gen8 require firmware update only",
+      "summary": "ReliaQuest writeup confirms active ransomware exploitation Feb-Mar 2026 of CVE-2024-12802 MFA bypass on SonicWall Gen6 SSL-VPN — incomplete patch where admins must also delete and recreate LDAP config without userPrincipalName; Gen6 EOL leaves many sites with the surface live.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-05-20"
+    },
+    {
+      "type": "news",
+      "title": "EvilTokens OAuth Consent Phishing-as-a-Service — 340+ Microsoft 365 Organizations Compromised in 5 Weeks via Legitimate Device-Code Consent Flow",
+      "threat_score": 6,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Microsoft 365 OAuth device-code consent flow + downstream Mail/Drive/Calendar/Contacts API surface",
+      "summary": "EvilTokens phishing-as-a-service compromised 340+ M365 orgs across 5 countries in 5 weeks by abusing legitimate OAuth device-code consent — victim completes real MFA then clicks Accept on a consent screen, attacker receives refresh tokens scoped to mailbox/drive/calendar/contacts.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-05-20"
+    },
+    {
+      "type": "news",
+      "title": "Anthropic Claude Code SOCKS5 Null-Byte Injection Sandbox Bypass — Silently Patched 2026-03-31, Disclosed 2026-05-20 (No CVE Assigned by Vendor)",
+      "threat_score": 5,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Anthropic Claude Code CLI agent — versions prior to 2.1.88 (active surface Oct 2025 to 2026-03-31)",
+      "summary": "Claude Code's outbound network allowlist could be bypassed via SOCKS5 hostname null-byte injection (attacker-host.com\\x00.google.com) — chainable with prompt injection ('Comment and Control') for env / credential exfiltration; Anthropic patched silently in 2.1.88 and declined to assign a CVE.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-05-20"
+    },
+    {
+      "type": "news",
+      "title": "rsync 3.4.3 — 6-CVE Batch Including CVE-2026-43618 (CVSS 8.1) Authenticated-User Memory Disclosure + CVE-2026-29518 (CVSS 7.3) Daemon TOCTOU Privilege Escalation",
+      "threat_score": 5,
+      "cve": "CVE-2026-29518, CVE-2026-43617, CVE-2026-43618, CVE-2026-43619, CVE-2026-43620, CVE-2026-45232",
+      "cvss": 8.1,
+      "affected_technology": "rsync 3.4.2 and earlier (daemon + client); fixed in 3.4.3",
+      "summary": "rsync 3.4.3 fixes 6 CVEs including authenticated remote memory disclosure via compressed-token decoder integer overflow (CVE-2026-43618 CVSS 8.1) and daemon-mode TOCTOU symlink-race privilege escalation when use_chroot=no (CVE-2026-29518 CVSS 7.3).",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-05-20"
+    },
+    {
+      "type": "news",
+      "title": "CVE-2026-24425 Twig Sandbox Bypass → Full RCE (CVSS 8.8) — Affects All Twig 2.16.x and 3.9.0-3.25.x",
+      "threat_score": 5,
+      "cve": "CVE-2026-24425",
+      "cvss": 8.8,
+      "affected_technology": "Twig PHP templating engine (used by Drupal, Symfony, Craft CMS, eZ Platform, multi-tenant PHP SaaS)",
+      "summary": "Twig SourcePolicyInterface-based sandbox is bypassable by passing arbitrary PHP callables into sort/filter/map/reduce filters, yielding full RCE in the web process; primary risk surface is multi-tenant PHP platforms where users can submit Twig fragments — fixed in 3.26.0.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-05-20"
+    }
+  ],
+  "noted": [
+    {
+      "cve": "CVE-2026-46339",
+      "product": "9router (npm) — MCP plugin server",
+      "summary": "Unauthenticated RCE via unprotected MCP custom plugin routes published 2026-05-19 GHSA database; ninth MCP-server-class CVE in 60 days — MCP frameworks shipping with unauth routes pattern continues."
+    },
+    {
+      "cve": "CVE-2026-46421",
+      "product": "@cap-js/db-service (npm)",
+      "summary": "Mini Shai-Hulud Wave 3 extension into SAP Cloud Application Programming Model ecosystem; supply-chain compromise covered under yesterday's Wave 3 update."
+    },
+    {
+      "cve": "CVE-2026-45758",
+      "product": "guardrails-ai (pip)",
+      "summary": "Supply-chain compromise on AI-safety package via malicious code injection; meta-irony aside, another pip data point on the 2026 supply-chain wave."
+    },
+    {
+      "cve": "CVE-2026-7637",
+      "product": "WordPress Boost plugin (PixelYourSite)",
+      "summary": "Unauth PHP Object Injection (CVSS 9.8) via STYXKEY-BOOST_USER_LOCATION cookie; no internal gadget chain in plugin, impact depends on coexisting vulnerable plugins/themes."
+    },
+    {
+      "cve": "CVE-2026-8468",
+      "product": "Plug (Erlang/Elixir HTTP)",
+      "summary": "Unbounded buffer accumulation in multipart header parsing → DoS against Phoenix Framework backbone; DoS-only but Phoenix deployments are non-trivial in our scope."
+    },
+    {
+      "cve": "CVE-2026-4802",
+      "product": "Cockpit (Red Hat / Fedora admin UI)",
+      "summary": "Arbitrary code execution in logs page via crafted link; admin-side, lower priority."
+    },
+    {
+      "cve": "CVE-2026-24213, CVE-2026-24214",
+      "product": "NVIDIA Triton Inference Server (DALI backend)",
+      "summary": "Authenticated out-of-bounds read with CVSS 8.0; AI-inference servers continue to be a CVE-prolific surface."
+    },
+    {
+      "cve": "CVE-2026-24163",
+      "product": "NVIDIA TRT-LLM",
+      "summary": "CVSS 9.8 issue per dbugs.ptsecurity.com listing; details not yet public — track NVIDIA PSIRT bulletin."
+    },
+    {
+      "cve": "GHSA-w9xh-5f39-vq89, GHSA-gp95-j463-vv28, GHSA-xvp4-phqj-cjr3, GHSA-9qv9-8xv6-5p35",
+      "product": "phpMyFAQ",
+      "summary": "Four high-severity advisories: missing password-reset token, default empty API token auth bypass, IDOR account takeover, unauthenticated password-reset endpoint enumeration; narrow deployment surface."
+    },
+    {
+      "cve": "Not yet assigned",
+      "product": "Linux Kernel — VU#980487 'Dirty Frag' CERT/CC note",
+      "summary": "CERT/CC vulnerability note published 2026-05-20; appears to consolidate the Dirty Frag / CopyFail / DirtyDecrypt / Fragnesia LPE family already extensively covered."
+    },
+    {
+      "cve": "CVE-2026-43067",
+      "product": "Linux kernel (block layer)",
+      "summary": "Block allocation wraparound on indirect-mapped files listed on app.opencve.io as CVSS 9.8; details limited, monitor distro advisories for clearer impact scope."
+    },
+    {
+      "cve": "Not specified",
+      "product": "P2PInfect Kubernetes/Redis compromise (FortiGuard 2026-05-20)",
+      "summary": "Multiple GKE clusters compromised via unprotected Redis instances; persistent and dormant malware on misconfigured K8s — botnet pattern, not a new CVE."
+    },
+    {
+      "cve": "Not specified",
+      "product": "Webworm EchoCreep / GraphWorm (China-aligned APT)",
+      "summary": "APT C2 abusing Discord and Microsoft Graph API for command-and-control; threat-intel reporting valuable for Graph API abuse detection engineering."
+    },
+    {
+      "cve": "Not specified",
+      "product": "PinTheft Arch Linux LPE",
+      "summary": "Public PoC released on patched flaw; Arch-only, LPE-only — out of remote-services scope."
+    },
+    {
+      "cve": "Not specified",
+      "product": "Discord default-on E2EE rollout (voice/video)",
+      "summary": "Defensive positive; affects forensic visibility of Discord-based threat-actor coordination — relevant for IR monitoring credential-market chatter."
+    },
+    {
+      "cve": "Not specified",
+      "product": "Grafana Labs GitHub breach disclosure 2026-05-19",
+      "summary": "TanStack-downstream incident — single missed GitHub workflow token allowed continued attacker access; illustrates the breach-response-rotation gap pattern."
+    },
+    {
+      "cve": "Not specified",
+      "product": "Mini Shai-Hulud Wave 3 — VS Code + Claude Code config persistence backdoor (Aikido)",
+      "summary": "Already covered under yesterday's Wave 3 update; Aikido's incremental persistence-mechanism documentation doesn't escalate the threat score further."
+    }
+  ],
+  "source_coverage": {
+    "total": 30,
+    "checked": 20,
+    "with_findings": 12,
+    "unreachable": [
+      "cisa.gov",
+      "cisa.gov/known-exploited-vulnerabilities-catalog",
+      "attackerkb.com",
+      "nvd.nist.gov",
+      "cve.mitre.org",
+      "cve.org",
+      "msrc.microsoft.com/blog",
+      "hackerone.com/hacktivity",
+      "bugcrowd.com/disclosures",
+      "cert.gov.ua"
+    ],
+    "degraded": [
+      "packetstormsecurity.com"
+    ]
+  },
+  "full_report": "reports/2026/05/21/report.md"
+}

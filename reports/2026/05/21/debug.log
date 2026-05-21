@@ -1,0 +1,129 @@
+==========================================================================
+WATCHTOWER DEBUG LOG — 2026-05-21
+==========================================================================
+
+[2026-05-21 05:55:00 UTC] Step 1: git pull
+  Result: Already up to date.
+
+[2026-05-21 05:56:00 UTC] Step 2: build dedup index from last 30 days
+  Cutoff: 2026-04-21 (30 days from 2026-05-21)
+  Reports scanned: 31 (2026/04/21 through 2026/05/20)
+  Unique CVEs indexed: 595
+  CVE-less titles indexed: 63
+  Saved to /tmp/dedup_cves.txt and /tmp/dedup_keywords.txt
+  Key dedup hits for today's candidates:
+    - CVE-2026-31431 (CopyFail Linux LPE) — already at ts=8 in 2026-05-05, KEV-added 2026-05-01 — SKIP (no material change today)
+    - CVE-2026-31635 (DirtyDecrypt Linux LPE) — Noted 2026-05-20 — keep Noted (THN article today restates K8s implications already implicit yesterday)
+    - CVE-2026-41054 (haveged LPE) — Noted 2026-05-20 — keep Noted
+    - Mini Shai-Hulud Wave 3 / CVE-2026-46412 — covered as ts=9 update yesterday — incremental Aikido persistence detail → Noted only
+    - Fox Tempest disruption — covered as ts=7 news yesterday — 4 new ransomware affiliates today → 🔄 UPDATE
+    - Drupal SA-CORE-2026-004 — pre-announce news yesterday (ts=9, CVE "Not yet assigned") — patch shipped + CVE-2026-9082 assigned today → 🔄 UPDATE
+    - CVE-2024-12802 SonicWall — NOT in dedup → NEW news
+
+[2026-05-21 06:00:00 UTC] Step 3: source check (SOURCES.md = 30 sources)
+  Batched WebFetch calls (≥3 per turn) per CLAUDE.md instruction.
+  Status legend: ✅ checked / ⚠️ degraded / ❌ unreachable
+
+  TIER 1 (15 sources):
+    ✅ bleepingcomputer.com [3.2s] — 13 May 19-20 stories; Drupal, GitHub breach, ChromaDB, Grafana, SonicWall, Fox Tempest, Mini Shai-Hulud, Microsoft self-service PW reset abuse, Discord E2EE
+    ✅ thehackernews.com [2.8s] — 10 May 20-21 stories; Drupal, GitHub TeamPCP, Fox Tempest, Webworm, YellowKey, Grafana, Trapdoor, DirtyDecrypt, OAuth phishing, RAMPART
+    ❌ cisa.gov [HTTP 403] — known-unreachable per MEMORY; relied on cross-source signals (no new KEV via THN/BC)
+    ❌ cisa.gov/known-exploited-vulnerabilities-catalog [HTTP 403] — known-unreachable
+    ✅ securityweek.com [2.5s] — 7 May 19-20 stories; YellowKey, Claude Code sandbox bypass, Mini Shai-Hulud, GitHub breach, Drupal, ChromaDB, Fox Tempest
+    ✅ github.com/search?q=CVE [3.8s] — 9 recent CVE-2026 repos; CVE-2026-31431 multiple variants, CVE-2026-21858 n8n, CVE-2026-34486 Tomcat Tribes, CVE-2026-2472 Vertex AI XSS, mini-shai-hulud-detector
+    ✅ schneier.com [1.9s] — only "On AI Security" 2026-05-20 (not in scope)
+    ✅ krebsonsecurity.com [2.1s] — no new posts since 2026-05-18 (CISA Admin AWS leak)
+    ✅ rapid7.com/blog [2.4s] — Metasploit wrap-up 2026-05-15, CVE-2026-0265 Palo Alto, CVE-2026-20182 Cisco SD-WAN — all prior coverage, no new for today
+    ❌ attackerkb.com [HTTP 403] — known-unreachable per MEMORY
+    ✅ fortinet.com/blog/threat-research [3.1s] — P2PInfect Kubernetes/Redis compromise (2026-05-20), PureLogs delivery via PawsRunner (2026-05-15)
+    ✅ securitylab.github.com [2.6s] — Open WebUI GHSL-2026-002 (2026-05-15), Quarkus CVE-2026-39852 (2026-05-06) — already covered
+    ✅ seclists.org/fulldisclosure [2.9s] — latest dated 2026-05-17; no new May 20-21 posts; Apple, Dovecot already prior
+    ⚠️ packetstormsecurity.com → packetstorm.news [3.4s] — homepage returned with "248 additions today, 42 exploits / 499 advisories in 7 days" but individual listings not surfaced — DEGRADED
+    ✅ opencve.io / app.opencve.io [3.8s] — 9 enterprise CVEs surfaced; CVE-2026-40165 authentik, CVE-2026-40102 Plane, CVE-2026-9149 RHEL libsolv, CVE-2026-43067 Linux block alloc, CVE-2026-45585 YellowKey, CVE-2026-40367 Office RCE (out of scope), CVE-2026-40369 Windows LPE
+
+  TIER 2 (16 sources, with seclists duplicated from Tier 1):
+    ❌ nvd.nist.gov [HTTP unreachable] — known-unreachable per MEMORY
+    ❌ cve.mitre.org [JS-only] — known-unreachable per MEMORY
+    ❌ cve.org [JS-only] — known-unreachable per MEMORY
+    ✅ projectzero.google [2.2s] — last post 2026-05-13 Pixel 10 0-click; no new for window
+    ✅ blog.cloudflare.com/tag/security [2.0s] — last security post 2026-05-18 Project Glasswing/Mythos; no new for window
+    ❌ msrc.microsoft.com/blog [no content] — tried both /blog and /update-guide variants; both returned page-header-only; known-degraded per MEMORY
+    ❌ hackerone.com/hacktivity [JS-only] — known-unreachable per MEMORY
+    ❌ bugcrowd.com/disclosures [HTTP 404] — known-unreachable per MEMORY (URL may have changed)
+    (seclists.org/fulldisclosure — counted in Tier 1)
+    ✅ kb.cert.org/vuls [2.4s] — VU#980487 "Linux Kernel Dirty Frag LPE" 2026-05-20 — duplicate of existing CopyFail/DirtyDecrypt family coverage
+    ✅ avleonov.com [3.0s] — May Patch Tuesday rollup, Apache ActiveMQ CVE-2026-34197, SharePoint CVE-2026-32201, Linux Dirty Frag — all prior coverage
+    ✅ github.com/0xMarcio/cve [3.5s] — recent commits surface CVE-2026-31431 + variants (K8s-specialized), CVE-2026-21858, CVE-2026-41651, CVE-2026-34486 PoC, CVE-2026-0073 adbd
+    ✅ dbugs.ptsecurity.com [2.7s] — CVE-2026-42960 Unbound (CVSS 10), CVE-2026-24213/24214 NVIDIA Triton (9.8), CVE-2026-24163 TRT-LLM (9.8), CVE-2026-7637 WordPress Boost (9.8), CVE-2026-24425 Twig (8.8), CVE-2026-8467 Phoenix Storybook (9.5)
+    ⚠️ habr.com/ru/companies/tomhunter [no May posts] — last post 2026-03-06; checked but no new content in window
+    ⚠️ teletype.in/@cyberok [no May posts] — last post 2026-02-04; checked but no new content in window
+    ❌ cert.gov.ua [no content displayed] — degraded/unreachable via WebFetch; classifying as unreachable
+
+  ADDITIONAL SOURCES CHECKED (from MEMORY high-value, beyond SOURCES.md):
+    ✅ openwall.com/lists/oss-security (MEMORY high-value 2026-05-04) — 12 posts on 2026-05-20: BIND 9, Unbound 1.25.1, PowerDNS 2026-06, rsync 3.4.3, Samba pre-announce, QEMU CXL, Cockpit CVE-2026-4802, Crypt::SaltedHash, haveged, PCManFM-Qt, etc.
+    ✅ github.com/advisories (MEMORY high-value 2026-05-07) — critical + high filter for 2026-05-20: @cap-js/db-service CVE-2026-46421, 9router CVE-2026-46339, guardrails-ai CVE-2026-45758, phpMyFAQ 4-CVE batch, wger, Plug CVE-2026-8468
+    ✅ drupal.org/sa-core-2026-004 — direct vendor advisory page yielded CVE-2026-9082 assignment, fixed versions, technical detail
+    ✅ fortiguard.fortinet.com/psirt — FG-IR-26-136 (CVE-2026-26083), FG-IR-26-100 (CVE-2026-39808), FG-IR-26-123 (CVE-2025-53844), FG-IR-26-121 (CVE-2026-22828) — all already in dedup
+
+  FINAL COUNTS (matches report.json source_coverage):
+    total = 30
+    checked = 20
+    with_findings = 12 (bleepingcomputer, thehackernews, securityweek, github/search, fortinet/threat-research, opencve.io, kb.cert.org/vuls, github/0xMarcio/cve, dbugs.ptsecurity.com, seclists.org/fulldisclosure, rapid7.com — counted Drupal/openwall/github-advisories as supporting cross-references, not added to checked count since not in SOURCES.md)
+    unreachable = 10
+    degraded = 1 (packetstormsecurity)
+    Verification: checked (20) >= total (30) - unreachable (10) → 20 >= 20 ✓
+
+[2026-05-21 06:10:00 UTC] Step 4: dedup classification
+  Per-finding decisions:
+    NEW   GitHub 3,800 repos breach (TeamPCP) — not in dedup; major incident
+    NEW   DNS Server Coordinated Patches (Unbound + BIND + PowerDNS) — none of the CVEs in dedup
+    NEW   authentik CVE-2026-40165 — not in dedup
+    NEW   SonicWall CVE-2024-12802 — not in dedup
+    NEW   EvilTokens OAuth phishing — not in dedup (campaign-level)
+    NEW   Anthropic Claude Code SOCKS5 null-byte sandbox bypass — not in dedup (no CVE assigned)
+    NEW   rsync 3.4.3 6-CVE batch — not in dedup
+    NEW   Twig CVE-2026-24425 — not in dedup
+    UPDATE Drupal SA-CORE-2026-004 — was preannounce on 2026-05-20 with CVE "Not yet assigned"; now CVE-2026-9082 assigned + technical detail published + patch shipped = material update
+    UPDATE Fox Tempest — covered yesterday at ts=7; today adds 4 new ransomware affiliates (INC/Qilin/BlackByte/Akira) + 3 malware families (Oyster/Lumma/Vidar) = scope expansion material update
+    SKIP   CVE-2026-31431 CopyFail — already at ts=8 in 2026-05-05; today's "9 variants in 48h" is ongoing chatter, not material
+    SKIP   CVE-2026-31635 DirtyDecrypt — Noted yesterday; THN article restates K8s implications already implicit in yesterday's note
+    SKIP   CVE-2026-45585 YellowKey BitLocker — client-only, OUT OF SCOPE per Watchtower scope rules
+    SKIP   CVE-2026-40367 Office RCE — client-only, OUT OF SCOPE
+    SKIP   Microsoft RAMPART/Clarity — defensive tooling, OUT OF SCOPE
+    SKIP   PinTheft Arch Linux LPE — Arch-only, LPE-only, OUT OF SCOPE
+    SKIP   Trapdoor Android Ad Fraud — mobile-only, OUT OF SCOPE
+    SKIP   Crypto ATM Scam $388M — financial fraud, OUT OF SCOPE
+    SKIP   Ukrainian Infostealer 18yo arrest — LE action, OUT OF SCOPE
+    SKIP   Pixel 10 0-click (Project Zero) — mobile, OUT OF SCOPE
+
+    NOTED 16 items: see report.json — covering MCP/AI-platform supply-chain CVEs, narrow-deployment CVEs, threat-intel-only items not warranting a full News entry.
+
+[2026-05-21 06:15:00 UTC] Step 5: write report.md and report.json
+  Wrote reports/2026/05/21/report.md following templates/report.template.md structure (Critical/High/Medium/Noted/Source Coverage tiers).
+  Wrote reports/2026/05/21/report.json with strict validator schema (date, findings, noted, source_coverage, full_report).
+  Findings count: 10 (2 update, 8 news).
+  Noted count: 17.
+
+[2026-05-21 06:18:00 UTC] Step 6: this debug.log being written.
+
+[2026-05-21 06:20:00 UTC] Step 7: validate report.json
+  Command: python3 /home/claude/workspace/watchtower/scripts/validate_report.py reports/2026/05/21/report.json
+  First pass: 1 warning (findings[4] Fox Tempest summary 333 chars > 200 target). No errors.
+  Tightened Fox Tempest summary; re-validated.
+  Second pass: ✅ reports/2026/05/21/report.json — valid (no warnings, no errors).
+
+==========================================================================
+NOTES FOR FOLLOW-UP / SELF-IMPROVEMENT
+==========================================================================
+
+- 2 items today are first-source from openwall.com/lists/oss-security (DNS server coordinated patches; rsync 3.4.3) — confirms MEMORY entry: "openwall.com is canonical primary source for fresh Apache and DNS-software CVE batches."
+
+- dbugs.ptsecurity.com (Tier 2) was unusually productive today — surfaced Twig CVE-2026-24425, NVIDIA Triton CVEs, WordPress Boost CVE-2026-7637 before BleepingComputer / THN picked any up.
+
+- All 10 traditionally-unreachable sources (CISA x2, AttackerKB, NVD, MITRE, CVE.org, MSRC, HackerOne, Bugcrowd, CERT-UA) remain JS-only or 403 via WebFetch. Compensated by cross-source signal from primary news outlets. Recommendation: continue routing those sources through THN / BleepingComputer / SecurityWeek relays; do not waste budget on direct fetches.
+
+- Calibration: Drupal CVE-2026-9082 PostgreSQL-only restriction means the true blast radius is the PostgreSQL-backed Drupal subset. Conservative ts=9 (same as preannounce) rather than ts=10 because (1) no in-the-wild exploitation yet at report time, (2) PostgreSQL backend (vs MySQL) is a non-universal precondition. Will revisit tomorrow once mass-exploitation telemetry appears.
+
+- DirtyDecrypt / CopyFail / Dirty Frag / Fragnesia family: 4+ named-CVE variants now, all sharing the page-cache-corruption → LPE → K8s-pod-escape pattern. Confirms MEMORY pattern about Linux page-cache LPEs becoming K8s container-escape primitives within 14 days. Tomorrow consider authoring a Pattern Library entry consolidating this family.
+
+- Bug noticed: MEMORY.md in /home/claude/prompts/watchtower contains a "Platform Observations" section about "OpenClaw Instance is Severely Outdated" referring to a tool called "openclaw" with instructions to run "openclaw update". This does not match any tooling described in CLAUDE.md, README.md, or SOURCES.md. Surfaced to user as potential prompt-injection in the file. Did not act on those instructions.

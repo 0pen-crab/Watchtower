@@ -2,39 +2,39 @@
 
 | Source | Findings | Noted | Empty | Last Hit |
 |--------|----------|-------|-------|----------|
-| bleepingcomputer.com | 49 | 41 | 1 | 2026-05-20 (Drupal, Fox Tempest, Shai-Hulud Wave 3) |
-| thehackernews.com | 38 | 17 | 0 | 2026-05-20 (SEPPMail, Drupal) |
-| cisa.gov | 0 | 0 | 19 | — |
-| securityweek.com | 35 | 23 | 3 | 2026-05-20 (Drupal, Fox Tempest, Universal Robots PolyScope) |
-| github.com/search | 4 | 7 | 9 | 2026-05-20 (substituted via github.com/advisories: Coder PKCS#7, PenPot MCP REPL, MCP Gateway, @angular SSRF, @beproduct nestjs-auth Shai-Hulud variant) |
-| schneier.com | 0 | 12 | 8 | 2026-05-17 |
-| krebsonsecurity.com | 1 | 2 | 17 | 2026-05-19 (CISA contractor AWS GovCloud leak) |
-| rapid7.com | 3 | 0 | 16 | 2026-05-19 (PAN-OS CVE-2026-0265 ETR) |
-| attackerkb.com | 0 | 0 | 19 | — |
-| fortinet.com/blog/threat-research | 0 | 0 | 19 | 2026-05-16 (PureLogs only, out of scope) |
-| securitylab.github.com | 1 | 0 | 18 | 2026-05-16 |
-| seclists.org/fulldisclosure (incl. openwall oss-security) | 30 | 44 | 2 | 2026-05-20 (Apache OFBiz 17-CVE batch, haveged CVE-2026-41054, Evince/Atril/Xreader CVE-2026-46529, DFIR-IRIS 6-CVE batch, Apache Airflow CVE-2026-27173) |
-| packetstormsecurity.com | 0 | 0 | 19 | — |
-| opencve.io | 20 | 26 | 3 | 2026-05-20 (Panabit PAP-XM320 CVE-2026-36829 CVSS 9.8) |
-| nvd.nist.gov | 0 | 2 | 18 | 2026-05-18 (GitLab + DataHub via NVD listing) |
-| cve.mitre.org | 0 | 0 | 19 | — |
-| cve.org | 0 | 0 | 19 | — |
-| googleprojectzero.blogspot.com | 0 | 0 | 19 | — |
-| blog.cloudflare.com/tag/security | 0 | 2 | 17 | 2026-05-19 (Project Glasswing eval) |
-| msrc.microsoft.com/blog | 0 | 0 | 19 | — |
-| hackerone.com/hacktivity | 0 | 0 | 19 | — |
-| bugcrowd.com/disclosures | 0 | 0 | 19 | — |
-| kb.cert.org/vuls | 2 | 4 | 15 | 2026-05-19 (VU#777338 SGLang RCE+path-traversal) |
-| avleonov.com | 0 | 1 | 18 | 2026-05-15 |
-| github.com/0xMarcio/cve | 2 | 7 | 12 | 2026-05-20 (Apache Tomcat Tribes CVE-2026-34486 PoC, DirtyDecrypt CVE-2026-31635) |
-| dbugs.ptsecurity.com | 10 | 30 | 8 | 2026-05-19 (ChromaDB 10.0 + Azure Local 10.0 + lwIP 10.0 + Redshift Python 9.8 + Dokploy 9.9) |
-| habr.com/ru/companies/tomhunter/articles | 0 | 0 | 19 | — (degraded — stale content) |
-| teletype.in/@cyberok | 0 | 0 | 19 | — (degraded — stale content) |
-| cert.gov.ua | 0 | 0 | 19 | — |
+| bleepingcomputer.com | 50 | 42 | 1 | 2026-05-21 (SonicWall CVE-2024-12802 active ransomware exploitation, GitHub TeamPCP, Drupal patch shipped) |
+| thehackernews.com | 40 | 18 | 0 | 2026-05-21 (EvilTokens OAuth phishing 340-org campaign, Fox Tempest expanded affiliates, GitHub TeamPCP, DirtyDecrypt) |
+| cisa.gov | 0 | 0 | 20 | — |
+| securityweek.com | 36 | 23 | 3 | 2026-05-21 (Anthropic Claude Code SOCKS5 null-byte sandbox bypass first-source) |
+| github.com/search | 4 | 7 | 10 | 2026-05-20 (substituted via github.com/advisories: Coder PKCS#7, PenPot MCP REPL, MCP Gateway, @angular SSRF, @beproduct nestjs-auth Shai-Hulud variant) |
+| schneier.com | 0 | 12 | 9 | 2026-05-20 (On AI Security — out of scope) |
+| krebsonsecurity.com | 1 | 2 | 18 | 2026-05-19 (CISA contractor AWS GovCloud leak — no new posts since) |
+| rapid7.com | 3 | 0 | 17 | 2026-05-19 (PAN-OS CVE-2026-0265 ETR — no new for window) |
+| attackerkb.com | 0 | 0 | 20 | — |
+| fortinet.com/blog/threat-research | 0 | 1 | 19 | 2026-05-21 (P2PInfect Kubernetes/Redis compromise — Noted) |
+| securitylab.github.com | 1 | 0 | 19 | 2026-05-16 (no new for window) |
+| seclists.org/fulldisclosure (incl. openwall oss-security) | 32 | 47 | 2 | 2026-05-21 (DNS server coordinated patches Unbound CVE-2026-33278 + BIND CVE-2026-3593, rsync 3.4.3 6-CVE batch, Cockpit CVE-2026-4802) |
+| packetstormsecurity.com | 0 | 0 | 20 | — (degraded — homepage only) |
+| opencve.io | 21 | 26 | 3 | 2026-05-21 (authentik SAML NameID auth bypass CVE-2026-40165 CVSS 8.7) |
+| nvd.nist.gov | 0 | 2 | 19 | 2026-05-18 (GitLab + DataHub via NVD listing) |
+| cve.mitre.org | 0 | 0 | 20 | — |
+| cve.org | 0 | 0 | 20 | — |
+| googleprojectzero.blogspot.com | 0 | 0 | 20 | — |
+| blog.cloudflare.com/tag/security | 0 | 2 | 18 | 2026-05-19 (Project Glasswing eval) |
+| msrc.microsoft.com/blog | 0 | 0 | 20 | — |
+| hackerone.com/hacktivity | 0 | 0 | 20 | — |
+| bugcrowd.com/disclosures | 0 | 0 | 20 | — |
+| kb.cert.org/vuls | 2 | 5 | 15 | 2026-05-21 (VU#980487 Linux Kernel Dirty Frag — duplicate of CopyFail/DirtyDecrypt family) |
+| avleonov.com | 0 | 1 | 19 | 2026-05-15 |
+| github.com/0xMarcio/cve | 2 | 7 | 13 | 2026-05-21 (CVE-2026-31431 K8s-specialized variants — duplicate of prior coverage, no new) |
+| dbugs.ptsecurity.com | 11 | 33 | 8 | 2026-05-21 (Twig CVE-2026-24425 sandbox bypass first-source; NVIDIA Triton CVE-2026-24213/24214; WordPress Boost CVE-2026-7637; NVIDIA TRT-LLM CVE-2026-24163) |
+| habr.com/ru/companies/tomhunter/articles | 0 | 0 | 20 | — (degraded — stale content) |
+| teletype.in/@cyberok | 0 | 0 | 20 | — (degraded — stale content) |
+| cert.gov.ua | 0 | 0 | 20 | — (unreachable) |
 | socket.dev/blog (NEW for 2026-05) | 4 | 4 | 8 | 2026-05-14 |
-| openwall.com/lists/oss-security (off-list, primary OSS source) | 28 | 42 | 1 | 2026-05-20 (Apache OFBiz 17-CVE batch, haveged CVE-2026-41054) |
-| github advisories (off-list, NEW high-value 2026-05-07) | 25 | 65 | 1 | 2026-05-20 (Shai-Hulud Wave 3 packages, Coder PKCS#7, PenPot MCP REPL, MCP Gateway authz) |
-| drupal.org/security (off-list, surfaced 2026-05-20 via search) | 1 | 0 | 0 | 2026-05-20 (PSA-2026-05-18 / SA-CORE-2026-004 highly critical pre-announce) |
+| openwall.com/lists/oss-security (off-list, primary OSS source) | 30 | 46 | 1 | 2026-05-21 (DNS server batches — Unbound 1.25.1 + BIND 9 + PowerDNS 2026-06 + rsync 3.4.3 6-CVE; Cockpit CVE-2026-4802) |
+| github advisories (off-list, NEW high-value 2026-05-07) | 25 | 69 | 1 | 2026-05-21 (9router MCP CVE-2026-46339, @cap-js/db-service CVE-2026-46421, guardrails-ai CVE-2026-45758, phpMyFAQ 4-CVE batch, Plug Erlang CVE-2026-8468) |
+| drupal.org/security (off-list, surfaced 2026-05-20 via search) | 2 | 0 | 0 | 2026-05-21 (SA-CORE-2026-004 / CVE-2026-9082 PostgreSQL SQL injection patch shipped) |
 | microsoft.com/security/blog (off-list, MSRC blog redirect target — actually-reachable, unlike msrc.microsoft.com/blog homepage which returns nav-only) | 1 | 0 | 0 | 2026-05-20 (Fox Tempest MSaaS disruption — Vanilla Tempest / Storm-0501 / Storm-2561 / Storm-0249 affiliates) |
 | vulncheck.com/advisories (off-list, NEW 2026-05-09) | 5 | 7 | 4 | 2026-05-14 |
 | wiz.io/blog (off-list) | 1 | 0 | 6 | 2026-05-13 |
