@@ -1,0 +1,188 @@
+{
+  "date": "2026-05-22",
+  "findings": [
+    {
+      "type": "news",
+      "title": "CVE-2026-20223 Cisco Secure Workload Unauthenticated Cross-Tenant Site-Admin RCE (CVSS 10.0)",
+      "threat_score": 7,
+      "cve": "CVE-2026-20223",
+      "cvss": 10.0,
+      "affected_technology": "Cisco Secure Workload Cluster Software (SaaS + on-prem) — internal REST API",
+      "summary": "Weak validation and authentication on internal REST APIs lets remote unauthenticated attackers cross tenant boundaries and gain Site Admin privileges; vendor-discovered, no public ITW yet, fixed in 3.10.8.3 / 4.0.3.17, SaaS patched cloud-side.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-05-21"
+    },
+    {
+      "type": "news",
+      "title": "Microsoft Defender Zero-Days CVE-2026-41091 LPE + CVE-2026-45498 DoS Actively Exploited + KEV-Added 2026-05-20",
+      "threat_score": 7,
+      "cve": "CVE-2026-41091, CVE-2026-45498",
+      "cvss": 7.8,
+      "affected_technology": "Microsoft Defender Antimalware Platform + Malware Protection Engine on all Windows versions",
+      "summary": "Paired Defender DoS + LPE actively exploited together as a blind-the-EDR-then-escalate post-exploit primitive; CISA KEV addition 2026-05-20 with 2026-06-03 federal deadline; fixed in Engine 1.1.26040.8+ and Platform 4.18.26040.7+.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-05-21"
+    },
+    {
+      "type": "update",
+      "title": "CVE-2026-46333 ssh-keysign-pwn Promoted — CVE Assigned, Multi-Distro Patches, Two Public Exploits, Industry-Framed as 4th Linux Kernel CVE in 3 Weeks",
+      "threat_score": 6,
+      "previous_threat_score": 4,
+      "cve": "CVE-2026-46333",
+      "cvss": 5.5,
+      "affected_technology": "Linux kernel __ptrace_may_access() race window introduced November 2016 — every major distro",
+      "summary": "Promoted from 2026-05-16 noted: CVE now assigned, upstream patch in mainline 2026-05-14, AlmaLinux/Ubuntu/Red Hat/CloudLinux/Debian/Fedora advisories shipped, two public exploits read /etc/shadow and SSH host keys; mitigate via Yama ptrace_scope=2 or 3 if unpatched.",
+      "first_seen_at": "2026-05-15"
+    },
+    {
+      "type": "news",
+      "title": "CVE-2026-45695 Kopia Backup Daemon SSH ProxyCommand Pre-Auth RCE (CVSS 9.8)",
+      "threat_score": 6,
+      "cve": "CVE-2026-45695",
+      "cvss": 9.8,
+      "affected_technology": "Kopia self-hosted backup software (Go, HTTP server) versions ≤ 0.22.3",
+      "summary": "When started with --without-password, /api/v1/repo/exists accepts unauth requests; externalSSH SFTP backend splits attacker-supplied args on spaces and passes to exec.CommandContext, so -oProxyCommand=<cmd> yields RCE on a single unauth HTTP request; fixed in 0.23.0.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-05-21"
+    },
+    {
+      "type": "news",
+      "title": "Showboat Linux Malware — China-Aligned Calypso Cluster Persistent Middle East / Asia-Pacific Telecom Implant Since 2022",
+      "threat_score": 5,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Compromised Linux servers at Middle East and Asia-Pacific telecommunications providers and ISPs",
+      "summary": "Modular Linux post-exploit framework (remote shell + file transfer + SOCKS5 proxy) attributed to China-aligned Calypso (Bronze Medley / Red Lamassu) with C2 correlating to Chengdu IP space; victims include Afghanistan ISP and Azerbaijan target; long-dwell telecom espionage pattern.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-05-21"
+    }
+  ],
+  "noted": [
+    {
+      "cve": "CVE-2026-47101, CVE-2026-47102",
+      "product": "LiteLLM (PT-2026-42538/42539, CVSS 8.8 each)",
+      "summary": "Authenticated role-modification + API-key privilege-escalation flaws yielding proxy_admin; sustained LiteLLM CVE cluster after KEV-listed CVE-2026-42208 — deprecation/segmentation candidate."
+    },
+    {
+      "cve": "CVE-2026-46703, CVE-2026-46695",
+      "product": "@boxlite-ai/boxlite (Go, AI infra)",
+      "summary": "Critical path-traversal arbitrary file write on host plus permission bypass for read-only files; low estimated deployment but tracked as part of broader AI-platform vuln pipeline."
+    },
+    {
+      "cve": "CVE-2026-46614",
+      "product": "Fission FaaS router (Go)",
+      "summary": "Missing authentication on function-invocation endpoints; unauth function-execution on any internet-exposed Fission cluster."
+    },
+    {
+      "cve": "CVE-2026-45697",
+      "product": "Craft CMS Formie plugin (Composer)",
+      "summary": "Pre-auth Twig template injection via hidden field; Craft CMS sites using Formie form-builder plugin at risk."
+    },
+    {
+      "cve": "CVE-2026-46633",
+      "product": "Twig (Composer) {% use %} PHP code injection",
+      "summary": "Companion to yesterday's CVE-2026-24425 Twig sandbox bypass — single-quote in template name escapes cache file string literal yielding PHP code execution; same Twig 3.26.0 upgrade addresses both."
+    },
+    {
+      "cve": "CVE-2026-46395",
+      "product": "@haxtheweb/haxcms-nodejs (npm)",
+      "summary": "Private signing key disclosure via broken HMAC; HAXcms node.js CMS deployments at risk; low estimated footprint."
+    },
+    {
+      "cve": "CVE-2026-45625",
+      "product": "arcane Git management tool (Go backend)",
+      "summary": "Missing authorization exposes Git credentials; niche self-hosted tool, noted for completeness."
+    },
+    {
+      "cve": "CVE-2026-47243",
+      "product": "Kata Containers runtime-rs virtiofsd",
+      "summary": "Symlink-escape primitive in Kata Containers runtime-rs virtiofsd; container-escape class for stronger-isolation K8s shops using Kata."
+    },
+    {
+      "cve": "CVE-2026-47323",
+      "product": "Apache Camel",
+      "summary": "Message header injection in Apache Camel; widely-used Java integration framework — track for full CVSS and impact expansion."
+    },
+    {
+      "cve": "CVE-2026-48207",
+      "product": "Apache Fory PyFory ReduceSerializer",
+      "summary": "Python deserialization policy-enforcement gap in Fory serialization library; same gadget class as prior Python-pickle ecosystem CVEs."
+    },
+    {
+      "cve": "CVE-2026-45760",
+      "product": "Apache Camel K (K8s integration platform)",
+      "summary": "Cross-namespace confused-deputy attack on Camel K builds; relevant for K8s shops running Camel K integrations."
+    },
+    {
+      "cve": "CVE-2026-45250",
+      "product": "FreeBSD setcred (FatGid)",
+      "summary": "FreeBSD-specific stack-overflow LPE; out of normal Linux scope but logged for BSD-based appliance fleets."
+    },
+    {
+      "cve": "CVE-2026-6960",
+      "product": "BookingPress Appointment Booking Pro (WordPress plugin, PT-2026-42552, CVSS 9.8)",
+      "summary": "Critical WordPress plugin advisory via PT-Security dbugs; track for skimmer-monetisation pattern (cf. Burst Statistics / Funnel Builder)."
+    },
+    {
+      "cve": "CVE-2026-8134",
+      "product": "Concrete CMS (PT-2026-42535, CVSS 9.4)",
+      "summary": "Critical Concrete CMS issue from PT-Security dbugs; part of a broader Concrete CMS multi-CVE batch via OpenCVE 2026-05-21."
+    },
+    {
+      "cve": "CVE-2026-22678",
+      "product": "Webmin (PT-2026-42550)",
+      "summary": "Lower-severity Webmin advisory; noted because Webmin is internet-exposed on many SOHO Linux servers."
+    },
+    {
+      "cve": "CVE-2026-42329, CVE-2026-42538, CVE-2026-42539, CVE-2026-42540, CVE-2026-42543, CVE-2026-42547",
+      "product": "DFIR-IRIS",
+      "summary": "Open Redirect + Insecure File Upload + Excessive Data Exposure + Mass Assignment + CSRF + False Alert Attribution batch in DFIR-IRIS incident-response platform; niche, affects DFIR teams running self-hosted IRIS."
+    },
+    {
+      "cve": "Not yet assigned",
+      "product": "Chromium Service Worker (Chrome / Edge / Brave / Opera / Vivaldi / Arc) — Google leak",
+      "summary": "Google accidentally exposed unfixed Service Worker bug where JS persists after browser close — botnet/proxy/DDoS implications for any compromised browser; client-only out of normal scope but logged."
+    },
+    {
+      "cve": "Not yet assigned",
+      "product": "QEMU CXL Memory Corruption (QEMUtiny, oss-security 2026-05-20)",
+      "summary": "QEMU CXL-emulation memory corruption disclosed; affects CI/test environments using QEMU CXL-memory emulation."
+    },
+    {
+      "cve": "Not yet assigned",
+      "product": "Memcached 1.6.42 (major security release pre-announce)",
+      "summary": "Pre-announced 'major security focused release' via oss-security 2026-05-19; CVEs not yet published; watch for the drop and patch tempo over next 7-14 days."
+    },
+    {
+      "cve": "Not yet assigned",
+      "product": "PowerDNS Advisory 2026-06 (oss-security 2026-05-20)",
+      "summary": "Multiple PowerDNS issues pre-announced; details pending vendor advisory expansion — companion to BIND + Unbound May patch wave."
+    },
+    {
+      "cve": "Not yet assigned",
+      "product": "Samba upcoming security releases scheduled 2026-05-26",
+      "summary": "Heads-up release window announced; pre-position patch teams for AD-related Samba advisory next week."
+    }
+  ],
+  "source_coverage": {
+    "total": 30,
+    "checked": 20,
+    "with_findings": 12,
+    "unreachable": [
+      "cisa.gov",
+      "cisa.gov/known-exploited-vulnerabilities-catalog",
+      "attackerkb.com",
+      "nvd.nist.gov",
+      "cve.mitre.org",
+      "cve.org",
+      "msrc.microsoft.com/blog",
+      "hackerone.com/hacktivity",
+      "bugcrowd.com/disclosures",
+      "cert.gov.ua"
+    ],
+    "degraded": [
+      "packetstormsecurity.com"
+    ]
+  },
+  "full_report": "reports/2026/05/22/report.md"
+}
