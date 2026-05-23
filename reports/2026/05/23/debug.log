@@ -1,0 +1,115 @@
+=== Watchtower Daily Run — 2026-05-23 ===
+Start: 2026-05-23 00:00:00 UTC
+
+[00:00:01] Step 1: git pull
+  Result: Already up to date.
+
+[00:00:05] Step 2: Building dedup index from last 30 days of reports
+  Reports scanned: 26 (2026/04/24 through 2026/05/22)
+  Unique CVE-2026/2025 IDs in dedup index: 628
+  Recent high-relevance CVEs already covered:
+    CVE-2026-9082 → not yet in index (SA-CORE-2026-004 was tracked as PSA on 2026-05-20 without CVE)
+    CVE-2026-34926 → not yet in index (new)
+    CVE-2025-34291 Langflow → noted in earlier reports (March 2026 MuddyWater)
+    CVE-2026-34908/34909/34910/33000/34911 Ubiquiti UniFi OS → not in index (new)
+    CVE-2026-39829/30/31/34/42508 Go x/crypto/ssh → not in index (new)
+    CVE-2026-42901/47280/41104/23652/40412/33117 Microsoft batch → not in index (new)
+    CVE-2024-12802 SonicWall → not in index (new old-CVE re-disclosure)
+
+[00:00:30] Step 3: Source enumeration from SOURCES.md
+  Tier 1 sources: 15
+  Tier 2 sources: 16 (with 1 duplicate: seclists/fulldisclosure)
+  Unique total: 30
+
+[00:00:35] Source checks (batched WebFetch calls):
+
+  ✅ bleepingcomputer.com — 15 articles enumerated 2026-05-20 → 2026-05-23 (~3s)
+  ✅ thehackernews.com — 15 articles enumerated, multiple high-value items (~4s)
+  ✅ securityweek.com — 15 articles + In Other News roundup (~4s)
+  ❌ cisa.gov/known-exploited-vulnerabilities-catalog — 403 Forbidden (per MEMORY)
+  ❌ cisa.gov — 403 Forbidden (per MEMORY)
+  ✅ github.com/0xMarcio/cve — top 5 recent PoCs surfaced (~3s)
+  ✅ rapid7.com/blog — Metasploit Wrap-Up 05/22 (CVE-2026-20182 SD-WAN + CVE-2026-41940 cPanel modules) (~5s)
+  ❌ attackerkb.com — 403 Forbidden (per MEMORY)
+  ✅ fortinet.com/blog/threat-research — P2Pinfect K8s analysis (~3s)
+  ✅ securitylab.github.com — 5 GHSL advisories 2026-05-22 (7-Zip + Chatwoot + Mesa + Doris) (~4s)
+  ✅ seclists.org/fulldisclosure — reachable but NO posts 2026-05-18→23 window (latest = 2026-05-17 Safari 26.5)
+  ⚠️ packetstormsecurity.com — Redirects to packetstorm.news, page returns ToS only (degraded per MEMORY)
+  ✅ opencve.io — 16+ Critical/High CVEs enumerated for 2026-05-21→23 window (~5s)
+  ✅ nvd.nist.gov — Top recent Critical CVEs (Kitty terminal + Webmin) (~4s)
+  ❌ cve.mitre.org — JS-only redirect to cve.org (per MEMORY)
+  ❌ cve.org — JS-only, returns empty content (per MEMORY)
+  ✅ projectzero.google — 1 post in window (Pixel 10 0-click 2026-05-13) (~3s)
+  ✅ blog.cloudflare.com — 5 recent posts (Claude Compliance API + Managed Agents + Mythos eval) (~3s)
+  ❌ msrc.microsoft.com/blog — redirects + sparse content
+  ❌ hackerone.com/hacktivity — JS-required, empty content (per MEMORY)
+  ❌ bugcrowd.com/disclosures — 404 (per MEMORY)
+  ✅ kb.cert.org/vuls — VU#980487 Dirty Frag 2026-05-20 + VU#777338 SGLang 2026-05-18 (~3s)
+  ✅ avleonov.com — May Patch Tuesday analysis 2026-05-19 (~3s)
+  ⚠️ habr.com/ru/companies/tomhunter — No posts since 2026-03-06 (degraded)
+  ⚠️ teletype.in/@cyberok — No posts since 2026-02-04 (degraded)
+  ❌ cert.gov.ua — Sparse content via WebFetch
+  ✅ dbugs.ptsecurity.com — Microsoft Patch Tuesday late-disclosure cluster surfaced (~3s)
+  ✅ github.com/advisories — 4 critical + 7 high GHSA advisories 2026-05-20→23 (~4s)
+  ✅ openwall oss-security (not formally in SOURCES.md but per MEMORY 2026-05-04 high-value) — 11 posts 2026-05-21→23 (Apache CXF + NGINX CVE-2026-9256 + others) (~4s)
+
+[00:08:00] Source coverage tally:
+  total = 30
+  unreachable = 9 [cisa.gov, cisa.gov KEV, attackerkb, cve.mitre, cve.org, msrc.microsoft, hackerone, bugcrowd, cert.gov.ua]
+  degraded = 4 [packetstormsecurity, habr/tomhunter, teletype/cyberok, seclists/fulldisclosure]
+  checked = 21 (30 - 9 unreachable)
+  with_findings = 18
+
+[00:09:00] Step 4: Triage and dedup decisions
+  CVE-2026-9082 Drupal SA-CORE-2026-004 → UPDATE (was noted 2026-05-20 as PSA pre-announce without CVE; now actively exploited)
+  CVE-2026-34926 Trend Micro Apex One → NEW (first appearance, KEV add today)
+  CVE-2025-34291 Langflow KEV → UPDATE (MuddyWater attribution from March 2026 already known; today's KEV add escalates)
+  Mini Shai-Hulud Wave 2 expansion (TanStack→GitHub-internal + Megalodon + Grafana linkage) → UPDATE (extends MEMORY 2026-05-13)
+  CVE-2026-34908/34909/34910/33000/34911 Ubiquiti UniFi OS → NEW (first appearance)
+  CVE-2026-39829/30/31/34/42508 Go x/crypto/ssh → NEW (first appearance)
+  Microsoft Patch Tuesday late-disclosure (CVE-2026-42901/47280/41104/23652/40412/33117) → UPDATE (extends MEMORY 2026-05-13 + 2026-05-19 Azure Local)
+  CVE-2024-12802 SonicWall MFA bypass → NEW (re-disclosure of incomplete patch pattern, distinct from April 2026 SonicWall batch)
+
+  Noted entries (no full News warranted):
+    Apache CXF 3-CVE (44417/44618/44930)
+    7-Zip multi-CVE batch (48095/48092/48101-104/48111-112)
+    Twig follow-ups (46639/46640)
+    containerd 46680
+    Open WebUI 45401
+    NGINX 9256 (companion to 42945)
+    Bestpractical RT 41076/75/74
+    yeswiki 46670, network-ai 46701, Apache Doris 48019
+    Mesa 29075 workflow RCE
+    Chatwoot GHSL-2026-059
+    HPLIP
+    Kitty 33642/33633 (client-only)
+    Four-Faith 2024-9643 mass exploitation surge
+    Showboat → JFMBackdoor Windows expansion
+    Huawei router → Luxembourg outage (historical)
+    Iranian gas station ATG breach
+    Linux kernel 31635 rxgk
+    Mythos macOS M5 + Cloudflare Mythos eval + Claude Managed Agents
+    P2Pinfect K8s
+    VU#980487 Dirty Frag CERT/CC
+
+  Skipped (no material change since prior coverage):
+    Apex One CVE family — already 10 KEV-listed; today's add is one new CVE not full batch
+    Cisco SD-WAN CVE-2026-20182 Metasploit module — escalation signal but already MEMORY'd
+    cPanel CVE-2026-41940 Metasploit module — already MEMORY'd as ransomware-monetised
+    Kimwolf botnet operator arrest — operational, not vuln
+    First VPN takedown — operational, not vuln
+
+[00:11:00] Step 5: Wrote report.md and report.json to reports/2026/05/23/
+  - 1 CRITICAL (Drupal)
+  - 5 HIGH (Mini Shai-Hulud expansion, Apex One, Ubiquiti, Langflow KEV, Go x/crypto/ssh)
+  - 2 MEDIUM (Microsoft Patch Tuesday batch, SonicWall incomplete patch)
+  - 23 Noted
+  Total findings = 8 (3 update, 5 news), Total noted = 23
+
+[00:12:30] Step 6: Validator run
+  $ python3 /home/claude/workspace/watchtower/scripts/validate_report.py reports/2026/05/23/report.json
+  ⚠️ 7 warning(s): summary length > 200 chars on findings 0/1/3/4/5/6/7
+  ✅ reports/2026/05/23/report.json — valid
+  Exit code 0 — proceeding to commit.
+
+[00:13:00] Step 7: git add + commit + push (next)

@@ -1,0 +1,233 @@
+{
+  "date": "2026-05-23",
+  "findings": [
+    {
+      "type": "update",
+      "title": "Drupal SA-CORE-2026-004 CVE-2026-9082 Highly Critical SQL Injection — Active Mass Exploitation Within 48 Hours of Patch (Internal 23/25)",
+      "threat_score": 8,
+      "previous_threat_score": 6,
+      "cve": "CVE-2026-9082",
+      "cvss": 6.5,
+      "affected_technology": "Drupal core 8.9 / 10.4 / 10.5 / 10.6 / 11.0 / 11.1 / 11.2 / 11.3 — PostgreSQL backend most exposed",
+      "summary": "Unauthenticated SQL injection via database abstraction API on PostgreSQL-backed Drupal sites confirmed under active mass exploitation by BleepingComputer + SecurityWeek 2026-05-22 within 48h of patch — matches SA-CORE-2018-002 Drupalgeddon 2 trajectory; patched 10.4.10 / 10.5.10 / 10.6.9 / 11.1.10 / 11.2.12 / 11.3.10 plus manual EOL backports.",
+      "first_seen_at": "2026-05-18"
+    },
+    {
+      "type": "update",
+      "title": "Mini Shai-Hulud Wave 2 Cluster Expansion — TanStack PAT Theft → GitHub-Internal 3,800-Repo Breach + Megalodon 5,561-Repo CI/CD Campaign + Grafana TanStack Linkage Confirmed",
+      "threat_score": 7,
+      "previous_threat_score": 7,
+      "cve": "Not yet assigned",
+      "cvss": null,
+      "affected_technology": "GitHub-internal repositories, GitHub Actions workflow ecosystem, Nx Console VSCode extension, TanStack-dependent npm packages",
+      "summary": "TeamPCP-linked cluster expanded with three coordinated reveals: GitHub-internal 3,800-repo theft via trojanized Nx Console VSCode extension (linked to TanStack), Grafana confirmed its prior 4-repo theft used a TanStack-stolen GitHub token, and Megalodon pushed 5,718 malicious commits across 5,561 repos via GitHub Actions workflow injection in a 6-hour window 2026-05-18 — exfil to 216.126.225.129:8443.",
+      "first_seen_at": "2026-05-13"
+    },
+    {
+      "type": "news",
+      "title": "Trend Micro Apex One CVE-2026-34926 — Directory Traversal Zero-Day Actively Exploited, CISA KEV-Added With 2026-06-04 Federal Deadline",
+      "threat_score": 7,
+      "cve": "CVE-2026-34926",
+      "cvss": 6.7,
+      "affected_technology": "Trend Micro Apex One on-premise management server",
+      "summary": "Authenticated-admin directory traversal allows attacker to modify a server-side key table and inject malicious code that is then deployed to every Apex One agent in the fleet; CISA KEV-added 2026-05-21 with federal deadline 2026-06-04 confirming in-the-wild exploitation likely by APT.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-05-22"
+    },
+    {
+      "type": "news",
+      "title": "Ubiquiti UniFi OS 5-CVE Maximum-Severity Batch — CVE-2026-34908 / 34909 / 34910 + 33000 + 34911 Affect 100,000+ Internet-Exposed Consoles",
+      "threat_score": 7,
+      "cve": "CVE-2026-34908, CVE-2026-34909, CVE-2026-34910, CVE-2026-33000, CVE-2026-34911",
+      "cvss": 9.8,
+      "affected_technology": "Ubiquiti UniFi OS (UniFi Cloud Gateway / Dream Machine / Cloud Key) — powers UniFi Network / Protect / Access / Talk / Connect",
+      "summary": "Five-CVE coordinated patch covering improper access control, path traversal (file access + account manipulation), unauth-network-accessible command injection, plus information disclosure on ~100,000 internet-exposed UniFi consoles (50,000 US); historical Ubiquiti CVEs are quickly enrolled into IoT botnets so patch tempo matters.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-05-22"
+    },
+    {
+      "type": "update",
+      "title": "Langflow CVE-2025-34291 Promoted to CISA KEV With MuddyWater Attribution + 2026-06-04 Federal Deadline",
+      "threat_score": 7,
+      "previous_threat_score": 6,
+      "cve": "CVE-2025-34291",
+      "cvss": 9.4,
+      "affected_technology": "Langflow open-source LLM workflow IDE — every internet-exposed self-hosted instance",
+      "summary": "CISA added Langflow's CORS + CSRF + code-execution-by-design chain to KEV 2026-05-21 with federal deadline 2026-06-04 and explicit MuddyWater (Iranian state-sponsored) attribution from March 2026 — fourth AI-platform CVE on KEV in 2026, cementing the self-hosted-AI-default-no-auth surface as a state-actor initial-access path.",
+      "first_seen_at": "2025-09-01"
+    },
+    {
+      "type": "news",
+      "title": "golang.org/x/crypto/ssh 5-CVE Batch — SignatureKey Revocation Bypass + FIDO/U2F Touch Bypass + Integer Overflow Infinite Write Loop",
+      "threat_score": 6,
+      "cve": "CVE-2026-39829, CVE-2026-39830, CVE-2026-39831, CVE-2026-39834, CVE-2026-42508",
+      "cvss": 9.1,
+      "affected_technology": "golang.org/x/crypto/ssh — back-end for Hashicorp Terraform/Vault/Consul/Boundary, K8s ssh agents, gitleaks, Caddy, every Go SSH client/server",
+      "summary": "Five-CVE coordinated drop in Go's crypto/ssh — revoked SignatureKey not checked, FIDO/U2F user-presence-not-verified, malicious peer resource leak via read-loop block, integer-overflow infinite write loop, and RSA/DSA key parser CPU-burn DoS; companion OpenSSH CVE-2026-39832 + golang/x/crypto CVE-2026-39833 ship same window.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-05-22"
+    },
+    {
+      "type": "update",
+      "title": "Microsoft May 2026 Patch Tuesday Late-Disclosure Batch — 5× CVSS 10.0 Azure-Adjacent + CVE-2026-33117 Azure SDK for Java Key Vault Auth-Tag Bypass",
+      "threat_score": 6,
+      "previous_threat_score": 5,
+      "cve": "CVE-2026-42901, CVE-2026-47280, CVE-2026-41104, CVE-2026-23652, CVE-2026-40412, CVE-2026-33117",
+      "cvss": 10.0,
+      "affected_technology": "Microsoft Entra ID, Azure Resource Manager, Azure Local, Azure Orbital Space SDK, Planetary Computer Pro, Power Pages, Azure SDK for Java",
+      "summary": "PT-Security dbugs surfaced five CVSS-10.0 Azure-adjacent bugs not enumerated by BleepingComputer/THN/SecurityWeek individual relayers — Entra ID origin validation, Azure Resource Manager, Planetary Computer Pro deserialization, Power Pages, Azure Orbital, plus Azure SDK for Java Key Vault auth-tag bypass — third instance in 60 days of the Patch Tuesday relayer-divergence pattern.",
+      "first_seen_at": "2026-05-13"
+    },
+    {
+      "type": "news",
+      "title": "SonicWall Gen6 SSL-VPN CVE-2024-12802 — MFA Bypass Re-Exploited Due to Incomplete Patch Requiring Manual LDAP Reconfig",
+      "threat_score": 6,
+      "cve": "CVE-2024-12802",
+      "cvss": 7.5,
+      "affected_technology": "SonicWall Gen6 SSL-VPN appliances (Gen7/Gen8 less affected)",
+      "summary": "ReliaQuest disclosed 2026-05-21 that the SNWLID-2025-0001 firmware patch is not effective by default on Gen6 — admins must manually delete LDAP UPN config, clear cached LDAP users, remove SSL VPN User Domain, reboot, and recreate LDAP; appears patched but remains exploitable, with IAB-class credential-brute-force + MFA-skip + Cobalt Strike chain active.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-05-21"
+    }
+  ],
+  "noted": [
+    {
+      "cve": "CVE-2026-44417, CVE-2026-44618, CVE-2026-44930",
+      "product": "Apache CXF (3-CVE batch)",
+      "summary": "CVE-2026-44417 incomplete fix for CVE-2025-48913 JMS-untrusted-config-to-RCE + CVE-2026-44618 XXE in WS-Transfer + CVE-2026-44930 LDAP injection in XKMS LDAP Repository; another Apache project shipping an incomplete-fix CVE per MEMORY 2026-05-06 Apache MINA pattern."
+    },
+    {
+      "cve": "CVE-2026-48095, CVE-2026-48092, CVE-2026-48101, CVE-2026-48102, CVE-2026-48103, CVE-2026-48104, CVE-2026-48111, CVE-2026-48112",
+      "product": "7-Zip multi-CVE memory corruption batch (GHSL-2026-115/116/117/118/119/120/121/122/140)",
+      "summary": "Jaroslav Lobačevski / GitHub Security Lab disclosed 9+ memory corruption issues in 7-Zip; primarily client-side but CI/CD-pipeline exposed if any step decompresses attacker-controlled archives."
+    },
+    {
+      "cve": "CVE-2026-46639, CVE-2026-46640",
+      "product": "Twig (Composer, continued)",
+      "summary": "Two more Twig escape primitives — _self.(<string>) macro-reference compilation arbitrary PHP execution + object-destructuring assignment property/method bypass — companion to 2026-05-21 CVE-2026-24425 + CVE-2026-46633; same 3.26.0 upgrade addresses."
+    },
+    {
+      "cve": "CVE-2026-46680",
+      "product": "containerd (Go) runAsNonRoot bypass (GHSA-fqw6-gf59-qr4w)",
+      "summary": "User ID handling bypass allows runAsNonRoot evasion in containerd; K8s shops relying on runAsNonRoot as a hardening control should patch promptly."
+    },
+    {
+      "cve": "CVE-2026-45401",
+      "product": "Open WebUI SSRF (Chinmohan Nayak)",
+      "summary": "Fifth high-severity Open WebUI CVE in 45 days (after CVE-2026-44551 LDAP, 44549 XSS, 44566 path-traversal-RCE, 44567 authz); internal-resource access via redirect-bypass — confirms Open WebUI deprecation-candidate pattern."
+    },
+    {
+      "cve": "CVE-2026-9256",
+      "product": "NGINX ngx_http_rewrite_module buffer overflow (oss-security 2026-05-22)",
+      "summary": "Alan Coopersmith disclosed buffer overflow in NGINX rewrite_module on 2026-05-22; companion / follow-up to CVE-2026-42945 NGINX Rift — track the post-AI-bug-finder adjacent-code-path recurrence pattern."
+    },
+    {
+      "cve": "CVE-2026-41076, CVE-2026-41075, CVE-2026-41074",
+      "product": "Bestpractical RT (Request Tracker) 3-CVE batch",
+      "summary": "LDAP/AD auth bypass (CVSS 8.1) + authenticated SQL injection (8.8) + CSRF (7.1) in Bestpractical RT; internal IT ticketing systems where any LDAP-backed user identity can be impersonated without password."
+    },
+    {
+      "cve": "CVE-2026-46670",
+      "product": "yeswiki/yeswiki (Composer) unauth SQL injection (GHSA-jwvv-qr7q-cv8j)",
+      "summary": "Unauthenticated SQL injection in PHP wiki CMS; niche but track for follow-on RCE chain."
+    },
+    {
+      "cve": "CVE-2026-46701",
+      "product": "@network-ai/network-ai (npm) Empty Default Secret (GHSA-j3vx-cx2r-pvg8)",
+      "summary": "Tool-invocation cross-origin access without authentication; another default-no-auth AI-infra advisory per MEMORY 2026-05-06 Intruder Labs pattern."
+    },
+    {
+      "cve": "CVE-2024-48019",
+      "product": "Apache Doris arbitrary file read on REST API logging (GHSL-2024-293)",
+      "summary": "GitHub Security Lab disclosed arbitrary file read on Apache Doris REST API logging endpoint; data-warehouse engine, internal-network surface."
+    },
+    {
+      "cve": "CVE-2026-29075",
+      "product": "Mesa benchmarks.yml workflow RCE (GHSL-2025-009)",
+      "summary": "GitHub Actions workflow misconfiguration in Mesa (similar primitive class as Mini Shai-Hulud Wave 2 pull_request_target chain) on a major open-source 3D-graphics library."
+    },
+    {
+      "cve": "Not yet assigned",
+      "product": "Chatwoot SQL injection (GHSL-2026-059, Man Yue Mo)",
+      "summary": "GitHub Security Lab disclosed SQL injection in Chatwoot customer support platform; relevant for internet-exposed customer-support deployments."
+    },
+    {
+      "cve": "Not yet assigned",
+      "product": "HPLIP Privilege Escalation + Arbitrary Code Execution (oss-security 2026-05-23)",
+      "summary": "HP Linux Imaging and Printing system; relevant for Linux dev/admin workstations with HP printer drivers."
+    },
+    {
+      "cve": "CVE-2026-33642, CVE-2026-33633",
+      "product": "Kitty GPU terminal heap buffer overflow (CVSS 9.8 / 8.8)",
+      "summary": "Image-loading + graphics-protocol bugs in Kitty terminal; client-side only, OOS for normal Watchtower scope, flagged for dev-workstation hardening."
+    },
+    {
+      "cve": "CVE-2024-9643",
+      "product": "Four-Faith F3x36 industrial cellular routers (CrowdSec 2026-05-22)",
+      "summary": "Hardcoded credentials in industrial routers under mass exploitation through mid-May 2026; OT-adjacent, IoT-botnet enrollment."
+    },
+    {
+      "cve": "Not yet assigned",
+      "product": "Showboat → JFMBackdoor Windows expansion (Calypso / Red Lamassu)",
+      "summary": "Calypso China-aligned cluster (MEMORY 2026-05-22 Showboat) also ships Windows-side JFMBackdoor (DLL-sideload via fltMC.exe + FLTLIB.dll); minor expansion of yesterday's News item."
+    },
+    {
+      "cve": "Not yet assigned",
+      "product": "Huawei enterprise router 0-day → Luxembourg national telecom 3-hour outage (July 2025)",
+      "summary": "SecurityWeek In Other News 2026-05-22 retroactive disclosure; not actionable but a critical-infrastructure data point on perimeter-router 0-day blast radius."
+    },
+    {
+      "cve": "Not yet assigned",
+      "product": "Iranian hackers breach US gas station ATG (automatic tank gauge) monitors",
+      "summary": "ATG systems compromised via unauthenticated internet-exposed devices; display-only manipulation, no physical impact. CISA / FBI advisory framing only."
+    },
+    {
+      "cve": "CVE-2026-31635",
+      "product": "Linux kernel rxgk DirtyDecrypt LPE (page-cache write)",
+      "summary": "PoC released 2026-05-19; per MEMORY page-cache-LPE → K8s container-escape 14-day rule, expect K8s escape PoC by ~2026-06-02 and possible KEV add."
+    },
+    {
+      "cve": "Not yet assigned",
+      "product": "Anthropic Mythos AI-found macOS M5 kernel exploit + Cloudflare Project Glasswing / Mythos comparison",
+      "summary": "Schneier 2026-05-21 + Cloudflare 2026-05-18 — AI-bug-finder labs continue producing exploits; Mythos extends disclosure-class to mobile/macOS kernel (MEMORY 2026-05-14 pattern)."
+    },
+    {
+      "cve": "Not yet assigned",
+      "product": "Anthropic + Cloudflare ship Claude Managed Agents + Claude Compliance API integration (2026-05-19 / 2026-05-21)",
+      "summary": "Cloudflare CASB monitoring of Claude Enterprise activity; calibration data point on broader AI-control-plane integration trend."
+    },
+    {
+      "cve": "Not yet assigned",
+      "product": "P2Pinfect K8s compromise (Fortinet 2026-05-20)",
+      "summary": "Unprotected Redis on misconfigured GKE persistent enrollment into P2P botnet; reinforces MEMORY 2026-05-06 self-hosted-default-no-auth posture pattern."
+    },
+    {
+      "cve": "CVE-2026-43284, CVE-2026-43500",
+      "product": "VU#980487 Dirty Frag CERT/CC vu# issued 2026-05-20",
+      "summary": "CERT/CC issuance for Linux kernel page-cache write LPE (MEMORY 2026-05-09); upstream patch still pending — track for K8s escape PoC arrival per the 14-day rule."
+    }
+  ],
+  "source_coverage": {
+    "total": 30,
+    "checked": 21,
+    "with_findings": 18,
+    "unreachable": [
+      "cisa.gov",
+      "cisa.gov/known-exploited-vulnerabilities-catalog",
+      "attackerkb.com",
+      "cve.mitre.org",
+      "cve.org",
+      "msrc.microsoft.com/blog",
+      "hackerone.com/hacktivity",
+      "bugcrowd.com/disclosures",
+      "cert.gov.ua"
+    ],
+    "degraded": [
+      "packetstormsecurity.com",
+      "habr.com/ru/companies/tomhunter/articles",
+      "teletype.in/@cyberok",
+      "seclists.org/fulldisclosure"
+    ]
+  },
+  "full_report": "reports/2026/05/23/report.md"
+}
