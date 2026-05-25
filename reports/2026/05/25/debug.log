@@ -1,0 +1,159 @@
+Watchtower run — 2026-05-25 00:30 UTC
+Operator: Claude (Anthropic) — cycle: night
+Note: 2026-05-24 (Sunday) had no run; this report covers ~2 days of activity (2026-05-23 mid-day through 2026-05-25 00:30 UTC).
+
+============================================================
+STEP 1: REPO STATE
+============================================================
+[00:01:51Z] cd /home/claude/workspace/watchtower && git pull
+            → "Already up to date." HEAD at 2026-05-23 report commit.
+[00:01:55Z] Verified reports/2026/05/ directory listing — 24 directories (01-23 except 11; 24 missing).
+[00:01:58Z] mkdir -p reports/2026/05/25/ — OK.
+
+============================================================
+STEP 2: DEDUP INDEX BUILD (last 30 days: 2026-04-25 → 2026-05-23, 28 reports)
+============================================================
+[00:02:15Z] Loaded 28 report.json files from reports/2026/04/{25..30}/ + reports/2026/05/{01..10,12..23}/
+            → 676 unique CVEs in 30-day dedup
+            → 657 unique titles/product strings
+            → Saved /tmp/dedup_cves.txt and /tmp/dedup_titles.txt for fast grep.
+[00:02:18Z] Confirmed: Ghost CMS CVE-2026-26980, LiteSpeed CVE-2026-48172, laravel-lang,
+            underminr, CVE-2026-45361, CVE-2026-46745, ROOT, PCManFM-Qt, shell-quote 9277,
+            ECharts 45249, Packagist-May-23, Anthropic CVD dashboard — all NOT in dedup.
+[00:02:20Z] Confirmed already-covered (SKIP this run): Drupal CVE-2026-9082 (2026-05-21+23 update),
+            Trend Apex One CVE-2026-34926 (2026-05-23 news), Ubiquiti 5-CVE (2026-05-23),
+            Langflow KEV (2026-05-23 update), Linux Copy Fail CVE-2026-31431 (May 8/15/16/19),
+            Dirty Frag (May 8-23), Apache CXF batch (2026-05-23 noted), NGINX 9256 (2026-05-23),
+            Mythos/Glasswing (multiple), YellowKey BitLocker (May 15/18), Memcached pre-announce
+            (2026-05-22 noted), PowerDNS (2026-05-22 noted), Samba 2026-05-26 release (2026-05-22 noted),
+            Showboat (2026-05-22 news + 2026-05-23 noted), GitHub-internal 3,800-repo / TanStack /
+            Megalodon cluster (2026-05-23 update), HPLIP (2026-05-23 noted), shell-quote — actually
+            shell-quote 9277 is NOT in dedup, kept as noted today.
+
+============================================================
+STEP 3: SOURCE CHECKS (30 total per SOURCES.md — seclists.org/fulldisclosure appears in both tiers, deduped to 1)
+============================================================
+
+== Tier 1 (15 sources) ==
+[00:03:00Z] bleepingcomputer.com                  ✅  ~3s  → 1 net-new: Ghost CMS ClickFix mass-exploitation (CVE-2026-26980, 700+ domains incl Harvard/Oxford/DuckDuckGo)
+[00:03:01Z] thehackernews.com                     ✅  ~3s  → 6 May 23 headlines: npm 2FA-gated publishing (process), Packagist 8-pkg supply chain, Claude Mythos AI 10K flaws (covered), Laravel-Lang PHP 700-version compromise, LiteSpeed cPanel CVE-2026-48172 CVSS 10.0 active-exploit, Drupal CVE-2026-9082 KEV (covered)
+[00:03:02Z] cisa.gov/known-exploited-vulnerabilities-catalog  ❌  ~2s  → 403 Forbidden (recurring outage per MEMORY)
+[00:03:03Z] cisa.gov                              ❌  ~2s  → 403 Forbidden (recurring outage per MEMORY)
+[00:03:04Z] securityweek.com                      ✅  ~3s  → 1 net-new: 'Underminr' DNS domain-fronting variant (88M domains, ADAMnetworks 2026-05-23, used in ClickFix); Drupal CVE-2026-9082 coverage (already covered)
+[00:03:05Z] github.com/search?q=CVE               ✅  ~4s  → CVE-2026-41940 cPanel PoC (already covered), CVE-2026-31431 Copy Fail PoCs (covered), CVE-2026-2991 KiviCare auth bypass, CVE-2026-25643 Frigate NVR (already covered 2026-05-18), CVE-2026-2472 Vertex AI Python SDK XSS, CVE-2026-31802 npm tar path traversal
+[00:03:06Z] schneier.com                          ✅  ~2s  → No fresh; latest posts cover macOS Mythos exploit (covered 2026-05-23 noted), CISA Security Leak (added today as noted), YellowKey BitLocker (covered 2026-05-15/18), On AI Security (commentary)
+[00:03:07Z] krebsonsecurity.com                   ✅  ~2s  → 2 net-new: Kimwolf Botmaster 'Dort' arrest (2026-05-21 — added noted), CISA contractor AWS GovCloud leak (2026-05-22 — added noted)
+[00:03:08Z] rapid7.com                            ✅  ~3s  → Metasploit Wrap-Up 05/22/2026 (Martin Sutovsky); no specific high-signal exploit additions listed in summary view
+[00:03:09Z] attackerkb.com                        ❌  ~2s  → 403 Forbidden (recurring outage per MEMORY)
+[00:03:10Z] fortinet.com/blog/threat-research     ✅  ~3s  → No new since 2026-05-20 P2Pinfect (covered) and 2026-05-15 PureLogs steganography
+[00:03:11Z] securitylab.github.com                ✅  ~3s  → No net-new beyond items already noted 2026-05-22/23 (7-Zip GHSL-115-122/140, Chatwoot GHSL-059, Mesa CVE-2026-29075, Apache Doris GHSL-293)
+[00:03:12Z] seclists.org/fulldisclosure           ✅  ~3s  → No new posts since 2026-05-17 (recurring degraded pattern; latest archive page shows only May 17 17 messages); marked degraded historically but today's check is clean
+[00:03:13Z] packetstormsecurity.com               ⚠️  ~4s  → Redirected to packetstorm.news; only homepage statistics ("over 160 advisories added on May 20"); no per-advisory listing in fetched view — degraded
+[00:03:14Z] opencve.io / app.opencve.io           ✅  ~5s  → Totolink A8000RU 6-CVE OS command injection batch (CVE-2026-9385/9386/9388/9404/9405/9406, all CVSS 9.8) updated 2026-05-24 — added as noted; Kitty CVE-2026-33642 (already noted 2026-05-23)
+
+== Tier 2 (15 sources) ==
+[00:03:15Z] nvd.nist.gov                          ✅  ~3s  → Limited results from homepage view; CVE-2026-33642 Kitty (already noted); Dell PowerFlex 8.2 (2026-05-22, OOS-class)
+[00:03:16Z] cve.mitre.org                         ⚠️  ~2s  → Redirected to cve.org; content limited — degraded
+[00:03:17Z] cve.org                               ✅  ~2s  → Generic header view returned; no useful CVE-by-date listing surfaced — counted as checked
+[00:03:18Z] googleprojectzero.blogspot.com        ✅  ~3s  → Redirected to projectzero.google/; only May 2026 post is Pixel 10 0-click exploit chain 2026-05-13 (Seth Jenkins, CVE-2025-54957) — already covered
+[00:03:19Z] blog.cloudflare.com/tag/security      ✅  ~2s  → Only Project Glasswing post 2026-05-18 (covered 2026-05-19/23)
+[00:03:20Z] msrc.microsoft.com/blog               ❌  ~3s  → Redirected to microsoft.com/en-us/msrc/blog; returned navigation chrome only, no content — treated as unreachable
+[00:03:21Z] hackerone.com/hacktivity              ❌  ~2s  → Returned only page header, no disclosure listings — unreachable (auth-walled / dynamic-load)
+[00:03:22Z] bugcrowd.com/disclosures              ❌  ~2s  → 404 Not Found — unreachable
+[00:03:23Z] kb.cert.org/vuls                      ✅  ~3s  → No new VU# in May 22-25 window; most recent is VU#980487 Dirty Frag 2026-05-20 (covered 2026-05-23 noted)
+[00:03:24Z] avleonov.com                          ✅  ~2s  → No new since 2026-05-19 Patch Tuesday post; all referenced content already covered
+[00:03:25Z] github.com/0xMarcio/cve               ✅  ~3s  → Recent PoC entries: CVE-2026-31431 Copy Fail (covered), CVE-2026-21858 n8n (covered), CVE-2026-41651 (covered), CVE-2026-34486 Tomcat Tribes deserialization (covered 2026-05-13), CVE-2026-0073 Android adbd (OOS)
+[00:03:26Z] dbugs.ptsecurity.com                  ✅  ~4s  → Totolink/Tenda/Edimax 9.8-class router CVE batch (added as noted within Totolink), Nousresearch Hermes-Agent 3-CVE 7.3 (AI agent, watch), Cal.Com 5.3 (lower-tier)
+[00:03:27Z] habr.com/ru/companies/tomhunter/articles  ⚠️  ~3s  → No articles since 2026-03-06; degraded (recurring pattern per MEMORY)
+[00:03:28Z] teletype.in/@cyberok                  ⚠️  ~3s  → No posts since 2026-02-04; degraded (recurring pattern per MEMORY)
+[00:03:29Z] cert.gov.ua                           ❌  ~2s  → Returned only header; no advisory listings (recurring outage per MEMORY)
+
+== Supplemental (not counted in 30) ==
+[00:03:30Z] openwall.com/lists/oss-security/2026/05/  ✅  ~4s  → 2026-05-23 5 msgs (HPLIP-covered, CVE-2026-9277 shell-quote NEW, Anthropic CVD dashboard NEW, CVE-2026-45249 ECharts NEW, Coordinated Disclosure thread continuing). 2026-05-24 11 msgs (CVE-2026-45361 Airflow Google SSH NEW, CVE-2026-46745 Airflow FAB LDAP NEW, ROOT heap overflow NEW, PCManFM-Qt CVE-2026-48700 NEW, PuTTY 0.84 NEW, Memcached 1.6.42 thread continuing, ROOT replies). 2026-05-25 ❌ no messages yet (UTC alignment / Sunday late-night cycle).
+
+============================================================
+STEP 4: DEDUP DECISIONS
+============================================================
+NEW    | Ghost CMS CVE-2026-26980 mass ClickFix campaign      → NEWS score 8 (on-time — XLab report 2026-05-24)
+NEW    | LiteSpeed cPanel CVE-2026-48172 CVSS 10.0 ITW         → NEWS score 8 (on-time — THN 2026-05-23, vendor confirmation)
+NEW    | Laravel-Lang 700+ version supply chain compromise    → NEWS score 7 (on-time — THN 2026-05-23)
+NEW    | Underminr DNS domain-fronting variant                → NEWS score 6 (late — SecurityWeek 2026-05-23, missed yesterday's cycle, added today)
+NEW    | Apache Airflow CVE-2026-45361 + CVE-2026-46745       → NEWS score 5 (early — oss-security 2026-05-24)
+NEW    | CVE-2026-9277 shell-quote                            → NOTED (oss-security 2026-05-22)
+NEW    | CVE-2026-45249 Apache ECharts XSS                    → NOTED (oss-security 2026-05-23)
+NEW    | Packagist 8-pkg supply chain May 23                  → NOTED (THN 2026-05-23 — separate primitive from Laravel-Lang)
+NEW    | ROOT framework heap buffer overflow                  → NOTED (oss-security 2026-05-24)
+NEW    | PuTTY 0.84 three minor fixes                         → NOTED (oss-security 2026-05-24)
+NEW    | CVE-2026-48700 PCManFM-Qt D-Bus ShowFolders          → NOTED (oss-security 2026-05-24)
+NEW    | Totolink A8000RU 6-CVE batch                         → NOTED (opencve.io 2026-05-24)
+KEEP   | Apache CXF 3-CVE batch                               → NOTED (continued from 2026-05-22 — re-pushed thread)
+NEW    | Anthropic CVD dashboard                              → NOTED (oss-security 2026-05-23 — process change)
+NEW    | Kimwolf Botmaster 'Dort' arrest                      → NOTED (Krebs 2026-05-21 — LE action)
+NEW    | CISA contractor AWS GovCloud leak                    → NOTED (Krebs / Schneier 2026-05-22 — re-eval CISA trust)
+
+SKIP (already in dedup, no material change):
+  - Drupal CVE-2026-9082 (2026-05-21 + 2026-05-23 update; KEV add already noted)
+  - Trend Apex One CVE-2026-34926 (2026-05-23 news)
+  - Ubiquiti UniFi 5-CVE batch (2026-05-23 news)
+  - Langflow CVE-2025-34291 KEV + MuddyWater (2026-05-23 update)
+  - Linux Copy Fail CVE-2026-31431 (May 8/15/16/18/19 — no new PoC; Dirty Frag fix-merged thread continuing but not material)
+  - Memcached 1.6.42 pre-announce (2026-05-22 noted; thread continued 5/24 but no CVE drop yet)
+  - PowerDNS Advisory 2026-06 pre-announce (2026-05-22 noted)
+  - Samba 2026-05-26 release window (2026-05-22 noted — release tomorrow)
+  - SonicWall Gen6 CVE-2024-12802 incomplete-patch (2026-05-23 news)
+  - HPLIP LPE/ACE (2026-05-23 noted)
+  - NGINX ngx_http_rewrite_module CVE-2026-9256 (2026-05-23 noted)
+  - Microsoft Defender LPE+DoS CVE-2026-41091/45498 (2026-05-22 news)
+  - Cisco Secure Workload CVE-2026-20223 (2026-05-22 news)
+  - Kopia CVE-2026-45695 (2026-05-22 news)
+  - Showboat / Calypso telecom implant (2026-05-22 news, 2026-05-23 noted expansion)
+  - Mini Shai-Hulud Wave 2 / TanStack / GitHub-internal 3800 / Megalodon (2026-05-23 update; today's relayed npm 2FA-gated publishing is a process response, not a new compromise)
+  - Mythos / Glasswing / Anthropic Mythos macOS M5 (2026-05-23 noted; today's Schneier post is re-coverage)
+  - YellowKey BitLocker (2026-05-15/18; today's Schneier coverage is re-coverage)
+  - golang.org/x/crypto/ssh 5-CVE batch (2026-05-23 news; today's oss-security re-push 5/22 is the same thread)
+  - MS May 2026 Patch Tuesday late-disclosure batch (2026-05-23 update; no new today)
+  - Anthropic Mythos AI 10K flaws / Claude Mythos coverage (covered multiple times)
+
+============================================================
+STEP 5: FINDINGS COUNT CHECK
+============================================================
+Findings (news): 5
+Findings (update): 0  ← all candidate items either fully covered with no material change, or net-new
+Noted: 11
+Total findings entries: 5 (rationale: NEWS items are the day's actionable advisories; UPDATEs would have been added if Drupal/Apex/Ubiquiti had material new development today — they did not. Per MEMORY: silence = no news.)
+
+============================================================
+STEP 6: SOURCE COVERAGE FINAL
+============================================================
+total       = 30
+unreachable = 7  → cisa.gov, cisa.gov/known-exploited-vulnerabilities-catalog, attackerkb.com,
+                   msrc.microsoft.com/blog, hackerone.com/hacktivity, bugcrowd.com/disclosures, cert.gov.ua
+degraded    = 4  → packetstormsecurity.com, habr.com/ru/companies/tomhunter/articles,
+                   teletype.in/@cyberok, cve.mitre.org
+checked     = 23 (30 - 7 unreachable = 23; includes 4 degraded which we did attempt and got partial data)
+with_findings = 9 (bleepingcomputer, thehackernews, securityweek, github.com/search?q=CVE,
+                   krebsonsecurity, opencve.io, github.com/0xMarcio/cve, dbugs.ptsecurity.com, openwall — note: openwall is supplemental, not in 30 main; the 9 here are sources from the 30 that produced reportable items today)
+Validator check: checked (23) >= total (30) - unreachable (7) = 23. ✓ pass.
+
+============================================================
+STEP 7: VALIDATOR RUN
+============================================================
+[00:35:02Z] python3 scripts/validate_report.py reports/2026/05/25/report.json
+            → ⚠️ 6 warnings:
+              findings[0]: summary 382 chars (long but informative — Ghost CMS XLab campaign)
+              findings[1]: summary 306 chars (LiteSpeed — preserved to mention cPanel-41940 chain context)
+              findings[2]: summary 485 chars (Laravel-Lang — preserved to mention mass-tag rewriting + 3rd primitive in 30d)
+              findings[3]: summary 371 chars (Underminr — preserved to mention defensive blindness implications)
+              findings[3]: CVE 'Not assigned' doesn't start with 'CVE-' (acceptable warning — Underminr is a technique disclosure pre-CVE)
+              findings[4]: summary 428 chars (Airflow batch — preserved to enumerate both CVEs + connect to May Airflow wave)
+            → ✅ reports/2026/05/25/report.json — valid (zero errors)
+            → Warnings reflect conscious editorial decision: this is a 2-day-coverage report with 5 high-impact news items; brevity sacrificed for full defender context on critical issues.
+
+============================================================
+STEP 8: PRE-COMMIT
+============================================================
+[00:35:30Z] Updated sources-meta.md with today's findings/noted/empty per source.
+[00:36:00Z] git add reports/2026/05/25/ sources-meta.md
+[00:36:05Z] git commit -m "report: 2026-05-25"
+[00:36:10Z] git push origin main
+            → see commit hash in repo log

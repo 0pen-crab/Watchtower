@@ -2,35 +2,35 @@
 
 | Source | Findings | Noted | Empty | Last Hit |
 |--------|----------|-------|-------|----------|
-| bleepingcomputer.com | 53 | 44 | 1 | 2026-05-22 (Drupal active exploitation, Ubiquiti UniFi OS 5-CVE batch, GitHub-internal 3,800 repo breach via Nx Console + TanStack linkage, SonicWall CVE-2024-12802 incomplete patch) |
-| thehackernews.com | 43 | 19 | 0 | 2026-05-22 (Megalodon 5,561-repo GitHub Actions campaign, CISA KEV Langflow + Apex One, Showboat → JFMBackdoor Calypso expansion) |
-| cisa.gov | 0 | 0 | 21 | — |
-| securityweek.com | 39 | 24 | 3 | 2026-05-22 (Drupal active exploitation, Apex One KEV, Grafana TanStack-linkage confirmed, Ubiquiti UniFi OS) |
-| github.com/search | 4 | 7 | 10 | 2026-05-20 (substituted via github.com/advisories: Coder PKCS#7, PenPot MCP REPL, MCP Gateway, @angular SSRF, @beproduct nestjs-auth Shai-Hulud variant) |
-| schneier.com | 0 | 12 | 9 | 2026-05-20 (On AI Security — out of scope) |
-| krebsonsecurity.com | 1 | 2 | 18 | 2026-05-19 (CISA contractor AWS GovCloud leak — no new posts since) |
-| rapid7.com | 3 | 0 | 17 | 2026-05-19 (PAN-OS CVE-2026-0265 ETR — no new for window) |
-| attackerkb.com | 0 | 0 | 20 | — |
-| fortinet.com/blog/threat-research | 0 | 1 | 19 | 2026-05-21 (P2PInfect Kubernetes/Redis compromise — Noted) |
-| securitylab.github.com | 2 | 1 | 19 | 2026-05-22 (7-Zip multi-CVE memory corruption batch GHSL-2026-115/116/117/118/119/120/121/122/140 + Chatwoot SQLi GHSL-2026-059 + Mesa benchmarks.yml CVE-2026-29075 + Apache Doris CVE-2024-48019) |
-| seclists.org/fulldisclosure (incl. openwall oss-security) | 33 | 50 | 3 | 2026-05-22 (Apache CXF 3-CVE batch 44417/44618/44930 incomplete-fix recurrence; NGINX CVE-2026-9256 buffer overflow follow-up to NGINX Rift; HPLIP 2026-05-23) |
-| packetstormsecurity.com | 0 | 0 | 20 | — (degraded — homepage only) |
-| opencve.io | 23 | 27 | 3 | 2026-05-22 (Microsoft Patch Tuesday late-disclosure batch — CVE-2026-42901 Entra ID + CVE-2026-47280 Azure Resource Manager + CVE-2026-41104 Planetary Computer Pro + golang.org/x/crypto/ssh 5-CVE batch) |
-| nvd.nist.gov | 0 | 2 | 19 | 2026-05-18 (GitLab + DataHub via NVD listing) |
-| cve.mitre.org | 0 | 0 | 20 | — |
-| cve.org | 0 | 0 | 20 | — |
-| googleprojectzero.blogspot.com | 0 | 0 | 20 | — |
-| blog.cloudflare.com/tag/security | 0 | 2 | 18 | 2026-05-19 (Project Glasswing eval) |
-| msrc.microsoft.com/blog | 0 | 0 | 20 | — |
-| hackerone.com/hacktivity | 0 | 0 | 20 | — |
-| bugcrowd.com/disclosures | 0 | 0 | 20 | — |
-| kb.cert.org/vuls | 2 | 6 | 15 | 2026-05-22 (VU#980487 Dirty Frag CERT/CC issuance 2026-05-20 — companion to MEMORY 2026-05-09) |
-| avleonov.com | 0 | 1 | 19 | 2026-05-15 |
-| github.com/0xMarcio/cve | 2 | 7 | 13 | 2026-05-21 (CVE-2026-31431 K8s-specialized variants — duplicate of prior coverage, no new) |
-| dbugs.ptsecurity.com | 12 | 34 | 8 | 2026-05-22 (Microsoft Patch Tuesday late-disclosure CVSS-10 batch first-source — Entra ID, Azure Resource Manager, Planetary Computer Pro, Power Pages, Azure Orbital) |
-| habr.com/ru/companies/tomhunter/articles | 0 | 0 | 20 | — (degraded — stale content) |
-| teletype.in/@cyberok | 0 | 0 | 20 | — (degraded — stale content) |
-| cert.gov.ua | 0 | 0 | 20 | — (unreachable) |
+| bleepingcomputer.com | 54 | 44 | 1 | 2026-05-25 (Ghost CMS CVE-2026-26980 mass ClickFix campaign 700+ domains incl. Harvard / Oxford / DuckDuckGo) |
+| thehackernews.com | 45 | 21 | 0 | 2026-05-25 (LiteSpeed cPanel CVE-2026-48172 CVSS 10.0 ITW + Laravel-Lang 700-version supply chain + Packagist 8-pkg noted) |
+| cisa.gov | 0 | 0 | 22 | — |
+| securityweek.com | 40 | 24 | 3 | 2026-05-25 (Underminr DNS domain-fronting variant 88M domains, ADAMnetworks) |
+| github.com/search | 4 | 7 | 11 | 2026-05-20 (substituted via github.com/advisories: Coder PKCS#7, PenPot MCP REPL, MCP Gateway, @angular SSRF, @beproduct nestjs-auth Shai-Hulud variant) |
+| schneier.com | 0 | 12 | 10 | 2026-05-20 (On AI Security — out of scope) |
+| krebsonsecurity.com | 1 | 4 | 18 | 2026-05-25 (Kimwolf Botmaster 'Dort' arrest + CISA contractor AWS GovCloud leak both NOTED) |
+| rapid7.com | 3 | 0 | 18 | 2026-05-19 (PAN-OS CVE-2026-0265 ETR — no new for window) |
+| attackerkb.com | 0 | 0 | 21 | — |
+| fortinet.com/blog/threat-research | 0 | 1 | 20 | 2026-05-21 (P2PInfect Kubernetes/Redis compromise — Noted) |
+| securitylab.github.com | 2 | 1 | 20 | 2026-05-22 (7-Zip multi-CVE memory corruption batch GHSL-2026-115/116/117/118/119/120/121/122/140 + Chatwoot SQLi GHSL-2026-059 + Mesa benchmarks.yml CVE-2026-29075 + Apache Doris CVE-2024-48019) |
+| seclists.org/fulldisclosure (incl. openwall oss-security) | 34 | 56 | 3 | 2026-05-25 (Apache Airflow CVE-2026-45361 + CVE-2026-46745 NEWS; ROOT framework heap overflow / PuTTY 0.84 / CVE-2026-48700 PCManFM-Qt / CVE-2026-9277 shell-quote / CVE-2026-45249 Apache ECharts / Anthropic CVD dashboard NOTED) |
+| packetstormsecurity.com | 0 | 0 | 21 | — (degraded — homepage only) |
+| opencve.io | 23 | 28 | 3 | 2026-05-25 (Totolink A8000RU 6-CVE OS command injection batch CVE-2026-9385/86/88/9404/05/06 all CVSS 9.8) |
+| nvd.nist.gov | 0 | 2 | 20 | 2026-05-18 (GitLab + DataHub via NVD listing) |
+| cve.mitre.org | 0 | 0 | 21 | — (degraded — redirects to cve.org) |
+| cve.org | 0 | 0 | 21 | — |
+| googleprojectzero.blogspot.com | 0 | 0 | 21 | — |
+| blog.cloudflare.com/tag/security | 0 | 2 | 19 | 2026-05-19 (Project Glasswing eval) |
+| msrc.microsoft.com/blog | 0 | 0 | 21 | — (unreachable — redirects to nav-only page) |
+| hackerone.com/hacktivity | 0 | 0 | 21 | — |
+| bugcrowd.com/disclosures | 0 | 0 | 21 | — |
+| kb.cert.org/vuls | 2 | 6 | 16 | 2026-05-22 (VU#980487 Dirty Frag CERT/CC issuance 2026-05-20 — companion to MEMORY 2026-05-09) |
+| avleonov.com | 0 | 1 | 20 | 2026-05-15 |
+| github.com/0xMarcio/cve | 2 | 7 | 14 | 2026-05-21 (CVE-2026-31431 K8s-specialized variants — duplicate of prior coverage, no new) |
+| dbugs.ptsecurity.com | 12 | 35 | 8 | 2026-05-25 (Totolink/Tenda/Edimax 9.8-class router CVE batch — folded into Totolink noted; Nousresearch Hermes-Agent 3-CVE 7.3 monitoring) |
+| habr.com/ru/companies/tomhunter/articles | 0 | 0 | 21 | — (degraded — stale content) |
+| teletype.in/@cyberok | 0 | 0 | 21 | — (degraded — stale content) |
+| cert.gov.ua | 0 | 0 | 21 | — (unreachable) |
 | socket.dev/blog (NEW for 2026-05) | 4 | 4 | 8 | 2026-05-14 |
 | openwall.com/lists/oss-security (off-list, primary OSS source) | 31 | 49 | 1 | 2026-05-22 (Apache CXF 3-CVE incomplete-fix batch + NGINX rewrite-module CVE-2026-9256 + Apache Camel K + Fory + Kata Containers + 3 Perl crypto bugs) |
 | github advisories (off-list, NEW high-value 2026-05-07) | 26 | 73 | 1 | 2026-05-22 (containerd CVE-2026-46680 runAsNonRoot bypass, Twig follow-ups 46639/46640, @boxlite-ai/boxlite 46703/46695, yeswiki 46670, @network-ai 46701) |

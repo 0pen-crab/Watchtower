@@ -1,0 +1,138 @@
+{
+  "date": "2026-05-25",
+  "findings": [
+    {
+      "type": "news",
+      "title": "Ghost CMS CVE-2026-26980 Pre-Auth SQL Injection — Mass ClickFix Campaign Compromises 700+ Domains Including Harvard / Oxford / Auburn / DuckDuckGo",
+      "threat_score": 8,
+      "cve": "CVE-2026-26980",
+      "cvss": null,
+      "affected_technology": "Ghost CMS (Node.js publishing platform) versions 3.24.0 through 6.19.0; patched 6.19.1 released 2026-02-19",
+      "summary": "XLab disclosed 2026-05-24 large-scale active exploitation of three-month-old Ghost CMS SQL injection enabling admin API key exfiltration and persistent ClickFix-payload injection across 700+ high-profile domains (Harvard, Oxford, Auburn, DuckDuckGo); at least two distinct activity clusters re-infect cleaned sites with DLL loaders / JS droppers / UtilifySetup.exe Electron malware.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-05-24"
+    },
+    {
+      "type": "news",
+      "title": "LiteSpeed cPanel Plugin CVE-2026-48172 — Maximum-Severity (CVSS 10.0) cPanel-User-to-Root RCE Actively Exploited Across Shared Hosting",
+      "threat_score": 8,
+      "cve": "CVE-2026-48172",
+      "cvss": 10.0,
+      "affected_technology": "LiteSpeed User-End cPanel Plugin v2.3 through v2.4.4 (LiteSpeed WHM plugin not affected); patched in 2.4.5+ and bundled into WHM plugin 5.3.1.0",
+      "summary": "Incorrect privilege assignment in lsws.redisAble lets any cPanel user execute arbitrary scripts as root on the host; LiteSpeed confirmed in-the-wild exploitation 2026-05-22 with single-grep IoC primitive — pairs directly with cPanel CVE-2026-41940 IAB+ransomware monetization chain on shared hosting hosts.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-05-23"
+    },
+    {
+      "type": "news",
+      "title": "Laravel-Lang PHP Packages Supply Chain Compromise — 700+ Malicious Versions Pushed via Git-Tag Rewriting Targeting Composer Autoload",
+      "threat_score": 7,
+      "cve": "Not yet assigned",
+      "cvss": null,
+      "affected_technology": "laravel-lang/lang, laravel-lang/http-statuses, laravel-lang/attributes, laravel-lang/actions (Composer)",
+      "summary": "Attackers rewrote every existing git tag in each of four Laravel-Lang repos to point to malicious commits delivering an autoload-registered src/helpers.php credential stealer (cloud creds, wallets, browser data, VPN configs, env vars on Windows/Linux/macOS); 700+ compromised versions published 2026-05-22 / 2026-05-23 within seconds of each other indicating automated mass-tag rewriting — third major mutable-package-metadata abuse in 30 days after Mini Shai-Hulud Wave 2 + Megalodon.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-05-23"
+    },
+    {
+      "type": "news",
+      "title": "Underminr DNS Domain-Fronting Variant — CDN Tenant-Misrouting Technique Affects ~88M Domains, Already Used in ClickFix Campaigns",
+      "threat_score": 6,
+      "cve": "Not assigned",
+      "cvss": null,
+      "affected_technology": "Shared-tenancy CDN infrastructure (US/UK/Canada-anchored CDNs most affected per ADAMnetworks)",
+      "summary": "ADAMnetworks disclosed 2026-05-23 a domain-fronting variant that presents the SNI and HTTP Host of a domain while forcing a request to a different tenant IP on the same shared CDN edge — defeats SNI / Host-header-based egress filtering, protective-DNS, and SWG controls; already used in ClickFix campaigns hiding C2 behind trusted CDN domains across ~88M affected scopes.",
+      "discovery_latency": "late",
+      "first_seen_at": "2026-05-23"
+    },
+    {
+      "type": "news",
+      "title": "Apache Airflow Provider Two-CVE Disclosure — CVE-2026-45361 Google ComputeEngineSSHHook Host-Key-Verification-Disabled + CVE-2026-46745 FAB Auth Manager LDAP Filter Injection",
+      "threat_score": 5,
+      "cve": "CVE-2026-45361, CVE-2026-46745",
+      "cvss": null,
+      "affected_technology": "apache-airflow-providers-google (< 22.0.0) and apache-airflow-providers-fab (< 3.6.4)",
+      "summary": "Two Airflow provider advisories landed on oss-security 2026-05-24: ComputeEngineSSHHook disables SSH host-key verification by default (Low, MITM-class) and FAB Auth Manager /auth/token endpoint allows unauthenticated LDAP filter injection (Moderate, CWE-90, directory exfil + auth bypass) — extends the May Airflow CVE wave (43826 / 41018 / 27173) to six cumulative provider advisories across the 2026-05-10 → 2026-05-24 window.",
+      "discovery_latency": "early",
+      "first_seen_at": "2026-05-24"
+    }
+  ],
+  "noted": [
+    {
+      "cve": "CVE-2026-9277",
+      "product": "shell-quote (npm, <= 1.8.3, CVSS 8.1)",
+      "summary": "Akshat Sinha disclosed 2026-05-22; newline in .op of object tokens bypasses POSIX shell escaping in quote(); fixed in 1.8.4 via strict allowlisting of valid operator values; niche integration pattern (object-token usage) but CI/CD and build-tool exposure if attacker-controlled input reaches shell-quote."
+    },
+    {
+      "cve": "CVE-2026-45249",
+      "product": "Apache ECharts Lines series tooltip XSS (< 6.1.0)",
+      "summary": "Zhongxiang Wang disclosed 2026-05-23; raw HTML in series.data[i].name rendered via innerHTML when Lines series + tooltips used without custom formatter; widely embedded charting library, risk on dashboards accepting user-controlled labels."
+    },
+    {
+      "cve": "Not yet assigned",
+      "product": "Packagist 8-package supply chain compromise (2026-05-23)",
+      "summary": "moritz-sauer-13/silverstripe-cms-theme + crosiersource/crosierlib-base + devdojo/wave + devdojo/genesis + katanaui/katana + elitedevsquad/sidecar-laravel + r2luna/brain + baskarcm/tzi-chat-ui compromised via package.json (not composer.json) postinstall script downloading Linux binary to /tmp/.sshd; Socket investigation found ~777 files across GitHub referencing the same payload — broader operation, no Shai-Hulud attribution."
+    },
+    {
+      "cve": "Not yet assigned",
+      "product": "ROOT framework (CERN) heap buffer overflow in TKey::Streamer / TBasket::ReadBasketBuffers (CVSS 7.8)",
+      "summary": "Manopakorn Kooharueangrong disclosed 2026-05-24; integer overflow in fObjlen + fKeylen validation lets attacker-controlled .root files trigger 32KB heap OOB write at TBasket.cxx:601; PR #22377 fixes; relevant for CERN SWAN / batch worker / grid-storage environments processing third-party .root files."
+    },
+    {
+      "cve": "CVE-2026-4115",
+      "product": "PuTTY 0.84 three minor security fixes (2026-05-24)",
+      "summary": "ECDSA-NIST-curve point-addition assertion-failure DoS (MITM-triggerable pre-host-verify) + RSA-key-exchange double-free remote crash + Telnet trust-sigil persistence across proxy auth; client-side scope, but PuTTY is fleet-deployed across many enterprise admin shops — schedule upgrade in next ITSM cycle."
+    },
+    {
+      "cve": "CVE-2026-48700",
+      "product": "PCManFM-Qt arbitrary file open via D-Bus ShowFolders",
+      "summary": "Aaron Rainbolt disclosed 2026-05-24; file URI passed to ShowFolders triggers MIME handler invocation rather than directory listing; with Wine+WineHQ packages installed, enables Flatpak / Snap sandbox escape by dropping an EXE and pointing PCManFM-Qt at it."
+    },
+    {
+      "cve": "CVE-2026-9385, CVE-2026-9386, CVE-2026-9388, CVE-2026-9404, CVE-2026-9405, CVE-2026-9406",
+      "product": "Totolink A8000RU 6-CVE unauthenticated OS command injection batch (CVSS 9.8 each)",
+      "summary": "Six OS command injection CVEs across setRemoteCfg / setGameSpeedCfg / setDdnsCfg / setScheduleCfg / setLanguageCfg / setTracerouteCfg published via app.opencve.io 2026-05-24; same product family already noted 2026-04-27 (CVE-2026-7037); consumer/SOHO router IoT-botnet recruitment vector."
+    },
+    {
+      "cve": "CVE-2026-44417, CVE-2026-44618, CVE-2026-44930",
+      "product": "Apache CXF 3-CVE batch (continued from 2026-05-22)",
+      "summary": "Colm O hEigeartaigh re-pushed 2026-05-22 thread: incomplete fix for CVE-2025-48913 JMS-untrusted-config-to-RCE + XXE in WS-Transfer + LDAP injection in XKMS LDAP Repository; same Apache-incomplete-fix pattern as MINA / OFBiz earlier in May; tracking on the list."
+    },
+    {
+      "cve": "Not yet assigned",
+      "product": "Anthropic Coordinated Vulnerability Disclosure dashboard launch (oss-security 2026-05-23)",
+      "summary": "Alan Coopersmith relayed Anthropic's new CVD tracking dashboard via oss-security; process change rather than a vulnerability, but relevant for security teams tracking Claude API surface advisories."
+    },
+    {
+      "cve": "Not yet assigned",
+      "product": "Kimwolf Botmaster 'Dort' Arrest (Krebs 2026-05-21)",
+      "summary": "23-year-old Ottawa resident arrested in US/Canada for operating Kimwolf IoT botnet (30 Tbps+ record DDoS); law-enforcement action signaling continued pressure on DDoS infrastructure operators."
+    },
+    {
+      "cve": "Not yet assigned",
+      "product": "CISA Contractor AWS GovCloud Credential Leak (Krebs / Schneier 2026-05-22)",
+      "summary": "A CISA contractor maintained a public GitHub repository containing plaintext AWS GovCloud credentials and internal CISA system details; KEV-consumer and threat-feed-consumer threat models should be re-evaluated pending CISA's incident-response disclosure."
+    }
+  ],
+  "source_coverage": {
+    "total": 30,
+    "checked": 23,
+    "with_findings": 9,
+    "unreachable": [
+      "cisa.gov",
+      "cisa.gov/known-exploited-vulnerabilities-catalog",
+      "attackerkb.com",
+      "msrc.microsoft.com/blog",
+      "hackerone.com/hacktivity",
+      "bugcrowd.com/disclosures",
+      "cert.gov.ua"
+    ],
+    "degraded": [
+      "packetstormsecurity.com",
+      "habr.com/ru/companies/tomhunter/articles",
+      "teletype.in/@cyberok",
+      "cve.mitre.org"
+    ]
+  },
+  "full_report": "reports/2026/05/25/report.md"
+}
