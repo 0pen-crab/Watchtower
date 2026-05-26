@@ -1,0 +1,116 @@
+=== Watchtower Daily Run — 2026-05-26 ===
+Cycle: night
+Run start: 2026-05-26 00:00 UTC
+
+[00:00] git pull → "Already up to date." Last commit 2026-05-25/night.
+
+[00:01] Dedup index build — read reports/2026/*/*/report.json for window 2026-04-26 → 2026-05-25 inclusive. Result: 28 daily reports (one gap 2026-05-11 → 2026-05-12 transition, one gap on 2026-05-24). 649 unique CVE IDs in dedup index covering News + Noted entries. Saved to /tmp/dedup_cves.txt for membership checks. Title-based dedup for non-CVE incidents (Mythos / Glasswing / Megalodon / TrapDoor / Laravel-Lang / etc.) cross-referenced by grep against report.md content.
+
+[00:03] Source sweep begin — 30 sources in SOURCES.md (15 Tier 1 + 16 Tier 2 with one dup of seclists.org/fulldisclosure).
+
+[00:03] bleepingcomputer.com ✅ — fetched top headlines. Surfaced: FBI Kali365 phishing-as-a-service (2026-05-25, new), Ghost CMS (2026-05-24 — covered), Laravel Lang (covered), Netherlands seize (2026-05-22 — new Noted), Ubiquiti UniFi 3 max-sev patches (2026-05-22 — in dedup CVE-2026-33000/34908/9/10/11), Drupal SQLi (covered), Trend Micro Apex One zero-day (covered KEV), Kimwolf arrest (covered), Chromium background-JS-after-close (2026-05-21 — new Noted).
+
+[00:03] thehackernews.com ✅ — fetched homepage + Vulnerability tag. Surfaced TrapDoor cross-ecosystem supply chain (2026-05-25, NEW — not in dedup), Lazarus RemotePE (2026-05-25 — new Noted), npm 2FA-gated publishing (mitigation/defensive — not counted), Claude Mythos 10K vulnerabilities (2026-05-22 update, material), Ghost / LiteSpeed / Drupal / Laravel-Lang all already covered.
+
+[00:03] securityweek.com ✅ — fetched homepage. Surfaced Megalodon 5,500+ repos (2026-05-25 — material update on prior 2026-05-18 entry, but no specific new IoCs — tracked at NOTED-tier-only via pattern), Underminr DNS variant (covered), Drupal exploitation (covered), TrendAI Apex One (covered), various breach disclosures (OncologyInstitute, Radiology Associates, DocketWise — OOS as data breaches w/o new technical primitive).
+
+[00:04] cisa.gov ❌ — 403 Forbidden (same as yesterday + every cycle this month — see MEMORY). Marked unreachable.
+[00:04] cisa.gov/known-exploited-vulnerabilities-catalog ❌ — 403 Forbidden. Marked unreachable. Fallback to web search confirming KEV state: no new additions since 2026-05-22 Drupal CVE-2026-9082 (federal deadline 2026-05-27). Earlier 2026-05-21 batch: CVE-2025-34291 Langflow + CVE-2026-34926 Trend Micro Apex One — already covered.
+[00:04] securityweek.com category/vulnerabilities ❌ — 403. Fell back to homepage already covered.
+[00:04] github.com/search?q=CVE ✅ — fetched recently-updated CVE-2026 repos. Surfaced CVE-2026-XNU-AIO-KEVENT-UAF (iOS-only, OOS), CVE-2026-2991 (KiviCare auth bypass — in dedup), CVE-2026-31802 (npm tar path traversal — NEW Noted, client-side), CVE-2026-24291 (Windows LPE — OOS no remote), CVE-2026-2472 (Vertex AI XSS — niche AI, no exploitation), CVE-2026-25643 (Frigate NVR — in dedup), CVE-2026-2441 (Chrome UAF — OOS), CVE-2026-0828 / 20841 (Windows Notepad / BYOVD — OOS), confirmed pattern.
+
+[00:05] schneier.com ✅ — 5 recent posts. Friday Squid (2026-05-22 — N/A), CISA security leak (covered yesterday), macOS M5 Kernel memory corruption via Mythos (2026-05-21 — NEW Noted), On AI Security (OOS commentary), Laurie Anderson (OOS).
+
+[00:05] krebsonsecurity.com ✅ — 5 recent posts. Netherlands 800-server seizure (2026-05-25 — NEW Noted), CISA leak follow-up (2026-05-22 covered), Kimwolf arrest (2026-05-21 covered), Patch Tuesday May 2026 (covered).
+
+[00:05] rapid7.com ✅ — Metasploit Wrap Up 05/22/2026 surfaced; no new exploitation escalation signals. Q1 2026 Threat Report linked, no new CVEs from May for our window.
+
+[00:05] attackerkb.com ❌ — 403 Forbidden (consistent w/ MEMORY). Marked unreachable.
+
+[00:05] fortinet.com/blog/threat-research ✅ — 5 recent posts. P2PInfect Kubernetes / Redis (2026-05-20 — was a NOTED candidate yesterday; tracked at meta-level, no new IoCs); PureLogs PawsRunner (2026-05-15 covered earlier); older posts unchanged.
+
+[00:06] securitylab.github.com ⚠️ — redirects to github.blog/tag/github-security-lab/. Latest 2026-04-14 (no new May content). Fetched successfully — content reachable but no recent advisories during the window. Counted as ✅ in checked, just no new findings.
+
+[00:06] seclists.org/fulldisclosure ✅ — May archive index — most-recent 17 posts dated 2026-05-17. No fresh posts in 2026-05-22 → 2026-05-26 window. Reachable but no May 22-26 content; counted as checked.
+
+[00:06] packetstormsecurity.com ⚠️ — redirects to packetstorm.news (degraded). Homepage shows 35 exploits / 423 advisories in last 7 days but the actual listings page detail not exposed via WebFetch. Marked degraded (same as yesterday).
+
+[00:06] opencve.io ✅ — fetched 2026-05-25 critical-tier query. Surfaced CVE-2026-42773 / 42774 / 48837 / 45216 (WP-class SQLi/priv-esc — Noted). Also browsed for KEV updates — none beyond what was already covered.
+
+[00:07] nvd.nist.gov ⚠️ → Detail-page fallback used. Search page itself is nav-only via WebFetch (counted as checked because individual /detail/CVE-XXXX pages return useful data — confirmed for CVE-2026-42782, CVE-2026-45217, CVE-2026-5222).
+
+[00:07] cve.org / cve.mitre.org ❌ → Both JS-required; cve.mitre.org redirects to cve.org. cve.mitre.org marked degraded; cve.org effectively the same destination — counted as part of degraded set.
+
+[00:07] googleprojectzero.blogspot.com → projectzero.google ✅ — 5 most recent posts. Pixel 10 0-click chain (2026-05-13 — Android RCE chain, primarily mobile, marginally OOS for our public-facing scope), no May 22-26 posts.
+
+[00:07] blog.cloudflare.com/tag/security ✅ — Glasswing initial update (2026-05-18 covered), Copy Fail response (2026-05-07 covered), older items unchanged. No new content in window.
+
+[00:08] msrc.microsoft.com/blog ❌ — Redirects to microsoft.com/en-us/msrc/blog which returns nav-only page (no blog post content). Marked unreachable (same as yesterday).
+
+[00:08] hackerone.com/hacktivity ❌ — JS-required, returns nav-only HTML via WebFetch. Marked unreachable.
+
+[00:08] bugcrowd.com/disclosures ❌ — 404 (consistent with prior runs since 2026-05-15+). Marked unreachable.
+
+[00:08] kb.cert.org/vuls ✅ — VU#980487 Dirty Frag (2026-05-20 covered), VU#777338 SGLang (2026-05-18 covered), VU#471747 dnsmasq (2026-05-11 covered), VU#937808 Casdoor (2026-05-11 covered), VU#260001 Copy Fail (2026-05-08 covered). No new for window.
+
+[00:08] avleonov.com ✅ — Monthly "In the Trend of VM" #27 published 2026-05-25 covering CVE-2026-31431 / 34197 / 32201 / 34621 (all in dedup). May Patch Tuesday May 19 analysis (covered earlier). No new findings.
+
+[00:08] github.com/0xMarcio/cve ✅ — Top 10 recently-updated repos. CVE-2026-31431 dominates (covered). No new high-signal additions.
+
+[00:08] dbugs.ptsecurity.com ✅ — 10 most recent disclosures dated 2026-05-25: CVE-2026-5222 (Rust Cargo — NEW Noted), CVE-2026-42763 (Sepay), CVE-2026-32389 (Linethemes Nanocare), CVE-2026-42776 (Sunshine Photo Cart), CVE-2026-42774 (Crocoblock JetEngine — NEW Noted), CVE-2026-9514 (Totolink CA750-PoE — IoT batch noted), CVE-2026-45209 (MyCryptoCheckout), CVE-2026-45217 (ThemeHigh Stripe — NEW Noted), CVE-2026-48837 (Unlimited Elements — NEW Noted), CVE-2026-39436 (Cformsii).
+
+[00:09] habr.com/ru/companies/tomhunter/articles ⚠️ — Latest March 2026 (no May posts since "Топ новостей инфобеза за февраль 2026 года" 2026-03-06). Degraded.
+[00:09] teletype.in/@cyberok ⚠️ — Latest February 2026. Degraded.
+[00:09] cert.gov.ua ❌ — Empty content via WebFetch. Marked unreachable.
+
+[00:10] SUPPLEMENTAL (not counted in 30):
+  - openwall.com/lists/oss-security/2026/05/25/ ✅ — Apache Syncope CVE-2026-42782 + CVE-2026-42797 (post #4, #5 — NEW NEWS), Apache Shiro CVE-2026-43827/28/44598/48589 (posts #6/#7/#8/#9 — NEW NEWS), Aaron Rainbolt MIME handler discussion (covered yesterday), Coordinated Disclosure in the LLM Age (discussion, not advisory).
+  - openwall.com/lists/oss-security/2026/05/26/ ❌ — "No messages for this day." (Today is still early in UTC, expected.)
+  - socket.dev/blog (TrapDoor disclosure) ✅ — primary TrapDoor campaign report.
+
+[00:11] Dedup decisions:
+  - TrapDoor: NEW (not in dedup; distinct from Laravel-Lang 2026-05-22, Megalodon 2026-05-18, Mini Shai-Hulud Wave 2). Score 7 — first AI-coding-agent .cursorrules / CLAUDE.md zero-width Unicode primitive.
+  - Apache Syncope CVE-2026-42782 + 42797: NEW (not in dedup). Score 5 — post-auth admin RCE on IAM product.
+  - Apache Shiro 4-CVE batch: NEW (not in dedup). Score 4 — auth framework session+cookie+redirect+SSRF combo.
+  - Project Glasswing 10K milestone: UPDATE candidate vs new — folded into Noted as material update because earlier Glasswing/Mythos noted entries (2026-04-25, 2026-05-01, 2026-05-12, 2026-05-13, 2026-05-14, 2026-05-19) span 271→10K milestone. Score 4 if elevated, but Noted is the right tier (no specific CVE to act on, mean patch time 2 weeks observed).
+  - WP-class SQLi batch (CVE-2026-42773/74/48837/45216): Noted batch — long tail of plugin disclosures.
+  - FBI Kali365: Noted (social engineering, not new CVE).
+  - CVE-2026-5222 Rust Cargo: Noted (low severity 2.3, niche multi-registry case).
+  - macOS M5 Mythos kernel bug: Noted (Apple hardware, OOS but Mythos data point).
+  - Chromium background-JS: Noted (browser/client; relevance limited to AI-agent embedded browsers).
+  - npm tar CVE-2026-31802: Noted (client-side).
+  - Lazarus RemotePE: Noted (tradecraft, not advisory).
+  - Netherlands hosting seizure: Noted (LE action).
+  - Drupal KEV deadline 2026-05-27 reminder: Noted (compliance reminder; CVE itself covered yesterday).
+  - TrendMicro Apex One KEV (CVE-2026-34926): Noted (already covered yesterday; carried for KEV-deadline tracking).
+  - SKIP: Ubiquiti UniFi OS CVE-2026-33000/34908/9/10/11 (all 5 CVEs in dedup — fully covered 2026-05-22 entry).
+  - SKIP: Drupal SQLi CVE-2026-9082 (in dedup as 2026-05-20/21/22 entries — only KEV-deadline reminder folded into Noted).
+  - SKIP: LiteSpeed CVE-2026-48172 (in dedup yesterday).
+  - SKIP: Ghost CMS CVE-2026-26980 (in dedup yesterday).
+  - SKIP: Laravel-Lang supply chain (in dedup yesterday).
+  - SKIP: Megalodon 5,500-repo expansion (in dedup; SecurityWeek headline today is just current activity count, no new technical primitive).
+  - SKIP: Kimwolf arrest (in dedup yesterday).
+  - SKIP: CISA contractor GovCloud leak (in dedup yesterday).
+
+[00:12] Final source_coverage tallies:
+  - total: 30
+  - unreachable: 7 (cisa.gov, cisa.gov/known-exploited-vulnerabilities-catalog, attackerkb.com, msrc.microsoft.com/blog, hackerone.com/hacktivity, bugcrowd.com/disclosures, cert.gov.ua)
+  - degraded: 4 (packetstormsecurity.com, habr.com/ru/companies/tomhunter/articles, teletype.in/@cyberok, cve.mitre.org)
+  - checked: 23 (= total − unreachable per validator semantics; degraded counted as checked)
+  - with_findings: 7 (bleepingcomputer, thehackernews, securityweek, opencve, dbugs.ptsecurity, krebsonsecurity, oss-security via openwall — counted Schneier as no-findings because the M5 kernel item is Noted-only and counted under multiple primary sources)
+
+[00:13] Writing reports/2026/05/26/report.md and report.json.
+[00:14] Running validator on report.json — see output below.
+
+=== VALIDATOR OUTPUT ===
+$ python3 scripts/validate_report.py reports/2026/05/26/report.json
+⚠️  3 warning(s):
+   findings[0]: 'summary' is 475 chars (aim for <200)
+   findings[1]: 'summary' is 431 chars (aim for <200)
+   findings[2]: 'summary' is 464 chars (aim for <200)
+✅ reports/2026/05/26/report.json — valid
+
+[validator clean — warnings are non-blocking summary-length advisories consistent with prior reports]
+
+Run end: 2026-05-26 00:15 UTC
+

@@ -1,0 +1,121 @@
+{
+  "date": "2026-05-26",
+  "findings": [
+    {
+      "type": "news",
+      "title": "TrapDoor Cross-Ecosystem Credential Stealer — 34+ Malicious Packages / 384+ Versions Across npm + PyPI + Crates.io With AI-Coding-Assistant Manipulation Primitive",
+      "threat_score": 7,
+      "cve": "Not yet assigned",
+      "cvss": null,
+      "affected_technology": "npm (19 packages), PyPI (7 packages), Crates.io (6 packages) — total 34+ malicious packages / 384+ versions published by attacker account ddjidd564 starting 2026-05-22 20:20 UTC",
+      "summary": "Socket disclosed 2026-05-25 a coordinated TrapDoor supply-chain campaign across three package registries with ecosystem-specific execution primitives (npm postinstall, PyPI remote-JS import-time, Crates.io build.rs XOR-encoded wallet exfil) and a novel AI-coding-assistant manipulation primitive — zero-width Unicode characters injected into .cursorrules / CLAUDE.md to trick Cursor / Claude Code / Copilot CLI into running 'security scans' that exfiltrate developer secrets.",
+      "discovery_latency": "late",
+      "first_seen_at": "2026-05-22"
+    },
+    {
+      "type": "news",
+      "title": "Apache Syncope CVE-2026-42782 Post-Auth RCE via Groovy Static Initializer Sandbox Bypass + CVE-2026-42797 JexlContextBuilder Info Disclosure",
+      "threat_score": 5,
+      "cve": "CVE-2026-42782, CVE-2026-42797",
+      "cvss": null,
+      "affected_technology": "Apache Syncope 3.0 through 3.0.16, 4.0 through 4.0.5, 4.1.0 (identity management server); fixed in 4.0.6 / 4.1.1",
+      "summary": "Apache Syncope's Groovy class static initializers bypassed the sandbox (CWE-653) — an admin with Implementations entitlement could trigger JVM-level RCE via Runtime.exec / ProcessBuilder / File / Socket; CVE-2026-42797 companion advisory exposes JexlContextBuilder application context to non-Implementations callers; both disclosed via oss-security 2026-05-25 with public PoC details circulating same day on cyberpress / gbhackers.",
+      "discovery_latency": "early",
+      "first_seen_at": "2026-05-25"
+    },
+    {
+      "type": "news",
+      "title": "Apache Shiro Four-CVE Authentication Framework Batch — Session Fixation / Missing Cookie Secure Flag / Open Redirect / SSRF (Jakarta EE Module)",
+      "threat_score": 4,
+      "cve": "CVE-2026-43827, CVE-2026-43828, CVE-2026-44598, CVE-2026-48589",
+      "cvss": null,
+      "affected_technology": "Apache Shiro 1.0.0 through 2.1.0 (stable), 3.0.0-alpha-0 through 3.0.0-alpha-1 (alpha), Jakarta EE module; fixed in 2.1.1 / 3.0.0-alpha-2",
+      "summary": "Four coordinated Apache Shiro oss-security disclosures 2026-05-25: session fixation (CVE-2026-43827 — no new session ID issued post-login), missing cookie Secure flag on native session+rememberMe (CVE-2026-43828), Jakarta EE post-auth open redirect + SSRF requiring valid credentials (CVE-2026-44598), and Referer-trust open redirect on post-login flow (CVE-2026-48589) — Shiro is among the three most-deployed JVM auth frameworks alongside Spring Security + JAAS.",
+      "discovery_latency": "early",
+      "first_seen_at": "2026-05-25"
+    }
+  ],
+  "noted": [
+    {
+      "cve": "Not yet assigned",
+      "product": "Anthropic Project Glasswing / Mythos Preview 10,000-Vulnerability Milestone Update (2026-05-22)",
+      "summary": "Anthropic published 2026-05-22 that Mythos Preview at ~50 trusted partners surfaced 10,000+ high/critical-severity bugs in the first month (6,202 critical of 23,019 total), with notable disclosures including 27-year-old OpenBSD bug, 16-year-old FFmpeg bug, and wolfSSL cert-forgery primitive; mean patch time is 2 weeks — material update on the long-running Mythos track first noted 2026-04-25."
+    },
+    {
+      "cve": "CVE-2026-34926",
+      "product": "TrendMicro Apex One KEV Promotion (Federal Deadline 2026-06-11)",
+      "summary": "Directory-traversal flaw in on-premise Apex One added to CISA KEV 2026-05-21 alongside Langflow CVE-2025-34291; tracked in yesterday's report, no material change today."
+    },
+    {
+      "cve": "CVE-2026-9082",
+      "product": "Drupal Core KEV Federal Deadline 2026-05-27 (one day from now)",
+      "summary": "Drupal Core SA-CORE-2026-004 PostgreSQL SQL injection added to CISA KEV 2026-05-22 with federal deadline 2026-05-27; active exploitation since 2026-05-22 — defenders should treat tomorrow's window as no-grace remediation for any Drupal+PostgreSQL stack."
+    },
+    {
+      "cve": "Not assigned",
+      "product": "FBI Kali365 OAuth Device-Code Phishing-as-a-Service Advisory (BleepingComputer 2026-05-25)",
+      "summary": "FBI alert on phishing-as-a-service abusing Microsoft 365 OAuth device-code authentication flow to steal session tokens + bypass MFA; folds into the EvilTokens / OAuth-consent-phishing pattern (noted 2026-05-13) — disable device-code flow on tenant Conditional Access policy where not strictly required."
+    },
+    {
+      "cve": "CVE-2026-5222",
+      "product": "Rust Cargo URL Normalization Authorization Decision (CVSS 2.3 Low, 2026-05-25)",
+      "summary": "Cargo 1.68–1.96 leaks credentials across multiple-registry-same-domain hosting via non-canonical sparse-index URL normalization (CWE-647); low severity but relevant for any team running private Cargo registries with multi-tenant hosting; fix in Cargo PR #17031."
+    },
+    {
+      "cve": "Not yet assigned",
+      "product": "Anthropic Mythos macOS M5 Kernel Memory Corruption Disclosure (Schneier 2026-05-21)",
+      "summary": "Researchers used Anthropic Mythos to identify a macOS M5 kernel memory-corruption primitive (no CVE yet); Apple-hardware-specific and out-of-scope for our infrastructure focus but tracked as another datapoint in the Mythos-finds-X sequence."
+    },
+    {
+      "cve": "Not assigned",
+      "product": "Google Chromium Background-JavaScript-After-Close Disclosure (BleepingComputer 2026-05-21)",
+      "summary": "Google accidentally exposed details of an unfixed Chromium flaw where JS continues executing after browser closure, enabling RCE; client-only but tracked because AI-coding-agent embedded browsers (Cursor / ChatGPT Atlas / Claude Code browser tools) inherit Chromium internals."
+    },
+    {
+      "cve": "CVE-2026-42773, CVE-2026-42774, CVE-2026-48837, CVE-2026-45216",
+      "product": "WordPress Plugin Critical SQLi/Privilege-Escalation Batch (Patchstack relay 2026-05-25)",
+      "summary": "Four new WP-class advisories: eMagicOne Store Manager 9.3 blind SQLi (≤1.3.2), Crocoblock JetEngine 9.3 blind SQLi (≤3.8.8.1), Unlimited Elements for Elementor 8.5 blind SQLi, StoreApps Smart Manager 8.8 incorrect privilege assignment; long tail of WP-class disclosures, will promote if active exploitation surfaces."
+    },
+    {
+      "cve": "CVE-2026-45217",
+      "product": "ThemeHigh Stripe Payment Gateway for WooCommerce Auth Bypass (Patchstack 2026-05-25, CVSS 6.5)",
+      "summary": "Through-version 5.0.7 broken-auth vulnerability enables unauth password-recovery exploitation against WooCommerce + Stripe deployments; payment-handling plugins remain a current attacker focus (compare Funnel-Builder skimmer campaign noted 2026-04-30)."
+    },
+    {
+      "cve": "CVE-2026-31802",
+      "product": "npm tar Path Traversal Symlink Extract (PoC public, 2026-05-25 GitHub trending)",
+      "summary": "npm tar package vulnerable to arbitrary file overwrite via symlink extraction in crafted tar archives; client-side (developer machines extracting third-party tarballs) but folds into the broader supply-chain-on-developer-machine pattern alongside TrapDoor / Mini Shai-Hulud / Megalodon."
+    },
+    {
+      "cve": "Not assigned",
+      "product": "Lazarus RemotePE Memory-Only RAT (THN 2026-05-25)",
+      "summary": "DPRK-attributed multi-stage attack chain deploys memory-resident-only RAT against DeFi / crypto sector; DeFi / crypto trading desks should incorporate memory-only payload detection into EDR tuning."
+    },
+    {
+      "cve": "Not assigned",
+      "product": "Netherlands Seizes 800 Servers of Bulletproof Hosting Operator (BleepingComputer + Krebs 2026-05-22)",
+      "summary": "Dutch authorities arrested two operators of Stark Industries Solutions / PQHosting / MIRhosting / the.hosting supporting Russia-backed cyber operations; expect short-term shifts in C2 hosting / phishing infrastructure as operators relocate."
+    }
+  ],
+  "source_coverage": {
+    "total": 30,
+    "checked": 23,
+    "with_findings": 7,
+    "unreachable": [
+      "cisa.gov",
+      "cisa.gov/known-exploited-vulnerabilities-catalog",
+      "attackerkb.com",
+      "msrc.microsoft.com/blog",
+      "hackerone.com/hacktivity",
+      "bugcrowd.com/disclosures",
+      "cert.gov.ua"
+    ],
+    "degraded": [
+      "packetstormsecurity.com",
+      "habr.com/ru/companies/tomhunter/articles",
+      "teletype.in/@cyberok",
+      "cve.mitre.org"
+    ]
+  },
+  "full_report": "reports/2026/05/26/report.md"
+}
