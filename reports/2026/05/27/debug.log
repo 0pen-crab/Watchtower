@@ -1,0 +1,148 @@
+=== Watchtower Daily Run — 2026-05-27 (Night Cycle) ===
+Start: 2026-05-27T00:01:36Z
+Operator: Claude (Opus 4.7)
+
+== STEP 1: git pull ==
+[00:01:36Z] cd /home/claude/workspace/watchtower && git pull
+[00:01:38Z] Already up to date.
+
+== STEP 2: Dedup index from last 30 days ==
+[00:01:40Z] Enumerating reports/2026/05/{16,17,18,19,20,21,22,23,25,26}/
+[00:01:42Z] Extracted CVE list from previous reports — dedup index built.
+Notable already-covered items (skip-class):
+  - CVE-2026-31802 npm tar — noted 2026-05-26
+  - CVE-2026-9082 Drupal (KEV deadline today 2026-05-27)
+  - CVE-2026-34926 TrendMicro Apex One — KEV-added 2026-05-21
+  - CVE-2026-26980 Ghost CMS — covered 2026-05-25 as News (today: material change → Update)
+  - CVE-2026-31431 Copy Fail Linux LPE — extensively covered 2026-05-15+
+  - CVE-2025-55182 React2Shell — covered 2026-05-12+
+  - CVE-2026-41091 + CVE-2026-45498 Defender pair — covered 2026-05-22
+  - CVE-2026-42945 NGINX Rift — covered 2026-05-15
+  - CVE-2026-31635 — covered
+  - Anthropic Mythos / Glasswing — noted multiple times
+  - BitLocker YellowKey / CVE-2026-45585 — covered as Noted MEMORY 2026-05-17
+  - Megalodon GitHub 5,500+ repo campaign — MEMORY 2026-05-22 / 2026-05-23
+
+== STEP 3: Source checks (target: every source in SOURCES.md) ==
+
+[00:02:00Z] Tier-1 primary news:
+  ✅ bleepingcomputer.com — Ghost CMS active mass exploitation (700+ sites, ClickFix), Ubiquiti UniFi (May 22 article still surfaced), Charter Communications breach confirmed, 7-Eleven 185k records, FBI Kali365, ZTE routers (full-disclosure relay), MuddyWater 9-country, Nimbus Manticore MiniFast, Lazarus RemotePE; KnowledgeDeliver zero-day mention. 6.5s
+  ✅ thehackernews.com — CVE-2026-45659 SharePoint deserialization RCE, CVE-2026-26980 Ghost CMS update, CVE-2026-5426 KnowledgeDeliver zero-day, CVE-2026-45585 BitLocker YellowKey (dedup), CVE-2026-31635 Linux LPE (dedup), CVE-2026-42945 NGINX Rift (dedup), TrapDoor (dedup), MuddyWater, Nimbus Manticore, Lazarus. 7.1s
+  ✅ securityweek.com — Ghost CMS 700+ compromised + Harvard/Oxford/DuckDuckGo, KnowledgeDeliver zero-day, Drupal CVE-2026-9082 active exploitation, Megalodon (dedup), Laravel-Lang (dedup), Anthropic Mythos 23k vulns analysis. 5.8s
+
+[00:02:35Z] Tier-1 / Tier-2 vendor advisories:
+  ❌ cisa.gov — 403 Forbidden via WebFetch (unchanged from prior reports)
+  ❌ cisa.gov/known-exploited-vulnerabilities-catalog — 403 Forbidden (unchanged)
+  ⚠️ msrc.microsoft.com/blog — redirected to nav-only page; SharePoint CVE-2026-45659 captured via NVD detail page fallback
+  ⚠️ blog.cloudflare.com/tag/security — no new content since May 18 Project Glasswing post; 4.1s
+  ⚠️ fortinet.com/blog/threat-research — May 26 PureLogs phishing campaign (client-only, out-of-scope), May 20 P2PInfect Kubernetes/Redis still latest in-scope post; 5.0s
+  ❌ fortiguard.com/psirt — TLS cert verification error via WebFetch (degraded, not in 30-source baseline)
+
+[00:03:00Z] Research / OSINT:
+  ⚠️ schneier.com — Wi-Fi sensing surveillance (May 26, OOS — not vulnerability), CISA credential exposure (dedup MEMORY 2026-05-19), Mythos macOS M5 (dedup 2026-05-26), BitLocker YellowKey (dedup), AI age-verification bypass (May 15, OOS); 5.2s
+  ✅ krebsonsecurity.com — Netherlands 800-server seizure (dedup 2026-05-26), CISA contractor AWS exposure (dedup MEMORY 2026-05-19), Canvas/ShinyHunters update (dedup), Kimwolf 30 Tbps DDoS botmaster arrest (NEW Noted), Tyler Buchanan Scattered Spider plea (NEW Noted); 4.8s
+  ⚠️ rapid7.com — May 22 + May 15 Metasploit Wrap-Up (already covered), CVE-2026-0265 PAN-OS, CVE-2026-20182 SD-WAN, CVE-2026-0300 PAN-OS (all dedup); 6.7s
+  ❌ attackerkb.com — 403 Forbidden (unchanged)
+  ✅ securitylab.github.com — 7-Zip + Chatwoot + Mesa + Apache Doris (all already covered prior week)
+  ⚠️ googleprojectzero.blogspot.com — redirects to projectzero.google; May 13 Pixel 10 0-click (client-only, OOS); 4.4s
+  ✅ avleonov.com — In the Trend of VM #27 (CVE-2026-31431 / 34197 / 32201 / 34621 — all dedup); 3.9s
+  ✅ kb.cert.org/vuls — no new VU# since 2026-05-20 VU#980487 Dirty Frag; 4.0s
+
+[00:03:45Z] Supply chain:
+  ✅ github.com/search?q=CVE — top trending: CVE-2026-31431 still dominates (3,902 stars), CVE-2025-55182, CVE-2025-33073, CVE-2024-38063, CVE-2026-25643 Frigate NVR (dedup MEMORY 2026-05-18), CVE-2026-31802 npm tar (dedup 2026-05-26); 5.5s
+  ✅ github.com/0xMarcio/cve — CVE-2026-31431 + CVE-2025-55182 + CVE-2025-33073 + CVE-2024-38063 (all dedup); 4.6s
+  ⚠️ packetstormsecurity.com — redirects to packetstorm.news; homepage statistics only (200+ additions); 3.5s
+
+[00:04:30Z] Threat intel:
+  ✅ seclists.org/fulldisclosure — ZTE Router CVE batch (NEW Noted), MCP SSRF pair Anthropic + Microsoft (NEW Noted), Apple May 2026 batch (mobile/client-only, OOS), Dovecot 2.3.x patch-timeline query (informational); 5.4s
+  ✅ opencve.io — FastNetMon multi-CVE batch (NEW Noted), CVE-2026-9605 libredwg heap overflow (low-priority client-side), CVE-2026-9606 Courier Management System SQLi; 4.0s
+  ✅ dbugs.ptsecurity.com — Joomla CVE-2026-48898 + 48899 + 48904 (NEW News), Prolix OC Lumiverse CVE-2026-44450 / 44451 (niche industrial), IBM HTTP Server multi-CVE batch (CVSS 9.8 but enterprise mainframe scope — minor surface), Mirasvit Full Page Cache Warmer, Silicon Labs Simplicity SDK, OpenVPN Connect CVE-2026-9560 (client-only, OOS); 4.8s
+  ⚠️ nvd.nist.gov — used detail-page fallback for CVE-2026-45659 SharePoint, CVE-2026-48898 Joomla, CVE-2026-48686 FastNetMon, CVE-2026-43947 FUXA (RESERVED status, fallback to GH advisories project page); 5.3s + 4.7s + 3.9s + 4.4s
+  ⚠️ cve.org — JS-required, empty content via WebFetch
+  ⚠️ cve.mitre.org — redirects to cve.org (degraded)
+
+[00:05:30Z] Regional + BB:
+  ⚠️ habr.com/ru/companies/tomhunter/articles — stale (March 2026 latest)
+  ⚠️ teletype.in/@cyberok — stale (February 2026 latest)
+  ❌ cert.gov.ua — empty content via WebFetch
+  ❌ hackerone.com/hacktivity — empty content (JS-only)
+  ❌ bugcrowd.com/disclosures — 404 (URL changed; unfixed since 2026-04-14)
+
+[00:06:00Z] Supplemental sources (off the 30-source list):
+  ✅ openwall.com/lists/oss-security 2026/05/ — Perl Archive::Tar batch (CVE-2026-42496/42497/9538), Perl regex CVE-2026-8376, qSnapper D-Bus batch (CVE-2026-41045-48 — LPE, OOS), Apache Flink Kubernetes Operator CVE-2026-40564, Mojolicious::Plugin::Statsd CVE-2026-46740 (metric injection, niche), Crypt::ScryptKDF CVE-2026-8647 (CSPRNG-fallback, niche); 5.7s
+  ✅ openwall.com/lists/oss-security 2026/05/27/ — no posts yet for 2026-05-27 (queried at 00:06 UTC, archive returned "No messages for this day"); 2.8s
+  ✅ github.com/advisories (Critical, 2026-05-26 filter) — CVE-2026-33137 + CVE-2026-23734 XWiki critical pair (NEW Noted), CVE-2026-46716 Nezha (already covered), CVE-2026-46670 YesWiki + CVE-2026-46703/46695 Boxlite + CVE-2026-46633 Twig (all dedup); 4.5s
+  ✅ github.com/advisories (High, 2026-05-26 filter) — FUXA CVE-2026-43947/43946/43945 pre-auth RCE (NEW News), Kirby CMS CVE-2026-44174/44175/44177, Fedify CVE-2026-42462 LD-Signature bypass, yeoman-environment CVE-2026-42089; 5.0s
+  ✅ socket.dev/blog — no new posts since 2026-05-25 TrapDoor (already covered); 3.4s
+  ✅ thehackernews.com/search (Ghost CMS) — QiAnXin XLab + Claude joint research detail; 4.2s
+
+== STEP 4: Dedup decisions (entry-by-entry) ==
+[00:06:30Z] Dedup decisions:
+  NEW    — Ghost CMS active mass exploitation (UPDATE, material change since 2026-05-25 News: 700+ compromised sites, Harvard/Oxford/DuckDuckGo headline lift, joint research disclosed)
+  NEW    — Joomla! com_users CVE-2026-48898/48899/48904 (3 CVSS 9.8 unauth priv-esc)
+  NEW    — Digital Knowledge KnowledgeDeliver zero-day CVE-2026-5426 (active ITW, Mandiant + GTIG)
+  NEW    — Microsoft SharePoint CVE-2026-45659 (late-disclosure Patch Tuesday)
+  NEW    — FUXA SCADA pre-auth RCE batch (10 advisories total since Feb)
+  NEW    — MCP SSRF pair Anthropic + Microsoft (Noted)
+  NEW    — FastNetMon BGP CVE batch (Noted)
+  NEW    — Apache Flink K8s Operator SSRF (Noted)
+  NEW    — Perl Archive::Tar batch (Noted)
+  NEW    — Perl regex CVE-2026-8376 (Noted)
+  NEW    — XWiki critical pair CVE-2026-33137 + 23734 (Noted)
+  NEW    — ZTE Router CVE batch (Noted)
+  NEW    — Charter Communications breach (Noted)
+  NEW    — 7-Eleven 185k breach confirmation (Noted)
+  NEW    — MuddyWater 9-country DLL side-loading (Noted)
+  NEW    — Nimbus Manticore MiniFast AI-assisted (Noted)
+  NEW    — Kimwolf IoT botmaster arrest (Noted)
+  NEW    — Tyler Buchanan Scattered Spider plea (Noted)
+  SKIP   — CVE-2026-31802 npm tar (already in 2026-05-26)
+  SKIP   — CVE-2026-9082 Drupal (federal deadline today, no material change since 2026-05-25)
+  SKIP   — CVE-2026-34926 TrendMicro Apex One (KEV-added 2026-05-21, dedup)
+  SKIP   — CVE-2026-31431 Copy Fail Linux LPE (extensively covered 2026-05-15+)
+  SKIP   — CVE-2025-55182 React2Shell (covered 2026-05-12+)
+  SKIP   — CVE-2026-41091 + 45498 Defender (covered 2026-05-22)
+  SKIP   — CVE-2026-42945 NGINX Rift (covered 2026-05-15)
+  SKIP   — CVE-2026-31635 Linux LPE (covered)
+  SKIP   — Anthropic Mythos / Glasswing (multiple noted, no new material primitive)
+  SKIP   — BitLocker YellowKey (covered as Noted MEMORY 2026-05-17)
+  SKIP   — Megalodon 5,500+ repos (MEMORY 2026-05-22 / 2026-05-23)
+  SKIP   — Schneier Wi-Fi sensing (OOS — surveillance research, not vulnerability)
+  SKIP   — Apple May 2026 batch (mobile / client-only OOS)
+  SKIP   — Project Zero Pixel 10 0-click (mobile/client OOS)
+  SKIP   — Frigate NVR CVE-2026-25643 (MEMORY 2026-05-18)
+  SKIP   — IBM HTTP Server multi-CVE batch (enterprise mainframe scope — minor surface, not core internet)
+  SKIP   — FBI Kali365 OAuth device-code (covered 2026-05-26)
+  SKIP   — Lazarus RemotePE (covered 2026-05-26, kept as Noted with explicit "no material change today")
+
+== STEP 5: Report files written ==
+[00:08:00Z] reports/2026/05/27/report.md — 6 News (1 Update + 4 News + 1 News batch with full body)
+                                          Actually: 1 Update + 4 News in JSON (Ghost UPDATE; Joomla, KnowledgeDeliver, SharePoint, FUXA all News)
+[00:08:00Z] reports/2026/05/27/report.json — 5 findings + 14 noted
+[00:08:00Z] reports/2026/05/27/debug.log — this file
+
+== STEP 6: Source coverage final ==
+[00:08:30Z] source_coverage:
+  total: 30
+  checked: 23 (30 - 7 unreachable)
+  with_findings: 9
+  unreachable: [cisa.gov, cisa.gov/known-exploited-vulnerabilities-catalog, attackerkb.com, msrc.microsoft.com/blog, hackerone.com/hacktivity, bugcrowd.com/disclosures, cert.gov.ua]
+  degraded: [packetstormsecurity.com, habr.com/ru/companies/tomhunter/articles, teletype.in/@cyberok, cve.mitre.org]
+
+== STEP 7: Validator output ==
+[00:09:00Z] python3 scripts/validate_report.py reports/2026/05/27/report.json
+⚠️  5 warning(s):
+   findings[0]: 'summary' is 312 chars (aim for <200)
+   findings[1]: 'summary' is 337 chars (aim for <200)
+   findings[2]: 'summary' is 360 chars (aim for <200)
+   findings[3]: 'summary' is 346 chars (aim for <200)
+   findings[4]: 'summary' is 491 chars (aim for <200)
+✅ reports/2026/05/27/report.json — valid
+
+== STEP 8: sources-meta + commit + push ==
+[00:09:30Z] sources-meta.md updated with 2026-05-27 entries
+[00:10:00Z] git add reports/2026/05/27 sources-meta.md
+[00:10:05Z] git commit -m "report: 2026-05-27"
+[00:10:08Z] git push
+
+End: 2026-05-27T00:10:00Z (approx)

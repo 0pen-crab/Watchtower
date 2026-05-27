@@ -1,0 +1,153 @@
+{
+  "date": "2026-05-27",
+  "findings": [
+    {
+      "type": "update",
+      "title": "Ghost CMS CVE-2026-26980 Active Mass Exploitation Confirmed — 700+ Sites Compromised in ClickFix Campaign (Harvard / Oxford / DuckDuckGo Among Victims)",
+      "threat_score": 8,
+      "previous_threat_score": 7,
+      "cve": "CVE-2026-26980",
+      "cvss": 9.4,
+      "affected_technology": "Ghost CMS Content API (versions prior to 6.19.1, patched 2026-02); unpatched-instance long tail still widely exposed in 2026-05",
+      "summary": "QiAnXin XLab (with Anthropic Claude as research assistant) disclosed 2026-05-25 active mass exploitation of CVE-2026-26980 across 700+ Ghost CMS sites — including Harvard, Oxford, and DuckDuckGo — using the SQL injection to harvest Admin API Keys and inject ClickFix-campaign JavaScript via Ghost's content APIs.",
+      "first_seen_at": "2026-05-25"
+    },
+    {
+      "type": "news",
+      "title": "Joomla! com_users Triple Critical Privilege-Escalation Batch — CVE-2026-48898 / 48899 / 48904 (CVSS 9.8 Each, Unauthenticated)",
+      "threat_score": 7,
+      "cve": "CVE-2026-48898, CVE-2026-48899, CVE-2026-48904",
+      "cvss": 9.8,
+      "affected_technology": "Joomla! CMS 4.0.0 through 5.4.5 (current stable LTS line) and 6.0.0 through 6.1.0 (pre-release); com_users component — batch task endpoint + group editing webservice",
+      "summary": "Three coordinated CVSS 9.8 unauthenticated privilege-escalation CVEs in Joomla!'s com_users component published to NVD 2026-05-26 — two on the batch task endpoint and one on the group editing webservice endpoint — affecting Joomla 4.x / 5.x / 6.x with no public PoC yet but widely scanned given the Drupalgeddon-class trajectory pattern.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-05-26"
+    },
+    {
+      "type": "news",
+      "title": "Digital Knowledge KnowledgeDeliver Zero-Day RCE — CVE-2026-5426 ASP.NET ViewState Deserialization via Hardcoded machineKey, Godzilla Web Shell + Cobalt Strike Beacon Deployment",
+      "threat_score": 6,
+      "cve": "CVE-2026-5426",
+      "cvss": 7.5,
+      "affected_technology": "Digital Knowledge KnowledgeDeliver (Japanese-market Learning Management System, ASP.NET) — deployments prior to 2026-02-24 vendor patch",
+      "summary": "Mandiant + Google Threat Intelligence Group jointly disclosed 2026-05-25 active zero-day exploitation of KnowledgeDeliver — hardcoded ASP.NET machineKey values in web.config enable unauthenticated ViewState forgery → LosFormatter.Deserialize() RCE; observed payloads include Godzilla web shell + Cobalt Strike Beacon against predominantly Japanese deployments.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-05-25"
+    },
+    {
+      "type": "news",
+      "title": "Microsoft SharePoint Server CVE-2026-45659 Post-Auth Deserialization RCE (CVSS 8.8) — Late-Surfacing From May 2026 Patch Tuesday",
+      "threat_score": 5,
+      "cve": "CVE-2026-45659",
+      "cvss": 8.8,
+      "affected_technology": "Microsoft Office SharePoint Server (on-prem versions per MSRC affected-products table); CWE-502 deserialization of untrusted data, network-reachable, authenticated low-privilege attacker",
+      "summary": "NVD-published 2026-05-22 (modified 2026-05-26) authenticated SharePoint Server RCE via deserialization of untrusted data with CVSS 8.8 — not featured in mainstream Patch Tuesday relayer summaries, surfaces via THN late-attention coverage 2026-05-25 / 2026-05-26 (continues the MEMORY 2026-05-14 Patch Tuesday CVE-list relayer divergence pattern).",
+      "discovery_latency": "late",
+      "first_seen_at": "2026-05-22"
+    },
+    {
+      "type": "news",
+      "title": "FUXA Industrial SCADA Multi-CVE Pre-Auth RCE Batch — CVE-2026-43945 / 43946 / 43947 Plus 3 Companion Critical GHSA Advisories",
+      "threat_score": 6,
+      "cve": "CVE-2026-43945, CVE-2026-43946, CVE-2026-43947",
+      "cvss": null,
+      "affected_technology": "FUXA open-source web-based SCADA / HMI / IIoT platform (github.com/frangoteam/FUXA); 10 advisories Feb-May 2026 spanning multiple pre-auth RCE primitives (script-test-mode authz bypass, path manipulation + config injection, arbitrary upload-API file write, tag-write, scheduler-write, hardcoded JWT signing secret)",
+      "summary": "GitHub Security Advisory database surfaced 2026-05-26 a coordinated FUXA SCADA / HMI multi-CVE batch including pre-auth RCE via Script Test Mode authorization bypass (43947), pre-auth RCE via path manipulation + configuration injection (43945), arbitrary tag-value disclosure (43946), and three companion critical GHSA advisories spanning upload-API arbitrary file write + arbitrary device-tag and scheduler write — extending the self-hosted-default-no-auth pattern into industrial-OT scope.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-05-26"
+    }
+  ],
+  "noted": [
+    {
+      "cve": "Not yet assigned",
+      "product": "MCP Server SSRF Pair — Anthropic mcp-server-fetch + Microsoft playwright-mcp (Full Disclosure, 2026-05-25)",
+      "summary": "Coordinated server-side request forgery (CVSS 7.5) in Anthropic's mcp-server-fetch and Microsoft's playwright-mcp implementations; already public via project GitHub issues — extends the MCP-server unauth RCE / authz bypass pattern (MEMORY 2026-04) to nine documented MCP-server CVEs in 60 days."
+    },
+    {
+      "cve": "CVE-2026-48686, CVE-2026-48688, CVE-2026-48692, CVE-2026-48695",
+      "product": "FastNetMon BGP NLRI Decoder + gRPC API + MikroTik Plugin Multi-CVE Batch (2026-05-26 NVD)",
+      "summary": "FastNetMon Community Edition has stack-based buffer overflow in decode_bgp_subnet_encoding_ipv4_raw() (CVE-2026-48686 CVSS 9.8) plus unauthenticated gRPC API on port 50052 (48692) and OS command injection in MikroTik plugin (48695) — pre-auth RCE on BGP-based DDoS detection platform deployed by ISPs / hosting providers."
+    },
+    {
+      "cve": "CVE-2026-40564",
+      "product": "Apache Flink Kubernetes Operator SSRF + Local File Access (oss-security 2026-05-26)",
+      "summary": "Gyula Fora disclosed SSRF + local file access in Apache Flink Kubernetes Operator — continues the May 2026 Apache CVE wave (MINA / CXF / HTTP / Tomcat / OFBiz / Wicket / Syncope / Shiro / Flink); K8s-Operator-scope impact."
+    },
+    {
+      "cve": "CVE-2026-42496, CVE-2026-42497, CVE-2026-9538",
+      "product": "Perl Archive::Tar Symlink + Hardlink Path-Traversal + Memory-Exhaustion Batch (oss-security 2026-05-26)",
+      "summary": "Stig Palmquist disclosed Archive::Tar (Perl) symlink extraction (<3.08, CVE-2026-42496), hardlink extraction (<3.08, CVE-2026-42497), and memory exhaustion via crafted size field (<3.10, CVE-2026-9538); joins npm tar CVE-2026-31802 in the broader tarball-extraction symlink-class pattern."
+    },
+    {
+      "cve": "CVE-2026-8376",
+      "product": "Perl Regex Compilation Heap Buffer Overflow (oss-security 2026-05-26)",
+      "summary": "Timothy Legge disclosed a heap buffer overflow in Perl 5.43.10 regex compilation triggered by repeated-pattern compilation; relevant for CGI / log-processing / data-pipeline workloads where Perl compiles attacker-influenced regex."
+    },
+    {
+      "cve": "CVE-2026-33137, CVE-2026-23734",
+      "product": "XWiki Platform Critical Pair — Unauth XAR Import via REST + Path Traversal in ssx/jsx Endpoints (GitHub Advisories 2026-05-26)",
+      "summary": "CVE-2026-33137 unauthenticated XAR import via REST /wikis/{wikiName} + CVE-2026-23734 path traversal in ssx/jsx endpoints when using leading slash — pre-auth pair on enterprise wiki / knowledge-management platform widely deployed at research/education institutions."
+    },
+    {
+      "cve": "CVE-2026-34472, CVE-2026-34473, CVE-2026-34474, CVE-2021-21735",
+      "product": "ZTE ZXHN Router Multi-CVE Batch — 17+ Models / 140k Exposed (Full Disclosure 2026-05-25)",
+      "summary": "m.nageh disclosed unauthenticated DoS via oversized POST body across 17+ ZTE ZXHN models (CVE-2026-34473 CVSS 7.5), H188A V6 authentication bypass via pre-login wizard credential leakage (34472), and H298A/H108N admin credential exposure (34474); ~140k publicly-exposed devices; H108N marked EOL without patch."
+    },
+    {
+      "cve": "Not assigned",
+      "product": "Charter Communications Breach Confirmed by ShinyHunters Extortion (BleepingComputer 2026-05-26)",
+      "summary": "Charter Communications confirmed a breach after ShinyHunters extortion threat — pattern continuation of the CoinbaseCartel cluster (Grafana / Salesforce / Drupal-PSA wave 2026-05); customer-data class with credential-reuse / phishing-pretext implications."
+    },
+    {
+      "cve": "Not assigned",
+      "product": "7-Eleven 185k-Record Breach Subset Confirmed (BleepingComputer 2026-05-26)",
+      "summary": "7-Eleven confirmed exposure of 185,000 individuals attributed to ShinyHunters; consistent with the prior 2026-05-19 600k 7-Eleven Salesforce breach (MEMORY 2026-05-19) — subset / re-attribution rather than new event."
+    },
+    {
+      "cve": "Not assigned",
+      "product": "MuddyWater (Iran/MOIS) DLL Side-Loading Campaign Across 9 Countries (THN 2026-05-26)",
+      "summary": "MuddyWater DLL-side-loading campaign targeting industrial / electronics manufacturing, education, and financial sectors across 9 countries; joins prior MuddyWater Teams-helpdesk attribution (MEMORY 2026-05-07)."
+    },
+    {
+      "cve": "Not assigned",
+      "product": "Nimbus Manticore (Iran) MiniFast Backdoor — Allegedly AI-Assisted Development (THN 2026-05-26)",
+      "summary": "Iranian Nimbus Manticore cluster deployed MiniFast backdoor; researchers attribute code patterns to AI-assisted development — second documented AI-assisted-development attribution against an active threat-actor cluster (joins Google GTIG ITW AI-generated 0-day, MEMORY 2026-05-12)."
+    },
+    {
+      "cve": "Not assigned",
+      "product": "Lazarus RemotePE Memory-Only RAT Continued Coverage (THN 2026-05-26)",
+      "summary": "DPRK-attributed multi-stage attack chain deploying memory-resident-only RAT against DeFi / crypto sector — covered in our 2026-05-26 report, no material change today."
+    },
+    {
+      "cve": "Not assigned",
+      "product": "Kimwolf IoT Botnet Botmaster Arrest — Record 30 Tbps DDoS (Krebs 2026-05-26)",
+      "summary": "23-year-old Ottawa resident operating Kimwolf IoT botnet arrested; >25,000 attack commands issued, peak 30 Tbps DDoS (record), >$1M aggregate victim losses — short-term shifts in IoT-botnet-as-a-service supply likely."
+    },
+    {
+      "cve": "Not assigned",
+      "product": "Scattered Spider Member Tyler Buchanan Guilty Plea (Krebs 2026-05-26)",
+      "summary": "British national Tyler Buchanan, senior Scattered Spider member, pleaded guilty to wire fraud + identity theft on 2022 phishing campaigns; >$8M stolen cryptocurrency — sustained legal pressure on The Com ecosystem."
+    }
+  ],
+  "source_coverage": {
+    "total": 30,
+    "checked": 23,
+    "with_findings": 9,
+    "unreachable": [
+      "cisa.gov",
+      "cisa.gov/known-exploited-vulnerabilities-catalog",
+      "attackerkb.com",
+      "msrc.microsoft.com/blog",
+      "hackerone.com/hacktivity",
+      "bugcrowd.com/disclosures",
+      "cert.gov.ua"
+    ],
+    "degraded": [
+      "packetstormsecurity.com",
+      "habr.com/ru/companies/tomhunter/articles",
+      "teletype.in/@cyberok",
+      "cve.mitre.org"
+    ]
+  },
+  "full_report": "reports/2026/05/27/report.md"
+}
