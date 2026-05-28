@@ -1,0 +1,173 @@
+{
+  "date": "2026-05-28",
+  "findings": [
+    {
+      "type": "news",
+      "title": "LiteSpeed cPanel Plugin CVE-2026-48172 (CVSS 10.0) — Any-User-to-Root Privilege Escalation Actively Exploited, KEV-Listed With 4-Day Federal Deadline",
+      "threat_score": 9,
+      "cve": "CVE-2026-48172",
+      "cvss": 10.0,
+      "affected_technology": "LiteSpeed cPanel/WHM Plugin (versions 2.3 → 2.4.4, fixed in 2.4.5; WHM Plugin 5.3.1.0 bundles cPanel plugin 2.4.7); shared-hosting environments at hundreds of thousands of multi-tenant sites",
+      "summary": "Improper privilege management in the lsws.redisAble function lets any authenticated cPanel user execute arbitrary scripts with root privileges; LiteSpeed confirmed in-the-wild exploitation and CISA added the CVE to KEV on 2026-05-26 with a 4-day Federal-civilian remediation deadline of 2026-05-29.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-05-26"
+    },
+    {
+      "type": "news",
+      "title": "Samba Unauth RCE Pair — CVE-2026-4408 (DCE/RPC SAMR %u, CVSS 10.0) + CVE-2026-4480 (Printing %J, CVSS 10.0)",
+      "threat_score": 8,
+      "cve": "CVE-2026-4408, CVE-2026-4480",
+      "cvss": 10.0,
+      "affected_technology": "Samba (all currently-supported branches prior to 4.24.3 / 4.23.8 / 4.22.10) — file servers + classic (non-AD) domain controllers (CVE-2026-4408) + print servers using printing=bsd or printing=sysv (CVE-2026-4480); printing=cups / iprint not vulnerable",
+      "summary": "Samba shipped a six-CVE batch 2026-05-26 led by two CVSS-10.0 unauth RCE primitives via unescaped shell metacharacters in %u substitution (DCE/RPC SAMR check_password_script) and %J substitution (printing print_command), both yielding network-reachable unauthenticated code execution on standard misconfigured deployments.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-05-26"
+    },
+    {
+      "type": "news",
+      "title": "Gitea CVE-2026-27771 — Unauthenticated Private Container Image Exposure on 30,000+ Internet-Facing Instances (4-Year Latent)",
+      "threat_score": 7,
+      "cve": "CVE-2026-27771",
+      "cvss": null,
+      "affected_technology": "Gitea self-hosted Git platform (all versions prior to 1.26.2, fixed 1.26.2) — Container Registry feature; 30,000+ internet-facing instances across 30+ countries (concentration in CN/US/DE/FR/UK; healthcare, aerospace, retail, ISP sectors)",
+      "summary": "Noscope disclosed 2026-05-27 a four-year-latent authorization flaw where the 'private' designation on Gitea container repositories did not enforce authentication on image pulls — every private container image on a vulnerable Gitea instance is pullable by any unauthenticated remote attacker, exposing the embedded build-time secrets (DB creds, API keys, TLS certs, environment variables) by default.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-05-27"
+    },
+    {
+      "type": "news",
+      "title": "SymJack — Symlink-Hijack Supply Chain Attack Confirmed Against Six AI Coding Agents (Claude Code, Gemini/Antigravity, Cursor, Copilot CLI, Grok Build, Codex CLI)",
+      "threat_score": 7,
+      "cve": "Not yet assigned",
+      "cvss": null,
+      "affected_technology": "Claude Code, Gemini CLI / Antigravity CLI, Cursor Agent CLI, GitHub Copilot CLI, Grok Build, OpenAI Codex CLI; CI environments with non-interactive auto-approve modes are particularly affected",
+      "summary": "Adversa AI published the SymJack technique 2026-05-27 — a malicious repo's renamed symlink causes the AI agent's approved file operation (cp/mv) to silently overwrite the agent's own configuration with an attacker-controlled MCP server registration, executing arbitrary code on the developer's machine at next agent restart and chaining end-to-end through CI auto-approve.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-05-27"
+    },
+    {
+      "type": "news",
+      "title": "Jenkins Security Advisory 2026-05-27 — 11-CVE Plugin Batch Including LDAP/AD Referral RCE and Email Extension Arbitrary File Read",
+      "threat_score": 5,
+      "cve": "CVE-2026-48916, CVE-2026-48917, CVE-2026-48918, CVE-2026-48919, CVE-2026-48920, CVE-2026-48921, CVE-2026-48922, CVE-2026-48923, CVE-2026-48924, CVE-2026-48925, CVE-2026-48926, CVE-2026-48927, CVE-2026-9674",
+      "cvss": null,
+      "affected_technology": "Multiple Jenkins plugins: LDAP, Active Directory, Email Extension, Pipeline: Groovy Libraries, Credentials Binding, AppSpider, Bitbucket OAuth, GitHub Integration, Multijob, Job Import, buildgraph-view (no fix available for buildgraph-view)",
+      "summary": "Jenkins shipped an 11-vulnerability plugin batch 2026-05-27 — highest-impact items are LDAP/AD plugins following malicious referrals to rmi:// URLs for Java-deser RCE on the controller, Email Extension Plugin reading arbitrary controller files via file:-scheme URLs in image inlining, Pipeline: Groovy Libraries symlink-bypass, and Credentials Binding path-traversal.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-05-27"
+    },
+    {
+      "type": "news",
+      "title": "Pretalx CVE-2026-41241 — Stored XSS via Organiser Search Auto-Accepted Talk Submissions; Researcher Got Accepted at 40 Conferences",
+      "threat_score": 4,
+      "cve": "CVE-2026-41241",
+      "cvss": null,
+      "affected_technology": "Pretalx open-source conference CFP management platform (versions prior to 2026.1.0, fixed 2026.1.0) — widely used at PyCon US, fwd:cloudsec, postmarketOS Conference, Open Data Hub Day, and major security conferences",
+      "summary": "Sonar / Novee disclosed a stored XSS in Pretalx's organiser search interface that lets a speaker inject JS via submission titles / display names / email addresses; PoC was a single attacker auto-applying to 40 conferences and getting accepted at every one by programmatically clicking 'Accept' when the organiser searched.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-05-27"
+    },
+    {
+      "type": "update",
+      "title": "GlassWorm Botnet C2 Disruption (CrowdStrike + Google + Shadowserver, 2026-05-26 14:00 UTC) — All Four C2 Channels Severed",
+      "threat_score": 5,
+      "previous_threat_score": 7,
+      "cve": "Not assigned",
+      "cvss": null,
+      "affected_technology": "GlassWorm developer-targeting botnet — operative since early 2025; previously tracked as GlassWorm v2 (73 Open VSX sleeper extensions, 320+ artifacts since 2025-12-21, MEMORY 2026-04-28); compromised VSCode/Cursor/Positron/Windsurf/VSCodium extensions + 300+ GitHub repos + npm/Python postinstall packages",
+      "summary": "CrowdStrike + Google + Shadowserver executed a coordinated 2026-05-26 takedown of all four GlassWorm C2 channels (Solana blockchain, BitTorrent DHT, Google Calendar event titles, traditional VPS) — new-infection blast radius drops sharply, but compromised endpoints retain implants and stolen credentials (SSH/git/cloud/browser/crypto) remain in attacker possession warranting retroactive hunts.",
+      "first_seen_at": "2026-04-28"
+    }
+  ],
+  "noted": [
+    {
+      "cve": "Not assigned",
+      "product": "mouse5212-super-formatter npm package targeting Anthropic Claude /mnt/user-data workspace (Malware-Slop, THN 2026-05-27)",
+      "summary": "First publicly-tracked malicious npm package specifically exfiltrating Anthropic Claude's /mnt/user-data workspace files via postinstall script to attacker GitHub repos using victim's GitHub token or hardcoded fallback — extends AI-agent-config-as-code class to AI-agent data-dirs; poor OPSEC (leaked token) suggests AI-assisted authorship."
+    },
+    {
+      "cve": "CVE-2026-40914",
+      "product": "Apache Artemis / ActiveMQ Artemis STOMP Routing-Type Modification (oss-security 2026-05-27)",
+      "summary": "STOMP protocol address routing-type modification by authenticated users without createAddress permission; extends the CVE-2025-27427 pattern in Apache ActiveMQ Artemis."
+    },
+    {
+      "cve": "CVE-2026-8450, CVE-2026-48962, CVE-2026-48961, CVE-2026-48959, CVE-2025-15649",
+      "product": "Perl CPAN Stack Batch — HTTP::Daemon OS Command Injection + IO::Compress Arbitrary Code Exec + IO::Uncompress Crash/DoS (oss-security 2026-05-27)",
+      "summary": "HTTP::Daemon <6.17 OS command injection via send_file() (CVE-2026-8450); IO::Compress <2.220 arbitrary code execution via File::GlobMapper (CVE-2026-48962); IO::Compress zipdetails-CLI undefined-sub crash (CVE-2026-48961); IO::Uncompress::Unzip CPU exhaustion in fastForward (CVE-2026-48959); IO::Uncompress::Unzip uncaught-exception (CVE-2025-15649) — broad CPAN-stack security batch."
+    },
+    {
+      "cve": "CVE-2026-49010",
+      "product": "OpenStack Swift s3api Chunked Upload DoS (oss-security 2026-05-27)",
+      "summary": "Denial of service via truncated s3api chunked upload in OpenStack Swift; affects S3-compatibility layer used by private cloud / scientific computing deployments."
+    },
+    {
+      "cve": "CVE-2026-43121",
+      "product": "Linux Kernel io_uring/zcrx Race Condition → Double-Free + 4-Byte OOB Write (snailsploit / penligent.ai 2026-05-27)",
+      "summary": "Concurrent scrub + refill paths corrupt niov freelist in io_uring zerocopy-receive subsystem → kernel arbitrary code execution; requires CAP_NET_ADMIN + page-pool-backed NIC (mlx5/nfp) + CONFIG_IO_URING_ZCRX=y. LPE-only — noted for K8s control-plane / multi-tenant Linux operators given the page-cache-LPE-to-container-escape trajectory (MEMORY 2026-05-16)."
+    },
+    {
+      "cve": "CVE-2026-8832",
+      "product": "WPCode WordPress Plugin (PT-Security dbugs PT-2026-43573, 2026-05-27)",
+      "summary": "WPCode WordPress code-snippet-management plugin (CVSS 8.8) — auth-bypass-to-RCE class consistent with the May 2026 WordPress plugin pattern (Burst Statistics, Funnel Builder, AI Engine)."
+    },
+    {
+      "cve": "CVE-2026-4802",
+      "product": "Cockpit on Red Hat Enterprise Linux (opencve.io 2026-05-27)",
+      "summary": "Remote command execution via unsanitised parameters in system-logs UI (CVSS 8.0); shell metacharacter injection in crafted URLs against Cockpit web management UI on RHEL / Fedora / CentOS Stream."
+    },
+    {
+      "cve": "CVE-2026-37711",
+      "product": "Dolibarr ERP/CRM v22.0.0-v22.0.4, v24.0.0-alpha (opencve.io 2026-05-27)",
+      "summary": "Remote code execution (CVSS 7.3) in core actions file of widely-deployed SMB ERP/CRM platform."
+    },
+    {
+      "cve": "CVE-2026-48687",
+      "product": "FastNetMon Community Edition Juniper-router Integration Plugin (opencve.io 2026-05-27)",
+      "summary": "OS command injection (CVSS 8.1) via unsanitised _log() concatenation in FastNetMon's Juniper-router plugin; additional CVE to the FastNetMon BGP NLRI / gRPC / MikroTik batch already Noted 2026-05-27."
+    },
+    {
+      "cve": "Not assigned",
+      "product": "Stark Industries Solutions Hosting Infrastructure Seizure — Netherlands (Krebs 2026-05-25)",
+      "summary": "Dutch authorities seized 800+ servers and arrested two operators of a Russian-staging-ground hosting provider previously used for DDoS + EU-targeted disinformation; operational / infrastructure-level disruption joining the Fox Tempest MSaaS (2026-05-19) + GlassWorm (2026-05-26) May 2026 takedown cluster."
+    },
+    {
+      "cve": "CVE-2026-1933, CVE-2026-2340, CVE-2026-3012, CVE-2026-3238",
+      "product": "Samba Companion Advisories (2026-05-26 Release)",
+      "summary": "Lower-impact items in the same Samba 4.24.3 / 4.23.8 / 4.22.10 release as the CVSS-10 pair: missing access checks on reparse-point operations (1933), WORM vfs module overwrite (2340), auto-enrollment GPO installing CA cert over plain HTTP without verification (3012), AD DC WINS server DoS (3238)."
+    },
+    {
+      "cve": "CVE-2026-29075",
+      "product": "Mesa benchmarks.yml CI Workflow Arbitrary Code Execution (GHSL-2025-009, GitHub Security Lab 2026-05-27)",
+      "summary": "Arbitrary code execution in Mesa's benchmarks.yml CI workflow; workflow-file scope limits impact to CI-job-compromise rather than runtime."
+    },
+    {
+      "cve": "Not yet assigned",
+      "product": "Chatwoot SQL Injection GHSL-2026-059 (GitHub Security Lab 2026-05-27)",
+      "summary": "SQL injection in Chatwoot open-source customer-support platform discovered by Man Yue Mo; no CVE assigned yet."
+    }
+  ],
+  "source_coverage": {
+    "total": 30,
+    "checked": 20,
+    "with_findings": 9,
+    "unreachable": [
+      "cisa.gov",
+      "cisa.gov/known-exploited-vulnerabilities-catalog",
+      "attackerkb.com",
+      "msrc.microsoft.com/blog",
+      "hackerone.com/hacktivity",
+      "bugcrowd.com/disclosures",
+      "cert.gov.ua",
+      "cve.org",
+      "googleprojectzero.blogspot.com",
+      "nvd.nist.gov"
+    ],
+    "degraded": [
+      "packetstormsecurity.com",
+      "habr.com/ru/companies/tomhunter/articles",
+      "teletype.in/@cyberok",
+      "cve.mitre.org"
+    ]
+  },
+  "full_report": "reports/2026/05/28/report.md"
+}
