@@ -1,0 +1,131 @@
+{
+  "date": "2026-05-29",
+  "findings": [
+    {
+      "type": "news",
+      "title": "FortiClient EMS CVE-2026-35616 — Pre-Auth API Bypass Exploited In-Wild to Push PowerShell Stealer Fleet-Wide",
+      "threat_score": 9,
+      "cve": "CVE-2026-35616",
+      "cvss": 9.1,
+      "affected_technology": "Fortinet FortiClient Endpoint Management Server (EMS) <7.4.7",
+      "summary": "Pre-auth API bypass in FortiClient EMS lets attackers modify endpoint policies and push malicious PowerShell to every managed endpoint as legitimate operation; Arctic Wolf detected active in-wild exploitation in May 2026 dropping FortiEndpoint_Patch.exe Chromium/Gecko stealer, fixed in 7.4.7+.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-05-28"
+    },
+    {
+      "type": "news",
+      "title": "Gogs — Unpatched 0-Day RCE via Branch-Name Argument Injection into git rebase --exec (CVSS 9.4, MSF module)",
+      "threat_score": 8,
+      "cve": "Not yet assigned",
+      "cvss": 9.4,
+      "affected_technology": "Gogs self-hosted Git platform (all supported builds; rebase-merge-enabled repos)",
+      "summary": "Authenticated user crafts a branch name that injects --exec into git rebase during 'Rebase before merging' pull-request merge, achieving RCE on the Gogs server; disclosed to maintainers 2026-03-17, unpatched as of 2026-05-28 public disclosure, with a Metasploit module available.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-05-28"
+    },
+    {
+      "type": "news",
+      "title": "Casdoor VU#780781 — Nine-CVE SAML/JWT/MFA Identity-Provider Bypass Batch, No Patch (CVE-2026-9090…9098)",
+      "threat_score": 8,
+      "cve": "CVE-2026-9090, CVE-2026-9091, CVE-2026-9092, CVE-2026-9093, CVE-2026-9094, CVE-2026-9095, CVE-2026-9096, CVE-2026-9097, CVE-2026-9098",
+      "cvss": null,
+      "affected_technology": "Casdoor open-source IAM/SSO ≤2.362.0",
+      "summary": "CERT/CC VU#780781 details nine concurrent unpatched identity bypasses in Casdoor including arbitrary SAML signing-cert acceptance, MFA bypass via social-login binding, account takeover via unverified email, cross-org token exchange, SAML replay/audience/timing flaws, and missing JWT revocation checks; vendor coordination failed and no patches are available.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-05-28"
+    },
+    {
+      "type": "news",
+      "title": "Veeam Backup & Replication 13 + Service Provider Console — CVSS-9.4 MSP-Console Unauth Script Exec (CVE-2026-32996/32997/32998)",
+      "threat_score": 7,
+      "cve": "CVE-2026-32996, CVE-2026-32997, CVE-2026-32998",
+      "cvss": 9.4,
+      "affected_technology": "Veeam Backup & Replication 13.0.1, Veeam Service Provider Console ≤9.2.1, Veeam Agent for Windows",
+      "summary": "CVE-2026-32998 (CVSS 9.4) enables RCE on the multi-tenant VSPC via unsafe alarm-management script-exec parameters, CVE-2026-32997 (CVSS 8.6) lets Backup Admin write arbitrary files on Linux Veeam appliance, CVE-2026-32996 is Windows agent LPE; fixed in VBR 13.0.2.29 and VSPC 9.2.1.33875, no confirmed ITW yet but Veeam infrastructure is a top ransomware target.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-05-28"
+    },
+    {
+      "type": "news",
+      "title": "DAEMON Tools Lite Supply-Chain Compromise (CVE-2026-8398) — Signed Trojanized Installers + KEV-Added 2026-05-27",
+      "threat_score": 7,
+      "cve": "CVE-2026-8398",
+      "cvss": null,
+      "affected_technology": "DAEMON Tools Lite (Windows 12.5.0.2421–12.5.0.2434) signed by AVB Disc Soft",
+      "summary": "Attackers compromised AVB Disc Soft's official daemon-tools.cc distribution channel ~2026-04-08→2026-05-05, re-signing trojanized DTHelper/DiscSoftBusServiceLite/DTShellHlp binaries with the legitimate code-signing certificate; Kaspersky observed several thousand infections across 100+ countries and CISA added CVE-2026-8398 to KEV on 2026-05-27.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-05-28"
+    },
+    {
+      "type": "news",
+      "title": "GreyVibe (Russia-Aligned) — Industrial-Scale ChatGPT/Gemini/Ideogram-Powered Phishing + AI-Assisted RAT Development against Ukraine",
+      "threat_score": 6,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Threat-actor activity targeting Ukrainian gov/military/civilian/business orgs",
+      "summary": "BleepingComputer + SecurityWeek detail a likely-Russian threat cluster active since August 2025 that has scaled ChatGPT/Gemini/Ideogram AI usage to industrial levels for phishing lures and custom obfuscator/RAT development (LegionRelay, PhantomRelay, FallSpy, LOOKVALPS/JS, DAYLIGHT, TEASOUP), making AI-assistance baseline tradecraft across multi-geo threat clusters and obsoleting linguistic-quality phishing filters.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-05-28"
+    },
+    {
+      "type": "update",
+      "title": "TanStack + Nx Console KEV-Added 2026-05-27 (CVE-2026-45321 + CVE-2026-48027) — Federal Deadline 2026-06-10",
+      "threat_score": 8,
+      "previous_threat_score": 7,
+      "cve": "CVE-2026-45321, CVE-2026-48027",
+      "cvss": null,
+      "affected_technology": "TanStack npm packages + Nx Console VS Code extension (Mini Shai-Hulud Wave 2 cluster)",
+      "summary": "CISA added CVE-2026-45321 (TanStack OIDC/cache-poisoning supply-chain) and CVE-2026-48027 (Nx Console malicious extension v18.95.0 published briefly 2026-05-19) to KEV alongside CVE-2026-8398 on 2026-05-27, formalizing federal compliance pressure on the Wave 2 monetization paths previously covered 2026-05-21/22.",
+      "first_seen_at": "2026-05-21"
+    },
+    {
+      "type": "update",
+      "title": "Netherlands Stark Industries Seizure — Arrests Named: Andrey Nesterenko (MIRhosting) + Youssef Zinad (WorkTitans BV)",
+      "threat_score": 5,
+      "previous_threat_score": 5,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Bulletproof-hosting infrastructure (MIRhosting, WorkTitans BV, the[.]hosting)",
+      "summary": "Krebs follow-up names the two arrested operators behind the 800+ servers seized 2026-05-27 across five Netherlands locations and maps their corporate structure to the PQHosting (sanctioned May 2025) → Stark Industries Solutions bulletproof-hosting lineage used for pro-Russian Danish-municipal-election attacks 2025-11-13→19.",
+      "first_seen_at": "2026-05-26"
+    }
+  ],
+  "noted": [
+    {"cve": "CVE-2025-48977", "product": "Apache Ignite REST HTTP default config", "summary": "Arbitrary file read in default REST HTTP configuration (oss-security 2026-05-28); monitor for unauth-RCE escalation given typical internal-network deployment."},
+    {"cve": "CVE-2026-40914", "product": "Apache Artemis/ActiveMQ STOMP", "summary": "STOMP protocol handler can modify address routing-type (oss-security 2026-05-27) — likely multi-tenant authz boundary issue."},
+    {"cve": "CVE-2026-41565", "product": "CryptX <0.088_001", "summary": "Stack buffer overflow in four AEAD decrypt_verify helpers (oss-security 2026-05-28); part of Perl crypto stack, expect ecosystem batch absorption."},
+    {"cve": "CVE-2026-46740", "product": "Mojolicious::Plugin::Statsd ≤0.04", "summary": "Metric injection (oss-security 2026-05-28) — continues long-tail Perl/CPAN ecosystem batch pattern."},
+    {"cve": "CVE-2026-9658", "product": "Plack::Middleware::Security::Common <0.13.1", "summary": "Header injection in request processing (oss-security 2026-05-28) — Perl PSGI middleware, niche."},
+    {"cve": "CVE-2026-8647", "product": "Crypt::ScryptKDF ≤0.010", "summary": "Insecure RNG fallback when CSPRNG modules unavailable (oss-security 2026-05-26) — silently weakens KDF strength."},
+    {"cve": "Multiple", "product": "Open Babel 3.2.0", "summary": "24-CVE file-format parser batch (oss-security 2026-05-28) — open-source chemistry toolkit, primarily client-side parsing, OOS unless exposed via SaaS file-conversion endpoints."},
+    {"cve": "CVE-2026-41045, CVE-2026-41046, CVE-2026-41047, CVE-2026-41048", "product": "qSnapper D-Bus", "summary": "Privileged D-Bus service issues on Linux (oss-security 2026-05-26); local-only, OOS."},
+    {"cve": "Not yet assigned", "product": "Linux kernel/cifs-utils CIFSwitch", "summary": "Local root via forged cifs.spnego upcall (oss-security 2026-05-28); LPE-only, OOS but absorb if container-escape primitive emerges."},
+    {"cve": "Multiple", "product": "OpenStack Keystone + Neutron", "summary": "Keystone credential-delegation/authz bypass + Neutron tagging-policy bypass (oss-security 2026-05-28); multi-tenant cloud platform authz bugs, impact depends on tenant model."},
+    {"cve": "CVE-2026-33825, CVE-2026-41091, CVE-2026-45498", "product": "Microsoft 'slams' Chaotic Eclipse / Nightmare-Eclipse disclosures", "summary": "THN coverage 2026-05-28 of GitHub + GitLab account removals refers to already-disclosed BlueHammer (CVE-2026-33825, KEV April 2026) + RedSun/UnDefend (KEV 2026-05-20) — no new vulnerability, disclosure-policy drama only."},
+    {"cve": "CVE-2026-47759", "product": "TinyMCE WYSIWYG editor", "summary": "Stored XSS in widely-deployed editor (CVSS 8.7, dbugs PT-2026-44388, 2026-05-28); embedded in many SaaS admin panels, monitor for escalation."},
+    {"cve": "CVE-2026-44798", "product": "Nautobot", "summary": "NVD published HIGH-severity assignment 2026-05-28; already noted 2026-05-14 and severity-tier confirmation is not material change."},
+    {"cve": "Not assigned", "product": "FBI fake-FIFA World Cup fraud sites warning", "summary": "BleepingComputer 2026-05-28 consumer-fraud alert; defensive interest only as phishing-lure-watchlist input."}
+  ],
+  "source_coverage": {
+    "total": 30,
+    "checked": 21,
+    "with_findings": 8,
+    "unreachable": [
+      "cisa.gov",
+      "cisa.gov/known-exploited-vulnerabilities-catalog",
+      "attackerkb.com",
+      "msrc.microsoft.com/blog",
+      "hackerone.com/hacktivity",
+      "bugcrowd.com/disclosures",
+      "cve.org",
+      "cve.mitre.org",
+      "cert.gov.ua"
+    ],
+    "degraded": [
+      "packetstormsecurity.com",
+      "habr.com/ru/companies/tomhunter/articles",
+      "teletype.in/@cyberok"
+    ]
+  },
+  "full_report": "reports/2026/05/29/report.md"
+}
