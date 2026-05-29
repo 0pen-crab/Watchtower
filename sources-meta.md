@@ -2,13 +2,13 @@
 
 | Source | Findings | Noted | Empty | Last Hit |
 |--------|----------|-------|-------|----------|
-| bleepingcomputer.com | 56 | 51 | 1 | 2026-05-28 (LiteSpeed cPanel CVE-2026-48172 KEV-listed any-user-to-root — NEWS; GlassWorm botnet takedown — UPDATE; Stark Industries seizure relay — NOTED) |
-| thehackernews.com | 49 | 27 | 0 | 2026-05-28 (Gitea CVE-2026-27771 unauth private container image exposure — NEWS; mouse5212-super-formatter Malware-Slop npm targeting Claude /mnt/user-data — NOTED) |
+| bleepingcomputer.com | 57 | 52 | 1 | 2026-05-29 (GreyVibe Russia AI-augmented Ukraine ops — NEWS; Netherlands MIRhosting/WorkTitans arrests Nesterenko+Zinad — UPDATE; FBI fake-FIFA fraud — NOTED) |
+| thehackernews.com | 52 | 28 | 0 | 2026-05-29 (FortiClient EMS CVE-2026-35616 active exploit — NEWS; Gogs unpatched 0-day RCE Burgess/Rapid7 — NEWS; DAEMON Tools Lite CVE-2026-8398 supply-chain + KEV — NEWS; Microsoft slams Chaotic Eclipse disclosure drama — NOTED) |
 | cisa.gov | 0 | 0 | 25 | — |
-| securityweek.com | 43 | 24 | 4 | 2026-05-28 (LiteSpeed cPanel zero-day + Pretalx CVE-2026-41241 100% talk acceptance + SymJack AI-coding-agent supply-chain — all NEWS; GlassWorm takedown — UPDATE) |
+| securityweek.com | 43 | 24 | 4 | 2026-05-29 (FortiClient EMS CVE-2026-35616 + GreyVibe corroboration — secondary confirmation only; primary attribution credited to BC/THN) |
 | github.com/search | 4 | 8 | 13 | 2026-05-28 (no new high-signal additions) |
 | schneier.com | 0 | 13 | 12 | 2026-05-28 (no new vulnerability-class content) |
-| krebsonsecurity.com | 1 | 7 | 18 | 2026-05-28 (Stark Industries 800-server seizure 2026-05-25 — NOTED) |
+| krebsonsecurity.com | 1 | 7 | 18 | 2026-05-29 (Netherlands arrests follow-up — named Andrey Nesterenko/MIRhosting + Youssef Zinad/WorkTitans + PQHosting lineage — UPDATE) |
 | rapid7.com | 3 | 0 | 21 | 2026-05-28 (no new Metasploit Wrap-Up since 2026-05-22; required retry after initial /blog/ timeout) |
 | attackerkb.com | 0 | 0 | 24 | — |
 | fortinet.com/blog/threat-research | 0 | 1 | 23 | 2026-05-28 (PureLogs phishing campaign 2026-05-26 — OOS-client) |
@@ -24,15 +24,15 @@
 | msrc.microsoft.com/blog | 0 | 0 | 24 | — (unreachable — redirects to nav-only page) |
 | hackerone.com/hacktivity | 0 | 0 | 24 | — |
 | bugcrowd.com/disclosures | 0 | 0 | 24 | — |
-| kb.cert.org/vuls | 2 | 6 | 19 | 2026-05-28 (no new VU# since 2026-05-20 VU#980487 Dirty Frag) |
+| kb.cert.org/vuls | 3 | 6 | 19 | 2026-05-29 (VU#780781 Casdoor 9-CVE SAML/JWT/MFA bypass batch CVE-2026-9090…9098 — NEWS, no patch, vendor coordination failed) |
 | avleonov.com | 0 | 1 | 22 | 2026-05-28 (no new post since In the Trend of VM #27 on 2026-05-25) |
 | github.com/0xMarcio/cve | 2 | 7 | 17 | 2026-05-28 (no new high-signal additions; Copy Fail Rust PoC gained stars but no material change) |
-| dbugs.ptsecurity.com | 13 | 39 | 8 | 2026-05-28 (PT-2026-43573 / CVE-2026-8832 WPCode WordPress plugin CVSS 8.8 — NOTED, continues PT-Security WP-CVE-relay pattern) |
+| dbugs.ptsecurity.com | 14 | 40 | 8 | 2026-05-29 (Veeam CVE-2026-32996/32997/32998 triple-batch incl. CVSS 9.4 VSPC RCE — NEWS; TinyMCE CVE-2026-47759 CVSS 8.7 stored XSS — NOTED) |
 | habr.com/ru/companies/tomhunter/articles | 0 | 0 | 24 | — (degraded — stale content, March 2026 latest) |
 | teletype.in/@cyberok | 0 | 0 | 24 | — (degraded — stale content, February 2026 latest) |
 | cert.gov.ua | 0 | 0 | 24 | — (unreachable — empty content via WebFetch) |
 | socket.dev/blog (NEW for 2026-05) | 5 | 4 | 10 | 2026-05-27 |
-| openwall.com/lists/oss-security (off-list, primary OSS source) | 33 | 58 | 1 | 2026-05-28 (Samba CVE-2026-4408 + 4480 CVSS-10 unauth-RCE pair via vendor advisory + Jenkins 2026-05-27 advisory + Perl CPAN batch + Apache Artemis CVE-2026-40914 + OpenStack Swift CVE-2026-49010 + Linux io_uring/zcrx CVE-2026-43121 — all surfaced via this channel) |
+| openwall.com/lists/oss-security (off-list, primary OSS source) | 33 | 68 | 1 | 2026-05-29 (10 fresh noted: Apache Ignite CVE-2025-48977 default-config file read, Apache Artemis CVE-2026-40914 STOMP routing, CryptX CVE-2026-41565 AEAD stack overflow, Mojolicious Statsd CVE-2026-46740 injection, Plack::Middleware CVE-2026-9658 header injection, Crypt::ScryptKDF CVE-2026-8647 RNG fallback, Open Babel 24-CVE batch, qSnapper D-Bus CVE-2026-41045-48, CIFSwitch local root, OpenStack Keystone+Neutron authz bypass) |
 | github advisories (off-list, NEW high-value 2026-05-07) | 27 | 75 | 2 | 2026-05-28 (no new posts since 2026-05-26 FUXA batch + XWiki pair) |
 | samba.org/samba/security (NEW 2026-05-28, vendor PSIRT direct) | 1 | 1 | 0 | 2026-05-28 (CVE-2026-4408 + CVE-2026-4480 CVSS-10 unauth-RCE pair on file/print servers — NEWS CRITICAL; 4 lower-severity companions — NOTED) |
 | jenkins.io/security (NEW 2026-05-28, vendor PSIRT direct) | 1 | 0 | 0 | 2026-05-28 (11-CVE plugin advisory 2026-05-27 incl. LDAP/AD referral RCE — NEWS) |
