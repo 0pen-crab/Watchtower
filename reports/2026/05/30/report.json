@@ -1,0 +1,109 @@
+{
+  "date": "2026-05-30",
+  "findings": [
+    {
+      "type": "news",
+      "title": "PraisonAI 16-CVE Second-Batch — Hardcoded JWT Key, Sandbox Escape, Default-No-Auth Across Core + Platform",
+      "threat_score": 8,
+      "cve": "CVE-2026-47391, CVE-2026-47392, CVE-2026-47393, CVE-2026-47394, CVE-2026-47396, CVE-2026-47397, CVE-2026-47398, CVE-2026-47399, CVE-2026-47405, CVE-2026-47406, CVE-2026-47407, CVE-2026-47409, CVE-2026-47410, CVE-2026-47414, CVE-2026-47416, CVE-2026-48169",
+      "cvss": null,
+      "affected_technology": "PraisonAI (core, pip) and praisonai-platform (enterprise SaaS layer, pip)",
+      "summary": "GitHub Advisories published a 16-CVE coordinated batch against PraisonAI core + platform on 2026-05-28/29 covering hardcoded JWT signing key 'dev-secret-change-me' enabling token forgery, cross-workspace IDOR + privilege escalation to owner, unauthenticated LLM-driven code execution, Python builtins sandbox escape, and Flask API shipping with authentication disabled by default — second multi-CVE batch against PraisonAI in 45 days.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-05-30"
+    },
+    {
+      "type": "update",
+      "title": "Marimo CVE-2026-39987 UPDATE — Sysdig Confirms In-Wild LLM-Agent Post-Compromise (Cloud-Cred → AWS Secrets Manager → Parallel SSH → DB Exfil in 2 Minutes)",
+      "threat_score": 8,
+      "previous_threat_score": 8,
+      "cve": "CVE-2026-39987",
+      "cvss": 9.3,
+      "affected_technology": "Marimo Python notebook (=<0.20.4)",
+      "summary": "Sysdig published the first publicly documented end-to-end LLM-agent post-exploitation chain against a real victim — Marimo WebSocket RCE initial access pivoted via AWS instance metadata to Secrets Manager SSH key retrieval and eight parallel SSH sessions, with full PostgreSQL schema discovery and content exfiltration completed in under two minutes; Chinese-language planning comment 看还能做什么 and machine-optimised command formatting fingerprint the LLM-agent operator.",
+      "first_seen_at": "2026-04-14"
+    },
+    {
+      "type": "news",
+      "title": "ChatGPhish — Markdown-Image Rendering in ChatGPT Web Summaries Enables Stealth Phishing + IP/UA/Referer Leakage",
+      "threat_score": 6,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "OpenAI ChatGPT web client response renderer (chatgpt.com)",
+      "summary": "Permiso Security disclosed a class of ChatGPT response-rendering issues where malicious Markdown images and links in webpages summarised by ChatGPT render inside the trusted chatgpt.com interface, leaking the user's IP/User-Agent/Referer to attacker servers via image fetches and serving phishing payloads (fake security alerts, QR codes) that bypass email and desktop URL filters.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-05-29"
+    },
+    {
+      "type": "news",
+      "title": "LLMShare Campaign — chatgpt.com/s/ Share-Pages Abused for Fake-Outage Malware Delivery via Google Ads",
+      "threat_score": 6,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "OpenAI ChatGPT shared-conversation surface (chatgpt.com/s/)",
+      "summary": "Push Security tracked an active campaign abusing ChatGPT's shared-conversation feature to host attacker-controlled HTML on the trusted chatgpt.com origin, displaying fake 'ChatGPT outage' notices and redirecting users to openew[.]app which serves Windows + macOS malware-laden fake desktop clients; Google Ads on ChatGPT search queries drive the funnel.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-05-29"
+    },
+    {
+      "type": "news",
+      "title": "Asocks 17M-Device Residential-Proxy Botnet Takedown — 200+ Servers Seized in Netherlands",
+      "threat_score": 6,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Asocks residential-proxy botnet (Windows/macOS/Android/iOS infections)",
+      "summary": "Dutch NCSC + National Police seized 200+ servers at a Netherlands-based hosting provider supporting the Asocks 'universal proxy service' covert residential-proxy botnet of ~17M infected endpoints, contradicting Asocks' voluntary-bandwidth marketing — fourth major adversary-infrastructure disruption in 14 days alongside Fox Tempest, GlassWorm v2, and Stark Industries/MIRhosting.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-05-29"
+    },
+    {
+      "type": "news",
+      "title": "Vibe-Coded Apps — Red Access 'Shadow Builders' Finds 2,000+ Sensitive-Data Exposures Across AI-No-Code Platforms",
+      "threat_score": 5,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "AI vibe-coding / no-code platforms (Cursor, v0/Vercel, Bolt, Lovable, Replit Ghostwriter et al.)",
+      "summary": "Red Access's 'Shadow Builders' report catalogued ~380,000 publicly accessible vibe-platform assets with 2,000+ holding sensitive corporate/operational/personal data — many granting admin access by default to anyone reaching the URL while connecting directly to production CRMs/ERPs/BI systems, bypassing DLP/CASB/SSO; positioned as a distinct Shadow AI asset class.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-05-29"
+    }
+  ],
+  "noted": [
+    {"cve": "CVE-2026-44825", "product": "Apache Solr BasicAuth via bin/solr CLI", "summary": "Enabling BasicAuth through the bin/solr CLI silently configures additional users with insecure defaults (oss-security 2026-05-29); audit security.json on Solr clusters where BasicAuth was CLI-enabled."},
+    {"cve": "CVE-2026-48840", "product": "Exim 4.99.4 PROXY-protocol", "summary": "PROXY-protocol uninitialised-stack disclosure leaks adjacent memory to peer (oss-security 2026-05-29); bounded impact but worth tracking for memory-disclosure-to-bypass chains."},
+    {"cve": "CVE-2024-13745", "product": "EDK II firmware partition-table TPM measurement", "summary": "Partition-table TPM measurement-list issues in EDK II firmware (oss-security 2026-05-29); firmware-tier integrity edge case affecting attestation/measured-boot."},
+    {"cve": "Not yet assigned", "product": "Vim < 9.2.561 Python omni-completion", "summary": "Arbitrary code execution via Python omni-completion in older Vim builds (oss-security 2026-05-29); local client/dev-tool only, OOS for infra scope but worth flagging for dev workstations."},
+    {"cve": "Not yet assigned", "product": "Linux kernel ZCRX DMA-after-unmap (netif_rxq_cleanup_unlease)", "summary": "Solar Designer reported a race in netif_rxq_cleanup_unlease() ordering inversion (oss-security 2026-05-29); kernel net-stack DMA window, track for downstream patches."},
+    {"cve": "Not assigned", "product": "JINX-0164 cryptocurrency-firm targeting (Wiz 2026-05-28)", "summary": "LinkedIn-recruiter social engineering against crypto firms + developers deploying AUDIOFIX (Python) + MiniRAT (Go) via fake meeting clients and compromised @velora-dex/sdk npm; TTPs mirror BlueNoroff/Contagious Interview without infrastructure overlap."},
+    {"cve": "Not assigned", "product": "Kimsuky HTTPSpy South-Korea campaign (THN 2026-05-29)", "summary": "DPRK-aligned Kimsuky distributing HTTPSpy RAT disguised as Korean security-software installers (nProtect, AhnLab) and fake Cisco Webex camera-fix prompts targeting South Korean military/corporate; social engineering, no new CVE."},
+    {"cve": "Not assigned", "product": "Sicoob.Sdk NuGet 2.0.0–2.0.4 malicious package (THN 2026-05-29)", "summary": "Brazilian-banking SDK supply-chain compromise exfiltrating PFX certs + passwords + client IDs to hardcoded Sentry endpoint, ~500 downloads + 11 sibling 'sicoob' packages totalling ~6,000 downloads; NuGet has removed."},
+    {"cve": "Not assigned", "product": "stigmem-node federation security (GHSA-9vp8-3hmv-8fgh, GHSA-jmfc-hfjq-pxcp 2026-05-28)", "summary": "Federation peer registration lacks explicit out-of-band approval and cleartext non-loopback transport permitted; niche but flags self-hosted federation governance gaps."},
+    {"cve": "Not assigned", "product": "Carnival Cruise Line 6M-record breach (SecurityWeek 2026-05-28)", "summary": "Consumer/PII breach with identity-theft risk; intrusion vector pending — consumer-PII class, OOS for infra-CVE focus."},
+    {"cve": "Not assigned", "product": "Charter Communications HIBP-confirmed expansion", "summary": "HIBP confirmed 4.9M accounts + 85K employee-directory subset (BleepingComputer 2026-05-29) extending the 2026-05-29 noted entry; ShinyHunters initial-access via April 2026 vishing-to-Entra/Salesforce chain unchanged."},
+    {"cve": "Multiple (CVE-2026-9872, 9873, 9874, 9875, 9876 +146 more)", "product": "Google Chrome 148 update", "summary": "151 CVEs (22 critical + 123 high) patched 2026-05-29; use-after-free + insufficient-validation dominant — client browser, OOS for infra scope but flagged for fleet-patch ack."},
+    {"cve": "Not assigned", "product": "Google Chrome DBSC general availability", "summary": "Device-Bound Session Credentials cryptographically tie cookies to TPM/Secure-Enclave keys mitigating infostealer cookie-theft → MFA-bypass; mandatory for Workspace tenants — defensive feature note."},
+    {"cve": "Not assigned", "product": "DDoS-as-a-Service market expansion 2023→2026 (BleepingComputer 2026-05-29)", "summary": "~10× growth in service ads (38→364), ~4× unique clusters (31→123), ~3× active actors (15→41); subscription pricing from $25/month up to $2,000 for premium botnets — background telemetry, no specific advisory."}
+  ],
+  "source_coverage": {
+    "total": 30,
+    "checked": 21,
+    "with_findings": 9,
+    "unreachable": [
+      "cisa.gov",
+      "cisa.gov/known-exploited-vulnerabilities-catalog",
+      "attackerkb.com",
+      "msrc.microsoft.com/blog",
+      "hackerone.com/hacktivity",
+      "bugcrowd.com/disclosures",
+      "cve.org",
+      "cve.mitre.org",
+      "cert.gov.ua"
+    ],
+    "degraded": [
+      "packetstormsecurity.com",
+      "habr.com/ru/companies/tomhunter/articles",
+      "teletype.in/@cyberok"
+    ]
+  },
+  "full_report": "reports/2026/05/30/report.md"
+}

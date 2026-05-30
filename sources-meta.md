@@ -2,18 +2,18 @@
 
 | Source | Findings | Noted | Empty | Last Hit |
 |--------|----------|-------|-------|----------|
-| bleepingcomputer.com | 57 | 52 | 1 | 2026-05-29 (GreyVibe Russia AI-augmented Ukraine ops — NEWS; Netherlands MIRhosting/WorkTitans arrests Nesterenko+Zinad — UPDATE; FBI fake-FIFA fraud — NOTED) |
-| thehackernews.com | 52 | 28 | 0 | 2026-05-29 (FortiClient EMS CVE-2026-35616 active exploit — NEWS; Gogs unpatched 0-day RCE Burgess/Rapid7 — NEWS; DAEMON Tools Lite CVE-2026-8398 supply-chain + KEV — NEWS; Microsoft slams Chaotic Eclipse disclosure drama — NOTED) |
-| cisa.gov | 0 | 0 | 25 | — |
-| securityweek.com | 43 | 24 | 4 | 2026-05-29 (FortiClient EMS CVE-2026-35616 + GreyVibe corroboration — secondary confirmation only; primary attribution credited to BC/THN) |
-| github.com/search | 4 | 8 | 13 | 2026-05-28 (no new high-signal additions) |
-| schneier.com | 0 | 13 | 12 | 2026-05-28 (no new vulnerability-class content) |
-| krebsonsecurity.com | 1 | 7 | 18 | 2026-05-29 (Netherlands arrests follow-up — named Andrey Nesterenko/MIRhosting + Youssef Zinad/WorkTitans + PQHosting lineage — UPDATE) |
-| rapid7.com | 3 | 0 | 21 | 2026-05-28 (no new Metasploit Wrap-Up since 2026-05-22; required retry after initial /blog/ timeout) |
+| bleepingcomputer.com | 60 | 56 | 1 | 2026-05-30 (Asocks 17M-device botnet takedown Dutch NCSC — NEWS; LLMShare ChatGPT share-page malware Push Security — NEWS; Charter HIBP-confirmed 4.9M + 85K employee directory — NOTED; Chrome 148 + DBSC GA + DDoS-as-a-Service market — all NOTED) |
+| thehackernews.com | 55 | 31 | 0 | 2026-05-30 (ChatGPhish ChatGPT Markdown phishing Permiso — NEWS; Marimo CVE-2026-39987 + Sysdig LLM-agent post-comp — UPDATE; Vibe-Coded Apps Red Access 'Shadow Builders' — NEWS; JINX-0164 / Kimsuky HTTPSpy / Sicoob NuGet — NOTED) |
+| cisa.gov | 0 | 0 | 26 | — |
+| securityweek.com | 43 | 25 | 4 | 2026-05-30 (Carnival Cruise 6M + Chrome 148 corroboration — NOTED only; no fresh primary leads) |
+| github.com/search | 5 | 8 | 13 | 2026-05-30 (PraisonAI 16-CVE second-batch surfaced via github.com/advisories — NEWS CRITICAL; cross-confirmed via THN reporting) |
+| schneier.com | 0 | 13 | 13 | 2026-05-30 (no new vulnerability-class content; weekly squid post + Chilling Effects essay) |
+| krebsonsecurity.com | 1 | 7 | 19 | 2026-05-30 (no new post since 2026-05-25 arrests follow-up) |
+| rapid7.com | 3 | 0 | 22 | 2026-05-30 (Metasploit Wrap-Up 05/29/2026 by Spencer McIntyre — no new fleet-wide signal; Gogs + Cisco SD-WAN already covered) |
 | attackerkb.com | 0 | 0 | 24 | — |
 | fortinet.com/blog/threat-research | 0 | 1 | 23 | 2026-05-28 (PureLogs phishing campaign 2026-05-26 — OOS-client) |
 | securitylab.github.com | 2 | 3 | 22 | 2026-05-28 (Chatwoot GHSL-2026-059 SQL injection + Mesa CVE-2026-29075 benchmarks.yml workflow — both NOTED; 7-Zip batch dup) |
-| seclists.org/fulldisclosure (incl. openwall oss-security) | 36 | 70 | 3 | 2026-05-28 (Samba 4.24.3/4.23.8/4.22.10 unauth-RCE pair surfaced via oss-security 2026-05-27 → NEWS CRITICAL; Jenkins 2026-05-27 advisory 11-CVE batch → NEWS; Perl CPAN batch + Apache Artemis CVE-2026-40914 + OpenStack Swift CVE-2026-49010 + Linux io_uring/zcrx CVE-2026-43121 — all NOTED via oss-security 2026-05-27) |
+| seclists.org/fulldisclosure (incl. openwall oss-security) | 36 | 75 | 3 | 2026-05-30 (Linux ZCRX DMA-after-unmap race + CVE-2024-13745 EDK II + CVE-2026-48840 Exim PROXY-protocol + Vim < 9.2.561 omni-completion ACE + CVE-2026-44825 Apache Solr BasicAuth — all NOTED via oss-security 2026-05-29) |
 | packetstormsecurity.com | 0 | 0 | 24 | — (degraded — homepage only; redirects to packetstorm.news) |
 | opencve.io | 23 | 32 | 4 | 2026-05-28 (CVE-2026-4802 RHEL Cockpit + CVE-2026-48687 FastNetMon Juniper plugin + CVE-2026-37711 Dolibarr — all NOTED) |
 | nvd.nist.gov | 0 | 2 | 23 | 2026-05-28 (search/feed pages return navigation only via WebFetch — JS-heavy. Marked unreachable. Data obtained via opencve.io.) |
@@ -32,8 +32,8 @@
 | teletype.in/@cyberok | 0 | 0 | 24 | — (degraded — stale content, February 2026 latest) |
 | cert.gov.ua | 0 | 0 | 24 | — (unreachable — empty content via WebFetch) |
 | socket.dev/blog (NEW for 2026-05) | 5 | 4 | 10 | 2026-05-27 |
-| openwall.com/lists/oss-security (off-list, primary OSS source) | 33 | 68 | 1 | 2026-05-29 (10 fresh noted: Apache Ignite CVE-2025-48977 default-config file read, Apache Artemis CVE-2026-40914 STOMP routing, CryptX CVE-2026-41565 AEAD stack overflow, Mojolicious Statsd CVE-2026-46740 injection, Plack::Middleware CVE-2026-9658 header injection, Crypt::ScryptKDF CVE-2026-8647 RNG fallback, Open Babel 24-CVE batch, qSnapper D-Bus CVE-2026-41045-48, CIFSwitch local root, OpenStack Keystone+Neutron authz bypass) |
-| github advisories (off-list, NEW high-value 2026-05-07) | 27 | 75 | 2 | 2026-05-28 (no new posts since 2026-05-26 FUXA batch + XWiki pair) |
+| openwall.com/lists/oss-security (off-list, primary OSS source) | 33 | 73 | 1 | 2026-05-30 (5 fresh noted from 2026-05-29 archive: Linux ZCRX DMA-after-unmap race ordering inversion / CVE-2024-13745 EDK II partition-table TPM measurement / CVE-2026-48840 Exim 4.99.4 PROXY-protocol uninit stack / Vim < 9.2.561 Python omni-completion ACE / CVE-2026-44825 Apache Solr BasicAuth CLI insecure-users) |
+| github advisories (off-list, NEW high-value 2026-05-07) | 28 | 75 | 2 | 2026-05-30 (PraisonAI 16-CVE second-batch CVE-2026-47391/47392/47393/47394/47396/47397/47398/47399/47405/47406/47407/47409/47410/47414/47416/48169 — NEWS CRITICAL; stigmem-node federation pair GHSA-9vp8-3hmv-8fgh + GHSA-jmfc-hfjq-pxcp — NOTED) |
 | samba.org/samba/security (NEW 2026-05-28, vendor PSIRT direct) | 1 | 1 | 0 | 2026-05-28 (CVE-2026-4408 + CVE-2026-4480 CVSS-10 unauth-RCE pair on file/print servers — NEWS CRITICAL; 4 lower-severity companions — NOTED) |
 | jenkins.io/security (NEW 2026-05-28, vendor PSIRT direct) | 1 | 0 | 0 | 2026-05-28 (11-CVE plugin advisory 2026-05-27 incl. LDAP/AD referral RCE — NEWS) |
 | adversa.ai/blog (NEW 2026-05-28, AI-coding-agent disclosure channel) | 1 | 0 | 0 | 2026-05-28 (SymJack symlink-hijack against 6 AI coding agents — NEWS, second Adversa AI publication after 2026-05-07 TrustFall) |

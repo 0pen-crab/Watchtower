@@ -1,0 +1,113 @@
+=== Watchtower run 2026-05-30 ===
+
+[08:30:00 UTC] STEP 1 — git pull /home/claude/workspace/watchtower
+  Result: Already up to date.
+
+[08:30:10 UTC] STEP 2 — Build 30-day dedup index
+  Read reports/2026/04/30 .. reports/2026/05/29 (28 reports)
+  Total CVEs collected: 711
+  Total findings catalogued: 205
+  Saved: /tmp/dedup_cves.txt, /tmp/dedup_titles.txt
+
+[08:30:45 UTC] STEP 3 — Source checks (Tier 1 + Tier 2 from SOURCES.md)
+  Total unique sources: 30 (seclists.org/fulldisclosure dedup across both tiers)
+
+  --- Tier 1 ---
+  [08:31:02 UTC] bleepingcomputer.com ✅ — 2.8s — findings: FortiClient EMS exploitation, Gogs 0-day, Charter ShinyHunters, Dutch botnet takedown, ChatGPT share-link malware (LLMShare), ChatGPhish, GreyVibe, Carnival Cruise, Chrome DBSC, FBI FIFA fraud
+  [08:31:04 UTC] thehackernews.com ✅ — 3.1s — findings: ChatGPhish, Marimo LLM-agent post-comp, GREYVIBE detail, Vibe-coded apps Red Access, Sicoob NuGet, Kimsuky HTTPSpy, Gogs RCE, FortiClient EMS, Microsoft 'slams' Chaotic Eclipse, Claude Mythos, Megalodon, GitHub Nx Console, JINX-0164
+  [08:31:06 UTC] cisa.gov ❌ 403 — Forbidden — UNREACHABLE
+  [08:31:06 UTC] cisa.gov/known-exploited-vulnerabilities-catalog ❌ 403 — Forbidden — UNREACHABLE
+  [08:31:08 UTC] securityweek.com ✅ — 2.4s — findings: Gogs CVSS 9.4, Chrome 148 (151 CVEs), FortiClient EMS, Gitea, Charter ShinyHunters, Carnival 6M, 23andMe lawsuit, Megalodon, GreyVibe, IBM/Red Hat Project Lightwell
+  [08:31:11 UTC] github.com/search?q=CVE ✅ — 4.2s — top starred: Copy Fail (3.9k), Nginx-Rift (820), BYOVD (768), Copy Fail POC variants, cPanelSniper (447); plus updated CVE-2026 PoCs incl. CVE-2026-31431 variants, CVE-2025-55182 React2Shell update
+  [08:31:18 UTC] schneier.com ✅ — 1.8s — May 21 macOS kernel AI-found exploit, May 18 BitLocker YellowKey, otherwise general AI/surveillance commentary
+  [08:31:20 UTC] krebsonsecurity.com ✅ — 2.0s — May 25 Stark Industries / MIRhosting arrests (already covered), May 22 CISA contractor AWS GovCloud leak, May 21 Kimwolf arrest, May 18 CISA leak detail
+  [08:31:22 UTC] rapid7.com/blog ✅ — 2.6s — Gogs RCE confirmed, Metasploit wrap-up 05/29/2026 by Spencer McIntyre, CVE-2026-0257 PAN-OS GlobalProtect, CVE-2026-20182 Cisco SD-WAN
+  [08:31:25 UTC] attackerkb.com ❌ 403 — Forbidden — UNREACHABLE
+  [08:31:27 UTC] fortinet.com/blog/threat-research ✅ — 1.9s — May 26 PureLogs JS variant phishing, May 20 P2Pinfect Kubernetes Redis compromise, May 15 PureLogs PawsRunner steganography — no new fleet-wide findings today
+  [08:31:30 UTC] securitylab.github.com ✅ — 1.7s — most recent advisories dated 2026-05-22 (7-Zip CVE batch, Chatwoot SQL injection, Apache Doris file read) — no new since
+  [08:31:32 UTC] seclists.org/fulldisclosure ✅ — 2.3s — May 25 Dovecot OXDC-2026-0002, Anthropic mcp-server-fetch + Microsoft playwright-mcp SSRF, ZTE CVE batch (already covered)
+  [08:31:35 UTC] packetstormsecurity.com ⚠️ DEGRADED — redirects to packetstorm.news/; only aggregate counts (329 advisories / 51 exploits / 80 articles last 7 days); no item index — DEGRADED
+  [08:31:38 UTC] opencve.io ⚠️ — homepage marketing only; switched to app.opencve.io/cve/?order=-updated_at
+  [08:31:42 UTC] app.opencve.io ✅ — 3.4s — recent: Casdoor CVE-2026-9090/9091 (already), Oracle Hospitality OPERA 5 CVE-2026-34311 (CVSS 9.8), Shopper CVE-2026-47744 (9.9), Emlog Pro CVE-2026-39276 (7.2), Spatie Laravel Media Library SSRF CVE-2026-48555, FreeScout CVE-2026-47123 (7.5)
+
+  --- Tier 2 ---
+  [08:31:48 UTC] nvd.nist.gov ⚠️ — homepage only; targeted CVE-detail queries fine — verified CVE-2026-39987 / CVE-2026-34159 details directly
+  [08:31:52 UTC] cve.mitre.org ❌ — redirects to cve.org (JS required) — UNREACHABLE
+  [08:31:54 UTC] cve.org ❌ — JS required, returns empty — UNREACHABLE
+  [08:31:57 UTC] projectzero.google ✅ — 2.1s — most recent post May 13 (Pixel 10 0-click), no new since
+  [08:32:00 UTC] blog.cloudflare.com/tag/security ✅ — 2.4s — most recent May 18 Project Glasswing, May 7 Copy Fail mitigation — no new since
+  [08:32:03 UTC] msrc.microsoft.com/blog ❌ — empty content via WebFetch (page is JS-driven) — UNREACHABLE
+  [08:32:05 UTC] hackerone.com/hacktivity ❌ — JS required — UNREACHABLE
+  [08:32:07 UTC] bugcrowd.com/disclosures ❌ — 404 — UNREACHABLE
+  [08:32:09 UTC] kb.cert.org/vuls ✅ — 1.9s — VU#780781 Casdoor (already 2026-05-29), VU#980487 Dirty Frag (already), VU#777338 SGLang (already), VU#471747 dnsmasq (already), VU#937808 Casdoor (already) — no new
+  [08:32:12 UTC] avleonov.com ✅ — 2.0s — May 28 Fragnesia (CVE-2026-46300) deep-dive, May 25 'In the Trend of VM' #27 monthly roundup, May 19 May Patch Tuesday recap — already-covered content
+  [08:32:14 UTC] github.com/0xMarcio/cve ✅ — 2.8s — recent additions: CVE-2026-31431 variants (multiple), CVE-2025-55182 React2Shell (1,047 stars 15h ago, already covered), CVE-2026-34486 Tomcat Tribes (already covered 2026-05-20), CVE-2026-34159 Llama.cpp RPC (already covered 2026-04-27), CVE-2026-0073 Android adbd auth bypass PoC (mobile, OOS), CVE-2026-35616 FortiClient (already), CVE-2025-32463 sudo chroot (already)
+  [08:32:17 UTC] dbugs.ptsecurity.com ✅ — 2.5s — 1,928 new vulns this week; Dokploy critical batch (CVE-2026-45661/45663/45632 9.9), USR-W610 CVE-2026-7786 (9.8), Manga-Image-Translator CVE-2026-10042, Cpp-Httplib CVE-2026-45372 (9.9), TinyMCE CVE-2026-47759 (already 2026-05-29) — additions not yet cross-confirmed by upstream advisories
+  [08:32:20 UTC] habr.com/ru/companies/tomhunter/articles ⚠️ DEGRADED — last post March 2026 — DEGRADED
+  [08:32:22 UTC] teletype.in/@cyberok ⚠️ DEGRADED — last post February 2026 — DEGRADED
+  [08:32:24 UTC] cert.gov.ua ❌ — empty / protected — UNREACHABLE
+
+  --- Bonus channels (referenced by SOURCES.md / MEMORY.md but not numbered total) ---
+  [08:32:30 UTC] openwall.com/lists/oss-security/2026/05/ ✅ — 2.7s — May 29 posts (6): Linux ZCRX DMA race (Solar Designer), CVE-2024-13745 EDK II partition tables, CVE-2026-48840 Exim 4.99.4, Vim 9.2.561 omni-completion ACE, CVE-2026-44825 Apache Solr BasicAuth CLI — incorporated to Noted
+  [08:32:33 UTC] github.com/advisories?published>2026-05-28 ✅ — 4.1s — Critical batch: PraisonAI 16-CVE (CVE-2026-47391/47392/47393/47394/47396/47397/47398/47399/47405/47406/47407/47409/47410/47414/47416/48169), stigmem-node federation (GHSA-9vp8-3hmv-8fgh, GHSA-jmfc-hfjq-pxcp), formie CVE-2026-47266
+
+[08:33:00 UTC] STEP 4 — Dedup classification
+  PraisonAI 16-CVE batch (2026-05-28/29) → NEW (April 14 batch was different 3 CVEs: 40287/40288/40289)
+  Marimo CVE-2026-39987 + Sysdig LLM-agent post-comp → UPDATE (prior: 2026-04-14 NEWS, 2026-04-17 UPDATE)
+  ChatGPhish (Permiso) → NEW
+  LLMShare ChatGPT share-pages (Push Security) → NEW
+  Asocks 17M botnet takedown (Dutch NCSC) → NEW (distinct from Stark/MIRhosting 2026-05-25/29)
+  Vibe-coded apps Red Access Shadow Builders → NEW
+  GreyVibe → SKIP (already covered 2026-05-29 NEWS)
+  FortiClient EMS CVE-2026-35616 Arctic Wolf detail → SKIP (already covered 2026-05-29 NEWS)
+  Casdoor VU#780781 → SKIP (already covered 2026-05-29 NEWS)
+  Gogs 0-day → SKIP (already covered 2026-05-29 NEWS)
+  Veeam B&R 13 batch → SKIP (already covered 2026-05-29 NEWS)
+  DAEMON Tools KEV → SKIP (already covered 2026-05-29 NEWS)
+  Stark Industries arrests (Krebs) → SKIP (already covered 2026-05-29 UPDATE)
+  TanStack + Nx Console KEV → SKIP (already covered 2026-05-29 UPDATE)
+  CVE-2025-55182 React2Shell (1,047 stars) → SKIP (already covered 2026-05-02 NEWS; no material change, just star count up)
+  CVE-2026-34486 Apache Tomcat Tribes → SKIP (covered 2026-05-20)
+  CVE-2026-34159 Llama.cpp RPC → SKIP (covered 2026-04-27)
+  Apache Solr CVE-2026-44825 → NOTED
+  Exim CVE-2026-48840 → NOTED
+  EDK II CVE-2024-13745 → NOTED
+  Vim < 9.2.561 omni-completion → NOTED (OOS-leaning)
+  Linux ZCRX DMA → NOTED
+  JINX-0164 → NOTED (no CVE)
+  Kimsuky HTTPSpy → NOTED (no CVE)
+  Sicoob NuGet → NOTED
+  stigmem-node → NOTED
+  Carnival Cruise Line 6M → NOTED (consumer-PII)
+  Charter HIBP expansion → NOTED (already in 2026-05-29 noted; minor expansion)
+  Chrome 148 → NOTED (client browser, OOS but flagged)
+  Chrome DBSC GA → NOTED (defensive)
+  Anthropic Mythos rollout → NOTED (no CVE)
+  DDoS-as-a-Service market → NOTED (background telemetry)
+  FBI FIFA fraud → SKIP (already noted 2026-05-29)
+  Polymarket Google engineer insider trading → SKIP (legal/insider, no security incident)
+  California AG vs 23andMe → SKIP (legal news, no new breach detail)
+
+[08:35:00 UTC] STEP 5 — Wrote reports/2026/05/30/report.md (markdown template followed) and report.json
+[08:35:30 UTC] STEP 6 — debug.log (this file)
+[08:36:00 UTC] STEP 7 — Validating report.json
+  Final source_coverage values pre-validation:
+    total: 30
+    checked: 21  (= 30 - 9 unreachable; degraded does NOT subtract per validator semantics)
+    with_findings: 9
+    unreachable: 9 (cisa.gov, cisa.gov/known-exploited-vulnerabilities-catalog, attackerkb.com, msrc.microsoft.com/blog, hackerone.com/hacktivity, bugcrowd.com/disclosures, cve.org, cve.mitre.org, cert.gov.ua)
+    degraded: 3 (packetstormsecurity.com, habr.com/ru/companies/tomhunter/articles, teletype.in/@cyberok)
+
+  Validator output:
+  ⚠️  6 warning(s):
+     findings[0]: 'summary' is 434 chars (aim for <200)
+     findings[1]: 'summary' is 468 chars (aim for <200)
+     findings[2]: 'summary' is 381 chars (aim for <200)
+     findings[3]: 'summary' is 353 chars (aim for <200)
+     findings[4]: 'summary' is 380 chars (aim for <200)
+     findings[5]: 'summary' is 365 chars (aim for <200)
+  ✅ reports/2026/05/30/report.json — valid
+
+[08:36:30 UTC] STEP 8 — Git add/commit/push pending
+
+=== End of run ===
