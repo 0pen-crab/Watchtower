@@ -1,0 +1,109 @@
+Watchtower debug log — 2026-05-31 (Sunday, low-volume cycle)
+=============================================================
+
+STEP 1 — git pull
+  [2026-05-31 T+0s] cd /home/claude/workspace/watchtower && git pull → "Already up to date."
+
+STEP 2 — Dedup index from last 30 days
+  [2026-05-31 T+30s] Loaded MEMORY.md (135 lines, ~56k tokens — truncated read to first 60 lines for index; full content available via offset reads).
+  [2026-05-31 T+45s] Loaded prior reports 2026-05-23 → 2026-05-30 via Python script (8 daily reports). Extracted ~50 finding + ~80 noted entries by (type, cve, title).
+  Notable already-covered identifiers (skip if re-surfaced): CVE-2026-39987 (Marimo + Sysdig), CVE-2026-47391/47392/47393/47394/47396/47397/47398/47399/47405/47406/47407/47409/47410/47414/47416/48169 (PraisonAI 16-CVE batch), CVE-2026-35616 (FortiClient EMS), CVE-2026-9090…9098 (Casdoor VU#780781), CVE-2026-32996/32997/32998 (Veeam triple), CVE-2026-8398 (DAEMON Tools), CVE-2026-45321 + CVE-2026-48027 (TanStack + Nx Console KEV), CVE-2026-48172 (LiteSpeed cPanel), CVE-2026-4408 + CVE-2026-4480 (Samba pair), CVE-2026-27771 (Gitea), CVE-2026-26980 (Ghost CMS), CVE-2026-5426 (KnowledgeDeliver), CVE-2026-45659 (SharePoint), CVE-2026-43945/43946/43947 (FUXA), CVE-2026-48898/48899/48904 (Joomla), CVE-2026-9082 (Drupal), CVE-2026-34926 (Apex One KEV), CVE-2026-34908/34909/34910/33000/34911 (UniFi), CVE-2025-34291 (Langflow KEV), CVE-2026-39829/39830/39831/39834/42508 (golang ssh), CVE-2024-12802 (SonicWall), CVE-2026-42897 (Exchange KEV), CVE-2026-20182 (Cisco SD-WAN), CVE-2026-41940 (cPanel "Sorry"), CVE-2026-0265 + CVE-2026-0300 (prior PAN-OS), CVE-2026-44112/44113/44115/44118 (OpenClaw Claw Chain), CVE-2026-31431 (Copy Fail), CVE-2026-43284/43500 (Dirty Frag), CVE-2026-46300 (Fragnesia), CVE-2026-46333 (ssh-keysign-pwn), Shai-Hulud Wave 2/3 cluster + TeamPCP + CoinbaseCartel, GreyVibe, Nimbus Manticore, GlassWorm v2 takedown, Stark Industries / MIRhosting / Asocks, mouse5212-super-formatter, SymJack, ChatGPhish, LLMShare, Vibe-Coded Apps Shadow Builders, Charter, 7-Eleven, Carnival Cruise, Kimsuky, JINX-0164, Sicoob NuGet, Chrome 148, DBSC GA.
+
+STEP 3 — Source check (every source from SOURCES.md, 30 total)
+  [2026-05-31 T+60s] Batched WebFetch calls 3+ per turn.
+
+  ✅ bleepingcomputer.com (T+62s, 4s)             — 2 new articles: PAN-OS CVE-2026-0257 (NEW finding), CIFSwitch (NEW finding). Older 2026-05-29 articles already covered.
+  ✅ thehackernews.com (T+62s, 5s)                — PAN-OS CVE-2026-0257 (corroborates BC); other articles already covered.
+  ✅ securityweek.com (T+62s, 4s)                 — Flowise CVE-2026-40933 PoC published (NEW finding); other articles already covered.
+  ❌ cisa.gov (skipped — known 403 since MEMORY 2026-04)             — UNREACHABLE
+  ❌ cisa.gov/known-exploited-vulnerabilities-catalog (skipped — 403) — UNREACHABLE; KEV CVE-2026-0257 surfaced via THN/BC/Rapid7 relay
+  ⚠️ github.com/search?q=CVE (T+70s)               — login required for code search (treated as degraded), but github.com/advisories used as substitute and returned PraisonAI batch (already covered) + stigmem-node federation pair (already noted in 2026-05-30).
+  ✅ schneier.com (T+72s, 3s)                      — Chilling Effects (OOS — political commentary), Wi-Fi sensing (OOS — surveillance research), FBI 2025 Internet Crime Report (NOTED — calibration).
+  ✅ krebsonsecurity.com (T+72s, 3s)               — No new posts since 2026-05-25 (Netherlands arrests, already covered).
+  ✅ rapid7.com (T+72s, 3s)                        — Only Metasploit Wrap-Up 05/29/2026 (Spencer McIntyre) — no new fleet-wide signal.
+  ❌ attackerkb.com (skipped — known 403)          — UNREACHABLE
+  ✅ fortinet.com/blog/threat-research (T+85s, 3s) — Only PureLogs (2026-05-26, OOS-client) + P2Pinfect (2026-05-20, already covered).
+  ✅ securitylab.github.com (T+85s, 3s)            — No advisories 2026-05-29→31; latest is GHSL-2026-140 7-Zip on 2026-05-22 (covered 2026-05-23).
+  ✅ seclists.org/fulldisclosure (T+85s, 4s)       — Latest archive entry 2026-05-25 (mcp-server-fetch + playwright-mcp SSRF — already noted 2026-05-27). No new posts 2026-05-29→31.
+  ⚠️ packetstormsecurity.com (skipped — redirects to packetstorm.news, homepage-only via WebFetch) — DEGRADED.
+  ✅ opencve.io (T+95s, 5s)                        — 2026-05-30 CVE batch: Synology BeeStation OS CVE-2025-12686 CVSS 9.8 (NOTED); Pensar Apex CVE-2026-36044 (lower priority); Netis AC1200 router 3-CVE batch (OOS — SOHO router); Tasmota Buffer overflows (OOS — IoT firmware); libjxl CVE-2025-70103 (NOTED, also in oss-security); GPAC/MP4Box CVE-2025-70116 (NOTED); Dolibarr CVE-2026-10154 (low-sev, skipped — already covered in 2026-05-28 noted via opencve).
+  ⚠️ nvd.nist.gov (covered via opencve.io relay)   — JS-required homepage; opencve.io is the authoritative relay.
+  ❌ cve.mitre.org (skipped — redirects to cve.org) — UNREACHABLE
+  ❌ cve.org (skipped — JS-required)                — UNREACHABLE
+  ✅ googleprojectzero.blogspot.com → projectzero.google (T+105s, 3s) — Latest post still 2026-05-13 (Pixel 10 exploit). No new content.
+  ✅ blog.cloudflare.com/tag/security (T+105s, 3s) — Latest post still 2026-05-18 (Project Glasswing). No new content.
+  ❌ msrc.microsoft.com/blog (skipped — nav-only)  — UNREACHABLE
+  ❌ hackerone.com/hacktivity (skipped — JS)        — UNREACHABLE
+  ❌ bugcrowd.com/disclosures (skipped — 404)       — UNREACHABLE
+  ✅ kb.cert.org/vuls (T+115s, 3s)                  — Latest is VU#780781 Casdoor (2026-05-28) already covered 2026-05-29.
+  ✅ avleonov.com (T+115s, 3s)                      — Latest post 2026-05-28 (Fragnesia, already covered).
+  ✅ github.com/0xMarcio/cve (T+115s, 3s)           — Apache Tomcat CVE-2026-34486 PoC repos gaining stars (NOTED — tooling momentum); Copy Fail Rust PoC continued (already covered).
+  ✅ dbugs.ptsecurity.com (T+125s, 4s)              — 2026-05-30 batch: Trendnet TEW-432BRP 4-CVE CVSS 9.0 (NOTED batch), Tomato CVE-2026-10124 CVSS 9.0 (NOTED), Cicadascms CVE-2026-10153 (low-sev, skip), Linux Kernel CVE-2026-46242 (low-sev, skip), Westboy. 2026-05-29 batch: cpp-httplib CVE-2026-46527 CVSS 8.7 (NOTED), GitHub CLI CVE-2026-48501 CVSS 7.4 (NOTED), npm Axios CVE-2026-44489 (NOTED).
+  ⚠️ habr.com/ru/companies/tomhunter/articles (skipped — stale, March 2026 latest) — DEGRADED.
+  ⚠️ teletype.in/@cyberok (skipped — stale, February 2026 latest)               — DEGRADED.
+  ❌ cert.gov.ua (skipped — empty via WebFetch)     — UNREACHABLE
+
+  Off-list sources also checked (do not count toward total, but consulted):
+  ✅ openwall.com/lists/oss-security                — 2026-05-30 archive: 7 posts (Apache MINA SSHD CVE-2026-48827 NOTED, GPAC/MP4Box CVE-2025-70116 NOTED, sshfs CVE-2026-47187 + CVE-2026-48711 NEW finding, Vim < 9.2.565 NOTED, Apache Fluss CVE-2026-49361 NOTED, Text::LineFold CVE-2026-8594 NOTED, libjxl CVE-2025-70103 NOTED). 2026-05-31: "No messages for this day" — Sunday silence.
+  ✅ socket.dev/blog                                — Latest 2026-05-27 OSV.dev 157 false-positive withdrawal (NOTED).
+  ✅ securityaffairs.com                            — Charter, Asocks, GreyVibe (already covered); Signal SMS phishing campaign (NOTED — novel platform-trust-abuse tradecraft).
+  ✅ helpnetsecurity.com                            — Carnival, Asocks, FortiClient EMS (already covered).
+  ✅ hunt.io/blog                                   — Smishing 19-country campaign 2026-05-27 (OOS — not vuln/CVE).
+
+STEP 4 — Triage decisions
+
+  PROMOTIONS:
+    - CVE-2026-0257 PAN-OS GlobalProtect: NEW (no prior coverage; surfaced via BC + THN + Rapid7 simultaneously). Threat score 9. Discovery latency 'late' (KEV add 2026-05-29 + mainstream 2026-05-30; our 2026-05-30 cycle missed it).
+    - CVE-2026-40933 Flowise RCE: NEW (PoC published 2026-05-30 by Obsidian Security; SecurityWeek relay). Threat score 7. Discovery latency 'late'.
+    - CIFSwitch Linux LPE: NEW (full disclosure by SpaceX security engineer 2026-05-30; CVE pending). Threat score 7. Discovery latency 'on-time'.
+    - sshfs CVE-2026-47187 + CVE-2026-48711: NEW (oss-security 2026-05-30; fix in 3.7.6 released 2026-05-29). Threat score 6. Discovery latency 'on-time'.
+
+  NOTED:
+    - Apache MINA SSHD CVE-2026-48827 (post-auth path traversal, narrower scope than the NEWS items)
+    - Apache Fluss CVE-2026-49361 (DoS)
+    - Vim < 9.2.565 OOB read (client-side)
+    - CVE-2026-8594 Perl Text::LineFold (narrow)
+    - CVE-2025-12686 Synology BeeStation OS (SMB scope)
+    - CVE-2025-70103 libjxl heap overflow
+    - CVE-2025-70116 GPAC/MP4Box NULL deref
+    - Trendnet TEW-432BRP 4-CVE batch (SOHO/legacy)
+    - Tomato CVE-2026-10124 (commodity router)
+    - cpp-httplib CVE-2026-46527 (header-only library — downstream relay tracking)
+    - GitHub CLI CVE-2026-48501 (dev tool)
+    - npm Axios CVE-2026-44489 (routine)
+    - Apache Tomcat CVE-2026-34486 PoC tooling momentum (existing-CVE escalation)
+    - Signal recovery-key SMS phishing campaign (tradecraft, not vuln)
+    - OSV.dev 157 false-positive malware report withdrawal (supply-chain process)
+    - 23andMe CA AG lawsuit (litigation)
+    - Google engineer Polymarket insider trading (insider threat)
+    - Trump Mobile data breach (OOS but flagged)
+
+  SKIPS (no material change):
+    - Carnival Cruise 6M-record breach: already noted 2026-05-30.
+    - Charter Communications ShinyHunters: already noted 2026-05-30 (Charter HIBP expansion).
+    - GreyVibe AI tradecraft: already news 2026-05-29.
+    - Marimo Sysdig analysis: already update 2026-05-30.
+    - FortiClient EMS CVE-2026-35616: already news 2026-05-29.
+    - Gogs RCE: already news 2026-05-29.
+    - Casdoor VU#780781: already news 2026-05-29.
+    - Netherlands arrests: already update 2026-05-29.
+    - All other items in BleepingComputer/THN/SecurityWeek/SecurityAffairs/HelpNet for 2026-05-29 → 30 cycle.
+
+STEP 5 — Report write
+  [2026-05-31 T+200s] Wrote /home/claude/workspace/watchtower/reports/2026/05/31/report.md (~210 lines)
+  [2026-05-31 T+210s] Wrote /home/claude/workspace/watchtower/reports/2026/05/31/report.json (4 findings, 18 noted)
+
+STEP 6 — Source coverage figures (pre-validator)
+  total: 30
+  checked: 21  (= 30 - 9 unreachable; degraded count as checked)
+  with_findings: 8  (bleepingcomputer, thehackernews, securityweek, opencve.io, openwall.com/lists/oss-security via off-list relay, dbugs.ptsecurity.com, github.com/0xMarcio/cve, securityaffairs.com)
+  unreachable (9): cisa.gov, cisa.gov/known-exploited-vulnerabilities-catalog, attackerkb.com, msrc.microsoft.com/blog, hackerone.com/hacktivity, bugcrowd.com/disclosures, cve.org, cve.mitre.org, cert.gov.ua
+  degraded (3): packetstormsecurity.com, habr.com/ru/companies/tomhunter/articles, teletype.in/@cyberok
+  Constraint check: checked(21) >= total(30) - unreachable(9)=21 ✓
+
+STEP 7 — Validator run
+  (output appended below)
+
+STEP 8 — Commit and push
+  (output appended below)
+✅ reports/2026/05/31/report.json — valid

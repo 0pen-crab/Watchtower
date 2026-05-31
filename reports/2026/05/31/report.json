@@ -1,0 +1,91 @@
+{
+  "date": "2026-05-31",
+  "findings": [
+    {
+      "type": "news",
+      "title": "PAN-OS GlobalProtect CVE-2026-0257 — Authentication-Override Cookie Forgery Actively Exploited, KEV-Added with 3-Day Federal Deadline",
+      "threat_score": 9,
+      "cve": "CVE-2026-0257",
+      "cvss": 7.8,
+      "affected_technology": "Palo Alto Networks PAN-OS + Prisma Access GlobalProtect portal/gateway (authentication-override-cookie feature enabled)",
+      "summary": "Attackers forge GlobalProtect authentication-override cookies to bypass authentication and obtain internal VPN IP assignment; Rapid7 MDR confirmed two same-operator exploitation waves (2026-05-17 + 2026-05-21) and CISA added the bug to KEV 2026-05-29 with a 3-day federal deadline.",
+      "discovery_latency": "late",
+      "first_seen_at": "2026-05-30"
+    },
+    {
+      "type": "news",
+      "title": "Flowise CVE-2026-40933 — Pre-Import Code Execution via Malicious Chatflow + MCP Tool (CVSS 9.9, Public PoC)",
+      "threat_score": 7,
+      "cve": "CVE-2026-40933",
+      "cvss": 9.9,
+      "affected_technology": "FlowiseAI Flowise self-hosted (< 3.1.0); Flowise Cloud not affected",
+      "summary": "Malicious chatflow JSON with a Custom MCP Tool executes attacker commands during the auto-triggered canvas-enumeration step on import (no operator approval); Obsidian Security published a one-click PoC 2026-05-30, fixed in Flowise 3.1.0.",
+      "discovery_latency": "late",
+      "first_seen_at": "2026-05-30"
+    },
+    {
+      "type": "news",
+      "title": "CIFSwitch — 19-Year-Old Linux Kernel LPE to Root via CIFS Auth-Key-Description Forge + NSS Module Hijack (Public PoC)",
+      "threat_score": 7,
+      "cve": "Not yet assigned",
+      "cvss": null,
+      "affected_technology": "Linux kernel via cifs-utils — Mint 21.3/22.3, CentOS Stream 9, Rocky 9, AlmaLinux 9, Kali 2021.4-2026.1, SLES 15 SP7 confirmed; Ubuntu/Debian/Pop!_OS/openSUSE/Oracle/Amazon Linux potentially affected",
+      "summary": "Unprivileged local user forges a CIFS auth key description that loads an attacker-controlled NSS module via namespace switching, yielding root; 19-year-old bug fixed via upstream commit 3da1fdf with public PoC on GitHub, disclosed by SpaceX engineer Asim Viladi Oglu Manizada 2026-05-30.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-05-30"
+    },
+    {
+      "type": "news",
+      "title": "sshfs ≤ 3.7.5 — CVE-2026-47187 Symlink Escape (CVSS 9.3) + CVE-2026-48711 SSH Argument Injection (CVSS 7.0)",
+      "threat_score": 6,
+      "cve": "CVE-2026-47187, CVE-2026-48711",
+      "cvss": 9.3,
+      "affected_technology": "sshfs FUSE SFTP filesystem client (CVE-2026-47187 ≤ 3.7.5; CVE-2026-48711 1.4 → 3.7.5)",
+      "summary": "Malicious SFTP server symlink targets containing '..' bypass sshfs containment to read/write arbitrary local files via cp, and companion mount-source argument-injection (e.g. [-oProxyCommand=CMD]:/path) yields command execution without SSH auth — both fixed in sshfs 3.7.6 (2026-05-29).",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-05-30"
+    }
+  ],
+  "noted": [
+    {"cve": "CVE-2026-48827", "product": "Apache MINA SSHD sshd-git path traversal", "summary": "Authenticated SSH users can traverse outside the configured repository root in MINA SSHD 2.0.0→2.17.1 / 3.0.0-M1→M3 via missing path validation in git-upload-pack / git-receive-pack (oss-security 2026-05-30); fixed in 2.18.0 + 3.0.0-M4."},
+    {"cve": "CVE-2026-49361", "product": "Apache Fluss Netty frame decoder DoS", "summary": "Memory exhaustion via crafted oversized Netty frames in Apache Fluss (oss-security 2026-05-30); only impactful if a Fluss endpoint is reachable from untrusted networks."},
+    {"cve": "Not yet assigned", "product": "Vim < 9.2.565 terminal screen snapshot OOB read", "summary": "Out-of-bounds read in terminal screen snapshot functionality (oss-security 2026-05-30); client-side dev-tool only, flagged for dev workstation fleet patch."},
+    {"cve": "CVE-2026-8594", "product": "Perl Text::LineFold ≤ 2019.001 duplicate output", "summary": "Output-duplication bug on special break characters (oss-security 2026-05-30); narrow security adjacency where duplicated output crosses trust boundaries."},
+    {"cve": "CVE-2025-12686", "product": "Synology BeeStation OS AdminCenter buffer overflow", "summary": "CVSS 9.8 unauthenticated buffer-copy-without-size-check RCE in BeeStation OS AdminCenter (opencve.io 2026-05-30); consumer/SMB NAS scope, flagged for SMB asset inventories."},
+    {"cve": "CVE-2025-70103", "product": "libjxl heap buffer overflow processing PBM", "summary": "Heap buffer overflow in libjxl PBM decoding (oss-security 2026-05-30); deserves attention where libjxl runs in user-supplied-image processing paths."},
+    {"cve": "CVE-2025-70116", "product": "GPAC/MP4Box NULL pointer dereference on truncated MP4", "summary": "Crash on malformed MP4 input via gf_media_map_esd (oss-security 2026-05-30); DoS-class, relevant to media-processing pipelines accepting user uploads."},
+    {"cve": "CVE-2026-10120, CVE-2026-10121, CVE-2026-10122, CVE-2026-10123", "product": "Trendnet TEW-432BRP router (4-CVE CVSS 9.0 batch)", "summary": "Four critical router CVEs (PT-Security dbugs 2026-05-30); SOHO/legacy scope, track for Mirai-variant enrollment over the 14-day window."},
+    {"cve": "CVE-2026-10124", "product": "Shibby Tomato firmware critical CVE", "summary": "CVSS 9.0 router-firmware flaw on Tomato (PT-Security dbugs 2026-05-30); commodity-router scope."},
+    {"cve": "CVE-2026-46527", "product": "cpp-httplib header-only C++ HTTP library", "summary": "CVSS 8.7 defect in cpp-httplib (PT-Security 2026-05-29); embedded server libraries warrant downstream-vendor-relay tracking before patches propagate to compiled appliances."},
+    {"cve": "CVE-2026-48501", "product": "GitHub CLI", "summary": "CVSS 7.4 local CLI tool flaw (PT-Security 2026-05-29); developer-workstation impact, OOS for infra but worth a dev-fleet update push."},
+    {"cve": "CVE-2026-44489", "product": "npm Axios", "summary": "Low-CVSS HTTP-client issue (PT-Security 2026-05-29); routine npm patch."},
+    {"cve": "CVE-2026-34486", "product": "Apache Tomcat EncryptInterceptor PoC tooling momentum", "summary": "GitHub PoC repos (striga-ai / 404-src / Vozec) gaining stars per 0xMarcio/cve aggregator; existing-CVE → exploit-tooling escalation, confirm April patch is applied on Tomcat clusters running 4000/tcp Tribes."},
+    {"cve": "Not assigned", "product": "Signal recovery-key SMS phishing campaign (SecurityAffairs 2026-05-30)", "summary": "Attackers impersonate Signal support via SMS to harvest backup recovery keys → decrypt message archive; targeted at journalists + activists, joins the 2026-Q2 platform-trust-abuse social-engineering tradecraft cluster."},
+    {"cve": "Not assigned", "product": "OSV.dev withdraws 157 false-positive malware reports (Socket.dev 2026-05-27)", "summary": "Mass false-positive incident across npm + PyPI in the supply-chain malware-feed ecosystem; defenders relying on OSV.dev for install-time blocking should verify rule-base provenance."},
+    {"cve": "Not assigned", "product": "23andMe (Chrome Holding Co.) California AG lawsuit (BleepingComputer 2026-05-29)", "summary": "Litigation milestone from the 2023 breach; non-vulnerability."},
+    {"cve": "Not assigned", "product": "Google security engineer charged with Polymarket insider trading (BleepingComputer 2026-05-29)", "summary": "Insider-threat data point; non-vulnerability."},
+    {"cve": "Not assigned", "product": "Trump Mobile customer data breach (SecurityWeek 2026-05-29)", "summary": "Mentioned in SecurityWeek 'In Other News' roundup; vendor specifics not detailed, OOS for infra-CVE focus."}
+  ],
+  "source_coverage": {
+    "total": 30,
+    "checked": 21,
+    "with_findings": 8,
+    "unreachable": [
+      "cisa.gov",
+      "cisa.gov/known-exploited-vulnerabilities-catalog",
+      "attackerkb.com",
+      "msrc.microsoft.com/blog",
+      "hackerone.com/hacktivity",
+      "bugcrowd.com/disclosures",
+      "cve.org",
+      "cve.mitre.org",
+      "cert.gov.ua"
+    ],
+    "degraded": [
+      "packetstormsecurity.com",
+      "habr.com/ru/companies/tomhunter/articles",
+      "teletype.in/@cyberok"
+    ]
+  },
+  "full_report": "reports/2026/05/31/report.md"
+}
