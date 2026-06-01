@@ -1,0 +1,71 @@
+{
+  "date": "2026-06-01",
+  "findings": [
+    {
+      "type": "news",
+      "title": "WP Maps Pro CVE-2026-8732 — Unauthenticated Admin-Account Creation Actively Exploited on ~15,000 WordPress Sites",
+      "threat_score": 6,
+      "cve": "CVE-2026-8732",
+      "cvss": null,
+      "affected_technology": "WP Maps Pro WordPress plugin (Envato Market) ≤ 6.1.0; fixed in 6.1.1 released 2026-05-20",
+      "summary": "Unauthenticated attackers call a vendor-support 'temporary access' AJAX endpoint protected only by a frontend-exposed nonce to create new WordPress administrator accounts with one-click passwordless login URLs; Wordfence blocked 3,600+ exploitation attempts in the 24h before disclosure (BleepingComputer 2026-05-31).",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-05-31"
+    },
+    {
+      "type": "news",
+      "title": "Apache Airflow 16-CVE Batch — Authenticated RCE via XCom PATCH + BashOperator Jinja2 Injection + Multi-Endpoint AuthZ Bypass",
+      "threat_score": 6,
+      "cve": "CVE-2026-40861, CVE-2026-40961, CVE-2026-40963, CVE-2026-41014, CVE-2026-41017, CVE-2026-41084, CVE-2026-42252, CVE-2026-42358, CVE-2026-42359, CVE-2026-42360, CVE-2026-45360, CVE-2026-45426, CVE-2026-46764, CVE-2026-48726, CVE-2026-49267, CVE-2026-49298",
+      "cvss": null,
+      "affected_technology": "Apache Airflow data-orchestration platform (2.x + 3.x release branches per upstream advisory)",
+      "summary": "Sixteen-CVE coordinated disclosure on oss-security 2026-05-31 — highest-priority items CVE-2026-42359 authenticated RCE via XCom PATCH endpoint, CVE-2026-45360 arbitrary import in custom deadline-reference deserialization, and CVE-2026-42252 BashOperator Jinja2 template injection via dag_run.conf with low-privilege user pattern; remaining CVEs span DAG-permission filter bypass via Python lstrip() character-stripping on JWT cookies, JWT cookie missing Secure flag behind HTTPS-terminating proxies, cross-DAG bulk-TaskInstance mutation, template-truncation bypassing nested sensitive-key masking, and SMTP STARTTLS certificate-validation gaps.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-05-31"
+    },
+    {
+      "type": "news",
+      "title": "Apache ActiveMQ 6-CVE Batch — Jolokia addNetworkConnector RCE + Authorization Defects in Messaging Core",
+      "threat_score": 6,
+      "cve": "CVE-2026-42253, CVE-2026-42588, CVE-2026-45505, CVE-2026-46605, CVE-2026-49157, CVE-2026-49270",
+      "cvss": null,
+      "affected_technology": "Apache ActiveMQ Classic messaging broker (5.18.x / 5.19.x patched branches per Apache advisory)",
+      "summary": "Six-CVE batch disclosed on oss-security 2026-05-31 — highest-priority CVE-2026-42588 RCE via Jolokia addNetworkConnector (JMX-over-HTTP bridge enabled by default on the admin interface), plus companion discovery-side weakness CVE-2026-45505 in the same code path, CVE-2026-49157 authenticated low-privilege web users retain Jolokia capability after privilege downgrade, CVE-2026-42253 HTTP response header injection via JMS message properties, CVE-2026-46605 incomplete authorization during destination operations, and CVE-2026-49270 durable subscription disclosure via crafted message.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-05-31"
+    }
+  ],
+  "noted": [
+    {"cve": "CVE-2026-46621, CVE-2026-46562, CVE-2026-44632", "product": "Yamcs-core mission-control platform 3-CVE batch", "summary": "Authenticated RCE via Jython algorithm code injection (CVE-2026-46621), mission-database algorithm override (CVE-2026-46562), and Janino expression-engine injection (CVE-2026-44632) in Yamcs satellite mission-control / telemetry platform (GitHub Advisories 2026-05-31); aerospace / SCADA-ground-segment scope."},
+    {"cve": "CVE-2026-45618", "product": "liquidjs JavaScript template engine RCE", "summary": "Remote code execution in widely deployed liquidjs npm template engine (GitHub Advisories 2026-05-31); downstream SSG/CMS dependency-tree audit warranted (Eleventy + many static-site pipelines)."},
+    {"cve": "CVE-2026-46716", "product": "nezha Go server-monitoring tool cross-tenant RCE", "summary": "Cross-tenant remote code execution via API endpoint in nezha (GitHub Advisories 2026-05-31); self-hosted ops-monitoring, joins the default-no-auth self-host class."},
+    {"cve": "CVE-2026-47131, CVE-2026-47137, CVE-2026-47140, CVE-2026-47208, CVE-2026-47210", "product": "vm2 npm — 5 additional sandbox-escape variants", "summary": "Five new sandbox-escape CVEs (GitHub Advisories 2026-05-31) joining the 12-CVE batch from MEMORY 2026-05-08; library remains structurally unfixable per maintainer — migrate to isolated-vm or process-sandbox."},
+    {"cve": "CVE-2026-25879", "product": "langroid agent framework prompt-to-SQL → RCE", "summary": "Prompt-to-SQL injection chain yielding RCE in langroid LLM agent framework (GitHub Advisories 2026-05-31); extends AI-agent-framework attack-surface class (joins PraisonAI multi-batch pattern)."},
+    {"cve": "Not assigned", "product": "Anthropic Claude Mythos-class models public rollout (BleepingComputer 2026-05-31)", "summary": "Anthropic confirms Mythos-class model rollout after delaying for 'identified security risks to software systems'; non-CVE policy note, AI-platform threat-model calibration data point."},
+    {"cve": "CVE-2026-10187, CVE-2026-10188, CVE-2026-10189, CVE-2026-10191, CVE-2026-10192, CVE-2026-10164, CVE-2026-10166", "product": "Tenda W12 + Edimax BR-6478AC + Totolink N300RH SOHO router CVSS 9.0+ batch", "summary": "Multiple stack-based buffer overflows in SOHO router admin interfaces (dbugs/PT-Security 2026-05-30/31); commodity-router scope, Mirai-variant tracking but OOS for corporate perimeter."},
+    {"cve": "Not assigned", "product": "Carnival Cruise Line breach — ~6M customers (SecurityWeek + BleepingComputer 2026-05-28)", "summary": "ShinyHunters extortion gang attribution; non-CVE, joins Charter Communications (4.9M) + 23andMe litigation as the 2026-Q2 mega-breach cluster."},
+    {"cve": "Not assigned", "product": "Anthropic Claude security plugin / Azure privilege escalation / Kali365 MFA bypass (THN ThreatsDay 2026-05-31)", "summary": "Weekly roundup-only mentions without standalone advisories visible yet; flagged for follow-up next cycle if specifics surface."}
+  ],
+  "source_coverage": {
+    "total": 30,
+    "checked": 21,
+    "with_findings": 6,
+    "unreachable": [
+      "cisa.gov",
+      "cisa.gov/known-exploited-vulnerabilities-catalog",
+      "attackerkb.com",
+      "msrc.microsoft.com/blog",
+      "hackerone.com/hacktivity",
+      "bugcrowd.com/disclosures",
+      "cve.mitre.org",
+      "cve.org",
+      "cert.gov.ua"
+    ],
+    "degraded": [
+      "packetstormsecurity.com",
+      "habr.com/ru/companies/tomhunter/articles",
+      "teletype.in/@cyberok"
+    ]
+  },
+  "full_report": "reports/2026/06/01/report.md"
+}

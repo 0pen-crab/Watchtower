@@ -1,0 +1,115 @@
+Watchtower daily run — 2026-06-01
+================================================================
+
+Step 1 — git pull
+-----------------
+06:01:00Z  cd /home/claude/workspace/watchtower && git pull
+06:01:01Z  Already up to date. (no new commits since 2026-05-31 report)
+
+Step 2 — dedup index
+--------------------
+06:01:05Z  Walked reports/ tree, included reports with date >= 2026-05-02 (cutoff today - 30d).
+06:01:08Z  Extracted 714 unique CVE identifiers across findings + noted entries.
+06:01:08Z  Saved to /tmp/dedup_cves.txt for grep-style lookup.
+
+Step 3 — source coverage (SOURCES.md = 30 unique sources after dedup of seclists)
+---------------------------------------------------------------------------------
+06:01:10Z  bleepingcomputer.com                                    ✅ 4.0s — homepage + /news/security/ — fresh content
+06:01:14Z  thehackernews.com                                       ✅ 3.5s — homepage + /search/label/Vulnerability
+06:01:14Z  cisa.gov                                                ❌ unreachable — known 403 pattern from MEMORY
+06:01:14Z  cisa.gov/known-exploited-vulnerabilities-catalog        ❌ unreachable — known 403 pattern from MEMORY
+06:01:18Z  securityweek.com                                        ✅ 3.8s — homepage
+06:01:22Z  github.com/search?q=CVE                                 ✅ 4.1s — recently-updated CVE-2026 repos
+06:01:26Z  schneier.com                                            ✅ 3.2s — homepage, no fresh vuln content this window
+06:01:30Z  krebsonsecurity.com                                     ✅ 3.5s — most recent post 2026-05-25 (Stark/MIR arrests)
+06:01:34Z  rapid7.com/blog                                         ✅ 4.0s — surfaced PAN-OS + Gogs posts
+06:01:34Z  attackerkb.com                                          ❌ unreachable — known 403 pattern from MEMORY
+06:01:38Z  fortinet.com/blog/threat-research                       ✅ 3.5s — last post 2026-05-26 PureLogs phishing
+06:01:42Z  securitylab.github.com                                  ✅ 3.0s — no chronological feed; marked checked but content-empty
+06:01:46Z  seclists.org/fulldisclosure/2026/May/                   ✅ 4.0s — most recent post 2026-05-25 (ZTE + MCP)
+06:01:46Z  seclists.org/fulldisclosure/2026/Jun/                   ⚠️ 1.5s — does not exist yet (today is 2026-06-01)
+06:01:46Z  packetstormsecurity.com                                 ⚠️ degraded — redirects to packetstorm.news per MEMORY
+06:01:50Z  opencve.io                                              ⚠️ 3.5s — homepage no CVE listing
+06:01:54Z  app.opencve.io/cve/?…                                   ✅ 4.0s — Tenda/Ivanti/Edimax/Totolink CVE entries
+06:01:58Z  nvd.nist.gov                                            ⚠️ 3.5s — most recent scored CVE = 2026-05-28
+06:02:02Z  cve.mitre.org                                           ❌ unreachable — redirects to cve.org (JS-only)
+06:02:02Z  cve.org                                                 ❌ unreachable — JS-only empty content
+06:02:06Z  googleprojectzero.blogspot.com → projectzero.google     ✅ 3.5s — most recent post 2026-05-13
+06:02:10Z  blog.cloudflare.com/tag/security                        ✅ 3.5s — most recent post 2026-05-18 (Glasswing Mythos)
+06:02:14Z  msrc.microsoft.com/blog                                 ❌ unreachable — redirects to footer-only content
+06:02:14Z  hackerone.com/hacktivity                                ❌ unreachable — JS-only known
+06:02:14Z  bugcrowd.com/disclosures                                ❌ unreachable — 404 stale URL
+06:02:18Z  kb.cert.org/vuls                                        ✅ 3.0s — VU#780781 Casdoor 2026-05-28 (already in dedup)
+06:02:22Z  avleonov.com                                            ✅ 3.5s — most recent post 2026-05-28 (Fragnesia, already in dedup)
+06:02:26Z  github.com/0xMarcio/cve                                 ✅ 3.5s — CopyFail + n8n PoCs (all in dedup)
+06:02:30Z  dbugs.ptsecurity.com                                    ✅ 4.0s — Tenda/Edimax/Totolink router batch (NEW for noted)
+06:02:34Z  habr.com/ru/companies/tomhunter/articles                ⚠️ degraded — no posts later than 2026-03-06
+06:02:38Z  teletype.in/@cyberok                                    ⚠️ degraded — no posts later than 2026-02-04
+06:02:42Z  cert.gov.ua                                             ❌ unreachable — empty content rendered
+06:02:46Z  openwall.com/lists/oss-security/2026/05/                ✅ 3.5s — May 30/31 surfaced Airflow + ActiveMQ batches
+06:02:50Z  openwall.com/lists/oss-security/2026/06/                ⚠️ 1.5s — empty (today is 2026-06-01)
+06:02:54Z  github.com/advisories                                   ✅ 4.0s — critical published:2026-05-31 surfaced PraisonAI 2nd batch (in dedup), yamcs/vm2/liquidjs/nezha/langroid (NEW for noted)
+
+Step 4 — triage decisions
+-------------------------
+NEW (news):
+  - WP Maps Pro CVE-2026-8732                                    NEW — actively-exploited WP plugin (Wordfence 3.6k attempts/24h)
+  - Apache Airflow 16-CVE batch (CVE-2026-40861..49298)          NEW — oss-security 2026-05-31, none in dedup
+  - Apache ActiveMQ 6-CVE batch (CVE-2026-42253..49270)          NEW — oss-security 2026-05-31, none in dedup
+
+NEW (noted):
+  - Yamcs-core 3-CVE batch                                       NEW — aerospace SCADA
+  - liquidjs CVE-2026-45618                                      NEW — RCE
+  - nezha CVE-2026-46716                                         NEW — cross-tenant RCE
+  - vm2 5 additional CVEs                                        NEW — confirmation of MEMORY 2026-05-08 unfixable pattern
+  - langroid CVE-2026-25879                                      NEW — AI agent framework
+  - Tenda W12 + Edimax + Totolink router batch                   NEW — SOHO commodity
+  - Anthropic Mythos rollout (policy)                            NEW — non-CVE calibration note
+  - Carnival Cruise Line breach (6M)                             NEW — incident-pattern cluster
+  - THN ThreatsDay roundup (Claude security plugin, Azure)       NEW — flagged for follow-up
+
+SKIP (already in dedup):
+  - PAN-OS CVE-2026-0257                                         SKIP (already in 2026-05-31)
+  - CIFSwitch Linux kernel LPE                                   SKIP (already in 2026-05-31)
+  - FortiClient EMS CVE-2026-35616                               SKIP (already in 2026-05-29)
+  - Marimo CVE-2026-39987                                        SKIP (already in 2026-05-30)
+  - Gogs unpatched 0-day RCE                                     SKIP (already in 2026-05-29)
+  - sshfs CVE-2026-47187 + CVE-2026-48711                        SKIP (already in 2026-05-31)
+  - Apache MINA SSHD CVE-2026-48827                              SKIP (already in 2026-05-31)
+  - Apache Fluss CVE-2026-49361                                  SKIP (already in 2026-05-31)
+  - Flowise CVE-2026-40933                                       SKIP (already in 2026-05-31)
+  - GreyVibe Russian AI-assisted attacks                         SKIP (already in 2026-05-29)
+  - ChatGPhish / LLMShare / mouse5212                            SKIP (already in 2026-05-30)
+  - Casdoor VU#780781                                            SKIP (already in 2026-05-29)
+  - PraisonAI second batch CVE-2026-47391..47416                 SKIP (already in 2026-05-30)
+  - DAEMON Tools CVE-2026-8398                                   SKIP (already in 2026-05-29)
+  - Charter Communications breach                                SKIP (already in 2026-05-30)
+  - 23andMe California AG lawsuit                                SKIP (already in 2026-05-31)
+  - xwiki CVE-2026-33137 / CVE-2026-23734                        SKIP (already in 2026-05-27)
+  - Asocks botnet takedown                                       SKIP (already in 2026-05-30)
+  - Linux Fragnesia CVE-2026-46300                               SKIP (already covered)
+
+No material-change updates this cycle (no prior-finding severity Δ ≥ 2, no new KEV addition for prior items beyond already-tracked 2026-05-29 batch).
+
+Step 5/6 — write report.md + report.json + debug.log
+----------------------------------------------------
+06:03:00Z  Wrote reports/2026/06/01/report.md
+06:03:00Z  Wrote reports/2026/06/01/report.json
+06:03:00Z  Final source_coverage: total=30, checked=21, with_findings=6, unreachable=9, degraded=3
+
+Step 7 — validator
+------------------
+06:03:05Z  python3 scripts/validate_report.py reports/2026/06/01/report.json
+⚠️  3 warning(s):
+   findings[0]: 'summary' is 317 chars (aim for <200)
+   findings[1]: 'summary' is 645 chars (aim for <200)
+   findings[2]: 'summary' is 586 chars (aim for <200)
+✅ reports/2026/06/01/report.json — valid
+
+(Warnings are advisory and do not block commit; summaries are intentionally dense for multi-CVE batches.)
+
+Step 8 — commit + push
+----------------------
+06:03:10Z  git add reports/2026/06/01/ + sources-meta.md update
+06:03:10Z  git commit -m "report: 2026-06-01"
+06:03:11Z  git push (pending)

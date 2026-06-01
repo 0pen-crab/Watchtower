@@ -2,7 +2,7 @@
 
 | Source | Findings | Noted | Empty | Last Hit |
 |--------|----------|-------|-------|----------|
-| bleepingcomputer.com | 62 | 56 | 1 | 2026-05-31 (PAN-OS GlobalProtect CVE-2026-0257 auth-override-cookie ITW + KEV-add — NEWS CRITICAL; CIFSwitch Linux kernel LPE 19-year-old + PoC + SpaceX engineer — NEWS HIGH) |
+| bleepingcomputer.com | 63 | 57 | 1 | 2026-06-01 (WP Maps Pro CVE-2026-8732 — NEWS HIGH actively-exploited WordPress plugin admin-creation; Carnival Cruise 6M breach — NOTED) |
 | thehackernews.com | 56 | 31 | 0 | 2026-05-31 (PAN-OS GlobalProtect CVE-2026-0257 — NEWS CRITICAL corroborates BC; older 2026-05-29 articles already covered) |
 | cisa.gov | 0 | 0 | 27 | — |
 | securityweek.com | 44 | 25 | 4 | 2026-05-31 (Flowise CVE-2026-40933 CVSS 9.9 PoC published by Obsidian Security — NEWS HIGH) |
@@ -27,13 +27,13 @@
 | kb.cert.org/vuls | 3 | 6 | 20 | 2026-05-31 (still VU#780781 Casdoor latest — no new VU#) |
 | avleonov.com | 0 | 1 | 23 | 2026-05-31 (no new post since Fragnesia on 2026-05-28) |
 | github.com/0xMarcio/cve | 2 | 8 | 17 | 2026-05-31 (Apache Tomcat CVE-2026-34486 PoC repos gaining stars — NOTED tooling momentum; Copy Fail Rust PoC continues) |
-| dbugs.ptsecurity.com | 14 | 47 | 8 | 2026-05-31 (Trendnet TEW-432BRP 4-CVE CVSS 9.0 batch + Tomato CVE-2026-10124 + cpp-httplib CVE-2026-46527 CVSS 8.7 + GitHub CLI CVE-2026-48501 + npm Axios CVE-2026-44489 — all NOTED) |
+| dbugs.ptsecurity.com | 14 | 48 | 8 | 2026-06-01 (Tenda W12 4-CVE stack-overflow batch + Edimax BR-6478AC pair + Totolink N300RH CVSS 9.0+ batch — NOTED commodity SOHO router scope) |
 | habr.com/ru/companies/tomhunter/articles | 0 | 0 | 25 | — (degraded — stale content, March 2026 latest) |
 | teletype.in/@cyberok | 0 | 0 | 25 | — (degraded — stale content, February 2026 latest) |
 | cert.gov.ua | 0 | 0 | 25 | — (unreachable — empty content via WebFetch) |
 | socket.dev/blog (NEW for 2026-05) | 5 | 5 | 10 | 2026-05-31 (OSV.dev 157 false-positive malware report withdrawal across npm + PyPI — NOTED; no new 2026-05-28→31 posts) |
-| openwall.com/lists/oss-security (off-list, primary OSS source) | 34 | 79 | 2 | 2026-05-31 (2026-05-30 archive: sshfs CVE-2026-47187 + 48711 — NEWS HIGH; Apache MINA SSHD CVE-2026-48827 + Apache Fluss CVE-2026-49361 + Vim < 9.2.565 OOB read + Text::LineFold CVE-2026-8594 + libjxl CVE-2025-70103 + GPAC/MP4Box CVE-2025-70116 — all NOTED; 2026-05-31 empty Sunday) |
-| github advisories (off-list, NEW high-value 2026-05-07) | 28 | 75 | 3 | 2026-05-31 (no new high-signal advisories beyond previously covered PraisonAI batch + stigmem-node federation pair) |
+| openwall.com/lists/oss-security (off-list, primary OSS source) | 36 | 79 | 2 | 2026-06-01 (2026-05-31 archive: Apache Airflow 16-CVE batch incl. CVE-2026-42359 authenticated RCE + CVE-2026-42252 BashOperator Jinja2 — NEWS HIGH; Apache ActiveMQ 6-CVE batch incl. CVE-2026-42588 Jolokia addNetworkConnector RCE — NEWS HIGH; 2026-06-01 archive empty) |
+| github advisories (off-list, NEW high-value 2026-05-07) | 28 | 80 | 3 | 2026-06-01 (5 new noted: yamcs-core 3-CVE batch CVE-2026-46621/46562/44632 mission-control RCE; liquidjs CVE-2026-45618 template-engine RCE; nezha CVE-2026-46716 cross-tenant RCE; vm2 5 additional sandbox-escape CVEs CVE-2026-47131/47137/47140/47208/47210; langroid CVE-2026-25879 prompt-to-SQL → RCE) |
 | samba.org/samba/security (NEW 2026-05-28, vendor PSIRT direct) | 1 | 1 | 0 | 2026-05-28 (CVE-2026-4408 + CVE-2026-4480 CVSS-10 unauth-RCE pair on file/print servers — NEWS CRITICAL; 4 lower-severity companions — NOTED) |
 | jenkins.io/security (NEW 2026-05-28, vendor PSIRT direct) | 1 | 0 | 0 | 2026-05-28 (11-CVE plugin advisory 2026-05-27 incl. LDAP/AD referral RCE — NEWS) |
 | adversa.ai/blog (NEW 2026-05-28, AI-coding-agent disclosure channel) | 1 | 0 | 0 | 2026-05-28 (SymJack symlink-hijack against 6 AI coding agents — NEWS, second Adversa AI publication after 2026-05-07 TrustFall) |
