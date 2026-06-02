@@ -1,0 +1,179 @@
+{
+  "date": "2026-06-02",
+  "findings": [
+    {
+      "type": "news",
+      "title": "Windows Netlogon CVE-2026-41089 — Pre-Auth RCE on Domain Controllers Actively Exploited 20 Days After May Patch Tuesday",
+      "threat_score": 9,
+      "cve": "CVE-2026-41089",
+      "cvss": 9.8,
+      "affected_technology": "Microsoft Windows Server (Netlogon service) — all supported Windows Server SKUs running domain controller role",
+      "summary": "Stack-based buffer overflow in Windows Netlogon enables unauthenticated remote code execution on domain controllers; Microsoft patched 2026-05-12 without flagging exploitation risk and Belgian CCB confirmed active in-the-wild exploitation 2026-06-01.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-06-01"
+    },
+    {
+      "type": "news",
+      "title": "Miasma Supply-Chain Worm — 7 @redhat-cloud-services npm Packages Trojanized via Compromised Red Hat Employee GitHub Account",
+      "threat_score": 8,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "npm @redhat-cloud-services namespace (vulnerabilities-client, tsc-transform-imports, topological-inventory-client, sources-client, rule-components, remediations-client, rbac-client) — ~117K weekly combined downloads",
+      "summary": "Mini Shai-Hulud derivative codenamed Miasma trojanized 7 Red Hat npm packages with a preinstall hook exfiltrating cloud credentials and CI secrets to an Anthropic-API-impersonator domain, with novel GCP/Azure identity collectors and per-infection encrypted payloads.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-06-01"
+    },
+    {
+      "type": "news",
+      "title": "codexui-android npm — OpenAI Codex Non-Expiring Refresh-Token Theft via Trojan Package, ~30K Weekly Downloads, 50-Day Undetected Exfil",
+      "threat_score": 7,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "OpenAI Codex CLI (~/.codex/auth.json) — every developer who installed codexui-android since 2026-04-10; also Android app OpenClaw Codex Claude AI Agent (50K+ downloads)",
+      "summary": "Malicious codexui-android npm package silently exfiltrated non-expiring OpenAI Codex refresh tokens for ~50 days before discovery, enabling indefinite silent impersonation of every affected developer's Codex session.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-06-01"
+    },
+    {
+      "type": "news",
+      "title": "Vitest CVE-2026-47429 + CVE-2026-47428 — Critical RCE in Widely-Deployed JavaScript Test Framework via UI / Browser Mode",
+      "threat_score": 7,
+      "cve": "CVE-2026-47429, CVE-2026-47428",
+      "cvss": 9.8,
+      "affected_technology": "vitest <4.1.0 (file-serving bypass RCE) and @vitest/browser 4.0.17-<4.1.6 / 5.0.0-beta.0-<5.0.0-beta.3 (XSS-to-RCE) — Vite/Vue/Svelte ecosystem default testing framework",
+      "summary": "Two critical Vitest advisories enable RCE via UI-mode file-serving bypass on Windows and via @vitest/browser otelCarrier query-parameter XSS leading to VITEST_API_TOKEN recovery and authenticated file-write API abuse.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-05-30"
+    },
+    {
+      "type": "news",
+      "title": "Operation Dragon Weave (China-Aligned) — AZUREVEIL AdaptixC2 Agent Using Azure Blob Storage as Dead-Drop C2 Against Czech Republic + Taiwan",
+      "threat_score": 6,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Government, research, academic, technology, financial-services targets in Czech Republic and Taiwan; AdaptixC2 framework deployment",
+      "summary": "Seqrite Labs disclosed a sustained China-aligned spear-phishing campaign delivering RUSTCLOAK loader and AZUREVEIL AdaptixC2 agent that uses Azure Blob Storage containers as dead-drop C2 channels.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-06-01"
+    },
+    {
+      "type": "news",
+      "title": "DriveSurge IAB — Thousands of Compromised Sites Funnel Visitors into ClickFix + FakeUpdate Chains via zTDS, Now Targeting macOS",
+      "threat_score": 6,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Compromised public-facing websites (WordPress + generic CMS) used as malware-distribution infrastructure; ClickFix + FakeUpdate lures targeting Windows + macOS browser fleets",
+      "summary": "Silent Push disclosed a pay-per-install initial-access broker DriveSurge using a custom traffic-distribution system to deliver ClickFix and FakeUpdate lures, now extended to macOS desktop targeting.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-06-01"
+    },
+    {
+      "type": "news",
+      "title": "WordPress Steam-Profile-as-Dead-Drop Campaign — 1,980 Infected WordPress Sites Use Steam Community Comments as C2 Channel",
+      "threat_score": 5,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "WordPress (compromised via stolen credentials / vulnerable themes / plugins) — ~1,980 active infected sites; Steam Community profile comments as C2",
+      "summary": "GoDaddy detailed a 10-month-running campaign infecting ~1,980 WordPress sites that fetch commands from Steam Community profile comments encoded with invisible Unicode characters, eliminating dedicated C2 infrastructure.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-06-01"
+    },
+    {
+      "type": "news",
+      "title": "Meta AI Support Chatbot Abused to Hijack High-Profile Instagram Accounts via Password-Reset MFA Bypass",
+      "threat_score": 5,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Meta / Instagram account recovery flow — AI customer-support chatbot with email-change authority during password reset",
+      "summary": "Pro-Iranian actors used Meta's AI customer-support chatbot to associate attacker-controlled email addresses with target Instagram accounts during password reset, briefly hijacking Obama White House and U.S. Space Force accounts before Meta deployed an emergency patch.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-06-01"
+    }
+  ],
+  "noted": [
+    {
+      "cve": "CVE-2026-45192",
+      "product": "Apache Airflow (17th CVE; addendum to MEMORY 2026-06-01 16-CVE batch) — improper redaction of sensitive fields in Connection Extra API responses",
+      "summary": "Newly-disclosed 17th Apache Airflow CVE addendum to yesterday's 16-CVE batch; apply alongside the existing fixes."
+    },
+    {
+      "cve": "CVE-2026-46718",
+      "product": "Apache Calcite — authenticated user-controlled models load arbitrary classes for code execution",
+      "summary": "Apache Calcite class-loading flaw enabling code execution via user-controlled models; affects downstream Druid/Beam/Hive/Flink/Phoenix that bundle Calcite."
+    },
+    {
+      "cve": "CVE-2026-35563",
+      "product": "Apache Directory LDAP API client — fails to validate server certificate hostname matching",
+      "summary": "MitM-class LDAP client cert-validation defect with broad enterprise Java-LDAP blast radius."
+    },
+    {
+      "cve": "CVE-2026-49328",
+      "product": "Apache Fesod (Incubating) — SSRF via inadequate URL validation",
+      "summary": "Apache Fesod SSRF; incubator-stage with limited deployment, logged for visibility."
+    },
+    {
+      "cve": "CVE-2026-8643",
+      "product": "pip (Python package installer) — console/GUI script extraction outside install directory",
+      "summary": "pip script-extraction directory escape; potential CI/CD supply-chain abuse vector if a malicious wheel is permitted to install."
+    },
+    {
+      "cve": "CVE-2026-8796",
+      "product": "Sereal::Decoder (Perl serialization) — heap out-of-bounds read",
+      "summary": "Low-impact heap OOB read in Perl Sereal::Decoder; only relevant to Perl services parsing untrusted Sereal input."
+    },
+    {
+      "cve": "None assigned (GHSA pending)",
+      "product": "bmcweb (OpenBMC web server) — four vulnerabilities, two unfixed (Full Disclosure 2026-05-31)",
+      "summary": "Four bmcweb vulnerabilities including two unfixed; OOB management plane attack surface on hyperscaler-grade rackmount servers."
+    },
+    {
+      "cve": "CVE-2026-8501",
+      "product": "PC Tools Internet Security PCTCore64.sys driver (CERT/CC VU#158530) — BYOVD candidate",
+      "summary": "Discontinued-product signed driver usable as BYOVD primitive for credential extraction and cross-process handle manipulation; add to WDAC / Vulnerable Driver Block List."
+    },
+    {
+      "cve": "CVE-2026-0826",
+      "product": "HP Poly VVX and Trio VoIP Phones (Rapid7) — pre-auth stack buffer overflow",
+      "summary": "Critical pre-auth stack overflow in HP Poly VoIP phones; OOS for most corporate perimeters since VoIP is typically internal-VLAN only."
+    },
+    {
+      "cve": "None assigned",
+      "product": "Mennekes Amtron Series EV-charging-station multiple vulnerabilities (CyberDanube 20260528-0)",
+      "summary": "OT/EV-charging vulnerabilities; OOS for corporate perimeter but logged as OT-infrastructure calibration data."
+    },
+    {
+      "cve": "None assigned",
+      "product": "Dashlane password manager — credential-stuffing brute-force wave 2026-05-31 → 2026-06-01",
+      "summary": "External credential-stuffing wave against Dashlane accounts; vendor confirms no platform compromise."
+    },
+    {
+      "cve": "None assigned",
+      "product": "Spain National Police doxer arrest — 'Police-ESP-Doxed' actor doxing government employees",
+      "summary": "Individual arrested 2026-05-27 for publishing personal data of Spanish govt staff via prior-breach + OSINT data aggregation; not a system compromise event."
+    }
+  ],
+  "source_coverage": {
+    "total": 30,
+    "checked": 22,
+    "with_findings": 14,
+    "unreachable": [
+      "cisa.gov",
+      "cisa.gov/known-exploited-vulnerabilities-catalog",
+      "attackerkb.com",
+      "cve.org",
+      "cve.mitre.org",
+      "googleprojectzero.blogspot.com",
+      "hackerone.com/hacktivity",
+      "bugcrowd.com/disclosures"
+    ],
+    "degraded": [
+      "packetstormsecurity.com",
+      "nvd.nist.gov",
+      "msrc.microsoft.com/blog",
+      "habr.com/ru/companies/tomhunter/articles",
+      "teletype.in/@cyberok",
+      "cert.gov.ua"
+    ]
+  },
+  "full_report": "reports/2026/06/02/report.md"
+}

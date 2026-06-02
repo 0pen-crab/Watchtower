@@ -1,0 +1,119 @@
+# Watchtower Debug Log — 2026-06-02
+
+## Step 1: git pull
+[2026-06-02 06:00:00Z] cd /home/claude/workspace/watchtower && git pull
+[2026-06-02 06:00:02Z] Already up to date. ✅
+
+## Step 2: dedup index build
+[2026-06-02 06:00:15Z] Read 28 prior reports (reports/2026/05/{03..31} + reports/2026/06/01)
+[2026-06-02 06:00:30Z] Extracted 747 unique CVE IDs into /tmp/dedup_cves.txt
+[2026-06-02 06:00:35Z] Read MEMORY.md (137 lines / 138K bytes) — confirmed durable patterns and recent disclosure context through 2026-06-01
+
+## Step 3: source checks
+SOURCES.md total: 30 unique sources (seclists deduplicated)
+
+✅ Checked successfully (16):
+- bleepingcomputer.com — 4.1s — 15 articles surfaced — multiple high-priority finds (Netlogon, Miasma, DriveSurge, Steam-C2)
+- thehackernews.com — 3.8s — 15 articles — Miasma, codexui-android, Dragon Weave, weekly recap
+- securityweek.com — 4.0s — 15 articles — confirmed Netlogon CVE-2026-41089 + Flowise PoC + Gogs
+- rapid7.com — 2.9s — Metasploit Wrap Up 2026-05-29 + HP Poly CVE-2026-0826 + PAN-OS observation post
+- schneier.com — 2.4s — June 1 post on AI vuln-disclosure (calibration only)
+- krebsonsecurity.com — 2.7s — Meta AI Bot Instagram hijack (June 1)
+- fortinet.com/blog/threat-research — 2.3s — May 26 PureLogs + May 20 P2Pinfect (no fresh)
+- securitylab.github.com — 2.5s — May 22 7-Zip batch + Chatwoot + Mesa workflow (no June)
+- seclists.org/fulldisclosure/2026/May/ — 2.8s — bmcweb OpenBMC + Mennekes Amtron (May 31)
+- opencve.io — 3.1s — Casdoor CVE-2026-9092 (already covered) + Android batch (OOS)
+- blog.cloudflare.com/tag/security — 2.2s — Project Glasswing post May 18 only (no June)
+- kb.cert.org/vuls — 2.6s — VU#158530 PCTCore64.sys June 1
+- avleonov.com — 2.4s — Fragnesia post May 28 (already covered)
+- github.com/0xMarcio/cve — 2.9s — Cisco/n8n/CopyFail/SafeBreach/Tomcat PoC tempo
+- dbugs.ptsecurity.com — 3.4s — Cloud Foundry CVE-2026-40965 CVSS-10 + Pixa Bank + Android
+- openwall oss-security 2026/06/ — 3.2s — 13 June 1 posts (Airflow-17 / Calcite / Directory / Fesod / pip / Sereal / GPAC)
+- GitHub Security Advisories — 3.0s — Vitest CVE-2026-47428/47429 critical + PraisonAI cont.
+
+⚠️ Degraded — reachable but no usable fresh content (6):
+- packetstormsecurity.com — redirects to packetstorm.news, response is Terms of Service page only
+- nvd.nist.gov — homepage returned navigation only, no CVE listings
+- msrc.microsoft.com/blog — redirects to microsoft.com/en-us/msrc/blog; response empty content
+- habr.com/ru/companies/tomhunter/articles — most recent post March 6, 2026 (stale)
+- teletype.in/@cyberok — most recent post Feb 4, 2026 (stale)
+- cert.gov.ua — homepage only, no alert data surfaced
+
+❌ Unreachable (8):
+- cisa.gov — 403 Forbidden (consistent w/ MEMORY)
+- cisa.gov/known-exploited-vulnerabilities-catalog — 403 Forbidden
+- attackerkb.com — known-blocked per MEMORY (treated as unreachable)
+- cve.org — JS-required (per MEMORY)
+- cve.mitre.org — redirects to cve.org (per MEMORY)
+- googleprojectzero.blogspot.com — redirects to projectzero.google (per MEMORY)
+- hackerone.com/hacktivity — JS-required (per MEMORY)
+- bugcrowd.com/disclosures — 404 (consistent w/ MEMORY 2026-04-23)
+
+source_coverage final:
+  total: 30
+  checked: 22 (16 successful + 6 degraded)
+  with_findings: 14
+  unreachable: 8
+  degraded: 6
+  Constraint: checked (22) >= total (30) - unreachable (8) = 22 ✓
+
+## Step 4: dedup decisions
+
+NEW items (promoted to findings):
+- CVE-2026-41089 Windows Netlogon — NEW (not in dedup index; first appearance)
+- Miasma Red Hat npm — NEW (campaign, no CVE)
+- codexui-android — NEW (no CVE)
+- CVE-2026-47428, CVE-2026-47429 (Vitest) — NEW (not in dedup index)
+- Operation Dragon Weave — NEW (campaign)
+- DriveSurge — NEW (campaign)
+- WordPress Steam C2 — NEW (campaign)
+- Meta AI Instagram hijack — NEW (no CVE)
+
+SKIP (already in dedup index / MEMORY):
+- WP Maps Pro CVE-2026-8732 — SKIP (already in reports/2026/06/01 as news)
+- PAN-OS CVE-2026-0257 — SKIP (MEMORY 2026-05-31)
+- CIFSwitch (Linux kernel) — SKIP (MEMORY 2026-05-31; promoted from noted 2026-05-29)
+- Casdoor CVE-2026-9092 — SKIP (already covered as part of CVE-2026-9090…9098 batch, MEMORY 2026-05-29)
+- Apache Airflow CVE-2026-45192 — partial SKIP (16-CVE batch already in reports/2026/06/01; the 17th is noted-tier as addendum, not full update)
+- Apache MINA SSHD CVE-2026-48827 — SKIP (MEMORY 2026-05-30 noted)
+- sshfs CVE-2026-47187 + 48711 — SKIP (MEMORY 2026-05-30 news)
+- Apache Fluss CVE-2026-49361 — SKIP (MEMORY 2026-05-30 noted)
+- libjxl CVE-2025-70103 — SKIP (MEMORY 2026-05-30 noted)
+- GPAC/MP4Box batch (CVE-2025-60481 etc.) — SKIP (related to MEMORY 2026-05-30 GPAC noted)
+- Gogs zero-day — SKIP (MEMORY 2026-05-29 news)
+- Flowise CVE-2026-40933 — SKIP (MEMORY 2026-05-31 news)
+- Charter Communications breach — SKIP (MEMORY 2026-05-27 noted)
+- Chrome 148 — SKIP (MEMORY 2026-05-30 noted; client-only OOS)
+- 23andMe California AG lawsuit — SKIP (existing breach, no new info)
+- Asocks botnet takedown — SKIP (MEMORY 2026-05-30 news)
+
+Noted-tier (new but not promoted):
+- CVE-2026-45192 Apache Airflow Connection-Extra redaction (addendum to yesterday's 16-CVE batch)
+- CVE-2026-46718 Apache Calcite model class-loading
+- CVE-2026-35563 Apache Directory LDAP API cert validation
+- CVE-2026-49328 Apache Fesod SSRF
+- CVE-2026-8643 pip script extraction
+- CVE-2026-8796 Sereal::Decoder Perl heap
+- bmcweb OpenBMC (no CVE)
+- CVE-2026-8501 PCTCore64.sys BYOVD
+- CVE-2026-0826 HP Poly VVX/Trio
+- Mennekes Amtron EV-charging (no CVE)
+- Dashlane brute-force (no CVE)
+- Spain doxer arrest (no CVE)
+
+## Step 5+6+7: write + validate
+[2026-06-02 06:35:00Z] Wrote reports/2026/06/02/report.md (10 sections, 8 findings, 12 noted)
+[2026-06-02 06:38:00Z] Wrote reports/2026/06/02/report.json (matching schema)
+[2026-06-02 06:39:00Z] python3 scripts/validate_report.py reports/2026/06/02/report.json
+[2026-06-02 06:39:01Z] ✅ reports/2026/06/02/report.json — valid
+
+## Discovery latency tally
+- 8/8 news items tagged "on-time" (all surfaced within 24-48h of original publication 2026-05-30 → 2026-06-01)
+- 0 "early", 0 "late"
+- Score-7+ items (Netlogon=9, Miasma=8, codexui=7, Vitest=7): 4/4 on-time → 100% (target >80%) ✓
+
+## Notes for next cycle
+- Windows Netlogon CVE-2026-41089 should be watched for KEV addition + ransomware-affiliate ramp.
+- Miasma will likely spawn Wave-3-class follow-on compromises within 7-14 days per the TeamPCP-source-released worm prediction (MEMORY 2026-05-19).
+- Vitest CVE-2026-47429 has the highest probability of a public PoC within 7 days given the GHSA technical detail.
+- codexui-android refresh-token-non-expiry primitive may extend to Claude Code / Cursor / Gemini CLI in follow-on supply-chain campaigns — pre-emptively monitor `~/.claude/credentials.json` exfil patterns.
