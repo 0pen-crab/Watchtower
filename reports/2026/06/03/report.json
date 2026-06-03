@@ -1,0 +1,223 @@
+{
+  "date": "2026-06-03",
+  "findings": [
+    {
+      "type": "update",
+      "title": "Miasma Supply-Chain Worm Scope Expanded 4.5x — 32 @redhat-cloud-services npm Packages, 96 Malicious Versions in a 72-Second Window, ~10M Total Downloads",
+      "threat_score": 8,
+      "previous_threat_score": 8,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "npm @redhat-cloud-services namespace (Hybrid Cloud Console ecosystem) — 32 packages, 96 malicious versions, ~10 million cumulative downloads; 210 downstream repos confirmed compromised by Ox Security",
+      "summary": "SecurityWeek follow-on coverage expands the Miasma Red Hat npm worm scope from 7 to 32 packages with 96 malicious versions pushed in a 72-second automated burst (~10M cumulative downloads) and 210 confirmed downstream-credential-leak repos identified by Ox Security.",
+      "first_seen_at": "2026-06-01"
+    },
+    {
+      "type": "news",
+      "title": "Kirki WordPress Plugin CVE-2026-8206 — REST API Password-Reset Address-Substitution Yields Unauthenticated Admin Takeover, Active Exploitation Against ~500K Sites",
+      "threat_score": 7,
+      "cve": "CVE-2026-8206",
+      "cvss": null,
+      "affected_technology": "Kirki WordPress plugin versions 6.0.0 through 6.0.6 (≈500,000 active installs; embedded in many premium themes); patched 6.0.7",
+      "summary": "The Kirki plugin's REST API password-reset endpoint accepts an attacker-supplied email parameter, sending the reset link to the attacker instead of the account owner; Wordfence observed 222+ exploitation attempts within 24 hours on 2026-06-02.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-06-02"
+    },
+    {
+      "type": "news",
+      "title": "Oracle WebLogic CVE-2024-21182 Added to CISA KEV — Pre-Auth RCE Patched July 2024 Now Actively Exploited, 3-Day Federal Deadline 2026-06-04",
+      "threat_score": 7,
+      "cve": "CVE-2024-21182",
+      "cvss": 7.5,
+      "affected_technology": "Oracle WebLogic Server (12c / 14c) instances missing the July 2024 Critical Patch Update; T3/HTTP-exposed deployments highest-risk",
+      "summary": "CISA added the pre-auth Oracle WebLogic RCE CVE-2024-21182 (originally patched July 2024) to the Known Exploited Vulnerabilities catalog on 2026-06-01 with a 3-day federal remediation deadline of 2026-06-04 after detecting active in-the-wild exploitation.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-06-01"
+    },
+    {
+      "type": "news",
+      "title": "Progress Sitefinity CMS — Multi-CVE Critical Batch Including CVE-2026-7312 (CVSS 10.0)",
+      "threat_score": 6,
+      "cve": "CVE-2026-7312, CVE-2026-7198, CVE-2026-7201, CVE-2026-7195",
+      "cvss": 10.0,
+      "affected_technology": "Progress Sitefinity CMS (widely-deployed enterprise .NET CMS, frequently internet-facing in mid-market and enterprise marketing-property deployments)",
+      "summary": "Positive Technologies dbugs surfaced a four-CVE Progress Sitefinity batch with CVE-2026-7312 at CVSS 10.0 (network, no auth, no UI) and three companion CVEs at 9.8 and 8.8; no PoC or in-the-wild exploitation yet but a wide-attack-surface CMS exposure.",
+      "discovery_latency": "early",
+      "first_seen_at": "2026-06-02"
+    },
+    {
+      "type": "news",
+      "title": "Dashlane Confirms Encrypted Vault Downloads for Fewer Than 20 Personal-Plan Users After Brute-Force / 2FA-Bypass Wave",
+      "threat_score": 5,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Dashlane password manager consumer/personal plan accounts — fewer than 20 users had encrypted vaults downloaded after attackers cleared 2FA and registered new devices",
+      "summary": "Dashlane updated its 2026-05-31 brute-force disclosure to confirm that encrypted vaults of fewer than 20 personal-plan users were actually downloaded after attackers cleared 2FA, contradicting yesterday's no-platform-compromise framing.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-06-02"
+    },
+    {
+      "type": "news",
+      "title": "Sophos Discloses AI-Built Ransomware Toolkit — Claude Opus + Multi-Agent Pipeline With ~80 Modules Tested Against 70+ EDR Evasion Techniques",
+      "threat_score": 5,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Threat-actor offensive capability (Sophos / CrowdStrike / Microsoft Defender targeted in the toolkit's iterative test loop); Cobalt Strike + Telegram-bot C2 deployed; Rust/Go payload binaries emitted",
+      "summary": "Sophos detailed a threat actor running an agentic AI-assisted ransomware development pipeline using Claude Opus and other frontier models to iteratively refine ~80 payload modules against ~70 EDR-evasion techniques, accelerating the research-to-deployment cycle to days.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-06-02"
+    },
+    {
+      "type": "news",
+      "title": "ChatGPT Share-Link Abuse — Google Ads -> ChatGPT-Hosted Fake-Outage Lure -> openew[.]app Cross-Platform Malware (LLMShare Class Extension)",
+      "threat_score": 5,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "ChatGPT share feature (chatgpt.com) abused as legitimate-renderer trust vector; openew[.]app cloaked typosquat delivering Windows + macOS malware payloads",
+      "summary": "Push Security disclosed a campaign that buys Google Ads for ChatGPT search terms and redirects victims to a legitimate chatgpt.com share URL rendering an attacker-controlled fake-outage page, leading users to download cross-platform malware from openew[.]app.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-06-02"
+    }
+  ],
+  "noted": [
+    {
+      "cve": "CVE-2026-46243",
+      "product": "CIFSwitch — 19-year-old Linux CIFS-spnego-upcall LPE to root (CVE now assigned; was CVE-pending in Watchtower 2026-05-31)",
+      "summary": "CVE-2026-46243 now assigned to the CIFSwitch Linux LPE; GitHub checker script publicly available; defensive posture unchanged from prior advisory."
+    },
+    {
+      "cve": "CVE-2026-41089",
+      "product": "Windows Netlogon — Microsoft denies Belgian CCB active-exploitation framing (Watchtower 2026-06-02 NEWS, score 9)",
+      "summary": "Microsoft told BleepingComputer it has no evidence supporting CCB's exploitation claim; operationally no change to patch-now stance."
+    },
+    {
+      "cve": "CVE-2026-41115",
+      "product": "Apache Kafka — improper authorization on CONSUMER_GROUP_DESCRIBE API enables cross-group consumer-state disclosure",
+      "summary": "Apache Kafka CONSUMER_GROUP_DESCRIBE authorization bypass patched in 4.0.1 / 3.9.2; low-but-nonzero data-exposure risk in widely-deployed Kafka clusters."
+    },
+    {
+      "cve": "None assigned (pending)",
+      "product": "BIRD / BIRD2 BGP — stack-buffer overflow in AS_PATH mask matching",
+      "summary": "BIRD/BIRD2 BGP stack overflow disclosed on oss-security 2026-06-02; CVE pending; routing-edge DoS-class via crafted BGP UPDATE in route-filter context."
+    },
+    {
+      "cve": "None assigned",
+      "product": "OpenStack Swift proxy DoS + Neutron policy bypass (two-errata batch)",
+      "summary": "Routine OpenStack errata for Swift proxy DoS and Neutron policy bypass; patches available; affects Swift object-storage and Neutron networking deployments."
+    },
+    {
+      "cve": "None assigned (pending)",
+      "product": "Linux kernel TLS — use-after-free in tls_sk_proto_close()",
+      "summary": "UAF on socket-close path in kernel TLS disclosed by Oleg Sevostyanov; CVE pending; likely LPE-class with restricted trigger preconditions."
+    },
+    {
+      "cve": "None assigned",
+      "product": "X.Org X server + Xwayland — multi-CVE security advisory",
+      "summary": "Standard X.Org security batch covering multiple vulnerabilities in X server and Xwayland; mostly LPE/client-side; patch through distribution channels."
+    },
+    {
+      "cve": "VU#615987",
+      "product": "Verizon VoLTE deployments — missing IPsec integrity protection for IMS SIP signaling",
+      "summary": "Telecom critical-infrastructure issue in IMS SIP signaling on Verizon VoLTE deployments; calibration data point for carrier-VoLTE risk surface."
+    },
+    {
+      "cve": "VU#873170",
+      "product": "Collibra Agent — improper authentication + path traversal vulnerabilities",
+      "summary": "Enterprise data-governance product Collibra Agent contains improper-authentication and path-traversal flaws; patch when vendor publishes if Collibra is in scope."
+    },
+    {
+      "cve": "VU#265691",
+      "product": "Appsmiths — SQL Query autocomplete renderer cross-site scripting vulnerability",
+      "summary": "Low-deployment SaaS internal-tooling builder XSS in SQL Query autocomplete renderer; included for completeness."
+    },
+    {
+      "cve": "CVE-2025-48595",
+      "product": "Google Android June 2026 update — actively exploited zero-day plus 124 additional flaws (mobile-only)",
+      "summary": "Google patched 124 Android vulnerabilities including the actively-exploited CVE-2025-48595 (CVSS 8.4); mobile-only and OOS for our scope but logged as calibration."
+    },
+    {
+      "cve": "CVE-2025-8088",
+      "product": "Gamaredon (Russia-aligned) weaponizes WinRAR CVE-2025-8088 to deliver GammaWorm + GammaSteel against Ukrainian targets",
+      "summary": "Older WinRAR path-traversal CVE re-monetized by Gamaredon for Ukraine-targeted malware delivery; calibration data point on regional APT operations."
+    },
+    {
+      "cve": "None assigned",
+      "product": "SideCopy (Pakistan-aligned) Operation XENOFISCAL — Afghanistan Finance Ministry targeted with Xeno RAT",
+      "summary": "SideCopy spear-phishing campaign against Afghanistan Finance Ministry deploying open-source Xeno RAT; regional APT, calibration only for our scope."
+    },
+    {
+      "cve": "None assigned",
+      "product": "Microsoft Android app — single-line-of-code account-token exposure (SecurityWeek exclusive)",
+      "summary": "Single code line in Microsoft Android apps reportedly bypasses protections for Microsoft account token access; mobile-only with limited corporate-defensive impact unless BYOD-exposed."
+    },
+    {
+      "cve": "None assigned",
+      "product": "Microsoft sends legal threats to security researcher publishing Windows exploits including BitLocker bypass (Schneier)",
+      "summary": "Vulnerability-disclosure-policy data point regarding Microsoft's legal posture toward a Windows-exploit researcher; track for chilling-effect trend."
+    },
+    {
+      "cve": "None assigned",
+      "product": "Trump Executive Order on AI Model Vetting for national-security risks",
+      "summary": "Policy/governance Executive Order on vetting top AI models for national-security risks; calibration data point for the AI-regulation track."
+    },
+    {
+      "cve": "None assigned",
+      "product": "Anthropic Mythos preview expanded to 150 additional organizations",
+      "summary": "Calibration data point on the Mythos / Project Glasswing track; expect corresponding vendor-advisory wave in next 30 days as partner research outputs hit coordinated disclosure."
+    },
+    {
+      "cve": "CVE-2025-27851",
+      "product": "Garmin Empirbus Wireless Display Unit — WebSocket cross-site origin hijacking enabling full device control (CVSS 9.3)",
+      "summary": "OT/marine-IoT vulnerability in Garmin Empirbus Wireless Display Unit; OOS for corporate perimeter but logged for OT-fleet calibration."
+    },
+    {
+      "cve": "CVE-2026-24237",
+      "product": "NVIDIA NVTabular (pip) — unsafe deserialization enabling RCE / data tampering",
+      "summary": "ML pipeline library unsafe-pickle deserialization; low corporate-deployment exposure unless ML teams use NVTabular notebooks on shared infrastructure."
+    },
+    {
+      "cve": "CVE-2026-9064",
+      "product": "Red Hat 389 Directory Server — missing bound on LDAP controls enabling CPU/heap DoS",
+      "summary": "Enterprise LDAP DoS in 389 Directory Server; patch when Red Hat errata land; impact is DoS-only with no auth bypass."
+    },
+    {
+      "cve": "CVE-2026-47092",
+      "product": "Anthropic Claude HUD (jarrodwatts/claude-hud) — COMSPEC env-var command injection on Windows",
+      "summary": "Niche desktop AI HUD utility command-injection via COMSPEC; another data point for the AI-coding-assistant local-RCE class."
+    },
+    {
+      "cve": "None assigned",
+      "product": "WeedHack Minecraft infostealer — 116K systems infected since January 2026",
+      "summary": "Gamer-targeting infostealer (Minecraft mods/cheats) with browser/cookie/wallet credential theft; OOS but logged for BYOD spillover awareness."
+    },
+    {
+      "cve": "None assigned",
+      "product": "Dragos acquires xIoT security firm Phosphorus",
+      "summary": "Industry consolidation in OT/IoT defense; calibration data point on the OT-security tooling ecosystem."
+    }
+  ],
+  "source_coverage": {
+    "total": 30,
+    "checked": 22,
+    "with_findings": 13,
+    "unreachable": [
+      "cisa.gov",
+      "cisa.gov/known-exploited-vulnerabilities-catalog",
+      "attackerkb.com",
+      "cve.org",
+      "cve.mitre.org",
+      "googleprojectzero.blogspot.com",
+      "hackerone.com/hacktivity",
+      "bugcrowd.com/disclosures"
+    ],
+    "degraded": [
+      "packetstormsecurity.com",
+      "nvd.nist.gov",
+      "msrc.microsoft.com/blog",
+      "habr.com/ru/companies/tomhunter/articles",
+      "teletype.in/@cyberok",
+      "cert.gov.ua"
+    ]
+  },
+  "full_report": "reports/2026/06/03/report.md"
+}

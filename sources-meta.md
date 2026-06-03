@@ -2,35 +2,35 @@
 
 | Source | Findings | Noted | Empty | Last Hit |
 |--------|----------|-------|-------|----------|
-| bleepingcomputer.com | 4 | 1 | 0 | 2026-06-02 (Windows Netlogon CVE-2026-41089 RCE actively exploited — NEWS CRITICAL; Miasma Red Hat npm — NEWS HIGH; DriveSurge ClickFix/FakeUpdate IAB — NEWS MEDIUM; WordPress Steam-profile-as-C2 1980 sites — NEWS MEDIUM; Dashlane brute-force — NOTED) |
-| thehackernews.com | 4 | 0 | 0 | 2026-06-02 (Miasma 7 @redhat-cloud-services npm packages — NEWS HIGH; codexui-android OpenAI Codex refresh-token theft — NEWS HIGH; Operation Dragon Weave China-aligned w/ AdaptixC2 Azure-Blob C2 — NEWS MEDIUM; weekly recap relayed Netlogon + PAN-OS already covered) |
-| securityweek.com | 1 | 1 | 0 | 2026-06-02 (Windows Netlogon CVE-2026-41089 active exploitation — NEWS CRITICAL corroborates BC; HP Poly VVX/Trio CVE-2026-0826 via Rapid7 — NOTED) |
-| krebsonsecurity.com | 1 | 0 | 0 | 2026-06-02 (Meta AI Support Chatbot Instagram-account hijack via password-reset MFA bypass — NEWS MEDIUM, first publicly-documented AI-customer-support-bot identity-control hijack class) |
-| rapid7.com | 0 | 1 | 0 | 2026-06-02 (HP Poly VVX/Trio CVE-2026-0826 critical pre-auth stack overflow — NOTED VoIP scope; PAN-OS observation post relays MEMORY 2026-05-31) |
-| schneier.com | 0 | 0 | 1 | 2026-06-02 (June 1 post on AI vuln-disclosure — calibration only, no actionable finding) |
-| fortinet.com/blog/threat-research | 0 | 0 | 1 | 2026-06-02 (still PureLogs 2026-05-26 latest — no fresh) |
-| securitylab.github.com | 0 | 0 | 1 | 2026-06-02 (still GHSL-2026-140 7-Zip batch 2026-05-22 latest — no new advisories) |
-| github.com/search (advisories) | 1 | 0 | 0 | 2026-06-02 (Vitest CVE-2026-47429 + CVE-2026-47428 critical RCE in widely-deployed JS test framework — NEWS HIGH; PraisonAI batch continuation already covered) |
-| seclists.org/fulldisclosure | 0 | 2 | 0 | 2026-06-02 (May 31 archive: bmcweb OpenBMC 4 vulns 2 unfixed no CVE — NOTED OOB management; Mennekes Amtron EV-charging multiple — NOTED OT/EV OOS) |
-| openwall.com/lists/oss-security | 0 | 6 | 0 | 2026-06-02 (June 1 batch: Apache Airflow CVE-2026-45192 17th Connection-Extra redaction — NOTED addendum to MEMORY 2026-06-01 16-CVE; Apache Calcite CVE-2026-46718 class-loading — NOTED; Apache Directory LDAP API CVE-2026-35563 cert validation — NOTED; Apache Fesod CVE-2026-49328 SSRF — NOTED; pip CVE-2026-8643 script extraction — NOTED CI impact; Sereal::Decoder CVE-2026-8796 Perl heap — NOTED low impact) |
-| kb.cert.org/vuls | 0 | 1 | 0 | 2026-06-02 (VU#158530 / CVE-2026-8501 PCTCore64.sys BYOVD — NOTED, abandoned product but signed driver usable as credential-extraction primitive) |
-| opencve.io | 0 | 0 | 1 | 2026-06-02 (Casdoor CVE-2026-9092 already covered in MEMORY 2026-05-29 batch; Android batch OOS) |
-| dbugs.ptsecurity.com | 0 | 0 | 1 | 2026-06-02 (Cloud Foundry CVE-2026-40965 CVSS 10.0 + Pixa Bank CVE-2026-49491 + Utt Hiper 1200Gw CVE-2026-10292 — limited blast radius, no enterprise-perimeter signal worth promoting; Android batch OOS) |
-| github.com/0xMarcio/cve | 0 | 0 | 1 | 2026-06-02 (cPanel CVE-2026-41940 + Copy Fail PoC tempo continues; nothing new since MEMORY 2026-05-31) |
-| blog.cloudflare.com/tag/security | 0 | 0 | 1 | 2026-06-02 (no new content; Project Glasswing 2026-05-18 still latest) |
-| avleonov.com | 0 | 0 | 1 | 2026-06-02 (no new post since Fragnesia 2026-05-28) |
-| cisa.gov (incl. /KEV) | 0 | 0 | 1 | — (403 Forbidden — both endpoints) |
-| attackerkb.com | 0 | 0 | 1 | — (per MEMORY known-blocked) |
-| cve.org / cve.mitre.org | 0 | 0 | 1 | — (JS-required, no content) |
-| googleprojectzero.blogspot.com | 0 | 0 | 1 | — (redirects to projectzero.google) |
-| msrc.microsoft.com/blog | 0 | 0 | 1 | — (redirects to nav-only page) |
-| hackerone.com/hacktivity | 0 | 0 | 1 | — (JS-required) |
-| bugcrowd.com/disclosures | 0 | 0 | 1 | — (404 since 2026-04) |
-| packetstormsecurity.com | 0 | 0 | 1 | — (degraded — homepage ToS only; redirects to packetstorm.news) |
-| nvd.nist.gov | 0 | 0 | 1 | — (degraded — homepage no CVE listings; data via opencve.io) |
-| habr.com/ru/companies/tomhunter | 0 | 0 | 1 | — (degraded — stale through March 2026) |
-| teletype.in/@cyberok | 0 | 0 | 1 | — (degraded — stale through February 2026) |
-| cert.gov.ua | 0 | 0 | 1 | — (degraded — empty content) |
+| bleepingcomputer.com | 5 | 4 | 0 | 2026-06-03 (Kirki CVE-2026-8206 active exploit on 500K WP sites — NEWS HIGH; ChatGPT-share-link/openew[.]app delivery — NEWS MEDIUM; Sophos AI-built ransomware toolkit — NEWS MEDIUM; Dashlane vault download confirmation — NEWS MEDIUM; Netlogon MSFT denial NOTED; WeedHack Minecraft NOTED) |
+| thehackernews.com | 5 | 4 | 0 | 2026-06-03 (Oracle WebLogic CVE-2024-21182 KEV add 2026-06-01 — NEWS HIGH; Dashlane vault-download corroboration NEWS MEDIUM; Gamaredon WinRAR CVE-2025-8088 NOTED; SideCopy XENOFISCAL NOTED; Android June CVE-2025-48595 NOTED) |
+| securityweek.com | 4 | 7 | 0 | 2026-06-03 (Miasma scope expansion 32 pkgs / 96 versions / ~10M downloads — UPDATE CRITICAL; Oracle WebLogic KEV — NEWS HIGH corroborates THN/BC; Sitefinity CVE-2026-7312 + 7198 + 7201 + 7195 — NEWS MEDIUM via dbugs relay; Dashlane corroboration — NEWS MEDIUM; Trump AI EO NOTED; MS Android app NOTED; Anthropic Mythos 150-org NOTED; HP Poly CVE-2026-0826 dedup; Dragos/Phosphorus NOTED) |
+| krebsonsecurity.com | 1 | 0 | 1 | 2026-06-03 (no new post since 2026-06-01 Meta AI Instagram hijack already in dedup) |
+| rapid7.com | 0 | 1 | 1 | 2026-06-03 (Metasploit Wrap-Up 05/29/2026 still latest — no new posts in window) |
+| schneier.com | 0 | 2 | 1 | 2026-06-03 (Microsoft threatening security researcher — NOTED policy/disclosure; Encryption + AI essay — calibration only) |
+| fortinet.com/blog/threat-research | 0 | 0 | 2 | 2026-06-03 (still PureLogs 2026-05-26 latest — no fresh) |
+| securitylab.github.com | 0 | 0 | 2 | 2026-06-03 (still GHSL-2026-140 7-Zip batch 2026-05-22 latest — no new advisories) |
+| github.com/search (advisories) | 1 | 0 | 1 | 2026-06-03 (CIFSwitch CVE-2026-46243 checker script surfaced — Noted addendum to 2026-05-31 finding; otherwise dedup of CopyFail/cPanel) |
+| seclists.org/fulldisclosure | 0 | 2 | 1 | 2026-06-03 (May archive: only 2026-05-31 posts already in dedup; Jun/ archive empty) |
+| openwall.com/lists/oss-security | 0 | 11 | 0 | 2026-06-03 (06/02 batch: X.Org X server/Xwayland multi-CVE — NOTED; BIRD/BIRD2 BGP AS_PATH stack overflow CVE pending — NOTED; Apache Kafka CVE-2026-41115 CONSUMER_GROUP_DESCRIBE — NOTED; OpenStack Swift proxy DoS + Neutron policy bypass — NOTED; Linux kernel TLS UAF tls_sk_proto_close — NOTED) |
+| kb.cert.org/vuls | 0 | 4 | 0 | 2026-06-03 (06/02: VU#615987 Verizon VoLTE missing IPsec — NOTED; VU#873170 Collibra Agent auth+path-traversal — NOTED; VU#265691 Appsmiths SQL/XSS — NOTED) |
+| opencve.io | 0 | 5 | 1 | 2026-06-03 (app.opencve.io/cve: Garmin Empirbus CVE-2025-27851 9.3 — NOTED; NVIDIA NVTabular CVE-2026-24237 — NOTED; Red Hat 389 Directory Server CVE-2026-9064 — NOTED; Claude HUD CVE-2026-47092 — NOTED; Debian dpkg + libsolv + Dell ThinOS dedup) |
+| dbugs.ptsecurity.com | 1 | 0 | 1 | 2026-06-03 (Progress Sitefinity CVE-2026-7312 CVSS 10.0 + 7198/7201/7195 — NEWS MEDIUM; Armember Premium + Spacelabs Sentinel + Openmed + Verizon VoLTE CVEs noted only — limited enterprise impact) |
+| github.com/0xMarcio/cve | 0 | 0 | 2 | 2026-06-03 (Netlogon/Copy Fail PoC tempo continues — all dedup) |
+| blog.cloudflare.com/tag/security | 0 | 0 | 2 | 2026-06-03 (no new content; Project Glasswing 2026-05-18 still latest) |
+| avleonov.com | 0 | 0 | 2 | 2026-06-03 (May Linux Patch Wednesday 06-02 — calibration only; 1638 vulns / 474 kernel) |
+| cisa.gov (incl. /KEV) | 0 | 0 | 2 | — (403 Forbidden — both endpoints; Oracle WebLogic CVE-2024-21182 KEV add 2026-06-01 surfaced via SW/BC/THN relay) |
+| attackerkb.com | 0 | 0 | 2 | — (per MEMORY known-blocked) |
+| cve.org / cve.mitre.org | 0 | 0 | 2 | — (JS-required, no content) |
+| googleprojectzero.blogspot.com | 0 | 0 | 2 | — (redirects to projectzero.google) |
+| msrc.microsoft.com/blog | 0 | 0 | 2 | — (redirects to nav-only page) |
+| hackerone.com/hacktivity | 0 | 0 | 2 | — (JS-required) |
+| bugcrowd.com/disclosures | 0 | 0 | 2 | — (404 since 2026-04) |
+| packetstormsecurity.com | 0 | 0 | 2 | — (degraded — homepage nav only; redirects to packetstorm.news) |
+| nvd.nist.gov | 0 | 0 | 2 | — (degraded — homepage no CVE listings; data via opencve.io) |
+| habr.com/ru/companies/tomhunter | 0 | 0 | 2 | — (degraded — stale through 2026-03-06) |
+| teletype.in/@cyberok | 0 | 0 | 2 | — (degraded — stale through 2026-02-04) |
+| cert.gov.ua | 0 | 0 | 2 | — (degraded — empty content) |
 
 ## Score Calibration
 *(Updated monthly)*
