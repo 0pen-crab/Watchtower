@@ -1,0 +1,226 @@
+{
+  "date": "2026-06-04",
+  "findings": [
+    {
+      "type": "news",
+      "title": "HTTP/2 Bomb (CVE-2026-49975 Apache; companion CVEs pending) — Remote DoS Against Apache httpd / NGINX / IIS / Envoy / Cloudflare Pingora, Three Major Implementations UNPATCHED, Public PoC",
+      "threat_score": 8,
+      "cve": "CVE-2026-49975",
+      "cvss": null,
+      "affected_technology": "Web servers and edge proxies — Apache httpd (mod_http2, fixed in 2.0.41), NGINX (fixed in 1.29.8 with new max_headers directive), Microsoft IIS (unpatched), Envoy (unpatched), Cloudflare Pingora (unpatched)",
+      "summary": "A combined HPACK compression amplification and HTTP/2 flow-control stalling DoS technique discovered by OpenAI's Codex agent can crash Apache httpd, NGINX, IIS, Envoy, and Cloudflare Pingora from a single client in under a minute; Apache + NGINX patched, IIS/Envoy/Pingora unpatched with public PoC.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-06-03"
+    },
+    {
+      "type": "news",
+      "title": "Linux Kernel CVE-2022-0492 (cgroups v1 release_agent) Added to CISA KEV — Active Container-Escape Exploitation Confirmed by Kaspersky, 3-Day Federal Deadline 2026-06-05",
+      "threat_score": 7,
+      "cve": "CVE-2022-0492",
+      "cvss": 7.8,
+      "affected_technology": "Linux kernel cgroups v1 subsystem; kernel versions 2.6 through 4.20 and 5.5 through 5.17 (fixed in 4.9.301+, 4.14.266+, 5.4.177+, 5.10.97+, 5.15.20+); container hosts (Kubernetes, Docker, containerd) most exposed",
+      "summary": "CISA added the 3-year-old Linux kernel cgroup release_agent container-escape bug CVE-2022-0492 to the KEV catalog on 2026-06-02 with a 3-day federal remediation deadline of 2026-06-05 after Kaspersky published in-the-wild exploitation reporting against containerized environments.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-06-02"
+    },
+    {
+      "type": "news",
+      "title": "Visual Studio Code Unpatched Zero-Day — One-Click GitHub OAuth Token Theft via Malicious Extension Auto-Install (Full Disclosure)",
+      "threat_score": 7,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Microsoft Visual Studio Code (all currently shipping versions); github.dev browser variant; GitHub OAuth tokens with full-repo-access scope",
+      "summary": "Researcher Ammar Askar published full disclosure of an unpatched VS Code zero-day that uses a crafted github.dev link to auto-install a malicious extension via simulated keypresses inside a sandboxed webview, exfiltrating the victim's full-scope GitHub OAuth token in one click.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-06-03"
+    },
+    {
+      "type": "news",
+      "title": "CISA + FBI + EPA Joint Advisory — Internet-Exposed Automatic Tank Gauges Actively Exploited Across US Gas Stations, Iran-Linked Per CNN",
+      "threat_score": 6,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Automatic Tank Gauge (ATG) systems — Veeder-Root TLS-450 and similar; internet-exposed fuel-storage telemetry at gas stations and corporate fuel infrastructure across Energy, Chemical, Food & Agriculture, Transportation sectors",
+      "summary": "CISA / FBI / EPA joint advisory 2026-06-03 confirms active in-the-wild exploitation of internet-exposed Automatic Tank Gauges across US gas stations via auth bypass + hardcoded creds + command injection to modify tank readings and disable alerts; CNN reports Iranian attribution.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-06-03"
+    },
+    {
+      "type": "news",
+      "title": "Django Security Release — Five-CVE Batch Patched in 6.0.6 / 5.2.15 (CVE-2026-6873, 7666, 8404, 35193, 48587)",
+      "threat_score": 5,
+      "cve": "CVE-2026-6873, CVE-2026-7666, CVE-2026-8404, CVE-2026-35193, CVE-2026-48587",
+      "cvss": null,
+      "affected_technology": "Django web framework versions 6.0.x and 5.2.x LTS; patched in 6.0.6 and 5.2.15",
+      "summary": "Django announced security releases 6.0.6 and 5.2.15 on 2026-06-03 patching a coordinated five-CVE batch (CVE-2026-6873, 7666, 8404, 35193, 48587); per-CVE severity detail still propagating but Django's tier-1 framework footprint warrants prompt fleet upgrade.",
+      "discovery_latency": "early",
+      "first_seen_at": "2026-06-03"
+    },
+    {
+      "type": "news",
+      "title": "Redis CVE-2026-23479 — 2-Year-Old Use-After-Free RCE Discovered by Autonomous AI Tool Xint Code, Patched May 5 But Public Disclosure Lags",
+      "threat_score": 5,
+      "cve": "CVE-2026-23479",
+      "cvss": 8.8,
+      "affected_technology": "Redis 7.2.0-7.2.13, 7.4.0-7.4.8, 8.2.0-8.2.5, 8.4.0-8.4.2, 8.6.0-8.6.2 (introduced in 7.2.0); patched in 7.2.14, 7.4.9, 8.2.6, 8.4.3, 8.6.3",
+      "summary": "Theori's Xint Code autonomous AI security tool discovered a 2-year-old use-after-free vulnerability in Redis's unblockClientOnKey() that allows authenticated users with default-user ACL permissions to execute arbitrary OS commands; patched May 5, public disclosure 2026-06-03.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-06-03"
+    },
+    {
+      "type": "news",
+      "title": "Acer Wave 7 Routers — CVE-2026-49200 (Plaintext Credential Exposure) + CVE-2026-49201 (Hardcoded Crypto Key for Backup-Backdoor Injection), Vendor Says Patch By End of June",
+      "threat_score": 5,
+      "cve": "CVE-2026-49200, CVE-2026-49201",
+      "cvss": null,
+      "affected_technology": "Acer Wave 7 mesh routers running firmware T7c_GBL_1.01.000055 or earlier; consumer/SOHO scope",
+      "summary": "Acer disclosed two vendor-rated maximum-severity zero-days in its Wave 7 mesh routers — unauthenticated plaintext credential exposure via log archives plus a hardcoded crypto key enabling persistent backdoor injection via modified backups; patches scheduled for end-of-June 2026.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-06-03"
+    },
+    {
+      "type": "news",
+      "title": "Atlas RAT Campaign — TA4922 (Chinese-Speaking Cybercrime, Silver Fox / Void Arachne Overlap) Expanding From East Asia Into Germany / Italy / UK / South Africa",
+      "threat_score": 4,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Windows endpoints in Germany / Italy / UK / South Africa receiving localized payroll / tax / VAT / HR phishing lures; Atlas RAT includes anti-Defender-Application-Guard evasion",
+      "summary": "Proofpoint detailed TA4922 — a Chinese-speaking cybercrime cluster overlapping Silver Fox / Void Arachne — expanding from East Asia into Germany/Italy/UK/SA with localized phishing campaigns delivering the new Atlas RAT family with explicit Microsoft Defender Application Guard evasion.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-06-03"
+    },
+    {
+      "type": "news",
+      "title": "Global Stock Exchange Espionage — 150-Day Senior-Executive Outlook Mailbox Compromise, Adobe / OneDrive Masquerade Persistence",
+      "threat_score": 4,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Unnamed major global stock exchange senior-executive Outlook mailbox; Windows endpoints with scheduled tasks masquerading as Adobe / Lenovo / OneDrive system services; exfiltration via Dropbox + OneDrive",
+      "summary": "Researchers disclosed a 150-day Oct-2025-to-Mar-2026 espionage operation against an unnamed major global stock exchange, compromising a senior executive's Outlook mailbox with Adobe/OneDrive-disguised malware persisting via scheduled tasks impersonating system services.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-06-03"
+    },
+    {
+      "type": "news",
+      "title": "Windows Search URI Handler — Unpatched NTLMv2 Hash-Leak via search: Crumb-Location Parameter, Microsoft Declined to Patch (Moderate Rating)",
+      "threat_score": 5,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Microsoft Windows Search URI handler (search: protocol); structurally similar to CVE-2026-33829 (Snipping Tool) and CVE-2023-35636 (Outlook) which Microsoft did patch",
+      "summary": "Huntress published full disclosure of an unpatched Windows search: URI handler vulnerability leaking Net-NTLMv2 hashes via crafted crumb=location parameter; Microsoft declined to patch (Moderate rating), mirroring patched CVE-2026-33829 and CVE-2023-35636.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-06-03"
+    }
+  ],
+  "noted": [
+    {
+      "cve": "None assigned",
+      "product": "FortiGuard C0XMO Gafgyt variant — new IoT botnet leveraging DD-WRT exploitation for multi-arch propagation",
+      "summary": "New Gafgyt-derived IoT botnet variant C0XMO documented by FortiGuard on 2026-06-03 using DD-WRT router exploitation for cross-platform propagation; IoT-botnet calibration data point."
+    },
+    {
+      "cve": "None assigned",
+      "product": "DesckVB RAT — Google DoubleClick redirect malspam campaign (.NET RAT active since 2026-02)",
+      "summary": "Personalized phishing campaign abusing Google DoubleClick redirects to deliver DesckVB .NET RAT via PDF / ZIP / JS loader chain; documented by THN 2026-06-03 with ~80K endpoint footprint."
+    },
+    {
+      "cve": "CVE-2026-31431",
+      "product": "Linux Kernel 'Copy Fail' LPE — multiple Rust + C PoC implementations released on GitHub since 2026-06-03",
+      "summary": "Theori-Xint-Code-discovered Linux kernel local privilege escalation now has multiple public PoCs; LPE-only with no remote vector but indicates active exploit-tool development cycle."
+    },
+    {
+      "cve": "None assigned",
+      "product": "OFAC sanction against Iran's Nobitex cryptocurrency exchange",
+      "summary": "US Treasury sanctioned Nobitex (Iran's largest crypto exchange) for facilitating ransomware-payment-adjacent terror financing; sanctions / policy calibration data point."
+    },
+    {
+      "cve": "None assigned",
+      "product": "Europol — 9 organized-crime groups dismantled in EU-wide illegal-streaming bust (29 arrests)",
+      "summary": "Europol coordinated takedown of nine illegal-streaming organized-crime groups across EU member states; law-enforcement calibration data point."
+    },
+    {
+      "cve": "None assigned",
+      "product": "Microsoft attempts to calm legal-threat fears after zero-day disclosure backlash (Schneier follow-up)",
+      "summary": "Follow-up on Watchtower 2026-06-03 noted item — Microsoft is attempting damage control after BitLocker-bypass researcher legal-threat coverage but disclosure-policy stance unchanged."
+    },
+    {
+      "cve": "None assigned",
+      "product": "WhatsApp / Slack / Gemini notification prompt-injection 'Invitation Is All You Need' successor (SafeBreach)",
+      "summary": "SafeBreach demonstrated Gemini voice-assistant hijack via poisoned messaging-app notifications using foreign-language and muted-text obfuscation; patched server-side by Google in 2025-11."
+    },
+    {
+      "cve": "CVE-2026-46447, CVE-2026-48681, CVE-2026-44917",
+      "product": "OpenStack Ironic + Mistral 4-issue batch (oss-security 2026-06-03)",
+      "summary": "OpenStack Ironic script injection during node boot + ISO path traversal + pxe_template file extraction plus Mistral policy enforcement bypass disclosed in coordinated errata."
+    },
+    {
+      "cve": "None assigned (pending)",
+      "product": "Linux Kernel TLS — use-after-free in tls_sk_proto_close() (Oleg Sevostyanov, oss-security 2026-06-02)",
+      "summary": "Persistent day-two coverage of Linux kernel TLS ULP UAF on socket close path; CVE pending; LPE-class with restricted trigger preconditions."
+    },
+    {
+      "cve": "VU#595768",
+      "product": "Securly Chrome Extension — multiple weak-encryption + access-control vulnerabilities (CERT/CC 2026-06-03)",
+      "summary": "Securly browser-extension family carries multiple weak-encryption and access-control vulnerabilities affecting education-segment Chrome deployments; browser-extension scope."
+    },
+    {
+      "cve": "CVE-2026-47065",
+      "product": "Oracle Java CVE-2026-47065 (PT-Security PT-2026-45913, CVSS 9.8) — pre-disclosure",
+      "summary": "Positive Technologies dbugs surfaced an Oracle Java CVSS 9.8 CVE assignment ahead of July 2026 Oracle CPU; vendor-advisory page expected closer to the CPU release window."
+    },
+    {
+      "cve": "CVE-2026-46775, CVE-2026-46833",
+      "product": "Oracle REST Data Services CVSS 9.9 + Oracle Database Net Service CVSS 9.0 (opencve pre-disclosures)",
+      "summary": "Pre-published Oracle CVE assignments for REST Data Services and Database Net Service surfaced via opencve.io; vendor-advisory page pending — watch for July 2026 Oracle CPU bundling."
+    },
+    {
+      "cve": "None assigned",
+      "product": "Microsoft 365 Android — production debug flag enabling cross-app account-token access (SecurityWeek exclusive expanded)",
+      "summary": "SecurityWeek expanded coverage on the single-debug-flag Microsoft 365 Android-app token-leak; mobile-only and OOS for direct corporate defense unless BYOD-exposed; logged 2026-06-03 noted."
+    },
+    {
+      "cve": "CVE-2025-48595",
+      "product": "Google Android June 2026 Security Bulletin — actively exploited CVE-2025-48595 plus 123 additional flaws",
+      "summary": "Mobile-only Android security bulletin including CVE-2025-48595 active exploitation; OOS for our scope but pre-disclosure window opened and KEV-add expected."
+    },
+    {
+      "cve": "None assigned",
+      "product": "IMA Diligence Services breach — 525,000 records via legacy third-party server",
+      "summary": "Third-party diligence vendor breach via legacy-server compromise (SecurityWeek 2026-06-03); supply-chain / third-party-risk calibration."
+    },
+    {
+      "cve": "None assigned",
+      "product": "Google Android AI deepfake-call protection (defensive feature rollout)",
+      "summary": "Android feature detecting AI-impersonated personal-contact phone calls; defensive control rollout calibration data point."
+    },
+    {
+      "cve": "None assigned",
+      "product": "Krebs follow-up on Meta AI / Instagram account-takeover (Obama White House + US Space Force defacement)",
+      "summary": "Krebs published deeper analysis of the 2026-06-02 NEWS Meta AI Instagram account-takeover; Meta deployed emergency patch but full root-cause analysis pending."
+    }
+  ],
+  "source_coverage": {
+    "total": 30,
+    "checked": 25,
+    "with_findings": 14,
+    "unreachable": [
+      "cisa.gov",
+      "cisa.gov/known-exploited-vulnerabilities-catalog",
+      "attackerkb.com",
+      "bugcrowd.com/disclosures",
+      "cve.mitre.org"
+    ],
+    "degraded": [
+      "seclists.org/fulldisclosure",
+      "packetstormsecurity.com",
+      "nvd.nist.gov",
+      "cve.org",
+      "msrc.microsoft.com/blog",
+      "hackerone.com/hacktivity",
+      "habr.com/ru/companies/tomhunter/articles",
+      "teletype.in/@cyberok",
+      "cert.gov.ua"
+    ]
+  },
+  "full_report": "reports/2026/06/04/report.md"
+}

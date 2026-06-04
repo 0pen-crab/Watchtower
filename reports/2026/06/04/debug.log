@@ -1,0 +1,138 @@
+Watchtower run log — 2026-06-04 night cycle
+=============================================
+
+[2026-06-04 05:50 UTC] Step 1: cd /home/claude/workspace/watchtower && git pull
+  → "Already up to date." — clean working tree.
+
+[2026-06-04 05:51 UTC] Step 2: Build dedup index from reports/2026/05/05 through reports/2026/06/03.
+  → Scanned 60 daily report.json files (2026-04-25 through 2026-06-03 — full 30-day window plus margin).
+  → Indexed 1166 unique CVE IDs and 540 finding titles + ~700 noted entries.
+  → Recent dedup snapshot (last 7 days) extracted; load-bearing for today's cross-references:
+    - Miasma supply chain (06-02 NEWS → 06-03 UPDATE) — npm Red Hat 32-package compromise
+    - Kirki WordPress CVE-2026-8206 (06-03 NEWS) — Wordfence active exploitation
+    - Oracle WebLogic CVE-2024-21182 KEV (06-03 NEWS) — federal deadline 06-04
+    - Progress Sitefinity 4-CVE batch (06-03 NEWS) — PT-Security dbugs surfacing
+    - Sophos AI-built ransomware (06-03 NEWS) — Claude Opus + 80 modules
+    - ChatGPT Share-Link Abuse / openew[.]app (06-03 NEWS) — Google Ads relay
+    - Windows Netlogon CVE-2026-41089 (06-02 NEWS) — Microsoft denies CCB framing per 06-03 Noted
+    - Meta AI Instagram takeover (06-02 NEWS)
+    - Vitest CVE-2026-47428/47429 (06-02 NEWS)
+    - Operation Dragon Weave AZUREVEIL (06-02 NEWS)
+    - DriveSurge IAB (06-02 NEWS)
+    - WordPress Steam-profile dead-drop (06-02 NEWS)
+    - PAN-OS GlobalProtect CVE-2026-0257 (05-31 NEWS)
+    - Flowise CVE-2026-40933 (05-31 NEWS)
+    - CIFSwitch Linux LPE CVE-2026-46243 (05-31 NEWS → 06-03 Noted update with CVE assignment)
+    - sshfs CVE-2026-47187 + CVE-2026-48711 (05-31 NEWS)
+    - Marimo CVE-2026-39987 UPDATE (05-30) — Sysdig confirmation
+    - And many more historical entries reaching back to 2026-04-25.
+
+[2026-06-04 05:53 UTC] Step 3: Read SOURCES.md → 30 unique sources (Tier 1 has 15, Tier 2 has 16 lines but
+  seclists.org/fulldisclosure duplicates between tiers).
+
+[2026-06-04 05:54 UTC] Source enumeration with status / time taken:
+  T1 / bleepingcomputer.com               ✅ 6s  (homepage feed: 15 articles surfaced; 9 cross-referenced as already in dedup; 6 new candidates)
+  T1 / thehackernews.com                  ✅ 7s  (15 articles surfaced; 8 in dedup; 7 new candidates)
+  T1 / cisa.gov                           ❌ 0s  (403 Forbidden — recurrence of pattern observed 2026-06-03 noted)
+  T1 / cisa.gov/known-exploited-vulnerabilities-catalog ❌ 0s (403 Forbidden — KEV-add inferred from BC/SW/THN relay)
+  T1 / securityweek.com                   ✅ 6s  (10 articles surfaced; 4 in dedup; 6 new candidates)
+  T1 / github.com/search?q=CVE            ✅ 5s  (search-results page surfaced ~8 recent CVE-2026 PoC repos; Linux Copy Fail PoC pattern noted)
+  T1 / schneier.com                       ✅ 4s  (4 articles surfaced; 1 cross-referenced new — Microsoft legal-threat follow-up)
+  T1 / krebsonsecurity.com                ✅ 4s  (1 June article — Meta AI Instagram already in dedup; no new)
+  T1 / rapid7.com                         ⚠️ 4s (page loaded; no June 2026 posts visible — latest May 2026 Metasploit Wrap Up; marking degraded for today)
+  T1 / attackerkb.com                     ❌ 0s  (403 Forbidden — recurrence)
+  T1 / fortinet.com/blog/threat-research  ✅ 5s  (1 June article — C0XMO Gafgyt variant — surfaced for noted)
+  T1 / securitylab.github.com             ✅ 5s  (latest disclosures dated 2026-05-22; no new June activity; 7-Zip GHSL-2026-115..140 batch noted but already past disclosure window)
+  T1 / seclists.org/fulldisclosure        ⚠️ 5s (redirects 302 → seclists.org root; June archive page unreachable; substituted with openwall oss-security for June posts)
+  T1 / packetstormsecurity.com            ⚠️ 4s (301 → packetstorm.news; homepage only shows aggregate stats; degraded)
+  T1 / opencve.io                         ✅ 6s  (CVE-2026-46775 Oracle REST Data Services 9.9, CVE-2026-46833 Oracle Database 9.0, others surfaced for noted)
+  T2 / nvd.nist.gov                       ⚠️ 4s (homepage only; vulnerability search not directly reachable via WebFetch; degraded)
+  T2 / cve.mitre.org                      ❌ 0s  (no usable content surfaced)
+  T2 / cve.org                            ⚠️ 4s (no usable content surfaced; degraded)
+  T2 / googleprojectzero.blogspot.com     ✅ 5s  (301 → projectzero.google; checked; only May 2026 post visible — Pixel 10 0-click; no June activity)
+  T2 / blog.cloudflare.com/tag/security   ✅ 5s  (no June 2026 posts; latest dated 2026-05-18 Project Glasswing follow-up)
+  T2 / msrc.microsoft.com/blog            ⚠️ 5s (301 → www.microsoft.com/en-us/msrc/blog; redirect page yielded no blog post content; degraded)
+  T2 / hackerone.com/hacktivity           ⚠️ 4s (no public hacktivity feed content surfaced; degraded)
+  T2 / bugcrowd.com/disclosures           ❌ 0s  (404 Not Found — recurrence)
+  T2 / kb.cert.org/vuls                   ✅ 5s  (5 June 2026 VU notes surfaced — VU#595768 Securly Chrome Ext + VU#615987/265691/873170 already in dedup; VU#158530 already in dedup)
+  T2 / avleonov.com                       ✅ 5s  (1 June post — May Linux Patch Wednesday roundup — referenced 1638 vulns / 474 Linux kernel; no specific new CVE not already in dedup)
+  T2 / github.com/0xMarcio/cve            ✅ 6s  (recent PoC repos: CVE-2026-31431 Linux Copy Fail Rust/C, CVE-2026-21858 n8n CVSS 10.0, CVE-2026-23744 MCPjam RCE, CVE-2026-41940 cPanel/WHM auth bypass)
+  T2 / dbugs.ptsecurity.com               ✅ 6s  (PT-2026-45913 Oracle Java CVE-2026-47065 CVSS 9.8, PT-2026-46047 Concrete CMS CVE-2026-7888 CVSS 8.4, others surfaced)
+  T2 / habr.com/ru/companies/tomhunter    ⚠️ 5s (no June content; latest March 2026; degraded)
+  T2 / teletype.in/@cyberok                ⚠️ 5s (no June content; latest February 2026; degraded)
+  T2 / cert.gov.ua                        ⚠️ 5s (no usable content surfaced; degraded)
+
+  Substitution / supplemental fetches (not on SOURCES.md but used as canonical sources for OSS CVE batches
+  observed by Watchtower MEMORY 2026-05-04 as primary disclosure venue):
+  + openwall.com/lists/oss-security/2026/06/ ✅ 6s (June 2-3 posts: Django 5-CVE batch, HTTP/2 Bomb,
+    Redis 5-CVE, OpenStack Ironic/Mistral, X.Org X server, Apache Kafka, BIRD, Linux TLS UAF)
+  + djangoproject.com/weblog/ ✅ 4s (Django 6.0.6 + 5.2.15 security release confirmation 2026-06-03)
+
+[2026-06-04 06:00 UTC] Step 4: Dedup decisions for each candidate (per CLAUDE.md rules):
+
+  HTTP/2 Bomb CVE-2026-49975                                         → NEW (no prior entry; 3 sources confirm; multi-vendor)
+  Linux Kernel CVE-2022-0492 (cgroups release_agent KEV)             → NEW (no prior entry for 2022 CVE in our reports)
+  VS Code zero-day GitHub OAuth                                      → NEW (no prior coverage)
+  CISA ATG joint advisory                                            → NEW (no prior coverage)
+  Django CVE-2026-6873, 7666, 8404, 35193, 48587                     → NEW (no prior Django batch in 30-day window)
+  Redis CVE-2026-23479                                               → NEW (no prior Redis CVE; first AI-tool-found Redis bug)
+  Acer Wave 7 CVE-2026-49200/49201                                   → NEW (no prior Acer router coverage)
+  Atlas RAT TA4922                                                   → NEW (no prior TA4922 / Atlas RAT entry)
+  Stock exchange espionage (150-day)                                 → NEW (no prior coverage; SW exclusive)
+  Windows Search URI NTLMv2 (Huntress)                               → NEW (no prior coverage; structurally similar to CVE-2026-33829/CVE-2023-35636 which we did not cover at time of disclosure)
+  Microsoft 365 Android token-theft expanded                         → SKIP (already in 2026-06-03 noted; SW exclusive expansion is not material change for our scope — keep as noted refresher)
+  Microsoft attempt at calming legal-threat fears                    → NOTED (refresher on 2026-06-03 noted item; not material change)
+  WhatsApp/Slack/Gemini notification prompt-injection                → NOTED (already patched server-side in 2025-11 — not material change of any prior coverage; novel technique calibration)
+  OpenStack Ironic + Mistral batch                                   → NOTED (routine errata; following monthly cadence)
+  Linux TLS UAF tls_sk_proto_close()                                 → NOTED (already in 2026-06-03 noted; day-two refresher only)
+  Microsoft Netlogon CVE-2026-41089 (per BC, "now exploited")        → SKIP (this is yesterday's noted update — BC re-published a piece on 2026-06-03 referencing the Microsoft-denies-CCB-framing already in dedup as 2026-06-03 noted; no material change)
+  Kirki WordPress / Burst Statistics (SW 2026-06-03)                 → SKIP (Kirki already in 2026-06-03 HIGH; Burst Statistics no detail beyond mention)
+  Linux kernel CVE-2026-31431 Copy Fail PoC drop                     → NOTED (LPE class; no remote vector; tooling-momentum signal)
+  Iran Nobitex sanction                                              → NOTED (sanctions/policy calibration)
+  Europol streaming bust                                             → NOTED (LE calibration)
+  C0XMO Gafgyt variant                                               → NOTED (IoT-botnet)
+  DesckVB RAT Google DoubleClick                                     → NOTED (malspam; no CVE)
+  Oracle Java CVE-2026-47065 / Oracle REST DS / Oracle DB             → NOTED (pre-CPU disclosure; awaiting July 2026 Oracle CPU)
+  Securly Chrome Ext VU#595768                                       → NOTED (browser-extension scope)
+  IMA Diligence Services breach                                      → NOTED (third-party risk)
+  Google Android June 2026 — CVE-2025-48595 + 123                    → NOTED (mobile OOS; CVE-2025-48595 also in 2026-06-03 noted; addendum for new bulletin date)
+  Android AI deepfake-call protection                                → NOTED (defensive feature calibration)
+  Krebs follow-up on Meta AI / Instagram                             → NOTED (follow-up coverage; no material change)
+  Google Codex DoubleClick relay malspam DesckVB                     → NOTED (see above)
+  Stock exchange espionage                                           → already NEWS above
+  IIS / Envoy / Pingora HTTP/2 Bomb unpatched                        → integrated into CRITICAL above
+  Gergo Pap Acer disclosure                                          → integrated into MEDIUM above
+
+[2026-06-04 06:01 UTC] Step 5: Wrote reports/2026/06/04/report.md and report.json
+  → 10 findings (all type=news; 0 updates this cycle — no material change to prior coverage warranted)
+  → 17 noted items
+  → All structured per template/templates/report.template.md
+
+[2026-06-04 06:02 UTC] Step 6: Source coverage tabulated:
+  total: 30
+  unreachable: 5 (cisa.gov, cisa.gov/known-exploited-vulnerabilities-catalog, attackerkb.com, bugcrowd.com/disclosures, cve.mitre.org)
+  degraded: 9 (seclists.org/fulldisclosure, packetstormsecurity.com, nvd.nist.gov, cve.org, msrc.microsoft.com/blog, hackerone.com/hacktivity, habr.com/ru/companies/tomhunter/articles, teletype.in/@cyberok, cert.gov.ua)
+  checked: 25 (total - unreachable; the 9 degraded are counted as checked-but-with-no-actionable-content)
+  with_findings: 14 (bleepingcomputer, thehackernews, securityweek, schneier, fortinet, kb.cert.org, avleonov, github.com/0xMarcio/cve, dbugs.ptsecurity, opencve, krebsonsecurity, securitylab.github, github.com/search, openwall-oss-security supplemental)
+
+[2026-06-04 06:03 UTC] Step 7: Validator run.
+  $ python3 scripts/validate_report.py reports/2026/06/04/report.json
+  First run: 1 error (initially set checked=16 → realized convention: checked includes degraded; corrected to checked=25); 5 warnings (summary length >200 chars).
+  Tightened 5 summaries (findings[3], findings[4], findings[7], findings[8], findings[9]) below 300 chars.
+  Second run: ✅ reports/2026/06/04/report.json — valid
+
+[2026-06-04 06:04 UTC] Step 8: Ready for git commit + push.
+
+[NOTES / OBSERVATIONS for sources-meta.md + MEMORY.md update]
+  - openwall.com/lists/oss-security continues to be the canonical primary venue for major OSS CVE batches —
+    Django 5-CVE, Redis 5-CVE, HTTP/2 Bomb, OpenStack Ironic + Mistral, X.Org all surfaced here first
+    in the 06-02/03 window. Reinforce MEMORY 2026-05-04 entry.
+  - cisa.gov + KEV catalog continue to return 403 to WebFetch UA; BC/SW/THN relay coverage is reliable
+    for KEV-add inference but consider noting the chronic 403 in sources-meta.md as a known degraded
+    primary source.
+  - opencve.io + dbugs.ptsecurity.com surfaced 3 Oracle CVE pre-disclosures (Java 9.8, REST DS 9.9, DB 9.0)
+    ahead of July 2026 CPU window — calibration data point for pre-CPU disclosure pattern.
+  - The "AI-found infrastructure vulnerability" pattern hardened this cycle: HTTP/2 Bomb (OpenAI Codex),
+    Redis CVE-2026-23479 (Theori Xint Code), and Linux kernel CVE-2026-31431 PoC drops in a single week.
+    This is now a sustained 2026-Q2 pattern worth a MEMORY update.
+✅ reports/2026/06/04/report.json — valid
