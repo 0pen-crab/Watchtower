@@ -1,0 +1,241 @@
+{
+  "date": "2026-06-06",
+  "findings": [
+    {
+      "type": "news",
+      "title": "Cisco Catalyst SD-WAN Manager CVE-2026-20245 — Unpatched Zero-Day Active Exploitation Yielding Root Command Execution, Seventh SD-WAN Zero-Day of 2026",
+      "threat_score": 8,
+      "cve": "CVE-2026-20245",
+      "cvss": null,
+      "affected_technology": "Cisco Catalyst SD-WAN Manager (formerly vManage); all currently shipping versions, no patch available; SD-WAN management plane / vManage HTTPS administrative interface",
+      "summary": "Cisco issued an emergency advisory on 2026-06-05 for unpatched CVE-2026-20245 in Catalyst SD-WAN Manager confirming active in-the-wild exploitation yielding unauthenticated root command execution on the SD-WAN control plane; seventh SD-WAN zero-day Cisco has confirmed in 2026.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-06-05"
+    },
+    {
+      "type": "news",
+      "title": "IronWorm npm Supply-Chain Worm — Rust Infostealer with eBPF Kernel Rootkit and Tor C2 Self-Propagating via npm Trusted Publishing OIDC Across 36 Packages",
+      "threat_score": 8,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "npm registry; 36 trojanized packages published from compromised asteroiddao account; targets OpenAI / Anthropic / AWS / npm / SSH / crypto-wallet secrets across 86 env vars + 20 credential files; abuses npm Trusted Publishing OIDC workflow for self-propagation",
+      "summary": "JFrog disclosed IronWorm on 2026-06-04 — a Rust-based npm worm with an eBPF kernel rootkit, Tor C2, and novel self-propagation via stolen npm Trusted Publishing OIDC tokens that re-publish trojanized package versions automatically; 36 packages contaminated, third Wave-2-class npm worm in 30 days.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-06-04"
+    },
+    {
+      "type": "news",
+      "title": "Everest Forms Pro WordPress Plugin CVE-2026-3300 (CVSS 9.8) — Unauthenticated Remote Code Execution via Calculation Addon eval() Injection, Active Mass Exploitation",
+      "threat_score": 7,
+      "cve": "CVE-2026-3300",
+      "cvss": 9.8,
+      "affected_technology": "Everest Forms Pro WordPress plugin, Calculation Addon, all versions ≤ 1.9.12; patched in 1.9.13; affects any site rendering a form with the Calculation Addon enabled",
+      "summary": "Everest Forms Pro Calculation Addon concatenates user-submitted form field values into a PHP code string and passes it directly to eval() yielding unauthenticated RCE; active mass exploitation reported by Wordfence telemetry per THN 2026-06-05; fourth active-exploit WordPress plugin disclosure in 8 days.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-06-05"
+    },
+    {
+      "type": "news",
+      "title": "SolarWinds Serv-U CVE-2026-28318 — KEV-Added with 2026-06-19 Federal Deadline, Active Exploitation of Unauth Resource-Exhaustion DoS via Content-Encoding: deflate POST",
+      "threat_score": 6,
+      "cve": "CVE-2026-28318",
+      "cvss": null,
+      "affected_technology": "SolarWinds Serv-U file transfer platform (HTTP/HTTPS/FTP/FTPS/SFTP) prior to 15.5.4 Hotfix 1; ~12,000 internet-exposed instances per Shodan",
+      "summary": "CISA added SolarWinds Serv-U CVE-2026-28318 to the KEV catalog on 2026-06-05 with a 2026-06-19 federal deadline after confirmed in-the-wild exploitation of unauthenticated resource-consumption DoS triggered by Content-Encoding: deflate POST requests; SolarWinds shipped Serv-U 15.5.4 Hotfix 1 the same day.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-06-05"
+    },
+    {
+      "type": "news",
+      "title": "Cisco Unified Communications Manager CVE-2026-20230 (CVSS 8.6) — Unauthenticated SSRF → Arbitrary File Write → Root Privilege Escalation, Public PoC Released",
+      "threat_score": 6,
+      "cve": "CVE-2026-20230",
+      "cvss": 8.6,
+      "affected_technology": "Cisco Unified Communications Manager with the WebDialer Web Service enabled (default off); fixed in 14SU6 and 15SU5",
+      "summary": "Cisco disclosed CVE-2026-20230 in Unified CM on 2026-06-04 — an unauthenticated SSRF in the WebDialer service enabling file writes to disk and root privilege escalation; public PoC released within 24 hours but no in-wild exploitation confirmed yet; WebDialer is disabled by default, limiting blast radius.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-06-04"
+    },
+    {
+      "type": "news",
+      "title": "Polyfill.io Domain Takeover Round 2 — Toshiba, Muji, Samsung Smart TVs and Multiple Japanese Brands Serving Fake Login Prompts via HTTP 401 on Legacy Script References",
+      "threat_score": 6,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Web pages with legacy polyfill[.]io / cdn.polyfill[.]io script references; affected brands include Toshiba, Muji, Zojirushi, FiNC Technologies, Ishiyaku Publishers, Hobonichi, Samsung Smart TVs",
+      "summary": "Following 2024's polyfill.io Chinese-entity compromise, the domain changed hands again and the new owner is responding with HTTP 401 challenges that surface browser-native auth prompts on every legacy-referencing page; Toshiba, Muji and Samsung have advised users to ignore prompts and rotate credentials.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-06-05"
+    },
+    {
+      "type": "news",
+      "title": "UNC5221 / VerdantBamboo 'Brickstorm' — 18-Month Edge-Device Persistence Campaign via Egnyte and SSL-VPN Zero-Days, Plenet + AgentPSD Secondary Implants",
+      "threat_score": 6,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Edge devices and storage-sync (Egnyte); Microsoft 365 environments; victim sectors: legal services, SaaS providers, BPOs, technology companies, primarily US-based; MSP infrastructure abused for lateral movement",
+      "summary": "Volexity disclosed a UNC5221 / VerdantBamboo campaign on 2026-06-05 in which the Golang/Rust Brickstorm WebSocket implant — plus Plenet .NET shell-and-file backdoor and AgentPSD Python reverse-shell fallback — maintained persistence on edge devices for 18+ months undetected before infrastructure went dark in mid-September 2025 and reactivated in 2026.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-06-05"
+    },
+    {
+      "type": "news",
+      "title": "PCPJack — 230 AWS, Google Cloud, and Azure Servers Hijacked into Covert SMTP Relay Network Verified for Mail Delivery Every Five Minutes",
+      "threat_score": 5,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "~230 compromised public-cloud-tenant servers across AWS, GCP, Azure (US/Europe/Asia); operator C2 at 213.136.80[.]73",
+      "summary": "Hunt.io documented the PCPJack operation on 2026-06-05 — ~230 cloud-tenant servers compromised across the three major hyperscalers and converted into authenticated SMTP relays verified for mail delivery every 5 minutes; initially flagged by SentinelOne in April 2026 as a cloud-credential-theft framework, now operationalized at scale.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-06-05"
+    },
+    {
+      "type": "news",
+      "title": "CPython CVE-2026-7774 — tarfile.data_filter Path-Traversal Bypass Allowing Writes Outside the Extraction Directory",
+      "threat_score": 5,
+      "cve": "CVE-2026-7774",
+      "cvss": null,
+      "affected_technology": "CPython tarfile module (full version matrix pending); 3.12+ default data_filter and pre-3.12 backports; downstream blast radius includes pip/wheel installers, ML model-weights loaders, CI artifact extractors, container runtimes",
+      "summary": "Oss-security 2026-06-04 disclosed CVE-2026-7774 — a path-traversal bypass in CPython's tarfile.data_filter sandbox allowing writes outside the intended extraction directory; broad blast radius via pip/wheel, ML model-distribution pipelines, and CI artifact extraction.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-06-04"
+    },
+    {
+      "type": "update",
+      "title": "TA4922 / Atlas RAT Campaign — RomulusLoader and SilentRunLoader Added to Tooling, Target-Geography UK/DE/IT/SA Confirmed (Material Tooling Expansion)",
+      "threat_score": 4,
+      "previous_threat_score": 4,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Same as 2026-06-04 entry — Windows endpoints in UK/Germany/Italy/South Africa receiving localized payroll/tax/VAT/HR phishing lures; adds new loader families RomulusLoader and SilentRunLoader alongside Atlas RAT and ValleyRAT",
+      "summary": "THN 2026-06-05 expands the 2026-06-04 TA4922 (Silver Fox / Void Arachne overlap) coverage with two new loader families RomulusLoader and SilentRunLoader running alongside Atlas RAT; threat score holds at 4 but defenders should treat existing IOC sets as incomplete and re-ingest the new tooling indicators.",
+      "first_seen_at": "2026-06-04"
+    }
+  ],
+  "noted": [
+    {
+      "cve": "CVE-2026-10881, CVE-2026-10882, CVE-2026-10883, CVE-2026-11282",
+      "product": "Chrome 149 — 429 vulnerabilities patched, 22 critical including CVE-2026-10881 ANGLE OOB write sandbox-escape (CVSS 9.6, $97K bounty) and CVE-2026-11282 sandbox escape on Linux",
+      "summary": "Chrome 149 patches 429 vulnerabilities including 22 critical sandbox-escape and use-after-free flaws; browser client OOS for direct corporate defense but Linux sandbox bypass relevant to dev-workstation patch cadence; no in-wild exploitation flagged."
+    },
+    {
+      "cve": "None assigned",
+      "product": "Hola Browser Windows supply-chain compromise — Monero miner injected as me.exe → HolaMonitorService.exe via hola_monitor_svc Windows service (BC 2026-06-04)",
+      "summary": "Israeli VPN/proxy browser Hola for Windows was compromised in its distribution channel and shipped a Monero miner persisting via a Windows service plus a Defender exclusion rule; ~0.1% of userbase impacted per vendor."
+    },
+    {
+      "cve": "None assigned",
+      "product": "Mirasvit Magento Full Page Cache Warmer — Unauthenticated PHP-object-deserialization RCE on Magento / Adobe Commerce servers (SW 2026-06-04)",
+      "summary": "Mirasvit Full Page Cache Warmer extension contains an unauthenticated PHP-object-deserialization RCE primitive exploitable on Magento/Adobe Commerce stores; no CVE assigned yet, vendor patch ETA pending."
+    },
+    {
+      "cve": "None assigned",
+      "product": "Stripe-as-payload-host Magecart campaign — skimmer JS hosted in Stripe customer-metadata field at cus_TfFjAAZQNOYENR loaded via Google Tag Manager (Sansec)",
+      "summary": "Magecart operators host skimmer JavaScript in a Stripe customer-metadata record and load it via Google Tag Manager bypassing CSP via trusted domains; Firestore variant uses braintree-payment-app project; durable pattern of payment-processor APIs as CSP-trusted skimmer hosts."
+    },
+    {
+      "cve": "None assigned",
+      "product": "OP-512 — Fourth China-aligned IIS-targeting threat cluster in 12 months (ReliaQuest 2026-06-05)",
+      "summary": "ReliaQuest disclosed OP-512, a previously unreported China-linked cluster deploying a custom IIS web-shell framework for espionage; joins CL-STA-0048 / DragonRank / GhostRedirector as the fourth China-aligned IIS-targeting actor in 12 months."
+    },
+    {
+      "cve": "CVE-2025-48595, CVE-2022-0492",
+      "product": "CISA KEV addition — Android CVE-2025-48595 + Linux CVE-2022-0492 (2026-06-04/05) — Linux already covered Watchtower 2026-06-04 HIGH; Android mobile-only OOS",
+      "summary": "Joint CISA KEV announcement reaffirms Android CVE-2025-48595 plus Linux CVE-2022-0492 active exploitation; Linux entry was Watchtower 2026-06-04 HIGH; Android is mobile-only OOS and was already in 2026-06-03 / 2026-06-04 Noted."
+    },
+    {
+      "cve": "None assigned",
+      "product": "ATG joint advisory amplification — Shadowserver scan confirms 909 US ATG systems exposed on port 10001/tcp (BC 2026-06-05)",
+      "summary": "Day-two coverage of the 2026-06-04 CRITICAL ATG joint advisory adds Shadowserver scan numbers showing 909 US-located ATG systems exposed; no new vendor or CVE info, scope-confirmation only."
+    },
+    {
+      "cve": "None assigned",
+      "product": "Brave Origin paid browser launch (BC 2026-06-04)",
+      "summary": "Brave Software released Origin, a paid bloat-free browser variant without cryptocurrency or AI features; calibration data point for security-conscious-user browser-choice market shift, not a security advisory."
+    },
+    {
+      "cve": "None assigned",
+      "product": "DentaQuest data breach — 2.6 million accounts exposed (BC 2026-06-04)",
+      "summary": "Dental benefits administrator DentaQuest disclosed a breach exposing data of 2.6 million accounts; third-party-risk and notification calibration data point, no CVE."
+    },
+    {
+      "cve": "None assigned",
+      "product": "UN World Food Programme Palestine self-registration app breach — 600,000 Gaza households (BC 2026-06-04)",
+      "summary": "World Food Programme disclosed a breach of its Palestine self-registration application exposing data on 600,000 Gaza households; humanitarian-sector targeting calibration, no CVE."
+    },
+    {
+      "cve": "CVE-2026-50076",
+      "product": "Apache Fory — Java ReplaceResolverSerializer deserialization checks bypass (oss-security 2026-06-04, Chaokun Yang)",
+      "summary": "Apache Fory serialization engine contains a Java ReplaceResolverSerializer deserialization-check bypass yielding RCE primitive; watch for downstream Apache-stack adoption pickup."
+    },
+    {
+      "cve": "None assigned",
+      "product": "Vim < 9.2.597 — Arbitrary Code Execution via Python Omni-Completion (oss-security 2026-06-04)",
+      "summary": "Follow-up Vim ACE via Python omni-completion in versions before 9.2.597; client-side / dev-workstation OOS; flag to dev-fleet patch cadence as continuation of the Vim 9.2.561 issue."
+    },
+    {
+      "cve": "CVE-2026-8722, CVE-2026-46739, CVE-2026-46741, CVE-2026-8829, CVE-2026-49940, CVE-2026-49941, CVE-2026-49942",
+      "product": "Perl multi-CVE batch — Net::Async::Statsd::Client, Net::Statsd, Etsy::StatsD metric-injection plus HTML::Entities UAF and Net::CIDR::Set IP-validation (oss-security 2026-06-04)",
+      "summary": "Multi-CVE Perl batch covering metric-injection in three Statsd-related modules, HTML::Entities use-of-freed-memory, and Net::CIDR::Set IP/netmask validation; legacy-Perl scope and limited blast radius, calibration only."
+    },
+    {
+      "cve": "None assigned",
+      "product": "FortiGuard — FIFA World Cup 2026 fraud wave, 4,300+ fraudulent domains, GHOST STADIUM banking malware via pirate streaming",
+      "summary": "FortiGuard documented 4,300+ fraudulent World Cup domains and the GHOST STADIUM operation distributing banking malware via pirate streaming applications; brand-impersonation pre-positioning data point."
+    },
+    {
+      "cve": "CVE-2026-8889, CVE-2026-8881",
+      "product": "Securly Chrome Extension — SHA-1 weak hash (CVE-2026-8889) + MD5 weak KDF (CVE-2026-8881), complements VU#595768 from Watchtower 2026-06-04",
+      "summary": "Securly Chrome extension uses deprecated SHA-1 hashing for security-critical URL matching and a weak MD5-based KDF with minimal iteration; education-segment scope; browser-extension OOS for most enterprises."
+    },
+    {
+      "cve": "CVE-2026-10878",
+      "product": "D-Link DWR-M920 — CVE-2026-10878 (PT-2026-46838, CVSS 8.8)",
+      "summary": "D-Link DWR-M920 SOHO router CVSS 8.8 vulnerability surfaced via PT-Security dbugs; OOS for corporate perimeter, Mirai-variant tracking only."
+    },
+    {
+      "cve": "CVE-2026-6207, CVE-2026-6209",
+      "product": "Havelsan Geographic Tracking System — CVE-2026-6207 + CVE-2026-6209 (CVSS 9.1)",
+      "summary": "Havelsan Turkish-military/civilian GIS platform multiple-CVE batch with CVSS 9.1 severity; OT/specialized-system scope, OOS for typical corporate defense but sector-relevant."
+    },
+    {
+      "cve": "CVE-2026-49492",
+      "product": "Markdown Preview Enhanced CVE-2026-49492 (CVSS 8.8) — Command injection on Windows via external-file open from markdown documents",
+      "summary": "Markdown Preview Enhanced opens external files referenced from markdown without input validation, enabling Windows command injection; dev-workstation client-side scope, relevant to dev-fleet patch cadence."
+    },
+    {
+      "cve": "None assigned",
+      "product": "Asin Android spyware — Arabic-user targeting via govlens[.]net, pdf-reader[.]help, live-war-map[.]com (THN 2026-06-05)",
+      "summary": "Android spyware Asin distributed through fake news/PDF reader/war map apps targeting Arabic-speaking users; mobile-only OOS, sector-targeting calibration only."
+    },
+    {
+      "cve": "None assigned",
+      "product": "Schneier 'AI Worm' research prototype (Schneier blog 2026-06-05)",
+      "summary": "Researchers built a prototype internet worm carrying its own language model that executes the model on each compromised host; LLM-augmented-malware-class research calibration."
+    }
+  ],
+  "source_coverage": {
+    "total": 30,
+    "checked": 25,
+    "with_findings": 13,
+    "unreachable": [
+      "cisa.gov",
+      "cisa.gov/known-exploited-vulnerabilities-catalog",
+      "attackerkb.com",
+      "bugcrowd.com/disclosures",
+      "cve.mitre.org"
+    ],
+    "degraded": [
+      "seclists.org/fulldisclosure",
+      "packetstormsecurity.com",
+      "nvd.nist.gov",
+      "cve.org",
+      "msrc.microsoft.com/blog",
+      "hackerone.com/hacktivity",
+      "habr.com/ru/companies/tomhunter/articles",
+      "teletype.in/@cyberok",
+      "cert.gov.ua"
+    ]
+  },
+  "full_report": "reports/2026/06/06/report.md"
+}

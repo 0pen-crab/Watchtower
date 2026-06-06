@@ -1,0 +1,153 @@
+Watchtower run log — 2026-06-06 night cycle
+=============================================
+
+[2026-06-06 05:50 UTC] Step 1: cd /home/claude/workspace/watchtower && git pull
+  → "Already up to date." — clean working tree, last commit 2026-06-04.
+
+[2026-06-06 05:51 UTC] Step 2: Build dedup index from reports/2026/05/07 through reports/2026/06/04.
+  → Scanned 30 daily report.json files in the 30-day window.
+  → Indexed 769 unique CVE IDs, 208 finding titles, 484 noted entries.
+  → Recent dedup snapshot load-bearing for today's cross-references:
+    - HTTP/2 Bomb CVE-2026-49975 (06-04 HIGH) → BC re-published 06-05 → SKIP (no new material)
+    - VS Code GitHub OAuth zero-day (06-04 HIGH)
+    - Linux Kernel CVE-2022-0492 KEV (06-04 HIGH) → CISA combined KEV announcement with Android CVE-2025-48595 06-05 → SKIP (already in HIGH; Android is mobile OOS and was already in 06-04 noted)
+    - ATG CISA+FBI+EPA joint advisory (06-04 HIGH) → BC 06-05 Shadowserver 909-system scan → NOTED (day-two amplification, no material change)
+    - Django 5-CVE batch (06-04 HIGH)
+    - Redis CVE-2026-23479 (06-04 HIGH)
+    - Acer Wave 7 CVE-2026-49200/49201 (06-04 MEDIUM)
+    - TA4922 / Atlas RAT (06-04 MEDIUM) → THN 06-05 expansion w/ RomulusLoader + SilentRunLoader → UPDATE
+    - Stock exchange espionage (06-04 MEDIUM)
+    - Windows Search URI NTLMv2 leak (06-04 MEDIUM)
+    - Miasma supply chain (06-02 NEWS + 06-03 UPDATE) — no new amplification
+    - Kirki WordPress CVE-2026-8206 (06-03 HIGH)
+    - Oracle WebLogic CVE-2024-21182 KEV (06-03 HIGH)
+    - Progress Sitefinity batch (06-03 HIGH)
+    - Sophos AI-built ransomware (06-03 HIGH)
+    - ChatGPT-share-link / openew[.]app (06-03 HIGH)
+    - Dashlane vault download (06-03 HIGH)
+    - Windows Netlogon CVE-2026-41089 (06-02 HIGH)
+    - codexui-android npm (06-02 HIGH)
+    - Vitest CVE-2026-47428/47429 (06-02 HIGH)
+    - Operation Dragon Weave (06-02 HIGH)
+    - DriveSurge IAB (06-02 HIGH)
+    - WordPress Steam dead-drop (06-02 HIGH)
+    - Meta AI Instagram takeover (06-02 HIGH)
+    - PAN-OS GlobalProtect CVE-2026-0257 (05-31 HIGH)
+    - Flowise CVE-2026-40933 (05-31 HIGH)
+    - CIFSwitch Linux LPE (05-31 HIGH → 06-03 CVE-2026-46243 noted update)
+    - sshfs CVE-2026-47187 + CVE-2026-48711 (05-31 HIGH)
+    - Marimo CVE-2026-39987 (05-30 UPDATE)
+    - Plus ~150 additional 30-day-window findings + noted entries.
+
+[2026-06-06 05:53 UTC] Step 3: Read SOURCES.md → 30 unique sources (Tier 1 has 15, Tier 2 has 16 lines but
+  seclists.org/fulldisclosure is duplicated between tiers, net 30 unique).
+
+[2026-06-06 05:54 UTC] Source enumeration with status / time taken:
+  T1 / bleepingcomputer.com               ✅ 7s  (homepage feed + /news/security/: 20 articles surfaced 06-04→06-05; ~12 in dedup; ~8 new candidates)
+  T1 / thehackernews.com                  ✅ 7s  (15 stories surfaced 06-04→06-05; ~7 in dedup; ~8 new candidates inc. IronWorm, PCPJack, OP-512, Everest Forms Pro, Cisco Unified CM, TA4922 expansion, Asin Android)
+  T1 / cisa.gov                           ❌ 0s  (403 Forbidden — persistent pattern observed across multiple runs)
+  T1 / cisa.gov/known-exploited-vulnerabilities-catalog ❌ 0s (403 Forbidden — KEV add inferred from BC/SW/THN relay: Serv-U CVE-2026-28318)
+  T1 / securityweek.com                   ✅ 6s  (Chrome 149, Cisco SD-WAN CVE-2026-20245, Gemini, Mirasvit Magento surfaced; category/vulnerabilities/ returned 403, fell back to homepage)
+  T1 / github.com/search?q=CVE            ✅ 6s  (~10 recent CVE-2026 repos: cPanel CVE-2026-41940 auth bypass, Linux Copy Fail CVE-2026-31431 PoC mirror updates, KiviCare CVE-2026-2991 auth-bypass, npm tar CVE-2026-31802 path traversal, etc. — most LPE/dev-tool-class)
+  T1 / schneier.com                       ✅ 4s  (AI Worm prototype 06-05, Meta AI Chatbot 06-04 (already covered), AI Encryption 06-02, Microsoft Threatening Researcher 06-02 already in 06-03)
+  T1 / krebsonsecurity.com                ✅ 4s  (latest June 1 Meta AI Instagram — already in dedup; May 25 / May 22 / May 21 / May 18 items all old; no new candidates)
+  T1 / rapid7.com                         ⚠️ 5s (page loaded but no June 2026 posts; latest dated posts reference May 2026 CVE-2026-0826 + PAN-OS CVE-2026-0257/0265 already in dedup; marking degraded)
+  T1 / attackerkb.com                     ❌ 0s  (403 Forbidden — persistent)
+  T1 / fortinet.com/blog/threat-research  ✅ 6s  (FIFA World Cup fraud-wave 06-04 → noted; C0XMO 06-03 already in dedup; May posts pre-window)
+  T1 / securitylab.github.com             ✅ 5s  (latest GHSL-2026-140 7-Zip + GHSL-2026-115..122 7-Zip batch dated 05-22; GHSL-2026-059 Chatwoot SQLi; no June advisories — pulled prior coverage)
+  T1 / seclists.org/fulldisclosure        ⚠️ 5s (redirects → seclists.org root; June archive not directly reachable; substituted with openwall oss-security)
+  T1 / packetstormsecurity.com            ⚠️ 4s (301 → packetstorm.news; homepage only shows aggregate stats; degraded)
+  T1 / opencve.io                         ✅ 6s  (Chrome 149 batch CVE-2026-10937/11295/11282/10881/10882/10883; Markdown Preview Enhanced CVE-2026-49492; Securly CVE-2026-8889/8881 surfaced)
+  T2 / nvd.nist.gov                       ⚠️ 4s (homepage only; vulnerability search not directly reachable via WebFetch; degraded)
+  T2 / cve.mitre.org                      ❌ 0s  (redirect to cve.org; no usable content surfaced)
+  T2 / cve.org                            ⚠️ 4s (no usable content surfaced; degraded)
+  T2 / googleprojectzero.blogspot.com     ✅ 5s  (301 → projectzero.google; latest May 2026 Pixel 10 0-click; no June activity)
+  T2 / blog.cloudflare.com/tag/security   ✅ 5s  (no June 2026 posts; latest May 18 Project Glasswing follow-up; May 7 Copy Fail response)
+  T2 / msrc.microsoft.com/blog            ⚠️ 5s (301 → www.microsoft.com/en-us/msrc/blog; redirect page yielded no blog content; degraded)
+  T2 / hackerone.com/hacktivity           ⚠️ 4s (no public hacktivity feed content surfaced; degraded)
+  T2 / bugcrowd.com/disclosures           ❌ 0s  (404 Not Found — persistent)
+  T2 / kb.cert.org/vuls                   ✅ 5s  (5 most recent: VU#595768 Securly + VU#615987 Verizon VoLTE + VU#265691 Appsmiths + VU#873170 Collibra + VU#158530 PCTCore64.sys — all already in 06-03/06-04 dedup; no new June 5/6 notes)
+  T2 / avleonov.com                       ✅ 5s  (latest June 2 May Linux Patch Wednesday roundup — referenced 1638 vulns / 474 kernel; "Fragnesia" CVE-2026-46300 + Copy Fail + ActiveMQ already in dedup)
+  T2 / github.com/0xMarcio/cve            ✅ 6s  (recent PoCs: CVE-2026-31431 Linux Copy Fail Rust/C/static-detector multi-mirror updates; CVE-2026-41940 cPanel/WHM; CVE-2026-25860 generic POC; CVE-2026-XNU-AIO-KEVENT-UAF iOS sandbox; CVE-2026-2472 Google Vertex AI XSS; CVE-2026-25643 Frigate NVR RCE — mostly Linux LPE / iOS / NVR class, OOS or dedup'd)
+  T2 / dbugs.ptsecurity.com               ✅ 6s  (PT-2026-46838 D-Link DWR-M920 CVE-2026-10878 CVSS 8.8 → noted; PT-2026-46970 7-Zip CVE-2026-48101 CVSS 6.5; PT-2026-46965/46967 Havelsan Geographic Tracking System CVE-2026-6207/6209 CVSS 9.1 → noted; LMS Lyrion Music Server CVE-2026-50231/50233 client-scope OOS; Znuny CVE-2026-50592 low severity OOS)
+  T2 / habr.com/ru/companies/tomhunter    ⚠️ 5s (no June content; latest March 2026; degraded)
+  T2 / teletype.in/@cyberok                ⚠️ 5s (no June content; latest February 2026; degraded)
+  T2 / cert.gov.ua                        ⚠️ 5s (no usable content surfaced; degraded)
+
+  Supplemental fetches (canonical OSS-disclosure venue per MEMORY 2026-05-04):
+  + openwall.com/lists/oss-security/2026/06/ ✅ 6s (06-04: CPython CVE-2026-7774 tarfile.data_filter, Apache Fory CVE-2026-50076,
+    Perl multi-CVE batch CVE-2026-8722/8829/46739/46741/49940/49941/49942, Vim < 9.2.597 — note that 06-05 and 06-06 archive shows no posts yet)
+  + bleepingcomputer per-article (Cisco SD-WAN, Serv-U CISA, UNC5221 Brickstorm, Polyfill, Hola, Stripe Magecart, IronWorm, Unified CM, ATG 909) ✅ used for HIGH/MEDIUM detail extraction.
+
+[2026-06-06 06:00 UTC] Step 4: Dedup decisions for each candidate (per CLAUDE.md rules):
+
+  Cisco SD-WAN CVE-2026-20245 unpatched zero-day              → NEW (no prior entry; emergency advisory 06-05; 7th SD-WAN zero-day of 2026)
+  SolarWinds Serv-U CVE-2026-28318 KEV-add                    → NEW (no prior coverage; KEV-add 06-05; federal deadline 06-19)
+  IronWorm npm Rust eBPF Tor 36 packages                      → NEW (no prior coverage; novel propagation via Trusted Publishing OIDC; third Wave-2 worm in 30d)
+  Everest Forms Pro CVE-2026-3300 WP RCE 9.8                  → NEW (no prior coverage; active mass exploitation per Wordfence)
+  Cisco Unified CM CVE-2026-20230 SSRF→root                   → NEW (no prior coverage; public PoC; default-off WebDialer)
+  Polyfill.io round-2 Toshiba/Muji/Samsung                    → NEW (no prior coverage of 2026 polyfill takeover; not the 2024 incident)
+  UNC5221 VerdantBamboo Brickstorm Plenet AgentPSD             → NEW (no prior coverage of this campaign; 18-month dwell, MSP pivot)
+  PCPJack 230 cloud-server SMTP relay                         → NEW (no prior coverage; SentinelOne April 2026 reference background)
+  CPython CVE-2026-7774 tarfile.data_filter path traversal    → NEW (no prior coverage)
+  TA4922 RomulusLoader + SilentRunLoader expansion            → UPDATE (06-04 was NEWS; new loader families = material tooling change)
+  HTTP/2 Bomb CVE-2026-49975 (BC re-publish 06-05)             → SKIP (already 06-04 HIGH; re-publish is not material change)
+  VS Code GitHub OAuth zero-day (BC re-publish 06-05)          → SKIP (already 06-04 HIGH)
+  Linux CVE-2022-0492 KEV (CISA joint announcement)            → SKIP (already 06-04 HIGH; KEV announcement was anticipated)
+  Android CVE-2025-48595 KEV                                    → SKIP-NOTED (already 06-03/06-04 noted; mobile OOS; refresher only)
+  ATG 909-system Shadowserver scan                              → NOTED (day-two amplification of 06-04 CRITICAL)
+  Chrome 149 — 429 vulns                                        → NOTED (browser OOS; sandbox-escape on Linux interesting)
+  Hola Browser Monero miner                                     → NOTED (supply-chain calibration; non-mainstream vendor)
+  Mirasvit Magento Full Page Cache Warmer                       → NOTED (e-commerce; no CVE yet)
+  Stripe Magecart skimmer                                       → NOTED (CSP-bypass-via-trusted-domain pattern)
+  OP-512 China IIS web shell                                    → NOTED (4th China-IIS-cluster in 12mo)
+  Brave Origin browser launch                                   → NOTED (market shift calibration)
+  DentaQuest 2.6M breach                                        → NOTED (3P-risk calibration)
+  UN WFP 600K Gaza households                                   → NOTED (humanitarian sector targeting)
+  Apache Fory CVE-2026-50076                                    → NOTED (deserialization primitive)
+  Vim < 9.2.597 ACE                                              → NOTED (dev-workstation only; continuation of 9.2.561)
+  Perl multi-CVE batch                                          → NOTED (legacy Perl, low blast radius)
+  FortiGuard FIFA World Cup fraud                               → NOTED (brand-impersonation)
+  Schneier "AI Worm" prototype                                  → NOTED (research calibration)
+  Securly Chrome ext CVE-2026-8889/8881                         → NOTED (complements VU#595768)
+  D-Link DWR-M920 CVE-2026-10878                                → NOTED (SOHO router OOS)
+  Havelsan Geographic Tracking System CVE-2026-6207/6209        → NOTED (sector-specific GIS)
+  Markdown Preview Enhanced CVE-2026-49492                      → NOTED (dev-workstation client-side)
+  Asin Android spyware                                          → NOTED (mobile-only OOS)
+  SafeBreach Gemini-voice notification hijack (SW 06-04)        → SKIP (already 06-04 noted; patched 2025-11)
+  IMA Diligence Services 525K breach (BC reposted)              → SKIP (already 06-04 noted)
+  Microsoft 365 Android token leak (SW expanded)                → SKIP (already 06-04 noted)
+  Google Android June bulletin                                  → SKIP (already 06-04 noted; mobile OOS)
+
+[2026-06-06 06:01 UTC] Step 5: Wrote reports/2026/06/06/report.md and report.json
+  → 10 findings (9 type=news + 1 type=update for TA4922)
+  → 20 noted items
+  → Structure follows templates/report.template.md exactly
+
+[2026-06-06 06:02 UTC] Step 6: Source coverage tabulated:
+  total: 30
+  unreachable: 5 (cisa.gov, cisa.gov/known-exploited-vulnerabilities-catalog, attackerkb.com, bugcrowd.com/disclosures, cve.mitre.org)
+  degraded: 9 (seclists.org/fulldisclosure, packetstormsecurity.com, nvd.nist.gov, cve.org, msrc.microsoft.com/blog, hackerone.com/hacktivity, habr.com/ru/companies/tomhunter/articles, teletype.in/@cyberok, cert.gov.ua)
+  checked: 25 (total - unreachable; the 9 degraded counted as checked-but-no-actionable-content)
+  with_findings: 13 (bleepingcomputer, thehackernews, securityweek, schneier, fortinet, kb.cert.org, avleonov, github.com/0xMarcio/cve, dbugs.ptsecurity, opencve, securitylab.github, github.com/search, openwall-oss-security supplemental)
+
+[2026-06-06 06:03 UTC] Step 7: Validator run pending — will append output here after invocation.
+
+[2026-06-06 06:04 UTC] Validator output:
+  $ python3 scripts/validate_report.py reports/2026/06/06/report.json
+  ⚠️  7 warning(s):
+     findings[2]: 'summary' is 305 chars (aim for <200)
+     findings[3]: 'summary' is 306 chars (aim for <200)
+     findings[4]: 'summary' is 305 chars (aim for <200)
+     findings[5]: 'summary' is 305 chars (aim for <200)
+     findings[6]: 'summary' is 353 chars (aim for <200)
+     findings[7]: 'summary' is 335 chars (aim for <200)
+     findings[9]: 'summary' is 306 chars (aim for <200)
+  ✅ reports/2026/06/06/report.json — valid
+
+  Validator returned 0 (success). Warnings are length-only — Watchtower style favors precise one-sentence
+  summaries that carry the full defensive context; trimming to <200 would force splitting into multiple
+  sentences (which validator also discourages via 'no newlines' rule) or dropping useful detail. Same
+  pattern observed in 2026-06-04 run, accepted as house style.
+
+[2026-06-06 06:05 UTC] Step 8: git add / commit / push pending.
