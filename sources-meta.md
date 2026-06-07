@@ -2,35 +2,35 @@
 
 | Source | Findings | Noted | Empty | Last Hit |
 |--------|----------|-------|-------|----------|
-| bleepingcomputer.com | 16 | 11 | 0 | 2026-06-06 (Cisco SD-WAN CVE-2026-20245 unpatched zero-day — NEWS HIGH; SolarWinds Serv-U CVE-2026-28318 KEV — NEWS MEDIUM; IronWorm npm 36-package Rust+eBPF — NEWS HIGH; Polyfill round-2 Toshiba/Muji/Samsung — NEWS MEDIUM; UNC5221 VerdantBamboo Brickstorm — NEWS MEDIUM; Cisco Unified CM CVE-2026-20230 — NEWS MEDIUM; Hola Browser cryptominer NOTED; DentaQuest 2.6M breach NOTED; UN WFP 600K Gaza households NOTED; Brave Origin NOTED; ATG 909-system Shadowserver amplification NOTED; Stripe Magecart NOTED) |
-| thehackernews.com | 15 | 10 | 0 | 2026-06-06 (IronWorm corroboration — NEWS HIGH; Everest Forms Pro CVE-2026-3300 CVSS 9.8 — NEWS HIGH; PCPJack 230-server cloud SMTP relay — NEWS MEDIUM; Cisco Unified CM corroboration — NEWS MEDIUM; UNC5221 corroboration — NEWS MEDIUM; TA4922 RomulusLoader+SilentRunLoader UPDATE; OP-512 China IIS web-shell NOTED; Asin Android spyware NOTED) |
-| securityweek.com | 8 | 13 | 0 | 2026-06-06 (Cisco SD-WAN CVE-2026-20245 corroboration — NEWS HIGH; Chrome 149 429-vuln batch NOTED; Mirasvit Magento Full Page Cache Warmer NOTED; Gemini voice-via-notification follow-up NOTED) |
-| krebsonsecurity.com | 1 | 1 | 2 | 2026-06-06 (no new content; still 06-01 Meta AI Instagram latest) |
-| rapid7.com | 0 | 1 | 3 | 2026-06-06 (still no new June 2026 posts; degraded continuing) |
-| schneier.com | 0 | 4 | 1 | 2026-06-06 (AI Worm research prototype NOTED) |
-| fortinet.com/blog/threat-research | 0 | 2 | 2 | 2026-06-06 (FIFA World Cup 2026 fraud-wave + GHOST STADIUM NOTED) |
-| securitylab.github.com | 0 | 0 | 4 | 2026-06-06 (still GHSL-2026-140 7-Zip batch 2026-05-22 latest — no new advisories) |
-| github.com/search (advisories) | 1 | 0 | 3 | 2026-06-06 (no new high-signal items beyond ongoing Copy Fail / cPanel / Frigate NVR PoC mirrors) |
-| seclists.org/fulldisclosure | 0 | 2 | 3 | 2026-06-06 (degraded continues — June archive redirects; openwall oss-security substitute) |
-| openwall.com/lists/oss-security | 3 | 17 | 0 | 2026-06-06 (06/04 batch: CPython CVE-2026-7774 tarfile.data_filter — NEWS MEDIUM; Apache Fory CVE-2026-50076 NOTED; Vim < 9.2.597 NOTED; Perl multi-CVE batch CVE-2026-8722/8829/46739/46741/49940/49941/49942 NOTED) |
-| kb.cert.org/vuls | 0 | 5 | 1 | 2026-06-06 (no new VU# notes since 06-03 batch already in dedup) |
-| opencve.io | 0 | 10 | 1 | 2026-06-06 (Chrome 149 batch CVE-2026-10881/10882/10883/11282/10937/11295 NOTED; Markdown Preview Enhanced CVE-2026-49492 NOTED; Securly Chrome ext CVE-2026-8889/8881 NOTED) |
-| dbugs.ptsecurity.com | 1 | 3 | 1 | 2026-06-06 (D-Link DWR-M920 CVE-2026-10878 NOTED; Havelsan GIS CVE-2026-6207/6209 CVSS 9.1 NOTED) |
-| github.com/0xMarcio/cve | 0 | 1 | 3 | 2026-06-06 (Linux Copy Fail Rust/C/static-detector PoC mirror churn; cPanel/WHM CVE-2026-41940; KiviCare CVE-2026-2991; npm tar CVE-2026-31802 — mostly LPE/dev-tool class) |
-| blog.cloudflare.com/tag/security | 0 | 0 | 4 | 2026-06-06 (no new content; Project Glasswing 2026-05-18 still latest) |
-| avleonov.com | 0 | 0 | 4 | 2026-06-06 (no new posts since 06-02 May Linux Patch Wednesday roundup) |
-| cisa.gov (incl. /KEV) | 0 | 0 | 4 | — (403 Forbidden continues; Serv-U CVE-2026-28318 KEV + Linux CVE-2022-0492 + Android CVE-2025-48595 surfaced via BC/SW/THN relay) |
-| attackerkb.com | 0 | 0 | 4 | — (per MEMORY known-blocked) |
-| cve.org / cve.mitre.org | 0 | 0 | 4 | — (JS-required, no content) |
-| googleprojectzero.blogspot.com | 0 | 0 | 4 | — (redirects to projectzero.google; Pixel 10 2026-05-13 still latest) |
-| msrc.microsoft.com/blog | 0 | 0 | 4 | — (redirects to nav-only page) |
-| hackerone.com/hacktivity | 0 | 0 | 4 | — (JS-required) |
-| bugcrowd.com/disclosures | 0 | 0 | 4 | — (404 since 2026-04) |
-| packetstormsecurity.com | 0 | 0 | 4 | — (degraded — homepage nav only; redirects to packetstorm.news) |
-| nvd.nist.gov | 0 | 0 | 4 | — (degraded — homepage no CVE listings; data via opencve.io) |
-| habr.com/ru/companies/tomhunter | 0 | 0 | 4 | — (degraded — stale through 2026-03-06) |
-| teletype.in/@cyberok | 0 | 0 | 4 | — (degraded — stale through 2026-02-04) |
-| cert.gov.ua | 0 | 0 | 4 | — (degraded — empty content) |
+| bleepingcomputer.com | 16 | 11 | 1 | 2026-06-07 (no new actionable items — all surfaced advisories duplicates of 06-06: Everest Forms, Cisco SD-WAN, SolarWinds Serv-U, IronWorm, Stripe-Magecart) |
+| thehackernews.com | 18 | 12 | 0 | 2026-06-07 (Miasma 73 Microsoft GitHub repos — UPDATE score 8→9 HIGH; FFmpeg 21 zero-days CVE-2026-39210→39218 — NEWS MEDIUM; Bright Data residential-proxy SDK — NEWS MEDIUM; ChatGPT Lockdown Mode NOTED; SOC-CMM 10% AI value NOTED) |
+| securityweek.com | 8 | 13 | 1 | 2026-06-07 (no new actionable items — all surfaced items duplicates of 06-06 incl. Chrome 149, Cisco SD-WAN, OWASP CVE Lite CLI tool launch) |
+| krebsonsecurity.com | 1 | 1 | 3 | 2026-06-07 (no new content — still 06-01 Meta AI Instagram latest) |
+| rapid7.com | 0 | 1 | 4 | 2026-06-07 (still no new June 2026 posts; latest is 2026-05-29 Metasploit wrap-up; degraded continuing) |
+| schneier.com | 0 | 4 | 2 | 2026-06-07 (no new content; AI Worm 2026-06-05 still latest) |
+| fortinet.com/blog/threat-research | 0 | 2 | 3 | 2026-06-07 (no new content — FIFA + C0XMO still latest) |
+| securitylab.github.com | 0 | 0 | 5 | 2026-06-07 (no new advisories — GHSL-2026-140 7-Zip batch 2026-05-22 still latest) |
+| github.com/search (advisories) | 1 | 0 | 4 | 2026-06-07 (no new high-signal items — same dup churn: cPanel, KiviCare, npm tar, Frigate NVR, Vertex AI XSS) |
+| seclists.org/fulldisclosure | 0 | 2 | 4 | 2026-06-07 (degraded — only Revive Adserver SA-2026-002 from 2026-06-04 still visible; June archive thin) |
+| openwall.com/lists/oss-security | 3 | 22 | 0 | 2026-06-07 (06/06 batch: Project Zero 4 FreeType bugs NOTED; OpenStack Ironic DoS CVE-2026-50589 NOTED; Perl Protocol::HTTP2 CVE-2026-10725 HTTP/2 Bomb variant NOTED; Perl DBI CVE-2026-10879 NOTED; Perl DataDog::DogStatsd CVE-2026-9270/11362 NOTED; libinput follow-up NOTED) |
+| kb.cert.org/vuls | 0 | 5 | 2 | 2026-06-07 (no new VU# notes since 06-03 Securly batch) |
+| opencve.io | 0 | 10 | 2 | 2026-06-07 (Product Slider Pro WooCommerce CVE-2026-49777 surfaced but niche WP/WooCommerce plugin OOS; Chrome renderer UAFs dup of 06/06 batch) |
+| dbugs.ptsecurity.com | 1 | 3 | 2 | 2026-06-07 (degraded — homepage stats only; specific advisory feed not parseable) |
+| github.com/0xMarcio/cve | 0 | 1 | 4 | 2026-06-07 (no new June 5-7 entries; existing CopyFail / Netlogon / n8n mirrors dup) |
+| blog.cloudflare.com/tag/security | 0 | 0 | 5 | 2026-06-07 (no new content — Project Glasswing 2026-05-18 still latest) |
+| avleonov.com | 0 | 0 | 5 | 2026-06-07 (PAN-OS CVE-2026-0300 retrospective post 2026-06-05 — historical content, no new advisory) |
+| cisa.gov (incl. /KEV) | 0 | 0 | 5 | — (403 Forbidden continues; no new KEV additions since 2026-06-05 Serv-U + Linux cgroups batch) |
+| attackerkb.com | 0 | 0 | 5 | — (per MEMORY known-blocked, 403 Forbidden) |
+| cve.org / cve.mitre.org | 0 | 0 | 5 | — (JS-required, no content) |
+| googleprojectzero.blogspot.com | 0 | 0 | 5 | — (redirects to projectzero.google; Pixel 10 2026-05-13 still latest) |
+| msrc.microsoft.com/blog | 0 | 0 | 5 | — (redirects to nav-only page) |
+| hackerone.com/hacktivity | 0 | 0 | 5 | — (JS-required) |
+| bugcrowd.com/disclosures | 0 | 0 | 5 | — (404 since 2026-04 — flag for SOURCES.md drop at next review) |
+| packetstormsecurity.com | 0 | 0 | 5 | — (degraded — redirects to packetstorm.news, homepage nav only) |
+| nvd.nist.gov | 0 | 0 | 5 | — (degraded — homepage no CVE listings; data via opencve.io) |
+| habr.com/ru/companies/tomhunter | 0 | 0 | 5 | — (degraded — stale through 2026-03-06, ~3-month silence) |
+| teletype.in/@cyberok | 0 | 0 | 5 | — (degraded — stale through 2026-02-04, ~4-month silence) |
+| cert.gov.ua | 0 | 0 | 5 | — (degraded — empty content) |
 
 ## Score Calibration
 *(Updated monthly)*

@@ -1,0 +1,113 @@
+{
+  "date": "2026-06-07",
+  "findings": [
+    {
+      "type": "update",
+      "title": "Miasma Supply-Chain Worm Hits 73 Microsoft GitHub Repositories Across Azure / Azure-Samples / Microsoft / MicrosoftDocs Plus AI Coding Environments (Claude Code / Gemini CLI / Cursor / VS Code) — Major Scope Expansion from npm Registry",
+      "threat_score": 9,
+      "previous_threat_score": 8,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Microsoft GitHub organizations (Azure, Azure-Samples, Microsoft, MicrosoftDocs); 73 repositories disabled by GitHub; durabletask PyPI / .NET / Go / Java / JavaScript / MSSQL ecosystem; AI coding environments (Claude Code, Gemini CLI, Cursor, VS Code); same actor as TeamPCP May 2026 wave",
+      "summary": "Miasma worm (Watchtower 2026-06-02 NEWS / 2026-06-03 UPDATE) compromised 73 repos across four official Microsoft GitHub orgs and now propagates via a 4.3 MB payload auto-executed inside Claude Code / Gemini CLI / Cursor / VS Code AI coding environments; credentials assessed as never fully lost from May TeamPCP wave.",
+      "first_seen_at": "2026-06-02"
+    },
+    {
+      "type": "news",
+      "title": "depthfirst AI Agent Discloses 21 Zero-Days in FFmpeg — CVE-2026-39210 → CVE-2026-39218 Heap / Stack Overflows in TS Demuxer Through VP9 Decoder, Patched Upstream",
+      "threat_score": 5,
+      "cve": "CVE-2026-39210, CVE-2026-39211, CVE-2026-39212, CVE-2026-39213, CVE-2026-39214, CVE-2026-39215, CVE-2026-39216, CVE-2026-39217, CVE-2026-39218",
+      "cvss": null,
+      "affected_technology": "FFmpeg C codebase (~1.5M LOC); parsers and demuxers across TS through VP9; deployment footprint spans media transcoders, Python wheels, container images, NVR appliances, video-conferencing back ends, CDN ingest layers; some bugs latent 15-20 years (one from 2003)",
+      "summary": "depthfirst's autonomous AI agent identified 21 zero-day heap / stack overflows in FFmpeg parsers and demuxers for ~$1,000 in compute (THN 2026-06-06); 9 CVE-2026-3921X assignments plus un-numbered fixes patched upstream, per-bug PoC inputs published, no in-wild yet but broad media-pipeline footprint warrants prompt patch.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-06-06"
+    },
+    {
+      "type": "news",
+      "title": "Bright Data Residential-Proxy SDK in Free Smart-TV and Mobile Apps Repurposes 400M Consumer IPs for AI-Scraper Anti-Bot Bypass — Bypasses iOS VPN, \"Weaker Than Most Malware\"",
+      "threat_score": 5,
+      "cve": null,
+      "cvss": null,
+      "affected_technology": "Bright Data (formerly Luminati) residential-proxy SDK; embedded in free smart-TV apps (PlayWorks Digital, CloudTV, Longvision partners) plus iOS and Android consumer apps; ~400M residential IPs, 200 GB/month per device default; traffic bypasses iOS VPN profiles; consumer device population on corporate networks (conference-room / lobby / executive smart TVs, BYOD iOS)",
+      "summary": "Include Security + Buchodi disclosed 2026-06-06 that free smart-TV and mobile apps embedding Bright Data's SDK silently convert consumer devices into residential exit nodes for a 400M-IP commercial proxy network used by AI scrapers to evade anti-bot defenses; controls weaker than most malware and traffic bypasses iOS VPN.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-06-06"
+    }
+  ],
+  "noted": [
+    {
+      "cve": "None assigned",
+      "product": "OpenAI ChatGPT Lockdown Mode defensive feature launch (THN 2026-06-06)",
+      "summary": "Optional advanced setting disables live browsing, image retrieval, deep research, agent mode, canvas networking, and file downloads to reduce prompt-injection / data-exfiltration blast radius; OpenAI acknowledges residual risk via enabled Apps and unforeseen capability combinations — defensive AI-platform hardening calibration data point."
+    },
+    {
+      "cve": "Not yet assigned",
+      "product": "Project Zero discloses 4 bugs in FreeType (oss-security 2026-06-06)",
+      "summary": "Google Project Zero published four FreeType font-rendering library vulnerabilities; client-side / font-rendering scope reachable via document and PDF handlers; flag for endpoint-fleet patch cadence and PDF-processing-server fleets bundling FreeType."
+    },
+    {
+      "cve": "CVE-2026-10725",
+      "product": "Perl Protocol::HTTP2 ≤ 1.12 — HTTP/2 Bomb variant (oss-security 2026-06-06)",
+      "summary": "HPACK-amplification + flow-control-stalling HTTP/2 Bomb pattern (Watchtower 2026-06-04 HIGH covering Apache CVE-2026-49975 / NGINX / IIS / Envoy / Pingora) confirmed in Perl Protocol::HTTP2; limited Perl-HTTP/2 production deployment, mod_perl + Mojolicious shops should patch."
+    },
+    {
+      "cve": "CVE-2026-50589",
+      "product": "OpenStack Ironic DoS under reduced process stack size (OSSN-0099, oss-security 2026-06-06)",
+      "summary": "DoS triggered in OpenStack Ironic when operating under constrained stack conditions; limited deployment footprint to OpenStack-Ironic-running private clouds; calibration only."
+    },
+    {
+      "cve": "CVE-2026-10879",
+      "product": "Perl DBI < 1.648 heap overflow on SQL statement parsing (oss-security 2026-06-06)",
+      "summary": "Perl database-interface library memory overflow on SQL statement parsing; legacy-Perl scope, calibration only."
+    },
+    {
+      "cve": "CVE-2026-9270, CVE-2026-11362",
+      "product": "Perl DataDog::DogStatsd ≤ 0.07 metric injection (oss-security 2026-06-06)",
+      "summary": "Metric-injection issues in the DataDog statistics Perl library covering both base parsing and event-tag handling; observability-stack pollution risk, low blast radius."
+    },
+    {
+      "cve": "None assigned",
+      "product": "SOC-CMM 2026 report — only ~10% of SOCs say AI delivers excellent value (THN 2026-06-06)",
+      "summary": "Industry-survey calibration data point on enterprise AI security-tooling adoption; not an advisory."
+    },
+    {
+      "cve": "CVE-2026-28318",
+      "product": "Day-2 amplification — SolarWinds Serv-U CVE-2026-28318 (Watchtower 2026-06-06 NEWS already covered)",
+      "summary": "THN 2026-06-06 republishes the 2026-06-05 KEV addition with patched-version (15.5.4 HF1) and Content-Encoding: deflate POST mitigation details already in yesterday's NEWS entry; no new info, no update warranted."
+    },
+    {
+      "cve": "None assigned",
+      "product": "libinput device-group udev-properties injection follow-up (oss-security 2026-06-06)",
+      "summary": "Continued discussion of the previously disclosed libinput flaw; no new CVE, calibration / fix-tracking only."
+    }
+  ],
+  "source_coverage": {
+    "total": 30,
+    "checked": 25,
+    "with_findings": 7,
+    "unreachable": [
+      "cisa.gov",
+      "cisa.gov/known-exploited-vulnerabilities-catalog",
+      "attackerkb.com",
+      "bugcrowd.com/disclosures",
+      "cve.mitre.org"
+    ],
+    "degraded": [
+      "seclists.org/fulldisclosure",
+      "packetstormsecurity.com",
+      "opencve.io",
+      "nvd.nist.gov",
+      "cve.org",
+      "msrc.microsoft.com/blog",
+      "hackerone.com/hacktivity",
+      "habr.com/ru/companies/tomhunter",
+      "teletype.in/@cyberok",
+      "cert.gov.ua",
+      "blog.cloudflare.com/tag/security",
+      "kb.cert.org/vuls",
+      "dbugs.ptsecurity.com"
+    ]
+  },
+  "full_report": "reports/2026/06/07/report.md"
+}
