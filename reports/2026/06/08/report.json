@@ -1,0 +1,90 @@
+{
+  "date": "2026-06-08",
+  "findings": [
+    {
+      "type": "update",
+      "title": "Mirasvit Full Page Cache Warmer for Magento 2 — CVE-2026-45247 (CVSS 9.8) Unauthenticated PHP-Object-Deserialization RCE Promoted from Noted → CISA KEV (2026-06-03) + Active Imperva Exploitation Observed",
+      "threat_score": 9,
+      "previous_threat_score": 3,
+      "cve": "CVE-2026-45247",
+      "cvss": 9.8,
+      "affected_technology": "Mirasvit Full Page Cache Warmer extension for Magento 2 / Adobe Commerce versions < 1.11.12; processes attacker-controlled CacheWarmer cookie on ordinary storefront requests and passes it to PHP unserialize() without class allow-listing (CWE-502); exploit primitive is a single cookie value on any normal storefront request, no auth required",
+      "summary": "Mirasvit Magento Cache Warmer (Watchtower 2026-06-06 NOTED, no CVE then) now has CVE-2026-45247 (CVSS 9.8), is on CISA KEV as of 2026-06-03 (Watchtower missed), and Imperva confirms in-the-wild exploitation with the CacheWarmer:(Tz|Qz|YT) cookie IOC — patch to 1.11.12 immediately on all Magento / Adobe Commerce storefronts.",
+      "first_seen_at": "2026-06-06"
+    },
+    {
+      "type": "news",
+      "title": "Microsoft 365 Copilot CVE-2026-45497 — First Publicly-Acknowledged Critical RCE in a Major-Cloud Enterprise AI Assistant via Command Injection With Service-Container Scope Change, Already Mitigated Server-Side",
+      "threat_score": 5,
+      "cve": "CVE-2026-45497",
+      "cvss": 9.6,
+      "affected_technology": "Microsoft 365 Copilot cloud service; command-injection primitive (CWE-77) allowing authorized attacker to execute code over network with scope change (S:C) indicating break-out from Copilot service container into other M365 components; no customer-side artifact, fix shipped server-side; companion advisory CVE-2026-42824 covers an info-disclosure path in the same service",
+      "summary": "Microsoft published CVE-2026-45497 on 2026-06-04 — a critical command-injection RCE in M365 Copilot whose scope change allowed container break-out into other M365 components; already mitigated in Microsoft cloud with no customer action and no in-wild observation, but a notable precedent as the first publicly-acknowledged critical RCE in a major-cloud enterprise AI assistant.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-06-04"
+    }
+  ],
+  "noted": [
+    {
+      "cve": "CVE-2021-27137",
+      "product": "C0XMO Gafgyt botnet — mainstream coverage expansion (BleepingComputer 2026-06-07; FortiGuard original 2026-06-03, Watchtower 2026-06-04 NOTED)",
+      "summary": "BC republishes FortiGuard C0XMO Gafgyt-variant disclosure adding Japanese-target + German-source-IP attribution and modular-architecture confirmation; DD-WRT enthusiast/SOHO scope only, IoT-botnet calibration."
+    },
+    {
+      "cve": "None assigned",
+      "product": "Silent Ransom Group / Luna Moth / UNC3753 — law-firm IT-impersonation campaign IOCs (BleepingComputer 2026-06-07; FBI FLASH 2026-05-26, Watchtower 2026-05-28 OOS)",
+      "summary": "Follow-up adds IOCs (<org>-itdesk[.]com / <org>-it[.]com phishing domains, Teams/Zoom/Quick Assist/AnyDesk/Zoho Assist initial access, WinSCP/Rclone exfil, fast-flux residential-proxy DNS, business-data-leaks[.]com); largely law-firm-vertical social-engineering scope but remote-access-tool fingerprints useful for detection."
+    },
+    {
+      "cve": "CVE-2022-0492, CVE-2025-48595",
+      "product": "CISA KEV adds Linux cgroup auth bypass + Android Framework integer overflow (2026-06-02)",
+      "summary": "Linux cgroup-1 release_agent privilege bypass historically used in container-escape chains, relevant to shared-tenant container infra running cgroup-v1; Android integer overflow mobile-only OOS. Both long-patched upstream."
+    },
+    {
+      "cve": "CVE-2026-42824",
+      "product": "Microsoft 365 Copilot Information Disclosure (2026-06-04)",
+      "summary": "Companion advisory to CVE-2026-45497 RCE above; already mitigated server-side with no customer action; tracked as additional AI-platform calibration data point."
+    },
+    {
+      "cve": "CVE-2026-11413, CVE-2026-11435, CVE-2026-26422",
+      "product": "PT-Security DB 2026-06-07 batch — JD Cloud Box AX6600 (CVSS 9.0), Jinher OA (CVSS 7.5), Clash-Verge-Service-IPC (CVSS 8.4), GL.iNet router cluster (PT-2026-47175..47191)",
+      "summary": "Niche / SOHO / regional-vendor scope; flag only if internal asset DB surfaces Clash-Verge (Chinese-language VPN-tunnel client) on developer endpoints."
+    },
+    {
+      "cve": "CVE-2026-7795, CVE-2026-7796, CVE-2026-8502",
+      "product": "WordPress-plugin micro-batch (PT-Security 2026-06-07) — Click To Chat – WA Widget, EmbedPress, LearnPress",
+      "summary": "Standard CVSS-5/6 WordPress-plugin noise; auto-update channels should pick them up. No incident activity reported."
+    },
+    {
+      "cve": "None assigned",
+      "product": "Microsoft Patch Tuesday June 2026 prep — 2026-06-09 (tomorrow)",
+      "summary": "Microsoft's June 2026 Patch Tuesday lands 2026-06-09; expect a ~100-130 CVE batch. Tomorrow's report will cover."
+    }
+  ],
+  "source_coverage": {
+    "total": 30,
+    "checked": 26,
+    "with_findings": 6,
+    "unreachable": [
+      "cisa.gov",
+      "cisa.gov/known-exploited-vulnerabilities-catalog",
+      "attackerkb.com",
+      "bugcrowd.com/disclosures"
+    ],
+    "degraded": [
+      "rapid7.com",
+      "seclists.org/fulldisclosure",
+      "packetstormsecurity.com",
+      "opencve.io",
+      "cve.mitre.org",
+      "cve.org",
+      "msrc.microsoft.com/blog",
+      "hackerone.com/hacktivity",
+      "github.com/0xMarcio/cve",
+      "habr.com/ru/companies/tomhunter",
+      "teletype.in/@cyberok",
+      "cert.gov.ua"
+    ]
+  },
+  "full_report": "reports/2026/06/08/report.md"
+}

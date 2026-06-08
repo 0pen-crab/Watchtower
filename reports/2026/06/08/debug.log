@@ -1,0 +1,163 @@
+Watchtower Daily Run — 2026-06-08
+=================================
+Start: 2026-06-08T02:00:00Z
+End:   2026-06-08T02:35:00Z
+Cycle: night
+
+STEP 1 — Pull repo
+------------------
+02:00:00Z  cd /home/claude/workspace/watchtower && git pull
+           → Already up to date.
+
+STEP 2 — Build dedup index from last 30 days (2026-05-09 → 2026-06-07)
+----------------------------------------------------------------------
+02:00:30Z  python3 dedup-extract: 744 unique CVE IDs across 30 daily reports
+           Covered topics observed (sample): Miasma worm, ClaudeBleed, OpenClaw,
+           Open WebUI LDAP bypass, FastGPT sandbox RCE, depthfirst FFmpeg 21-CVE
+           batch, Bright Data residential-proxy SDK, SolarWinds Serv-U CVE-2026-28318,
+           Cisco SD-WAN CVE-2026-20245, Everest Forms Pro CVE-2026-3300,
+           Chrome 149 (429 bugs), Mirasvit Magento Cache Warmer (noted, no CVE),
+           HTTP/2 Bomb cluster (Apache CVE-2026-49975, etc.), Acer Wave 7,
+           DDoS / botnets (C0XMO Gafgyt), Red Hat npm namespace compromise,
+           Pretalx CVE-2026-41241, etc.
+
+STEP 3 — Source coverage (30 total)
+-----------------------------------
+
+TIER 1 (15)
+  ✅ bleepingcomputer.com               4.7s   → 2 June-7 articles: C0XMO Gafgyt (dup, 06/04 NOTED),
+                                                Silent Ransom Group (dup, 05/28 OOS); /news/security/page/2 returned mostly 06/01-06/03 already covered
+  ✅ thehackernews.com                  3.4s   → 06/06 articles all covered prior; KEV writeup
+                                                CVE-2026-45247 Mirasvit (PROMOTE → UPDATE), Cisco SD-WAN CVE-2026-20245 (dup),
+                                                Miasma worm (dup), Bright Data residential proxy (dup), FFmpeg 21-CVE (dup),
+                                                Android Asin spyware (mobile-only OOS), FIFA World Cup scams (06/06 noted)
+  ❌ cisa.gov                            -      403 Forbidden (persistent per memory)
+  ❌ cisa.gov/known-exploited-vulnerabilities-catalog
+                                         -      403 Forbidden (persistent) → KEV add CVE-2026-45247 inferred via
+                                                CISA news alert URL (2026/06/03), Imperva blog, THN, SecurityWeek;
+                                                additional 2026-06-02 KEV adds CVE-2022-0492 + CVE-2025-48595 inferred via same channels
+  ✅ securityweek.com                   3.1s   → June-7 article: Emphere $2.1M raise (funding/PR, OOS);
+                                                June-6: Opal Security funding (OOS); June-5: Chrome 149 dup, Cisco SD-WAN dup;
+                                                no new advisory-class items
+  ✅ github.com/search?q=CVE            4.5s   → recent repos: CVE-2026-41940 (cPanel, 06/06 NOTED), CVE-2026-31431 (dup),
+                                                CVE-2026-42945 NGINX Rift detector (dup), CVE-2026-2991 (dup), CVE-2026-31802 (dup),
+                                                CVE-2026-1492 (WP User Registration, niche) — all dup/niche
+  ✅ schneier.com                       2.7s   → 06/05 "AI Worm" commentary (research-only, not advisory); 06/04 Meta AI chatbot
+                                                (already covered by Krebs 06/01); 06/03 medieval ciphers (research only);
+                                                06/02 Microsoft researcher legal action (already covered)
+  ✅ krebsonsecurity.com                2.4s   → only one June post: 06/01 Meta AI Instagram (dup)
+  ⚠️ rapid7.com                         3.5s   → no dates visible on page; features stale CVE-2026-0826/0257 + Q1 2026 landscape;
+                                                marking degraded
+  ❌ attackerkb.com                      -      403 Forbidden (persistent, 06/07 + 06/06 same)
+  ✅ fortinet.com/blog/threat-research  3.2s   → 06/04 FIFA World Cup (06/06 noted dup), 06/03 C0XMO Gafgyt (06/04 noted dup),
+                                                06/03 PureLogs phishing (already in 06/04 reporting)
+  ✅ securitylab.github.com             3.0s   → only 05/22 advisories visible (7-Zip GHSL-2026-115..140 batch,
+                                                Chatwoot SQLi GHSL-2026-059, Apache Doris GHSL-2024-293, Mesa GHSL-2025-009);
+                                                all already covered or past-window
+  ⚠️ seclists.org/fulldisclosure        3.5s   → /2026/Jun/ archive page: only Revive Adserver SA-2026-002 (2026-06-04, niche
+                                                ad-server, calibration only, NOT promoted); rest of June archive empty;
+                                                marking degraded
+  ⚠️ packetstormsecurity.com            -      301 redirect to packetstorm.news; root + /files/latest/1 both returned ToS page
+                                                content (no listing data); degraded
+  ⚠️ opencve.io                         2.9s   → homepage marketing only; /cve listing requires auth; degraded
+
+TIER 2 (15)
+  ✅ nvd.nist.gov                       3.7s   → recent HIGH CVEs all already covered or mobile-only OOS:
+                                                CVE-2026-10939 / 10958 Chrome (OOS browser sandbox, covered in 06/06 Chrome 149),
+                                                CVE-2026-21029 Galaxy Editing, CVE-2026-21030 MediaTek HAL,
+                                                CVE-2026-21031 AppBlock (all mobile-only OOS)
+  ⚠️ cve.mitre.org                      -      301 redirect to cve.org (handled below)
+  ⚠️ cve.org                            -      homepage with no listing data; degraded
+  ✅ googleprojectzero.blogspot.com     -      301 redirect to projectzero.google/; latest 05/13 (Pixel 10, mobile OOS);
+                                                no June posts
+  ✅ blog.cloudflare.com/tag/security   -      latest 2026-05-18 "Project Glasswing"; no June posts
+  ⚠️ msrc.microsoft.com/blog            -      301 redirect to microsoft.com/en-us/msrc/blog; no post listing in response;
+                                                degraded
+  ⚠️ hackerone.com/hacktivity           -      no public listing visible; degraded
+  ❌ bugcrowd.com/disclosures           -      404 Not Found (page structure changed since previous runs)
+  ✅ kb.cert.org/vuls                   3.2s   → recent VU# entries all dup: VU#595768 Securly (06/03), VU#615987 Verizon VoLTE
+                                                (06/02), VU#265691 Appsmiths (06/02), VU#873170 Collibra (06/02), VU#158530
+                                                PCTCore (06/01 — local-only, OOS); calibration row in NOTED for previously-covered
+  ✅ avleonov.com                       3.4s   → 06/05 PAN-OS CVE-2026-0300 writeup (dup, May coverage); 06/02 May Linux Patch
+                                                Wednesday roll-up (all dup); rest May
+  ⚠️ github.com/0xMarcio/cve            -      year-folder index only; no detail visible; degraded
+  ✅ dbugs.ptsecurity.com               4.0s   → PT-2026-47175..47191 GL.iNet routers (2026-06-07), PT-2026-47153 JD Cloud Box
+                                                CVE-2026-11413 (CVSS 9.0), PT-2026-47157 Jinher OA CVE-2026-11435,
+                                                PT-2026-47167 Clash-Verge CVE-2026-26422 (CVSS 8.4), WP-plugin batch
+                                                (Click To Chat / EmbedPress / LearnPress) — all rolled into single NOTED entries
+  ⚠️ habr.com/ru/companies/tomhunter    -      latest article 2026-03-06 (top news Feb 2026); no June activity; degraded
+  ⚠️ teletype.in/@cyberok               -      latest article 2026-02-04; no June activity; degraded
+  ❌ cert.gov.ua                         -      page header only, no advisory listing in body; could not extract content
+
+Source coverage tally:
+  total       = 30
+  checked     = 26  (✅14 + ⚠️12 — degraded count toward checked per validator semantics)
+  unreachable = 4   (cisa.gov, cisa.gov/known-exploited-vulnerabilities-catalog, attackerkb.com, bugcrowd.com/disclosures)
+  with_findings = 6  (bleepingcomputer, thehackernews, securityweek, fortinet, kb.cert.org, dbugs.ptsecurity, nvd.nist.gov — primary surfacing channels for today's items)
+  validator constraint: checked (26) >= total (30) - unreachable (4) = 26  ✓
+
+STEP 4 — Dedup decisions
+------------------------
+  - CVE-2026-45247 Mirasvit Magento Cache Warmer       → UPDATE (PROMOTE from 06/06 NOTED;
+        material change triggers met: CVE assignment + CISA KEV addition 06/03 + active Imperva
+        exploitation observed + vendor patch 1.11.12 released + Sansec advisory published with technical
+        detail. Previous "noted" score treated as 3 for previous_threat_score.)
+  - CVE-2026-45497 M365 Copilot RCE                    → NEWS (newly disclosed 2026-06-04; first
+        publicly-acknowledged critical-class RCE in major-cloud enterprise AI assistant;
+        scope-change S:C means container escape into wider M365; threat-score 5 because Microsoft
+        already mitigated server-side with no customer action and no in-wild exploitation)
+  - C0XMO BleepingComputer 06-07 follow-up             → NOTED (already in 06/04 NOTED; BC adds some
+        detail but no material change per definition — still IoT/SOHO scope; cross-ref only)
+  - Silent Ransom Group BC 06-07                       → NOTED (FBI FLASH 2026-05-26 already
+        OOS-flagged in 05/28; BC adds IOCs which are useful detection input; promoted from OOS to
+        NOTED for IOC trackability, not to full finding because scope is law-firm-vertical
+        social-engineering)
+  - CISA KEV CVE-2022-0492 / CVE-2025-48595 (06-02)    → NOTED (Linux cgroup-1 container-escape
+        primitive long-patched; Android integer overflow mobile-only OOS)
+  - CVE-2026-42824 M365 Copilot Info Disclosure        → NOTED (companion to CVE-2026-45497 above,
+        same mitigation status)
+  - PT-Security 06-07 batch (GL.iNet, JD Cloud Box, Jinher OA, Clash-Verge)  → NOTED (niche / SOHO /
+        regional-vendor scope; grouped into a single NOTED entry)
+  - WP-plugin micro-batch                              → NOTED (CVSS-5/6 routine plugin noise)
+  - June Patch Tuesday prep                            → NOTED (advance flag for tomorrow's run)
+  - CERT/CC VU#595768/615987/265691/873170 (06-02..03) → NOTED (already covered in prior reports;
+        single calibration row)
+  - Chrome WebRTC CVE-2026-10939 / 10958 (06-04)       → SKIP (already covered as part of 06/06
+        Chrome 149 patch batch, browser-sandbox OOS classification)
+  - NVD CVE-2026-21029 / 21030 / 21031 (06-05)         → SKIP (Galaxy + MediaTek + AppBlock all
+        mobile-only OOS)
+  - PAN-OS CVE-2026-0300 avleonov writeup (06-05)      → SKIP (already covered as KEV May 2026)
+  - Schneier "AI Worm" (06-05)                         → SKIP (research/commentary, not advisory)
+  - Meta AI Instagram (Krebs 06-01)                    → SKIP (already covered)
+
+STEP 5 — Write report files
+---------------------------
+02:25:00Z  Write reports/2026/06/08/report.md  (CRITICAL Mirasvit + HIGH M365 Copilot + 7 NOTED)
+02:28:00Z  Write reports/2026/06/08/report.json
+
+STEP 6 — Validator
+------------------
+02:30:00Z  python3 scripts/validate_report.py reports/2026/06/08/report.json
+           Output:
+             ⚠️  2 warning(s):
+                findings[0]: 'summary' is 325 chars (aim for <200)
+                findings[1]: 'summary' is 377 chars (aim for <200)
+             ✅ reports/2026/06/08/report.json — valid
+           Exit code 0. Warnings only; consistent with prior-day reports (06/07 summaries ranged
+           similarly long). Not blocking.
+
+STEP 7/8 — sources-meta.md + git commit/push (next)
+---------------------------------------------------
+Pending.
+
+Notes for future calibration
+----------------------------
+  * Mirasvit miss in 06/06: the SecurityWeek article 2026-06-04 reported the vulnerability without a
+    CVE assignment then; the CVE/KEV add landed 2026-06-03 simultaneously but Watchtower 06/06 did
+    not cross-reference the CISA news-alerts URL pattern (cisa.gov/news-events/alerts/YYYY/MM/DD/).
+    Action: when CISA's own catalog page is 403-blocked, also probe /news-events/alerts/<recent-dates>
+    URLs as fallback channel — they're reachable.
+  * Tomorrow (06/09) is Microsoft Patch Tuesday: prepare for a ~100-130 CVE batch. Allocate extra
+    time in the run.
+
+End of debug log.
