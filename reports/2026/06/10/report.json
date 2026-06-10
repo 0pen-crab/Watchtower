@@ -1,0 +1,217 @@
+{
+  "date": "2026-06-10",
+  "findings": [
+    {
+      "type": "news",
+      "title": "Check Point Remote Access VPN / Mobile Access / Spark Firewalls — CVE-2026-50751 Unauthenticated Authentication Bypass Exploited as Zero-Day by Qilin Ransomware; CISA Emergency 3-Day Patch Deadline (Due 2026-06-11)",
+      "threat_score": 10,
+      "cve": "CVE-2026-50751",
+      "cvss": null,
+      "affected_technology": "Check Point Remote Access VPN, Mobile Access / SSL VPN, and Spark firewalls — only configurations using deprecated IKEv1 key exchange without machine certificate requirements; an unauthenticated remote attacker can bypass authentication and establish a VPN session; Qilin RaaS confirmed post-compromise activity in at least one observed incident; patched 2026-06-08, KEV-added 2026-06-09 with a 3-day BOD-style deadline of 2026-06-11 for federal civilian agencies",
+      "summary": "Check Point published an emergency advisory for CVE-2026-50751 (Remote Access VPN / Mobile Access / Spark firewall unauthenticated auth bypass) on 2026-06-08, CISA added it to KEV with a 3-day deadline on 2026-06-09, and Qilin ransomware affiliates are already exploiting it post-compromise — patch and audit Check Point edges immediately.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-06-09"
+    },
+    {
+      "type": "news",
+      "title": "Microsoft June 2026 Patch Tuesday — Record ~200 CVEs Including Three Publicly Disclosed Zero-Days (CTFMON EoP 'GreenPlasma', HTTP/2 Bomb DoS, BitLocker 'YellowKey' Bypass) and 28 Critical RCEs Spanning ADDS, Hyper-V, Kerberos KDC, HTTP.sys, RDP Client",
+      "threat_score": 9,
+      "cve": "CVE-2026-45586, CVE-2026-49160, CVE-2026-50507",
+      "cvss": null,
+      "affected_technology": "Microsoft Windows / Windows Server (CTFMON, HTTP.sys, BitLocker TPM-only, Kerberos KDC, ADDS, Hyper-V, DHCP Client, Deployment Services, Graphics, Media, RDP Client, Nuance PowerScribe), Azure Kubernetes Service, Exchange Server (6 CVEs), SharePoint Server (20+ CVEs); three CVEs are publicly disclosed pre-patch — CVE-2026-45586 CTFMON link-following EoP to SYSTEM (researcher Nightmare Eclipse, 'GreenPlasma'), CVE-2026-49160 HTTP/2 header-compression DoS ('HTTP/2 Bomb'), CVE-2026-50507 BitLocker physical-access bypass on TPM-only protected volumes ('YellowKey'); 28 critical-severity RCE CVEs across the batch",
+      "summary": "Microsoft's June 2026 Patch Tuesday lands ~200 CVEs (a monthly record per Krebs) including three publicly disclosed zero-days — CTFMON-EoP, HTTP/2 Bomb DoS, BitLocker bypass — plus 28 critical RCEs across ADDS, Hyper-V, HTTP.sys, Kerberos KDC, RDP Client, Deployment Services and 6 Exchange / 20+ SharePoint CVEs; treat as full-fleet patch sprint.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-06-09"
+    },
+    {
+      "type": "news",
+      "title": "Veeam Backup & Replication CVE-2026-44963 (CVSS 9.4) — Any Low-Privilege Domain User Can Achieve RCE on Domain-Joined Backup Servers via Vulnerable VBR ≤12.3.2.4465; Patched 12.3.2.4854",
+      "threat_score": 8,
+      "cve": "CVE-2026-44963",
+      "cvss": 9.4,
+      "affected_technology": "Veeam Backup & Replication 12.x up to and including 12.3.2.4465 (all v12 builds prior to 12.3.2.4854); only affects VBR installs joined to an AD domain — any authenticated domain user with no special privilege can achieve remote code execution on the backup server; v13.x is unaffected due to v13 architectural changes; no in-wild exploitation observed yet but Veeam expects rapid patch-diff weaponisation",
+      "summary": "Veeam disclosed CVE-2026-44963 (CVSS 9.4) — any low-privilege domain user can execute code on a domain-joined Veeam Backup & Replication 12.x server up to 12.3.2.4465; patch to 12.3.2.4854 immediately and audit whether VBR really needs to be domain-joined, since backup servers are a high-value ransomware target.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-06-09"
+    },
+    {
+      "type": "news",
+      "title": "BerriAI LiteLLM CVE-2026-42271 (CVSS 8.7, Chains to 10.0 with CVE-2026-48710 Starlette Host Bypass) — Authenticated MCP-Test Endpoint Command Injection in Versions ≥1.74.2 & <1.83.7 Added to CISA KEV, Actively Exploited; Patched 1.83.7",
+      "threat_score": 8,
+      "cve": "CVE-2026-42271",
+      "cvss": 8.7,
+      "affected_technology": "BerriAI LiteLLM Python proxy versions ≥1.74.2 and <1.83.7; command injection in the preview MCP-test endpoints (POST /mcp-rest/test/connection and POST /mcp-rest/test/tools/list) which accepted command/args/env fields and spawned them as a subprocess on the proxy host; requires a valid proxy API key but chains with CVE-2026-48710 (Starlette Host header bypass) for combined unauthenticated RCE rated CVSS 10.0; CISA added to KEV catalog 2026-06-08/09 with confirmation of active exploitation; patched in 1.83.7",
+      "summary": "CISA added CVE-2026-42271 in BerriAI LiteLLM to KEV after observing active exploitation of its MCP-test command-injection endpoint, which chains with CVE-2026-48710 for unauthenticated RCE (CVSS 10.0); upgrade LiteLLM to 1.83.7 and block /mcp-rest/test/* at the reverse proxy on any AI-platform deployment that uses LiteLLM.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-06-09"
+    },
+    {
+      "type": "news",
+      "title": "SAP June 2026 Security Patch Day — 15 CVEs Including Four Critical Flaws in NetWeaver and Commerce Cloud (Memory Corruption + Disclosure + Disruption)",
+      "threat_score": 7,
+      "cve": "Multiple",
+      "cvss": null,
+      "affected_technology": "SAP NetWeaver and SAP Commerce Cloud — June 2026 SAP Security Patch Day fixes 15 issues including 4 critical-severity flaws in those two products spanning information disclosure, memory corruption, and system-disruption paths; companion oss-security thread (SYSS-2026-004) describes a NetWeaver SAML XML Signature Wrapping bug published 2026-06-08 in the same window",
+      "summary": "SAP's June 2026 Security Patch Day fixes 15 CVEs including four critical-severity NetWeaver / Commerce Cloud flaws (memory corruption + info disclosure + disruption) and lands alongside SYSS-2026-004 NetWeaver SAML XML Signature Wrapping — patch NetWeaver / Commerce Cloud and audit any SAML federation endpoints.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-06-09"
+    },
+    {
+      "type": "update",
+      "title": "Apache ActiveMQ Jolokia RCE CVE-2026-42588 — Public Python PoC Published on GitHub (0xMarcio repo); Material Escalation From Original 2026-06-01 News",
+      "threat_score": 8,
+      "previous_threat_score": 6,
+      "cve": "CVE-2026-42588",
+      "cvss": null,
+      "affected_technology": "Apache ActiveMQ Jolokia management endpoint; a public Python PoC repository was added to the 0xMarcio CVE-PoC index during the 2026-06-08→09 window, escalating real-world exploitation likelihood; original news entry in Watchtower 2026-06-01 (threat_score 6) was pre-PoC; with weaponisation now public, treat as confirmed mass-scanner-ready",
+      "summary": "Public Python PoC for the ActiveMQ Jolokia RCE CVE-2026-42588 (Watchtower News 2026-06-01) now lives on GitHub — score up from 6 to 8: any internet-exposed ActiveMQ Jolokia endpoint should be considered hostile-reachable, patch or remove the Jolokia handler immediately.",
+      "first_seen_at": "2026-06-01"
+    },
+    {
+      "type": "update",
+      "title": "Apache Tomcat Tribes CVE-2026-34486 Unauth Java-Deserialization RCE — Metasploit Module Landed (Rapid7 Wrap-Up 2026-06-09); Lifts Exploitation Tempo on Already-High Risk",
+      "threat_score": 9,
+      "previous_threat_score": 7,
+      "cve": "CVE-2026-34486",
+      "cvss": null,
+      "affected_technology": "Apache Tomcat Tribes (clustering / replication channel); unauthenticated Java deserialization RCE first newsed in Watchtower 2026-05-20 (threat_score 7); Rapid7's 2026-06-09 Metasploit Weekly Wrap-Up adds a Tomcat Tribes RCE module — moves from researcher PoC to point-and-shoot framework module which substantially lowers the skill bar and historically correlates with broader opportunistic exploitation within days",
+      "summary": "Apache Tomcat Tribes unauth Java-deserialization RCE CVE-2026-34486 now has a Metasploit module per Rapid7's 2026-06-09 wrap-up — escalating from score 7 to 9: any Tomcat cluster exposing the Tribes channel to untrusted networks must be patched or firewalled today.",
+      "first_seen_at": "2026-05-20"
+    }
+  ],
+  "noted": [
+    {
+      "cve": "CVE-2026-11645",
+      "product": "Google Chrome V8 Engine Zero-Day (5th of 2026) — patched 149.0.7827.102/103, exploited in wild, anonymous reporter",
+      "summary": "Out-of-bounds R/W in V8 actively exploited via crafted HTML; ASLR-bypass + sandbox-execute primitive but browser-sandbox scope only — out of Watchtower core scope per browser-only exclusion but tracked because Chrome zero-day cadence is itself the signal."
+    },
+    {
+      "cve": "CVE-2026-23111",
+      "product": "Linux kernel nf_tables UAF — Local root + container escape via unprivileged user namespaces (Exodus Intelligence + FuzzingLabs PoCs public 2026-06-08)",
+      "summary": "Single-character inverted check in nf_tables creates UAF; Ubuntu 22.04/24.04, Debian Bookworm/Trixie, RHEL 10, Amazon Linux, SUSE all affected; kernel-patched upstream 2026-02-05 but multi-distro reboot rollouts lag — relevant for shared-tenant container hosts running cgroup-v1 or namespaces-enabled kernels."
+    },
+    {
+      "cve": "None assigned",
+      "product": "Microsoft Defender 'RoguePlanet' SMB-share race condition — researcher PoC by Nightmare Eclipse, no patch yet",
+      "summary": "Race condition in Defender's handling of remote SMB-share files spawns SYSTEM command prompt on success; Microsoft silently hardened related Defender APIs mid-May to block junction vectors but the race remains; application allow-listing recommended mitigation per ThreatLocker."
+    },
+    {
+      "cve": "CVE-2026-52806",
+      "product": "Gogs authenticated RCE via argument injection (Rapid7 disclosure 2026-06-08, fixed 2026-06-07)",
+      "summary": "Authenticated Git-server users can chain argument injection in Gogs to RCE; patch shipped 2026-06-07; corporate-fleet relevance only if Gogs (rather than Gitea / GitLab) is in use as an internal Git server."
+    },
+    {
+      "cve": "CVE-2026-10523",
+      "product": "Ivanti Sentry CVSS 9.9 (PT-2026-47807, dbugs.ptsecurity.com 2026-06-09)",
+      "summary": "PT Security DB indexes a CVSS 9.9 Ivanti Sentry CVE on 2026-06-09 with no public technical detail yet — Ivanti edge-gateway components have a history of CISA KEV adds, flag for promotion when an Ivanti advisory or PoC surfaces."
+    },
+    {
+      "cve": "CVE-2026-47643",
+      "product": "Microsoft Azure Stack Edge CVSS 9.8 (PT-2026-48038, dbugs.ptsecurity.com 2026-06-09)",
+      "summary": "Azure Stack Edge CVSS 9.8 published alongside the broader Microsoft Patch Tuesday batch; niche to teams running Azure Stack Edge appliances at the corporate edge — not core fleet but track in asset-DB if present."
+    },
+    {
+      "cve": "CVE-2026-34691",
+      "product": "Adobe Experience Manager Forms CVSS 9.3 (Adobe June 2026 batch — 123 CVEs total, ~half RCE)",
+      "summary": "Adobe's June 2026 batch addresses 123 vulnerabilities — Experience Manager dominates with multiple high-severity flaws; AEM is a frequent public-facing CMS, so prioritise updates on any internet-reachable AEM Forms or Sites endpoints."
+    },
+    {
+      "cve": "CVE-2026-45447",
+      "product": "OpenSSL — 18 CVEs in June batch including high-severity AI-discovered flaw (PT-2026-47844)",
+      "summary": "OpenSSL's June 2026 batch addresses 18 vulnerabilities including a high-severity issue reportedly identified by AI; broad-blast-radius distro-rebuild rollout — no incident activity yet but pin to your distro patch-cadence for the week."
+    },
+    {
+      "cve": "CVE-2026-29167, CVE-2026-29170, CVE-2026-34355, CVE-2026-34356, CVE-2026-42535, CVE-2026-42536, CVE-2026-43951, CVE-2026-44119, CVE-2026-44185, CVE-2026-44186, CVE-2026-44631, CVE-2026-48913, CVE-2026-49975",
+      "product": "Apache HTTP Server (httpd) June 2026 batch — 13 CVEs across mod_ldap, mod_proxy_ftp, mod_proxy_html, mod_dav_fs, mod_xml2enc, mod_ssl, mod_http2 (oss-security 2026-06-08)",
+      "summary": "Apache httpd June 2026 batch lands 13 CVEs covering memory corruption, OOB read, EoP via .htaccess expressions, HTTP/2 DoS, and mod_ssl OCSP stack over-read; no in-wild exploitation reported but apply httpd rebuilds across all edge fleets running mod_proxy_* or mod_http2."
+    },
+    {
+      "cve": "CVE-2026-9669",
+      "product": "CPython bz2.BZ2Decompressor stack buffer overflow (oss-security 2026-06-08, Alan Coopersmith)",
+      "summary": "Stack corruption triggered by reusing a BZ2Decompressor after an error condition; corporate-fleet relevance limited but flag if Python build artifacts surface in security-products SBOM."
+    },
+    {
+      "cve": "CVE-2026-49818",
+      "product": "Apache Airflow — Samba provider path traversal via GCS object names (oss-security 2026-06-09, Jarek Potiuk)",
+      "summary": "Path traversal via crafted GCS object names in the Apache Airflow Samba provider; affects only Airflow deployments using both Samba + GCS providers — niche scope, patch when Samba-provider bump lands."
+    },
+    {
+      "cve": "Multiple",
+      "product": "Apache Answer multi-CVE batch (CVE-2026-34905 → CVE-2026-25688, oss-security 2026-06-09)",
+      "summary": "Six Apache Answer Q&A platform CVEs including unlisted-question access, HTML / XSS injection, avatar validation, TIFF processing, and authorization bypass; low corporate-fleet relevance unless Answer is in internal use as a Q&A platform."
+    },
+    {
+      "cve": "Multiple",
+      "product": "Xen Security Advisories XSA-491 through XSA-494 (oss-security 2026-06-09)",
+      "summary": "Xen 2026-06-09 batch covers x86 HVM port traversal, domctl lock abuse, ARM memory completion, and mapcache metadata; VM-isolation scope is out of Watchtower core per scope note but Xen XSAs propagate into multiple cloud-IaaS substrates so track via your IaaS provider's CVE feed."
+    },
+    {
+      "cve": "None assigned",
+      "product": "CERT/CC VU#616257 — Microsoft-signed UEFI shim bootloaders vulnerable to Secure Boot bypass (2026-06-09)",
+      "summary": "CERT/CC VU#616257 published 2026-06-09 covers Microsoft-signed UEFI shim bootloaders with Secure Boot bypass paths; firmware-rollout cadence is months-long but track for any preboot integrity claims in the SOC threat model."
+    },
+    {
+      "cve": "CVE-2025-8088",
+      "product": "WinRAR path-traversal continued Russia-aligned exploitation against Ukrainian orgs (THN 2026-06-09; Watchtower NOTED 2026-06-03)",
+      "summary": "Russia-aligned actors continue exploiting the July-2025-patched CVE-2025-8088 WinRAR NTFS-ADS path traversal against Ukrainian organisations; incremental campaign-continuation reporting only — no scope or capability change since prior NOTED."
+    },
+    {
+      "cve": "None assigned",
+      "product": "Shai-Hulud / Miasma / Hades supply-chain campaign — 73 compromised Microsoft GitHub repos + 19 PyPI packages (BleepingComputer + THN 2026-06-08/09)",
+      "summary": "Information-stealer / credential-harvester payload distributed via 73 compromised repositories across Microsoft GitHub orgs (Miasma) plus 19 PyPI packages using setup.pth + obfuscated JS (Hades/Shai-Hulud); remove cached dependencies and rotate developer secrets if any of the listed packages were installed since 2026-06-04."
+    },
+    {
+      "cve": "None assigned",
+      "product": "ServiceNow customer-instance data exposure via /api/now/related_list_edit/create unauthenticated endpoint (BleepingComputer 2026-06-09; patched 2026-06-05, ServiceNow evaluating CVE assignment)",
+      "summary": "ServiceNow patched a misconfigured API endpoint that had requires_authentication=false, allowing unauthenticated queries against customer instance tables; affected customers were notified via support cases — verify whether your tenant received a notice and review IP 51.159.98.241 in API access logs."
+    },
+    {
+      "cve": "None assigned",
+      "product": "Tchap French government encrypted messaging platform — account-hijack breach (BleepingComputer 2026-06-09)",
+      "summary": "Tchap (Matrix-based) breach via compromised user account — no protocol-level CVE; flag only for org-policy / threat-model parallels if your team runs Matrix / Element infrastructure."
+    },
+    {
+      "cve": "None assigned",
+      "product": "WhatsApp / Meta blocks NSO Group spear-phishing campaign + files contempt-of-court motion (BleepingComputer + THN 2026-06-08)",
+      "summary": "Meta detected and disrupted an NSO Group spear-phishing campaign targeting WhatsApp users and filed contempt motion for permanent-injunction violation; no IOC-actionable detail for corporate defenders but useful policy signal for executive-protection programs."
+    },
+    {
+      "cve": "None assigned",
+      "product": "Self-replicating AI worm research PoC on open-weight LLMs (University of Toronto, THN 2026-06-09)",
+      "summary": "Academic proof-of-concept of an autonomous LLM-driven worm that identifies vulnerabilities and replicates across networks using open-weight models; calibration data point for AI-enabled-attack threat-model entries — no live deployment observed."
+    },
+    {
+      "cve": "None assigned",
+      "product": "FROST attack — JavaScript-based SSD timing side-channel for cross-site tracking (THN 2026-06-09)",
+      "summary": "Researchers demonstrate that SSD contention timing exposed to in-browser JS leaks which sites are open / which apps are running, with no permissions required — privacy-side-channel research with limited corporate-defender action."
+    }
+  ],
+  "source_coverage": {
+    "total": 30,
+    "checked": 23,
+    "with_findings": 14,
+    "unreachable": [
+      "cisa.gov",
+      "cisa.gov/known-exploited-vulnerabilities-catalog",
+      "attackerkb.com",
+      "bugcrowd.com/disclosures",
+      "hackerone.com/hacktivity",
+      "cve.mitre.org",
+      "cve.org"
+    ],
+    "degraded": [
+      "packetstormsecurity.com",
+      "msrc.microsoft.com/blog",
+      "nvd.nist.gov",
+      "googleprojectzero.blogspot.com",
+      "fortinet.com/blog/threat-research",
+      "securitylab.github.com",
+      "opencve.io",
+      "avleonov.com",
+      "habr.com/ru/companies/tomhunter/articles",
+      "teletype.in/@cyberok",
+      "cert.gov.ua"
+    ]
+  },
+  "full_report": "reports/2026/06/10/report.md"
+}
