@@ -1,0 +1,104 @@
+Watchtower debug log — cycle 2026-06-11/night
+================================================
+
+[00:00:01] STEP 1: git pull
+  → result: Already up to date.
+
+[00:00:05] STEP 2: build dedup index from last 30 days (cutoff 2026-05-12)
+  → 700 unique CVEs in reports/2026/05/12/.. 2026/06/10/
+  → saved to /tmp/dedup_cves.txt
+  → most recent prior report: reports/2026/06/10/report.json
+  → most recent prior MEMORY append: 2026-06-10
+
+[00:00:10] STEP 3: walk SOURCES.md (30 sources, Tier1=15 + Tier2=15)
+
+  -- Tier 1 --
+  ✅ bleepingcomputer.com                       (3.4s) — Patch Tuesday, Exchange XSS, PeopleSoft, Defender, Ivanti, SAP
+  ✅ thehackernews.com                          (4.0s) — Langflow CVE-2026-5027, CISA KEV adds (Cisco / Chrome / Arista)
+  ❌ cisa.gov                                   (-) — 403 Forbidden (persistent)
+  ❌ cisa.gov/known-exploited-vulnerabilities-catalog (-) — 403 Forbidden (persistent)
+     → fallback URL `news-events/alerts/2026/06/09/cisa-adds-three-known-exploited-vulnerabilities-catalog` also 403 today via WebFetch; surfaced KEV adds via THN / SearchEngine fallback per MEMORY 2026-06-10
+  ✅ securityweek.com                           (3.5s) — Arista no-patch, Exchange OWA XSS, Adobe 123 CVEs, Fortinet/Ivanti
+  ⚠️ github.com/search?q=CVE                    (—) — heavy degraded; covered via 0xMarcio/cve mirror
+  ✅ schneier.com                               (2.8s) — NSO Group / WhatsApp court order, Anthropic Glasswing transparency, Zcash, GPS-as-KDC
+  ✅ krebsonsecurity.com                        (3.2s) — Patch Tuesday record (~200 CVEs), Gentlemen ransomware, AI-assisted bug-finding
+  ✅ rapid7.com/blog                            (3.4s) — Ivanti Sentry advisories, Gogs argument-injection CVE-2026-52806, MSF Apache ActiveMQ + Gogs + Windows kernel
+  ❌ attackerkb.com                             (-) — 403 Forbidden (persistent per MEMORY)
+  ✅ fortinet.com/blog/threat-research          (3.1s) — C0XMO Gafgyt (2026-06-03), FIFA fraud campaign (2026-06-04) — no new June 10/11 content but checked
+  ⚠️ securitylab.github.com                     (3.4s) — latest publish date 2026-05-22 (no fresh content)
+  ✅ seclists.org/fulldisclosure                (2.9s) — SYSS-2026-004 SAP NetWeaver SAML XML SigWrapping (2026-06-08), SEC Consult Genetec RabbitMQ binplant (2026-06-08)
+  ⚠️ packetstormsecurity.com                    (-) — redirect to packetstorm.news (degraded)
+  ⚠️ opencve.io                                 (2.7s) — marketing landing only; fallback app.opencve.io/cve covered separately
+
+  -- Tier 2 --
+  ⚠️ nvd.nist.gov                               (-) — redirect to nist.gov/itl/nvd (degraded)
+  ❌ cve.mitre.org                              (-) — JS-only / redirects to cve.org (persistent per MEMORY)
+  ❌ cve.org                                    (-) — JS-only (persistent per MEMORY)
+  ⚠️ googleprojectzero.blogspot.com             (-) — redirect to projectzero.google/ (degraded)
+  ✅ blog.cloudflare.com/tag/security           (3.0s) — defend against frontier cyber models (2026-06-09), threat intel WAF rules (2026-06-08) — no CVEs
+  ⚠️ msrc.microsoft.com/blog                    (-) — redirect to microsoft.com/en-us/msrc/blog (degraded)
+  ❌ hackerone.com/hacktivity                   (-) — JS-only (persistent per MEMORY)
+  ❌ bugcrowd.com/disclosures                   (-) — 404 (persistent per MEMORY, flag for SOURCES.md removal)
+  ✅ kb.cert.org/vuls                           (3.2s) — VU#616257 Microsoft-signed UEFI shim Secure Boot bypass (2026-06-09)
+  ✅ avleonov.com                               (3.0s) — PAN-OS CVE-2026-0300 follow-on (2026-06-05), May Linux PW roundup (2026-06-02) — most recent posts predate today
+  ✅ github.com/0xMarcio/cve                    (3.5s) — CVE PoC index (no dated diff but checked for Ivanti / Langflow PoCs — both Tenable / watchTowr publish off-repo)
+  ✅ dbugs.ptsecurity.com                       (3.0s) — Fission CVE-2026-50566 (CVSS 9.9), ImageMagick batch CVE-2026-53460..65, Palo Alto Cortex XSIAM CVE-2026-0274, Pi-Hole FTL CVE-2026-44693, Apache OFBiz cross-listing
+  ⚠️ habr.com/ru/companies/tomhunter/articles    (3.2s) — most recent article 2026-03-06 (no June content)
+  ⚠️ teletype.in/@cyberok                       (3.0s) — most recent article 2026-02-04 (no June content)
+  ❌ cert.gov.ua                                (3.0s) — empty webpage response (no advisories rendered via WebFetch)
+  ✅ openwall.com/lists/oss-security/2026/06/   (3.6s) — Jenkins 8-CVE batch, Apache OFBiz CVE-2026-47342 + 50223, ldns CVE-2026-10846, Apache Answer CVE-2026-25700, Node.js 2026-06-17 release, ITScape KVM/arm64 CVE-2026-46316, FreeBSD kTLS CVE-2026-45257, OpenSSL 16-CVE amplification of yesterday's NOTED
+
+[00:11:30] STEP 4: dedup classification for candidate entries
+
+  -- NEW NEWS --
+  ✅ NEW: CVE-2026-5027 Langflow — not in dedup, threat_score=9 (active exploit + ~7K Censys exposed + unpatched)
+  ✅ NEW: CVE-2026-7473 Arista EOS — not in dedup, threat_score=8 (KEV add, no patch planned, FCEB deadline 2026-06-23)
+  ✅ NEW: ShinyHunters PeopleSoft mass-extortion — not in dedup, threat_score=8 (300 instances / 100+ orgs / Nottingham confirmed)
+  ✅ NEW: CVE-2026-25089 Fortinet FortiSandbox — not in dedup, threat_score=7 (CVSS 9.1 pre-auth RCE, no in-wild yet, patched)
+
+  -- UPDATES (material change) --
+  ✅ UPDATE: CVE-2026-20245 Cisco SD-WAN Manager — was newsed 2026-06-06 score 8 → KEV add 2026-06-09 → score 9
+  ✅ UPDATE: CVE-2026-42897 Exchange OWA XSS — was updated 2026-05-17 score 9 → permanent patch ships June PT → score 8
+  ✅ UPDATE (from noted → news): CVE-2026-10520 / CVE-2026-10523 Ivanti Sentry — was NOTED 2026-06-10 (only CVE-2026-10523 from PT-Security, no detail) → vendor advisory + watchTowr PoC 2026-06-09/10 → previous_threat_score=3, threat_score=9
+
+  -- SKIPPED (in dedup, no material change) --
+  ✅ SKIP: CVE-2026-11645 Chrome V8 (KEV add 2026-06-09 IS material change but browser-sandbox scope is OOS per CLAUDE.md scope policy; kept as NOTED reference in source coverage)
+  ✅ SKIP: CVE-2026-23111 Linux kernel nf_tables (already noted 2026-06-10)
+  ✅ SKIP: CVE-2026-44963 Veeam VBR (newsed 2026-06-10)
+  ✅ SKIP: CVE-2026-42271 BerriAI LiteLLM (newsed 2026-06-10)
+  ✅ SKIP: CVE-2026-42588 ActiveMQ Jolokia (updated 2026-06-10)
+  ✅ SKIP: CVE-2026-34486 Tomcat Tribes (updated 2026-06-10)
+  ✅ SKIP: SAP June Patch Day (newsed 2026-06-10)
+  ✅ SKIP: Microsoft June 2026 Patch Tuesday batch (newsed 2026-06-10)
+  ✅ SKIP: CVE-2026-52806 Gogs auth RCE (noted 2026-06-10)
+  ✅ SKIP: CVE-2026-45447 OpenSSL PKCS7_verify UAF (noted 2026-06-10 — amplified today only)
+
+  -- NOTED batch (today) --
+  ✅ NOTED: Apache OFBiz CVE-2026-47342 + 50223 (oss-security)
+  ✅ NOTED: Jenkins CVE-2026-53435..53442 (jenkins.io 2026-06-10)
+  ✅ NOTED: ldns CVE-2026-10846 DNS-poisoning (oss-security)
+  ✅ NOTED: RoguePlanet PoC release (BC / SW — material progression on yesterday's NOTED)
+  ✅ NOTED: Apache Answer CVE-2026-25700 AdminToken (oss-security)
+  ✅ NOTED: ITScape KVM/arm64 CVE-2026-46316 (OOS guest-host but tracked)
+  ✅ NOTED: FreeBSD kTLS CVE-2026-45257 (OOS local but tracked)
+  ✅ NOTED: Node.js June 2026 release placeholder (oss-security)
+  ✅ NOTED: Pi-Hole FTL CVE-2026-44693 (PT-Security)
+  ✅ NOTED: Fission CVE-2026-50566 (PT-Security)
+  ✅ NOTED: Palo Alto Cortex XSIAM CVE-2026-0274 (PT-Security)
+  ✅ NOTED: ImageMagick June 2026 batch (opencve.io / PT-Security)
+  ✅ NOTED: Genetec RabbitMQ binplant (Full Disclosure)
+  ✅ NOTED: Anthropic Project Glasswing transparency (Schneier — calibration)
+  ✅ NOTED: NSO Group WhatsApp court order continuation
+  ✅ NOTED: ShinyHunters Wynn Resorts cluster context
+  ✅ NOTED: Zcash Orchard fraudulent-fund-creation patched (Schneier — calibration)
+  ✅ NOTED: OpenSSL 16-CVE June batch amplification (oss-security 2026-06-09)
+  ✅ NOTED: GHSL-2025-009 / CVE-2026-29075 Mesa benchmarks.yml workflow
+
+[00:14:00] STEP 5/6: writing reports/2026/06/11/report.md and report.json
+  → 7 findings (4 news + 3 updates) + 19 noted items
+  → source_coverage: total=30, checked=22, with_findings=14, unreachable=8, degraded=7
+  → invariant check: checked (22) >= total (30) - unreachable (8) = 22 ✓
+
+[00:14:10] STEP 7: validate report.json
+  → command: python3 scripts/validate_report.py reports/2026/06/11/report.json
+  → result: ✅ valid — 6 warnings (summary length > 200 chars on 6 findings, no errors)

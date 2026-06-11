@@ -1,0 +1,204 @@
+{
+  "date": "2026-06-11",
+  "findings": [
+    {
+      "type": "news",
+      "title": "Langflow CVE-2026-5027 (CVSS 8.8) — Unpatched Path-Traversal File-Write in /api/v2/files Chains With Default Auto-Login to Unauthenticated RCE; Active Exploitation Observed Against ~7,000 Censys-Exposed Instances",
+      "threat_score": 9,
+      "cve": "CVE-2026-5027",
+      "cvss": 8.8,
+      "affected_technology": "Langflow (open-source visual workflow builder for LangChain-based AI applications) up to and including 1.8.4 — the POST /api/v2/files endpoint fails to sanitize the 'filename' multipart-form parameter, allowing path-traversal arbitrary file writes; because Langflow ships with auto-login enabled by default, an unauthenticated attacker can obtain a valid session token with a single request and then write arbitrary files to disk to achieve RCE on the Langflow host; Tenable Research disclosed the issue (TRA-2026-26) on 2026-03-27 after three unanswered vendor contacts in Jan/Feb 2026; ~7,000 Langflow instances are exposed to the internet (Censys), majority in North America; active exploitation observed as of 2026-06-10 (test-file writes pre-cursor to full RCE)",
+      "summary": "Langflow up to 1.8.4 has an unpatched path-traversal in /api/v2/files that chains with its default auto-login posture for unauthenticated RCE — active exploitation is now observed against ~7,000 internet-exposed instances per Censys; remove Langflow from the internet, disable auto-login, and front it with a reverse proxy + strict auth immediately.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-06-10"
+    },
+    {
+      "type": "update",
+      "title": "Cisco Catalyst SD-WAN Manager CVE-2026-20245 — Added to CISA KEV 2026-06-09 With 13-Day Federal Deadline (Due 2026-06-23); Confirms Active Exploitation of Unpatched Root-Command-Execution Zero-Day Originally Newsed 2026-06-06",
+      "threat_score": 9,
+      "previous_threat_score": 8,
+      "cve": "CVE-2026-20245",
+      "cvss": 7.8,
+      "affected_technology": "Cisco Catalyst SD-WAN Manager (formerly vManage); originally newsed 2026-06-06 as an emergency Cisco advisory with no patch available; CISA added to KEV catalog 2026-06-09 (per news-events alert URL pattern) alongside CVE-2026-11645 Chrome V8 + CVE-2026-7473 Arista EOS, with a 13-day FCEB deadline of 2026-06-23 — KEV add formalizes active in-the-wild exploitation; still no Cisco patch as of 2026-06-11, only IOS XE / Catalyst SD-WAN Manager hardening guidance",
+      "summary": "CISA added Cisco Catalyst SD-WAN Manager CVE-2026-20245 (originally Watchtower News 2026-06-06) to KEV on 2026-06-09 with a 2026-06-23 federal deadline confirming active exploitation; score up from 8 to 9 — Cisco still ships no patch, so audit every internet-reachable vManage HTTPS interface for the published mitigations today.",
+      "first_seen_at": "2026-06-05"
+    },
+    {
+      "type": "update",
+      "title": "Ivanti Sentry CVE-2026-10520 (CVSS 10.0) Unauthenticated Pre-Auth Root RCE + CVE-2026-10523 (CVSS 9.9) Auth-Bypass Admin Creation — Vendor Advisory + watchTowr Public PoC Both Landed 2026-06-09/10; Promoted From 2026-06-10 NOTED Now That Technical Detail Is Public",
+      "threat_score": 9,
+      "previous_threat_score": 3,
+      "cve": "CVE-2026-10520, CVE-2026-10523",
+      "cvss": 10.0,
+      "affected_technology": "Ivanti Sentry (mobile-gateway / MICS-config endpoint) versions 10.5.1, 10.6.1, 10.7.0 and earlier — CVE-2026-10520 is unauthenticated OS-command-injection via the /mics/api/v2/sentry/mics-config/handleMessage endpoint (commands handed straight to the backend handleExecute() routine) for trivial root RCE; CVE-2026-10523 is an authentication-bypass that lets an unauthenticated attacker create administrator accounts; Ivanti shipped fixes in Sentry 10.5.2 / 10.6.2 / 10.7.1 on 2026-06-09; watchTowr published a working PoC for CVE-2026-10520 on 2026-06-10; Ivanti has not yet seen in-wild exploitation but the PoC is trivial and Sentry has a history of CISA KEV adds (2023 multiple)",
+      "summary": "Ivanti Sentry CVE-2026-10520 (CVSS 10.0 unauth pre-auth root RCE) and CVE-2026-10523 (CVSS 9.9 unauth admin-account-creation) — full vendor advisory 2026-06-09 + watchTowr PoC 2026-06-10 — promoted from yesterday's NOTED entry now that technical detail is public; patch to 10.5.2 / 10.6.2 / 10.7.1 today and audit the /mics/api/v2/* path for exploitation attempts.",
+      "first_seen_at": "2026-06-09"
+    },
+    {
+      "type": "news",
+      "title": "Arista EOS CVE-2026-7473 (CVSS 6.9) — Tunnel-Traffic Comparison Bypass Actively Exploited and Added to CISA KEV 2026-06-09; Arista Says NO Patches Planned — ACL Workaround Only, Federal Deadline 2026-06-23",
+      "threat_score": 8,
+      "cve": "CVE-2026-7473",
+      "cvss": 6.9,
+      "affected_technology": "Arista Extensible Operating System (EOS) on 7020R, 7280R / 7280R2, and 7500R / 7500R2 router series — incomplete-comparison-with-missing-factors vulnerability in tunnel-traffic processing causes EOS to forward non-configured tunnel traffic; CISA added to KEV 2026-06-09 with a 13-day FCEB deadline of 2026-06-23 confirming in-wild exploitation; Arista has formally declined to ship a patch citing configuration-compatibility risk on existing deployments and recommends ACL deployment on upstream or affected devices",
+      "summary": "CISA added Arista EOS CVE-2026-7473 to KEV on 2026-06-09 with a 2026-06-23 deadline confirming active exploitation, but Arista has stated NO patches will be issued — operators of 7020R / 7280R / 7500R series must deploy upstream ACLs or retire the affected devices, no fix is coming.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-06-09"
+    },
+    {
+      "type": "news",
+      "title": "Oracle PeopleSoft Mass-Extortion Campaign — ShinyHunters Claims Data Theft From 300 Instances Across 100+ Organisations Via 'Gadget Chain of Old + Zero-Day' Vulnerabilities, Education-Sector Heavy (Nottingham University Confirmed Victim)",
+      "threat_score": 8,
+      "cve": "Multiple",
+      "cvss": null,
+      "affected_technology": "Oracle PeopleSoft enterprise suite (HR / payroll / finance / SCM / procurement / student administration) — ShinyHunters extortion group confirmed to BleepingComputer 2026-06-10 they breached approximately 300 PeopleSoft instances across 100+ organisations using what they describe as a 'gadget chain' of older PeopleSoft CVEs plus one or more undisclosed zero-day primitives; campaign weighted toward the education sector with many previously-extorted victims being re-targeted; Nottingham University publicly confirmed 2026-06-10 their breach with data already on the leak site; ShinyHunters has historically targeted Oracle products (April 2026 NetSuite, July 2025 SuiteCRM) and the campaign reads as an extension of that targeting cadence",
+      "summary": "ShinyHunters told BleepingComputer 2026-06-10 they've stolen data from 300 PeopleSoft instances across 100+ orgs (Nottingham University publicly confirmed) using a gadget-chain of old PeopleSoft CVEs + one or more zero-days — audit internet-facing PeopleSoft, ensure all 2024-2025 CPU advisories are applied, monitor for outbound data egress and exploitation attempts on PeopleSoft UI / IB endpoints.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-06-10"
+    },
+    {
+      "type": "update",
+      "title": "Microsoft Exchange Server CVE-2026-42897 OWA XSS — June 2026 Patch Tuesday Ships First Permanent Code Patch After 26 Days of Mitigations-Only Posture Following 2026-05-16 KEV Addition",
+      "threat_score": 8,
+      "previous_threat_score": 9,
+      "cve": "CVE-2026-42897",
+      "cvss": 8.1,
+      "affected_technology": "On-premises Microsoft Exchange Server 2016 / 2019 / Subscription Edition — Outlook Web Access XSS-via-crafted-email zero-day disclosed 2026-05-14 (Watchtower NEWS), KEV-added 2026-05-16 with 2026-06-06 federal deadline (Watchtower UPDATE 2026-05-17 score 9 amid mitigations-only posture); Microsoft's June 9 Patch Tuesday ships the first permanent code-level patch closing the 26-day window during which the only defence was the OWA configuration toggles Microsoft published in May; in-wild XSS-token-theft + mailbox-impersonation exploitation chain is unchanged but the patch path lowers operational pain materially for orgs that can deploy June Exchange CU rapidly",
+      "summary": "Microsoft Exchange Server CVE-2026-42897 OWA XSS — first permanent code patch ships in June 2026 Patch Tuesday after 26 days of mitigations-only posture (Watchtower UPDATE 2026-05-17 score 9); score down to 8 because patch is now available, deploy the June Exchange CU and remove the temporary OWA config workaround.",
+      "first_seen_at": "2026-05-13"
+    },
+    {
+      "type": "news",
+      "title": "Fortinet FortiSandbox CVE-2026-25089 (CVSS 9.1) — Pre-Auth OS Command Injection via 'Start VNC' Web UI JSON Parameter, Patched in 5.0.6 / 4.4.9 (FG-IR-26-141, 2026-06-09)",
+      "threat_score": 7,
+      "cve": "CVE-2026-25089",
+      "cvss": 9.1,
+      "affected_technology": "Fortinet FortiSandbox 5.0.0–5.0.5, 4.4.0–4.4.8, 4.2 all versions; FortiSandbox Cloud and PaaS 5.0.4–5.0.5 — unauthenticated remote OS command injection in the Web UI 'start VNC' feature via specially-crafted JSON input causing second-order command injection (CWE-78); no auth required and attack complexity is low; FG-IR-26-141 published 2026-06-09; patched in 5.0.6, 4.4.9, Cloud 5.0.6, PaaS 5.0.6; internally discovered by Fortinet PSIRT (Adham El Karn); no observed exploitation yet but FortiSandbox sits inside enterprise security perimeters and historical Fortinet appliance disclosures see scanner-template weaponisation within days",
+      "summary": "Fortinet FortiSandbox CVE-2026-25089 (CVSS 9.1) — pre-auth OS command injection via the 'start VNC' Web UI JSON parameter, patched in 5.0.6 / 4.4.9 / Cloud 5.0.6 (FG-IR-26-141) — no in-wild yet but treat as 7-14 day patch SLA on perimeter security infrastructure given Fortinet's PoC-to-scanner-template tempo.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-06-09"
+    }
+  ],
+  "noted": [
+    {
+      "cve": "CVE-2026-47342, CVE-2026-50223",
+      "product": "Apache OFBiz pre-24.09.07 — authenticated privilege escalation (updateOrRemove authorization bypass) + Content/DataResource FreeMarker template-injection RCE (oss-security 2026-06-10, Jacopo Cappellato)",
+      "summary": "Two Apache OFBiz auth-required vulnerabilities — CVE-2026-47342 (low-priv → admin escalation) and CVE-2026-50223 (Content/DataResource FreeMarker template injection → RCE); patch to 24.09.07; relevant to any internet-facing OFBiz ERP deployments where partner or low-trust users have content-editing capabilities."
+    },
+    {
+      "cve": "CVE-2026-53435, CVE-2026-53436, CVE-2026-53437, CVE-2026-53438, CVE-2026-53439, CVE-2026-53440, CVE-2026-53441, CVE-2026-53442",
+      "product": "Jenkins 2.567 / LTS 2.555.2 and earlier — 8-CVE batch including Stapler deserialization → impersonation + Script Console RCE + arbitrary file read (CVE-2026-53435 critical), open-redirect / login-flow phishing, stored XSS in offline cause descriptions, and plaintext secret persistence in config.xml (jenkins.io security advisory 2026-06-10)",
+      "summary": "Jenkins batch lands a Stapler arbitrary-type-deserialization issue (CVE-2026-53435) chaining to RCE / impersonation / arbitrary file read plus 7 lower-severity issues; patch to 2.568 / LTS 2.555.3 — most issues require Overall/Read but Jenkins controllers are commonly broadly-readable and the deserialization path warrants priority across CI/CD fleets."
+    },
+    {
+      "cve": "CVE-2026-10846",
+      "product": "ldns ≤1.9.0 — stub-resolver UDP responses not verified against query (ID, address/port, question section); off-path DNS poisoning (oss-security 2026-06-10, Pablo Ruiz / codecome.ai)",
+      "summary": "ldns CVSS 8.2 off-path DNS-poisoning class issue affecting all stub resolvers / drill tool down to 1.2.0; upgrade to 1.9.1 — distro-rebuild blast radius across any service or container image that links ldns rather than getaddrinfo."
+    },
+    {
+      "cve": "None assigned",
+      "product": "Microsoft Defender 'RoguePlanet' SMB-share race condition — full PoC released 2026-06-10 by Nightmare Eclipse / Chaotic Eclipse, no patch (Watchtower NOTED 2026-06-10)",
+      "summary": "Defender SMB-share race published as a working PoC granting SYSTEM on fully June-2026-patched Windows; remote-SMB-trigger primitive is in scope, but the EoP-class outcome keeps it in NOTED — apply ThreatLocker / application allow-listing mitigation pending vendor fix."
+    },
+    {
+      "cve": "CVE-2026-25700",
+      "product": "Apache Answer — AdminToken not invalidated after admin deactivation (oss-security 2026-06-10, Enxin Xie)",
+      "summary": "Continuation of the 2026-06-09 Apache Answer 6-CVE batch — admin-deactivation leaves issued tokens valid; only relevant where Answer is in internal use as a Q&A platform."
+    },
+    {
+      "cve": "CVE-2026-46316",
+      "product": "ITScape: Guest-to-Host Escape in KVM/arm64 (oss-security 2026-06-10, Hyunwoo Kim) — VM isolation scope, out of core Watchtower scope per policy",
+      "summary": "Arm64 KVM guest-to-host escape primitive — tracked here for IaaS substrate operators since cloud providers commonly run KVM on Arm Graviton-class fleets; consume via your IaaS provider's CVE feed for actionable timing."
+    },
+    {
+      "cve": "CVE-2026-45257",
+      "product": "FreeBSD kTLS-RX in-place AES-GCM decrypt over sendfile(2) EXTPG mbufs to page-cache write / local root (oss-security 2026-06-10, bumsrakete)",
+      "summary": "FreeBSD kTLS local-root path on sendfile(2) + kTLS receive path — local privilege escalation, out of Watchtower remote-component scope, tracked only for FreeBSD-fleet operators."
+    },
+    {
+      "cve": "Not yet assigned",
+      "product": "Node.js June 2026 security release scheduled 2026-06-17 — all supported release lines (oss-security 2026-06-10, Rafael Gonzaga)",
+      "summary": "Node.js scheduled-release announcement; CVE list / severity withheld until 2026-06-17; pre-stage maintenance windows for any Node.js-based service fleet."
+    },
+    {
+      "cve": "CVE-2026-44693",
+      "product": "Pi-Hole FTL — CVSS 8.8 (PT-2026-48330, dbugs.ptsecurity.com 2026-06-10)",
+      "summary": "Pi-Hole FTL CVSS 8.8 — limited corporate blast radius given Pi-Hole's home-network footprint, but a meaningful patch item for any internal DNS sinkhole deployments built on Pi-Hole."
+    },
+    {
+      "cve": "CVE-2026-50566",
+      "product": "Fission serverless platform — CVSS 9.9 (PT-2026-48511, dbugs.ptsecurity.com 2026-06-10)",
+      "summary": "Fission Kubernetes-native serverless framework CVSS 9.9 — niche enterprise scope but anyone running Fission for FaaS workloads should patch on priority."
+    },
+    {
+      "cve": "CVE-2026-0274",
+      "product": "Palo Alto Cortex XSIAM — CVSS 8.1 (dbugs.ptsecurity.com 2026-06-10)",
+      "summary": "Cortex XSIAM CVSS 8.1 — affects enterprise XSIAM customers; tracked only for asset-DB / SOAR platform operators."
+    },
+    {
+      "cve": "CVE-2026-49218, CVE-2026-53460, CVE-2026-53461, CVE-2026-53462, CVE-2026-53463, CVE-2026-53464, CVE-2026-53465",
+      "product": "ImageMagick June 2026 batch — DCM decoder dimension validation + memory allocation OOM cluster, patched in 6.9.13-48/50 + 7.1.2-24/25 (opencve.io 2026-06-10)",
+      "summary": "ImageMagick DoS-class batch — patched upstream, distro rebuilds rolling; relevant only where ImageMagick is in the user-supplied-content image-processing path, which is common in CMS + ticketing + helpdesk fleets."
+    },
+    {
+      "cve": "Not yet assigned",
+      "product": "SEC Consult SA-20260608-0 — privilege escalation via binary planting in Genetec-provided RabbitMQ (Full Disclosure 2026-06-08)",
+      "summary": "Binary-planting EoP in Genetec products' bundled RabbitMQ — limited to Genetec physical-security customers, no remote path."
+    },
+    {
+      "cve": "None assigned",
+      "product": "Anthropic Project Glasswing transparency concerns — thousands of vulnerabilities reportedly found by Anthropic's AI vuln-discovery initiative but few patched, no methodology / findings disclosure (Schneier 2026-06-08)",
+      "summary": "Calibration data point for the AI-vulnerability-discovery scaling pattern noted in Watchtower MEMORY 2026-06-10 (Microsoft attributing PT volume to AI assistance); useful to track but no specific defensive action."
+    },
+    {
+      "cve": "None assigned",
+      "product": "NSO Group resumed WhatsApp spear-phishing in violation of permanent injunction (BleepingComputer + Schneier + THN 2026-06-08/10) — continuation of 2026-06-08 NOTED",
+      "summary": "Material continuation reporting on NSO Group's WhatsApp targeting; no new IOC or capability change beyond what BleepingComputer published 2026-06-08, kept here for policy / executive-protection program tracking."
+    },
+    {
+      "cve": "None assigned",
+      "product": "ShinyHunters / Wynn Resorts data theft (eSecurity Planet) — related earlier campaign event surfaced alongside the 2026-06-10 PeopleSoft scope reveal",
+      "summary": "Adjacent context to today's PeopleSoft NEWS finding; Wynn Resorts breach is older but ShinyHunters' surfacing of new evidence aligns with the same group's June 2026 PeopleSoft extortion push — track as cluster, not separate finding."
+    },
+    {
+      "cve": "None assigned",
+      "product": "Zcash Orchard privacy-system bug enabling fraudulent ZEC creation, patched (Schneier 2026-06-08)",
+      "summary": "Cryptocurrency-economic-impact research bug; no corporate-fleet defensive action, tracked only as calibration for AI-assisted vuln-research signal (found by AI researcher Taylor Hornby)."
+    },
+    {
+      "cve": "Multiple",
+      "product": "OpenSSL June 2026 16-CVE Security Advisory (oss-security 2026-06-09) — addendum to 2026-06-10 NOTED expanding CVE-2026-45447 PKCS7_verify UAF detail + 15 additional CVEs (CVE-2026-34182 CMS AuthEnvelopedData, CVE-2026-34183 / CVE-2026-42764 QUIC, CVE-2026-35188 OCSP double-free, CVE-2026-45445 AES-OCB IV bypass, etc.)",
+      "summary": "OpenSSL advisory amplification on yesterday's NOTED entry; high-severity PKCS7_verify UAF (CVE-2026-45447) is the most concerning given S/MIME signed-message exposure on mail gateways; distro rebuild cadence applies — no new in-wild signal."
+    },
+    {
+      "cve": "CVE-2026-29075",
+      "product": "GitHub Security Lab GHSL-2025-009 — Arbitrary code execution in Mesa benchmarks.yml workflow (securitylab.github.com)",
+      "summary": "Mesa benchmarks.yml GitHub-Actions workflow code-execution path published recently — relevant to teams running forks of Mesa with CI on untrusted PRs; limited corporate blast radius."
+    }
+  ],
+  "source_coverage": {
+    "total": 30,
+    "checked": 22,
+    "with_findings": 14,
+    "unreachable": [
+      "cisa.gov",
+      "cisa.gov/known-exploited-vulnerabilities-catalog",
+      "attackerkb.com",
+      "bugcrowd.com/disclosures",
+      "hackerone.com/hacktivity",
+      "cve.mitre.org",
+      "cve.org",
+      "cert.gov.ua"
+    ],
+    "degraded": [
+      "packetstormsecurity.com",
+      "msrc.microsoft.com/blog",
+      "nvd.nist.gov",
+      "googleprojectzero.blogspot.com",
+      "securitylab.github.com",
+      "habr.com/ru/companies/tomhunter/articles",
+      "teletype.in/@cyberok"
+    ]
+  },
+  "full_report": "reports/2026/06/11/report.md"
+}

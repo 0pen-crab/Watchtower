@@ -2,28 +2,28 @@
 
 | Source | Findings | Noted | Empty | Last Hit |
 |--------|----------|-------|-------|----------|
-| bleepingcomputer.com | 19 | 18 | 1 | 2026-06-10 (+3 FINDINGS: Check Point CVE-2026-50751 ZDI + KEV relay → CRITICAL; Veeam CVE-2026-44963 → HIGH; MS June Patch Tuesday 200 CVEs → CRITICAL. +5 NOTED: Chrome V8 ZDI CVE-2026-11645; ServiceNow API auth-bypass; Tchap French govt breach; WhatsApp/NSO disruption; Shai-Hulud/Miasma 73-repo + PyPI supply chain) |
-| thehackernews.com | 21 | 17 | 0 | 2026-06-10 (+2 FINDINGS: LiteLLM CVE-2026-42271 KEV add — primary discovery channel; Veeam RCE corroboration. +5 NOTED: Linux nf_tables CVE-2026-23111 LPE+container escape; WinRAR CVE-2025-8088 Russia-aligned continued; FROST SSD-timing attack; UofT self-replicating LLM worm; Hades/Miasma PyPI cross-coverage) |
-| securityweek.com | 11 | 16 | 1 | 2026-06-10 (+2 FINDINGS: MS Patch Tuesday 200 CVEs corroborated BC; SAP NetWeaver/Commerce June 4-critical batch. +3 NOTED: Adobe 123 CVEs / AEM-heavy with CVE-2026-34691 9.3 callout; OpenSSL 18 CVEs AI-found high-sev; Chrome 5th ZDI of 2026 corroboration) |
-| krebsonsecurity.com | 2 | 1 | 4 | 2026-06-10 (+1 FINDING: "A Record-Breaking Patch Tuesday for June 2026" — 200 CVEs, AI-bug-finding angle, 3 publicly-disclosed ZDI emphasis; useful corroboration + framing for the MS batch entry) |
-| rapid7.com | 2 | 2 | 5 | 2026-06-10 (+2 FINDINGS: em-patch-tuesday-june-2026 post = MS batch corroboration; Metasploit Wrap-Up "Apache ActiveMQ RCE + Gogs Rebase RCE + Windows Kernel Pointer Enum" — direct trigger for Tomcat Tribes CVE-2026-34486 UPDATE escalation 7→9. +1 NOTED: Gogs CVE-2026-52806 authenticated RCE patched 06-07) |
-| schneier.com | 0 | 4 | 4 | 2026-06-10 (no digest-relevant content — Zcash Orchard Claude-Opus-4.8-found vuln + Anthropic Glasswing critique both off-topic for vendor-advisory digest, calibration only) |
-| fortinet.com/blog/threat-research | 0 | 2 | 5 | 2026-06-10 (no new content — FIFA WC 2026-06-04 still latest, no 06-08→10 posts) |
-| securitylab.github.com | 0 | 0 | 7 | 2026-06-10 (no new advisories — GHSL-2026-140 7-Zip 2026-05-22 still latest) |
-| github.com/search (advisories) | 1 | 1 | 5 | 2026-06-10 (+1 NOTED bucket: CVE-2026-2 search surfaces ActiveMQ Jolokia PoC repo + cPanel CVE-2026-41940 + Linux Copy Fail CVE-2026-31431 Rust PoC + Frigate CVE-2026-25643 + Gogs CVE-2026-52806 + Tomcat Tribes confirmed — primary discovery channel for the two UPDATE escalations) |
-| seclists.org/fulldisclosure | 1 | 3 | 5 | 2026-06-10 (+1 FINDING surfaced: SYSS-2026-004 SAP NetWeaver SAML XML Signature Wrapping by Moritz Bechler 2026-06-08 — folded into the SAP June Patch Day entry. +1 NOTED: SEC Consult SA-20260608-0 Genetec RabbitMQ binary planting — niche) |
-| openwall.com/lists/oss-security | 4 | 27 | 1 | 2026-06-10 (+1 FINDING: Apache HTTP Server June 13-CVE batch 06-08 — folded into Noted as enterprise-edge fleet maintenance. +5 NOTED: CPython CVE-2026-9669 bz2; Apache Airflow Samba+GCS CVE-2026-49818; Apache Answer 6-CVE batch; Xen XSA-491→494; OpenSSL advisory thread) |
-| kb.cert.org/vuls | 0 | 6 | 3 | 2026-06-10 (+1 NOTED: VU#616257 Microsoft-signed UEFI shim Secure Boot bypass 2026-06-09 — flag for SOC threat-model preboot-integrity claims) |
-| opencve.io | 0 | 10 | 4 | 2026-06-10 (degraded continuing — returned 2023-era Malwarebytes CVEs only, no June 2026 data; PT-Security dbugs covers this gap) |
-| dbugs.ptsecurity.com | 1 | 8 | 2 | 2026-06-10 (+4 NOTED: PT-2026-47807 Ivanti Sentry CVE-2026-10523 CVSS 9.9 — high-priority watchlist as Ivanti edges have KEV history; PT-2026-47844 OpenSSL CVE-2026-45447 — corroboration; PT-2026-48038 Azure Stack Edge CVE-2026-47643 CVSS 9.8; PT-2026-48130 Adobe AEM Forms CVE-2026-34691 CVSS 9.3) |
-| github.com/0xMarcio/cve | 2 | 1 | 5 | 2026-06-10 (+2 FINDINGS via index updates: CVE-2026-42588 Apache ActiveMQ Jolokia PoC publication — UPDATE trigger 6→8; CVE-2026-34486 Apache Tomcat Tribes PoC confirmation overlapping Rapid7 Metasploit module — UPDATE trigger 7→9. Also fingerprints for Netlogon 41089, Linux CVE-2026-31431 Copy Fail, Windows RegPwn CVE-2026-24291) |
-| blog.cloudflare.com/tag/security | 0 | 0 | 7 | 2026-06-10 (+0 — Frontier Cyber Models customer-zero defensive architecture + Cloudforce One real-time WAF rules posts both Cloudflare-product marketing, not vendor-advisory content) |
-| avleonov.com | 0 | 0 | 7 | 2026-06-10 (PAN-OS CVE-2026-0300 RCE retrospective 2026-06-05 still latest — no 06-08→10 posts) |
-| cisa.gov (incl. /KEV) | 0 | 0 | 7 | 2026-06-10 (403 Forbidden on both /KEV catalog AND news-events/alerts/2026/06/09/cisa-adds-* fallback today — KEV adds for CVE-2026-50751 + CVE-2026-42271 sourced entirely via THN/BleepingComputer relay; news-events fallback worked 2026-06-03 for Mirasvit but failed today) |
+| bleepingcomputer.com | 21 | 19 | 1 | 2026-06-11 (+2 FINDINGS: ShinyHunters PeopleSoft 100+ orgs mass-extortion → HIGH; Exchange CVE-2026-42897 OWA XSS permanent-patch corroboration. +1 NOTED: RoguePlanet PoC publication relay) |
+| thehackernews.com | 22 | 18 | 0 | 2026-06-11 (+1 FINDING: Langflow CVE-2026-5027 unpatched/active-exploit primary channel → CRITICAL; CISA Cisco+Chrome+Arista KEV adds primary discovery channel for two findings) |
+| securityweek.com | 13 | 17 | 1 | 2026-06-11 (+2 FINDINGS: Arista EOS CVE-2026-7473 no-patch-planned → HIGH; FortiSandbox CVE-2026-25089 → HIGH. +1 NOTED: ICS Patch Tuesday Siemens/Schneider/Phoenix Contact note) |
+| krebsonsecurity.com | 2 | 1 | 5 | 2026-06-11 (no new digest-relevant content — Gentlemen ransomware 2026-06-10 + Patch Tuesday post 2026-06-09 already covered yesterday) |
+| rapid7.com | 3 | 2 | 5 | 2026-06-11 (+1 FINDING: Ivanti Sentry CVE-2026-10520/10523 ETR direct discovery — promoted yesterday's NOTED to today's CRITICAL UPDATE) |
+| schneier.com | 0 | 6 | 4 | 2026-06-11 (+2 NOTED: NSO Group WhatsApp court order violation continuation; Anthropic Glasswing transparency calibration — both off-topic for vendor advisories but kept as calibration data) |
+| fortinet.com/blog/threat-research | 0 | 2 | 6 | 2026-06-11 (no new content — C0XMO Gafgyt 2026-06-03 still latest) |
+| securitylab.github.com | 0 | 1 | 7 | 2026-06-11 (+1 NOTED: GHSL-2025-009 Mesa benchmarks.yml CVE-2026-29075 — published 2026-05-22 but not previously surfaced) |
+| github.com/search (advisories) | 1 | 1 | 6 | 2026-06-11 (no new high-signal items today — login required for code search, jenkins.io covered separately) |
+| seclists.org/fulldisclosure | 1 | 4 | 5 | 2026-06-11 (+1 NOTED: SEC Consult Genetec RabbitMQ binary-planting EoP 2026-06-08 — niche physical security) |
+| openwall.com/lists/oss-security | 4 | 32 | 1 | 2026-06-11 (+5 NOTED: Apache OFBiz CVE-2026-47342 + 50223 RCE + EoP; Jenkins 8-CVE batch incl. Stapler deserialization CVE-2026-53435; ldns CVE-2026-10846 DNS-poisoning; Apache Answer CVE-2026-25700 AdminToken; Node.js June 17 release placeholder. OpenSSL 16-CVE batch addendum to yesterday's NOTED) |
+| kb.cert.org/vuls | 0 | 6 | 4 | 2026-06-11 (no new VU# — VU#616257 UEFI shim 2026-06-09 still latest, already covered yesterday) |
+| opencve.io | 0 | 11 | 4 | 2026-06-11 (+1 NOTED via app.opencve.io fallback: ImageMagick June 2026 batch CVE-2026-49218 + CVE-2026-53460..53465 DCM + memory allocation OOM cluster) |
+| dbugs.ptsecurity.com | 1 | 11 | 2 | 2026-06-11 (+3 NOTED: Pi-Hole FTL CVE-2026-44693 CVSS 8.8; Fission CVE-2026-50566 CVSS 9.9; Palo Alto Cortex XSIAM CVE-2026-0274 CVSS 8.1. Yesterday's PT-2026-47807 Ivanti Sentry NOTED promoted to today's CRITICAL UPDATE via Ivanti advisory + watchTowr PoC) |
+| github.com/0xMarcio/cve | 2 | 1 | 6 | 2026-06-11 (no new index updates today; checked for Langflow CVE-2026-5027 + Ivanti Sentry CVE-2026-10520 — both publish off-repo via Tenable / watchTowr) |
+| blog.cloudflare.com/tag/security | 0 | 0 | 8 | 2026-06-11 (no new digest-relevant — Frontier Cyber Models + Cloudforce One WAF rules both Cloudflare-product marketing, not advisories) |
+| avleonov.com | 0 | 0 | 8 | 2026-06-11 (PAN-OS CVE-2026-0300 2026-06-05 still latest — no 06-09→11 posts) |
+| cisa.gov (incl. /KEV) | 0 | 0 | 8 | 2026-06-11 (403 Forbidden on /KEV catalog continuing; news-events/alerts/2026/06/09/cisa-adds-three-known-exploited-vulnerabilities-catalog reachable for the Cisco+Chrome+Arista KEV add via search-engine result mirror — fallback URL pattern remains best-effort per MEMORY 2026-06-08) |
 | attackerkb.com | 0 | 0 | 7 | — (403 Forbidden persistent) |
 | cve.org / cve.mitre.org | 0 | 0 | 7 | — (JS-required, no content via WebFetch) |
 | googleprojectzero.blogspot.com | 0 | 0 | 7 | — (redirects to projectzero.google; Pixel 10 2026-05-13 still latest) |
-| msrc.microsoft.com/blog | 1 | 1 | 6 | 2026-06-10 (homepage still nav-only after redirect; MS Patch Tuesday content sourced via BleepingComputer + Krebs + SecurityWeek + Rapid7 relay — direct MSRC blog post listing remains degraded) |
+| msrc.microsoft.com/blog | 1 | 1 | 7 | 2026-06-11 (homepage still nav-only after redirect; Exchange CVE-2026-42897 patch news sourced via BleepingComputer + SecurityWeek relay — direct MSRC blog post listing remains degraded) |
 | hackerone.com/hacktivity | 0 | 0 | 7 | — (JS-required) |
 | bugcrowd.com/disclosures | 0 | 0 | 7 | — (404 persistent since 2026-04 — flag for SOURCES.md drop in sources-review-2026-06.md) |
 | packetstormsecurity.com | 0 | 0 | 7 | — (degraded — redirects to packetstorm.news, homepage nav only) |
