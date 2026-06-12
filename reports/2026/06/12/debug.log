@@ -1,0 +1,140 @@
+=== Watchtower Daily Run 2026-06-12 ===
+
+[00:00:00Z] STARTED
+[00:00:05Z] cd /home/claude/workspace/watchtower && git pull → "Already up to date."
+[00:00:10Z] Built dedup index from last 30 days (reports 2026-05-13 → 2026-06-11): 27 days of reports, 673 unique CVEs covered (saved to /tmp/dedup_index.txt)
+
+=== Source check (SOURCES.md = 30 unique URLs) ===
+
+[Tier 1]
+[00:01:30Z] bleepingcomputer.com → ✅ checked (5.2s) — top 15 headlines, multiple findings: Oracle PeopleSoft CVE-2026-35273 (UPDATE candidate), Ivanti Sentry active exploitation (UPDATE candidate), CISA BOD 26-04, Coupang fine, Kyushu Electric, Maine portal abuse, AudiA6 takedown
+[00:01:30Z] thehackernews.com → ✅ checked (5.1s) — top 15 vulnerability articles: Check Point VPN CVE-2026-50751 (NEWS — KEV-add 06-08 LATE), proto6 protobuf.js batch, Veeam B&R, GreatXML, RoguePlanet, Patch Tuesday 206 CVEs, ServiceNow, Veeam CVE-2026-44963, OceanLotus SPECTRALVIPER
+[00:01:30Z] cisa.gov/known-exploited-vulnerabilities-catalog → ❌ unreachable (403, per MEMORY recurring)
+[00:01:30Z] cisa.gov → ❌ unreachable (403, per MEMORY recurring)
+[00:01:30Z] securityweek.com → ✅ checked (5.4s) — Splunk CVE-2026-20253 NEWS candidate + Palo Alto CVE-2026-0274 (already noted yesterday) + ServiceNow patched
+[00:01:30Z] github.com/search?q=CVE → ✅ checked (5.6s) — recent CVE-2026 repos: vibe-coding-security, CVE-2026-41940 cPanel PoC (2h ago) + CVE-2026-31431 Linux Copy Fail PoCs (2h ago)
+[00:01:30Z] schneier.com → ✅ checked (4.5s) — License Plate Tracking, NSO continuation, GPS key distribution, Zcash (continuations; all NOTED-eligible only)
+[00:01:30Z] krebsonsecurity.com → ✅ checked (4.5s) — Gentlemen ransomware + Patch Tuesday 206 CVE record
+[00:01:30Z] rapid7.com → ✅ checked (5.1s) — Check Point VPN ETR + Ivanti Sentry ETR + Gogs RCE
+[00:01:30Z] attackerkb.com → ❌ unreachable (403, per MEMORY recurring)
+[00:01:30Z] fortinet.com/blog/threat-research → ✅ checked (4.7s) — only one post in 7d: AsyncRAT via AI-document lures (2026-06-11 Cara Lin)
+[00:01:30Z] securitylab.github.com → ✅ checked (4.8s) — DEGRADED, no new advisories in last 7d (most recent 2026/05/22)
+[00:01:30Z] seclists.org/fulldisclosure → ✅ checked (5.0s) — last post 2026-06-08 (SEC Consult Genetec RabbitMQ — already noted 2026-06-11)
+[00:01:30Z] packetstormsecurity.com → ❌ unreachable (redirected to packetstorm.news/; ToS-only content)
+[00:01:30Z] opencve.io → ✅ checked (5.2s) — multiple CVE-2026 entries: CVE-2026-49973 Hermes WebUI, CVE-2026-42647 JoomSport, Samsung Assistant, Chrome batch (client OOS), macOS Tahoe sandbox bypass
+
+[Tier 2]
+[00:01:30Z] nvd.nist.gov → ⚠️ degraded (header-only HTML returned)
+[00:01:30Z] cve.mitre.org → ❌ unreachable (JS-only, redirected to cve.org)
+[00:01:30Z] cve.org → ❌ unreachable (JS-only)
+[00:01:30Z] googleprojectzero.blogspot.com → ❌ unreachable (redirected to projectzero.google, no content)
+[00:01:30Z] blog.cloudflare.com/tag/security → ✅ checked (4.5s) — most recent posts 2026-06-08/09 (Cloudforce One, Project Glasswing) — no actionable findings
+[00:01:30Z] msrc.microsoft.com/blog → ❌ unreachable (redirected to microsoft.com/msrc/blog; header-only content)
+[00:01:30Z] hackerone.com/hacktivity → ❌ unreachable (JS-only per MEMORY)
+[00:01:30Z] bugcrowd.com/disclosures → ❌ unreachable (404 per MEMORY)
+[00:01:30Z] kb.cert.org/vuls → ✅ checked (4.9s) — VU#862559 crypton-x509 (2026-06-11), VU#616257 UEFI shim Secure Boot bypass (2026-06-09)
+[00:01:30Z] avleonov.com → ✅ checked (4.8s) — no posts in last 7d (most recent 2026-06-05 PAN-OS RCE blog already covered)
+[00:01:30Z] github.com/0xMarcio/cve → ✅ checked (5.0s) — CVE-2026-41940 cPanel/WHM + CVE-2026-31431 Linux LPE + Netlogon CVE-2026-41089 referenced
+[00:01:30Z] dbugs.ptsecurity.com → ✅ checked (5.3s) — CVE-2026-35273 PeopleSoft, CVE-2026-45060/42846 ClipBucket, CVE-2026-49060 Hippoo, CVE-2026-42647 JoomSport, CVE-2026-45171 CyberArk PSM
+[00:01:30Z] habr.com/ru/companies/tomhunter/articles → ⚠️ degraded (3-month silence since 2026-03-06 per MEMORY)
+[00:01:30Z] teletype.in/@cyberok → ⚠️ degraded (4-month silence since 2026-02-04 per MEMORY)
+[00:01:30Z] cert.gov.ua → ❌ unreachable (empty content per MEMORY)
+
+[Bonus]
+[00:01:30Z] openwall.com/lists/oss-security (MEMORY-tracked, not in SOURCES.md) → ✅ checked — Apache CXF 12-CVE batch published 2026-06-11 (Colm O hEigeartaigh)
+
+=== Source coverage tally ===
+Total: 30 unique URLs
+Reached / checked: 19 (=30 - 11 unreachable)
+Of those, with_findings: 13
+Unreachable: 11 (cisa.gov x2, attackerkb, bugcrowd, hackerone, cve.mitre, cve.org, googleprojectzero, packetstormsecurity, msrc, cert.gov.ua)
+Degraded: 3 (nvd.nist.gov, habr/tomhunter, teletype/@cyberok)
+
+=== Deep-dive WebFetch (drill-down on top leads) ===
+[00:08:00Z] bleepingcomputer.com/news/security/cisa-tells-govt-agencies-to-patch-critical-exploited-flaws-in-3-days/ → ✅ BOD 26-04 details (3-day FCEB deadline)
+[00:08:00Z] bleepingcomputer.com/news/security/oracle-mitigates-peoplesoft-zero-day-exploited-in-data-theft-attacks/ → ✅ CVE-2026-35273 + Oracle mitigation
+[00:08:00Z] bleepingcomputer.com/news/security/max-severity-ivanti-sentry-vulnerability-now-exploited-in-attacks/ → ✅ Shadowserver 2/19 backdoored
+[00:08:00Z] bleepingcomputer.com/news/security/oracle-peoplesoft-servers-hacked-in-shinyhunters-data-theft-attacks/ → ✅ ShinyHunters TTPs (MeshCentral / azurenetfiles[.]net / 68% higher-ed)
+[00:08:30Z] rapid7.com/blog/post/etr-critical-check-point-vpn-zero-day-exploited-in-the-wild-cve-2026-50751/ → ✅ Full CVE-2026-50751 detail (CVSS 9.3, IKEv1, Qilin attribution, KEV 06-08, federal deadline 06-11 lapsed)
+[00:08:30Z] securityweek.com/splunk-palo-alto-networks-patch-severe-vulnerabilities/ → ✅ Splunk CVE-2026-20253 (CVSS 9.8, unauth file create), Palo Alto Cortex CVE-2026-0274 (already noted)
+[00:08:30Z] securityweek.com/servicenow-patches-vulnerability-exploited-against-some-customers/ → ✅ No CVE, patched 06-05, researchers-only
+[00:08:30Z] thehackernews.com/2026/06/critical-check-point-vpn-flaw-exploited.html → ✅ Confirmation of CVE-2026-50751 KEV 06-08
+[00:08:30Z] thehackernews.com/2026/06/microsoft-patches-record-206-flaws.html → ✅ Patch Tuesday top RCEs (CVE-2026-45657, CVE-2026-47291, CVE-2026-44815)
+[00:08:30Z] thehackernews.com/2026/06/veeam-backup-replication-rce-flaw-lets.html → ✅ Veeam CVE-2026-44963 (CVSS 9.4, watchTowr / Sina Kheirkhah)
+[00:08:30Z] thehackernews.com/2026/06/six-proto6-vulnerabilities-in.html → ✅ protobuf.js 6-CVE Proto6 batch
+[00:08:30Z] thehackernews.com/2026/06/new-greatxml-exploit-bypasses-windows.html → ✅ GreatXML — local physical access, OOS
+
+=== Dedup decisions ===
+[Findings classified into NEWS/UPDATE/NOTED based on dedup index]
+
+NEWS items (5):
+- CVE-2026-50751 (Check Point VPN): NEW — not in dedup index. Discovery latency = LATE (KEV add 06-08, federal deadline 06-11 lapsed). Score 9.
+- CVE-2026-20253 (Splunk Enterprise): NEW — not in dedup index. On-time. Score 7.
+- CVE-2026-44963 (Veeam B&R): NEW — not in dedup index. On-time. Score 7.
+- CVE-2026-49875 + CVE-2026-50623-50645 (Apache CXF 12-CVE batch): NEW — not in dedup index. On-time. Score 7.
+- CVE-2026-44289-44295 (protobuf.js Proto6): NEW — not in dedup index. On-time. Score 6.
+
+UPDATE items (2):
+- CVE-2026-35273 (Oracle PeopleSoft): MATERIAL CHANGE from yesterday's NEWS — specific CVE assigned + Oracle mitigation portal release. Score 8 → 9.
+- CVE-2026-10520 (Ivanti Sentry): MATERIAL CHANGE — Shadowserver confirms active exploitation (2/19 backdoored). Score 9 → 9 (hold, incident-activity-confirmed trigger).
+
+SKIP items (already covered, no material change):
+- CVE-2026-7473 (Arista EOS): SKIP (already in 2026-06-11 as NEWS, no change)
+- CVE-2026-20245 (Cisco SD-WAN): SKIP (already in 2026-06-11 as UPDATE, no change)
+- CVE-2026-11645 (Chrome V8): SKIP (already in 2026-06-10 NOTED, client OOS)
+- CVE-2026-5027 (Langflow): SKIP (already in 2026-06-11 CRITICAL, no material change)
+- CVE-2026-42897 (Exchange OWA): SKIP (already in 2026-06-11 UPDATE — Patch Tuesday code patch, captured yesterday)
+- CVE-2026-25089 (FortiSandbox): SKIP (already in 2026-06-11 NEWS)
+- CVE-2026-23111 (Linux nf_tables): SKIP (already in 2026-06-10 NOTED, local OOS)
+- CVE-2026-42271 (LiteLLM): SKIP (already in 2026-06-10 with score adjustment)
+- CVE-2026-0274 (Palo Alto Cortex XSOAR/XSIAM): SKIP (already in 2026-06-11 NOTED)
+- CVE-2025-8088 (WinRAR): SKIP (already in 2026-06-10 NOTED, client OOS)
+- CVE-2026-29075 (Mesa GitHub Action): SKIP (already in 2026-06-11 NOTED)
+
+NOTED items (19):
+- BOD 26-04 (no CVE): NEW policy directive
+- Microsoft June Patch Tuesday 206-CVE batch: NEW context with in-scope items called out
+- CVE-2026-41940 (cPanel/WHM): NEW PoC, advisory pending
+- CVE-2026-45171 (CyberArk PSM): NEW dbugs disclosure, advisory pending
+- ServiceNow no-CVE: NEW (researchers-only, no customer action)
+- KEV-add cluster confirmation
+- VU#862559 (crypton-x509): NEW
+- VU#616257 (UEFI shim): NEW (firmware OOS)
+- GreatXML BitLocker bypass: NEW (local OOS)
+- CVE-2026-45060/42846 (ClipBucket V5): NEW (niche)
+- CVE-2026-42647 (JoomSport WP plugin): NEW (niche)
+- CVE-2026-49060 (Hippoo WC plugin): NEW (niche)
+- CVE-2026-49973 (Hermes WebUI): NEW (niche)
+- AsyncRAT AI-document lure campaign: NEW
+- OceanLotus SPECTRALVIPER FireAnt campaign: NEW
+- RoguePlanet continuation: continued from 2026-06-10/11
+- npm v12 install-scripts-off-by-default: NEW supply-chain hardening
+- Maine breach portal abuse: NEW (no CVE)
+- Coupang fine + Kyushu Electric: NEW (privacy / data-handling, no CVE)
+
+=== Validator output ===
+$ python3 scripts/validate_report.py reports/2026/06/12/report.json
+⚠️  7 warning(s):
+   findings[0]: 'summary' is 398 chars (aim for <200)
+   findings[1]: 'summary' is 366 chars (aim for <200)
+   findings[2]: 'summary' is 372 chars (aim for <200)
+   findings[3]: 'summary' is 363 chars (aim for <200)
+   findings[4]: 'summary' is 327 chars (aim for <200)
+   findings[5]: 'summary' is 340 chars (aim for <200)
+   findings[6]: 'summary' is 310 chars (aim for <200)
+✅ reports/2026/06/12/report.json — valid
+
+Warnings only (summary length); validator passes. Consistent with recent reports' summary lengths (320-400 chars).
+
+=== source_coverage values (final) ===
+{
+  "total": 30,
+  "checked": 19,
+  "with_findings": 13,
+  "unreachable": ["cisa.gov", "cisa.gov/known-exploited-vulnerabilities-catalog", "attackerkb.com", "bugcrowd.com/disclosures", "hackerone.com/hacktivity", "cve.mitre.org", "cve.org", "cert.gov.ua", "googleprojectzero.blogspot.com", "packetstormsecurity.com", "msrc.microsoft.com/blog"],
+  "degraded": ["nvd.nist.gov", "habr.com/ru/companies/tomhunter/articles", "teletype.in/@cyberok"]
+}
+
+Constraint: checked (19) >= total (30) - unreachable (11) = 19 ✓
+
+=== END ===

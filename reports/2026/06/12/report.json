@@ -1,0 +1,203 @@
+{
+  "date": "2026-06-12",
+  "findings": [
+    {
+      "type": "news",
+      "title": "Check Point Remote Access VPN CVE-2026-50751 (CVSS 9.3) — IKEv1 Certificate-Validation Bypass Actively Exploited Since 2026-05-07 By Qilin Ransomware Affiliate, CISA KEV-Added 2026-06-08 With Federal Deadline 2026-06-11 (Now Lapsed) — Affects 9 Branches R80.40 → R82.10 Plus Spark Firewalls",
+      "threat_score": 9,
+      "cve": "CVE-2026-50751",
+      "cvss": 9.3,
+      "affected_technology": "Check Point Remote Access VPN, Mobile Access blade, and Spark Firewall product lines — affected branches R80.20.X, R80.40, R81, R81.10, R81.10.X, R81.20, R82, R82.00.X, R82.10 (four EoS: R80.20.X, R80.40, R81, R81.10) — logic flaw in how Remote Access and Mobile Access components validate certificates during IKEv1 key exchange; in deployments using deprecated IKEv1 + accepting legacy Remote Access clients + not requiring machine certificates, an unauthenticated attacker can establish a fully-authorised VPN session without any credentials; CISA added to KEV 2026-06-08 with a 3-day FCEB deadline of 2026-06-11 (now lapsed); Rapid7 MDR confirmed two customer incidents (high confidence) attributed to a Qilin ransomware affiliate using VPS infrastructure for geographically targeted ingress; Check Point first observed suspicious activity 2026-06-04 and traced the earliest exploitation to 2026-05-07; companion CVE-2026-50752 (CVSS 7.4) MITM on site-to-site VPN published in the same advisory, not exploited",
+      "summary": "Check Point Remote Access VPN CVE-2026-50751 (CVSS 9.3) IKEv1 certificate-validation bypass — actively exploited since 2026-05-07 by Qilin ransomware affiliate, KEV-added 2026-06-08 with federal deadline 2026-06-11 (now lapsed) — patch every R80.20.X–R82.10 gateway today, disable legacy Remote Access clients, force IKEv2-only authentication and require machine certificates on every external VPN.",
+      "discovery_latency": "late",
+      "first_seen_at": "2026-06-08"
+    },
+    {
+      "type": "update",
+      "title": "Oracle PeopleSoft PeopleTools 8.61/8.62 CVE-2026-35273 (CVSS 9.8) Now Assigned — Oracle Releases Emergency Mitigations 2026-06-11 For The Unauthenticated RCE That ShinyHunters Used To Breach 300 Instances Across 100+ Organisations; 68% Of Victims In Higher Education, Mandiant IOCs Published",
+      "threat_score": 9,
+      "previous_threat_score": 8,
+      "cve": "CVE-2026-35273",
+      "cvss": 9.8,
+      "affected_technology": "Oracle PeopleSoft Enterprise PeopleTools 8.61 and 8.62 — yesterday's Watchtower NEWS (titled 'Oracle PeopleSoft Mass-Extortion Campaign … gadget chain of old + zero-day') identified the ShinyHunters campaign with cve='Multiple'; Oracle has now assigned CVE-2026-35273 and confirmed the zero-day primitive is remotely exploitable without authentication and may result in remote code execution; Oracle released emergency mitigations via its support portal 2026-06-11 with a full patch forthcoming; Mandiant published recommendations including restricting access to sensitive PeopleSoft endpoints and monitoring for ShinyHunters TTPs (MeshCentral agents disguised as Microsoft Azure services, SSH brute-force against psoft / oracle / linuxadm accounts, azurenetfiles[.]net staging domain); scope refined to 68% higher-education concentration with Nottingham University (450K students) publicly confirmed; PT-Security dbugs PT-2026-48612 disclosure same day",
+      "summary": "Oracle PeopleSoft CVE-2026-35273 (CVSS 9.8 unauth RCE) — specific CVE now assigned and Oracle releases emergency mitigations 2026-06-11 for the ShinyHunters zero-day campaign newsed yesterday — score up 8→9, apply Oracle's portal mitigation immediately, restrict access to PeopleSoft endpoints, hunt for MeshCentral-as-Azure-service activity and azurenetfiles[.]net.",
+      "first_seen_at": "2026-06-10"
+    },
+    {
+      "type": "update",
+      "title": "Ivanti Sentry CVE-2026-10520 (CVSS 10.0) Active Exploitation Confirmed — Shadowserver Scanning Finds 2-Of-19 Internet-Exposed Gateways Already Backdoored 24 Hours After Vendor Advisory + watchTowr PoC Landed; Saudi NCA Co-Discovery; Ivanti Advisory Still Not Updated With ITW Status",
+      "threat_score": 9,
+      "previous_threat_score": 9,
+      "cve": "CVE-2026-10520",
+      "cvss": 10.0,
+      "affected_technology": "Ivanti Sentry (formerly MobileIron Sentry) mobile-gateway — yesterday's Watchtower UPDATE noted 'no in-wild exploitation yet but the PoC is trivial'; Shadowserver published 2026-06-11 confirming active exploitation has commenced with 19 vulnerable instances detected in their scans and at least 2 already backdoored ('all remaining likely compromised too'); Saudi NCA (National Cybersecurity Authority) is credited as a partial discovery source for the active-exploit detection; patch (Sentry R10.5.2 / R10.6.2 / R10.7.1) was published 2026-06-09 leaving < 48 hour patch-to-confirmed-exploitation gap; companion CVE-2026-10523 (CVSS 9.9 auth-bypass admin-creation) still patched in the same release wave; Ivanti's security advisory has NOT been updated to reflect confirmed in-the-wild status as of 2026-06-12",
+      "summary": "Ivanti Sentry CVE-2026-10520 active exploitation confirmed — Shadowserver 2026-06-11 reports 2/19 internet-exposed gateways already backdoored, < 48h after vendor advisory + watchTowr PoC; score holds at 9 — patch IMMEDIATELY to R10.5.2/R10.6.2/R10.7.1, IR-hunt every gateway you can reach for backdoor artefacts, treat unpatched perimeter Sentries as already compromised.",
+      "first_seen_at": "2026-06-09"
+    },
+    {
+      "type": "news",
+      "title": "Splunk Enterprise CVE-2026-20253 (CVSS 9.8) — Unauthenticated Arbitrary File Creation / Truncation Via PostgreSQL Sidecar Service Endpoint Lacking Auth Controls; Patched 2026-06-11 Alongside Three Additional Splunk High-Severity Issues (RCE / SSRF / XSS)",
+      "threat_score": 7,
+      "cve": "CVE-2026-20253",
+      "cvss": 9.8,
+      "affected_technology": "Splunk Enterprise (specific version ranges pending vendor advisory transcription) — Splunk's PostgreSQL sidecar service exposes a file-operations endpoint that lacks authentication controls, allowing an unauthenticated attacker to invoke arbitrary file creation / truncation operations on the Splunk host (CWE-306 missing-authentication for critical function chaining to arbitrary file write → typical Splunk-RCE-via-app-deploy primitive); Splunk shipped fixes 2026-06-11 alongside three additional High-severity issues enabling RCE, SSRF, and XSS, plus four Medium issues touching saved-search modification and data exfil; SecurityWeek reports no observed in-the-wild exploitation yet; given Splunk's enterprise-wide deployment posture and its history (CVE-2024-32114 / multiple SPL-based RCEs) of becoming a ransomware-affiliate target within 30-60 days of high-CVSS unauth disclosures, this should be treated as a 7-14 day patch SLA on the indexer fleet",
+      "summary": "Splunk Enterprise CVE-2026-20253 (CVSS 9.8) — pre-auth arbitrary file creation/truncation via PostgreSQL sidecar endpoint missing auth controls, patched 2026-06-11 alongside RCE+SSRF+XSS — no in-wild yet, but Splunk's enterprise blast radius + history of post-disclosure ransomware-affiliate uptake warrants treating this as a 7-14 day patch SLA on every indexer.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-06-11"
+    },
+    {
+      "type": "news",
+      "title": "Veeam Backup & Replication v12 CVE-2026-44963 (CVSS 9.4) — Authenticated Domain-User RCE On Backup Server Patched 2026-06-09 In 12.3.2.4854 (Discovered By watchTowr's Sina Kheirkhah); Veeam v13 Architecture Not Affected",
+      "threat_score": 7,
+      "cve": "CVE-2026-44963",
+      "cvss": 9.4,
+      "affected_technology": "Veeam Backup & Replication 12.3.2.4465 and all earlier v12 builds — authenticated domain-user RCE on the Backup Server; any AD-joined non-admin domain account suffices to obtain code execution on the Veeam server, which routinely holds backup-encryption keys + service credentials for every backed-up workload (a ransomware-affiliate dream-target); patched in 12.3.2.4854 (2026-06-09); v13.x architecture eliminated the vulnerable code path so v13 deployments are not affected; discovered + reported by watchTowr researcher Sina Kheirkhah, who has a multi-year track record of Veeam findings translating to ransomware affiliate weaponisation within 30-60 days (CVE-2023-27532 → Cuba/Akira; CVE-2024-40711 → Akira/LockBit; CVE-2025-23120 → Black Basta)",
+      "summary": "Veeam Backup & Replication v12 CVE-2026-44963 (CVSS 9.4) authenticated-domain-user RCE on backup server, patched in 12.3.2.4854 (watchTowr / Sina Kheirkhah) — Veeam's history of post-disclosure ransomware-affiliate uptake within 30-60 days means treat as 7-day patch SLA on every v12 deployment; v13 architecture is unaffected.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-06-09"
+    },
+    {
+      "type": "news",
+      "title": "Apache CXF 12-CVE Batch (oss-security 2026-06-11, Colm O hEigeartaigh) — OAuth2 Token-Introspection Auth Bypass + 7 OAuth2 Issues + 2 JNDI Injection (JMS / MDB) + XXE In W3CMultiSchemaFactory + Attachment-Header Restriction Gap — Affects Widely-Deployed Enterprise Java SOAP/REST Stack",
+      "threat_score": 7,
+      "cve": "CVE-2026-49875, CVE-2026-50623, CVE-2026-50627, CVE-2026-50628, CVE-2026-50629, CVE-2026-50630, CVE-2026-50631, CVE-2026-50632, CVE-2026-50633, CVE-2026-50634, CVE-2026-50645",
+      "cvss": null,
+      "affected_technology": "Apache CXF — widely-deployed enterprise Java SOAP/REST framework (downstream in Spring Web Services, ServiceMix, Karaf, JBoss Fuse, many Apache pipelines, and most large-enterprise Java service buses) — 12-CVE batch published 2026-06-11 via oss-security by Colm O hEigeartaigh: CVE-2026-49875 XXE in W3CMultiSchemaFactory and EndpointReferenceUtils; CVE-2026-50623 OAuth2 TokenIntrospectionService authentication bypass; CVE-2026-50627 OAuth2 Access Token Validator missing JWT audience/issuer validation; CVE-2026-50628 OAuth2 inverted IP-binding check defeats security control; CVE-2026-50629 OAuth2 log injection via unsanitised client identifier; CVE-2026-50630 OAuth2 HTTP response splitting via WWW-Authenticate realm injection; CVE-2026-50631 OAuth2 TOCTOU race condition in refresh-token processing; CVE-2026-50632 JNDI injection in JMSConfigFactory; CVE-2026-50633 JNDI injection in DispatchMDBMessageListenerImpl; CVE-2026-50634 WS JSON request filter trusts metadata from unvalidated first signature entry; CVE-2026-50645 no restriction on attachment headers per message — the OAuth2 auth-bypass (50623) + JNDI injections (50632/33) + XXE (49875) are the highest-impact items in scope for any internet-facing CXF deployment serving OAuth2 token endpoints or SOAP/JMS bridges",
+      "summary": "Apache CXF 12-CVE batch landed via oss-security 2026-06-11 — highest-impact items are CVE-2026-50623 OAuth2 token-introspection auth bypass, CVE-2026-50632/50633 JNDI injection in JMS handlers, and CVE-2026-49875 XXE in W3CMultiSchemaFactory; patch Apache CXF on every internet-facing SOAP / REST / OAuth2 surface in your Java estate today.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-06-11"
+    },
+    {
+      "type": "news",
+      "title": "protobuf.js 'Proto6' 6-CVE Batch — CVE-2026-44291 (CVSS 8.1) Prototype-Pollution Code-Gen RCE + CVE-2026-44295 (CVSS 8.7) Code Injection Via Malicious Schema Names + 4 DoS/Prototype-Pollution Issues; Affects Node.js Apps, Google Cloud Libraries, Baileys-Based WhatsApp Bots",
+      "threat_score": 6,
+      "cve": "CVE-2026-44289, CVE-2026-44290, CVE-2026-44291, CVE-2026-44292, CVE-2026-44294, CVE-2026-44295",
+      "cvss": 8.7,
+      "affected_technology": "protobuf.js ≤ 7.5.5 and 8.0.0–8.0.1, plus protobufjs-cli ≤ 1.2.0 and 2.0.0–2.0.1 — the de-facto JavaScript/TypeScript Protocol Buffers implementation used in virtually every Node.js application that consumes gRPC, every Google Cloud client library, and the Baileys WhatsApp bot framework; 6-CVE 'Proto6' cluster comprises CVE-2026-44289 (CVSS 7.5 unbounded recursion DoS), CVE-2026-44290 (CVSS 7.5 process-crash via unsafe option paths), CVE-2026-44291 (CVSS 8.1 code-generation gadget triggered after prototype pollution → RCE), CVE-2026-44292 (CVSS 5.3 prototype injection in generated constructors), CVE-2026-44294 (CVSS 5.3 DoS via crafted field names), CVE-2026-44295 (CVSS 8.7 static code injection via malicious schema names); root pattern is treating schemas + metadata as trusted ('data becomes behavior'); patched in protobufjs 7.5.6 / 8.0.2 and protobufjs-cli 1.2.1 / 2.0.2; published attack scenarios include CI/CD pipeline poisoning leaking build secrets and crashing WhatsApp bot fleets via crafted messages",
+      "summary": "protobuf.js 6-CVE 'Proto6' batch — CVE-2026-44291 (CVSS 8.1 prototype-pollution → RCE), CVE-2026-44295 (CVSS 8.7 schema-name code injection), plus 4 DoS/injection issues; patched in 7.5.6 / 8.0.2 — audit every Node.js gRPC/Protobuf dependency tree, especially Google Cloud SDK consumers and Baileys-based bots.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-06-10"
+    }
+  ],
+  "noted": [
+    {
+      "cve": "None assigned",
+      "product": "CISA Binding Operational Directive BOD 26-04 published 2026-06-11 — supersedes BOD 19-02 (2019) + BOD 22-01 (2021); risk-tiered remediation timelines for FCEB agencies (KEV-listed full-control vulns on internet-exposed assets: 3 days; partial control / non-automatable: 14 days; in-between tiers between)",
+      "summary": "CISA BOD 26-04 announced 2026-06-11 — federal-civilian executive-branch agencies must remediate KEV full-control items on public assets in 3 days, partial-control or non-automatable items in 14 days; agencies have 60 days to update policy and 180 days to fully implement — durable calibration point for Watchtower severity-tier assignment going forward (KEV add + full control = 3-day federal-equivalent SLA)."
+    },
+    {
+      "cve": "CVE-2026-45657, CVE-2026-47291, CVE-2026-44815, CVE-2026-49160, CVE-2026-45586, CVE-2026-50507",
+      "product": "Microsoft June 2026 Patch Tuesday (Krebs + THN 2026-06-09/10) — 206 CVEs / 39 Critical / 167 Important / 56 RCE / 3 publicly disclosed zero-days (CVE-2026-50507 BitLocker EoP, CVE-2026-45586 Win EoP, CVE-2026-49160 HTTP/2 DoS); top remote-RCE: CVE-2026-45657 Windows Kernel UAF via crafted network traffic (CVSS 9.8), CVE-2026-47291 Windows HTTP.sys integer overflow (CVSS 9.8), CVE-2026-44815 Windows DHCP Client buffer overflow (CVSS 9.8)",
+      "summary": "Microsoft June 2026 Patch Tuesday — 206 CVEs (largest-ever per Krebs); the in-scope remote items are CVE-2026-45657 Kernel UAF via network traffic, CVE-2026-47291 HTTP.sys integer overflow, and CVE-2026-44815 DHCP Client buffer overflow (all CVSS 9.8 + no in-wild yet); the three Patch Tuesday zero-days are publicly-disclosed only and local-EoP/DoS class — patch in your normal Patch Tuesday window, no out-of-band action required for in-wild status."
+    },
+    {
+      "cve": "CVE-2026-41940",
+      "product": "cPanel / WHM authentication bypass — Go-based PoC published 2026-06-12 on GitHub (Defacto-ridgepole254/CVE-2026-41940-Exploit-PoC) ahead of broad mainstream coverage; details limited to repository description",
+      "summary": "cPanel/WHM CVE-2026-41940 — authentication bypass PoC published 2026-06-12 on 0xMarcio-tracked GitHub repo; advisory not yet seen in mainstream feeds — monitor for vendor advisory + verify against any internet-facing cPanel control panels; high-leverage if confirmed given cPanel's hosting-industry deployment density."
+    },
+    {
+      "cve": "CVE-2026-45171",
+      "product": "CyberArk Privileged Session Manager — CVSS 9.3 (PT-2026-48787 via dbugs.ptsecurity.com 2026-06-11), advisory detail pending",
+      "summary": "CyberArk PSM CVE-2026-45171 (CVSS 9.3) PT-Security disclosure — high-leverage for any PAM-fleet operator given PSM's privileged-session-handling scope; await mainstream pickup before promotion."
+    },
+    {
+      "cve": "Not yet assigned",
+      "product": "ServiceNow instance-access vulnerability (SecurityWeek + THN 2026-06-10/11) — patched 2026-06-05 server-side on hosted customers; known internally since 2026-04-07; no CVE assignment yet, no malicious in-wild (security researchers / bug-bounty submitters only)",
+      "summary": "ServiceNow patched a server-side instance-access vulnerability 2026-06-05 (publicly disclosed 2026-06-10/11); no customer action required as fix is server-applied to hosted instances; tracked here as calibration data point for the 9-week internal-to-disclosure timeline."
+    },
+    {
+      "cve": "CVE-2026-20245, CVE-2026-7473, CVE-2026-11645, CVE-2026-50751",
+      "product": "CISA KEV adds 2026-06-08 / 09 cluster — Check Point CVE-2026-50751 (added 06-08, federal deadline 06-11 NOW LAPSED, promoted to today's NEWS), Cisco SD-WAN Manager CVE-2026-20245 (Watchtower UPDATE 06-11), Arista EOS CVE-2026-7473 (Watchtower NEWS 06-11), Chrome V8 CVE-2026-11645 (client-only OOS, already noted)",
+      "summary": "Confirming the four-CVE KEV-add cluster from 2026-06-08/09 — Check Point promoted to today's CRITICAL NEWS, Cisco SD-WAN and Arista EOS were UPDATE/NEWS yesterday, Chrome V8 remains client-OOS per scope policy; flag persistent gap in cisa.gov direct-fetch reachability — KEV adds continue to require cross-source relay."
+    },
+    {
+      "cve": "VU#862559",
+      "product": "crypton-x509-validation Haskell libraries — X.509 NameConstraints not enforced (CERT/CC 2026-06-11)",
+      "summary": "Haskell crypton-x509-validation library does not enforce X.509 NameConstraints — limited blast radius (only Haskell-based services with custom certificate authorities trusting NameConstraints), but if you have an internal Haskell PKI stack this is a meaningful policy-bypass primitive."
+    },
+    {
+      "cve": "VU#616257",
+      "product": "Microsoft-signed UEFI shim bootloaders vulnerable to Secure Boot bypass (CERT/CC 2026-06-09)",
+      "summary": "Secure Boot bypass via Microsoft-signed UEFI shim bootloaders — out of Watchtower core scope per firmware-no-remote-component policy, but track for endpoint-hardening / Bring-Your-Own-Vulnerable-Driver-class fleet operators; refresh DBX revocations + verify shim updates roll through your imaging pipeline."
+    },
+    {
+      "cve": "None assigned",
+      "product": "GreatXML BitLocker bypass (Chaotic Eclipse / Nightmare-Eclipse via THN 2026-06-11) — local physical-access exploit placing unattend.xml + ReAgent.xml in recovery partition to spawn unrestricted WinRE shell over the BitLocker volume",
+      "summary": "GreatXML BitLocker bypass — second BitLocker bypass from Chaotic Eclipse after YellowKey (CVE-2026-45585, patched June Patch Tuesday); strictly local physical-access scope so out of core Watchtower scope, tracked for endpoint hardening teams managing lost/stolen-device threat models."
+    },
+    {
+      "cve": "CVE-2026-45060, CVE-2026-42846",
+      "product": "ClipBucket V5 (Macwarrior video-sharing platform) CVSS 9.8 batch (PT-2026-48791 / PT-2026-48790 via dbugs.ptsecurity.com 2026-06-11)",
+      "summary": "ClipBucket V5 CVSS 9.8 two-CVE batch from Macwarrior video-sharing platform — niche corporate scope (small-to-mid hosting providers and a few large-asset deployments); audit any internal video-share platform inventory for Macwarrior dependencies."
+    },
+    {
+      "cve": "CVE-2026-42647",
+      "product": "JoomSport WordPress plugin (BearDev) — SQL injection CVSS 9.3, affects ≤ 5.7.7 (PT-2026-48782 via dbugs.ptsecurity.com 2026-06-11)",
+      "summary": "JoomSport WP plugin CVE-2026-42647 CVSS 9.3 SQL injection through 5.7.7 — niche sports-club WordPress installs; if your marketing estate hosts any sports-team or league sites verify Joomsport version and patch promptly."
+    },
+    {
+      "cve": "CVE-2026-49060",
+      "product": "Hippoo Mobile App for WooCommerce CVSS 9.8 (PT-2026-48785 via dbugs.ptsecurity.com 2026-06-11)",
+      "summary": "Hippoo Mobile App for WooCommerce CVSS 9.8 — niche WooCommerce mobile-companion plugin; relevant only to merchants who deployed Hippoo for headless-mobile checkout flows."
+    },
+    {
+      "cve": "CVE-2026-49973",
+      "product": "Hermes WebUI (Nesquina) — first-run authentication bypass CVSS 9.4 via the _set_password parameter on settings API (opencve.io 2026-06-11)",
+      "summary": "Hermes WebUI CVE-2026-49973 (CVSS 9.4) first-run auth bypass — niche home-server admin panel scope but the 'attacker submits to setup endpoint to lock out the legitimate operator' pattern is a recurring class worth IR-team awareness for any first-run-without-default-creds web UI."
+    },
+    {
+      "cve": "None assigned",
+      "product": "AsyncRAT campaign weaponising AI hype to deliver multi-stage payload via fake AI documents (FortiGuard Labs 2026-06-11, Cara Lin)",
+      "summary": "AsyncRAT campaign using fake AI documents + hidden PowerShell + AutoHotkey loaders for process injection — continuation of the AI-themed social-engineering trend (joins ChatGPhish / LLMShare cluster); brand-protection / SEC training programs should incorporate AI-document lures into phishing simulations."
+    },
+    {
+      "cve": "None assigned",
+      "product": "OceanLotus SPECTRALVIPER backdoor campaign against Vietnam — supply-chain attack via FireAnt forensic tool (THN 2026-06-11)",
+      "summary": "OceanLotus (APT32) SPECTRALVIPER campaign — supply-chain compromise of FireAnt forensic tooling targeting Vietnam infrastructure/investors; relevant only to organisations operating in or against Vietnamese targeting scope, but the 'compromise the forensic tool the IR team uses' pattern is durable APT tradecraft worth tracking."
+    },
+    {
+      "cve": "None assigned",
+      "product": "Microsoft Defender 'RoguePlanet' SMB-share race condition LPE (continued from 2026-06-10 NOTED; THN 2026-06-11 follow-on)",
+      "summary": "Continuation of RoguePlanet SMB-share race condition — Defender LPE granting SYSTEM on fully June-2026-patched Windows; still out of Watchtower core scope per local-EoP policy, kept here as a notable workstation-hardening item pending vendor fix."
+    },
+    {
+      "cve": "None assigned",
+      "product": "npm v12 disables install scripts by default (GitHub / BleepingComputer 2026-06-11) — supply-chain hardening shipping in npm 12",
+      "summary": "npm v12 disables lifecycle install scripts by default — major supply-chain hardening that closes the Wave-1 / Wave-2 npm-worm install-time-execution primitive at the package-manager level; structurally significant defensive change but no immediate action required beyond planning the npm 12 rollout in CI/CD fleets."
+    },
+    {
+      "cve": "None assigned",
+      "product": "Maine state breach-portal abuse — public-facing portal accepting fraudulent data-breach disclosure submissions without verification (BleepingComputer 2026-06-11)",
+      "summary": "Maine state portal abused to publish fake data-breach disclosures — operational lesson in public-disclosure-portal trust validation; not a vulnerability per se, kept here as calibration for any organisation relying on state breach-portal data feeds for threat-intel triage."
+    },
+    {
+      "cve": "None assigned",
+      "product": "Coupang $409M fine (South Korea, 2026-06-11) + Kyushu Electric Power physical-drive data loss exposing 10.9M customer records",
+      "summary": "Two large privacy / data-handling incidents — neither involves a technical CVE-class vulnerability; tracked for regulatory and risk-management context only."
+    }
+  ],
+  "source_coverage": {
+    "total": 30,
+    "checked": 19,
+    "with_findings": 13,
+    "unreachable": [
+      "cisa.gov",
+      "cisa.gov/known-exploited-vulnerabilities-catalog",
+      "attackerkb.com",
+      "bugcrowd.com/disclosures",
+      "hackerone.com/hacktivity",
+      "cve.mitre.org",
+      "cve.org",
+      "cert.gov.ua",
+      "googleprojectzero.blogspot.com",
+      "packetstormsecurity.com",
+      "msrc.microsoft.com/blog"
+    ],
+    "degraded": [
+      "nvd.nist.gov",
+      "habr.com/ru/companies/tomhunter/articles",
+      "teletype.in/@cyberok"
+    ]
+  },
+  "full_report": "reports/2026/06/12/report.md"
+}
