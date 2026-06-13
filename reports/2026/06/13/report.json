@@ -1,0 +1,209 @@
+{
+  "date": "2026-06-13",
+  "findings": [
+    {
+      "type": "update",
+      "title": "Ivanti Sentry CVE-2026-10520 (CVSS 10.0) — CISA KEV-Added 2026-06-11 With First-Ever BOD 26-04 3-Day Federal Deadline Of 2026-06-14; Shadowserver Continues To Report 2/19 Backdoored-To-Vulnerable Internet-Exposed Gateways; Ivanti Disputes Production-Exploitation Framing Calling It 'Honeypot-Only'",
+      "threat_score": 9,
+      "previous_threat_score": 9,
+      "cve": "CVE-2026-10520",
+      "cvss": 10.0,
+      "affected_technology": "Ivanti Sentry (formerly MobileIron Sentry) mobile-gateway — Watchtower has tracked since 2026-06-09 PT-Security dbugs NOTED → 2026-06-10 vendor advisory + watchTowr PoC UPDATE → 2026-06-11 Shadowserver 2/19 backdoored UPDATE; today's material change is CISA's KEV add 2026-06-11 plus first-ever invocation of Binding Operational Directive BOD 26-04 (published 2026-06-11 — see 2026-06-12 NOTED), pinning a 3-day FCEB remediation deadline of Sunday 2026-06-14; per BleepingComputer this is the inaugural use of BOD 26-04 — the directive's 'KEV-listed full-control issue on internet-exposed asset' tier; Shadowserver continues to detect 2/19 internet-exposed gateways already backdoored ('rest likely also compromised') 2026-06-12; Ivanti's official response (SecurityWeek 2026-06-12) reframes the observed exploitation as honeypot-only and reiterates that management port 8443 'should never be exposed to the internet' — a vendor-disputed-framing dynamic to watch given Shadowserver explicitly distinguishes vulnerable-and-backdoored from honeypot signature matches",
+      "summary": "Ivanti Sentry CVE-2026-10520 KEV-added 2026-06-11 + first-ever BOD 26-04 invocation pinning 3-day FCEB deadline 2026-06-14 — Shadowserver continues 2/19 internet-exposed-and-backdoored reporting; Ivanti calls it honeypot-only but the same dataset identifies 19 still-vulnerable internet-exposed instances — patch every Sentry to R10.5.2/R10.6.2/R10.7.1 by Sunday, treat unpatched as already compromised.",
+      "first_seen_at": "2026-06-09"
+    },
+    {
+      "type": "news",
+      "title": "Arch Linux AUR Mass-Compromise — 400+ Hijacked Packages Push Rust Credential-Stealer + eBPF Kernel Rootkit Via atomic-lockfile@1.4.2 npm Dep In Spoofed-Maintainer PKGBUILD Edits; Harvests Browser / Slack / Discord / Teams Sessions + GitHub / npm / Vault / SSH / Docker Creds; Detection IOCs Published 2026-06-12 By Researcher Whanos, Main Payload SHA-256 6144d433f8a0316869877b5f834c801251bbb936e5f1577c5680878c7443c98b",
+      "threat_score": 8,
+      "cve": "None assigned",
+      "cvss": null,
+      "affected_technology": "Arch User Repository (AUR) build scripts (PKGBUILD) — 400+ community packages compromised; Arch official repositories not affected; attackers adopted abandoned packages and edited the PKGBUILD files, spoofed git commit metadata to look like long-standing-maintainer commits; the malicious build step pulls atomic-lockfile@1.4.2 from npm during local package build; that npm dep loads a Rust-compiled ELF infostealer that harvests browser cookies / tokens / local storage from Chrome / Edge / Brave, Electron-app session data from Slack / Discord / Microsoft Teams, GitHub credentials / npm tokens / HashiCorp Vault tokens / SSH artefacts, Docker and Podman registry credentials, Telegram session keys; when run with root the payload deploys an eBPF rootkit hiding processes / files / network interfaces that survives conventional cleanup; researcher Whanos has published a detection script + IOC list; main payload SHA-256 6144d433f8a0316869877b5f834c801251bbb936e5f1577c5680878c7443c98b; Arch maintainers began removing the malicious commits and banning the offending accounts overnight 2026-06-11/12",
+      "summary": "Arch Linux AUR mass-compromise — 400+ hijacked packages drop Rust credential-stealer + eBPF rootkit via atomic-lockfile@1.4.2 npm dep in spoofed-maintainer PKGBUILD edits; harvests browser / Slack / Discord / Teams sessions + GitHub / npm / Vault / SSH / Docker creds; rotate every credential on any host that ran makepkg since 2026-06-11 and reimage root-execution hosts because eBPF rootkit removal is unreliable.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-06-12"
+    },
+    {
+      "type": "news",
+      "title": "Agentjacking — New Attack Class Hijacks AI Coding Agents (Claude Code, Cursor) Via Crafted Sentry Error Events Injected At The DSN Ingest Endpoint; 2,388 Organisations With Exposed DSNs Confirmed; 85% Success Rate Across Tested AI Coding Assistants; Sentry Acknowledged + Declined Architectural Fix Calling It 'Not Technically Defensible'",
+      "threat_score": 7,
+      "cve": "None assigned",
+      "cvss": null,
+      "affected_technology": "Sentry error-tracking platform event ingestion endpoint + downstream AI coding agents Claude Code and Cursor consuming Sentry data via Model Context Protocol (MCP); Sentry DSNs (Data Source Names) are public, write-only credentials embedded in client-side code so the application can POST error events — Sentry's event-ingestion endpoint accepts arbitrary payloads from anyone holding the DSN; attacker who scrapes a target DSN from public website JavaScript POSTs a maliciously formatted error event whose message and context fields contain markdown that renders identically to legitimate Sentry templates; when a developer asks their AI coding agent to fix unresolved Sentry issues the agent queries Sentry via MCP and interprets the attacker's markdown as trusted system output, executing the embedded instructions with developer-account privileges; Tenet Security reports 85% success rate across tested AI coding assistants and 2,388 organisations with vulnerable DSNs in their published proof-set; bypasses EDR / WAF / IAM / VPN / Cloudflare / host firewalls because the malicious traffic flows over the legitimate Sentry ingest path; Sentry acknowledged + declined architectural fix calling it 'not technically defensible' and shipped a content filter blocking specific payload strings — a stopgap that adversarial markdown can almost certainly evade",
+      "summary": "Agentjacking — Tenet Security disclosed new attack class hijacking AI coding agents (Claude Code, Cursor) via crafted Sentry error events posted to public DSN ingest endpoint, 85% success rate against tested agents + 2,388 orgs with exposed DSNs; Sentry declined architectural fix calling it not-technically-defensible — treat all third-party MCP data sources as untrusted input and disable Sentry-MCP integrations on shared projects until structural fix lands.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-06-12"
+    },
+    {
+      "type": "news",
+      "title": "Velvet Ant 'Operation Highland' — China-Nexus APT Backdoored Linux PAM + OpenSSH On Air-Gapped Networks With Nine Modified PAM Modules + Credential-Logging OpenSSH Builds + Secret Master-Password And Logging-Disable Switches; Persistence Dates To 2016 (~Decade-Long Dwell Time); Sygnia Disclosure 2026-06-12",
+      "threat_score": 6,
+      "cve": "None assigned",
+      "cvss": null,
+      "affected_technology": "Linux authentication stack on Velvet Ant-targeted enterprise networks — modified /lib/security/pam_*.so modules + custom sshd binary across glibc-based distros; Sygnia researchers published 'Operation Highland' deep-technical report 2026-06-12 of a Chinese state-aligned APT resident inside an air-gapped enterprise network since approximately 2016 evading repeated eradication attempts by backdooring the Linux authentication stack itself; nine separate modified PAM modules + custom sshd build logging credentials + command history + two persistence primitives (hard-coded master password authenticating any user, hidden environment-variable switch disabling credential logging on operator demand); because authentication itself is compromised, traditional containment (password resets / key rotation / session termination) is ineffective; initial-access staging through an internet-facing web server bridge into the air-gapped segment; canonical detection playbook for this attack class: file-integrity-check pam_unix.so / pam_sssd.so / sshd against known-good package baselines, hunt hidden env-variable switches in /etc/ssh/sshd_config.d/, treat any sshd whose mtime predates last package upgrade as suspect; joins the same group's prior Cisco / F5 / Juniper edge-device zero-day campaigns (Watchtower covered the F5 line in February 2026)",
+      "summary": "Velvet Ant 'Operation Highland' — Sygnia disclosed ~decade-long China-nexus APT campaign that backdoored Linux PAM (9 modified modules) and OpenSSH (credential-logging build + secret-master-password + logging-disable env switch) on air-gapped enterprise networks since 2016; canonical detection: file-integrity-check pam_*.so + sshd against package hashes — credential rotation alone fails when auth itself is backdoored, re-image any mismatched host.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-06-12"
+    },
+    {
+      "type": "news",
+      "title": "phpBB 10-Year Authentication Bypass — Single-HTTP-Request Login As Any User Including Administrators On Default Configurations Of 3.3.16 And Below + 4.0.0-a2 And Below; Aikido / HackerOne Disclosed 2026-06-02, Patched 3.3.17 Shipped 2026-06-06, Public Disclosure 2026-06-12; ACP RCE Path Blocked By Separate Password Layer But Full-User-Impersonation Reachable",
+      "threat_score": 6,
+      "cve": "Not yet assigned",
+      "cvss": null,
+      "affected_technology": "phpBB forum software — 3.3.16 and below + 4.0.0-a2 and below — 10-year-old logic flaw in phpBB authentication allows an unauthenticated attacker to log in as any user, administrator included, with a single HTTP request requiring no special knowledge under default configuration; researchers at Aikido found the bug 2026-06-02 and reported it through phpBB's HackerOne program, phpBB shipped 3.3.17 four days later on 2026-06-06, public disclosure 2026-06-12; remote code execution is not directly reachable because the Admin Control Panel sits behind a separate password-prompt layer, but the bypass yields complete impersonation (read private messages, manipulate content / accounts, deface forums, exfiltrate registered-user PII); no safe 4.x release exists yet — only path is downgrade or wait; corporate exposure surface still non-trivial — community forums attached to mid-market e-commerce brands, internal support portals for legacy products, embedded user-management for industry conferences, partner-portal forums; bypass-as-administrator also makes phpBB instances credible credential-harvesting waterholes for cross-property credential reuse harvesting",
+      "summary": "phpBB 10-year auth bypass — single-HTTP-request login as any user including administrators on default configurations of 3.3.16 and below + 4.0.0-a2 and below; Aikido found 2026-06-02, patched 3.3.17 shipped 2026-06-06, public disclosure 2026-06-12 — ACP RCE blocked by separate password layer but full impersonation reachable; upgrade 3.x today, no safe 4.x release yet so downgrade or IP allow-list login/ACP endpoints.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-06-12"
+    },
+    {
+      "type": "news",
+      "title": "Squid 7.6 Multi-CVE Batch — CVE-2026-47729 Out-Of-Bounds Read In FTP Gateway (Cross-Session Data Disclosure Primitive) + CVE-2026-50012 Heap Buffer Overflow In Cache Digests Parsing (Malicious-Server Memory-Corruption Primitive, --enable-cache-digests Builds Only); oss-security Disclosure 2026-06-12 By Amos Jeffries / Squid Software Foundation",
+      "threat_score": 6,
+      "cve": "CVE-2026-47729, CVE-2026-50012",
+      "cvss": null,
+      "affected_technology": "Squid caching proxy / web cache — patched in Squid 7.6; Amos Jeffries (Squid Software Foundation) disclosed two new Squid CVEs via oss-security 2026-06-12; CVE-2026-47729 out-of-bounds read in FTP gateway component — a legitimate FTP client connecting through Squid against a malicious FTP server can disclose data from unrelated client sessions sharing the same Squid worker process, information-disclosure primitive particularly dangerous for multi-tenant proxy fleets; CVE-2026-50012 heap-based buffer overflow in cache-digests parsing — a malicious upstream cache responding to a cache_digest request can corrupt the Squid worker process's heap, memory-corruption RCE primitive but only when Squid is compiled with --enable-cache-digests (not the most common build flag but non-zero population of enterprise builds enable it for performance reasons); patches linked in the advisory (commits 865a131c7d557e68c965043d98c2eccae26deef8 for FTP, 19fcfe922717c8b255270c032dcde4071c003bcd for cache digests)",
+      "summary": "Squid 7.6 multi-CVE — CVE-2026-47729 FTP-gateway OOB-read cross-session data disclosure + CVE-2026-50012 heap-overflow in cache_digests parsing (--enable-cache-digests builds only); upgrade Squid to 7.6 across the proxy fleet, recompile without --enable-cache-digests as stopgap, prioritise multi-tenant FTP-gateway-disabled rebuilds.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-06-12"
+    },
+    {
+      "type": "news",
+      "title": "Portainer CVE-2026-33590 (CVSS 8.2) — Insecure Default Settings Allow Regular Portainer Users To Execute Arbitrary Commands With Elevated Privileges On The Container Host (Bind-Mount + Privileged-Mode Defaults); Patched 2.38.0 STS + 2.39.0 LTS By Sifis Bampionitakis / intWave Via oss-security 2026-06-12",
+      "threat_score": 5,
+      "cve": "CVE-2026-33590",
+      "cvss": 8.2,
+      "affected_technology": "Portainer < 2.38.0 STS / < 2.39.0 LTS Docker / Kubernetes container-management UI — ships with insecure default Docker security settings allowing regular Portainer users to spin up containers with bind-mounts of arbitrary host paths + privileged-mode flag set, textbook container-escape-by-design primitive (mount / from host into a privileged container = host root); Sifis Bampionitakis (intWave intern) disclosed via oss-security 2026-06-12; fixed in Portainer 2.38.0 (short-term support) and 2.39.0 (long-term support) by tightening default Docker Security Settings",
+      "summary": "Portainer CVE-2026-33590 (CVSS 8.2) — insecure defaults let regular Portainer users create privileged + bind-mount containers escaping to host root; patched in 2.38.0 STS and 2.39.0 LTS — upgrade and disable bind-mounts + privileged-mode in Docker Security Settings for all non-admin roles, audit recent container-creation history for surprise privileged + bind-mount-/ containers.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-06-12"
+    },
+    {
+      "type": "news",
+      "title": "LangGraph 3-CVE Chain — CVE-2025-67644 (CVSS 7.3) SQL Injection In SQLite Checkpointer + CVE-2026-28277 (CVSS 6.8) Unsafe msgpack Deserialization + CVE-2026-27022 (CVSS 6.5) RediSearch Query Injection; SQLi + Deser Chain Yields Self-Hosted RCE On Exposed get_state_history(); LangSmith Managed Platform Unaffected",
+      "threat_score": 5,
+      "cve": "CVE-2025-67644, CVE-2026-28277, CVE-2026-27022",
+      "cvss": 7.3,
+      "affected_technology": "LangGraph (LangChain agentic-framework) self-hosted deployments using SQLite or Redis checkpointers — three checkpointer-store CVEs disclosed 2026-06-12; CVE-2025-67644 (CVSS 7.3) SQLi in SQLite checkpointer via metadata-filter input on get_state_history() endpoint + CVE-2026-28277 (CVSS 6.8) unsafe msgpack deserialization of returned checkpoint blobs combine into arbitrary code execution on the LangGraph server; CVE-2026-27022 (CVSS 6.5) independent RediSearch query-injection in Redis checkpointer allowing access-control bypass on stored agent state; LangSmith's managed platform is not affected — self-hosted-deployment issue only; fix versions langgraph-checkpoint-sqlite 3.0.1+, langgraph 1.0.10+, @langchain/langgraph-checkpoint-redis 1.0.1+; continues the durable pattern from MEMORY 2026-06-11: self-hosted AI workflow / agent platforms (Langflow, Flowise, Open WebUI, FastGPT, now LangGraph) need Web/HTTP-fleet-tier patch SLAs because they expose agent state machinery to attacker input by default",
+      "summary": "LangGraph 3-CVE chain — CVE-2025-67644 (CVSS 7.3) SQLi in SQLite checkpointer + CVE-2026-28277 (CVSS 6.8) unsafe msgpack deser chain to self-hosted RCE on exposed get_state_history(), plus CVE-2026-27022 (CVSS 6.5) RediSearch query injection in Redis checkpointer — upgrade langgraph-checkpoint-sqlite 3.0.1+ / langgraph 1.0.10+ / langgraph-checkpoint-redis 1.0.1+; LangSmith managed platform unaffected.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-06-12"
+    }
+  ],
+  "noted": [
+    {
+      "cve": "None assigned",
+      "product": "Cal Water California Water Service breach by Iranian Handala group — threat actor published ~5GB including customer PII (names, addresses, phone, account numbers, payment histories), administrative credentials for an RTKBase GNSS-base-station instance running 783 continuous hours, mountpoint-level NTRIP passwords across 7 districts; Cal Water serves ~2M customers across 100 California communities; initial access likely through the unmanaged RTKBase platform; Cal Water has not publicly acknowledged the intrusion (SecurityWeek 2026-06-12)",
+      "summary": "Cal Water Iranian-Handala breach — 5GB customer PII + RTKBase admin creds + NTRIP mountpoint passwords across 7 districts (~2M customer population), no CVE — initial access likely through unmanaged RTKBase GNSS base station platform; calibration data point for water/critical-infrastructure perimeter posture monitoring."
+    },
+    {
+      "cve": "None assigned",
+      "product": "Tchap French government messenger breach — scope confirmed 73,000 accounts (~9% of 825,000 registered) — continuation of 2026-06-10 Watchtower NOTED; threat actor compromised single user account via social engineering, scraped unencrypted public-room metadata (names, emails, organisational affiliations, avatars); private E2EE conversations not exposed; actor claims 13.5GB documents/media + hardcoded LDAP credentials; not a protocol-level CVE (BleepingComputer 2026-06-12)",
+      "summary": "Tchap breach scope now confirmed 73,000 accounts (~9% of 825K registered) — public-room metadata scraped via compromised account, not a protocol-level CVE; private E2EE chats remained protected, but hardcoded LDAP credentials in the 13.5GB exfil set are an unrelated follow-on risk."
+    },
+    {
+      "cve": "None assigned",
+      "product": "Sniper Dz phishing-as-a-service platform dismantled — INTERPOL Operation Ramz Oct-2025→Feb-2026, 201 arrests across 13 MENA countries + admin Guedz arrested in Algeria; Group-IB-supported takedown of decade-old PhaaS platform generating 20K+ phishing domains and 45K+ victim records targeting PayPal / Facebook / Netflix-class brands (THN 2026-06-12)",
+      "summary": "INTERPOL Operation Ramz dismantled Sniper Dz PhaaS — 201 arrests across 13 MENA countries + admin Guedz arrested in Algeria; decade-old platform produced 20K+ phishing domains and 45K+ victim records targeting PayPal / Facebook / Netflix-class brands."
+    },
+    {
+      "cve": "None assigned",
+      "product": "AudiA6 cryptocurrency-laundering service dismantled — Europol-coordinated takedown 2026-06-10 (~€336M / $389M laundered since 2021); 2 Ukrainian + Russian nationals arrested in Georgia, 25 domains seized + 30 servers offline + €692K crypto + €86K cash frozen; DoJ conspiracy + money-laundering charges (20yr max); traced ~393.39 BTC (~$19.2M) from darknet markets and ransomware orgs directly into AudiA6 wallets (THN 2026-06-12)",
+      "summary": "AudiA6 crypto-laundering service shut down (Europol 2026-06-10) — €336M laundered since 2021, ~393.39 BTC traced from darknet markets and ransomware orgs into AudiA6 wallets; 2 Ukrainian/Russian arrests in Georgia + 30 servers offline + DoJ conspiracy charges (20yr max)."
+    },
+    {
+      "cve": "None assigned",
+      "product": "Google civil lawsuit against Chinese Outsider smishing PhaaS network — Gemini-AI-assisted phishing-page generation; filed 2026-06-12, 100K+ victims, 9K fake sites + 1.59M fraudulent URLs created 2025-11→2026-04, 2.5M smishing texts to Android users in 2-week May-June window; kit costs $88/week with 290+ brand templates + Telegram-bot ordering; Google partnered with AT&T / T-Mobile / Verizon for blocking",
+      "summary": "Google sues Chinese Outsider smishing PhaaS network using Gemini-assisted phishing-page generation — 100K+ victims, 9K fake sites + 1.59M fraudulent URLs Nov-2025→Apr-2026; AI-platform-misuse data point for defenders monitoring Gemini-as-toolchain abuse."
+    },
+    {
+      "cve": "None assigned",
+      "product": "The Gentlemen ransomware-as-a-service operator profile (Krebs 2026-06-10) — Zeta88 / Hastalamuerte; 90/10 affiliate split; 478 victims claimed including 240+ in 2026; second-most-active RaaS gang; Russian-speaking; LockBit-affiliate-evolved-to-independent; targets internet-facing VPN / firewall devices",
+      "summary": "The Gentlemen RaaS deep-dive (Krebs 2026-06-10) — Zeta88/Hastalamuerte admin, 90/10 affiliate split, 478 claimed victims including 240+ in 2026; durable affiliate-economic-pressure signal for orgs with perimeter-fleet patch SLAs slipping past 14 days."
+    },
+    {
+      "cve": "None assigned",
+      "product": "Anthropic Claude Fable 5 — researcher prompt-based jailbreak claim, Anthropic disputes it constitutes a genuine vulnerability (SecurityWeek 2026-06-12)",
+      "summary": "Anthropic Fable 5 — researcher claims prompt-based jailbreak, Anthropic disputes; tracked for AI-vendor-vs-researcher dispute pattern + adjacent to Microsoft 365 Copilot / LiteLLM mitigated-server-side AI-platform pattern from MEMORY 2026-06-08 / 2026-06-10."
+    },
+    {
+      "cve": "CVE-2017-20240, CVE-2026-9638, CVE-2026-9641",
+      "product": "Crypt::PBKDF2 Perl module pre-0.261630 batch (oss-security 2026-06-12, Robert Rothenberg) — CVE-2017-20240 timing-attack on derived-key comparison + CVE-2026-9638 weak salt-RNG + CVE-2026-9641 weak default algorithm/iteration-count",
+      "summary": "Crypt::PBKDF2 Perl module 3-CVE batch (oss-security 2026-06-12) — pre-0.261630 timing-attack on derived-key compare + weak salt-RNG + weak default algorithm/iterations; Perl-ecosystem long-tail, relevant only to legacy Perl auth services that selected Crypt::PBKDF2 for password hashing."
+    },
+    {
+      "cve": "CVE-2026-50086, CVE-2026-50090, CVE-2026-50084, CVE-2026-50091",
+      "product": "Aqara Smart Home cluster CVSS 9.0+ — IAM/SSO Gateway CVE-2026-50086 (CVSS 10.0), Cloud OAuth CVE-2026-50090 (CVSS 9.3), Cloud API CVE-2026-50084 (CVSS 9.6), Mobile App CVE-2026-50091 (CVSS 9.1) (PT-Security dbugs 2026-06-12)",
+      "summary": "Aqara Smart Home CVSS 9.0+ cluster (PT-Security dbugs 2026-06-12) — IAM/SSO Gateway CVSS 10.0, Cloud OAuth 9.3, Cloud API 9.6, Mobile App 9.1; IoT consumer-home scope out-of-Watchtower-core, tracked here because IAM/SSO Gateway perfect-10 hits the mass smart-home OAuth landscape."
+    },
+    {
+      "cve": "CVE-2026-53787, CVE-2026-54133",
+      "product": "Amasty Order Attributes (Magento) CVE-2026-53787 (CVSS 9.8) + JMESPath.Php CVE-2026-54133 (CVSS 9.8) (PT-Security dbugs 2026-06-12)",
+      "summary": "Magento-ecosystem CVSS 9.8 pair (PT-Security dbugs 2026-06-12) — Amasty Order Attributes + JMESPath.Php; continues Magento-extension cadence from Mirasvit KEV add 2026-06-03 (MEMORY 2026-06-08), keep 14-day patch SLA on the Magento-extension fleet."
+    },
+    {
+      "cve": "CVE-2026-10557",
+      "product": "Yarbo Mobile Application CVE-2026-10557 (CVSS 9.8) — PT-Security dbugs 2026-06-12; consumer-mobile scope, out of Watchtower core",
+      "summary": "Yarbo Mobile App CVE-2026-10557 (CVSS 9.8) — consumer-mobile scope out of Watchtower core; tracked for visibility."
+    },
+    {
+      "cve": "CVE-2026-48095",
+      "product": "7-Zip multi-CVE batch (GitHub Security Lab, Jaroslav Lobačevski) — GHSL-2026-140 / CVE-2026-48095 heap buffer write overflow + GHSL-2026-115→122 memory-access-violation batch (additional CVEs pending)",
+      "summary": "7-Zip GHSL-2026-115→122 + 140 (CVE-2026-48095) memory-safety batch — relevant to any service-side automation that decompresses untrusted .7z payloads (mail-scanning gateways, malware-sandbox feeders, archive-handling SaaS)."
+    },
+    {
+      "cve": "CVE-2024-48019",
+      "product": "Chatwoot GHSL-2026-059 SQL injection (Man Yue Mo / GitHub Security Lab) + Apache Doris CVE-2024-48019 REST API arbitrary file read",
+      "summary": "GitHub Security Lab disclosures — Chatwoot SQLi + Apache Doris REST API arbitrary file read; Chatwoot is widely deployed open-source customer-support helpdesk, Apache Doris is an analytics-DB in modern data stacks."
+    },
+    {
+      "cve": "CVE-2026-31802",
+      "product": "npm tar path-traversal CVE-2026-31802 — symlink-extract → arbitrary file overwrite (Recorded-texteditor120 PoC published, github.com/0xMarcio/cve tracker)",
+      "summary": "npm tar path-traversal CVE-2026-31802 symlink-extract → arbitrary file overwrite — npm tar is transitively present in millions of Node.js dependency trees; await mainstream advisory + verify patched tar version pinned in lock files."
+    },
+    {
+      "cve": "CVE-2026-41089",
+      "product": "Netlogon CVE-2026-41089 PoC update — additional implementations 10h ago on 0xMarcio/cve tracker, post-MEMORY-2026-06-02 (already NEWS) + Microsoft June Patch Tuesday (Watchtower 2026-06-12 NOTED)",
+      "summary": "Netlogon CVE-2026-41089 PoC additional implementations on 0xMarcio/cve — continuation tracking, no material-change UPDATE yet but escalate if a Metasploit module lands."
+    },
+    {
+      "cve": "None assigned",
+      "product": "Conti Ukrainian operator pleads guilty extradited from Ireland — conspiracy charges in the Conti ransomware-as-a-service case (BleepingComputer 2026-06-12)",
+      "summary": "Conti Ukrainian operator guilty plea (extradited from Ireland) — operational law-enforcement item joining AudiA6 / Sniper Dz cluster for this week's anti-cybercrime momentum."
+    },
+    {
+      "cve": "None assigned",
+      "product": "Novo Nordisk clinical-trial data breach (BleepingComputer 2026-06-12) — insulin-manufacturer breach with patient information from specific clinical trials affected; scope not yet quantified",
+      "summary": "Novo Nordisk clinical-trial data breach — patient info from specific trials affected, scope not yet quantified, no CVE; pharma / healthcare incident-tracking."
+    },
+    {
+      "cve": "None assigned",
+      "product": "OnyxC2 stealer-malware tracking 200+ applications ($250/month, encrypted payloads + DLL sideloading + in-memory execution evasion) — SecurityWeek 2026-06-12 commercial-stealer profile",
+      "summary": "OnyxC2 commercial stealer ($250/month, 200+ apps, DLL sideloading + in-memory execution evasion) — relevant calibration for SOC content tuning against modern stealer-as-a-service families."
+    }
+  ],
+  "source_coverage": {
+    "total": 30,
+    "checked": 21,
+    "with_findings": 13,
+    "unreachable": [
+      "cisa.gov",
+      "cisa.gov/known-exploited-vulnerabilities-catalog",
+      "attackerkb.com",
+      "bugcrowd.com/disclosures",
+      "hackerone.com/hacktivity",
+      "cve.mitre.org",
+      "cve.org",
+      "packetstormsecurity.com",
+      "msrc.microsoft.com/blog"
+    ],
+    "degraded": [
+      "nvd.nist.gov",
+      "habr.com/ru/companies/tomhunter/articles",
+      "teletype.in/@cyberok",
+      "cert.gov.ua",
+      "seclists.org/fulldisclosure"
+    ]
+  },
+  "full_report": "reports/2026/06/13/report.md"
+}

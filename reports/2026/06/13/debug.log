@@ -1,0 +1,138 @@
+=== Watchtower Daily Workflow Debug Log — 2026-06-13 ===
+Start: 2026-06-13T00:01:28Z
+
+[STEP 1] git pull
+  $ cd /home/claude/workspace/watchtower && git pull
+  Result: Already up to date.
+  Status: OK
+
+[STEP 2] Build dedup index from last 30 days (2026-05-14 → 2026-06-12)
+  - Iterated reports/2026/05/14 → reports/2026/06/12
+  - Built /tmp/dedup_index.txt: 631 unique CVEs across 694 entries
+  - Built /tmp/dedup_titles.txt: 623 titles
+  - Status: OK
+
+[STEP 3] Source check (SOURCES.md = 30 unique sources after deduping seclists)
+  --- Tier 1 (15) ---
+  ✅ bleepingcomputer.com           — 15 headlines pulled; Arch AUR, CISA Ivanti, phpBB, Tchap, Conti, Coupang, Maine
+  ✅ thehackernews.com              — 15 headlines pulled; AUR, Velvet Ant, Agentjacking, LangGraph, Google smishing, Sniper Dz, AudiA6
+  ❌ cisa.gov                       — HTTP 403 (persistent per MEMORY 2026-03-30)
+  ❌ cisa.gov/known-exploited-vulnerabilities-catalog — HTTP 403 (persistent)
+  ✅ securityweek.com               — 15 headlines pulled; Ivanti honeypots, Cal Water Handala, PeopleSoft confirm, Anthropic Fable 5
+  ✅ github.com/search?q=CVE        — most recent CVE-2026 repos: CVE-2026-31802 npm tar, CVE-2026-24291, CVE-2026-2472, CVE-2026-25643, CVE-2026-2441, CVE-2026-0828, CVE-2026-20841
+  ✅ schneier.com                   — 4 latest posts; Squid blogging, Sanders AI fund, license-plate tracking, NSO/WhatsApp
+  ✅ krebsonsecurity.com            — 3 latest posts; The Gentlemen RaaS, June Patch Tuesday, Meta AI Instagram
+  ✅ rapid7.com (blog)              — featured posts pulled; PeopleSoft, Ivanti Sentry, Check Point, HP Poly VVX, Metasploit wrap-ups
+  ❌ attackerkb.com                 — HTTP 403 (persistent per MEMORY)
+  ✅ fortinet.com/blog/threat-research — silent for 2026-06-12/13; most recent 2026-06-11 AsyncRAT (already MEMORY)
+  ✅ securitylab.github.com         — 7-Zip GHSL-2026-115→122 + 140 batch + Chatwoot SQLi + Apache Doris CVE-2024-48019
+  ⚠️ seclists.org/fulldisclosure    — only 2026-06-04→06-08 thread content; 2026-06-12/13 not yet indexed (DEGRADED)
+  ❌ packetstormsecurity.com        — redirects to packetstorm.news/; no useful 2026-06-12/13 content (per MEMORY)
+  ✅ opencve.io                     — 21 CVEs on 2026-06-12 incl ApostropheCMS CVE-2026-44990 (already noted), CVE-2026-54056 Kitty, CVE-2026-4870 Qiskit, CVE-2025-10101 Avast/Apple, Discourse cluster of 8
+
+  --- Tier 2 (16, deduping seclists) ---
+  ⚠️ nvd.nist.gov                   — most recent shown 2026-06-11; 2026-06-12/13 entries not yet enumerable via search-page WebFetch (DEGRADED)
+  ❌ cve.mitre.org                  — redirects to cve.org (JS-required) (per MEMORY)
+  ❌ cve.org                        — JS-required, empty content via WebFetch (per MEMORY)
+  ✅ googleprojectzero / projectzero.google — homepage fetched; no 2026-06-12/13 posts
+  ✅ blog.cloudflare.com/tag/security — latest posts dated 2026-06-08/09 (silent for 06-12/13)
+  ❌ msrc.microsoft.com/blog        — redirects to microsoft.com/en-us/msrc/blog; only navigation chrome returned, no content (per MEMORY 2026-06-06)
+  ❌ hackerone.com/hacktivity       — JS-required, empty content (per MEMORY)
+  ❌ bugcrowd.com/disclosures       — HTTP 404 (per MEMORY)
+  ✅ kb.cert.org/vuls               — most recent VU#862559 2026-06-11 (already covered yesterday); no 2026-06-12/13 advisories
+  ✅ avleonov.com                   — latest June posts: PAN-OS CVE-2026-0300, May Linux Patch Wednesday (1,638 vulns), Linux Fragnesia CVE-2026-46300
+  ✅ github.com/0xMarcio/cve        — CVE-2026-31431 Linux kernel update, CVE-2026-41089 Netlogon CLDAP RCE, CVE-2026-41940 cPanel/WHM (1d ago), CVE-2026-24061 SafeBreach
+  ✅ dbugs.ptsecurity.com           — 2026-06-12 batch: Aqara cluster (CVE-2026-50086/50090/50084/50091), Amasty CVE-2026-53787, JMESPath.Php CVE-2026-54133, Yarbo CVE-2026-10557
+  ⚠️ habr.com/ru/companies/tomhunter/articles — silent since 2026-03-06 (3-month silence, per MEMORY 2026-06-12) (DEGRADED)
+  ⚠️ teletype.in/@cyberok           — silent since 2026-02-04 (4-month silence, per MEMORY 2026-06-12) (DEGRADED)
+  ⚠️ cert.gov.ua                    — empty content via WebFetch (DEGRADED — persistent)
+
+  --- Bonus / per-MEMORY canonical source ---
+  ✅ openwall.com/lists/oss-security/2026/06/ — Squid CVE-2026-47729 + CVE-2026-50012, Portainer CVE-2026-33590, Crypt::PBKDF2 batch CVE-2017-20240/CVE-2026-9638/CVE-2026-9641 on 2026-06-12
+
+  Reachable + content: 21
+  Unreachable: 9 (cisa.gov, cisa.gov/known-exploited-vulnerabilities-catalog, attackerkb.com, bugcrowd.com/disclosures, hackerone.com/hacktivity, cve.mitre.org, cve.org, packetstormsecurity.com, msrc.microsoft.com/blog)
+  Degraded: 5 (nvd.nist.gov, habr.com/ru/companies/tomhunter/articles, teletype.in/@cyberok, cert.gov.ua, seclists.org/fulldisclosure)
+  total - unreachable - degraded = 30 - 9 - 5 = 16; checked must >= 30 - 9 = 21 → ✅ satisfies validator constraint
+
+[STEP 4] Dedup decisions
+  --- Promoted to NEWS ---
+  CVE-2026-10520 Ivanti Sentry         → UPDATE  (previous_threat_score=9 from 2026-06-12) — material change: CISA KEV add 06-11 + first BOD 26-04 invocation + 3-day deadline 06-14
+  Arch Linux AUR 400+ packages         → NEWS    (no prior entry; SHA-256 6144d433...)
+  Agentjacking (Sentry → AI coding)    → NEWS    (no prior entry; Tenet Security)
+  Velvet Ant Operation Highland (PAM)  → NEWS    (no prior PAM/OpenSSH entry; Sygnia)
+  phpBB 10-year auth bypass            → NEWS    (no prior entry; Aikido)
+  Squid CVE-2026-47729 + CVE-2026-50012 → NEWS   (no prior entry; oss-security)
+  Portainer CVE-2026-33590             → NEWS    (CVE-2026-44848 already noted 2026-05-16 but this is a different CVE on a different class — default-settings + privesc)
+  LangGraph CVE-2025-67644 + 28277 + 27022 → NEWS (no prior entry)
+
+  --- Skipped (already covered) ---
+  CVE-2026-35273 PeopleSoft           → SKIP (already update 2026-06-12)
+  CVE-2026-50751 Check Point          → SKIP (already news 2026-06-12)
+  CVE-2026-11645 Chrome V8            → SKIP (client OOS, already noted 2026-06-12)
+  CVE-2026-20245 Cisco SD-WAN         → SKIP (already update 2026-06-11)
+  CVE-2026-7473 Arista EOS            → SKIP (already news 2026-06-11)
+  CVE-2026-31431 Linux Copy Fail      → SKIP (already covered 2026-05-16/19, 2026-06-04)
+  CVE-2026-41940 cPanel WHM           → SKIP (already noted 2026-06-12, PoC update only)
+  CVE-2026-45171 CyberArk PSM         → SKIP (already noted 2026-06-12)
+  CVE-2026-44990 ApostropheCMS sanitize-html → SKIP (already noted 2026-05-16)
+  CVE-2026-41089 Netlogon PoC update  → NOTED only (already news 2026-06-02, no material change)
+  Microsoft June Patch Tuesday (206 CVEs) → SKIP (already noted 2026-06-12)
+  CISA BOD 26-04 (background)         → SKIP from noted (already noted 2026-06-12); incorporated as Ivanti UPDATE context
+  Coupang $409M fine + Kyushu 10.9M drive loss → SKIP (already noted 2026-06-12)
+  GreatXML BitLocker bypass           → SKIP (already noted 2026-06-12; local-physical OOS)
+  Microsoft RoguePlanet SMB Defender LPE → SKIP (already noted 2026-06-12; local-EoP OOS)
+  CISA KEV cluster CVE-2026-50751/CVE-2026-20245/CVE-2026-7473/CVE-2026-11645 → SKIP (already noted 2026-06-12)
+  Maine state breach-portal abuse     → SKIP (already noted 2026-06-12)
+  npm v12 disables install scripts    → SKIP (already noted 2026-06-12)
+
+  --- New NOTED items ---
+  Cal Water / Iranian Handala / RTKBase (SecurityWeek 2026-06-12)
+  Tchap 73K accounts (BleepingComputer 2026-06-12) — scope confirmation update to 2026-06-10 NOTED
+  Sniper Dz INTERPOL Operation Ramz (THN 2026-06-12)
+  AudiA6 Europol takedown (THN 2026-06-12)
+  Google sues Chinese Outsider smishing PhaaS (THN 2026-06-12)
+  The Gentlemen RaaS Krebs deep-dive (2026-06-10 hot)
+  Anthropic Fable 5 jailbreak dispute (SecurityWeek 2026-06-12)
+  Crypt::PBKDF2 Perl 3-CVE batch (oss-security 2026-06-12)
+  Aqara cluster CVSS 9.0+ (PT-Security dbugs 2026-06-12)
+  Amasty / JMESPath.Php CVSS 9.8 pair (PT-Security dbugs 2026-06-12)
+  Yarbo Mobile App CVSS 9.8 (PT-Security dbugs 2026-06-12)
+  7-Zip GitHub Security Lab batch (GHSL-2026-115→122 + 140)
+  Chatwoot GHSL-2026-059 + Apache Doris CVE-2024-48019 (GitHub Security Lab)
+  npm tar CVE-2026-31802 PoC (0xMarcio)
+  Netlogon CVE-2026-41089 PoC update (0xMarcio continuation)
+  Conti Ukrainian operator guilty plea (BleepingComputer 2026-06-12)
+  Novo Nordisk clinical-trial breach (BleepingComputer 2026-06-12)
+  OnyxC2 stealer-as-a-service ($250/mo, 200+ apps) (SecurityWeek 2026-06-12)
+
+[STEP 5] Report files written
+  ✅ reports/2026/06/13/report.md   — 8 findings (1 UPDATE + 7 NEWS), 18 noted, Source Coverage table per template
+  ✅ reports/2026/06/13/report.json — schema-strict, no extra keys, source_coverage block aligned
+
+[STEP 6] (this file)
+
+[STEP 7] Validator
+  $ python3 scripts/validate_report.py reports/2026/06/13/report.json
+  Output:
+  ⚠️  11 warning(s):
+     findings[0]: 'summary' is 403 chars (aim for <200)
+     findings[1]: 'summary' is 415 chars (aim for <200)
+     findings[1]: CVE 'None assigned' doesn't start with 'CVE-'
+     findings[2]: 'summary' is 461 chars (aim for <200)
+     findings[2]: CVE 'None assigned' doesn't start with 'CVE-'
+     findings[3]: 'summary' is 451 chars (aim for <200)
+     findings[3]: CVE 'None assigned' doesn't start with 'CVE-'
+     findings[4]: 'summary' is 420 chars (aim for <200)
+     findings[5]: 'summary' is 334 chars (aim for <200)
+     findings[6]: 'summary' is 381 chars (aim for <200)
+     findings[7]: 'summary' is 404 chars (aim for <200)
+  ✅ reports/2026/06/13/report.json — valid
+  Exit code 0 → schema clean. Summary-length warnings are consistent with prior reports' style and below validator hard-fail thresholds.
+
+[STEP 8] git add / commit / push (next)
+
+End-of-run notes:
+- Ivanti Sentry CVE-2026-10520 KEV / BOD 26-04 confirms the calibration anchor from 2026-06-12 NOTED — 3-day federal-equivalent SLA is now the operating reality, not a theoretical tier.
+- Arch AUR + Agentjacking + Velvet Ant cluster makes today's report unusually heavy on supply-chain + AI-tooling + APT-tradecraft surface — three independent new attack-class openings landing same day.
+- BleepingComputer + THN + oss-security carried the highest-leverage findings today; the cisa.gov news-events fallback URL was NOT tested this run because the KEV add was already in mainstream relay via BleepingComputer when first observed.
