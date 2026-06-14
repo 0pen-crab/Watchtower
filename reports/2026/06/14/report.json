@@ -1,0 +1,146 @@
+{
+  "date": "2026-06-14",
+  "findings": [
+    {
+      "type": "news",
+      "title": "OpenClaw CVE-2026-53819 (CVSS 8.7 v4 / 8.8 v3.1) — Workspace .env File Overrides Homebrew Executable Selection In Skill Installation Yielding Arbitrary Code Execution On Operator Workstation (CWE-426 Untrusted Search Path); Patched In 2026.5.27",
+      "threat_score": 7,
+      "cve": "CVE-2026-53819",
+      "cvss": 8.7,
+      "affected_technology": "OpenClaw (Anthropic CLI / agent harness, Node.js implementation) — all releases before 2026.5.27; skill-installation workflow trusts per-workspace .env when resolving the Homebrew executable, so an attacker who can write a workspace .env (malicious project opened by the operator, write-capable MCP server, shared dev container) sets a PATH-like override pointing at an attacker-controlled binary and gets arbitrary code execution under the trusted operator identity at next skill install/refresh; textbook CWE-426 untrusted-search-path. Stacks on top of the existing OpenClaw CVE batch from MEMORY 2026-03-30 (device.token.rotate RCE / exec-allowlist bypass / bootstrap-replay-to-operator.admin / MEDIA: protocol zero-auth read). Watchtower operator instance is still on 2026.2.21-2 per MEMORY 2026-03-30 — ~3.5 months out of date relative to 2026.5.27 patch line, so this is immediately actionable.",
+      "summary": "OpenClaw CVE-2026-53819 (CVSS 8.7) — workspace .env file overrides Homebrew executable selection in skill installation, yielding arbitrary code execution on operator workstation under operator identity; CWE-426 untrusted search path, patched 2026.5.27 — run `openclaw update` today, chmod 600 every workspace .env, audit any .env whose mtime predates the upgrade for PATH/HOMEBREW_PREFIX/BREW overrides.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-06-13"
+    },
+    {
+      "type": "news",
+      "title": "ApostropheCMS CVE-2026-53609 (CVSS 9.1) — Server-Side Prototype Pollution In apos.util.set() Via $pullAll Patch Operator Lets Authenticated Editor Disable publicApiCheck() Globally, Granting Full Unauthenticated Access To Every Piece-Type REST API Endpoint Until Process Restart; No Patched Release At Disclosure",
+      "threat_score": 6,
+      "cve": "CVE-2026-53609",
+      "cvss": 9.1,
+      "affected_technology": "ApostropheCMS ≤ 4.30.0 (Node.js / Express / MongoDB CMS) — apos.util.set() traverses dot-notation paths without sanitising __proto__; any editor-credentialed user can craft a PATCH using the $pullAll operator to write through Object.prototype, and the polluted property silently flips publicApiCheck() to permissive mode for every piece-type REST endpoint for the lifetime of the Node.js process; from one editor login the attacker obtains unauthenticated read/write to every collection (pages, articles, media, users) — restart is the only short-term mitigation while the vendor builds a patch; widely deployed on marketing / partner-portal / content-heavy properties; editor credentials are commonly held by non-engineering staff (PR / marketing / agencies) so the authenticated precondition is realistically low.",
+      "summary": "ApostropheCMS ≤ 4.30.0 CVE-2026-53609 (CVSS 9.1) — editor-credentialed user pollutes Object.prototype via $pullAll patch operator and disables publicApiCheck() globally, leaking full unauthenticated read/write on every piece-type REST endpoint until process restart; no patched release yet — restart instances, scope editor permissions tighter, WAF-block PATCH bodies containing __proto__ / prototype / constructor paths.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-06-13"
+    },
+    {
+      "type": "news",
+      "title": "GPAC / MP4Box 2026-06-13 Multimedia-Parser Batch — 20+ CVEs (CVE-2025-52292 / CVE-2025-52293 / CVE-2025-55641 Through CVE-2025-55663) Across MP4 Codec / Metadata / DASH Segmentation Surfaces (Use-After-Free, Heap Overflow, NULL-Deref, OOB Read, Divide-By-Zero); openwall oss-security Primary Channel",
+      "threat_score": 5,
+      "cve": "CVE-2025-52292, CVE-2025-52293, CVE-2025-55641, CVE-2025-55642, CVE-2025-55643, CVE-2025-55644, CVE-2025-55645, CVE-2025-55647, CVE-2025-55648, CVE-2025-55649, CVE-2025-55650, CVE-2025-55651, CVE-2025-55657, CVE-2025-55659, CVE-2025-55660, CVE-2025-55661, CVE-2025-55662, CVE-2025-55663",
+      "cvss": null,
+      "affected_technology": "GPAC / MP4Box multimedia framework — used inside mail-scanning gateways, malware-sandbox feeders, transcoding pipelines, video-on-demand toolchains, document-rendering pipelines; the 2026-06-13 oss-security batch lists 20+ individual CVEs in MP4 codec / metadata / DASH segmentation / Opus / VP / SVG parsing — use-after-free and heap overflow paths (Opus/VP/SVG handlers) are credible memory-corruption primitives, the rest collapse the parser or leak adjacent heap; relevant only where an automated pipeline (anti-spam attachment unpacker, ad-tech transcoder, SaaS video ingestion, security sandbox file-handler) decodes attacker-controlled multimedia; continuation of MEMORY 2026-06-13 openwall-as-canonical-primary-source pattern, now extended to multimedia-parser library batch disclosures.",
+      "summary": "GPAC/MP4Box 20+ CVE batch (CVE-2025-52292/52293/55641-55663) — UAF + heap overflow + NULL-deref + OOB read + divide-by-zero in MP4 codec / Opus / VP / SVG / DASH parsing surfaces, disclosed 2026-06-13 via openwall oss-security; relevant to mail-scanning gateways, malware sandboxes, transcoding pipelines that decode attacker-controlled multimedia — upgrade GPAC to the openwall-cited tag, isolate the MP4Box process under seccomp / dedicated container.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-06-13"
+    },
+    {
+      "type": "news",
+      "title": "runc CVE-2026-41579 (CVSS 3.3) — Malicious Container Image With /dev Symlink Triggers Limited Host Filesystem Integrity Violation In setupPtmx / setupDevSymlinks; Patched In runc 1.3.6 / 1.4.3 / 1.5.0-rc.3; Affects Podman + containerd, Docker Mitigated By Top-Level ro Layer",
+      "threat_score": 4,
+      "cve": "CVE-2026-41579",
+      "cvss": 3.3,
+      "affected_technology": "runc OCI container runtime — versions < 1.3.6 / < 1.4.3 / < 1.5.0-rc.3; filepath.Join misuse inside rootfs setup lets a container image whose /dev is itself a symlink trick host setup into deleting ptmx files or creating hard-coded symlinks (core/fd/ptmx/stdin/stdout/stderr) on host paths; CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:L/A:N — symlinks limited to standard system paths, ptmx files resist unlinking, so impact is bounded; relevant to Podman + containerd + Kubernetes worker fleets; Docker effectively immune via its top-level ro overlay; user namespaces and SELinux/AppArmor further reduce blast radius; included as NEWS at lowest score because it lands in the same week as Portainer CVE-2026-33590 container-management privesc (2026-06-13) so container-management cluster is now the active patch theme.",
+      "summary": "runc CVE-2026-41579 (CVSS 3.3) — malicious container image with /dev as a symlink causes limited host symlink-create / ptmx-delete via setupPtmx/setupDevSymlinks; patched in runc 1.3.6 / 1.4.3 / 1.5.0-rc.3; Docker mitigated by top-level ro overlay; upgrade Podman/containerd hosts that pull public images, AppArmor/SELinux as defence in depth.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-06-13"
+    }
+  ],
+  "noted": [
+    {
+      "cve": "CVE-2026-9648",
+      "product": "crypton-x509-validation Haskell library < 1.9.1 (VU#862559) — does not enforce X.509 NameConstraints per RFC 5280, so a compromised intermediate CA can mint certificates outside its authorised scope; Ben Smyth reported, release 2026-06-11",
+      "summary": "crypton-x509-validation < 1.9.1 (CVE-2026-9648 / VU#862559) — Haskell PKI library skips X.509 NameConstraints enforcement, allowing a compromised intermediate CA to issue out-of-scope certificates; niche Haskell-stack scope, monitored because of historical fintech Haskell deployments."
+    },
+    {
+      "cve": "CVE-2026-47162",
+      "product": "Vim netrw plugin < 9.2.0495 — Vimscript code injection via crafted URL (CVSS 8.8); mostly desktop / client surface but server-admin tooling that uses Vim to view remote files (sshfs / scp:// via netrw) is theoretically vulnerable",
+      "summary": "Vim netrw < 9.2.0495 CVE-2026-47162 (CVSS 8.8) — Vimscript code injection via crafted URL; desktop/client surface, patch on convenient cycle; flag any server-admin workflow that opens scp:// or remote URLs through netrw."
+    },
+    {
+      "cve": "CVE-2025-66276",
+      "product": "QNAP QTS CVSS 9.8 — fixed in QTS 5.2.7.3256 build 20250913 and later; QuTS hero unaffected; NAS edge-device class",
+      "summary": "QNAP QTS CVE-2025-66276 (CVSS 9.8) — fixed in QTS 5.2.7.3256 build 20250913; QuTS hero unaffected; track for ransomware-affiliate uptake against internet-exposed QTS NAS instances."
+    },
+    {
+      "cve": "CVE-2026-6428",
+      "product": "Koha library-management system SQL injection in reports module (CVSS 7.6) — authenticated staff users can read arbitrary database tables; relevant to university and public-library deployments",
+      "summary": "Koha CVE-2026-6428 (CVSS 7.6) — SQLi in reports module accessible to authenticated staff users; library-sector deployment relevance, low-priority for general enterprise but track for higher-ed sector."
+    },
+    {
+      "cve": "CVE-2026-12174",
+      "product": "D-Link DCS-935L IP camera firmware 1.10.01 format-string vulnerability in HTTP handler (CVSS 8.8) — consumer camera, EOL firmware; calibration data point for IoT-botnet uptake",
+      "summary": "D-Link DCS-935L CVE-2026-12174 (CVSS 8.8) — format-string in HTTP handler, EOL consumer IP-camera firmware; tracked for IoT-botnet uptake calibration."
+    },
+    {
+      "cve": "CVE-2026-7256",
+      "product": "Zyxel WRE6505 range extender CGI command injection (CVSS 8.8) — adjacent-LAN attacker; consumer range extender; Zyxel has historical IoT-botnet uptake",
+      "summary": "Zyxel WRE6505 CVE-2026-7256 (CVSS 8.8) — CGI command injection by adjacent-LAN attacker; consumer range extender with historical Zyxel botnet uptake."
+    },
+    {
+      "cve": "CVE-2026-12183",
+      "product": "Nefteprodukttekhnika BUK TS-G Russian-market gas-station automation (CVSS 9.8) — improper auth in config module → unauthenticated administrative actions; ICS / niche geography",
+      "summary": "Nefteprodukttekhnika BUK TS-G CVE-2026-12183 (CVSS 9.8) — improper auth in config module of Russian-market gas-station automation; ICS niche-geography, out of Watchtower core."
+    },
+    {
+      "cve": "CVE-2026-5513",
+      "product": "Bookly WordPress plugin stored XSS via customer cookie sanitisation gap (CVSS 7.2); standard WP-plugin patch cadence",
+      "summary": "Bookly WP plugin CVE-2026-5513 (CVSS 7.2) — stored XSS via customer cookie sanitisation gap; standard WP-plugin patch cadence."
+    },
+    {
+      "cve": "None assigned",
+      "product": "US Government 2026-06-12 export-control directive to Anthropic blocking foreign-national access to Fable 5 + Mythos 5 — federal directive arrived 17:21 ET 2026-06-12 over a single jailbreak report (model induced to read code and identify flaws); Anthropic disputes the framing, says directive would halt all frontier-model deployments if applied uniformly; Claude Opus 4.8 unaffected (BleepingComputer 2026-06-13)",
+      "summary": "US Gov 2026-06-12 export-control directive on Anthropic Fable 5 + Mythos 5 over a single code-flaw-analysis jailbreak — Anthropic disputes, Opus 4.8 unaffected; policy/governance event continuing the Fable 5 NOTED line from 2026-06-13 and relevant because Fable 5 was the vetted offensive-research model security teams relied on."
+    },
+    {
+      "cve": "CVE-2026-20253",
+      "product": "Splunk Enterprise CVE-2026-20253 watchTowr Labs follow-up exploit chain (THN 2026-06-13) — chain published: /backup against attacker DB → /restore with crafted passfile → SQL execution at restore time → Python-script overwrite → RCE; refines the 2026-06-12 NEWS entry's missing-auth-to-file-write gloss",
+      "summary": "Splunk Enterprise CVE-2026-20253 watchTowr Labs exploit chain published (THN 2026-06-13) — /backup → /restore → SQL → Python overwrite → RCE; not a score-up UPDATE without KEV add or in-wild evidence, but concrete reproducibility lift for detection-rule writers."
+    },
+    {
+      "cve": "CVE-2026-35273",
+      "product": "Oracle PeopleSoft CVE-2026-35273 Mandiant attribution refinement (BleepingComputer 2026-06-13) — 68% of confirmed victims in higher-education sector, exfil infrastructure pinned to 176.120.22.24, custom MeshCentral RMM agents deployed post-exploit; continuation of 2026-06-12 UPDATE",
+      "summary": "Oracle PeopleSoft CVE-2026-35273 Mandiant IOC refinement (BC 2026-06-13) — 68% higher-ed victim concentration, exfil 176.120.22.24, MeshCentral RMM post-exploit; continuation of 06-12 UPDATE, not material enough for a second UPDATE."
+    },
+    {
+      "cve": "None assigned",
+      "product": "Microsoft Windows WUSA installer fix (BleepingComputer 2026-06-13) — Microsoft has fixed a Windows-Update-via-WUSA-from-network-share failure that disrupted June 2026 Patch Tuesday rollouts on a subset of estates that automate patch deployment via WUSA-from-share",
+      "summary": "Microsoft Windows WUSA-from-network-share installer fix (BC 2026-06-13) — addresses Patch Tuesday rollout failure for estates using WUSA-from-share automation; calibration data point for patch-program operations."
+    },
+    {
+      "cve": "Multiple",
+      "product": "Chrome 149 update (SecurityWeek 2026-06-12) — 28 CVEs including 12 use-after-free; browser surface out of Watchtower core scope, tracked alongside this week's web-fleet advisories for general client/fleet patch planning",
+      "summary": "Chrome 149 — 28 CVEs (12 UAF) patched 2026-06-12 (SW); browser/client scope out of core, tracked for fleet patch-planning continuity alongside this week's web-fleet advisories."
+    },
+    {
+      "cve": "None assigned",
+      "product": "npm 12 default-disable of dependency install scripts (SecurityWeek 2026-06-13) — announced behavioural change in npm 12 to prevent supply-chain script execution by default; toolchain shift relevant for engineering organisations planning post-2026 build hygiene, continues the npm-Trusted-Publishing / atomic-lockfile Wave-2 cluster from MEMORY 2026-06-06 / 06-13",
+      "summary": "npm 12 default-disable of dependency install scripts (SW 2026-06-13) — toolchain shift preventing supply-chain script execution; continues the npm-Trusted-Publishing / atomic-lockfile Wave-2 cluster, relevant for build-hygiene planning."
+    }
+  ],
+  "source_coverage": {
+    "total": 30,
+    "checked": 21,
+    "with_findings": 14,
+    "unreachable": [
+      "cisa.gov",
+      "cisa.gov/known-exploited-vulnerabilities-catalog",
+      "attackerkb.com",
+      "bugcrowd.com/disclosures",
+      "hackerone.com/hacktivity",
+      "cve.mitre.org",
+      "cve.org",
+      "packetstormsecurity.com",
+      "msrc.microsoft.com/blog"
+    ],
+    "degraded": [
+      "nvd.nist.gov",
+      "habr.com/ru/companies/tomhunter/articles",
+      "teletype.in/@cyberok",
+      "cert.gov.ua",
+      "seclists.org/fulldisclosure",
+      "googleprojectzero.blogspot.com"
+    ]
+  },
+  "full_report": "reports/2026/06/14/report.md"
+}

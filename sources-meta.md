@@ -2,35 +2,35 @@
 
 | Source | Findings | Noted | Empty | Last Hit |
 |--------|----------|-------|-------|----------|
-| bleepingcomputer.com | 24 | 29 | 1 | 2026-06-13 (+1 FINDING: Arch Linux AUR 400+ package compromise → CRITICAL NEWS; +1 FINDING: phpBB 10-year auth bypass → HIGH NEWS; +1 FINDING contribution: Ivanti CVE-2026-10520 BOD-26-04 first-invocation → UPDATE; +6 NOTED: Tchap 73K scope, Conti Ukrainian plea, Novo Nordisk breach, Maine portal, Sniper Dz, OnyxC2) |
-| thehackernews.com | 27 | 22 | 0 | 2026-06-13 (+1 FINDING: Velvet Ant Operation Highland → HIGH NEWS; +1 FINDING: Agentjacking → HIGH NEWS; +1 FINDING: LangGraph 3-CVE chain → MEDIUM NEWS; +2 NOTED: Sniper Dz INTERPOL Operation Ramz, AudiA6 Europol takedown, Google sues Outsider smishing) |
-| securityweek.com | 14 | 19 | 1 | 2026-06-13 (no new findings — Cal Water Iranian Handala + Anthropic Fable 5 jailbreak dispute + OnyxC2 stealer-as-a-service → all NOTED) |
-| krebsonsecurity.com | 2 | 2 | 6 | 2026-06-13 (no new digest-relevant content — Gentlemen RaaS deep-dive → NOTED) |
-| rapid7.com | 4 | 2 | 6 | 2026-06-13 (no new posts since 2026-06-12 — featured posts unchanged) |
-| schneier.com | 0 | 6 | 6 | 2026-06-13 (Squid blogging + Sanders AI fund + license-plate tracking + NSO/WhatsApp — calibration NOTED only) |
-| fortinet.com/blog/threat-research | 0 | 3 | 7 | 2026-06-13 (no new posts since 2026-06-11 AsyncRAT) |
-| securitylab.github.com | 0 | 2 | 8 | 2026-06-13 (+1 NOTED: 7-Zip GHSL-2026-115→122 + 140 / CVE-2026-48095 batch + Chatwoot SQLi + Apache Doris) |
-| github.com/search (advisories) | 1 | 2 | 7 | 2026-06-13 (most-recently-updated CVE-2026 repos surfaced: CVE-2026-31802 npm tar PoC + Netlogon CVE-2026-41089 PoC additional implementations — both noted) |
-| seclists.org/fulldisclosure | 1 | 4 | 7 | 2026-06-13 (still no new posts since 2026-06-08 — DEGRADED) |
-| openwall.com/lists/oss-security | 7 | 33 | 1 | 2026-06-13 (+1 FINDING: Squid CVE-2026-47729 + CVE-2026-50012 → HIGH NEWS; +1 FINDING: Portainer CVE-2026-33590 → MEDIUM NEWS; +1 NOTED: Crypt::PBKDF2 Perl batch CVE-2017-20240/CVE-2026-9638/CVE-2026-9641) |
-| kb.cert.org/vuls | 0 | 8 | 5 | 2026-06-13 (no new VU# since 2026-06-11 VU#862559 — empty) |
-| opencve.io | 0 | 12 | 5 | 2026-06-13 (no high-impact 2026-06-12/13 entries beyond ApostropheCMS [already noted 2026-05-16] — Kitty / Qiskit / Avast / Discourse batch all out-of-scope) |
-| dbugs.ptsecurity.com | 1 | 20 | 2 | 2026-06-13 (+4 NOTED: Aqara cluster CVE-2026-50086/50090/50084/50091 incl. IAM/SSO Gateway perfect-10; Amasty Order Attributes CVE-2026-53787 + JMESPath.Php CVE-2026-54133 CVSS 9.8 pair; Yarbo Mobile App CVE-2026-10557 CVSS 9.8) |
-| github.com/0xMarcio/cve | 3 | 4 | 6 | 2026-06-13 (+2 NOTED: CVE-2026-31802 npm tar path-traversal PoC; CVE-2026-41089 Netlogon CLDAP RCE PoC additional implementations) |
-| blog.cloudflare.com/tag/security | 0 | 0 | 10 | 2026-06-13 (still silent for 06-12/13) |
-| avleonov.com | 0 | 0 | 10 | 2026-06-13 (no new posts) |
-| cisa.gov (incl. /KEV) | 0 | 0 | 10 | 2026-06-13 (403 continues; Ivanti CVE-2026-10520 KEV-add 2026-06-11 surfaced via BleepingComputer + SecurityWeek relay — this time the relay was timely enough to inform the same-week 3-day BOD-26-04 deadline) |
-| attackerkb.com | 0 | 0 | 8 | — (403 Forbidden persistent) |
-| cve.org / cve.mitre.org | 0 | 0 | 8 | — (JS-required, no content via WebFetch) |
-| googleprojectzero.blogspot.com | 0 | 0 | 8 | — (redirects to projectzero.google; no content) |
-| msrc.microsoft.com/blog | 1 | 1 | 9 | 2026-06-13 (homepage still nav-only after redirect — persistent) |
-| hackerone.com/hacktivity | 0 | 0 | 9 | — (JS-required) |
-| bugcrowd.com/disclosures | 0 | 0 | 9 | — (404 persistent since 2026-04 — flag for SOURCES.md drop in sources-review-2026-06.md) |
-| packetstormsecurity.com | 0 | 0 | 9 | — (degraded — homepage / files routes return ToS only) |
-| nvd.nist.gov | 0 | 0 | 9 | 2026-06-13 (degraded — search page returns 2026-06-09→11 entries only; opencve.io / dbugs.ptsecurity.com cover gap) |
-| habr.com/ru/companies/tomhunter | 0 | 0 | 9 | — (degraded — stale through 2026-03-06, ~3.3-month silence — escalate for drop in sources-review-2026-06.md) |
-| teletype.in/@cyberok | 0 | 0 | 9 | — (degraded — stale through 2026-02-04, ~4.3-month silence — escalate for drop) |
-| cert.gov.ua | 0 | 0 | 9 | — (degraded — empty content) |
+| bleepingcomputer.com | 24 | 32 | 1 | 2026-06-14 (no new FINDINGS; +3 NOTED: Anthropic Fable 5 + Mythos 5 export-control directive, Windows WUSA-from-share installer fix; "Chinese hackers hijack auth flow" = Velvet Ant continuation already-NEWS'd 06-13) |
+| thehackernews.com | 27 | 23 | 0 | 2026-06-14 (no new FINDINGS; +1 NOTED: Splunk CVE-2026-20253 watchTowr Labs chain follow-up — backup/restore/passfile/SQL/Python-overwrite chain refines 06-12 NEWS but no KEV add → not score-up UPDATE) |
+| securityweek.com | 14 | 21 | 1 | 2026-06-14 (no new FINDINGS; +2 NOTED: Chrome 149 28-CVE update, npm 12 default-disable install scripts) |
+| krebsonsecurity.com | 2 | 2 | 7 | 2026-06-14 (no new posts since 2026-06-10 Gentlemen RaaS) |
+| rapid7.com | 4 | 2 | 7 | 2026-06-14 (degraded — old content only, no 06-13/14 specific posts) |
+| schneier.com | 0 | 7 | 6 | 2026-06-14 (+1 NOTED-tracked: Friday squid blog 06-12 + Sanders AI essay — calibration only) |
+| fortinet.com/blog/threat-research | 0 | 3 | 8 | 2026-06-14 (no new posts since 2026-06-11 AsyncRAT) |
+| securitylab.github.com | 0 | 2 | 9 | 2026-06-14 (no new advisories beyond 06-13 batch) |
+| github.com/search (advisories) | 1 | 2 | 7 | 2026-06-14 (newest CVE-2026 PoC repos: ekomsSavior PeopleSoft + Defacto-ridgepole254 cPanel + Dullpurple-sloop726 Copy-Fail + Sonisi5085 XNU UAF — all continuation of already-covered CVEs) |
+| seclists.org/fulldisclosure | 1 | 4 | 8 | 2026-06-14 (still no new posts since 2026-06-08 — DEGRADED continues) |
+| openwall.com/lists/oss-security | 9 | 33 | 1 | 2026-06-14 (+2 FINDINGS: GPAC/MP4Box 20-CVE batch → MEDIUM NEWS; runc CVE-2026-41579 /dev-symlink → MEDIUM NEWS; 06-14 explicitly empty per archive) |
+| kb.cert.org/vuls | 0 | 9 | 5 | 2026-06-14 (+1 NOTED: VU#862559 / CVE-2026-9648 crypton-x509-validation Haskell NameConstraints) |
+| opencve.io | 2 | 19 | 5 | 2026-06-14 (+2 FINDINGS: CVE-2026-53819 OpenClaw .env Homebrew RCE → HIGH NEWS; CVE-2026-53609 ApostropheCMS prototype pollution → HIGH NEWS; +7 NOTED: CVE-2026-47162 Vim netrw, CVE-2025-66276 QNAP, CVE-2026-6428 Koha SQLi, CVE-2026-12174 D-Link DCS-935L, CVE-2026-7256 Zyxel WRE6505, CVE-2026-12183 Nefteprodukttekhnika ICS, CVE-2026-5513 Bookly WP) |
+| dbugs.ptsecurity.com | 1 | 20 | 3 | 2026-06-14 (landing only — per-CVE drilldown queue empty for 06-14) |
+| github.com/0xMarcio/cve | 3 | 4 | 7 | 2026-06-14 (commits page empty — degraded; tracker tickets still functional, no NEW PoC entries) |
+| blog.cloudflare.com/tag/security | 0 | 0 | 11 | 2026-06-14 (still silent — June posts only on 06-08 and 06-09) |
+| avleonov.com | 0 | 0 | 11 | 2026-06-14 (no new posts since 06-05 PAN-OS) |
+| cisa.gov (incl. /KEV) | 0 | 0 | 11 | 2026-06-14 (403 continues; news-events fallback URL ALSO 403 today — both probe paths failed; no KEV adds visible in mainstream relay 06-13/14) |
+| attackerkb.com | 0 | 0 | 9 | — (403 Forbidden persistent) |
+| cve.org / cve.mitre.org | 0 | 0 | 9 | — (JS-required, no content via WebFetch) |
+| googleprojectzero.blogspot.com | 0 | 0 | 9 | — (redirects to projectzero.google; no June 2026 content) |
+| msrc.microsoft.com/blog | 1 | 1 | 10 | 2026-06-14 (homepage still nav-only after redirect — persistent) |
+| hackerone.com/hacktivity | 0 | 0 | 10 | — (JS-required) |
+| bugcrowd.com/disclosures | 0 | 0 | 10 | — (404 persistent since 2026-04 — flag for SOURCES.md drop in sources-review-2026-06.md) |
+| packetstormsecurity.com | 0 | 0 | 10 | — (degraded — homepage / files routes return ToS only) |
+| nvd.nist.gov | 0 | 1 | 9 | 2026-06-14 (+1 NOTED contribution — CVE-2025-66276 QNAP surfaced via homepage top-20; opencve.io / dbugs.ptsecurity.com still cover gap) |
+| habr.com/ru/companies/tomhunter | 0 | 0 | 10 | — (degraded — stale through 2026-03-06, ~3.3-month silence — escalate for drop in sources-review-2026-06.md) |
+| teletype.in/@cyberok | 0 | 0 | 10 | — (degraded — stale through 2026-02-04, ~4.3-month silence — escalate for drop) |
+| cert.gov.ua | 0 | 0 | 10 | — (degraded — empty content) |
 
 ## Score Calibration
 *(Updated monthly)*
