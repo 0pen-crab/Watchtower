@@ -1,0 +1,142 @@
+{
+  "date": "2026-06-15",
+  "findings": [
+    {
+      "type": "news",
+      "title": "LiteSpeed cPanel Plugin CVE-2026-54420 (CVSS 8.5) — Symlink-Following Privilege Escalation To Root On CloudLinux/CageFS Shared Hosting, Actively Exploited In May 2026, CVE Formally Assigned 2026-06-14, Patched In Plugin v2.4.8 / WHM v5.3.2.1; Reported By Namecheap",
+      "threat_score": 7,
+      "cve": "CVE-2026-54420",
+      "cvss": 8.5,
+      "affected_technology": "LiteSpeed cPanel user-end plugin < 2.4.8 (LiteSpeed WHM Plugin < 5.3.2.0) on CloudLinux/CageFS shared hosting — CWE-61 UNIX Symbolic Link Following lets a tenant with FTP or web-shell access escalate to root on the shared host via attacker-controlled symlinks during the cert-generation + package-sizing API path (generateEcCert → packageUserSize). LiteSpeed vendor blog of 2026-06-01 already flagged active in-wild exploitation with a specific call pattern (chained generateEcCert then packageUserSize, 7–10 concurrent calls per attempt, single source IP); the CVE was only formally assigned on 2026-06-14 when the GitHub Security Advisory GHSA-3g44-c4qc-cxm8 was published. Distinct from the 2026-05-28 LiteSpeed cPanel chain CVE-2026-48172 (KEV-listed, lsws.redisAble any-authenticated-cPanel-user-to-root) — second LiteSpeed cPanel plugin shared-host-tenant-escape CVE in 18 days, structural pattern not one-off. Reported by Namecheap.",
+      "summary": "LiteSpeed cPanel plugin CVE-2026-54420 (CVSS 8.5) — symlink-following lets a CloudLinux/CageFS tenant escalate to host root via chained generateEcCert → packageUserSize calls, actively exploited in May 2026, CVE formally assigned 2026-06-14; patch to plugin v2.4.8 / WHM v5.3.2.1, treat as second LiteSpeed cPanel host-escape CVE in 18 days (paired with KEV CVE-2026-48172).",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-06-14"
+    },
+    {
+      "type": "news",
+      "title": "Google genai-toolbox MCP Server CVE-2026-11624 (CVSS v4 9.4) — Missing Origin Header Validation Yields DNS Rebinding Compromise Of MCP Server Cross-Origin From Operator's Browser; Patched In v0.25.0 With Two New --allowed-hosts / --allowed-origins Startup Flags Still Defaulting To * (Permissive); 7th MCP-Server Critical CVE Since April 2026",
+      "threat_score": 6,
+      "cve": "CVE-2026-11624",
+      "cvss": 9.4,
+      "affected_technology": "Google genai-toolbox MCP server (googleapis/genai-toolbox) < v0.25.0 — exposes Cloud SQL / BigQuery / Looker / Snowflake / PostgreSQL / Trino / Spanner sources as MCP tools to AI agents (Claude Code, Cursor, IDE assistants). CWE-346 Origin Validation Error: HTTP listener does not validate the Origin header on incoming connections, so an attacker who tricks the operator into visiting a malicious page DNS-rebinds back at the locally-listening MCP server and invokes any registered MCP tool (DB queries, file writes, credential exposure) under operator identity. Fix in v0.25.0 introduces --allowed-hosts + --allowed-origins startup flags both defaulting to * with only a startup-warning, so upgrade alone is insufficient — operators must explicitly set non-default allowlists. Continues the MCP-server attack-surface pattern (MEMORY: 6+ MCP server CVEs in 35 days — mcp-atlassian / nginx-ui / OpenHarness / chatgpt-mcp-server / Branch); this is the 7th critical MCP-server CVE since April 2026 and the first with Google's name attached. Discovered by Jonathan Leitschuh.",
+      "summary": "Google genai-toolbox MCP server CVE-2026-11624 (CVSS v4 9.4) — missing Origin header validation lets attacker DNS-rebind to a localhost-listening MCP server and execute MCP tools (DB queries, file writes) under operator identity; patched in v0.25.0 with new --allowed-hosts / --allowed-origins flags that still default to * — upgrade + explicit allowlists both required, 7th critical MCP-server CVE since April 2026.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-06-13"
+    },
+    {
+      "type": "news",
+      "title": "Google Cloud Vertex AI Python SDK CVE-2026-2472 (CVSS v4 8.6) — Stored XSS In _genai/_evals_visualization Component Executes In Operator's Jupyter / Colab Notebook When Rendering Crafted Model-Evaluation Or Dataset JSON; Affects google-cloud-aiplatform 1.98.0 → 1.130.x, Fixed In 1.131.0; PoC Public On GitHub",
+      "threat_score": 5,
+      "cve": "CVE-2026-2472",
+      "cvss": 8.6,
+      "affected_technology": "Google Cloud Vertex AI Python SDK (google-cloud-aiplatform) 1.98.0–1.130.x — _genai/_evals_visualization component renders model-evaluation results and dataset JSON inside Jupyter / Colab / Vertex AI Workbench notebooks without escaping HTML (CWE-79). An attacker who controls evaluation output (poisoned model card, malicious dataset, third-party eval result imported into a notebook) injects JavaScript that executes in the operator's notebook session, leaking GOOGLE_APPLICATION_CREDENTIALS, OAuth refresh tokens, project metadata, and any kernel-local secrets; cross-tab pivot via same browser origin. Fixed in 1.131.0 per Google Cloud Support Bulletin gcp-2026-011. PoC publicly available on GitHub (JoshuaProvoste/CVE-2026-2472-Vertex-AI-SDK-Google-Cloud). Continues the MEMORY 2026-05-09 ClaudeBleed / Mini Shai-Hulud SessionStart / AI-agent-control attack-surface cluster — eval-output as injection point is the new twist.",
+      "summary": "Google Cloud Vertex AI Python SDK CVE-2026-2472 (CVSS v4 8.6) — stored XSS in _genai/_evals_visualization executes in Jupyter / Colab when rendering crafted eval JSON, leaks GOOGLE_APPLICATION_CREDENTIALS + OAuth tokens; affects google-cloud-aiplatform 1.98.0–1.130.x, fixed in 1.131.0; public PoC on GitHub.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-06-13"
+    },
+    {
+      "type": "news",
+      "title": "KiviCare WordPress Plugin CVE-2026-2991 (CVSS 7.3) — patientSocialLogin() Accepts Any Email + Arbitrary Access Token Without Verifying With Social Provider, Authenticating Attacker As Any Patient; Auth Cookie Set Before Role Check So Admin Email Yields Admin Session; Affects KiviCare ≤ 4.1.2; PoC Public On GitHub",
+      "threat_score": 5,
+      "cve": "CVE-2026-2991",
+      "cvss": 7.3,
+      "affected_technology": "KiviCare clinic / patient-management WordPress plugin ≤ 4.1.2 — patientSocialLogin() REST endpoint authenticates on (email, access_token) pairs without verifying the access_token with the claimed social provider, so any unauthenticated attacker submits a patient email plus any token string and is logged in as that patient with full access to medical records, appointments, prescriptions, billing. Worse, the WordPress auth cookie is set before the user role is checked — submitting an administrator email yields an authenticated administrator session. CWE-287 Improper Authentication. PoC publicly available. Healthcare-sector WordPress deployments (clinics, private practice front-ends, telehealth) — high HIPAA / GDPR-health-data sensitivity even at modest install counts. NVD notes the CVE is not being prioritized for NVD enrichment — Wordfence is the canonical technical source.",
+      "summary": "KiviCare WordPress plugin ≤ 4.1.2 CVE-2026-2991 (CVSS 7.3) — patientSocialLogin() accepts any email + arbitrary access token, logs attacker in as any patient including admin (cookie set before role check), exposes HIPAA-class medical/billing records; PoC public — restrict the kc/v1/users/social-login REST endpoint, upgrade once vendor patch ships.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-06-13"
+    }
+  ],
+  "noted": [
+    {
+      "cve": "CVE-2026-11526",
+      "product": "Perl GD < 2.86 — OS command injection and file overwrite via 2-arg open() of filename argument; primary disclosure on openwall oss-security 2026-06-14 by Paul Johnson; CGI-era Perl image-processing module, niche",
+      "summary": "Perl GD < 2.86 CVE-2026-11526 — OS command injection + file overwrite via 2-arg open(), niche CGI-era Perl image module; disclosed openwall oss-security 2026-06-14."
+    },
+    {
+      "cve": "CVE-2026-11527",
+      "product": "Perl Config::IniFiles < 3.001000 — OS command injection and file overwrite via 2-arg open(); companion to CVE-2026-11526, same Perl 2-arg-open() footgun; niche Perl-stack scope",
+      "summary": "Perl Config::IniFiles < 3.001000 CVE-2026-11527 — OS command injection via 2-arg open(), companion to CVE-2026-11526; same Perl footgun, niche Perl-stack scope."
+    },
+    {
+      "cve": "CVE-2026-9641",
+      "product": "Perl Crypt::PBKDF2 < 0.261630 — weak default algorithm and iteration count; oss-security thread continued 2026-06-14 with Jacob Bachmeyer + Peter Gutmann + Harry Sintonen; already in 2026-06-13 NEWS, continued discussion only — no material change",
+      "summary": "Perl Crypt::PBKDF2 < 0.261630 CVE-2026-9641 — oss-security thread continued 2026-06-14 with Bachmeyer/Gutmann/Sintonen comments; already in 06-13 NEWS, no material change."
+    },
+    {
+      "cve": "CVE-2026-54421",
+      "product": "OpenStack Ironic ≤ 35.0.1 (CVSS 6.8) — PATCH to volume properties returns unredacted iSCSI credentials in response; POST path unaffected; bare-metal-provisioning operators only",
+      "summary": "OpenStack Ironic ≤ 35.0.1 CVE-2026-54421 (CVSS 6.8) — PATCH on volume properties leaks unredacted iSCSI creds, POST path unaffected; bare-metal-provisioning operators only."
+    },
+    {
+      "cve": "CVE-2026-54411",
+      "product": "Linux-PAM ≤ 1.7.2 pam_userdb — observable timing discrepancy enables password recovery via timing side-channel; classic but real; low-priority for general fleet, relevant where pam_userdb is the active PAM module",
+      "summary": "Linux-PAM ≤ 1.7.2 CVE-2026-54411 — pam_userdb observable timing discrepancy enables password recovery; relevant only where pam_userdb is the active PAM module."
+    },
+    {
+      "cve": "CVE-2026-54410",
+      "product": "nanoMODBUS v1.23.0 (CVSS 8.6) — off-by-one buffer overflow in recv_msg_header(); ICS / OT scope, niche library",
+      "summary": "nanoMODBUS v1.23.0 CVE-2026-54410 (CVSS 8.6) — off-by-one in recv_msg_header(); ICS/OT niche library scope."
+    },
+    {
+      "cve": "CVE-2026-54412",
+      "product": "LiamBindle MQTT-C v1.1.6 (CVSS 8.2) — heap-based OOB read + integer underflow in MQTT handler; embedded MQTT client library",
+      "summary": "LiamBindle MQTT-C v1.1.6 CVE-2026-54412 (CVSS 8.2) — heap OOB read + integer underflow; embedded MQTT client library."
+    },
+    {
+      "cve": "CVE-2026-54413",
+      "product": "driftregion iso14229 v0.9.0 (CVSS 8.2) — integer underflow in UDS security access handler; UDS (vehicle CAN-bus) automotive scope, out of Watchtower core",
+      "summary": "driftregion iso14229 v0.9.0 CVE-2026-54413 (CVSS 8.2) — integer underflow in UDS security access; vehicle CAN-bus automotive scope, out of Watchtower core."
+    },
+    {
+      "cve": "None assigned",
+      "product": "FBI / Black Lotus Labs / Google joint takedown of Outsider Enterprise Chinese phishing-as-a-service (BleepingComputer 2026-06-14) — 9k fake sites, 1M+ URLs, 3.8M cards stolen, $1.9B losses, 2.5M SMS/month in May; multi-server seizures + Shopify storefront + Telegram bot + ~$100k USDT; no CVE",
+      "summary": "FBI / Black Lotus Labs / Google Outsider Enterprise takedown (BC 2026-06-14) — 9k fake sites, 1M+ URLs, 3.8M cards, $1.9B losses, 2.5M SMS/month; operational takedown, no CVE; calibration data point for SMS-phishing-infrastructure scale."
+    },
+    {
+      "cve": "CVE-2026-31431",
+      "product": "Linux kernel page-cache LPE (Copy Fail) — fresh Rust-PoC dropped 2026-06-14 in github.com/0xMarcio/cve repo; already in 05-16 + 05-19 NEWS + 06-04 UPDATE (K8s container-escape primitive within 14 days); not a fresh material change at score level — escalation watch only",
+      "summary": "Linux kernel CVE-2026-31431 (Copy Fail) — fresh Rust-PoC in github.com/0xMarcio/cve 2026-06-14; already in 05-16/05-19 NEWS + 06-04 UPDATE; no fresh material change, escalation watch."
+    },
+    {
+      "cve": "CVE-2026-41089",
+      "product": "Windows Netlogon CLDAP stack buffer overflow CVSS 9.8 — fresh PoC drop in github.com/0xMarcio/cve 2026-06-14; already in 05-13 NEWS + 06-02/06-03/06-13 UPDATE chain (active exploitation confirmed); PoC release consistent with existing posture, no score change",
+      "summary": "Windows Netlogon CVE-2026-41089 — fresh PoC drop in github.com/0xMarcio/cve 2026-06-14; already in 05-13 NEWS + 06-02/06-03/06-13 UPDATE chain, no score change."
+    },
+    {
+      "cve": "CVE-2026-9109",
+      "product": "GPTranslate WordPress plugin (High severity) — AI translation plugin vulnerability disclosed via GitHub Security Advisory 2026-06-13/14; tracking as part of AI-WP-plugin cluster; technical detail still pending",
+      "summary": "GPTranslate WordPress plugin CVE-2026-9109 — AI translation plugin vulnerability (High), technical detail pending; tracked as part of AI-WP-plugin cluster."
+    },
+    {
+      "cve": "CVE-2025-15546",
+      "product": "Iptanus File Upload WordPress < 5.1.7 — improper file handling; classic WP file-upload vuln class; standard patch cadence",
+      "summary": "Iptanus File Upload WP < 5.1.7 CVE-2025-15546 — improper file handling, classic WP file-upload class; standard patch cadence."
+    }
+  ],
+  "source_coverage": {
+    "total": 30,
+    "checked": 22,
+    "with_findings": 12,
+    "unreachable": [
+      "cisa.gov",
+      "cisa.gov/known-exploited-vulnerabilities-catalog",
+      "attackerkb.com",
+      "bugcrowd.com/disclosures",
+      "hackerone.com/hacktivity",
+      "msrc.microsoft.com/blog",
+      "cert.gov.ua",
+      "cve.mitre.org"
+    ],
+    "degraded": [
+      "rapid7.com",
+      "seclists.org/fulldisclosure",
+      "googleprojectzero.blogspot.com",
+      "nvd.nist.gov",
+      "packetstormsecurity.com",
+      "habr.com/ru/companies/tomhunter/articles",
+      "teletype.in/@cyberok",
+      "cve.org"
+    ]
+  },
+  "full_report": "reports/2026/06/15/report.md"
+}
