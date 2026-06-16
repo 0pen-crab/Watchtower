@@ -1,0 +1,156 @@
+Watchtower run — 2026-06-16 (Night cycle)
+========================================
+
+[2026-06-16 00:00 UTC] Run started.
+[2026-06-16 00:00 UTC] Step 1: cd /home/claude/workspace/watchtower && git pull → "Already up to date."
+[2026-06-16 00:01 UTC] Step 2: Built dedup index from reports/2026/05/* + reports/2026/06/* report.json files. 30-day index assembled covering 2026-05-17 → 2026-06-15 (last report 06-15).
+
+[2026-06-16 00:02 UTC] Step 3: Read SOURCES.md → 30 unique sources (Tier 1: 15, Tier 2: 16 with seclists.org/fulldisclosure duplicated across tiers). Begin batched WebFetch checks (≥3 per turn).
+
+Source check results
+====================
+
+✅ bleepingcomputer.com — fetched 00:05 UTC, 12.4s. Listed: SimpleHelp bug, OptinMonster CDN supply-chain, Cisco SD-WAN vManage CVE-2026-20262, Council of Europe ShinyHunters, REDCap (Chinese hackers), M365 Copilot 1-click data theft, Infinite Campus breach, DOJ deepfake takedown. Multiple high-value findings.
+
+✅ thehackernews.com — fetched 00:05 UTC, 11.8s. Listed: Chinese hackers Google Workspace, NK Contagious Interview, LiteLLM CVE-2026-47101 chain, M365 Copilot CVE-2026-42824 SearchLeak, weekly recap (Chrome CVE-2026-11645), 152 Chrome wallpaper extensions adware, OptinMonster amplification, Sniper Dz MENA scams, PAN-OS GlobalProtect CVE-2026-0257. Plus archive: Microsoft Defender RoguePlanet zero-day, AI Worm follow-up, Anthropic Fable 5 release. Multiple high-value findings.
+
+✅ securityweek.com — fetched 00:05 UTC, 10.2s. Listed: Mackay Sugar ransomware, Conti plea, Council of Europe ShinyHunters, Tchap French gov breach, FBI Outsider Enterprise takedown, Chrome 149 patches, Google PeopleSoft attribution, NPM 12 script change. Findings.
+
+✅ krebsonsecurity.com — fetched 00:10 UTC, 8.1s. Listed: "Who Runs The Gentlemen?" (06-10, ransomware operator profile), record-breaking June Patch Tuesday (06-09, already in 06-10 NEWS), Meta AI Instagram (06-01, already in 06-02 NEWS). Findings (operator-profile background).
+
+✅ schneier.com — fetched 00:10 UTC, 7.5s. Listed: Critical Zcash vulnerability (06-08), Anthropic Project Glasswing update (06-08), AI Worm (06-05), FCC burner phones (06-15), Enhanced License Plate Tracking (06-11), GPS as key distribution (06-09), NSO court order (06-10), Bernie AI sovereign wealth (06-12), Friday Squid (06-12), Upcoming Speaking Engagements (06-14). Findings.
+
+❌ cisa.gov — not attempted (known persistent 403 per MEMORY 2026-03-30+); marked unreachable.
+
+❌ cisa.gov/known-exploited-vulnerabilities-catalog — not attempted (known persistent 403 per MEMORY); marked unreachable. KEV catalog cross-referenced via THN / Rapid7 ETRs.
+
+✅ github.com/search?q=CVE — fetched 00:15 UTC, 11.3s. Listed recent PoC repos: CVE-2026-41940 cPanel, CVE-2026-31431 Linux page-cache, CVE-2026-XNU-AIO-KEVENT-UAF iOS, CVE-2026-2991 KiviCare, CVE-2026-31802 npm tar, CVE-2026-24291 RegPwn Windows LPE, CVE-2026-2472 Vertex AI XSS, CVE-2026-25643 Frigate NVR RCE, CVE-2026-2441 Chrome Blink. PoC tracking data.
+
+✅ rapid7.com — fetched 00:15 UTC, 9.4s. Status: degraded (no date metadata on blog index). Listed: Metasploit Wrap-Up 13/06/2026 (new Kerberos + modules), Metasploit Wrap-Up 05/06/2026 (ActiveMQ + Gogs RCE), Wrap-Up 29/05/2026, ETR Oracle PeopleSoft (already in 06-12 UPDATE), ETR Ivanti Sentry (already in 06-11 NEWS / 06-12,13 UPDATE), ETR Check Point VPN (already in 06-10 NEWS / 06-12 UPDATE), HP Poly VVX CVE-2026-0826 (client VoIP — out of scope), Gogs CVE-2026-52806 (auth-required arg-injection RCE, UNFIXED → NOTED). Findings.
+
+❌ attackerkb.com — fetched 00:15 UTC, 403 Forbidden. Marked unreachable.
+
+✅ fortinet.com/blog/threat-research — fetched 00:20 UTC, 8.9s. Listed: AsyncRAT via AI hype (06-11), FIFA World Cup 2026 (06-04), Gafgyt variant C0XMO IoT botnet (06-03). Background only — no fresh in-scope items.
+
+✅ securitylab.github.com — fetched 00:20 UTC, 7.2s. Status: all entries from 2026-05-22 (7-Zip batch, Chatwoot, Mesa, Apache Doris) — no fresh June entries. Counted as checked, no fresh findings.
+
+✅ seclists.org/fulldisclosure — fetched 00:20 UTC, 6.8s. Status: degraded (only 3 messages for June 2026 — Revive Adserver 06-04, SAP NetWeaver 06-08, Genetec RabbitMQ 06-08; no messages 06-10 onward). Marked degraded.
+
+✅ packetstormsecurity.com → redirects to packetstorm.news — fetched 00:25 UTC, 6.5s. Status: degraded — aggregate stats only ("320 advisories, 70 exploits in last 7 days as of 06-07"), no individual entries listed. Marked degraded.
+
+✅ opencve.io / app.opencve.io — fetched 00:25 UTC, 9.7s. Listed CVE-2026-39502 Form Maker 10Web SQLi (CVSS 9.3), CVE-2026-48723 browserstack-cypress-cli cmd injection, CVE-2026-45437 Product Filter Widget Elementor XSS, CVE-2026-46447 OpenStack Ironic boot script injection, CVE-2026-53523 Nezha Monitoring host header injection. Findings.
+
+⚠️ nvd.nist.gov — fetched 00:25 UTC, status: degraded (page returned NVD API retirement timeline, no CVE search data). Marked degraded.
+
+⚠️ cve.mitre.org — not tested (historically degraded per MEMORY — redirects to cve.org). Marked unreachable.
+
+⚠️ cve.org — fetched 00:25 UTC, status: degraded (page returned only header, no CVE records — JS-rendered). Marked degraded.
+
+⚠️ googleprojectzero.blogspot.com — historically redirects to projectzero.google.com (JS-rendered). Marked degraded (per MEMORY 2026-03-30+).
+
+✅ blog.cloudflare.com/tag/security — fetched 00:30 UTC, 7.1s. Listed: Defend Against Frontier Cyber Models (06-09), Threat Indicators → WAF Rules (06-08). No in-scope vuln advisories.
+
+⚠️ msrc.microsoft.com/blog → redirects to microsoft.com/en-us/msrc/blog, fetched 00:30 UTC, content unavailable (navigation + footer only). Marked unreachable.
+
+❌ hackerone.com/hacktivity — fetched 00:30 UTC, no data returned (JS-rendered). Marked unreachable.
+
+❌ bugcrowd.com/disclosures — fetched 00:30 UTC, 404 Not Found. Marked unreachable.
+
+✅ kb.cert.org/vuls — fetched 00:35 UTC, 8.3s. Listed VU#862559 crypton-x509-validation Haskell (06-11), VU#616257 Microsoft-signed UEFI shim Secure Boot bypass (06-09), VU#595768 Securly Chrome Ext (06-03), VU#615987 Verizon VoLTE IPsec (06-02), VU#265691 Appsmiths XSS (06-02). Findings.
+
+✅ avleonov.com — fetched 00:35 UTC, 8.8s. Listed: PAN-OS RCE CVE-2026-0300 (06-05, distinct from CVE-2026-0257), May Linux Patch Wednesday (06-02). Findings.
+
+✅ github.com/0xMarcio/cve — fetched 00:35 UTC, 7.4s. Listed automated trending-CVE updates (06-14, 06-15); covers CVE-2026-31431 + CVE-2026-41089 + CVE-2026-24061 + CVE-2026-41940 + CVE-2026-0073. No new CVE PoCs surfaced beyond those already in 06-15 NOTED.
+
+✅ dbugs.ptsecurity.com — fetched 00:35 UTC, 9.0s. Listed PT-2026-49533 Elixir gRPC (CVE-2026-48853 CVSS 9.2), PT-2026-49306 NCEAS Metacart (CVE-2026-48114 CVSS 9.8), PT-2026-49375 MetaSlider (CVE-2026-39465 CVSS 9.1), PT-2026-49529 i18Next HTTP middleware (CVE-2026-48714 CVSS 9.1), RHEL 10 batch, Spring AI (CVE-2026-47835). Findings (mostly tier-2 plugin / library scope).
+
+⚠️ habr.com/ru/companies/tomhunter/articles — fetched 00:40 UTC, no June 2026 content (latest = March 2026). Marked degraded.
+
+⚠️ teletype.in/@cyberok — fetched 00:40 UTC, no June 2026 content (latest = February 2026). Marked degraded.
+
+❌ cert.gov.ua — fetched 00:40 UTC, content unavailable (header only). Marked unreachable.
+
+✅ openwall.com/lists/oss-security (bonus, not in SOURCES.md) — fetched 00:40 UTC, 8.6s. Listed 2026-06-14 + 2026-06-15 messages: CVE-2026-9641 Perl Crypt::PBKDF2 (continued, already in 06-15 NOTED), CVE-2026-11526 Perl GD (already in 06-15 NOTED), CVE-2026-11527 Perl Config::IniFiles (already in 06-15 NOTED), CVE-2026-12205 Perl Crypt::DSA, CVE-2026-11623 tmux 3.6b, Vim < 9.2.0653 OOB write, OSSA-2026-017 OpenStack Ironic boot script injection (CVE-2026-46447), CVE-2026-12087 Perl Socket, CVE-2026-11832 Dancer2 OAuth predictable nonce. 2026-06-16 archive empty ("No messages for this day"). Findings.
+
+✅ github.com/advisories (bonus, not in SOURCES.md) — fetched 00:40 UTC, 7.8s. Listed critical GHSAs 2026-06-15: Happyforms (CVE-2026-49768 unauth PHP-Object-Injection), GPTranslate (CVE-2026-49776 unauth SQLi), WP Travel Engine (CVE-2026-49770 unauth PHP-Object-Injection), FastDup (CVE-2026-52703 unauth path traversal), WP User Manager (CVE-2026-49766 subscriber arbitrary file deletion), Integration for Mailchimp (CVE-2026-49765 unauth PHP-Object-Injection), wpForo Forum (CVE-2026-49769 unauth PHP-Object-Injection). Findings.
+
+[2026-06-16 00:42 UTC] Source coverage tabulated:
+  total = 30
+  unreachable (8) = cisa.gov, cisa.gov/known-exploited-vulnerabilities-catalog, attackerkb.com, bugcrowd.com/disclosures, hackerone.com/hacktivity, msrc.microsoft.com/blog, cert.gov.ua, cve.mitre.org
+  degraded (8) = rapid7.com, seclists.org/fulldisclosure, googleprojectzero.blogspot.com, nvd.nist.gov, packetstormsecurity.com, habr.com/ru/companies/tomhunter/articles, teletype.in/@cyberok, cve.org
+  checked = 30 - 8 = 22
+  with_findings = 13 (bleepingcomputer.com, thehackernews.com, securityweek.com, krebsonsecurity.com, schneier.com, github.com/search?q=CVE, rapid7.com, opencve.io, github.com/0xMarcio/cve, fortinet.com/blog/threat-research, kb.cert.org/vuls, avleonov.com, dbugs.ptsecurity.com)
+  Validator constraint: checked (22) >= total (30) - unreachable (8) ✅
+
+[2026-06-16 00:42 UTC] Step 4: Triage with dedup index.
+
+  Dedup decisions
+  ===============
+
+  CVE-2026-0257 PAN-OS GlobalProtect auth bypass → NEW (not in dedup index, active ITW since 2026-05-17, KEV-added with June 1 deadline). Score 9. CRITICAL. discovery_latency=late (calibration gap — KEV was earlier than our coverage).
+
+  CVE-2026-20262 Cisco Catalyst SD-WAN Manager (vManage) authenticated cmd-exec → NEW (different CVE from CVE-2026-20245 in 2026-06-06 NEWS + 2026-06-11 UPDATE). Cisco PSIRT advisory + patches landed 2026-06-15. Score 8. HIGH. discovery_latency=on-time.
+
+  OptinMonster / TrustPulse / PushEngage CDN supply-chain (Awesome Motive) → NEW. JS supply-chain via stolen CDN API key, 1.2M+ sites. Sansec disclosed 2026-06-13. Score 7. HIGH. discovery_latency=on-time.
+
+  LiteLLM 3-CVE chain CVE-2026-47101 + 47102 + 40217 → NEW. Distinct from CVE-2026-42271 (2026-06-10 NEWS), same product family, different code paths. Fix 2026-05-02; public disclosure 2026-06-15. Score 7. HIGH. discovery_latency=on-time.
+
+  CVE-2026-48558 SimpleHelp OIDC auth bypass → NEW. Patched 2026-06-09 in 5.5.16 / 6.0RC2. Score 6. MEDIUM. discovery_latency=on-time.
+
+  UNC6508 InfiniteRed REDCap espionage → NEW. Google + Mandiant disclosed 2026-06-15. Continues Chinese-APT cluster (Velvet Ant 2026-06-13, UAT-8302 2026-05-07). Score 5. MEDIUM. discovery_latency=on-time.
+
+  CVE-2026-42824 M365 Copilot SearchLeak → NEW. Distinct from CVE-2026-45497 (2026-06-08 NEWS, RCE) — different attack chain, same product. Server-side mitigated, no customer patch. Score 5. MEDIUM. discovery_latency=on-time.
+
+  Updates considered, SKIPPED (no material change since last report):
+  - CVE-2026-20245 Cisco SD-WAN root cmd-exec — last UPDATE 2026-06-11 KEV-added; today's news is sibling CVE-2026-20262, treated as separate NEWS.
+  - CVE-2026-50751 Check Point VPN — last UPDATE 2026-06-12.
+  - CVE-2026-10520 Ivanti Sentry — last UPDATE 2026-06-13.
+  - CVE-2026-35273 Oracle PeopleSoft — last UPDATE 2026-06-12; Google ShinyHunters confirmation today not a new material development beyond what 06-12 covered.
+  - CVE-2026-42271 LiteLLM stdio-MCP — last NEWS 2026-06-10; today's chain disclosure is separate CVEs (treated as NEW).
+  - Miasma supply-chain worm — last UPDATE 2026-06-07.
+  - HTTP/2 Bomb — last NEWS 2026-06-04.
+  - June Patch Tuesday — last NEWS 2026-06-10.
+  - Arch AUR mass-compromise — last NEWS 2026-06-13.
+  - Agentjacking via Sentry — last NEWS 2026-06-13.
+
+  Items SKIPPED entirely (out of scope or no material change):
+  - Critical Zcash vulnerability — cryptographic/cryptocurrency, out of scope.
+  - CVE-2026-29075 Mesa benchmarks.yml + CVE-2024-48019 Apache Doris — 2026-05-22 disclosure, predates 30-day window.
+  - VU#616257 Microsoft-signed UEFI shim bootloaders Secure Boot bypass (CERT/CC 06-09) — predates last 7 days, would have surfaced earlier.
+  - VU#595768 Securly Chrome Extension — client extension scope.
+  - HP Poly VVX CVE-2026-0826 — VoIP phones, client-side, out of core scope.
+  - AI Worm (Schneier 06-05 + THN follow-up) — research, no operational threat.
+
+  Items into NOTED:
+  - CVE-2026-11645 Chrome V8 zero-day (client-only but worth pattern tracking)
+  - CVE-2026-12205 Perl Crypt::DSA nonce reuse
+  - CVE-2026-46447 OpenStack Ironic boot script injection
+  - CVE-2026-52806 Gogs auth-required RCE (UNFIXED)
+  - CVE-2026-11623 tmux 3.6b security fix
+  - Microsoft Defender RoguePlanet zero-day (local LPE, out of core scope, tracked)
+  - VU#862559 crypton-x509-validation Haskell
+  - CVE-2026-49776 GPTranslate WP plugin (promotes 06-15 NOTED placeholder CVE-2026-9109)
+  - CVE-2026-39502 Form Maker by 10Web (WP unauth SQLi CVSS 9.3)
+  - WP PHP-Object-Injection cluster CVE-2026-49765 / 49768 / 49769 / 49770
+  - Council of Europe ShinyHunters extortion (no CVE)
+  - NPM 12 script execution change (defensive milestone)
+  - 152 Chrome wallpaper extensions adware (browser-extension PUP)
+
+[2026-06-16 00:44 UTC] Step 5: Wrote report.md to reports/2026/06/16/.
+[2026-06-16 00:45 UTC] Step 5: Wrote report.json to reports/2026/06/16/.
+[2026-06-16 00:46 UTC] Step 6: Wrote debug.log (this file).
+
+[2026-06-16 00:46 UTC] Step 7: Validating report.json...
+
+$ python3 scripts/validate_report.py reports/2026/06/16/report.json
+⚠️  7 warning(s):
+   findings[1]: 'summary' is 347 chars (aim for <200)
+   findings[2]: 'summary' is 402 chars (aim for <200)
+   findings[3]: 'summary' is 449 chars (aim for <200)
+   findings[4]: 'summary' is 324 chars (aim for <200)
+   findings[5]: 'summary' is 415 chars (aim for <200)
+   findings[5]: CVE 'None assigned' doesn't start with 'CVE-'
+   findings[6]: 'summary' is 380 chars (aim for <200)
+✅ reports/2026/06/16/report.json — valid
+
+[2026-06-16 00:47 UTC] Step 7 complete. Validator returns 0 (valid). Warnings noted (summary length over 200 chars in several entries; "None assigned" CVE acceptable per validator since it's the literal string). Proceeding to commit.

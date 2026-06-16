@@ -1,0 +1,175 @@
+{
+  "date": "2026-06-16",
+  "findings": [
+    {
+      "type": "news",
+      "title": "Palo Alto Networks PAN-OS GlobalProtect CVE-2026-0257 (CVSS 7.8) — Authentication Bypass Actively Exploited Since 2026-05-17, CISA KEV-Added With Federal Deadline 2026-06-01 (Already Lapsed); Palo Alto PSIRT Advisory Lands 2026-06-15",
+      "threat_score": 9,
+      "cve": "CVE-2026-0257",
+      "cvss": 7.8,
+      "affected_technology": "Palo Alto Networks PAN-OS GlobalProtect portal and gateway components on PA-Series and VM-Series devices — unauthenticated attacker bypasses authentication and initiates VPN session against the appliance. Active in-the-wild exploitation observed beginning 2026-05-17 per PAN PSIRT; CISA KEV catalog entry with federal-agency remediation deadline of 2026-06-01 (already lapsed). PAN states only a 'small portion' of probed devices established VPN sessions and 'no post-access behavior or lateral movement has been identified' — but the foothold is one credential-prompt away from internal network access on a perimeter VPN appliance. IOCs (IPs, hostnames including 'WINDOWS-LAPTOP-001' and 'DESKTOP-GP01', MAC addresses) published 2026-06-15. Distinct from CVE-2026-0300 (PAN-OS RCE per avleonov 2026-06-05) — different code path. THN amplification 2026-06-15 is the first time Watchtower surfaces this CVE — calibration gap to investigate.",
+      "summary": "PAN-OS GlobalProtect CVE-2026-0257 (CVSS 7.8) — unauthenticated VPN authentication bypass actively exploited since 2026-05-17, KEV-added with federal deadline 2026-06-01 (lapsed); PAN PSIRT advisory + IOCs landed 2026-06-15; patch every PA-Series / VM-Series with GlobalProtect enabled immediately.",
+      "discovery_latency": "late",
+      "first_seen_at": "2026-06-15"
+    },
+    {
+      "type": "news",
+      "title": "Cisco Catalyst SD-WAN Manager (vManage) CVE-2026-20262 — Authenticated Arbitrary-Command Execution As Root Via File-Upload Validation Gap, Actively Exploited In Zero-Day Attacks, Patched 2026-06-15",
+      "threat_score": 8,
+      "cve": "CVE-2026-20262",
+      "cvss": null,
+      "affected_technology": "Cisco Catalyst SD-WAN Manager (vManage) — affected branches 20.9.9.1 and earlier, 20.12.7.1 and earlier, 20.15.4.4 and earlier, 20.15.5.2 and earlier, 20.18.3, 26.1.1.1 and earlier. Insufficient validation of user-supplied input during file uploads lets an authenticated remote attacker send a crafted HTTP request to an affected API endpoint and execute arbitrary commands as root. Cisco PSIRT confirms ITW exploitation observed earlier in June 2026 ahead of the 2026-06-15 patch. Distinct from but adjacent to CVE-2026-20245 (root-cmd-exec zero-day, 2026-06-06 NEWS / 2026-06-11 KEV UPDATE), CVE-2026-20182 (auth bypass), CVE-2026-20128 / 20122 / 20133 (info disclosure). Authentication requirement lowers immediate ceiling versus unauth CVE-2026-20245, but any credential foothold = fleet-root via vManage orchestration plane.",
+      "summary": "Cisco Catalyst SD-WAN Manager (vManage) CVE-2026-20262 — authenticated file-upload validation gap yields root command execution, ITW zero-day exploitation confirmed by Cisco PSIRT, patched across 20.9.9.x / 20.12.7.x / 20.15.4-5.x / 20.18.x / 26.1.1.x branches 2026-06-15; second Cisco SD-WAN root-cmd-exec CVE in 10 days alongside CVE-2026-20245.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-06-15"
+    },
+    {
+      "type": "news",
+      "title": "Awesome Motive CDN Supply-Chain Compromise — OptinMonster / TrustPulse / PushEngage WordPress Plugin JS Tampered Via Stolen CDN API Key, Plants Hidden Backdoor Plugin On 1.2M+ Sites, Self-Hiding Admin Account Creation Chain",
+      "threat_score": 7,
+      "cve": "Not yet assigned",
+      "cvss": null,
+      "affected_technology": "OptinMonster (1.2M+ WordPress sites) + TrustPulse + PushEngage — three Awesome Motive WordPress plugins served malicious JavaScript via Awesome Motive's CDN after attackers exploited a known UpdraftPlus vulnerability to compromise an Awesome Motive marketing server hosting CDN API credentials, then used the stolen CDN API key to silently modify JS files distributed via the CDN. Payload activates on WP-admin page-load — harvests authentication tokens + nonces, creates rogue admin accounts ('developer_api1' / 'dev_xxxxxx'), installs self-hiding backdoor plugin disguised as 'Content Delivery Helper' or 'Database Optimizer' (Sansec: 'operator rotates the disguise while keeping the logic byte-identical across renames'), exposes PHP web shell, beacons to Tidio-lookalike attacker-controlled C2. Malicious-JS distribution window: OptinMonster + TrustPulse 2026-06-12 22:17–22:42 UTC; PushEngage 2026-06-12 22:17 → 2026-06-13 19:02 UTC. Discovered by Sansec.",
+      "summary": "Awesome Motive CDN supply-chain compromise — attackers used UpdraftPlus vuln to steal CDN API key, tampered OptinMonster / TrustPulse / PushEngage JavaScript across 1.2M+ WP sites 2026-06-12/13; payload creates rogue admin + self-hiding backdoor plugin disguised as 'Content Delivery Helper' or 'Database Optimizer'; hunt for IOC admin usernames, rotate WP salts and admin creds on every affected site.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-06-13"
+    },
+    {
+      "type": "news",
+      "title": "BerriAI LiteLLM 3-CVE Chain CVE-2026-47101 + CVE-2026-47102 + CVE-2026-40217 (Full Chain CVSS 9.9) — Low-Privilege User Mints Allowed-Routes-Wildcard API Key → Self-Promotes To proxy_admin → Custom-Code-Guardrail exec() Sandbox Escape To RCE, Fixed In v1.83.14-stable",
+      "threat_score": 7,
+      "cve": "CVE-2026-47101, CVE-2026-47102, CVE-2026-40217",
+      "cvss": 9.9,
+      "affected_technology": "BerriAI/LiteLLM (multi-provider AI gateway proxy fronting OpenAI / Anthropic / Gemini / Bedrock / Azure) prior to v1.83.14-stable. Stage 1 CVE-2026-47101: regular user generates virtual API key with allowed_routes=['/*'] wildcard, server accepts unvalidated, gains admin-route access. Stage 2 CVE-2026-47102: /user/update endpoint accepts attacker-controlled user_role field without field restriction, self-promotion to proxy_admin. Stage 3 CVE-2026-40217: Custom Code Guardrail executes Python via exec() without source filtering; missing __builtins__ in globals dict causes Python to auto-inject full builtins (__import__ / open / eval) — reverse-shell-grade RCE. End-to-end impact: master keys, credential decryption salts, DB creds, every upstream provider API key, every prompt + response transiting the proxy. Distinct from CVE-2026-42271 (2026-06-10 NEWS, stdio-MCP subprocess spawn, CVSS 8.7, KEV-added) — same product, different code paths. Both fixes in v1.83.x branch; fix shipped 2026-05-02 in v1.83.14-stable, public disclosure 2026-06-15 by Obsidian Security.",
+      "summary": "BerriAI LiteLLM 3-CVE chain CVE-2026-47101 / 47102 / 40217 (full-chain CVSS 9.9) — low-priv user mints wildcard allowed_routes key, self-promotes to proxy_admin via unrestricted /user/update, escapes Custom Code Guardrail exec() sandbox via missing __builtins__ trick → RCE on AI gateway with all provider API keys exposed; fix in v1.83.14-stable (2026-05-02), public Obsidian Security writeup 2026-06-15; second material LiteLLM advisory in 7 days.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-06-15"
+    },
+    {
+      "type": "news",
+      "title": "SimpleHelp CVE-2026-48558 — Unauthenticated Rogue-Technician Account Creation Via OIDC Identity Assertion Validation Gap, Bypasses MFA; Patched In 5.5.16 / 6.0RC2; ~14k Shodan-Exposed Servers, ~7.2% Use OIDC",
+      "threat_score": 6,
+      "cve": "CVE-2026-48558",
+      "cvss": null,
+      "affected_technology": "SimpleHelp remote-management server ≤ 5.5.15 + 6.0 pre-release (RMM tooling). Improper validation of identity assertions from OIDC identity providers — when OIDC is enabled, an unauthenticated attacker creates and logs in as a new Technician user without going through MFA. Rogue Technician account gains default privileges of remoting into managed endpoints + executing scripts + standard MSP action set. Exploitation requires: OIDC authentication enabled + at least one Technician Group associated with the OIDC provider + 'Allow group authenticated logins' enabled. Shodan tracks ~14k publicly exposed SimpleHelp servers, ~7.2% use OIDC (~1k candidate-vulnerable). No ITW exploitation confirmed at disclosure. SimpleHelp is the RMM tool historically linked to the 2025 Akira ransomware affiliate cluster — RMM-tool footholds compound rapidly. Patched 2026-06-09 in 5.5.16 and 6.0RC2; BleepingComputer writeup 2026-06-15.",
+      "summary": "SimpleHelp CVE-2026-48558 — unauthenticated rogue-Technician account creation via OIDC identity assertion validation gap, bypasses MFA when OIDC + group-auth-login enabled; patched in 5.5.16 / 6.0RC2 2026-06-09; ~14k Shodan instances, ~1k OIDC-configured candidates; RMM-tool surface historically linked to Akira ransomware.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-06-15"
+    },
+    {
+      "type": "news",
+      "title": "UNC6508 (China-Nexus Espionage) 'InfiniteRed' — REDCap Medical-Research Server Compromise With Custom Persistence + Credential Harvester + Backdoor And Google Workspace Auto-Forwarding 'Patroit' Rule, 2-Year Undetected Dwell, North American Research Institution Target",
+      "threat_score": 5,
+      "cve": "None assigned",
+      "cvss": null,
+      "affected_technology": "REDCap-class medical research database platforms + downstream Google Workspace mailboxes — China-linked espionage group UNC6508 compromised a North American medical research institution September 2023, deployed custom 3-component InfiniteRed malware (persistence/update + credential harvester + backdoor with command exec, file transfer, ad-hoc SQL against REDCap DB) by December 2023, ran activity through November 2025 — 2+ years undetected. Initial-access vector targeted older vulnerable REDCap installations; exact CVE not confirmed. Novel tradecraft: Google Workspace content-compliance rule named 'Patroit' auto-forwards mail matching keywords (medical research / advanced technology / military / geo-strategic policy) to external exfil mailbox — workflow-level persistence surviving endpoint cleanup. Google + Mandiant disclosed 2026-06-15 with YARA + IOCs in underlying report. Continues Chinese-APT-on-research-orgs cluster (Velvet Ant Operation Highland 2026-06-13, UAT-8302 2026-05-07).",
+      "summary": "UNC6508 (China-nexus) 'InfiniteRed' REDCap medical-research-server espionage — Sep-2023 compromise of N-American research org via older REDCap installs, custom 3-component malware suite + novel Google Workspace 'Patroit' content-compliance auto-forwarding rule, 2-year undetected dwell through Nov-2025; Google + Mandiant disclosed 2026-06-15 with YARA + IOCs; hunt Workspace forwarding rules + REDCap patch status.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-06-15"
+    },
+    {
+      "type": "news",
+      "title": "Microsoft 365 Copilot Enterprise CVE-2026-42824 'SearchLeak' — 3-Stage Chain (Parameter Prompt-Injection + Render-Race Sanitization Gap + Bing-SSRF CSP Bypass) Yields One-Click Data Theft Of Email + MFA Codes + Files Via Microsoft.com-Domain Link; Mitigated Server-Side",
+      "threat_score": 5,
+      "cve": "CVE-2026-42824",
+      "cvss": 7.5,
+      "affected_technology": "Microsoft 365 Copilot Enterprise Search — Varonis Threat Labs chained 3 bugs: (1) the q URL parameter accepts natural-language queries that Copilot processes as instructions (parameter-to-prompt injection); (2) Copilot's safety guardrail wraps response output in <code> blocks, but sanitization race lets browser render the stream before sanitization completes, allowing injected <img> tags to fire; (3) page CSP allowlists *.bing.com and Bing's Search-by-Image endpoint makes server-side requests on behalf of Bing — attackers smuggle exfil through Bing-as-SSRF-proxy outside the CSP envelope. Victim clicks microsoft.com-domain link → Copilot extracts mailbox/calendar/SharePoint/OneDrive → response embeds attacker-controlled <img> → Bing fetch leaks data. Exfil classes: email content + subjects, MFA + OTP codes, password-reset links, calendar invites + meeting notes, SharePoint + OneDrive files. Microsoft CVSS 6.5, NVD 7.5 (disagreement). Microsoft mitigated server-side, no customer patch required (managed service). No ITW exploitation observed; PoC-only. Second material M365 Copilot CVE in 8 days alongside CVE-2026-45497 (2026-06-08 NEWS).",
+      "summary": "Microsoft 365 Copilot Enterprise CVE-2026-42824 'SearchLeak' — Varonis-disclosed 3-stage chain (parameter prompt-injection + render-race sanitization gap + Bing-SSRF CSP bypass) yields one-click exfil of email + MFA codes + files via microsoft.com-domain link; mitigated server-side, no customer patch; PoC-only, no ITW; second M365 Copilot CVE in 8 days alongside CVE-2026-45497.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-06-15"
+    }
+  ],
+  "noted": [
+    {
+      "cve": "CVE-2026-11645",
+      "product": "Google Chrome V8 zero-day (CVSS 8.8) — out-of-bounds memory access in V8 JS/Wasm engine, in-wild exploitation confirmed by Google, patched in Chrome 149.0.7827.102/.103 (Win/Mac/Linux); fifth Chrome zero-day in 2026; client-only browser scope out of Watchtower core but tracked for AI-coding-assistant / Electron-app dependency chains; reported by 303f06e3 for $55k bounty",
+      "summary": "Chrome V8 CVE-2026-11645 (CVSS 8.8) — OOB memory access in V8, ITW exploitation confirmed, patched in 149.0.7827.102/.103; fifth Chrome 0-day in 2026; client-only scope but tracked for AI-coding-assistant dependency chains."
+    },
+    {
+      "cve": "CVE-2026-12205",
+      "product": "Perl Crypt::DSA < 1.21 — nonce reused across signatures yielding private-key recovery primitive; oss-security 2026-06-15 disclosure by Timothy Legge; niche Perl-stack scope, cryptographic-failure-class",
+      "summary": "Perl Crypt::DSA < 1.21 CVE-2026-12205 — nonce reuse across signatures yields private-key recovery; oss-security 2026-06-15, niche Perl-stack scope."
+    },
+    {
+      "cve": "CVE-2026-46447",
+      "product": "OpenStack Ironic < 35.0.2 (OSSA-2026-017) — script injection during node boot via Linux command-line override (iPXE script); oss-security 2026-06-15 by Jay Faulkner; bare-metal-provisioning operators only; companion to CVE-2026-54421 from 2026-06-15 NOTED",
+      "summary": "OpenStack Ironic < 35.0.2 CVE-2026-46447 — script injection via Linux command-line override during node boot; bare-metal operators only; companion to CVE-2026-54421."
+    },
+    {
+      "cve": "CVE-2026-52806",
+      "product": "Gogs (self-hosted Git) — authenticated argument-injection RCE, UNFIXED at Rapid7 disclosure 2026-06-13/15; auth required but self-hosted Git server compromise = source-code repo compromise; track for vendor patch availability",
+      "summary": "Gogs CVE-2026-52806 — authenticated argument-injection RCE, UNFIXED at Rapid7 disclosure; auth required, self-hosted Git server scope; track for vendor patch."
+    },
+    {
+      "cve": "CVE-2026-11623",
+      "product": "tmux < 3.6b — security fix shipped 2026-06-15 (oss-security); widely deployed terminal multiplexer; technical detail not yet public, track upstream advisory",
+      "summary": "tmux CVE-2026-11623 — security fix shipped in 3.6b 2026-06-15; widely deployed but technical detail still pending."
+    },
+    {
+      "cve": "None assigned",
+      "product": "Microsoft Defender 'RoguePlanet' zero-day — fourth Defender LPE-to-SYSTEM zero-day disclosed by Chaotic Eclipse (after BlueHammer / UnDefend / RedSun); race-condition local privilege elevation, confirmed ITW exploitation per THN 2026-06-15; local privilege elevation without remote component = out of Watchtower core scope but pattern tracking for MS-PSIRT coordination posture",
+      "summary": "Microsoft Defender RoguePlanet zero-day — 4th Defender LPE-to-SYSTEM zero-day from Chaotic Eclipse, race-condition primitive, ITW exploitation; local LPE out of Watchtower core but tracked for MS-PSIRT pattern."
+    },
+    {
+      "cve": "VU#862559",
+      "product": "crypton-x509-validation Haskell libraries — do not enforce X.509 NameConstraints (CERT/CC 2026-06-11); no CVE assigned; niche Haskell-stack scope but classic X.509 chain validation failure",
+      "summary": "VU#862559 crypton-x509-validation Haskell — X.509 NameConstraints not enforced (CERT/CC 2026-06-11); niche Haskell scope, classic chain-validation failure class."
+    },
+    {
+      "cve": "CVE-2026-49776",
+      "product": "GPTranslate WordPress plugin — unauthenticated SQL injection (GitHub Security Advisory 2026-06-15); technical detail now public, promotes 2026-06-15 NOTED placeholder CVE-2026-9109 from pending-detail to confirmed-detail",
+      "summary": "GPTranslate WP plugin CVE-2026-49776 — unauthenticated SQL injection (GHSA 2026-06-15); promotes 06-15 placeholder CVE-2026-9109 with confirmed technical detail."
+    },
+    {
+      "cve": "CVE-2026-39502",
+      "product": "Form Maker by 10Web ≤ 1.15.38 (CVSS 9.3) — unauthenticated SQL injection in widely-deployed WordPress form plugin; opencve.io 2026-06-15",
+      "summary": "Form Maker by 10Web ≤ 1.15.38 CVE-2026-39502 (CVSS 9.3) — unauthenticated SQL injection; widely-deployed WP form plugin."
+    },
+    {
+      "cve": "CVE-2026-49768, CVE-2026-49770, CVE-2026-49765, CVE-2026-49769",
+      "product": "WordPress plugin 'PHP Object Injection' cluster 2026-06-15 (GitHub Advisory Database) — Happyforms (CVE-2026-49768) + WP Travel Engine (CVE-2026-49770) + Integration for Mailchimp (CVE-2026-49765) + wpForo Forum (CVE-2026-49769); all unauthenticated PHP Object Injection in the same advisory batch — likely common library / boilerplate root-cause",
+      "summary": "WP PHP-Object-Injection cluster 2026-06-15 — Happyforms / WP Travel Engine / Integration for Mailchimp / wpForo Forum (CVE-2026-49765/68/69/70) all unauth PHP-Object-Injection; common-library root-cause suspected."
+    },
+    {
+      "cve": "None assigned",
+      "product": "Council of Europe ShinyHunters extortion (SecurityWeek + BleepingComputer 2026-06-15) — extortion group claims 297 GB of data including employee PII; continues 2026 ShinyHunters campaign cluster (Oracle PeopleSoft 06-11/12, Salesforce/Infinite Campus 06-15); no specific CVE for this incident yet",
+      "summary": "Council of Europe ShinyHunters extortion claim (BC + SW 2026-06-15) — 297 GB allegedly stolen; continues 2026 ShinyHunters campaign cluster, no specific CVE yet."
+    },
+    {
+      "cve": "None assigned",
+      "product": "NPM 12 script-execution change (SecurityWeek 2026-06-15) — 'npm install' will no longer execute scripts from dependencies unless explicitly allowed; major supply-chain defence milestone relevant for Miasma / Mini Shai-Hulud / IronWorm worm class",
+      "summary": "NPM 12 script-execution change (SW 2026-06-15) — npm install will not execute dep scripts by default; supply-chain defence milestone for Miasma / Mini Shai-Hulud / IronWorm class."
+    },
+    {
+      "cve": "None assigned",
+      "product": "152 Chrome wallpaper extensions, 105k installs linked to adware + fake-traffic networks (THN 2026-06-15) — 38 publisher accounts in Chrome Web Store distributing PUPs across 152 extensions; browser-extension PUP scope but worth tracking for endpoint-allowlist policies",
+      "summary": "152 Chrome wallpaper extensions (105k installs) linked to adware + fake-traffic across 38 publisher accounts (THN 2026-06-15) — browser-extension PUP scope, endpoint allowlist relevant."
+    }
+  ],
+  "source_coverage": {
+    "total": 30,
+    "checked": 22,
+    "with_findings": 13,
+    "unreachable": [
+      "cisa.gov",
+      "cisa.gov/known-exploited-vulnerabilities-catalog",
+      "attackerkb.com",
+      "bugcrowd.com/disclosures",
+      "hackerone.com/hacktivity",
+      "msrc.microsoft.com/blog",
+      "cert.gov.ua",
+      "cve.mitre.org"
+    ],
+    "degraded": [
+      "rapid7.com",
+      "seclists.org/fulldisclosure",
+      "googleprojectzero.blogspot.com",
+      "nvd.nist.gov",
+      "packetstormsecurity.com",
+      "habr.com/ru/companies/tomhunter/articles",
+      "teletype.in/@cyberok",
+      "cve.org"
+    ]
+  },
+  "full_report": "reports/2026/06/16/report.md"
+}
