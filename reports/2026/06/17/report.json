@@ -1,0 +1,230 @@
+{
+  "date": "2026-06-17",
+  "findings": [
+    {
+      "type": "update",
+      "title": "Arch Linux AUR 'Atomic Arch' Mass-Compromise Scope Expansion 400 → 1,500+ Packages; AUR Account Registrations Suspended 2026-06-16; Attackers Expanded From NPM-Stage Into Bun Installation Paths",
+      "threat_score": 8,
+      "previous_threat_score": 8,
+      "cve": "None assigned",
+      "cvss": null,
+      "affected_technology": "Arch Linux Arch User Repository (AUR) — abandoned-package hijacks plus entirely new malicious packages. Watchtower 2026-06-13 News covered the 400+ package campaign delivering a Rust credential-stealer + eBPF kernel rootkit via the 'atomic-lockfile' NPM stage. Material updates 2026-06-16: scope expanded to ≥1,500 packages (SW + BC 2026-06-16); attackers expanded distribution to Bun-based installation paths in addition to NPM 2026-06-12; Arch Linux suspended new AUR account registrations 2026-06-16 while cleanup continues. Sonatype + StepSecurity confirm any host that ran a tainted install must be treated as fully untrusted — eBPF-based hiding primitives make conventional endpoint scans insufficient; rebuild from clean media + rotate every ambient SSH key / browser cookie / Vault token / cloud session. Threat score stays at 8 — severity unchanged, scope materially expanded. Continues the broader 2026 developer-supply-chain cluster (Shai-Hulud / Miasma / IronWorm) but distinct in eBPF rootkit payload and package-ecosystem targeting.",
+      "summary": "Arch Linux AUR 'Atomic Arch' campaign expanded 400→1,500+ malicious packages, attackers added Bun installation paths, Arch suspended new account registrations 2026-06-16; eBPF rootkit means tainted hosts require rebuild not cleanup — inventory every Arch host that ran AUR installs since 2026-06-07, treat as compromised, rotate all ambient credentials.",
+      "first_seen_at": "2026-06-13"
+    },
+    {
+      "type": "update",
+      "title": "LiteSpeed cPanel CVE-2026-54420 Added To CISA KEV With BOD 26-04 Three-Day Federal Remediation Deadline; Second Invocation Of The 3-Day Window After Ivanti Sentry CVE-2026-10520",
+      "threat_score": 8,
+      "previous_threat_score": 7,
+      "cve": "CVE-2026-54420",
+      "cvss": 8.5,
+      "affected_technology": "LiteSpeed cPanel user-end plugin on cPanel/WHM shared-hosting platforms. Watchtower 2026-06-15 News at score 7 covered symlink-following privilege-escalation-to-root from any FTP / web-shell foothold. Material change 2026-06-16: CISA added CVE-2026-54420 to the KEV catalog with the BOD 26-04 three-day federal-agency remediation timer (BleepingComputer 2026-06-16). This is the second BOD 26-04 three-day timer invocation after Ivanti Sentry CVE-2026-10520 on 2026-06-11 — CISA reserves it for cases where compensating controls are weak and exploitation is straightforward. Effective industry deadline: 2026-06-19. Patch is the 2026-06-09 LiteSpeed plugin fix-version. Where the LiteSpeed plugin is not in use on a cPanel host, uninstall it entirely. Score raised to 8 on KEV addition + BOD 26-04 three-day timer.",
+      "summary": "LiteSpeed cPanel CVE-2026-54420 (CVSS 8.5) added to CISA KEV with BOD 26-04 three-day federal deadline (BC 2026-06-16) — second 3-day invocation after Ivanti Sentry CVE-2026-10520; effective industry deadline 2026-06-19; inventory cPanel/WHM hosts, patch to 2026-06-09 fix-version or uninstall the plugin if unused.",
+      "first_seen_at": "2026-06-15"
+    },
+    {
+      "type": "update",
+      "title": "Fortinet FortiSandbox CVE-2026-25089 + Sibling CVE-2026-39813 + CVE-2026-39808 Now Confirmed Under Active In-The-Wild Exploitation Per Defused Threat Intel; Was PoC-Only In 2026-06-11 News",
+      "threat_score": 8,
+      "previous_threat_score": 7,
+      "cve": "CVE-2026-25089, CVE-2026-39813, CVE-2026-39808",
+      "cvss": 9.1,
+      "affected_technology": "Fortinet FortiSandbox advanced threat-detection appliance (appliance + VM form factors). Watchtower 2026-06-11 News covered CVE-2026-25089 (pre-auth OS command injection via 'Start' parameter, CVSS 9.1) at score 7. Material change 2026-06-16: Defused threat-intel firm observed active in-the-wild exploitation of all three FortiSandbox CVEs within the prior 24 hours (BleepingComputer + TheHackerNews 2026-06-16). Sibling CVE-2026-39813 and CVE-2026-39808 are also being exploited; patches landed 2026-04-14, so the unpatched-exploitation window is now two months wide. All three are low-complexity command-injection-class issues, no user interaction. FortiSandbox by design ingests attacker-controlled artefacts — pre-auth RCE on the detonation appliance is a pre-auth RCE on the inspection plane, both a blind spot and a high-value pivot. Score raised to 8 on confirmed ITW exploitation across the three-CVE batch.",
+      "summary": "FortiSandbox CVE-2026-25089 + CVE-2026-39813 + CVE-2026-39808 confirmed under active ITW exploitation by Defused threat intel 2026-06-16 (was PoC-only 2026-06-11); patches available since 2026-04-14 — inventory FortiSandbox fleet, verify on 2026-04-14 fix-train, forensic-image + rebuild any unit not patched by mid-April, net-isolate management interfaces.",
+      "first_seen_at": "2026-06-11"
+    },
+    {
+      "type": "news",
+      "title": "JetBrains Marketplace — 15+ Malicious Plugins Designed To Steal Anthropic / OpenAI / Google AI API Keys From Developer IDEs; Second 2026 AI-Credential-Theft Cluster Targeting Developer-IDE Marketplace Surfaces After Mini Shai-Hulud / IronWorm VS Code Campaign",
+      "threat_score": 6,
+      "cve": "None assigned",
+      "cvss": null,
+      "affected_technology": "JetBrains plugin marketplace serving IntelliJ IDEA / PyCharm / WebStorm / Rider / GoLand / CLion / Android Studio (JetBrains-derived) and other JetBrains IDEs. BleepingComputer 2026-06-16 (Lawrence Abrams) reports at least 15 malicious plugins published to the marketplace whose purpose is to extract AI API keys (Anthropic / OpenAI / Google / Cohere / Mistral / vendor-issued) from developer environments. Plugins masqueraded as legitimate productivity / AI-assistant integrations. Exfiltrated keys are directly monetisable (paid-tier model access for resale / proxy-as-a-service abuse), and many orgs grant the same keys access to internal proprietary data via embeddings / RAG endpoints — a credential compromise becomes a data-exfiltration foothold. Second 2026 AI-credential-theft cluster targeting developer-IDE marketplace surfaces after Mini Shai-Hulud / IronWorm VS Code + Claude Code config-persistence campaign (Watchtower 2026-05-21, 2026-06-06). Marketplace plugins as covert AI-key-collection channel warrants separate tracking from the broader supply-chain-worm cluster. IOC list pending from JetBrains.",
+      "summary": "JetBrains Marketplace ≥15 malicious plugins designed to steal Anthropic / OpenAI / Google / Cohere AI API keys from developer IDEs (BC 2026-06-16) — masqueraded as productivity / AI integrations; rotate every AI provider key resident in JetBrains workstations since 2026-05-01, default to 'trusted publishers only' plugin policy, prefer workload-identity over API-key access where supported.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-06-16"
+    },
+    {
+      "type": "news",
+      "title": "Cacti ≤ 1.2.30 CVE-2026-39949 — Authenticated OS Command Injection RCE Via host_notes Variable Substitution Into RRDtool Arguments; Public PoC On GitHub 2026-06-17",
+      "threat_score": 6,
+      "cve": "CVE-2026-39949",
+      "cvss": null,
+      "affected_technology": "Cacti network-monitoring platform ≤ 1.2.30. User-controlled host-metadata fields (specifically the device notes field) are substituted unsanitised into RRDtool command-line arguments via Cacti's variable replacement engine. Attack path: authenticated user with device + graph-template creation privileges injects shell metacharacters into the device-notes field, creates a graph template referencing |host_notes|, triggers graph rendering — rendering pipeline executes injected metacharacters as the web-server user (typically www-data / apache). Public PoC repository lukehebe/CVE-2026-39949 surfaced on GitHub 2026-06-17 supporting direct command execution (--cmd 'id') and out-of-band exfiltration (--oob your.oastify.com). Authentication required, lowering the immediate ceiling — but default-admin / weak-admin credentials are common on mid-tier Cacti deployments and credential-stuffing against Cacti is an established mass-exploitation route (continuing 2024 history). Vendor patch status: not yet confirmed at report time — track Cacti GitHub for fix-version.",
+      "summary": "Cacti ≤ 1.2.30 CVE-2026-39949 authenticated RCE via host_notes variable substitution into RRDtool command-line arguments; public PoC dropped on GitHub 2026-06-17 with --cmd and OOB modes; no vendor fix confirmed yet — inventory Cacti versions, rotate weak admin creds, restrict to management VLAN, hunt RRDtool args for shell metacharacters.",
+      "discovery_latency": "early",
+      "first_seen_at": "2026-06-17"
+    },
+    {
+      "type": "news",
+      "title": "Altium Enterprise Server Triple-CVE Batch — CVE-2026-11414 (CVSS 9.8) Hard-Coded Crypto Key Signing Vault Download URLs + CVE-2026-11420 (CVSS 9.8) Pre-Auth Path Traversal Arbitrary File Write In Network Installation Service + CVE-2026-11419 (CVSS 8.8) Authenticated Path Traversal In UploadController",
+      "threat_score": 6,
+      "cve": "CVE-2026-11414, CVE-2026-11420, CVE-2026-11419",
+      "cvss": 9.8,
+      "affected_technology": "Altium Enterprise Server (centralised PCB / electronics-design vault platform used by manufacturers). NVD 2026-06-16 published a three-CVE batch: (1) CVE-2026-11414 (CVSS 9.8) — Vault service signs file-download URLs with a hard-coded cryptographic key, any party in possession of the binary can mint download URLs for arbitrary files served by the Vault. (2) CVE-2026-11420 (CVSS 9.8) — path traversal in Network Installation Service permits unauthenticated arbitrary file write + package archive read, the typical setup for installer-replacement-class compromise. (3) CVE-2026-11419 (CVSS 8.8) — path traversal in UploadController via inadequate validation of user-controlled path components in image uploads. Compromise yields source IP for PCB designs + access to the build/install distribution path to downstream developer workstations. Vendor patch published with the advisory; confirm patched build line via Altium PSIRT.",
+      "summary": "Altium Enterprise Server NVD 2026-06-16 triple-CVE batch — CVE-2026-11414 (CVSS 9.8) Vault hard-coded URL-signing key + CVE-2026-11420 (CVSS 9.8) pre-auth path-traversal arbitrary file write in Network Installation Service + CVE-2026-11419 (CVSS 8.8) authenticated path traversal in UploadController; patch published, restrict Vault + Network Installation Service to engineering jump host, audit downstream installer-package integrity out-of-band.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-06-16"
+    },
+    {
+      "type": "news",
+      "title": "UNK_Deadrop (North-Korea-Aligned) Developer Supply-Chain Campaign Hits ~100 Orgs Via Fake GitHub Recruitment Lures Delivering Cross-Platform 'Overlord' Loader Framework (macOS arm64 + Linux + Windows)",
+      "threat_score": 6,
+      "cve": "None assigned",
+      "cvss": null,
+      "affected_technology": "Software-engineering / developer workstation attack surface across macOS arm64, Linux, and Windows. TheHackerNews 2026-06-16 reports a North-Korea-aligned cluster — UNK_Deadrop — running a developer-targeted social-engineering supply-chain campaign that has compromised an estimated ~100 organisations to date. Initial-access lure: fake GitHub recruitment messages ('please review this take-home project / code-review challenge') that route the candidate to a project repository whose build path drops a cross-platform 'Overlord' framework loader with macOS, Linux, and Windows payloads. Lure family closely matches 2024–2025 Lazarus 'Contagious Interview' pattern but Overlord is a new C2 + loader codebase, not BeaverTail / InvisibleFerret reuse. Notable: macOS variant ships native arm64 macOS persistence — among the first DPRK loaders with that capability, indicating substantial dev resources. For Watchtower scope: anyone in recruiting-adjacent or engineering roles approached by unsolicited GitHub recruiters in the last 60 days needs review; currently the highest-yield delivery vector against software-engineering targets.",
+      "summary": "UNK_Deadrop DPRK-aligned developer supply-chain campaign — ~100 orgs hit via fake GitHub recruitment 'take-home challenge' lures dropping cross-platform 'Overlord' loader (macOS arm64 + Linux + Windows) (THN 2026-06-16); new C2/loader codebase, not BeaverTail reuse; brief recruiting + engineering teams, sandbox unknown projects in disposable VMs, FIDO2-bind GitHub + cloud SSO.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-06-16"
+    },
+    {
+      "type": "news",
+      "title": "DragonForce Ransomware Deploys 'Backdoor.Turn' That Conceals C2 Traffic Inside Microsoft Teams Relay Infrastructure — Detection-Engineering Problem, Not A Teams Vulnerability",
+      "threat_score": 5,
+      "cve": "None assigned",
+      "cvss": null,
+      "affected_technology": "Microsoft Teams (used as covert C2 carrier — not a vulnerability in Teams itself). BleepingComputer 2026-06-16 (Bill Toulas) reports the DragonForce ransomware affiliate program has deployed a custom backdoor 'Backdoor.Turn' that conceals command-and-control communications within Microsoft Teams relay infrastructure — C2 traffic encoded to traverse Teams media-relay control plane, indistinguishable from legitimate Teams telemetry to perimeter inspection. Same family as prior Slack-as-C2 and Discord-as-C2 abuse but materially harder to filter: Teams traffic is universally allowed out of corporate networks, uses TLS-pinned endpoints that conventional decryption breaks, and the volume is high enough to hide low-rate C2 cadence inside. Detection-engineering problem: behavioural detection on Teams media-relay flow shape (volume + cadence + destination distribution) against per-user baselines, not perimeter-block.",
+      "summary": "DragonForce ransomware 'Backdoor.Turn' hides C2 inside Microsoft Teams media-relay infrastructure (BC 2026-06-16) — TTP, not a Teams CVE; conventional decryption breaks against TLS-pinned Teams endpoints; onboard Teams flow shape into SIEM with baseline + drift detection, hunt for non-Teams.exe processes initiating outbound to Teams relay endpoints.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-06-16"
+    }
+  ],
+  "noted": [
+    {
+      "cve": "None assigned",
+      "product": "Google Vertex AI Python SDK — bucket-squatting vulnerability lets attackers hijack ML-model uploads (THN 2026-06-16); fixed in v1.148.0+, no in-wild exploitation observed; continues 2026 AI-platform-supply-chain cluster",
+      "summary": "Google Vertex AI Python SDK bucket-squatting fixed in v1.148.0+ (THN 2026-06-16) — no ITW exploitation observed, AI-platform-supply-chain cluster continuation."
+    },
+    {
+      "cve": "CVE-2026-50203",
+      "product": "Apache Airflow SFTP Provider — path traversal in SFTPHook.retrieve_directory allows local file write outside intended directory (oss-security 2026-06-16); continues 06-01 16-CVE Airflow batch pattern",
+      "summary": "Apache Airflow SFTP Provider CVE-2026-50203 — path traversal in SFTPHook.retrieve_directory (oss-security 2026-06-16); continues 06-01 Airflow batch pattern."
+    },
+    {
+      "cve": "CVE-2026-43003",
+      "product": "OpenStack Ironic IPA command injection (oss-security 2026-06-16, Jay Faulkner); companion to CVE-2026-54421 noted 2026-06-15 and CVE-2026-46447 noted 2026-06-16; bare-metal-provisioning operators only",
+      "summary": "OpenStack Ironic CVE-2026-43003 — IPA command injection (oss-security 2026-06-16); companion to CVE-2026-54421 + CVE-2026-46447 from prior cycles; bare-metal operators only."
+    },
+    {
+      "cve": "None assigned",
+      "product": "OpenStack Nova OSSA-2026-022 — scheduler-hint injection bypasses Placement resource claims and scheduling constraints (oss-security 2026-06-16); multi-tenant OpenStack operators only",
+      "summary": "OpenStack Nova OSSA-2026-022 — scheduler-hint injection bypasses Placement resource claims (oss-security 2026-06-16); multi-tenant OpenStack only."
+    },
+    {
+      "cve": "CVE-2026-10649",
+      "product": "Pacemaker — DoS via integer overflow in remote message decompression (oss-security 2026-06-16); HA-cluster operators only",
+      "summary": "Pacemaker CVE-2026-10649 — DoS via integer overflow in remote message decompression (oss-security 2026-06-16); HA-cluster scope."
+    },
+    {
+      "cve": "CVE-2026-12003",
+      "product": "CPython — development search paths can be activated without modifying the installation directory (oss-security 2026-06-16); local / dev-environment scope",
+      "summary": "CPython CVE-2026-12003 — development search paths activatable without installation-directory modification (oss-security 2026-06-16); local/dev scope."
+    },
+    {
+      "cve": "Not yet assigned",
+      "product": "OpenBSD sppp PAP authentication bypass — bypass in sppp_pap_input (oss-security 2026-06-16); narrow OpenBSD PPP-link scope",
+      "summary": "OpenBSD sppp PAP authentication bypass in sppp_pap_input (oss-security 2026-06-16) — narrow PPP-link scope."
+    },
+    {
+      "cve": "Not yet assigned",
+      "product": "Vim < 9.2.x patches — out-of-bounds write in spell-file processing + code injection via crafted filenames (oss-security 2026-06-16); continues 2026 Vim cadence",
+      "summary": "Vim < 9.2.x patches — OOB write in spell-file processing + code injection via crafted filenames (oss-security 2026-06-16); continues 2026 Vim cadence."
+    },
+    {
+      "cve": "Not yet assigned",
+      "product": "gsasl 2.2.4 release fixes a heap-disclosure vulnerability (oss-security 2026-06-16); library affecting downstream SASL implementations",
+      "summary": "gsasl 2.2.4 fixes a heap-disclosure (oss-security 2026-06-16); library affecting downstream SASL implementations."
+    },
+    {
+      "cve": "CVE-2026-30121",
+      "product": "Remotion v4.0.409 arbitrary file write CVSS 9.1 (opencve.io 2026-06-16); niche React-video-framework scope",
+      "summary": "Remotion v4.0.409 CVE-2026-30121 arbitrary file write CVSS 9.1 (opencve.io 2026-06-16); niche React-video-framework scope."
+    },
+    {
+      "cve": "Not yet assigned",
+      "product": "Wertheim SafeController for VAULT ROOMS — multiple critical vulnerabilities in software + hardware microcontroller (SEC Consult SA-20260615-0 / -1, Full Disclosure 2026-06-15); physical-security vertical, narrow scope",
+      "summary": "Wertheim SafeController VAULT ROOM critical vulns (SEC Consult SA-20260615-0 / -1, FD 2026-06-15); physical-security vertical, narrow scope."
+    },
+    {
+      "cve": "None assigned",
+      "product": "iRhythm digital-health-co ransomware data-theft confirmation (SecurityWeek 2026-06-16); no CVE published, healthcare sector incident",
+      "summary": "iRhythm digital-health ransomware data-theft confirmation (SW 2026-06-16); no CVE / technical detail published, healthcare sector incident."
+    },
+    {
+      "cve": "None assigned",
+      "product": "Mackay Sugar (Australia's #2 sugar producer) ransomware by The Gentlemen group — operational shutdown (SecurityWeek 2026-06-16); continues Krebs 2026-06-10 The Gentlemen profile",
+      "summary": "Mackay Sugar ransomware by The Gentlemen (SW 2026-06-16); operational shutdown, continues Krebs 2026-06-10 group profile."
+    },
+    {
+      "cve": "None assigned",
+      "product": "Novo Nordisk — FulcrumSec extortion group claims 1.3 TB pharmaceutical data theft (SecurityWeek 2026-06-16); continues 2026-06-12 Noted clinical-trial breach",
+      "summary": "Novo Nordisk FulcrumSec 1.3 TB pharmaceutical data theft claim (SW 2026-06-16); continues 2026-06-12 Noted clinical-trial breach."
+    },
+    {
+      "cve": "None assigned",
+      "product": "Council of Europe ShinyHunters extortion — claim continues, investigation ongoing (BleepingComputer 2026-06-16); continues 2026-06-15 Noted entry, 2026 ShinyHunters cluster",
+      "summary": "Council of Europe ShinyHunters extortion claim continues (BC 2026-06-16); continues 2026-06-15 Noted, 2026 ShinyHunters campaign cluster."
+    },
+    {
+      "cve": "None assigned",
+      "product": "Cal Water California Water Service — Iranian Handala claim, operational systems unaffected per Cal Water statement (SecurityWeek 2026-06-16); continues 2026-06-13 Noted",
+      "summary": "Cal Water Iranian Handala claim — Cal Water states operational systems unaffected (SW 2026-06-16); continues 2026-06-13 Noted."
+    },
+    {
+      "cve": "None assigned",
+      "product": "NarwhalRAT / ScarCruft (APT37) — fake-Microsoft-security-alert phishing via LNK-in-ZIP targeting Microsoft account holders (THN 2026-06-16); client-side scope but worth tracking for MS-account credential-theft volume",
+      "summary": "NarwhalRAT / APT37 (ScarCruft) fake-MS-security-alert LNK-in-ZIP campaign targeting MS account holders (THN 2026-06-16); client-side, tracking for credential-theft volume."
+    },
+    {
+      "cve": "None assigned",
+      "product": "SprySOCKS Backdoor — previously Linux-only China-linked malware now ships Windows kernel-driver variants supporting 30+ commands (THN 2026-06-16); pattern indicator for cross-platform Chinese-APT tooling",
+      "summary": "SprySOCKS Backdoor — Linux-only → Windows kernel-driver variants with 30+ commands (THN 2026-06-16); cross-platform Chinese-APT tooling pattern indicator."
+    },
+    {
+      "cve": "None assigned",
+      "product": "ClickFix loader expansion — BabaDeda + Lorem Ipsum + Potemkin loader families targeting education + finance via fake-update lures (THN 2026-06-16); continues 2026 ClickFix tradecraft cluster",
+      "summary": "ClickFix loader expansion — BabaDeda + Lorem Ipsum + Potemkin families against education + finance via fake-update lures (THN 2026-06-16); 2026 ClickFix cluster continuation."
+    },
+    {
+      "cve": "None assigned",
+      "product": "Rokarolla Android banking trojan — 217 banking + crypto apps, 137 remote commands, spreads via fake TikTok + Chrome lookalike sites (BC + THN 2026-06-16); mobile-only — out of Watchtower core scope",
+      "summary": "Rokarolla Android banking trojan — 217 apps, 137 commands, fake TikTok + Chrome lookalikes (BC + THN 2026-06-16); mobile-only, out of Watchtower core scope."
+    },
+    {
+      "cve": "None assigned",
+      "product": "Tech Coalition 'Athena' OSS-vulnerability triage platform — 24+ organisations share pre-disclosure vulnerability triage (SecurityWeek 2026-06-16); defensive-infrastructure pattern signal",
+      "summary": "Tech Coalition 'Athena' OSS-vulnerability triage platform — 24+ orgs share pre-disclosure triage (SW 2026-06-16); defensive-infrastructure pattern signal."
+    },
+    {
+      "cve": "None assigned",
+      "product": "US Government export-control directive to Anthropic — cybersecurity executives publicly urge Trump administration regarding foreign-national access to Anthropic models (SecurityWeek 2026-06-16); continues 2026-06-14 Noted policy entry",
+      "summary": "US export-control directive to Anthropic — cybersecurity executive coalition urges Trump admin re foreign-national access (SW 2026-06-16); continues 2026-06-14 Noted policy entry."
+    },
+    {
+      "cve": "None assigned",
+      "product": "npm v12 default-disable of dependency install scripts rollout continuation (BC + SW 2026-06-16); continues 2026-06-12 Noted; major defensive milestone vs Miasma / Mini Shai-Hulud / IronWorm class",
+      "summary": "npm v12 default-disable of dependency install scripts rollout continues (BC + SW 2026-06-16); major defensive milestone vs Miasma / Mini Shai-Hulud / IronWorm class."
+    }
+  ],
+  "source_coverage": {
+    "total": 30,
+    "checked": 26,
+    "with_findings": 9,
+    "unreachable": [
+      "cisa.gov",
+      "cisa.gov/known-exploited-vulnerabilities-catalog",
+      "attackerkb.com",
+      "bugcrowd.com/disclosures"
+    ],
+    "degraded": [
+      "packetstormsecurity.com",
+      "hackerone.com/hacktivity",
+      "msrc.microsoft.com/blog",
+      "cve.mitre.org",
+      "cve.org",
+      "cert.gov.ua"
+    ]
+  },
+  "full_report": "reports/2026/06/17/report.md"
+}

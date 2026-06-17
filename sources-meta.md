@@ -2,36 +2,36 @@
 
 | Source | Findings | Noted | Empty | Last Hit |
 |--------|----------|-------|-------|----------|
-| bleepingcomputer.com | 28 | 34 | 2 | 2026-06-16 (+4 FINDINGS: Cisco Catalyst SD-WAN Manager CVE-2026-20262 HIGH, OptinMonster/TrustPulse/PushEngage CDN supply-chain HIGH, SimpleHelp CVE-2026-48558 MEDIUM, UNC6508 'InfiniteRed' REDCap espionage MEDIUM; +1 NOTED: Council of Europe ShinyHunters extortion) |
-| thehackernews.com | 30 | 26 | 1 | 2026-06-16 (+3 FINDINGS: PAN-OS GlobalProtect CVE-2026-0257 CRITICAL — late-discovery KEV-already-lapsed item; LiteLLM 3-CVE chain CVE-2026-47101/47102/40217 HIGH; M365 Copilot SearchLeak CVE-2026-42824 MEDIUM; +3 NOTED: Chrome V8 CVE-2026-11645 ITW 0-day, Defender RoguePlanet, 152 Chrome wallpaper extensions adware) |
-| securityweek.com | 14 | 23 | 2 | 2026-06-16 (no new FINDINGS; +2 NOTED: Council of Europe ShinyHunters, NPM 12 script-execution change supply-chain defence milestone) |
-| krebsonsecurity.com | 2 | 2 | 9 | 2026-06-16 (no new posts since 2026-06-10 Gentlemen RaaS) |
-| rapid7.com | 4 | 3 | 8 | 2026-06-16 (+1 NOTED: Gogs CVE-2026-52806 authenticated argument-injection RCE UNFIXED; degraded — no date metadata on titles) |
-| schneier.com | 0 | 7 | 8 | 2026-06-16 (no new June-15+ security-signal posts beyond 06-15 FCC burner phones — surveillance-only) |
-| fortinet.com/blog/threat-research | 0 | 3 | 10 | 2026-06-16 (no new posts since 2026-06-11 AsyncRAT) |
-| securitylab.github.com | 0 | 2 | 11 | 2026-06-16 (no new advisories beyond 2026-05-22 batch — 25-day silence) |
-| github.com/search (advisories) | 1 | 3 | 8 | 2026-06-16 (PoC repos surfaced: CVE-2026-2472 Vertex AI + CVE-2026-2991 KiviCare + new CVE-2026-XNU-AIO-KEVENT-UAF iOS — all already in dedup or NOTED elsewhere) |
-| seclists.org/fulldisclosure | 1 | 4 | 10 | 2026-06-16 (still no new posts since 2026-06-08 — DEGRADED continues, 8-day silence) |
-| openwall.com/lists/oss-security | 9 | 38 | 2 | 2026-06-16 (+3 NOTED: CVE-2026-12205 Perl Crypt::DSA nonce reuse → private key recovery, CVE-2026-46447 OpenStack Ironic boot script injection, CVE-2026-11623 tmux 3.6b security fix; 06-16 empty — DEGRADED for the day) |
-| kb.cert.org/vuls | 0 | 10 | 6 | 2026-06-16 (+1 NOTED: VU#862559 crypton-x509-validation Haskell — X.509 NameConstraints not enforced 06-11; no new since) |
-| opencve.io | 2 | 20 | 6 | 2026-06-16 (+1 NOTED: CVE-2026-39502 Form Maker by 10Web ≤ 1.15.38 unauth SQLi CVSS 9.3 — widely-deployed WP form plugin) |
-| dbugs.ptsecurity.com | 1 | 20 | 5 | 2026-06-16 (landing-only — confirmed PT-2026-49533 Elixir gRPC, PT-2026-49306 NCEAS Metacart, PT-2026-49375 MetaSlider, PT-2026-49529 i18Next HTTP middleware — all niche / tier-2 plugin/library scope, no new HIGH-priority items) |
-| github.com/0xMarcio/cve | 3 | 6 | 8 | 2026-06-16 (automated trending-CVE updates 06-14/15; no new PoCs surfaced beyond CVE-2026-31431 + 41089 + 24061 + 41940 + 0073 — all in dedup index) |
-| blog.cloudflare.com/tag/security | 0 | 0 | 13 | 2026-06-16 (still silent — June posts only on 06-08 and 06-09) |
-| avleonov.com | 0 | 0 | 13 | 2026-06-16 (no new posts since 06-05 PAN-OS CVE-2026-0300 — note: distinct from today's CVE-2026-0257 GlobalProtect bypass, same vendor different code path) |
-| cisa.gov (incl. /KEV) | 0 | 0 | 13 | 2026-06-16 (403 persistent; PAN-OS GlobalProtect CVE-2026-0257 KEV addition relayed via THN — calibration gap, surfaced late) |
-| attackerkb.com | 0 | 0 | 11 | — (403 Forbidden persistent) |
-| cve.org / cve.mitre.org | 0 | 0 | 11 | — (JS-required, no content via WebFetch) |
-| googleprojectzero.blogspot.com | 0 | 0 | 11 | — (redirects to projectzero.google; no June 2026 content) |
-| msrc.microsoft.com/blog | 1 | 1 | 12 | 2026-06-16 (homepage still nav-only after redirect — persistent) |
-| hackerone.com/hacktivity | 0 | 0 | 12 | — (JS-required) |
-| bugcrowd.com/disclosures | 0 | 0 | 12 | — (404 persistent since 2026-04 — flag for SOURCES.md drop in sources-review-2026-06.md) |
-| packetstormsecurity.com | 0 | 0 | 12 | — (degraded — redirect to packetstorm.news; aggregate stats only) |
-| nvd.nist.gov | 0 | 1 | 11 | 2026-06-16 (degraded; search interface broken — individual /vuln/detail/ pages still useful for CVE-2026-0257 + 20262 enrichment) |
-| habr.com/ru/companies/tomhunter | 0 | 0 | 12 | — (degraded — stale through 2026-03-06, ~3.4-month silence — escalate for drop) |
-| teletype.in/@cyberok | 0 | 0 | 12 | — (degraded — stale through 2026-02-04, ~4.4-month silence — escalate for drop) |
-| cert.gov.ua | 0 | 0 | 12 | — (degraded — empty content) |
-| github.com/advisories (off-list, NEW high-value 2026-05-07) | 28 | 82 | 4 | 2026-06-16 (+2 NOTED: CVE-2026-49776 GPTranslate WP unauth SQLi promotes earlier 06-15 NOTED CVE-2026-9109 placeholder; WP plugin "PHP Object Injection" cluster CVE-2026-49765/49768/49769/49770 — Happyforms/WP Travel Engine/Integration for Mailchimp/wpForo Forum, common-library root-cause suspected) |
+| bleepingcomputer.com | 30 | 35 | 2 | 2026-06-17 (+2 FINDINGS: JetBrains Marketplace 15+ malicious plugins steal AI API keys MEDIUM, DragonForce 'Backdoor.Turn' Microsoft Teams relay C2 MEDIUM; +3 UPDATE-amplifications: LiteSpeed cPanel CVE-2026-54420 KEV+BOD-26-04 3-day, FortiSandbox CVE-2026-25089/39813/39808 ITW exploitation, Arch Linux AUR 400→1500 expansion; +1 NOTED: Mackay Sugar / Council of Europe continued) |
+| thehackernews.com | 31 | 30 | 1 | 2026-06-17 (+1 FINDING: UNK_Deadrop DPRK developer-recruitment supply chain MEDIUM; +4 NOTED: Vertex AI SDK bucket squatting, NarwhalRAT/APT37, SprySOCKS Windows variants, ClickFix loader expansion BabaDeda+Lorem Ipsum+Potemkin) |
+| securityweek.com | 14 | 27 | 2 | 2026-06-17 (no new FINDINGS; +4 NOTED: iRhythm digital-health ransomware, Mackay Sugar Gentlemen ransomware, FulcrumSec Novo Nordisk 1.3TB claim, Atomic Arch 1500 packages amplification; Tech Coalition Athena OSS-triage launch) |
+| krebsonsecurity.com | 2 | 2 | 10 | 2026-06-17 (no new posts since 2026-06-10 Gentlemen RaaS — 7-day silence) |
+| rapid7.com | 4 | 3 | 9 | 2026-06-17 (no new fresh posts — landing latest dates 06-09 / 06-08 / 06-11) |
+| schneier.com | 0 | 9 | 8 | 2026-06-17 (+0 advisories; 2 surveillance/regulatory pattern posts: Flock cameras stalking 06-16, FCC burner-phone elimination 06-15) |
+| fortinet.com/blog/threat-research | 0 | 3 | 11 | 2026-06-17 (no new posts since 2026-06-11 AsyncRAT — 6-day silence) |
+| securitylab.github.com | 0 | 2 | 12 | 2026-06-17 (no new advisories beyond 2026-05-22 batch — 26-day silence) |
+| github.com/search (advisories) | 2 | 3 | 8 | 2026-06-17 (+1 FINDING from search: CVE-2026-39949 Cacti host_notes RCE — first surfaced via github CVE-search 3h ago) |
+| seclists.org/fulldisclosure | 1 | 5 | 10 | 2026-06-17 (+1 NOTED: SEC Consult SA-20260615-0/-1 Wertheim SafeController VAULT ROOMS) |
+| openwall.com/lists/oss-security | 9 | 46 | 2 | 2026-06-17 (+8 NOTED: Apache Airflow SFTP Provider CVE-2026-50203 path traversal, OpenStack Ironic CVE-2026-43003 IPA command injection, OpenStack Nova OSSA-2026-022 scheduler-hint injection, Pacemaker CVE-2026-10649 DoS, CPython CVE-2026-12003 dev-paths, OpenBSD sppp PAP bypass, Vim < 9.2.x batch, gsasl 2.2.4 heap disclosure) |
+| kb.cert.org/vuls | 0 | 10 | 7 | 2026-06-17 (no new since VU#862559 2026-06-11 — 6-day silence) |
+| opencve.io | 2 | 21 | 6 | 2026-06-17 (+1 NOTED: CVE-2026-30121 Remotion v4.0.409 arbitrary file write CVSS 9.1) |
+| dbugs.ptsecurity.com | 1 | 20 | 6 | 2026-06-17 (06-16 batch — PT-2026-49768/49769 OpenClaw low/med, PT-2026-49684 Firefox CVE-2026-12315 client-side, PT-2026-49727 Perry CVSS 9.1, PT-2026-49656 Kids Online Store, PT-2026-49720 Dell OpenManage CVSS 8.8 — all out-of-scope or low-priority) |
+| github.com/0xMarcio/cve | 3 | 6 | 9 | 2026-06-17 (no new 0-day-grade PoCs surfaced beyond existing dedup — CVE-2026-31431 + 41089 + 41651 trending) |
+| blog.cloudflare.com/tag/security | 0 | 0 | 14 | 2026-06-17 (still silent — June posts only on 06-08 and 06-09) |
+| avleonov.com | 0 | 0 | 14 | 2026-06-17 (no new posts since 06-06 Defender RedSun CVE-2026-41091 — 11-day silence) |
+| cisa.gov (incl. /KEV) | 0 | 0 | 14 | 2026-06-17 (403 persistent; LiteSpeed cPanel CVE-2026-54420 KEV addition + BOD 26-04 3-day timer surfaced via BC amplification on-time) |
+| attackerkb.com | 0 | 0 | 12 | — (403 Forbidden persistent) |
+| cve.org / cve.mitre.org | 0 | 0 | 12 | — (JS-required, no content via WebFetch) |
+| googleprojectzero.blogspot.com | 0 | 0 | 12 | — (redirects to projectzero.google; no June 2026 content) |
+| msrc.microsoft.com/blog | 1 | 1 | 13 | 2026-06-17 (homepage + aka.ms/blog-msrc both nav-only — persistent) |
+| hackerone.com/hacktivity | 0 | 0 | 13 | — (JS-required) |
+| bugcrowd.com/disclosures | 0 | 0 | 13 | — (404 persistent since 2026-04 — flag for SOURCES.md drop in sources-review-2026-06.md) |
+| packetstormsecurity.com | 0 | 0 | 13 | — (degraded — redirect to packetstorm.news; aggregate stats only — no per-listing extraction) |
+| nvd.nist.gov | 1 | 1 | 11 | 2026-06-17 (+1 FINDING: Altium Enterprise Server triple-CVE batch CVE-2026-11414 hard-coded URL-signing key CVSS 9.8 + CVE-2026-11420 pre-auth path traversal CVSS 9.8 + CVE-2026-11419 authenticated path traversal CVSS 8.8) |
+| habr.com/ru/companies/tomhunter | 0 | 0 | 13 | — (degraded — stale through 2026-03-06, ~3.4-month silence — escalate for drop) |
+| teletype.in/@cyberok | 0 | 0 | 13 | — (degraded — stale through 2026-02-04, ~4.4-month silence — escalate for drop) |
+| cert.gov.ua | 0 | 0 | 13 | — (degraded — empty content) |
+| github.com/advisories (off-list, NEW high-value 2026-05-07) | 28 | 82 | 5 | 2026-06-17 (no new entries surfaced; consider promoting to SOURCES.md formally per sources-review-2026-06.md) |
 
 ## Score Calibration
 *(Updated monthly)*

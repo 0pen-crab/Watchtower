@@ -1,0 +1,321 @@
+Watchtower run log — 2026-06-17 (Night Cycle)
+==============================================
+
+T+0:00:00  Started daily workflow.
+T+0:00:05  cd /home/claude/workspace/watchtower && git pull
+            → "Already up to date." (no remote-side merges since 2026-06-16 push)
+T+0:00:10  Loaded prompts/watchtower/CLAUDE.md, MEMORY.md (146 lines / ~180KB),
+            SOURCES.md (30 unique entries — Tier 1: 15, Tier 2: 16 with seclists/fulldisclosure
+            duplicated once → counted once), templates/report.template.md.
+T+0:00:30  Loaded prompts/watchtower/scripts/validate_report.py (ground-truth schema).
+T+0:00:45  Built dedup index across the last 30 days (2026-05-18 → 2026-06-16):
+            - Pulled every report.json
+            - Extracted CVE IDs + titles for findings + noted
+            - Index covers ~290+ CVE IDs and ~80+ named campaigns / breaches / incidents
+            - Notable currently-tracked clusters: Miasma / IronWorm / Mini Shai-Hulud,
+              Atomic Arch AUR, ShinyHunters (Oracle PeopleSoft / Salesforce / Council of
+              Europe), Chinese-APT-on-research-orgs (UNC6508 InfiniteRed, Velvet Ant
+              Operation Highland, UAT-8302), Chaotic Eclipse Defender LPE (BlueHammer /
+              UnDefend / RedSun / RoguePlanet), Cisco SD-WAN (CVE-2026-20245 / 20262),
+              LiteLLM (CVE-2026-42271 + 47101/47102/40217), AI-platform supply chain
+              (PraisonAI / LangFlow / LiteLLM / Vertex AI / OptinMonster CDN), Microsoft
+              365 Copilot Enterprise (CVE-2026-45497 / 42824), DragonForce / Lazarus /
+              Atlas RAT / NarwhalRAT (APT37) / Velvet Ant / SprySOCKS.
+
+============================================================================
+SOURCE SWEEP — 2026-06-17
+============================================================================
+
+TIER 1 — Top producers (15 entries)
+-----------------------------------
+
+[1/30] bleepingcomputer.com                                ✅  ~4s  FINDINGS
+       New: JetBrains Marketplace 15+ malicious plugins stealing AI API keys (Lawrence
+       Abrams 2026-06-16). DragonForce 'Backdoor.Turn' hides C2 in Microsoft Teams
+       relay infrastructure (Bill Toulas 2026-06-16). Critical Fortinet FortiSandbox
+       flaws now exploited in attacks (Sergiu Gatlan 2026-06-16, Defused intel).
+       CISA warns of another cPanel plugin flaw exploited in attacks — CVE-2026-54420
+       BOD 26-04 3-day federal deadline (Sergiu Gatlan 2026-06-16).
+       Echo of prior items: OptinMonster supply chain (06-15), Oracle PeopleSoft 0-day
+       (06-12 News), Awesome Motive CDN (covered 06-16), Cisco SD-WAN vManage 0-day
+       CVE-2026-20262 (covered 06-16), SimpleHelp CVE-2026-48558 (covered 06-16),
+       UNC6508 InfiniteRed (covered 06-16), Council of Europe ShinyHunters (06-15).
+
+[2/30] thehackernews.com                                   ✅  ~5s  FINDINGS
+       New: UNK_Deadrop North-Korea-aligned developer supply chain ~100 orgs via fake
+       GitHub recruitment + cross-platform 'Overlord' loader (macOS arm64 + Linux +
+       Windows). NarwhalRAT / ScarCruft (APT37) fake-MS-security-alert LNK-in-ZIP
+       campaign. SprySOCKS Linux-only → Windows kernel-driver variants supporting
+       30+ commands. ClickFix loader expansion — BabaDeda + Lorem Ipsum + Potemkin.
+       Google Vertex AI SDK bucket-squatting fixed in v1.148.0+.
+       Echo of prior items: LiteLLM 3-CVE chain (06-16), UNC6508 (06-16), Chrome V8
+       (06-16 Noted), Microsoft Patch Tuesday June (06-10).
+
+[3/30] cisa.gov/known-exploited-vulnerabilities-catalog    ❌  403  UNREACHABLE
+       Direct fetch returned HTTP 403; fall back to amplification via BC/SW/THN for
+       KEV deltas. Confirmed addition this cycle (via amplification): CVE-2026-54420
+       LiteSpeed cPanel plugin with BOD 26-04 3-day federal deadline (BC 2026-06-16).
+
+[4/30] cisa.gov                                            ❌  403  UNREACHABLE
+       Direct fetch returned HTTP 403; no fresh cisa.gov advisories surfaced via
+       amplification today.
+
+[5/30] securityweek.com                                    ✅  ~5s  FINDINGS
+       New: iRhythm digital-health ransomware data theft. Mackay Sugar (Australia's
+       #2 sugar producer) ransomware by The Gentlemen. Cybersecurity executives urge
+       Trump admin re Anthropic AI restrictions for foreign-national access. Tech
+       Coalition 'Athena' OSS-vulnerability triage platform (24+ orgs). Chinese
+       hackers (UNC6508) target medical/military/AI research in North America (06-15
+       coverage continued). Atomic Arch supply chain attack hits 1,500 AUR packages
+       (material scope expansion from 06-13 News at 400+ packages → 1,500+).
+       FulcrumSec claims 1.3 TB Novo Nordisk pharmaceutical data theft.
+       Cisco Catalyst SD-WAN vManage CVE-2026-20262 zero-day exploit (covered 06-16).
+
+[6/30] github.com/search?q=CVE                             ✅  ~5s  FINDINGS
+       Most-recently-updated CVE-2026 repositories:
+       - adampielak/CVE-2026-31431_SCA_WAZUH (2h ago) — Wazuh SCA hardening policy
+         for Copy Fail (existing in dedup index)
+       - lukehebe/CVE-2026-39949 (3h ago) — Cacti authenticated RCE via host_notes
+         variable substitution. NEW. ≤ 1.2.30. PoC script (cacti_rce_poc.py) with
+         direct cmd + OOB exfiltration. → NEWS at score 6.
+       - sourcecode347/CVE-2026-9082-Mass_Scanner (4h ago) — Drupal mass scanner
+         (CVE in dedup, mass-scanner amplification noted)
+       - clsmight/CVE-2026-41940-PoC (6h ago) — cPanel auth bypass (in dedup 06-12)
+       - KovachVL/CVE-2026-55168 (6h ago) — no further context
+       - tar-xz/CVE-2026-53519-PoC (6h ago) — no further context
+
+[7/30] schneier.com                                        ✅  ~4s  NO_SECTECH
+       Two posts in window: Flock cameras stalking misuse (2026-06-16), FCC burner-
+       phone elimination proposal (2026-06-15). Pattern-indicator signals, neither
+       a security advisory nor a campaign — Noted only.
+
+[8/30] krebsonsecurity.com                                 ✅  ~4s  NO_NEW
+       No posts since 2026-06-10 ('Who Runs The Gentlemen?'). Mackay Sugar attack
+       this cycle is the first Gentlemen incident matching the Krebs profile.
+
+[9/30] rapid7.com                                          ✅  ~5s  NO_NEW_FOR_TODAY
+       Latest posts: Metasploit Weekly Update (Spencer McIntyre), Oracle PeopleSoft
+       CVE-2026-35273 active exploitation (covered 06-12 News, 06-14 attribution
+       Noted), Ivanti Sentry CVE-2026-10520 / 10523 (covered 06-11 News), Check
+       Point VPN CVE-2026-50751 (covered 06-10 News / 06-12 News). No newer items
+       dated 2026-06-15/16/17 surfaced.
+
+[10/30] attackerkb.com                                     ❌  403  UNREACHABLE
+        Direct fetch returned HTTP 403.
+
+[11/30] fortinet.com/blog/threat-research                  ✅  ~4s  NO_NEW
+        Latest posts dated 2026-06-11 (AsyncRAT + AI-hype), 2026-06-04 (FIFA World
+        Cup 2026 fraud), 2026-06-03 (Gafgyt C0XMO). No 2026-06-15/16/17 posts.
+
+[12/30] securitylab.github.com                             ✅  ~4s  NO_NEW
+        Latest advisories dated 2026-05-22 (7-Zip cluster, Chatwoot, Mesa, Doris).
+        No fresh 2026-06-15+ items.
+
+[13/30] seclists.org/fulldisclosure                        ✅  ~4s  FINDINGS
+        2026-06-15 posts: SEC Consult SA-20260615-0 (Wertheim SafeController software
+        for VAULT ROOMS, multiple critical) + SEC Consult SA-20260615-1 (Wertheim
+        SafeController hardware for VAULT ROOMS). No 06-16/06-17 posts visible.
+        Noted only (narrow physical-security vertical).
+
+[14/30] packetstormsecurity.com                            ⚠️  ~5s  DEGRADED
+        301 redirect → packetstorm.news/ — homepage reports 330 advisories / 81
+        exploits in last 7 days but no listing visible from the redirect target
+        without per-section fetches. Marked degraded (responded but no usable
+        content surfaced).
+
+[15/30] opencve.io                                         ✅  ~5s  FINDINGS
+        New: CVE-2026-30121 Remotion v4.0.409 arbitrary file write CVSS 9.1 → Noted.
+        CVE-2026-48745 Traccar Client (mobile, out of scope). CVE-2026-45958 Linux
+        Kernel user-pointer dereference (kernel/local — already in cluster). CVE-
+        2025-56814 OpenCPN v5.12.0 wxExecute code injection (niche). CVE-2026-44587
+        CarrierWave content-type bypass (medium). CVE-2026-48788 Remark42 image-
+        proxy XSS (medium).
+
+TIER 2 — Reliable, lower frequency (16 entries; seclists already counted)
+-------------------------------------------------------------------------
+
+[16/30] nvd.nist.gov                                       ✅  ~5s  FINDINGS
+        2026-06-16 batch: CVE-2026-11414 Altium Enterprise Server Vault hard-coded
+        URL-signing key (CVSS 9.8), CVE-2026-11420 Altium ENS Network Installation
+        Service pre-auth path traversal (CVSS 9.8), CVE-2026-11419 Altium ENS
+        UploadController authenticated path traversal (CVSS 8.8). → NEWS at score 6.
+        No 2026-06-17 entries visible.
+
+[17/30] cve.mitre.org                                      ⚠️  ~3s  DEGRADED
+        301 redirect → cve.org/. Marked degraded (downstream cve.org also responded
+        with no usable content).
+
+[18/30] cve.org                                            ⚠️  ~3s  DEGRADED
+        Page header only, no CVE listings surfaced.
+
+[19/30] googleprojectzero.blogspot.com                     ✅  ~5s  NO_NEW
+        301 redirect → projectzero.google/. Most recent post is 2026-05-13 (Seth
+        Jenkins, Pixel 10 0-click exploit chain). No 2026-06 posts.
+
+[20/30] blog.cloudflare.com/tag/security                   ✅  ~4s  NO_NEW
+        Most recent: 2026-06-09 (frontier-AI-model defence architecture), 2026-06-08
+        (Cloudforce One threat intel → WAF rules). No 2026-06-15+ posts.
+
+[21/30] msrc.microsoft.com/blog                            ⚠️  ~5s  DEGRADED
+        301 redirect → microsoft.com/en-us/msrc/blog → no usable blog listings
+        surfaced. Tried aka.ms/blog-msrc as fallback (also redirect, no content).
+
+[22/30] hackerone.com/hacktivity                           ⚠️  ~3s  DEGRADED
+        Page title only, no hacktivity listing surfaced.
+
+[23/30] bugcrowd.com/disclosures                           ❌  404  UNREACHABLE
+        Direct fetch returned HTTP 404.
+
+[24/30] kb.cert.org/vuls                                   ✅  ~4s  NO_NEW
+        Most recent vulnerability notes: VU#862559 (2026-06-11, crypton-x509),
+        VU#616257 (2026-06-09, MS-signed UEFI shim), VU#595768 (2026-06-03, Securly
+        Chrome). No 2026-06-15+ notes.
+
+[25/30] avleonov.com                                       ✅  ~4s  NO_NEW
+        Most recent: 2026-06-06 (Defender RedSun CVE-2026-41091), 2026-06-05 (PAN-OS
+        CVE-2026-0300), 2026-06-02 (May Linux Patch Wednesday). No 06-15+ posts.
+
+[26/30] github.com/0xMarcio/cve                            ✅  ~5s  FINDINGS
+        Most-recently-updated 2026 entries: CVE-2026-31431 (Copy Fail kernel LPE, 9h
+        ago — in dedup), CVE-2026-41089 (Netlogon, 1d ago — covered 06-15 Noted
+        with fresh PoC), CVE-2026-24061 (multiple SafeBreach implementations 6d ago
+        — in dedup), CVE-2026-41651 (10h ago, no further detail visible).
+        Cacti CVE-2026-39949 PoC not yet indexed here but surfaced via separate
+        GitHub search [6/30] above.
+
+[27/30] dbugs.ptsecurity.com                               ✅  ~4s  FINDINGS
+        2026-06-16 batch: PT-2026-49768 + PT-2026-49769 (CVE-2026-53851 / 53852
+        OpenClaw, low/medium severity), PT-2026-49684 (CVE-2026-12315 Firefox 9.1,
+        client/browser out of scope), PT-2026-49727 (CVE-2026-53776 Perry 9.1),
+        PT-2026-49656 (CVE-2026-40750 Kids Online Store 9.9, niche), PT-2026-49720
+        (CVE-2024-24909 Dell OpenManage 8.8). No 2026-06-17 entries visible.
+
+[28/30] habr.com/ru/companies/tomhunter/articles           ⚠️  ~4s  DEGRADED_NO_FRESH
+        Most recent visible posts dated 2026-03-04/06. No 06-15+ articles. Possibly
+        a fetch-pagination limitation rather than the source being dormant — but no
+        fresh content surfaced this cycle.
+
+[29/30] teletype.in/@cyberok                               ⚠️  ~4s  DEGRADED_NO_FRESH
+        Most recent visible: 2026-02-04. No 06-15+ posts visible.
+
+[30/30] cert.gov.ua                                        ⚠️  ~4s  DEGRADED
+        Page title only, no advisory listing surfaced.
+
+============================================================================
+BONUS REFERENCE (NOT in SOURCES.md — not counted toward source coverage)
+============================================================================
+
+openwall.com/lists/oss-security/                           ✅  ~5s  REFERENCE
+       Per MEMORY.md, oss-security is a high-value primary source for Apache + Perl
+       + OpenStack CVE batches. Today's findings → Noted entries:
+       - CVE-2026-50203 Apache Airflow SFTP Provider path traversal
+       - CVE-2026-43003 OpenStack Ironic IPA command injection
+       - OpenStack Nova OSSA-2026-022 scheduler-hint injection
+       - CVE-2026-10649 Pacemaker DoS via integer overflow
+       - CVE-2026-12003 CPython development paths
+       - OpenBSD sppp PAP authentication bypass
+       - Vim < 9.2.x out-of-bounds write + code injection
+       - gsasl 2.2.4 heap disclosure fix
+
+============================================================================
+DEDUP DECISIONS
+============================================================================
+
+NEWS candidates evaluated against dedup index:
+  - JetBrains Marketplace 15 malicious plugins             NEW       → News #4 (score 6)
+  - DragonForce Backdoor.Turn / Teams relay C2             NEW       → News #8 (score 5)
+  - Cacti CVE-2026-39949 host_notes RCE                    NEW       → News #5 (score 6)
+  - Altium Enterprise Server triple-CVE 11414/11420/11419  NEW       → News #6 (score 6)
+  - UNK_Deadrop / Overlord developer supply chain          NEW       → News #7 (score 6)
+  - Google Vertex AI SDK bucket squatting                  NEW       → Noted (AI scope, no ITW)
+  - NarwhalRAT / ScarCruft (APT37) fake-MS-alert           NEW       → Noted (client-side)
+  - SprySOCKS Windows variants                             NEW       → Noted (pattern)
+  - ClickFix loader expansion                              NEW       → Noted (cluster)
+  - Rokarolla Android banking trojan                       NEW       → Noted (mobile, out of core scope)
+  - Remotion CVE-2026-30121                                NEW       → Noted (niche)
+  - Wertheim SafeController VAULT ROOMS                    NEW       → Noted (physical, narrow)
+  - iRhythm ransomware                                     NEW       → Noted (sector)
+  - Mackay Sugar / The Gentlemen ransomware                NEW       → Noted (sector)
+  - Athena Tech Coalition OSS triage                       NEW       → Noted (defensive infra)
+  - Flock cameras stalking                                 NEW       → not included (pattern)
+  - FCC burner-phone elimination                           NEW       → not included (regulatory)
+  - oss-security Airflow SFTP + Ironic + Nova + Pacemaker  NEW       → Noted entries
+  - oss-security CPython + OpenBSD + Vim + gsasl           NEW       → Noted entries
+
+UPDATE candidates evaluated against dedup index:
+  - Arch Linux AUR mass-compromise scope 400 → 1,500+      SKIP (already News 06-13) but
+                                                            MATERIAL CHANGE (scope expansion +
+                                                            Bun stage + AUR registration freeze)
+                                                                       → Update #1 (8 → 8)
+  - LiteSpeed cPanel CVE-2026-54420 KEV addition           SKIP (already News 06-15) but
+                                                            MATERIAL CHANGE (KEV + BOD 26-04
+                                                            3-day timer)
+                                                                       → Update #2 (7 → 8)
+  - Fortinet FortiSandbox CVE-2026-25089 ITW confirmed     SKIP (already News 06-11) but
+                                                            MATERIAL CHANGE (ITW exploitation
+                                                            + 2 sibling CVEs also exploited)
+                                                                       → Update #3 (7 → 8)
+  - Oracle PeopleSoft CVE-2026-35273 Rapid7 follow-up      SKIP (already 06-12 News, 06-14
+                                                            Mandiant attribution Noted, no
+                                                            further material change)
+  - Cisco SD-WAN vManage CVE-2026-20262                    SKIP (covered 06-16 News)
+  - SimpleHelp CVE-2026-48558                              SKIP (covered 06-16 News)
+  - Awesome Motive CDN supply chain                        SKIP (covered 06-16 News)
+  - UNC6508 InfiniteRed                                    SKIP (covered 06-16 News)
+  - LiteLLM 3-CVE chain                                    SKIP (covered 06-16 News)
+  - M365 Copilot CVE-2026-42824 SearchLeak                 SKIP (covered 06-16 News)
+  - PAN-OS GlobalProtect CVE-2026-0257                     SKIP (covered 06-16 News)
+  - Council of Europe ShinyHunters                         SKIP (covered 06-15 Noted)
+  - Cal Water Iranian Handala                              SKIP (covered 06-13 Noted)
+  - Novo Nordisk breach (FulcrumSec attribution)           CONTINUE-NOTED (already 06-13)
+  - npm v12 default-disable scripts                        CONTINUE-NOTED (already 06-12)
+
+============================================================================
+SOURCE COVERAGE TALLIES (pre-validator)
+============================================================================
+
+  total:           30
+  checked:         26  (= 30 total - 4 unreachable; degraded sources count as checked-with-caveat)
+  with_findings:    9  (bleepingcomputer, thehackernews, securityweek, github/search,
+                        github/0xMarcio, seclists/fulldisclosure, opencve, nvd, dbugs.pt)
+  unreachable:      4  (cisa.gov, cisa.gov/known-exploited-vulnerabilities-catalog,
+                        attackerkb.com, bugcrowd.com)
+  degraded:         6  (packetstorm, hackerone, msrc, cve.mitre.org/cve.org, cert.gov.ua)
+                       Note: cve.mitre.org redirects to cve.org — both counted separately
+                       because both appear in SOURCES.md as distinct entries.
+
+  Invariant check: checked (26) >= total (30) - unreachable (4) = 26 ✓
+
+============================================================================
+VALIDATOR RUN
+============================================================================
+
+$ python3 scripts/validate_report.py reports/2026/06/17/report.json
+⚠️  12 warning(s):
+   findings[0]: 'summary' is 353 chars (aim for <200)
+   findings[0]: CVE 'None assigned' doesn't start with 'CVE-'
+   findings[1]: 'summary' is 315 chars (aim for <200)
+   findings[2]: 'summary' is 357 chars (aim for <200)
+   findings[3]: 'summary' is 391 chars (aim for <200)
+   findings[3]: CVE 'None assigned' doesn't start with 'CVE-'
+   findings[4]: 'summary' is 341 chars (aim for <200)
+   findings[5]: 'summary' is 447 chars (aim for <200)
+   findings[6]: 'summary' is 379 chars (aim for <200)
+   findings[6]: CVE 'None assigned' doesn't start with 'CVE-'
+   findings[7]: 'summary' is 351 chars (aim for <200)
+   findings[7]: CVE 'None assigned' doesn't start with 'CVE-'
+✅ reports/2026/06/17/report.json — valid
+
+Warnings only (no errors). Summary-length warnings reflect the depth this cycle's
+findings require — three concurrent UPDATE items with full timeline / mitigation
+context + five NEWS items. CVE "None assigned" warnings are consistent with prior
+reports (e.g. 2026-06-16 used the same string for non-CVE entries).
+
+============================================================================
+END OF RUN
+============================================================================
+
+  Findings (8): 3 updates + 5 news.
+  Noted: 23 items.
+  Total runtime: ~10 minutes from git pull to validation pass.
+  Status: ✅ Validated. Ready for commit + push.
