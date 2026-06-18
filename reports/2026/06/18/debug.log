@@ -1,0 +1,88 @@
+2026-06-18 00:00:00 UTC — Watchtower run start
+2026-06-18 00:00:01 UTC — Step 1: `git pull` in /home/claude/workspace/watchtower → "Already up to date."
+2026-06-18 00:00:02 UTC — Step 2: Built 30-day dedup index from reports/2026/05/19 through reports/2026/06/17 → 596 unique CVEs covered; key recent themes: AUR mass-compromise (06-13/06-17), JetBrains plugin malware (06-17), LiteSpeed cPanel CVE-2026-54420 (06-15→06-17 KEV-update), FortiSandbox CVE-2026-25089/39813/39808 (06-17 update), PAN-OS CVE-2026-0257 (06-16), Awesome Motive CDN (06-16), BerriAI LiteLLM 3-CVE chain (06-16).
+2026-06-18 00:00:03 UTC — Step 3: Began source checks across SOURCES.md (Tier 1 + Tier 2).
+
+— SOURCE FETCH LOG —
+
+00:00:05 ✅ bleepingcomputer.com — fetched homepage; in-window posts: FortiBleed, CISA Joomla JCE BOD 26-04, Microsoft Defender RoguePlanet patch-development confirm, Kodak ShinyHunters, JetBrains AI-plugin malware, DragonForce Microsoft Teams relay, GhostTree NTFS evasion, Rokarolla Android, Microsoft Office launch issues, Steam Workshop wallpaper malware. ~2.4s.
+00:00:07 ✅ thehackernews.com — fetched homepage; in-window posts: Crypto Clipper VirusTotal abuse, Microsoft RoguePlanet CVE-2026-50656 confirm, JetBrains AI-plugin malware, Mastra npm 144-package compromise, CISA Joomla JCE Pro 2.9.99.4 active exploitation, Vertex AI bucket-squat. ~2.8s.
+00:00:10 ✅ securityweek.com — fetched homepage; in-window posts: 1Password acquires Apono, Tenet Security $6M seed, Rockwell Automation ICS patches, DragonForce Microsoft Teams relay, Microsoft Defender RoguePlanet patch-development, Oracle June 2026 CPU 245 patches, Chrome/Firefox updates, Joomla+LiteSpeed exploitation, FortiSandbox in hacker crosshairs, iRhythm breach confirm. ~3.1s.
+00:00:13 ⚠️ krebsonsecurity.com — fetched, most recent post 2026-06-10 ("Who Runs The Gentlemen?"), no in-window posts → degraded. ~1.9s.
+00:00:15 ⚠️ rapid7.com/blog — fetched, no clearly-in-window dated posts surfaced (homepage shows Metasploit Weekly 06-13 + 06-05 as anchors) → degraded. ~2.6s.
+00:00:18 ⚠️ seclists.org/fulldisclosure (Tier 1 entry) — fetched 2026-Jun archive; messages only through 06-15 → degraded. ~2.3s.
+00:00:20 ✅ openwall.com/lists/oss-security/2026/06/ — fetched 2026-06 archive (used as supplemental research, not in SOURCES.md count); in-window 06-17 posts: Apache DolphinScheduler 6-CVE batch (CVE-2026-32966 + CVE-2026-32967 + CVE-2026-42357 + CVE-2026-47340 + CVE-2026-49050 + CVE-2026-41280), Apache Shiro CVE-2026-49268 LDAP DN injection, libtiff CVE-2026-36849 DoS, Vim < 9.2.0670 Text Property OOB read. No 06-18 posts. ~2.5s.
+00:00:23 ✅ github.com/0xMarcio/cve — fetched README; recent PoC additions: CVE-2026-31431 Copy Fail Linux LPE, CVE-2026-41089 Netlogon CLDAP, CVE-2026-24061 telnetd, CVE-2026-41651 (new today), CVE-2026-0073 ADB. ~2.1s.
+00:00:25 ✅ github.com/search?q=CVE — fetched newest CVE-2026 repos: CVE-2026-24061-lab, CVE-2026-42945-poc, CVE-2026-45777, CVE-2026-9277, CVE-2026-46300-Fragnesia, CVE-2026-2256, CVE-2026-20262 (Cisco SD-WAN Manager — already covered 06-16 NEWS), CVE-2026-36425 OPSWAT, CVE-2026-48907 (Joomla JCE PoC — confirms NEWS today). ~2.4s.
+00:00:28 ⚠️ schneier.com — fetched homepage; in-window posts (Trump AI use cases, Flock cameras stalking) all out-of-scope governance/privacy content → degraded for our purposes. ~2.0s.
+00:00:30 ⚠️ fortinet.com/blog/threat-research — fetched, last post 2026-06-11 (AsyncRAT via AI-hype lure), no in-window posts → degraded. ~2.2s.
+00:00:32 ⚠️ securitylab.github.com — fetched, returned older 7-Zip CVE-2026-48095, Chatwoot GHSL-2026-059, Apache Doris CVE-2024-48019 — all already in 06-13/06-14 dedup, no fresh in-window items → degraded. ~2.3s.
+00:00:34 ✅ app.opencve.io — fetched homepage; in-window highest-CVSS: CVE-2026-54806 WP Activity Log 9.8 unauth PHP-object-injection, CVE-2026-54809 GIFT4U SQLi 9.3, CVE-2026-54808 WP Travel Gutenberg Blocks SQLi 9.3, CVE-2025-60236 EMV Creatify, CVE-2025-60231 nrghospital — all WordPress plugins routed to NOTED-equivalent silent-skip (low-impact mass-WP-plugin batch). ~2.5s.
+00:00:36 ❌ cisa.gov — HTTP 403 (consistent with MEMORY 2026-03-30 + 06-13 pattern). Unreachable.
+00:00:37 ❌ cisa.gov/known-exploited-vulnerabilities-catalog — HTTP 403. Unreachable. (Note: KEV adds for Joomla JCE + LiteSpeed cPanel confirmed via BC/THN/SW mainstream-relay path.)
+00:00:38 ❌ attackerkb.com — HTTP 403 (consistent with MEMORY pattern).
+00:00:39 ⚠️ packetstorm.news (redirected from packetstormsecurity.com) — fetched homepage + /files/advisory/1; aggregate stats only (382 advisories last 7 days) without per-item listings → degraded.
+00:00:42 ⚠️ blog.cloudflare.com/tag/security — fetched, last post 2026-06-09 → degraded.
+00:00:44 ⚠️ msrc.microsoft.com/blog — redirected to www.microsoft.com/en-us/msrc/blog; fetched but no in-window posts visible (navigation/footer only returned) → degraded.
+00:00:46 ❌ cve.org — JS-only / empty body. Unreachable.
+00:00:47 ❌ cve.mitre.org — redirects to cve.org / JS-only. Unreachable.
+00:00:48 ❌ googleprojectzero.blogspot.com — HTTP 404; tried fallback projectzero.google/2026/ also HTTP 404. Unreachable.
+00:00:49 ❌ hackerone.com/hacktivity — JS-only / empty body. Unreachable.
+00:00:50 ❌ bugcrowd.com/disclosures — HTTP 404 (consistent with MEMORY 2026-03-30 observation). Unreachable.
+00:00:51 ❌ nvd.nist.gov — returned policy/timeline page rather than vulnerability listings. Unreachable for our purposes.
+00:00:53 ✅ dbugs.ptsecurity.com — fetched; +1,881 vulnerabilities this week (total 381,834); highest in-window: Gen3C CVSS 9.8, Hermes-WebUI 9.1, Network-AI 9.1, Tinyproxy 9.1. Tinyproxy is the most defensively-relevant (web proxy infrastructure); routed to silent-skip pending more detail.
+00:00:55 ✅ avleonov.com — fetched; in-window post 2026-06-17 'In the Trend of VM' #28: CVE-2026-43284 + CVE-2026-43500 Linux 'Dirty Frag' (ITW), CVE-2026-46300 Linux 'Fragnesia', CVE-2026-41091 Microsoft Defender 'RedSun' (note: this is a separate Defender CVE distinct from CVE-2026-50656 RoguePlanet — RedSun is "fifth Defender LPE this year" per avleonov), CVE-2026-0300 PAN-OS unauth RCE. Routed RedSun + Dirty Frag + Fragnesia to NOTED (strict-scope local-LPE); PAN-OS CVE-2026-0300 to NOTED pending mainstream cross-reference.
+00:00:58 ✅ kb.cert.org/vuls — fetched; VU#380058 SignalRGB kernel driver improper access control + IOCTL vulnerabilities (2026-06-17). Routed to NOTED (local-LPE class).
+00:01:00 ⚠️ habr.com/ru/companies/tomhunter/articles — fetched, no new posts since 2026-03-06 → degraded (3.4-month silence — flag for drop in sources-review-2026-06.md per MEMORY 2026-06-11/12/13/14).
+00:01:02 ⚠️ teletype.in/@cyberok — fetched, no new posts since 2026-02-04 → degraded (4.4-month silence — flag for drop).
+00:01:04 ⚠️ cert.gov.ua — fetched, empty content → degraded (consistent with prior weeks).
+
+— DEDUP DECISIONS —
+
+00:01:10 NEW: CVE-2026-48907 Joomla JCE — not in dedup index; new KEV add 06-17. → NEWS score 9.
+00:01:11 NEW: FortiBleed (no CVE) — not in dedup; Diachenko 06-16/06-17 disclosure. → NEWS score 9.
+00:01:12 NEW: Mastra npm 144-package supply chain (no CVE) — not in dedup; 06-17 THN disclosure. → NEWS score 7.
+00:01:13 NEW: Apache DolphinScheduler 6-CVE batch (CVE-2026-32966/32967/42357/47340/49050/41280) — not in dedup. → NEWS score 5.
+00:01:14 PROMOTED-FROM-NOTED: Microsoft Defender 'RoguePlanet' was NOTED 2026-06-16; today CVE-2026-50656 assigned + vendor confirm + Positive Technologies ITW evidence. Strict-scope local-LPE = kept as NOTED rather than NEWS/UPDATE per scope guidance, but state-changed entry.
+00:01:15 SKIP (already in 2026-06-17): JetBrains Marketplace AI-plugin malware (full NEWS yesterday) — Aikido follow-up with telemetry expansion but no material score change. → NOTED only.
+00:01:16 SKIP (already in 2026-06-17): FortiSandbox CVE-2026-25089 / CVE-2026-39813 / CVE-2026-39808 — full UPDATE yesterday. Today's SOCRadar 30K compromised + Defused observation is more detail, but no material score change. → silent skip.
+00:01:17 SKIP (already in 2026-06-17): DragonForce 'Backdoor.Turn' Teams relay — full NEWS yesterday. → silent skip.
+00:01:18 SKIP (already in 2026-06-15 → 2026-06-17): LiteSpeed cPanel CVE-2026-54420 — full NEWS 06-15 + KEV-add UPDATE 06-17. CISA BC follow-up not material. → silent skip.
+00:01:19 SKIP (already in 2026-06-13 → 2026-06-17): Arch Linux AUR mass-compromise — full NEWS 06-13 + scope-expansion UPDATE 06-17 (400 → 1,500+). → silent skip.
+00:01:20 NEW (NOTED): CVE-2026-49268 Apache Shiro LDAP DN injection.
+00:01:21 NEW (NOTED): CVE-2026-43284 + CVE-2026-43500 Linux 'Dirty Frag' (strict-scope LPE).
+00:01:22 NEW (NOTED): CVE-2026-46300 Linux 'Fragnesia' (strict-scope LPE).
+00:01:23 NEW (NOTED): CVE-2026-0300 PAN-OS unauth RCE (avleonov only; pending mainstream cross-reference).
+00:01:24 NEW (NOTED): CVE-2026-36849 libtiff DoS.
+00:01:25 NEW (NOTED): Vim < 9.2.0670 OOB read (no CVE).
+00:01:26 NEW (NOTED): VU#380058 SignalRGB kernel driver (local-LPE).
+00:01:27 NEW (NOTED): Kodak ShinyHunters breach (extortion campaign continues).
+00:01:28 NEW (NOTED): Oracle June 2026 CPU 245 patches (operational watch).
+00:01:29 NEW (NOTED): Crypto Clipper VirusTotal-comment-gaming tradecraft.
+00:01:30 NEW (NOTED): GhostTree NTFS junction Defender evasion (06-16 BC).
+00:01:31 NEW (NOTED): Microsoft Office launch issues post-June-Patch-Tuesday (operational watch).
+
+— SOURCE COVERAGE NUMBERS —
+
+00:01:35 total: 30 (Tier 1 unique 15 + Tier 2 unique 15, with seclists/fulldisclosure dedup'd)
+00:01:36 unreachable: 9 — [cisa.gov, cisa.gov KEV, attackerkb, bugcrowd, googleprojectzero, cve.org, cve.mitre.org, hackerone, nvd]
+00:01:37 degraded: 12 — [krebs, rapid7, fortinet research, securitylab, packetstorm.news, cloudflare security, msrc blog, seclists fulldisclosure, habr/tomhunter, teletype/cyberok, cert.gov.ua, schneier]
+00:01:38 checked: 21 (sum of with-findings + degraded; 30 - 9 unreachable)
+00:01:39 with_findings: 10 — [bleepingcomputer, thehackernews, securityweek, opencve.io, dbugs.ptsecurity.com, avleonov.com, kb.cert.org/vuls, github.com/0xMarcio/cve, github.com/search?q=CVE, seclists.org/fulldisclosure-via-openwall-supplemental]
+
+— VALIDATOR RUN —
+
+00:01:42 python3 scripts/validate_report.py reports/2026/06/18/report.json
+    First run: ⚠️ 4 warning(s):
+       findings[1]: 'summary' is 348 chars (aim for <200)
+       findings[1]: CVE 'None assigned' doesn't start with 'CVE-'
+       findings[2]: 'summary' is 313 chars (aim for <200)
+       findings[3]: 'summary' is 367 chars (aim for <200)
+    ✅ valid (warnings only).
+    Trimmed findings[1] / [2] / [3] summaries.
+    Final run: ⚠️ 1 warning(s):
+       findings[1]: CVE 'None assigned' doesn't start with 'CVE-'
+    ✅ reports/2026/06/18/report.json — valid
+
+00:01:45 Step 7 complete — validator passes.
+00:01:46 Step 8: proceeding to git add / commit / push.

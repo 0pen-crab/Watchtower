@@ -1,0 +1,152 @@
+{
+  "date": "2026-06-18",
+  "findings": [
+    {
+      "type": "news",
+      "title": "Joomla JCE Extension CVE-2026-48907 — CISA KEV-Added 2026-06-17 With BOD 26-04 3-Day FCEB Deadline 2026-06-20; Automated Mass-Exploitation Active (CVSS 10.0)",
+      "threat_score": 9,
+      "cve": "CVE-2026-48907",
+      "cvss": 10.0,
+      "affected_technology": "Widget Factory Joomla Content Editor (JCE Pro) — all versions before 2.9.99.6",
+      "summary": "Unauthenticated improper-access-control flaw in Joomla JCE Pro lets attackers create editor profiles and upload PHP for code execution; CISA KEV-added 2026-06-17 with BOD 26-04 3-day federal deadline 2026-06-20 and automated public-exploit attacks in the wild.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-06-17"
+    },
+    {
+      "type": "news",
+      "title": "FortiBleed — 73,932 Fortinet SSL VPN URLs / ~75K FortiGate Devices Exposed With Plaintext Credentials + Configuration Data (Russian-Speaking Multi-Operator Group, 1.16B Credential Attempts)",
+      "threat_score": 9,
+      "cve": "None assigned",
+      "cvss": null,
+      "affected_technology": "Fortinet FortiGate SSL VPN + management interfaces",
+      "summary": "Diachenko found a Russian-speaking server logging 1.16B FortiGate VPN credential attempts plus plaintext creds for 73,932 firewall URLs in 194 countries (verified Chevron / Samsung / Foxconn / AT&T admin creds) with ~30K devices still online per SOCRadar.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-06-17"
+    },
+    {
+      "type": "news",
+      "title": "Mastra npm Supply-Chain Compromise — 144 @mastra/* Packages Backdoored Via Hijacked Contributor Account + 'easy-day-js' Trojanized Dependency",
+      "threat_score": 7,
+      "cve": "Not yet assigned",
+      "cvss": null,
+      "affected_technology": "@mastra/* npm namespace (144 packages, @mastra/core ~918K weekly downloads)",
+      "summary": "Attackers hijacked a former @mastra maintainer's npm account and within 88 minutes injected a trojanized 'easy-day-js' postinstall loader into 144 packages, harvesting browser data + 160+ crypto wallets and polling C2 for second-stage modules cross-platform.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-06-17"
+    },
+    {
+      "type": "news",
+      "title": "Apache DolphinScheduler 6-CVE Batch — Authorization / Privilege-Escalation / Permission-Check-Bypass Cluster Via Apache Security Mailing List",
+      "threat_score": 5,
+      "cve": "CVE-2026-32966, CVE-2026-32967, CVE-2026-42357, CVE-2026-47340, CVE-2026-49050, CVE-2026-41280",
+      "cvss": null,
+      "affected_technology": "Apache DolphinScheduler (workflow scheduler)",
+      "summary": "Apache DolphinScheduler 6-CVE authorization batch (DataSource leak, /v2 bypass, alert/workflow over-disclosure, regular-user → admin token escalation, workflow-deletion bypass) disclosed via openwall oss-security 2026-06-17.",
+      "discovery_latency": "early",
+      "first_seen_at": "2026-06-17"
+    }
+  ],
+  "noted": [
+    {
+      "cve": "CVE-2026-50656",
+      "product": "Microsoft Defender Malware Protection Engine",
+      "summary": "Yesterday's NOTED 'RoguePlanet zero-day' now has CVE assigned (CVSS 7.8) + Microsoft confirms patch in development + Positive Technologies reports in-wild exploitation; strict-scope-borderline local-only LPE → SYSTEM via race condition, monitoring through next Patch Tuesday."
+    },
+    {
+      "cve": "CVE-2026-49268",
+      "product": "Apache Shiro",
+      "summary": "LDAP DN injection in DefaultLdapRealm authentication component (openwall oss-security 2026-06-17); pending CVSS, watch for upgrade guidance from Apache Shiro project."
+    },
+    {
+      "cve": "CVE-2026-43284, CVE-2026-43500",
+      "product": "Linux kernel 'Dirty Frag'",
+      "summary": "LPE chain to root with public exploit code and in-wild exploitation evidence per Positive Technologies 'In the Trend of VM' #28 (avleonov 2026-06-17); pure local-LPE = strict-scope skip, monitoring only."
+    },
+    {
+      "cve": "CVE-2026-46300",
+      "product": "Linux kernel 'Fragnesia'",
+      "summary": "LPE with public exploit per avleonov 2026-06-17 'In the Trend of VM' #28; lab repository BenedictEjepu/CVE-2026-46300-Fragnesia on GitHub; strict-scope skip, monitoring only."
+    },
+    {
+      "cve": "CVE-2026-0300",
+      "product": "Palo Alto Networks PAN-OS",
+      "summary": "Unauthenticated RCE on PAN-OS appliances per avleonov 2026-06-17 'In the Trend of VM' #28 with publicly available exploit; pending mainstream-news cross-reference before promotion — would land in same 2026-Q2 perimeter-VPN cluster as CVE-2026-0257 and CVE-2026-50751."
+    },
+    {
+      "cve": "CVE-2026-36849",
+      "product": "libtiff",
+      "summary": "Denial-of-service via large SamplesPerPixel tag (openwall 2026-06-17); affects image-processing pipelines that ingest user-supplied TIFFs — relevant to multimedia-parser pipeline isolation pattern."
+    },
+    {
+      "cve": "Not yet assigned",
+      "product": "Vim < 9.2.0670",
+      "summary": "Out-of-bounds read in Text Property count (openwall 2026-06-17); bounded impact, relevant only to plugin-rich Vim setups loading untrusted files."
+    },
+    {
+      "cve": "VU#380058",
+      "product": "SignalRGB kernel driver",
+      "summary": "Improper access control and IOCTL vulnerabilities in SignalRGB kernel driver (CERT/CC 2026-06-17); local-LPE class, strict-scope skip for Watchtower-grade fleets but relevant to gaming-PC / kernel-driver attack surface."
+    },
+    {
+      "cve": "None assigned",
+      "product": "Kodak (ShinyHunters extortion)",
+      "summary": "Kodak acknowledged a security breach claimed by the ShinyHunters extortion gang (BleepingComputer 2026-06-17); continues the ShinyHunters PeopleSoft / Council of Europe / Salesforce campaign cadence."
+    },
+    {
+      "cve": "Multiple",
+      "product": "Oracle June 2026 Critical Patch Update",
+      "summary": "Oracle June 2026 Critical Patch Update delivers 245 patches across Communications, EBS, Enterprise Manager and other product families (SecurityWeek 2026-06-17); watch the Communications and EBS CVE list for any KEV-grade items in the next 48h triage."
+    },
+    {
+      "cve": "None assigned",
+      "product": "Crypto Clipper Campaign (VirusTotal comment-gaming tradecraft)",
+      "summary": "Threat actors leveraged paid posts on legitimate news sites, fake reviews, and coordinated VirusTotal trusted-comment accounts to inflate download counts and reputations (THN 2026-06-17); new tradecraft data point — VirusTotal community comments now gameable, should not be trusted as a reputation signal."
+    },
+    {
+      "cve": "None assigned",
+      "product": "JetBrains Marketplace malicious AI-plugin telemetry expansion (Aikido)",
+      "summary": "Aikido follow-up on 2026-06-17 JetBrains NEWS — 7 vendor accounts, ~70K total installs (DeepSeek AI Assist 27,727 + CodeGPT AI Assistant 25,571 as top two), unencrypted HTTP exfil to 39.107.60[.]51; same incident, no material score change."
+    },
+    {
+      "cve": "None assigned",
+      "product": "GhostTree (NTFS junction Defender evasion tradecraft)",
+      "summary": "Threat actors leveraged recursive NTFS junctions to generate unbounded valid file paths, causing Microsoft Defender scans to never complete (BleepingComputer 2026-06-16); new evasion tradecraft relevant to EDR-posture review, not a vulnerability per se."
+    },
+    {
+      "cve": "None assigned",
+      "product": "Microsoft Office launch issues post-June-Patch-Tuesday",
+      "summary": "Microsoft confirmed an issue preventing third-party applications from launching Microsoft Office or opening documents on updated Windows systems (BleepingComputer 2026-06-17); operational not security, but security teams should anticipate user-facing tickets misattributing the issue to Defender / EDR."
+    }
+  ],
+  "source_coverage": {
+    "total": 30,
+    "checked": 21,
+    "with_findings": 10,
+    "unreachable": [
+      "cisa.gov (HTTP 403)",
+      "cisa.gov/known-exploited-vulnerabilities-catalog (HTTP 403)",
+      "attackerkb.com (HTTP 403)",
+      "bugcrowd.com/disclosures (HTTP 404)",
+      "googleprojectzero.blogspot.com (HTTP 404 / redirects to projectzero.google also 404)",
+      "cve.org (JS-only / empty body)",
+      "cve.mitre.org (redirects to cve.org / JS-only)",
+      "hackerone.com/hacktivity (JS-only / empty body)",
+      "nvd.nist.gov (returned policy/timeline page rather than vulnerability listings)"
+    ],
+    "degraded": [
+      "krebsonsecurity.com (reachable, last post 2026-06-10)",
+      "rapid7.com/blog (reachable, no clearly-in-window dated posts surfaced)",
+      "fortinet.com/blog/threat-research (reachable, last post 2026-06-11)",
+      "securitylab.github.com (reachable, only stale advisories surfaced)",
+      "packetstorm.news (reachable, no per-item listings extracted)",
+      "blog.cloudflare.com/tag/security (reachable, last post 2026-06-09)",
+      "msrc.microsoft.com/blog (reachable, no in-window posts visible)",
+      "seclists.org/fulldisclosure (reachable, only through 2026-06-15)",
+      "habr.com/ru/companies/tomhunter (reachable, no new posts since 2026-03-06 — 3.4-month silence)",
+      "teletype.in/@cyberok (reachable, no new posts since 2026-02-04 — 4.4-month silence)",
+      "cert.gov.ua (reachable, empty content)",
+      "schneier.com (reachable, no in-scope content for this cycle)"
+    ]
+  },
+  "full_report": "reports/2026/06/18/report.md"
+}
