@@ -1,0 +1,194 @@
+{
+  "date": "2026-06-19",
+  "findings": [
+    {
+      "type": "news",
+      "title": "F5 NGINX Out-of-Band Patches — CVE-2026-42530 (CVSS 9.2) HTTP/3 QUIC Use-After-Free + CVE-2026-42055 (CVSS 9.2) Proxy/gRPC Heap Overflow Allow Unauthenticated RCE",
+      "threat_score": 8,
+      "cve": "CVE-2026-42530, CVE-2026-42055",
+      "cvss": 9.2,
+      "affected_technology": "F5 NGINX Open Source + NGINX Plus + NGINX Gateway Fabric + NGINX Instance Manager",
+      "summary": "F5 shipped out-of-band patches for two CVSS-9.2 unauthenticated NGINX RCE flaws (use-after-free in ngx_http_v3_module HTTP/3 QUIC and heap-based overflow in ngx_http_proxy_v2_module/ngx_http_grpc_module when ignore_invalid_headers is disabled); RCE requires ASLR bypass and no in-the-wild exploitation reported yet but NGINX's deployment scale makes patch urgency high.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-06-18"
+    },
+    {
+      "type": "news",
+      "title": "Cisco ISE CVE-2026-20181 (CVSS 9.1) Authenticated-Admin → Root Command Injection + CVE-2026-20190 Hashed-Credential Disclosure Patched; Single-Node Deployments Can DoS",
+      "threat_score": 7,
+      "cve": "CVE-2026-20181, CVE-2026-20190",
+      "cvss": 9.1,
+      "affected_technology": "Cisco Identity Services Engine (ISE) + ISE Passive Identity Connector (ISE-PIC) 3.3, 3.4, 3.5",
+      "summary": "Cisco patched a CVSS-9.1 authenticated-admin HTTP command-injection flaw in ISE/ISE-PIC that escalates to root and can DoS single-node deployments (CVE-2026-20181), plus a high-severity unauthenticated hashed-credential disclosure flaw (CVE-2026-20190); fixes in 3.3 Patch 11 / 3.4 Patch 6 / 3.5 hotfix, no in-wild exploitation observed.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-06-18"
+    },
+    {
+      "type": "news",
+      "title": "ShapedPlugin WordPress Supply-Chain Compromise — CVE-2026-10735 Backdoor In Build Pipeline From 2026-05-21; Product Slider Pro / Real Testimonials Pro / Smart Post Show Pro Paid Updates Shipped LicenseLoader.php Stealer",
+      "threat_score": 7,
+      "cve": "CVE-2026-10735",
+      "cvss": null,
+      "affected_technology": "ShapedPlugin paid WordPress plugins (Product Slider Pro pre-3.5.4, Real Testimonials Pro 3.2.5, Smart Post Show Pro pre-4.0.2) — vendor's free WordPress.org base ~400K active installs",
+      "summary": "Attackers compromised ShapedPlugin's build pipeline on 2026-05-21 and shipped LicenseLoader.php through legitimate paid-plugin updates for ~3 weeks before customer reports on 2026-06-10; payload steals WordPress creds + 2FA secrets + DB credentials + 3-month WooCommerce order history + SMTP creds, fixes shipped 2026-06-16.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-06-18"
+    },
+    {
+      "type": "news",
+      "title": "Arch Linux AUR Hijack — 400+ Abandoned Packages Adopted Since 2026-06-11; npm 'atomic-lockfile' + bun 'js-digest' Postinstall Pull Rust Infostealer With Optional eBPF Rootkit",
+      "threat_score": 6,
+      "cve": "Not yet assigned",
+      "cvss": null,
+      "affected_technology": "Arch Linux User Repository (AUR) — 400+ packages, attacker-adopted abandoned projects",
+      "summary": "Attackers adopted 400+ abandoned AUR projects from 2026-06-11, edited PKGBUILD/.install scripts to npm-install 'atomic-lockfile' (followed by bun 'js-digest' second wave) which drops a Rust infostealer harvesting browser/Electron/GitHub/npm/cloud/SSH/Docker creds plus an optional eBPF rootkit hiding processes via pinned BPF maps when run as root.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-06-18"
+    },
+    {
+      "type": "news",
+      "title": "Klue OAuth Compromise → 'Icarus' Salesforce CRM Theft Campaign — Dormant Prototype-Integration Credential Abused To Mint OAuth Tokens For Customer Salesforce Tenants",
+      "threat_score": 6,
+      "cve": "None assigned",
+      "cvss": null,
+      "affected_technology": "Klue Battlecards Salesforce integration + customer Salesforce CRM tenants connected via OAuth",
+      "summary": "Huntress and ReliaQuest report Icarus (April-2026 extortion group, alias 'mr bean') exploited a dormant Klue prototype-integration credential to steal customer OAuth tokens then ran Python REST API queries (sometimes ~1K queries in 15 minutes) against /services/data/v59.0/query to exfiltrate contacts/sales comms/quotes — Salesforce disabled the Klue Battlecards integration platform-wide.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-06-18"
+    },
+    {
+      "type": "news",
+      "title": "Operation Endgame SocGholish/FakeUpdates Takedown — 14,971 WordPress Sites Cleaned + 106 Servers/Domains Seized; Evil Corp-Linked Loader Active Since 2017",
+      "threat_score": 5,
+      "cve": "None assigned",
+      "cvss": null,
+      "affected_technology": "SocGholish/FakeUpdates/GhoLoader JavaScript downloader on compromised WordPress sites",
+      "summary": "Dutch NHCTU / Canadian RCMP / US FBI / German BKA with Europol+Eurojust cleaned 14,971 SocGholish-infected WordPress sites and seized 106 servers/domains on 2026-06-18 — the Evil Corp-linked JS loader has dropped Dridex/DoppelPaymer/Empire/Koadic/Chtonic/Azorult since 2017 via fake browser-update lures.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-06-18"
+    },
+    {
+      "type": "news",
+      "title": "Splunk AI Toolkit CVE-2026-20266 (CVSS 9.1) — Authenticated-Admin OS Command Injection Via Unsafe Shell Pattern In btool Configuration Helper",
+      "threat_score": 5,
+      "cve": "CVE-2026-20266, CVE-2026-20265",
+      "cvss": 9.1,
+      "affected_technology": "Splunk AI Toolkit (pre-5.7.4)",
+      "summary": "Splunk patched CVE-2026-20266 (CVSS 9.1) — an authenticated-admin OS command injection via unsafe shell pattern in the AI Toolkit btool configuration helper — alongside CVE-2026-20265 medium-severity info disclosure from insecure defaults; both fixed in AI Toolkit 5.7.4.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-06-18"
+    },
+    {
+      "type": "news",
+      "title": "Atlassian 100-Bulletin Quarterly Roll-Up — Critical Third-Party Dep Patches Across Jira/Confluence/Bitbucket/Bamboo (Axios x3, Apache Tomcat x5, Netty x1)",
+      "threat_score": 5,
+      "cve": "Multiple",
+      "cvss": null,
+      "affected_technology": "Atlassian Jira / Confluence / Bitbucket / Bamboo (server + data center)",
+      "summary": "Atlassian published 100 security bulletins on 2026-06-18 patching third-party dependency vulnerabilities across Jira/Confluence/Bitbucket/Bamboo — critical issues in Axios (3 CVEs), Apache Tomcat (5 CVEs) and Netty (1 CVE); no active exploitation reported but the dep-update surface is broad and worth prioritising for internet-facing instances.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-06-18"
+    }
+  ],
+  "noted": [
+    {
+      "cve": "CVE-2026-41091",
+      "product": "Microsoft Defender Malware Protection Engine ('RedSun')",
+      "summary": "avleonov 'In the Trend of VM' #28 (2026-06-17) reports CVE-2026-41091 LPE-to-SYSTEM in Defender Malware Protection Engine with public exploit and in-wild exploitation evidence; distinct from yesterday's 'RoguePlanet' CVE-2026-50656 — strict-scope local-LPE skip, monitoring only."
+    },
+    {
+      "cve": "None assigned",
+      "product": "INC Ransomware-as-a-Service Rust rewrite + Veeam DPAPI dumper",
+      "summary": "THN 2026-06-18 reports INC RaaS has 830+ victims since 2023-08, encryptors rewritten in Rust for cross-platform deployment, and an updated credential dumper targeting Veeam backups with salted DPAPI — backup-server hardening relevant to ransomware recovery posture."
+    },
+    {
+      "cve": "None assigned",
+      "product": "DragonForce 'Backdoor.Turn' — Microsoft Teams C2 abuse",
+      "summary": "THN 2026-06-18 reports DragonForce-linked Backdoor.Turn conceals C2 traffic inside Microsoft Teams relay infrastructure, dwelling 1–2 months undetected — egress allowlists for *.teams.microsoft.com should now expect Backdoor.Turn lookalike traffic patterns."
+    },
+    {
+      "cve": "CVE-2026-50656",
+      "product": "Microsoft Defender Malware Protection Engine ('RoguePlanet')",
+      "summary": "No material change vs 2026-06-18 — patch still in development, race condition LPE-to-SYSTEM unchanged; tracking through next Patch Tuesday."
+    },
+    {
+      "cve": "None assigned",
+      "product": "'Gentlemen' RaaS EDR-killer toolkit",
+      "summary": "BleepingComputer 2026-06-18 reports the Gentlemen RaaS group is actively developing/maintaining a suite of EDR-killer tools for affiliates — relevant to detection-bypass tradecraft, not a vulnerability per se."
+    },
+    {
+      "cve": "None assigned",
+      "product": "USB worm crypto-clipper (LNK propagation + Tor C2)",
+      "summary": "BleepingComputer 2026-06-18 reports a self-propagating USB clipper malware spreading via Windows .lnk shortcuts with Tor C2 and wallet-address substitution — endpoint USB-policy relevance, low Watchtower scope."
+    },
+    {
+      "cve": "None assigned",
+      "product": "Klue-affiliated SaaS integration shutdown impact (HubSpot/SharePoint/Zoom/Gong/Slack)",
+      "summary": "BleepingComputer 2026-06-18 notes Klue proactively disabled integrations with HubSpot, SharePoint, Zoom, Gong and Slack alongside the Icarus Salesforce breach — operational impact to detect/wait on if your team uses Klue Battlecards."
+    },
+    {
+      "cve": "Multiple",
+      "product": "REDCap research-platform legacy-version exploitation (UNC6508)",
+      "summary": "SecurityWeek 2026-06-18: ~8,500 internet-exposed REDCap instances, only 1.18% on latest 17.1.3 — China-linked UNC6508 (Mandiant/GTIG) compromises legacy installs deployed side-by-side with current versions, drops InfiniteRed backdoor and waits months before credential reuse; relevant if any biomedical-research partners run REDCap."
+    },
+    {
+      "cve": "Multiple",
+      "product": "Node.js June 2026 security releases (all active lines)",
+      "summary": "openwall oss-security 2026-06-18 announces Node.js security releases across all active release lines — see nodejs.org/en/blog/vulnerability/june-2026-security-releases for CVE list; check supply-chain build images and Docker base layers for any active-line bump."
+    },
+    {
+      "cve": "CVE-2026-43495",
+      "product": "Linux kernel MediaTek t7xx WWAN driver",
+      "summary": "openwall oss-security 2026-06-18 reports slab out-of-bounds read in MediaTek t7xx WWAN driver — local-impact only, mostly mobile-modem surface, strict-scope skip."
+    },
+    {
+      "cve": "CVE-2026-9692",
+      "product": "Mojolicious::Sessions::Storable (Perl)",
+      "summary": "openwall oss-security 2026-06-18 reports Mojolicious::Sessions::Storable through 0.05 generates session IDs with insufficient randomness — auth-bypass risk for any Perl web apps still on that storage backend."
+    },
+    {
+      "cve": "Not yet assigned",
+      "product": "Vim < 9.2.0671 (libsodium-encrypted files)",
+      "summary": "openwall oss-security 2026-06-18 reports out-of-bounds read in Vim libsodium-encrypted file handling — local-impact, bounded scope."
+    },
+    {
+      "cve": "Multiple",
+      "product": "Oracle Coherence CVE-2026-35307 (CVSS 10.0) + WebCenter family CVE-2026-46781/35286/35296 + MySQL Shell CVE-2026-46850",
+      "summary": "Oracle June 2026 CPU criticals visible in OpenCVE: Coherence RCE (10.0, scope-change), WebCenter Enterprise Capture RMI RCE (10.0), WebCenter Content/Sites HTTP-RCE (9.8), MySQL Shell (9.9) — follow-up triage from yesterday's Oracle CPU noted item; prioritise WebCenter and Coherence for internet-facing instances."
+    },
+    {
+      "cve": "CVE-2026-38716",
+      "product": "InHand Networks IR912/IR915 IoT routers",
+      "summary": "OpenCVE 2026-06-18 shows CVE-2026-38716 (CVSS 9.8) command injection in IR912/IR915 export function leading to remote root — IoT router surface, low installed base in Watchtower-grade fleets but flag for any field-deployed cellular routers."
+    },
+    {
+      "cve": "None assigned",
+      "product": "Cloudflare 'vulnerability-discovery harness' blog (defender tooling)",
+      "summary": "Cloudflare's 2026-06-18 post details a multi-stage LLM-driven vulnerability-discovery harness with adversarial-review triage loop — defender-tooling reference, not a vulnerability."
+    }
+  ],
+  "source_coverage": {
+    "total": 30,
+    "checked": 19,
+    "with_findings": 8,
+    "unreachable": [
+      "cisa.gov (HTTP 403)",
+      "cisa.gov/known-exploited-vulnerabilities-catalog (HTTP 403)",
+      "attackerkb.com (HTTP 403)",
+      "bugcrowd.com/disclosures (HTTP 404)",
+      "googleprojectzero.blogspot.com (HTTP 404)",
+      "cve.org (JS-only / empty body)",
+      "cve.mitre.org (redirects to cve.org / JS-only)",
+      "hackerone.com/hacktivity (JS-only / empty body)",
+      "packetstormsecurity.com (site under maintenance)",
+      "nvd.nist.gov (search interface returned navigation page, no data)",
+      "msrc.microsoft.com/blog (redirect to www.microsoft.com/en-us/msrc/blog; no in-window posts extractable)"
+    ],
+    "degraded": [
+      "habr.com/ru/companies/tomhunter (reachable, no new posts since 2026-03-06)",
+      "teletype.in/@cyberok (reachable, no new posts since 2026-02-04)",
+      "cert.gov.ua (reachable, empty content)"
+    ]
+  },
+  "full_report": "reports/2026/06/19/report.md"
+}
