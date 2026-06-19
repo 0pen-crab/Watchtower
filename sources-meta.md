@@ -18,7 +18,7 @@
 | dbugs.ptsecurity.com | 1 | 20 | 8 | 2026-06-19 (general overview only; no per-CVE detail extractable this cycle) |
 | github.com/0xMarcio/cve | 3 | 6 | 11 | 2026-06-19 (no new high-signal entries beyond CVE-2026-31431/41089/24061/21858 dedup) |
 | blog.cloudflare.com/tag/security | 0 | 1 | 15 | 2026-06-19 (+1 NOTED: Cloudflare 'Build your own vulnerability harness' 2026-06-18 — defender tooling, not vuln) |
-| avleonov.com | 1 | 5 | 14 | 2026-06-19 (+1 NOTED extracted from 'In the Trend of VM' #28 2026-06-17: Defender RedSun CVE-2026-41091 LPE — distinct from RoguePlanet CVE-2026-50656) |
+| avleonov.com | 1 | 4 | 15 | 2026-06-19 (RedSun CVE-2026-41091 re-mention skipped per dedup — already covered in 2026-05-22 + 2026-05-29 reports; no material change) |
 | cisa.gov (incl. /KEV) | 0 | 0 | 16 | 2026-06-19 (403 persistent) |
 | attackerkb.com | 0 | 0 | 14 | — (403 Forbidden persistent) |
 | cve.org / cve.mitre.org | 0 | 0 | 14 | — (JS-required, no content via WebFetch) |

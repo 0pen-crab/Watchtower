@@ -155,8 +155,6 @@ Atlassian shipped **100 security bulletins** on 2026-06-18 addressing third-part
 
 ## 📋 Noted / Monitoring
 
-**CVE-2026-41091 — Microsoft Defender Malware Protection Engine "RedSun"** — avleonov "In the Trend of VM" #28 (2026-06-17) reports LPE-to-SYSTEM with public exploit and in-wild exploitation evidence. Distinct from yesterday's RoguePlanet CVE-2026-50656. Strict-scope local-LPE skip, monitoring only.
-
 **INC Ransomware-as-a-Service Rust rewrite + Veeam DPAPI dumper** — THN 2026-06-18 reports 830+ victims since 2023-08, encryptors rewritten in Rust for cross-platform deployment, and an updated credential dumper targeting Veeam backups with salted DPAPI. Backup-server hardening is the relevant defender takeaway.
 
 **DragonForce "Backdoor.Turn" — Microsoft Teams C2 abuse** — THN 2026-06-18 reports DragonForce-linked Backdoor.Turn conceals C2 inside Microsoft Teams relay infrastructure, dwelling 1–2 months undetected. Egress allowlists for `*.teams.microsoft.com` now need to expect this.

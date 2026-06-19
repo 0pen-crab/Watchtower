@@ -92,11 +92,6 @@
   ],
   "noted": [
     {
-      "cve": "CVE-2026-41091",
-      "product": "Microsoft Defender Malware Protection Engine ('RedSun')",
-      "summary": "avleonov 'In the Trend of VM' #28 (2026-06-17) reports CVE-2026-41091 LPE-to-SYSTEM in Defender Malware Protection Engine with public exploit and in-wild exploitation evidence; distinct from yesterday's 'RoguePlanet' CVE-2026-50656 — strict-scope local-LPE skip, monitoring only."
-    },
-    {
       "cve": "None assigned",
       "product": "INC Ransomware-as-a-Service Rust rewrite + Veeam DPAPI dumper",
       "summary": "THN 2026-06-18 reports INC RaaS has 830+ victims since 2023-08, encryptors rewritten in Rust for cross-platform deployment, and an updated credential dumper targeting Veeam backups with salted DPAPI — backup-server hardening relevant to ransomware recovery posture."

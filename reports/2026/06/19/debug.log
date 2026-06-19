@@ -59,7 +59,7 @@ Watchtower run — 2026-06-19
   SocGholish takedown    no CVE                             NEW (Operation Endgame phase)
   Splunk AI Toolkit      CVE-2026-20266                     NEW
   Atlassian quarterly    Multiple                           NEW (group entry)
-  Defender RedSun        CVE-2026-41091                     NEW → Noted (local-only)
+  Defender RedSun        CVE-2026-41091                     SKIP (re-mention of already-covered KEV item from 2026-05-19; appears in 2026-05-22 + 2026-05-29 reports; per "no material change → skip" rule)
   Defender RoguePlanet   CVE-2026-50656                     SKIP (already in 2026-06-18 Noted, no material change today)
   Joomla JCE             CVE-2026-48907                     SKIP (already in 2026-06-18 News, no material change)
   FortiBleed             no CVE                             SKIP (already in 2026-06-18 News, no material change)
