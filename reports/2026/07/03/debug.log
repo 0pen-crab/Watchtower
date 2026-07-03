@@ -1,0 +1,136 @@
+# Watchtower debug log — 2026-07-03 daily cycle
+# Previous report: 2026-06-19 (14-day gap — largest window since MEMORY 2026-06-01 deferral thread)
+
+[2026-07-03 00:01Z] STEP 1: cd /home/claude/workspace/watchtower && git pull
+  → Already up to date.
+
+[2026-07-03 00:01Z] STEP 2: Build 30-day dedup index (cutoff 2026-06-03 → 2026-07-03)
+  → Enumerated report.json files under reports/2026/06/*/  (17 reports 2026-06-01→06-19; report.json for 05-31 and earlier out of window)
+  → Extracted 287 unique CVEs across findings + noted; wrote /tmp/dedup_cves.txt
+  → Notable dedup members (used below to route News vs Update vs Skip):
+    - CVE-2026-20245 (Cisco SD-WAN): 06-06, 06-11 → routing UPDATE
+    - CVE-2026-20230 (Cisco UCM): 06-06 → routing UPDATE
+    - CVE-2026-10520 (Ivanti Sentry): 06-11, 06-12, 06-13 → skip unless new material
+    - CVE-2026-42897 (Exchange OWA XSS): 06-11 → skip
+    - CVE-2026-45247 (Mirasvit Magento): 06-08 → skip
+    - CVE-2026-48907 (Joomla JCE): 06-18 → skip
+    - CVE-2026-45659 (SharePoint): NOT in dedup → route NEWS
+    - CVE-2026-8451 (New CitrixBleed): NOT in dedup → route NEWS
+    - CVE-2026-33825 (BlueHammer): NOT in dedup (April KEV → outside 30-day window) → route NEWS
+    - CVE-2026-46817 (Oracle EBS Payments): NOT in dedup → route NEWS
+    - CVE-2025-3248 (Langflow): NOT in dedup → route NEWS
+    - CVE-2026-48286 / 48313 / 48315 (Adobe Campaign Classic + ColdFusion): NOT in dedup → route NEWS
+
+[2026-07-03 00:02Z] STEP 3: Source polling (SOURCES.md — 30 unique sources after dedup of seclists fulldisclosure entry)
+
+  === Tier 1 ===
+  [00:02Z] ✅ bleepingcomputer.com                     4.2s → 12 items (Jun 30-Jul 2)
+  [00:03Z] ✅ thehackernews.com                        4.8s → 13 items (Jun 28-Jul 2)
+  [00:03Z] ❌ cisa.gov/known-exploited-vulnerabilities-catalog  0.3s → 403 (persistent per MEMORY)
+  [00:03Z] ❌ cisa.gov                                  0.3s → 403 (persistent per MEMORY)
+  [00:03Z] ✅ securityweek.com                         3.9s → 11 items (Jun 24-Jul 2)
+  [00:04Z] ✅ github.com/search?q=CVE&s=updated       4.5s → 6 recent PoCs (CVE-2026-2472, 2441, 20841, 24061, 56782, 51947)
+  [00:04Z] ✅ schneier.com                             4.1s → 10 posts (Jun 25-Jul 2)
+  [00:04Z] ✅ krebsonsecurity.com                      3.7s → 3 posts (Jun 18, Jun 23, Jul 2)
+  [00:05Z] ✅ rapid7.com/blog                          5.1s → 4 ETRs + 4 Metasploit wrap-ups (Jun 5, Jun 13, Jun 19)
+  [00:05Z] ❌ attackerkb.com                           0.3s → 403 (persistent per MEMORY)
+  [00:05Z] ✅ fortinet.com/blog/threat-research       4.2s → 4 items (Jun 4, Jun 11, Jun 26, Jul 1)
+  [00:06Z] ⚠️ securitylab.github.com                   3.9s → only 2026-05-22 advisories in window (no items in Jun 20-Jul 3)
+  [00:06Z] ✅ seclists.org/fulldisclosure              4.5s → 6 items (Jul 2 batch: Whistleblower plats, CWP SQLi, Horde IMP LFI, Safari 26.5.2, Asterisk)
+  [00:07Z] ⚠️ packetstormsecurity.com → packetstorm.news  4.0s → homepage nav only, no article listings resolved
+  [00:07Z] ✅ app.opencve.io/cve                       5.4s → 10 CVSS>=8.0 CVEs incl. Ubiquiti batch + CVE-2026-45499 Azure OpenAI SSRF
+
+  === Tier 2 ===
+  [00:07Z] ❌ nvd.nist.gov                             0.4s → JS-only splash, no data (routed unreachable per MEMORY)
+  [00:07Z] ❌ cve.mitre.org                            0.4s → redirect to cve.org (JS-only)
+  [00:07Z] ❌ cve.org                                  0.4s → JS-only (routed unreachable per MEMORY)
+  [00:07Z] ⚠️ googleprojectzero.blogspot.com → projectzero.google  3.2s → no posts in Jun 20-Jul 3 window (latest May 13)
+  [00:08Z] ✅ blog.cloudflare.com/tag/security         3.1s → 3 posts (Jun 23 post-quantum EO, Jun 24 OAuth, Jul 1 Attribution Insights)
+  [00:08Z] ⚠️ msrc.microsoft.com/blog → microsoft.com/en-us/msrc/blog  4.0s → nav shell, no article content resolved
+  [00:08Z] ❌ hackerone.com/hacktivity                 0.3s → JS-only (routed unreachable per MEMORY)
+  [00:08Z] ❌ bugcrowd.com/disclosures                 0.3s → 404 (URL change per MEMORY 2026-03-30)
+  [00:08Z] ✅ kb.cert.org/vuls                         3.7s → 5 VUs (VU#639124 GameFirst, VU#936962 FastStone, VU#226679 WinRE, VU#457458 UEFI, VU#380058)
+  [00:09Z] ✅ avleonov.com                             3.2s → 1 new post (Jul 2 Exchange XSS re-cap); rest already covered
+  [00:09Z] ✅ github.com/0xMarcio/cve                  3.5s → PoC updates for CVE-2026-31431, CVE-2026-41089, CVE-2026-21858, CVE-2026-41940, CVE-2026-45504 (all in dedup)
+  [00:09Z] ✅ dbugs.ptsecurity.com                     4.1s → 43 vulns in window, highlights PT-2026-55203 (WAF-ASP 9.8), PT-2026-55259 Flowmon 8.7, PT-2026-56004 OpenSUSE Urild 10.0
+  [00:09Z] ⚠️ habr.com/ru/companies/tomhunter          3.0s → no posts in window (silent 3.5-month, continues MEMORY 2026-06-19 flag)
+  [00:10Z] ⚠️ teletype.in/@cyberok                     3.0s → no posts in window (silent 4.5-month)
+  [00:10Z] ⚠️ cert.gov.ua                              2.9s → empty (per MEMORY chain)
+
+  === Bonus / off-list checks ===
+  [00:10Z] ✅ openwall.com/lists/oss-security/2026/06/ 4.5s → Apache NiFi, libxml2, Apache Doris, rsyslog, libssh2, Apache Shiro, curl, Apache Kvrocks, libexpat, Apache ActiveMQ, Apache Tomcat, hostapd batches
+  [00:11Z] ✅ openwall.com/lists/oss-security/2026/07/ 4.0s → 13 messages (Jul 1-2): DCMTK 5 DICOM, HttpComponents Core 2x, Perl CGI::Session::ID::md5, Perl HTML::Gumbo, Varnish HTTP/2, NUT upsmon, Linux 'DirtyClone'
+
+[2026-07-03 00:11Z] STEP 3 tally:
+  total = 30
+  successfully fetched with usable signal (checked) = 22
+  unreachable (HTTP failed or JS-only wall) = 8: cisa.gov, cisa.gov/kev, attackerkb, bugcrowd, hackerone, nvd, cve.mitre, cve.org
+  degraded (reachable but empty in window) = 7: msrc, packetstormsecurity, securitylab, projectzero, habr, teletype, cert.gov.ua
+  with_findings = 15 (bleepingcomputer, thehackernews, securityweek, krebsonsecurity, rapid7, fortinet, seclists, opencve, dbugs, kb.cert, github/0xMarcio, github/search, avleonov, oss-security batches, cloudflare)
+
+[2026-07-03 00:12Z] STEP 4: Dedup decisions (top 40):
+  CVE-2026-45659 SharePoint          → NEW (news, score 10)
+  CVE-2026-8451 New CitrixBleed      → NEW (news, score 9)
+  CVE-2026-46817 Oracle EBS Payments → NEW (news, score 9)
+  CVE-2026-33825 BlueHammer          → NEW (news, score 9 — outside 30-day dedup window)
+  CVE-2026-20245 Cisco SD-WAN        → SKIP (already in dedup 06-06, 06-11) → UPDATE (Mandiant material change, score unchanged 9)
+  CVE-2026-20230 Cisco UCM           → SKIP (already in dedup 06-06) → UPDATE (Cisco confirmed exploitation, score 6→8)
+  FortiBleed (no CVE)                → SKIP (already in dedup 06-18) → UPDATE (INC + Lynx attribution, 430K compromises, score 9→10)
+  CVE-2026-48286 + CVE-2026-48313 + CVE-2026-48315 Adobe → NEW (news, score 8)
+  CVE-2025-3248 Langflow             → NEW (news, novel AI-agent angle, score 7)
+  81M M365/Azure CLI spray           → NEW (news, score 7)
+  Argo CD unpatched                  → NEW (news, score 7)
+  Ubiquiti UniFi batch               → NEW (news, score 6)
+  DHS HSIN breach                    → NEW (news, score 6)
+  ChocoPoC RAT                       → NEW (news, score 6)
+  BioShocking AI browser             → NEW (news, score 5)
+  NetNut/Popa takedown               → NEW (news, score 5)
+  OFFIS DCMTK DICOM batch            → NEW (news, score 5)
+  CVE-2025-5777 CitrixBleed 2        → NOTED (Anubis abuse continues)
+  Apache HttpComponents Core         → NOTED
+  Apache NiFi                        → NOTED
+  Apache ActiveMQ 15                 → NOTED
+  Apache Tomcat 7                    → NOTED
+  Apache Kvrocks 5                   → NOTED
+  Apache Shiro                       → NOTED
+  Apache Doris                       → NOTED
+  libssh2 CVE-2026-55200             → NOTED
+  libxml2 CVE-2026-6653              → NOTED
+  libexpat 14                        → NOTED
+  rsyslog CVE-2026-55556             → NOTED
+  hostapd Wi-Fi 7                    → NOTED
+  curl 8.21.0                        → NOTED
+  PowerDNS                           → NOTED
+  Chrome 149 batch (CVE-2026-13779)  → NOTED
+  Apple iOS/macOS/Safari             → NOTED
+  Varnish Cache HTTP/2               → NOTED
+  NUT upsmon CVE-2026-54161          → NOTED
+  Perl CGI::Session::ID + HTML::Gumbo → NOTED
+  Horde Groupware IMP LFI            → NOTED
+  Control Web Panel SQLi             → NOTED
+  Linux DirtyClone CVE-2026-43503    → NOTED
+  CERT/CC VUs (639124, 936962, 226679, 457458) → NOTED
+  Kubota + Medtronic + 1M passports + Scattered Spider + Amadey/StealC → NOTED (breaches / LE actions)
+  Various additional threat-actor items → NOTED
+
+[2026-07-03 00:14Z] STEP 5: Write report.md and report.json
+  → wrote /home/claude/workspace/watchtower/reports/2026/07/03/report.md
+  → wrote /home/claude/workspace/watchtower/reports/2026/07/03/report.json
+
+[2026-07-03 00:15Z] STEP 6: This debug.log
+
+[2026-07-03 00:15Z] STEP 7: Validation
+  → python3 scripts/validate_report.py reports/2026/07/03/report.json
+  → 6 warnings (CVE 'None assigned' cosmetic), 0 errors
+  → ✅ valid
+  Validator output:
+  ⚠️  6 warning(s):
+     findings[6]: CVE 'None assigned' doesn't start with 'CVE-'
+     findings[9]: CVE 'None assigned' doesn't start with 'CVE-'
+     findings[12]: CVE 'None assigned' doesn't start with 'CVE-'
+     findings[13]: CVE 'None assigned' doesn't start with 'CVE-'
+     findings[14]: CVE 'None assigned' doesn't start with 'CVE-'
+     findings[15]: CVE 'None assigned' doesn't start with 'CVE-'
+  ✅ reports/2026/07/03/report.json — valid
+
+[2026-07-03 00:16Z] STEP 8: git add + commit + push
