@@ -1,0 +1,152 @@
+{
+  "date": "2026-07-04",
+  "findings": [
+    {
+      "type": "news",
+      "title": "Apache Solr CVE-2026-44825 (CVSS 9.8) Unauthenticated Velocity Response Writer Template-Injection RCE in Solr 9.4.0-9.10.1 + 10.0.0; Mass-Exploitation Framework Public on GitHub Same Day",
+      "threat_score": 8,
+      "cve": "CVE-2026-44825",
+      "cvss": 9.8,
+      "affected_technology": "Apache Solr (enterprise search platform)",
+      "summary": "Unauthenticated RCE via Velocity Response Writer template injection at /select?wt=velocity in Apache Solr 9.4.0-9.10.1 and 10.0.0; solrradar mass-exploitation framework published on GitHub the same day as disclosure.",
+      "discovery_latency": "early",
+      "first_seen_at": "2026-07-03"
+    },
+    {
+      "type": "news",
+      "title": "Joomla Page Builder CK Extension CVE-2026-56290 Unauthenticated File Upload to PHP RCE; Public Mass-Exploitation Framework Landed 2026-07-03",
+      "threat_score": 8,
+      "cve": "CVE-2026-56290",
+      "cvss": null,
+      "affected_technology": "Page Builder CK Joomla extension (<=3.5.10)",
+      "summary": "Unauthenticated file upload in browse.ajaxAddPicture allows PHP webshell drop via 40+ extension-bypass variants across 20+ writable paths; pbck-exploit mass-exploitation framework published same-day.",
+      "discovery_latency": "early",
+      "first_seen_at": "2026-07-03"
+    },
+    {
+      "type": "news",
+      "title": "Apache Lucene.Net Replicator 3-CVE Batch CVE-2026-47896 + CVE-2026-47897 + CVE-2026-47898 - Unauthenticated Arbitrary File Read + Arbitrary File Write + XXE",
+      "threat_score": 7,
+      "cve": "CVE-2026-47896, CVE-2026-47897, CVE-2026-47898",
+      "cvss": null,
+      "affected_technology": "Apache Lucene.Net Replicator + Analysis.Common (embedded in enterprise .NET search stacks)",
+      "summary": "Apache disclosed unauthenticated arbitrary file read on Lucene.Net.Replicator server, arbitrary file write from malicious server to client, and XXE in Analysis.Common PatternParser (oss-security 2026-07-03).",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-07-03"
+    },
+    {
+      "type": "news",
+      "title": "Cursor AI Code Editor 'DuneSlide' CVE-2026-50548 + CVE-2026-50549 (CVSS 9.8) Sandbox-Escape to OS-Level RCE; Patched April But Public Disclosure Today",
+      "threat_score": 7,
+      "cve": "CVE-2026-50548, CVE-2026-50549",
+      "cvss": 9.8,
+      "affected_technology": "Cursor AI code editor (pre-3.0)",
+      "summary": "Cato Networks disclosed dual sandbox-escape flaws in pre-3.0 Cursor abusing path validation and symlink canonicalization to overwrite cursorsandbox and yield OS-level RCE; patched in v3.0 released 2026-04-02, public disclosure 2026-07-03.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-07-03"
+    },
+    {
+      "type": "news",
+      "title": "Gitea Self-Hosted Git Server 8-CVE Batch Including CVE-2026-58426 (CVSS 9.6) + CVE-2026-58424 (CVSS 8.9) via dbugs.ptsecurity 2026-07-03",
+      "threat_score": 7,
+      "cve": "CVE-2026-58418, CVE-2026-58419, CVE-2026-58421, CVE-2026-58422, CVE-2026-58423, CVE-2026-58424, CVE-2026-58426, CVE-2026-28705",
+      "cvss": 9.6,
+      "affected_technology": "Gitea (open-source self-hosted Git service)",
+      "summary": "Positive Technologies dbugs surfaced an 8-CVE Gitea batch on 2026-07-03 with CVE-2026-58426 at CVSS 9.6 and CVE-2026-58424 at CVSS 8.9; details pending vendor advisory.",
+      "discovery_latency": "early",
+      "first_seen_at": "2026-07-03"
+    },
+    {
+      "type": "news",
+      "title": "ARToken PhaaS Exposes 'EvilTokens' Microsoft 365 Device-Code Phishing Toolkit - 37x YoY Surge in Device-Code Attacks, 11+ Kits Now Selling This Technique",
+      "threat_score": 7,
+      "cve": "None assigned",
+      "cvss": null,
+      "affected_technology": "Microsoft 365 accounts (device-code authentication flow)",
+      "summary": "ARToken PhaaS productizes attacks on the Microsoft OAuth 2.0 Device Authorization Grant flow that bypass MFA entirely by tricking victims into entering legitimate codes on the real login page; 37x YoY surge, Cloudflare Workers-hosted infrastructure, look-alike SharePoint tenants used for lures.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-07-03"
+    },
+    {
+      "type": "news",
+      "title": "Medtronic Data Breach Scoped At 3.8 Million Individuals; ShinyHunters Attribution Confirmed + Apparent Ransom Payment Signal",
+      "threat_score": 6,
+      "cve": "None assigned",
+      "cvss": null,
+      "affected_technology": "Medtronic corporate IT (post-ShinyHunters compromise)",
+      "summary": "SecurityWeek confirms 3,834,294 individuals notified in the April 2026 Medtronic ShinyHunters compromise including SSNs and health details; ShinyHunters removed the entry from its leak site suggesting a ransom payment.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-07-03"
+    },
+    {
+      "type": "news",
+      "title": "FatFs Embedded Filesystem 7-CVE Batch (CVE-2026-6682 to CVE-2026-6688) - Malicious USB / SD / Firmware Yields Jailbreak on Millions of Embedded Devices; No Upstream Patch",
+      "threat_score": 5,
+      "cve": "CVE-2026-6682, CVE-2026-6683, CVE-2026-6684, CVE-2026-6685, CVE-2026-6686, CVE-2026-6687, CVE-2026-6688",
+      "cvss": 7.6,
+      "affected_technology": "FatFs embedded FAT filesystem (ESP-IDF, STM32Cube, Zephyr, MicroPython, ArduPilot, Mbed, TizenRT, SWUpdate)",
+      "summary": "runZero disclosed 7 FatFs CVEs enabling physical-media-triggered jailbreak on cameras/drones/PLCs/crypto wallets; only CVE-2026-6684 has upstream fix R0.16, remaining six unpatched due to inactive maintainer.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-07-03"
+    },
+    {
+      "type": "news",
+      "title": "'Bad Epoll' Linux Kernel CVE-2026-46242 - Use-After-Free Root LPE Reachable from Chrome Renderer Sandbox With ~99% Success",
+      "threat_score": 5,
+      "cve": "CVE-2026-46242",
+      "cvss": null,
+      "affected_technology": "Linux kernel 6.4+ (and Android devices on kernel 6.4+)",
+      "summary": "Jaeyoung Chung disclosed a UAF race in epoll cleanup on Linux 6.4+ that a widened PoC exploits from inside Chrome's renderer sandbox for root ~99% of the time; upstream patch a6dc643c6931, no in-wild use.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-07-03"
+    },
+    {
+      "type": "news",
+      "title": "Rapid7 Metasploit Wrap-Up 2026-07-03 - Peyara Remote Mouse RCE Module + SMB-to-Meterpreter Capability",
+      "threat_score": 4,
+      "cve": "None assigned",
+      "cvss": null,
+      "affected_technology": "Metasploit Framework tooling adds",
+      "summary": "Weekly Metasploit release adds a Peyara Remote Mouse RCE exploit module and SMB-to-Meterpreter capability improvements; no new modules for previously-flagged high-severity CVEs in the 30-day window.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-07-03"
+    }
+  ],
+  "noted": [
+    {"cve": "CVE-2026-14007, CVE-2026-14011, CVE-2026-14016, CVE-2026-14017, CVE-2026-14020, CVE-2026-14022, CVE-2026-14023, CVE-2026-14025, CVE-2026-14032, CVE-2026-14043, CVE-2026-14056", "product": "Google Chrome 150.0.7871.47", "summary": "11-CVE fresh batch including 3x CVSS 9.6 sandbox escapes (Navigation, GetUserMedia UAF, Media Video); client-side fleet push on 24-hour SLA"},
+    {"cve": "CVE-2026-58278, CVE-2026-58524, CVE-2026-57987, CVE-2026-57993, CVE-2026-56645, CVE-2026-45489, CVE-2026-55945, CVE-2026-58285, CVE-2026-58289", "product": "Microsoft Edge 24-CVE batch via dbugs.ptsecurity 2026-07-03", "summary": "Chromium-family Edge batch mirrors Chrome 150 with CVSS 9.0 CVE-2026-58289 top; client-side fleet push"},
+    {"cve": "CVE-2026-56015", "product": "Perl Net::IP::LPM <= 1.10", "summary": "Heap out-of-bounds read via unbounded prefix length (oss-security 2026-07-03)"},
+    {"cve": "None assigned", "product": "OpenSSL ecosystem incomplete error-handling research", "summary": "openwall oss-security 2026-07-03 systemic-vuln-class post; calibration input on error-suppression as vuln category"},
+    {"cve": "None assigned", "product": "Avalon malware framework + CrownX ransomware", "summary": "New modular malware distributed via phishing with credential-theft, lateral-movement, and ransomware modules (THN 2026-07-03)"},
+    {"cve": "None assigned", "product": "North Korea-linked npm Rollup polyfill impersonation", "summary": "Malicious npm packages mimicking legitimate Rollup tooling to steal developer secrets; continues the DPRK developer supply-chain cluster"},
+    {"cve": "CVE-2026-20841", "product": "Windows Notepad (existing 30-day dedup)", "summary": "Two distinct PoCs for the Notepad markdown-link RCE landed on GitHub within ~40 minutes on 2026-07-03; exploitation-tempo signal, client-side vector"},
+    {"cve": "None assigned", "product": "SharePoint CVE-2026-45659 BOD 26-04 FCEB deadline", "summary": "3-day federal deadline lands today (Saturday 2026-07-04); any internet-facing SharePoint that missed May patch + July 2 KEV addition should be treated as candidate-compromised"},
+    {"cve": "None assigned", "product": "Cloudflare Attribution Business Insights 2026-07-03", "summary": "Product launch for crawler-attribution dashboard; ecosystem change, no immediate action"},
+    {"cve": "None assigned", "product": "Schneier calibration posts 2026-07-03", "summary": "Papa Johns surveillance advertising + Flock cameras vehicle fingerprinting + Cybersecurity Mission Creep US policy analysis; no operational action"}
+  ],
+  "source_coverage": {
+    "total": 30,
+    "checked": 22,
+    "with_findings": 9,
+    "unreachable": [
+      "cisa.gov",
+      "cisa.gov/known-exploited-vulnerabilities-catalog",
+      "attackerkb.com",
+      "bugcrowd.com/disclosures",
+      "hackerone.com/hacktivity",
+      "nvd.nist.gov",
+      "cve.mitre.org",
+      "cve.org"
+    ],
+    "degraded": [
+      "msrc.microsoft.com/blog",
+      "packetstormsecurity.com",
+      "securitylab.github.com",
+      "googleprojectzero.blogspot.com",
+      "habr.com/ru/companies/tomhunter",
+      "teletype.in/@cyberok",
+      "cert.gov.ua"
+    ]
+  },
+  "full_report": "reports/2026/07/04/report.md"
+}

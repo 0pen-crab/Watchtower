@@ -1,0 +1,104 @@
+Watchtower Debug Log — 2026-07-04 Daily Run
+=============================================
+
+## Session context
+- Run initiated: 2026-07-04 (UTC)
+- Prior report: 2026-07-03 (24-hour reporting window)
+- Dedup window: 30 days (reports 2026-06-04 → 2026-07-03)
+- Total prior-window CVEs indexed: 506 unique CVE IDs
+- Total prior-window titles indexed: 124 entries
+
+## Step 1: Repo pull
+- `cd /home/claude/workspace/watchtower && git pull` → Already up to date.
+
+## Step 2: Build dedup index
+- `grep -rhoE 'CVE-20[0-9]{2}-[0-9]+' reports/2026/06/ reports/2026/07/ | sort -u > /tmp/dedup_cves.txt`
+- 506 unique CVE IDs indexed spanning 2009 → 2026.
+- Titles pulled to /tmp/dedup_titles.txt (124 lines) for topic-level dedup.
+
+## Step 3: Source checks (SOURCES.md = 30 sources)
+
+### Tier 1 (15 sources)
+- [00:12 UTC] ✅ bleepingcomputer.com — 2 items dated 2026-07-03: NetNut disruption (already covered 2026-07-03 report), ARToken PhaaS / EvilTokens M365 device-code phishing kit (NEW).
+- [00:12 UTC] ✅ thehackernews.com — 6 items dated 2026-07-03 or later: FatFs 7-CVE batch (NEW), Bad Epoll Linux kernel LPE CVE-2026-46242 (NEW), Avalon+CrownX malware framework (NEW), NK npm Rollup polyfill impersonation (NEW), Citrix Bleed 2 (2026-07-02, already covered), Langflow JADEPUFFER (2026-07-02, already covered).
+- [00:12 UTC] ❌ cisa.gov/known-exploited-vulnerabilities-catalog — 403 Forbidden (persistent per MEMORY 2026-06-19).
+- [00:12 UTC] ❌ cisa.gov — 403 Forbidden (persistent).
+- [00:12 UTC] ✅ securityweek.com — Cursor DuneSlide CVE-2026-50548 + CVE-2026-50549 (NEW), Medtronic 3.8M breach (NEW), other items already covered.
+- [00:20 UTC] ✅ github.com/search?q=CVE — Solr CVE-2026-44825 mass-exploitation framework surfaced (NEW), Joomla PBCK CVE-2026-56290 mass-exploitation framework surfaced (NEW), Windows Notepad CVE-2026-20841 PoCs (already in dedup — noted as tempo signal), other PoCs already covered.
+- [00:12 UTC] ✅ schneier.com — 3 items dated 2026-07-03+: Flock cameras / Cybersecurity Mission Creep / Papa Johns advertising. Calibration-only, no operational action.
+- [00:12 UTC] ✅ krebsonsecurity.com — Only NetNut post 2026-07-02 (already covered 2026-07-03 report).
+- [00:20 UTC] ✅ rapid7.com — Metasploit Wrap-Up 2026-07-03 with Peyara Remote Mouse RCE + SMB-to-Meterpreter (NEW news item).
+- [00:20 UTC] ❌ attackerkb.com — 403 Forbidden (persistent).
+- [00:20 UTC] ✅ fortinet.com/blog/threat-research — Only Ousaban post 2026-07-01 already covered in 2026-07-03 report.
+- [00:20 UTC] ⚠️ securitylab.github.com — No posts since 2026-05-22 (still 42-day silence; escalate for drop per MEMORY 2026-06-19). Degraded.
+- [00:20 UTC] ⚠️ seclists.org/fulldisclosure — Only 2026-07-02 posts visible (already covered). No new items.
+- [00:29 UTC] ⚠️ packetstormsecurity.com → packetstorm.news — Nav-only + changelog (persistent per MEMORY). Degraded.
+- [00:29 UTC] ✅ opencve.io (via app.opencve.io/cve) — 11 Chrome 150.0.7871.47 CVEs dated 2026-07-03 (batch of client-side items including 3x CVSS 9.6 sandbox escapes: CVE-2026-14017 Navigation, CVE-2026-14043 GetUserMedia UAF, CVE-2026-14056 Media video sandbox escape). Noted.
+
+### Tier 2 (15 sources)
+- [00:35 UTC] ⚠️ nvd.nist.gov — JS-required, homepage shows 2026-06-25 data only. Unreachable.
+- [00:35 UTC] ⚠️ cve.mitre.org — Redirects to cve.org (JS-required). Unreachable.
+- [00:35 UTC] ⚠️ cve.org — JS-required. Unreachable.
+- [00:29 UTC] ⚠️ googleprojectzero.blogspot.com → projectzero.google — No new posts since 2026-05-13. Degraded.
+- [00:29 UTC] ✅ blog.cloudflare.com/tag/security — Attribution Business Insights post 2026-07-03; non-vuln business feature. Noted.
+- [00:29 UTC] ⚠️ msrc.microsoft.com/blog — Redirect to www.microsoft.com/en-us/msrc/blog (nav-only per MEMORY). Degraded.
+- [00:35 UTC] ⚠️ hackerone.com/hacktivity — JS-required. Unreachable.
+- [00:35 UTC] ❌ bugcrowd.com/disclosures — 404 (persistent since April per MEMORY). Unreachable.
+- [00:20 UTC] ✅ kb.cert.org/vuls — No new VU# since 2026-07-02 (VU#639124 GameFirst already covered).
+- [00:20 UTC] ✅ avleonov.com — No new posts since 2026-07-02 (already covered).
+- [00:20 UTC] ✅ github.com/0xMarcio/cve — Recent PoC entries all in dedup: CVE-2026-31431, 41089, 21858, 24061, 41940, 41651, 34486, 0073, 45504.
+- [00:29 UTC] ✅ dbugs.ptsecurity.com — Massive 2026-07-03 batch: 24-CVE Microsoft Edge cluster (noted, client-side) + 8-CVE Gitea cluster (NEWS HIGH, CVE-2026-58426 CVSS 9.6 top) + Nousresearch Hermes-Agent CVE-2026-14617 (low) + Deepmyst Mysti CVE-2026-14611 (low) + Assimp CVE-2026-14610 (low) + Keras CVE-2026-12481 (medium, historical).
+- [00:20 UTC] ✅ openwall.com/lists/oss-security (off-list high-value) — 5 items dated 2026-07-03: Apache Lucene.Net CVE-2026-47896 (unauth file read), CVE-2026-47897 (arbitrary file write), CVE-2026-47898 (XXE) — NEWS grouped as one entry; Perl Net::IP::LPM CVE-2026-56015 heap OOB read (Noted); "OpenSSL ecosystem incomplete error handling" research post (Noted, calibration).
+- [00:35 UTC] ⚠️ habr.com/ru/companies/tomhunter — Silent through 2026-03-06 (4.0-month silence, up from 3.9 last cycle). Degraded — escalate for drop.
+- [00:35 UTC] ⚠️ teletype.in/@cyberok — Silent through 2026-02-04 (5.0-month silence, up from 4.9). Degraded — escalate for drop.
+- [00:35 UTC] ⚠️ cert.gov.ua — Empty content. Degraded.
+
+## Source coverage tally
+- Total (SOURCES.md): 30
+- Unreachable (403/404/JS-required): 8 → cisa.gov, cisa.gov/KEV, attackerkb.com, bugcrowd.com/disclosures, hackerone.com/hacktivity, nvd.nist.gov, cve.mitre.org, cve.org
+- Degraded (attempted, empty/nav/silent): 7 → msrc.microsoft.com/blog, packetstormsecurity.com, securitylab.github.com, projectzero.google, habr.com/ru/companies/tomhunter, teletype.in/@cyberok, cert.gov.ua
+- Checked = 30 - 8 = 22 ✅ (validator constraint: checked >= total - unreachable = 22)
+- With findings (news + noted counted): 9
+
+## Step 4: Dedup classification
+- CVE-2026-44825 (Apache Solr Velocity) → NEW (not in dedup) → **NEWS CRITICAL** score 8
+- CVE-2026-56290 (Joomla PBCK) → NEW → **NEWS CRITICAL** score 8
+- CVE-2026-47896/47897/47898 (Lucene.Net) → NEW → **NEWS CRITICAL** score 7 (grouped)
+- CVE-2026-50548/50549 (Cursor DuneSlide) → NEW → **NEWS HIGH** score 7 (grouped)
+- CVE-2026-58418/58419/58421/58422/58423/58424/58426/28705 (Gitea batch) → NEW → **NEWS HIGH** score 7 (grouped)
+- ARToken PhaaS / EvilTokens M365 → NEW (device-code, distinct from LSHIY 07-03) → **NEWS HIGH** score 7
+- Medtronic 3.8M (was NOTED 07-03) → promoted → **NEWS MEDIUM** score 6
+- FatFs 7-CVE batch → NEW (out-of-primary-scope physical vector but signal-worthy) → **NEWS MEDIUM** score 5 (grouped)
+- CVE-2026-46242 (Bad Epoll Linux) → NEW (LPE, Chrome-renderer trigger) → **NEWS MEDIUM** score 5
+- Metasploit Wrap-Up 07-03 → NEW → **NEWS MEDIUM** score 4
+- CVE-2026-20841 (Windows Notepad markdown RCE) → SKIP (already in dedup — mentioned in 30-day window). Add to Noted as exploitation-tempo signal since new PoCs landed.
+- Chrome 150.0.7871.47 batch (CVE-2026-14007→14056) → NEW but client-side out of primary scope → **NOTED**
+- Microsoft Edge 24-CVE batch → NEW but client-side → **NOTED**
+- CVE-2026-56015 (Perl Net::IP::LPM) → NEW low-impact → **NOTED**
+- OpenSSL error-handling pandemic → NEW research post → **NOTED** (calibration)
+- Avalon / CrownX → NEW malware family → **NOTED**
+- NK npm Rollup polyfill → NEW supply-chain → **NOTED**
+- SharePoint BOD 26-04 deadline lands today → **NOTED** (calendar signal)
+- Schneier Papa Johns / Flock / Mission Creep → NEW policy/surveillance → **NOTED** (calibration only)
+- Cloudflare Attribution Business Insights → NEW product launch → **NOTED**
+
+## Step 5: Report write
+- report.md written to reports/2026/07/04/report.md following templates/report.template.md structure.
+- report.json written with 10 findings + 10 noted + source_coverage {total:30, checked:22, with_findings:9, unreachable:[8], degraded:[7]}.
+
+## Step 6: Debug log write
+- This file.
+
+## Step 7: Validator run
+```
+$ python3 scripts/validate_report.py reports/2026/07/04/report.json
+⚠️  3 warning(s):
+   findings[5]: CVE 'None assigned' doesn't start with 'CVE-'
+   findings[6]: CVE 'None assigned' doesn't start with 'CVE-'
+   findings[9]: CVE 'None assigned' doesn't start with 'CVE-'
+✅ reports/2026/07/04/report.json — valid
+```
+- Warnings only (CVE 'None assigned' items for ARToken PhaaS, Medtronic breach, Metasploit Wrap-Up — all legitimately without CVE). Exit code 0 = valid.
+
+## Step 8: Commit + push
+- Pending after this debug log write.

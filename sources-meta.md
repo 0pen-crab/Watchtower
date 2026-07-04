@@ -2,34 +2,34 @@
 
 | Source | Findings | Noted | Empty | Last Hit |
 |--------|----------|-------|-------|----------|
-| bleepingcomputer.com | 5 | 4 | 0 | 2026-07-03 (+5 FINDINGS: SharePoint CVE-2026-45659 CRITICAL, New CitrixBleed CVE-2026-8451 CRITICAL, Oracle EBS CVE-2026-46817 CRITICAL, BlueHammer CVE-2026-33825 CRITICAL, ChocoPoC RAT MEDIUM, DHS HSIN breach HIGH, 81M M365 spray HIGH, NetNut/Popa takedown MEDIUM, FortiBleed→INC/Lynx UPDATE, Cisco UCM UPDATE, BioShocking MEDIUM, Kubota + Medtronic NOTED) |
-| thehackernews.com | 4 | 4 | 0 | 2026-07-03 (+4 FINDINGS: SharePoint corroborate, Langflow JADEPUFFER AI ransomware HIGH, Argo CD unpatched HIGH, CitrixBleed ransomware relay; +4 NOTED: NetNut, Gaslight macOS, ChocoPoC, ToddyCat OAuth) |
-| securityweek.com | 3 | 3 | 0 | 2026-07-03 (+3 FINDINGS: New CitrixBleed CVE-2026-8451 corroborate, Adobe ColdFusion+Campaign Classic HIGH, BlueHammer CVE-2026-33825 corroborate, Cisco UCM corroborate, FortiBleed INC/Lynx corroborate; +3 NOTED: Chinese scam framework, Polymarket, Amadey/StealC) |
-| krebsonsecurity.com | 1 | 1 | 0 | 2026-07-03 (+1 NETNUT/Popa takedown 2026-07-02, +2 Scattered Spider guilty pleas 2026-06-23) |
-| rapid7.com | 0 | 0 | 1 | 2026-07-03 (no new ETRs since Metasploit Wrap-Up 2026-06-19; all covered CVEs in dedup) |
-| schneier.com | 0 | 1 | 0 | 2026-07-03 (+1 NOTED: 1M passports leaked via cannabis dispensary age-verification 2026-06-26; other posts calibration-only) |
-| fortinet.com/blog/threat-research | 0 | 2 | 0 | 2026-07-03 (+2 NOTED: Ousaban Iberian phishing 2026-07-01, Shai-Hulud CI/CD→Redshift 2026-06-26) |
-| securitylab.github.com | 0 | 0 | 1 | 2026-07-03 (still 2026-05-22 batch — 42-day silence; flag for drop escalated per MEMORY 2026-06-19) |
-| github.com/search (advisories) | 0 | 0 | 1 | 2026-07-03 (all recently updated repos already in dedup — 6 recent PoCs but all covered previously) |
-| seclists.org/fulldisclosure | 0 | 2 | 0 | 2026-07-03 (+2 NOTED: Horde IMP LFI, CWP SQLi 2026-07-02 batch) |
-| openwall.com/lists/oss-security | 1 | 20 | 0 | 2026-07-03 (+1 FINDING: OFFIS DCMTK 5 CISA-coord MEDIUM; +20 NOTED: Apache NiFi, ActiveMQ, Tomcat, Kvrocks, Shiro, Doris, HttpComponents Core, Perl CGI::Session, HTML::Gumbo, Varnish, NUT upsmon, libssh2, libxml2, libexpat, rsyslog, hostapd, curl, PowerDNS, DirtyClone LPE) |
-| kb.cert.org/vuls | 0 | 4 | 0 | 2026-07-03 (+4 NOTED: VU#639124 GameFirst, VU#936962 FastStone, VU#226679 WinRE UEFI, VU#457458 vendor-signed UEFI) |
-| opencve.io / app.opencve.io | 1 | 0 | 0 | 2026-07-03 (+1 FINDING: Ubiquiti UniFi batch CVE-2026-13768/50746/55115 grouped) |
-| dbugs.ptsecurity.com | 0 | 3 | 0 | 2026-07-03 (+3 NOTED: PT-2026-55203 Tr7 WAF-ASP 9.8, PT-2026-55259 Flowmon 8.7, PT-2026-56004 OpenSUSE Urild 10.0) |
-| github.com/0xMarcio/cve | 0 | 0 | 1 | 2026-07-03 (all PoC entries in dedup: CVE-2026-31431, 41089, 21858, 41940, 45504) |
-| blog.cloudflare.com/tag/security | 0 | 1 | 0 | 2026-07-03 (+1 NOTED: White House post-quantum EO 2026-06-23) |
-| avleonov.com | 0 | 0 | 1 | 2026-07-03 (2026-07-02 Exchange XSS CVE-2026-42897 re-mention already in dedup) |
-| cisa.gov (incl. /KEV) | 0 | 0 | 1 | 2026-07-03 (403 persistent — KEV signals via BC/SW/THN cross-reference: CVE-2026-45659 KEV-add 2026-07-02 + CVE-2026-33825 ransomware update 2026-06-30) |
-| attackerkb.com | 0 | 0 | 1 | 2026-07-03 (403 persistent) |
-| cve.org / cve.mitre.org | 0 | 0 | 1 | 2026-07-03 (JS-required) |
-| googleprojectzero.blogspot.com → projectzero.google | 0 | 0 | 1 | 2026-07-03 (no posts in window; latest still 2026-05-13) |
-| msrc.microsoft.com/blog | 0 | 0 | 1 | 2026-07-03 (redirect+nav-only persistent) |
-| hackerone.com/hacktivity | 0 | 0 | 1 | 2026-07-03 (JS-required) |
-| bugcrowd.com/disclosures | 0 | 0 | 1 | 2026-07-03 (404 persistent) |
-| packetstormsecurity.com → packetstorm.news | 0 | 0 | 1 | 2026-07-03 (nav-only persistent) |
-| nvd.nist.gov | 0 | 0 | 1 | 2026-07-03 (JS-required — data surfaced via opencve.io) |
-| habr.com/ru/companies/tomhunter | 0 | 0 | 1 | — (silent through 2026-03-06, ~3.9-month silence — escalate for drop) |
-| teletype.in/@cyberok | 0 | 0 | 1 | — (silent through 2026-02-04, ~4.9-month silence — escalate for drop) |
+| bleepingcomputer.com | 6 | 4 | 0 | 2026-07-04 (+1 FINDING: ARToken PhaaS/EvilTokens M365 device-code phishing kit HIGH; NetNut relay already in dedup) |
+| thehackernews.com | 8 | 6 | 0 | 2026-07-04 (+4 FINDINGS: FatFs 7-CVE embedded MEDIUM, Bad Epoll CVE-2026-46242 Linux kernel MEDIUM; +2 NOTED: Avalon+CrownX malware framework, NK npm Rollup polyfill impersonation) |
+| securityweek.com | 5 | 3 | 0 | 2026-07-04 (+2 FINDINGS: Cursor DuneSlide CVE-2026-50548/50549 AI IDE RCE HIGH, Medtronic 3.8M ShinyHunters breach MEDIUM) |
+| krebsonsecurity.com | 1 | 1 | 0 | 2026-07-04 (no new posts; NetNut 2026-07-02 already covered) |
+| rapid7.com | 1 | 0 | 0 | 2026-07-04 (+1 FINDING: Metasploit Wrap-Up 2026-07-03 with Peyara Remote Mouse RCE + SMB-to-Meterpreter — MEDIUM) |
+| schneier.com | 0 | 2 | 0 | 2026-07-04 (+1 NOTED bundle: Papa Johns advertising / Flock cameras vehicle fingerprint / Cybersecurity Mission Creep — calibration only) |
+| fortinet.com/blog/threat-research | 0 | 2 | 0 | 2026-07-04 (no new posts since Ousaban 2026-07-01) |
+| securitylab.github.com | 0 | 0 | 1 | 2026-07-04 (still 2026-05-22 batch — 43-day silence; drop candidate confirmed) |
+| github.com/search (advisories) | 2 | 1 | 0 | 2026-07-04 (+2 FINDINGS: Apache Solr CVE-2026-44825 mass-exploit framework CRITICAL, Joomla PBCK CVE-2026-56290 mass-exploit framework CRITICAL; +1 NOTED: Windows Notepad CVE-2026-20841 fresh PoC activity as tempo signal) |
+| seclists.org/fulldisclosure | 0 | 2 | 0 | 2026-07-04 (no new posts since 2026-07-02 batch) |
+| openwall.com/lists/oss-security | 2 | 22 | 0 | 2026-07-04 (+1 FINDING: Apache Lucene.Net CVE-2026-47896/47897/47898 3-CVE batch CRITICAL; +2 NOTED: Perl Net::IP::LPM CVE-2026-56015, OpenSSL error-handling pandemic post) |
+| kb.cert.org/vuls | 0 | 4 | 0 | 2026-07-04 (no new VU# since 2026-07-02 GameFirst) |
+| opencve.io / app.opencve.io | 1 | 1 | 0 | 2026-07-04 (+1 NOTED: Chrome 150.0.7871.47 11-CVE batch incl. 3x CVSS 9.6 sandbox escapes — client-side fleet push) |
+| dbugs.ptsecurity.com | 1 | 4 | 0 | 2026-07-04 (+1 FINDING: Gitea 8-CVE batch incl. CVE-2026-58426 9.6 + CVE-2026-58424 8.9 HIGH; +1 NOTED: Microsoft Edge 24-CVE Chromium-family batch) |
+| github.com/0xMarcio/cve | 0 | 0 | 1 | 2026-07-04 (all PoC entries in dedup: CVE-2026-31431, 41089, 21858, 41940, 24061, 34486, 45504, 20841, 0073) |
+| blog.cloudflare.com/tag/security | 0 | 2 | 0 | 2026-07-04 (+1 NOTED: Attribution Business Insights product launch 2026-07-03; non-vuln) |
+| avleonov.com | 0 | 0 | 1 | 2026-07-04 (no new posts since 2026-07-02 Exchange XSS) |
+| cisa.gov (incl. /KEV) | 0 | 0 | 1 | 2026-07-04 (403 persistent — no new KEV adds confirmed in 24h window via BC/SW/THN cross-reference; SharePoint CVE-2026-45659 3-day BOD 26-04 deadline lands 2026-07-04) |
+| attackerkb.com | 0 | 0 | 1 | 2026-07-04 (403 persistent) |
+| cve.org / cve.mitre.org | 0 | 0 | 1 | 2026-07-04 (JS-required) |
+| googleprojectzero.blogspot.com → projectzero.google | 0 | 0 | 1 | 2026-07-04 (no posts in window; latest still 2026-05-13, 52-day silence) |
+| msrc.microsoft.com/blog | 0 | 0 | 1 | 2026-07-04 (redirect+nav-only persistent) |
+| hackerone.com/hacktivity | 0 | 0 | 1 | 2026-07-04 (JS-required) |
+| bugcrowd.com/disclosures | 0 | 0 | 1 | 2026-07-04 (404 persistent) |
+| packetstormsecurity.com → packetstorm.news | 0 | 0 | 1 | 2026-07-04 (nav-only + changelog persistent) |
+| nvd.nist.gov | 0 | 0 | 1 | 2026-07-04 (JS-required — data surfaced via opencve.io) |
+| habr.com/ru/companies/tomhunter | 0 | 0 | 1 | — (silent through 2026-03-06, ~4.0-month silence — drop candidate confirmed) |
+| teletype.in/@cyberok | 0 | 0 | 1 | — (silent through 2026-02-04, ~5.0-month silence — drop candidate confirmed) |
 | cert.gov.ua | 0 | 0 | 1 | — (empty) |
 
 ## Missed 2026-07-01 monthly review
