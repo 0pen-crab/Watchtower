@@ -1,0 +1,108 @@
+Watchtower Debug Log — 2026-07-05 Daily Run
+=============================================
+
+## Session context
+- Run initiated: 2026-07-05 (UTC)
+- Prior report: 2026-07-04 (24-hour reporting window)
+- Dedup window: 30 days (reports 2026-06-05 → 2026-07-04)
+- Total prior-window CVEs indexed: 424 unique CVE IDs
+- Total prior-window titles indexed: 134 entries
+
+## Step 1: Repo pull
+- [00:05 UTC] `cd /home/claude/workspace/watchtower && git pull` → Already up to date.
+
+## Step 2: Build dedup index
+- [00:06 UTC] python glob over reports/2026/06/*/report.json + reports/2026/07/*/report.json — parsed 19 report.json files
+- 424 unique CVE IDs indexed, dumped to /tmp/watchtower/dedup_cves.txt
+- 134 titles (news + noted) dumped to /tmp/watchtower/dedup_titles.txt
+
+## Step 3: Source checks (SOURCES.md = 30 sources)
+
+### Tier 1 (15 sources)
+- [00:10 UTC] ✅ bleepingcomputer.com — 2026-07-04 top item is JADEPUFFER mainstream repackaging (SKIP — already covered 2026-07-03); NetNut, ARToken already covered 2026-07-04.
+- [00:10 UTC] ✅ thehackernews.com — 2026-07-04 items: Kairos $1M extortion case study (Noted, calibration), PolinRider DPRK 108-package supply-chain campaign (NEWS HIGH promoted from yesterday's noted Rollup polyfill entry), Avalon+CrownX additional detail (Noted, delta since 2026-07-04), PamStealer macOS Rust stealer (Noted, out-of-scope client-only). Contagious Interview / Famous Chollima cluster narrative.
+- [00:10 UTC] ❌ cisa.gov/known-exploited-vulnerabilities-catalog — 403 Forbidden (persistent per MEMORY 2026-06-19; also 2026-07-04).
+- [00:10 UTC] ❌ cisa.gov — 403 Forbidden (persistent).
+- [00:10 UTC] ✅ securityweek.com — SharePoint CVE-2026-45659 (already in dedup — noted the July-4 FCEB deadline expiry), CitrixBleed / Cisco Unified CM / Cursor DuneSlide / Medtronic all in 30-day dedup.
+- [00:15 UTC] ✅ github.com/search?q=CVE — Rich set of PoCs updated in the last 24h: CVE-2026-2472 Vertex AI SDK stored XSS (NEW Noted, in-scope AI-platform), CVE-2026-2441 Chrome CSS UAF (already patched Feb 2026, out of 30-day window but the fresh PoC repo is recent), CVE-2026-20841 Windows Notepad (already in dedup), CVE-2026-24061 GNU inetutils-telnetd (NEW — never previously covered despite Jan 2026 disclosure, active mass exploitation surfaced → NEWS CRITICAL), CVE-2026-9090 Casdoor 2.362.0 (low priority), CVE-2026-49049 Helix3 Joomla scanner (already ecosystem-covered), CVE-2026-57517 CWP SQL→RCE (already in dedup 2026-07-04), CVE-2026-54998 exp (unclear tech, deferred).
+- [00:15 UTC] ✅ schneier.com — No new posts since 2026-07-03 batch (Flock cameras + Papa Johns + Mission Creep already noted 2026-07-04).
+- [00:15 UTC] ✅ krebsonsecurity.com — No new posts since 2026-07-02 NetNut (already covered 2026-07-03).
+- [00:15 UTC] ✅ rapid7.com — No new posts since 2026-07-03 Metasploit Wrap-Up (already covered 2026-07-04).
+- [00:15 UTC] ❌ attackerkb.com — 403 Forbidden (persistent).
+- [00:15 UTC] ✅ fortinet.com/blog/threat-research — No posts since 2026-07-01 Ousaban (already in 30-day dedup).
+- [00:15 UTC] ⚠️ securitylab.github.com — No posts since 2026-05-22 (43-day silence, up from 42 last cycle; MEMORY escalation for drop still standing). Degraded.
+- [00:15 UTC] ✅ seclists.org/fulldisclosure — July 2 posts (Horde IMP CVE-2026-58451, Asterisk security releases, Zig std.http DoS, CVE-2026-58451 Horde Groupware IMP, CWP SQLi, Samsung Galaxy Buds HFP/A2DP). Horde + Zig are NEW and are added as Noted; Asterisk / CWP already covered previously; Samsung Buds is client-side out of scope.
+- [00:20 UTC] ⚠️ packetstormsecurity.com → packetstorm.news — 301 redirect + TOS-only body on both root and news pages. Degraded (persistent).
+- [00:20 UTC] ⚠️ opencve.io — Marketing landing page only; no per-CVE data without app.opencve.io/cve query auth. Degraded (persistent).
+
+### Tier 2 (15 sources)
+- [00:22 UTC] ⚠️ nvd.nist.gov — JS-required redirect notice, no vuln records rendered server-side. Degraded (persistent).
+- [00:22 UTC] ⚠️ cve.mitre.org — 301 redirects to cve.org (JS-required). Degraded (persistent).
+- [00:22 UTC] ⚠️ cve.org — JS-required empty body. Degraded (persistent).
+- [00:22 UTC] ⚠️ googleprojectzero.blogspot.com → projectzero.google — No new posts since 2026-05-13 (53-day silence). Degraded.
+- [00:22 UTC] ✅ blog.cloudflare.com/tag/security — No new posts since 2026-07-01 Attribution Business Insights (already in 30-day dedup).
+- [00:22 UTC] ⚠️ msrc.microsoft.com/blog → microsoft.com/en-us/msrc/blog — Nav-only body. Degraded (persistent).
+- [00:22 UTC] ⚠️ hackerone.com/hacktivity — JS-required empty body. Degraded (persistent).
+- [00:22 UTC] ❌ bugcrowd.com/disclosures — 404 Not Found (persistent since April 2026).
+- [00:22 UTC] ✅ kb.cert.org/vuls — No new VU# since 2026-07-02 (VU#639124 GameFirst already in 30-day dedup, June VUs also there).
+- [00:22 UTC] ✅ avleonov.com — No new posts since 2026-07-02 CVE-2026-42897 Exchange XSS (already in dedup).
+- [00:22 UTC] ✅ github.com/0xMarcio/cve — Recent entries: CVE-2026-31431 ("Copy Fail" Linux LPE, NEW Noted), CVE-2026-41089 (in dedup), CVE-2026-21858 (in dedup), CVE-2026-24061 telnetd (NEW, cross-reference w/ github/search source — NEWS CRITICAL), CVE-2026-45504 (in dedup).
+- [00:22 UTC] ✅ dbugs.ptsecurity.com — 2026-07-04 batch: CVE-2025-71380 n8n CVSS 8.8, CVE-2026-14534 + CVE-2026-14535 Fickling by Trail of Bits CVSS 8.8 each, CVE-2026-12195 Vesta by MyVesta CVSS 8.5, CVE-2026-12196 HestiaCP CVSS 8.3, 13x Picklescan CVSS 8.1. Vesta and HestiaCP are control panels (in-scope internet-facing infra) but detail is minimal → Noted. Fickling / Picklescan are security tools → Noted for supply-chain tooling risk.
+- [00:22 UTC] ⚠️ habr.com/ru/companies/tomhunter — Silent through 2026-03-06 (4.0-month silence, unchanged). Degraded — MEMORY drop escalation still standing.
+- [00:22 UTC] ⚠️ teletype.in/@cyberok — Silent through 2026-02-04 (5.0-month silence, unchanged). Degraded — MEMORY drop escalation still standing.
+- [00:22 UTC] ⚠️ cert.gov.ua — Empty content body. Degraded (persistent).
+
+### Corroboration searches (WebSearch, not counted in SOURCES.md total)
+- [00:26 UTC] "JadePuffer ransomware AI agent LLM automated attack July 2026" — confirmed Sysdig report, already in 2026-07-03 dedup. Skip.
+- [00:26 UTC] "PolinRider North Korea 108 malicious packages npm July 4 2026" — confirmed Socket.dev deep-dive published 2026-07-04. Grounds NEWS HIGH.
+- [00:26 UTC] "CVE-2026-24061 inetutils-telnetd" + "mass exploitation scanner" — confirmed CVSS 9.8, GreyNoise 18-52 IPs, mass-scanners on GitHub (ekomsSavior/telnet_scan, Chocapikk/CVE-2026-24061, SafeBreach PoC), ~212k Shodan-exposed. CISA KEV addition mentioned in secondary reporting but not independently verifiable (cisa.gov 403). Grounds NEWS CRITICAL.
+- [00:26 UTC] "Kairos Union County Ohio data theft extortion" — confirmed Ransom-ISAC / CYJAX case study of $1M June-2025 Union County payment; calibration Noted.
+- [00:26 UTC] "CVE-2026-45659 SharePoint deadline July 4" — deadline was Saturday 2026-07-04; already in 30-day dedup, noted as expired.
+- [00:26 UTC] "Avalon malware framework CrownX ransomware" — additional details on evasion + DPAPI + AI-assisted dev; still Noted (delta insufficient to promote).
+- [00:26 UTC] "CVE-2026-58451 Horde Groupware IMP" — minimal external corroboration; Noted.
+
+## Step 4: Dedup classification
+- CVE-2026-24061 GNU inetutils-telnetd → NEW (never covered in 30-day window) → **NEWS CRITICAL** score 8 (late catch-up, discovery_latency=late, first_seen_at=2026-01-20)
+- PolinRider DPRK supply-chain campaign → PROMOTED from yesterday's Rollup-polyfill Noted → **NEWS HIGH** score 7 (discovery_latency=on-time, first_seen_at=2026-07-04)
+- CVE-2026-31431 "Copy Fail" Linux LPE → NEW → **NOTED** (local without remote component, out of primary scope but tracked as post-exploit chain material)
+- CVE-2026-2472 Vertex AI Python SDK XSS → NEW → **NOTED** (in-scope AI platform, client-side XSS only)
+- CVE-2026-58451 Horde Groupware IMP → NEW → **NOTED** (in-scope email/collab, minimal detail)
+- Zig std.http DoS → NEW → **NOTED** (out-of-primary-scope calibration)
+- Kairos case study → NEW writeup → **NOTED** (calibration)
+- Avalon/CrownX delta → **NOTED** (already in yesterday's noted; today's expanded evasion/DPAPI details insufficient to promote)
+- PamStealer macOS → NEW → **NOTED** (client-only, out of scope)
+- JADEPUFFER BC mainstream coverage → **NOTED** (latency-calibration only; already covered 2026-07-03)
+- dbugs.ptsecurity.com 2026-07-04 batch (n8n / Fickling / Vesta / HestiaCP / Picklescan) → **NOTED** (grouped, insufficient technical detail to promote)
+- CVE-2026-45659 SharePoint FCEB deadline expiry → **NOTED** (already in dedup; deadline-expiry marker)
+- BleepingComputer NetNut / ARToken / Cursor / SharePoint / Medtronic / FatFs / Bad Epoll → SKIP (all in 30-day dedup)
+- CVE-2026-2441 Chrome CSS UAF → SKIP (Feb 2026 disclosure, outside 30-day window; the fresh GitHub PoC repos are dedup-adjacent — Chrome 150 batch already noted 2026-07-04)
+
+## Source coverage tally
+- Total (SOURCES.md): 30
+- Unreachable (403/404): 4 → cisa.gov, cisa.gov/KEV, attackerkb.com, bugcrowd.com/disclosures
+- Degraded (attempted, empty/nav/silent/JS-required): 12 → msrc.microsoft.com/blog, packetstormsecurity.com, securitylab.github.com, opencve.io, nvd.nist.gov, cve.mitre.org, cve.org, projectzero.google, hackerone.com/hacktivity, habr.com/ru/companies/tomhunter, teletype.in/@cyberok, cert.gov.ua
+- Checked = 30 - 4 = 26 ✅ (validator constraint: checked >= total - unreachable = 26)
+- With findings (news + noted counted): 6 → bleepingcomputer, thehackernews, github.com/search, github.com/0xMarcio, seclists/fulldisclosure, dbugs.ptsecurity.com
+
+Notes on with_findings count: securityweek.com surfaced only already-dedup items; kb.cert.org, avleonov, rapid7, fortinet, schneier, krebs, cloudflare all clean-no-new. The 6 with_findings sources yielded the 2 news + 10 noted entries.
+
+## Step 5-7: Report + validation
+- Writing report.md to reports/2026/07/05/report.md
+- Writing report.json to reports/2026/07/05/report.json
+- Running validator: `python3 scripts/validate_report.py reports/2026/07/05/report.json`
+
+
+## Validator output
+```
+$ python3 scripts/validate_report.py reports/2026/07/05/report.json
+⚠️  1 warning(s):
+   findings[1]: CVE 'None assigned' doesn't start with 'CVE-'
+✅ reports/2026/07/05/report.json — valid
+```
+
+Warning is expected — "None assigned" is the project convention for finding entries without a CVE (see 2026-07-04 report.json with 9 instances, 2026-07-03 with 21).
+
+## Step 8: Commit + push
+- `git add reports/2026/07/05/`
+- `git commit -m "report: 2026-07-05"`
+- `git push`

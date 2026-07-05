@@ -1,0 +1,65 @@
+{
+  "date": "2026-07-05",
+  "findings": [
+    {
+      "type": "news",
+      "title": "GNU inetutils-telnetd CVE-2026-24061 (CVSS 9.8) Unauthenticated Remote Root via USER Env Var Injection; GreyNoise Confirms Active Mass Scanning, 212k+ Devices Exposed on Shodan",
+      "threat_score": 8,
+      "cve": "CVE-2026-24061",
+      "cvss": 9.8,
+      "affected_technology": "GNU InetUtils telnetd (versions 1.9.3 through 2.7)",
+      "summary": "USER='-f root' via NEW_ENVIRON makes /usr/bin/login skip auth and hand a remote root shell; GreyNoise tracks 52 scanning IPs across 16 countries, mass scanners live on GitHub, ~212k Shodan-exposed hosts.",
+      "discovery_latency": "late",
+      "first_seen_at": "2026-01-20"
+    },
+    {
+      "type": "news",
+      "title": "PolinRider DPRK Supply-Chain Campaign 108 Malicious Packages Across npm + Packagist + Go + Chrome; Compromised Maintainer Accounts + Git History Rewriting Push OmniStealer + DEV#POPPER",
+      "threat_score": 7,
+      "cve": "None assigned",
+      "cvss": null,
+      "affected_technology": "developer tooling ecosystems (npm, Packagist / Composer, Go modules, Chrome Web Store)",
+      "summary": "Socket.dev on 2026-07-04 detailed the DPRK-linked PolinRider campaign spanning 108 malicious packages (19 npm, 10 Composer, 61 Go, 1 Chrome) delivered via compromised maintainer accounts and git-history-rewriting to plant OmniStealer + DEV#POPPER stealers with blockchain-RPC C2.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-07-04"
+    }
+  ],
+  "noted": [
+    {"cve": "CVE-2026-31431", "product": "Linux kernel 'Copy Fail' LPE (Theori Xint)", "summary": "9-year-old kernel LPE present since 2017; local-only per scope but tracked as post-exploit chain from Chrome-renderer-sandbox and similar RCE pivots (PoCs on GitHub)"},
+    {"cve": "CVE-2026-2472", "product": "Google Cloud Vertex AI Python SDK 1.98.0-1.130.9", "summary": "Unauthenticated stored XSS in Vertex AI notebook/console UI; in-scope per AI-platform advisory rule; upgrade guidance pending, interim CSP/DOMPurify on tenant tooling that renders Vertex-authored strings"},
+    {"cve": "CVE-2026-58451", "product": "Horde Groupware IMP", "summary": "Path-traversal advisory posted to seclists/fulldisclosure 2026-07-02 with minimal technical detail; email/collab in-scope, monitoring for downstream vendor advisories"},
+    {"cve": "None assigned", "product": "Zig std.http chunked reader integer-overflow DoS (seclists 2026-07-02)", "summary": "Unauthenticated remote DoS in Zig std.http; Zig-based frontends not widely deployed in our surface, calibration-only"},
+    {"cve": "None assigned", "product": "Kairos data-theft extortion case study (Union County OH June-2025 payment)", "summary": "Ransom-ISAC and CYJAX published deep-dive on 2026-07-04 from leaked negotiation chat and on-chain forensics; calibration signal for pure-exfil incident-response playbooks vs. encrypt-and-extort"},
+    {"cve": "None assigned", "product": "Avalon/CrownX modular malware framework (delta since 2026-07-04)", "summary": "Expanded details on browser data theft (Chromium+Firefox), DPAPI credential collection, VPN/SSH key theft, targeted AV evasion list, ProtonDrive ISO delivery, and AI-assisted development signals"},
+    {"cve": "None assigned", "product": "PamStealer macOS Rust infostealer (THN 2026-07-04)", "summary": "Client-only Maccy-clipboard impersonation using PAM to validate victim password before capture; out-of-scope for infrastructure bulletins but calibration for engineering-workstation defense"},
+    {"cve": "None assigned", "product": "JADEPUFFER mainstream coverage on BleepingComputer 2026-07-04", "summary": "Delayed BC repackaging of the Sysdig report already covered 2026-07-03; latency-calibration note (mainstream lag ~48h behind Sysdig/oss-security for this class of report)"},
+    {"cve": "CVE-2025-71380, CVE-2026-14534, CVE-2026-14535, CVE-2026-12195, CVE-2026-12196", "product": "dbugs.ptsecurity.com 2026-07-04 batch (n8n + Fickling + Vesta + HestiaCP + Picklescan)", "summary": "Fresh 2026-07-04 batch with n8n CVSS 8.8, Fickling 8.8x2 (Trail of Bits pickle-security tool), Vesta 8.5, HestiaCP 8.3, plus 13x Picklescan CVSS 8.1; watching Vesta/HestiaCP for vendor advisories"},
+    {"cve": "CVE-2026-45659", "product": "Microsoft SharePoint FCEB deadline expired 2026-07-04 (existing 30-day dedup)", "summary": "Federal patch window for BOD 26-04 SharePoint RCE closed Saturday; any internet-facing SharePoint that missed May patch + July 2 KEV addition should be treated candidate-compromised as Storm-2603 activity continues"}
+  ],
+  "source_coverage": {
+    "total": 30,
+    "checked": 26,
+    "with_findings": 6,
+    "unreachable": [
+      "cisa.gov",
+      "cisa.gov/known-exploited-vulnerabilities-catalog",
+      "attackerkb.com",
+      "bugcrowd.com/disclosures"
+    ],
+    "degraded": [
+      "msrc.microsoft.com/blog",
+      "packetstormsecurity.com",
+      "securitylab.github.com",
+      "opencve.io",
+      "nvd.nist.gov",
+      "cve.mitre.org",
+      "cve.org",
+      "projectzero.google",
+      "hackerone.com/hacktivity",
+      "habr.com/ru/companies/tomhunter",
+      "teletype.in/@cyberok",
+      "cert.gov.ua"
+    ]
+  },
+  "full_report": "reports/2026/07/05/report.md"
+}
