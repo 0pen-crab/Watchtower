@@ -1,0 +1,89 @@
+{
+  "date": "2026-07-06",
+  "findings": [
+    {
+      "type": "news",
+      "title": "Apache APISIX jwt-auth Algorithm Confusion CVE-2026-39999 (CVSS 9.8) — Pre-Auth Full Auth Bypass on One of the Top-3 Open-Source API Gateways; Public Technical Writeup + Fix in 3.16.1",
+      "threat_score": 7,
+      "cve": "CVE-2026-39999",
+      "cvss": 9.8,
+      "affected_technology": "Apache APISIX jwt-auth plugin (versions v2.2 through v3.16.0)",
+      "summary": "APISIX trusts server-side key selection but honours the JWT header alg on verify; attacker flips alg to HS256 and signs a token with the RSA public key as HMAC secret, impersonating any consumer unauth — fixed 3.16.1, advisory + writeup 2026-07-04.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-07-04"
+    },
+    {
+      "type": "news",
+      "title": "iCagenda Joomla Extension CVE-2026-48939 (CVSS 10.0) Pre-Auth File Upload → RCE Weaponised With Same-Day GitHub Mass-Exploitation Framework and In-the-Wild 'icagenda-batch/1.0' Scanner",
+      "threat_score": 7,
+      "cve": "CVE-2026-48939",
+      "cvss": 10.0,
+      "affected_technology": "iCagenda Joomla extension (versions ≤ 4.0.7)",
+      "summary": "Unauth file upload on the frontend Submit-an-Event form uploads a PHP webshell to a predictable web-served folder; mySites.guru reports in-the-wild scanner tagging User-Agent 'icagenda-batch/1.0', shinthink published mass-exploitation framework to GitHub 2026-07-06 — patched in 4.0.8 (2026-06-15).",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-07-06"
+    },
+    {
+      "type": "news",
+      "title": "Apache Camel 2026-07-05 Batch — 25+ Coordinated Advisories via oss-security Covering Header Injection, Infinispan Deserialization, and JMS ObjectMessage RCE Paths",
+      "threat_score": 6,
+      "cve": "CVE-2026-40047, Multiple",
+      "cvss": null,
+      "affected_technology": "Apache Camel (multiple components; 4.0.0–4.14.6, 4.15.0–4.18.1, 4.19.x pre-4.19.0)",
+      "summary": "Andrea Cosentino posted a coordinated 25+ Camel advisory batch covering HTTP/CoAP/DNS header injection to header-sensitive producers, Infinispan-cache deserialization gadgets, and JMS ObjectMessage RCE — fixes in 4.14.6 / 4.18.2 / 4.19.0.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-07-05"
+    },
+    {
+      "type": "news",
+      "title": "Microsoft Exchange CVE-2026-45504 (CVSS 8.8) SSRF-via-WOPI Arbitrary File Read — HawkTrace Public Technical Writeup + Working PoC Published Weaponising June 9 Patch Gap",
+      "threat_score": 5,
+      "cve": "CVE-2026-45504",
+      "cvss": 8.8,
+      "affected_technology": "Microsoft Exchange Server 2016 / 2019 / Subscription Edition (on-premises)",
+      "summary": "Authenticated low-priv mailbox user creates EWS ReferenceAttachment with crafted ProviderEndpointUrl; SSRF returns file:///path# and the URI-fragment trick makes Exchange read arbitrary local files via FileWebRequest — patched June 9, weaponised PoC + writeup by HawkTrace early July 2026.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-07-03"
+    }
+  ],
+  "noted": [
+    {"cve": "Not yet assigned", "product": "Apache Kafka OAUTHBEARER JWT clock-skew authentication bypass (oss-security 2026-07-04)", "summary": "Kafka 4.0.0–4.0.x authentication bypass reported by xylove21 as CVE-request; watching for CVE assignment + vendor advisory before promotion"},
+    {"cve": "CVE-2026-49297", "product": "Apache Airflow path traversal via GCSToSFTPOperator (oss-security 2026-07-04)", "summary": "GCS object-name manipulation enables filesystem access; enterprise but Airflow rarely internet-exposed, calibration for internal-platform hygiene"},
+    {"cve": "CVE-2026-56015", "product": "Net::IP::LPM Perl heap out-of-bounds read (oss-security 2026-07-03)", "summary": "Unbounded prefix-length parameter causes memory exposure; potential impact on Perl-based routing/subnet tools embedded in web apps"},
+    {"cve": "CVE-2026-14570", "product": "Crypt::DSA Perl weak nonce generation (oss-security 2026-07-05)", "summary": "Biased random generation in DSA nonce + private key material; low real-world impact for most Perl deployments, calibration for legacy signing pipelines"},
+    {"cve": "CVE-2026-12746, CVE-2026-12740", "product": "Perl OAuth provider/middleware missing state parameter (oss-security 2026-07-04)", "summary": "Dancer2::Plugin::Auth::OAuth::Provider + Plack::Middleware::OAuth lack OAuth 2.0 state (CSRF-class); low urgency, audit downstream Perl OAuth consumers"},
+    {"cve": "CVE-2026-46242", "product": "Linux kernel 'Bad Epoll' UAF LPE (THN 2026-07-05)", "summary": "Unprivileged-user-to-root use-after-free in kernel epoll; out of scope per Watchtower policy but tracked as post-exploit chain for Chrome-sandbox / K8s-pod-breakout scenarios"},
+    {"cve": "Not yet assigned", "product": "Cisco Unified Communications Manager in-the-wild exploitation (BleepingComputer + SecurityWeek 2026-07-04)", "summary": "Cisco publicly confirmed active exploitation of previously-disclosed Unified CM vulnerability; watching for CVE identification + KEV addition before News promotion"},
+    {"cve": "None assigned", "product": "FatFs embedded filesystem 7-vuln disclosure by runZero (THN 2026-07-04)", "summary": "Millions of IoT devices affected; requires physical/adjacent access, out of scope for internet-facing surface, IoT/OT-fleet calibration only"},
+    {"cve": "None assigned", "product": "Kali Linux 2026.2 release (BleepingComputer 2026-07-03)", "summary": "9 new offensive tools + NetHunter updates; defender-tooling calibration signal, no vulnerability content"},
+    {"cve": "None assigned", "product": "Adobe ColdFusion + Campaign Classic follow-up (existing 2026-07-03 NEWS)", "summary": "No new exploitation activity observed 2026-07-05 → 2026-07-06 window; internet-facing ColdFusion patch SLA remains 24h, Adobe P1 rating still active"},
+    {"cve": "None assigned", "product": "FBI + Google disrupt NetNut residential proxy network (Krebs + THN 2026-07-02)", "summary": "2M+ compromised devices dismantled; positive signal for reducing IAB proxy-layer supply, no patchable finding"},
+    {"cve": "None assigned", "product": "Ousaban Iberian Peninsula campaign (FortiGuard 2026-07-01)", "summary": "Regional Spain/Portugal phishing-PDF campaign with steganographic C2; low relevance for our fleet, geo-specific threat-modelling calibration only"}
+  ],
+  "source_coverage": {
+    "total": 30,
+    "checked": 26,
+    "with_findings": 8,
+    "unreachable": [
+      "cisa.gov",
+      "cisa.gov/known-exploited-vulnerabilities-catalog",
+      "attackerkb.com",
+      "bugcrowd.com/disclosures"
+    ],
+    "degraded": [
+      "msrc.microsoft.com/blog",
+      "packetstormsecurity.com",
+      "securitylab.github.com",
+      "opencve.io",
+      "nvd.nist.gov",
+      "cve.mitre.org",
+      "cve.org",
+      "projectzero.google",
+      "hackerone.com/hacktivity",
+      "habr.com/ru/companies/tomhunter",
+      "teletype.in/@cyberok",
+      "cert.gov.ua"
+    ]
+  },
+  "full_report": "reports/2026/07/06/report.md"
+}

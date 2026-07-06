@@ -1,0 +1,96 @@
+## Watchtower 2026-07-06 Night Cycle — Debug Log
+
+**Start:** 2026-07-06T00:01:42Z
+**Operator:** Watchtower vulnerability-researcher
+
+### Step 1 — Repo pull
+- `cd /home/claude/workspace/watchtower && git pull` → "Already up to date."
+
+### Step 2 — 30-day dedup index
+- Reports read (window 2026-06-06 → 2026-07-05):
+  2026-06-06, 06-07, 06-08, 06-10, 06-11, 06-12, 06-13, 06-14, 06-15, 06-16, 06-17, 06-18, 06-19, 07-03, 07-04, 07-05
+- Note: 2026-06-19 → 2026-07-03 = 14-day gap (documented in MEMORY 2026-07-03; using full 30-day window).
+- Extracted 343 unique CVE identifiers across findings + noted.
+- Written to `/tmp/watchtower_run/dedup_index.txt`.
+- Also captured 378 finding+noted titles for narrative-level dedup at `/tmp/watchtower_run/recent_titles.txt`.
+
+### Step 3 — Source checks (30 total)
+
+Batch 1 (Tier 1 primary news):
+- ✅ bleepingcomputer.com — 15 headlines retrieved, latest 24-48h; identified Adobe ColdFusion (already dedupe'd from 07-03), FortiBleed / Lynx, Medtronic breach, NetNut takedown, JADEPUFFER BC repackaging, Kali 2026.2, Cursor DuneSlide (already covered), Cisco Unified CM in-wild exploitation confirmation, ARToken PhaaS/EvilTokens (already MEMORY 2026-07-04), Scattered Spider extradition, PamStealer macOS.
+- ✅ thehackernews.com — 15 headlines; Kairos $1M payment, PolinRider 108 packages (already covered 07-05), FatFs 7 vulns (physical access — OOS), CVE-2026-46242 "Bad Epoll" Linux kernel LPE (OOS local privesc), Avalon/CrownX ransomware, Rollup npm typo-squats, Armored Likho BusySnake, EP member Pegasus, ToddyCat Umbrij OAuth Gmail (client-side), Oracle EBS CVE-2026-46817 (already covered).
+- ✅ securityweek.com — 15 headlines; Cursor DuneSlide (already covered), CitrixBleed 2 (existing CVE-2025-5777 covered), Cisco Unified CM active exploitation, CVE-2026-45659 SharePoint (already covered), JADEPUFFER (already covered 07-03), Medtronic breach (already covered 07-04), Scattered Spider extradition, Trump/Anthropic policy news, Adobe ColdFusion (already covered), Citrix NetScaler patches inc. HTTP/2 Bomb, Teams AI-bot policy.
+- ✅ rapid7.com/blog — 4 posts: Metasploit Wrap-Up (Peyara Remote Mouse RCE + SMB-to-Meterpreter), Oracle PeopleSoft CVE-2026-35273 ETR (already covered 06-12), Ivanti Sentry CVE-2026-10520/10523 (already covered 06-10 / 06-11), Check Point VPN CVE-2026-50751 ETR (already covered 06-10 / 06-12; verified 07-01 minor edit only, no material update).
+- ✅ seclists.org/fulldisclosure — retrieved page shows only up to 2026-07-02 posts; already covered in prior report (Zig std.http DoS, CVE-2026-58451 Horde IMP, CWP SQLi, pwnlift, Whistlelink).
+- ✅ openwall.com/lists/oss-security 2026/07/ — 07-03 (5 msgs: Lucene.Net batch already covered 07-04, Net::IP::LPM heap OOB, OpenSSL ecosystem note), 07-04 (10 msgs: Kafka OAUTHBEARER JWT clock-skew CVE-request, Apache APISIX JWT alg confusion CVE-2026-39999, CVE-2026-49297 Airflow path traversal, CVE-2026-12746/12740 Perl OAuth state), 07-05 (30 msgs: Apache Camel 25+ advisory batch by Andrea Cosentino, CVE-2026-14570 Crypt::DSA nonce, CVE-2026-40047 camel-docling).
+- ✅ krebsonsecurity.com — 5 posts in 7 days; NetNut/Popa botnet takedowns (already noted 07-05), Scattered Spider trial pleas, "Popa" botnet attribution to NASDAQ-listed Alarum, "The Gentlemen" ransomware operator, June 2026 Patch Tuesday retrospective (already dedupe'd).
+- ✅ schneier.com — 10 posts; primarily surveillance / policy / research; RSA keys with zero blocks; no in-scope vulnerability signal.
+- ✅ blog.cloudflare.com/tag/security — 1 post in 7d (crawler dashboard); no vulnerability signal.
+- ✅ fortinet.com/blog/threat-research — 1 post in 5d (Ousaban Iberian Peninsula campaign 2026-07-01); regional, low relevance.
+- ⚠️ packetstorm.news (redirect from packetstormsecurity.com) — homepage nav-only, no content surfaced via WebFetch.
+- ⚠️ opencve.io — redirects to app.opencve.io. Retrieved CVEs published 07-01→07-06 with CVSS≥7: mostly Chrome CVEs (OOS client sandbox scope), UTT nv518G buffer overflows (7.5, minor router), no in-scope items surfaced.
+- ✅ github.com/search?q=CVE&s=updated — retrieved 15 repos updated in last 5 days. Key finds:
+  - `shinthink/CVE-2026-48939` iCagenda Joomla pre-auth file upload → RCE (NEW, promoted to News)
+  - `shinthink/CVE-2026-27966` Langflow pre-auth RCE (already CVE-2025-3248 line covered)
+  - `shinthink/CVE-2026-9290` WP User Manager LFI (Wordpress plugin, mid-severity)
+  - `shinthink/CVE-2026-8713` Avada Builder path traversal (WP plugin file delete)
+  - `Defacto-ridgepole254/CVE-2026-41940-Exploit-PoC` cPanel/WHM auth bypass (already covered)
+  - `Dullpurple-sloop726/CVE-2026-31431-Linux-Copy-Fail` (already covered 06-02)
+  - `Recorded-texteditor120/CVE-2026-31802` npm tar path traversal (already covered)
+  - `tracyliving606/RegPwn` CVE-2026-24291 Windows LPE (OOS)
+- ❌ cisa.gov (both KEV catalog + /news-events/alerts) — 403 Forbidden.
+- ❌ attackerkb.com — known 403 per MEMORY, not retested this cycle.
+
+Batch 2 (Tier 2 + specialized):
+- ✅ github.com/advisories?query=type:reviewed+published:>2026-07-01 — 17 advisories 07-01→07-06 including Recce server SQL exec (CVE-2026-49360), 9router bypass (49353), golang.org/x/image PackBits DoS (46599), LaunchServer path traversal (54617), SimpleSAMLphp IdP validation (49284), SAML XPath DoS (49289), TLS validator confusion (49283), Keycloak SAML (2092), Steeltoe env var leak / port isolation (50194/50196/50200), fast-mcp-telegram bearer bypass (52830), jxl-grid Rust integer overflow (52834). SimpleSAMLphp cluster + Keycloak SAML noted as auth-federation calibration signal but no single item meets News/Update thresholds — all patched with limited public exploitation.
+- ✅ securitylab.github.com/advisories/ — latest publication 2026-05-22 (7-Zip, Chatwoot, Mesa, Doris) — all outside window.
+- ✅ avleonov.com — 7 posts in 14d; latest 2026-07-02 Exchange XSS CVE-2026-42897 (already covered), 06-26 Patch-Wednesday recap (already covered), 06-17 In-the-Trend #28 (already covered per MEMORY), 06-06 CVE-2026-41091 RedSun Defender (already covered per MEMORY), 06-05 CVE-2026-0300 PAN-OS (already covered), 06-02 Copy Fail (already covered).
+- ✅ github.com/0xMarcio/cve — 10 recent updates; CVE-2026-45504 Exchange file read (NEW, promoted to News), CVE-2026-41089 Netlogon CLDAP (already covered), CVE-2026-45504 Exchange, CVE-2026-34486 Tomcat Tribes (already covered), CVE-2025-55182 React2Shell (old, PoC repos being updated but no new active exploitation window in our reporting window).
+- ✅ dbugs.ptsecurity.com — batch 07-03→07-06 mostly SMB-scoped web apps (Pizzafy, Hospital Mgmt), CVE-2026-14721 UTT device 9.0 (niche), CVE-2026-59510 AIL Framework 7.1 (threat intel), CVE-2026-14781 Keycloak 4.8; no in-scope items meeting News threshold.
+- ✅ kb.cert.org/vuls — 5 posts in 7 days; latest 2026-07-02 GameFirst Anti-Cheat LPE (OOS client-side), older items June 22 FastStone / WinRE / Secure Boot (OOS).
+- ⚠️ msrc.microsoft.com/blog — redirected to microsoft.com/en-us/msrc/blog; WebFetch returned nav-only content.
+- ⚠️ nvd.nist.gov, cve.mitre.org, cve.org — JS/API-required for detail listings; used github.com/advisories + openwall as canonical replacements.
+- ⚠️ googleprojectzero.blogspot.com → projectzero.google — no posts within window per prior cycles.
+- ⚠️ hackerone.com/hacktivity — JS-required (SPA).
+- ❌ bugcrowd.com/disclosures — 404 (URL changed; drop candidate for monthly review).
+- ⚠️ habr.com/ru/companies/tomhunter — last post 2026-03-06 (4-month silence).
+- ⚠️ teletype.in/@cyberok — last post 2026-02-04 (5-month silence).
+- ⚠️ cert.gov.ua — homepage returned empty content via WebFetch.
+
+### Step 4 — Dedup decisions
+
+Fresh candidate items evaluated:
+- CVE-2026-39999 Apache APISIX JWT alg confusion → NEW (not in dedup) → News (score 7).
+- CVE-2026-48939 iCagenda Joomla pre-auth file-upload RCE → NEW (not in dedup) → News (score 7), same-day-tooling pattern per MEMORY 2026-07-04.
+- CVE-2026-45504 Microsoft Exchange SSRF file read → NEW (not in dedup; PoC published early July window) → News (score 5).
+- Apache Camel 25+ CVE batch (2026-07-05 oss-security) → NEW (batch not previously covered) → News (score 6).
+- CVE-2026-50751 Check Point VPN → SKIP (already covered 06-10 + 06-12; Rapid7 ETR 07-01 update was minor edit only, no material change).
+- CVE-2026-35273 Oracle PeopleSoft → SKIP (already covered 06-12 UPDATE + 06-14 follow-up).
+- CVE-2026-45659 SharePoint → SKIP (already covered 07-03 + 07-04, KEV deadline expired 07-04, no material change).
+- Adobe ColdFusion CVEs (48276/48277/48281/48282/48283/48286/48313/48315/48316) → SKIP (already covered 07-03 as News; no new exploitation activity 07-04→07-06).
+- CVE-2026-46817 Oracle EBS → SKIP (already covered 07-03).
+- CVE-2025-3248 Langflow → SKIP (already covered as JADEPUFFER context 07-03).
+- CVE-2025-5777 CitrixBleed 2 → SKIP (already covered previously; SecurityWeek repackaging not material).
+- CVE-2025-55182 React2Shell → SKIP (older Dec-2025 CVE, PoC repos being updated but no new 07-window active exploitation reporting).
+- CVE-2026-41089 Netlogon CLDAP → SKIP (already in dedup).
+- CVE-2026-34486 Tomcat Tribes → SKIP (already in dedup).
+- CVE-2026-42897 Exchange XSS → SKIP (already in dedup).
+- CVE-2026-41940 cPanel/WHM → SKIP (already in dedup).
+- CVE-2026-31431 Linux Copy Fail LPE → SKIP (already in dedup, OOS but tracked).
+- CVE-2026-31802 npm tar → SKIP (already in dedup).
+- CVE-2026-29075 Mesa CI code exec → SKIP (already in dedup).
+- Kafka OAUTHBEARER JWT clock-skew, Airflow path traversal, Perl Net::IP::LPM / Crypt::DSA / OAuth-Provider modules, "Bad Epoll" Linux kernel, Cisco Unified CM in-wild, FatFs 7 vulns, Kali 2026.2, ColdFusion follow-up, NetNut takedown, Ousaban → NOTED.
+- Cursor DuneSlide, ARToken/EvilTokens, Medtronic ShinyHunters, JADEPUFFER BC repackaging → SKIP (already covered 07-03/07-04).
+
+### Step 5 — Write files
+- reports/2026/07/06/report.md — written
+- reports/2026/07/06/report.json — written
+
+### Step 6 — Debug log (this file) written.
+
+### Step 7 — Validator run (pending — appended after execution)
+
+⚠️  1 warning(s):
+   findings[0]: 'summary' is 312 chars (aim for <200)
+✅ /home/claude/workspace/watchtower/reports/2026/07/06/report.json — valid
+✅ /home/claude/workspace/watchtower/reports/2026/07/06/report.json — valid
