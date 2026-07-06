@@ -2,35 +2,36 @@
 
 | Source | Findings | Noted | Empty | Last Hit |
 |--------|----------|-------|-------|----------|
-| bleepingcomputer.com | 6 | 4 | 1 | 2026-07-05 (no new; JADEPUFFER mainstream repackaging already in dedup, PolinRider primary attribution goes to THN — noted latency calibration) |
-| thehackernews.com | 9 | 8 | 0 | 2026-07-05 (+1 FINDING: PolinRider DPRK 108-package supply-chain campaign HIGH promoted from Rollup polyfill Noted; +2 NOTED: Kairos $1M extortion case study, PamStealer macOS Rust infostealer) |
-| securityweek.com | 5 | 4 | 0 | 2026-07-05 (+1 NOTED: SharePoint CVE-2026-45659 FCEB deadline expired 2026-07-04; all other cross-refs in dedup) |
-| krebsonsecurity.com | 1 | 1 | 1 | 2026-07-05 (no new posts since 2026-07-02 NetNut) |
-| rapid7.com | 1 | 0 | 1 | 2026-07-05 (no new posts since 2026-07-03 Metasploit wrap-up) |
-| schneier.com | 0 | 2 | 1 | 2026-07-05 (no new posts since 2026-07-03 calibration batch) |
-| fortinet.com/blog/threat-research | 0 | 2 | 1 | 2026-07-05 (no new posts since 2026-07-01 Ousaban) |
-| securitylab.github.com | 0 | 0 | 2 | 2026-07-05 (still 2026-05-22 batch — 44-day silence; drop candidate confirmed) |
-| github.com/search (advisories) | 3 | 2 | 0 | 2026-07-05 (+1 FINDING: CVE-2026-24061 GNU inetutils-telnetd active-exploitation CRITICAL late catch-up; +1 NOTED: CVE-2026-2472 Vertex AI SDK stored XSS AI-platform) |
-| seclists.org/fulldisclosure | 0 | 4 | 0 | 2026-07-05 (+2 NOTED: CVE-2026-58451 Horde Groupware IMP path traversal, Zig std.http chunked reader DoS) |
-| openwall.com/lists/oss-security | 2 | 22 | 1 | 2026-07-05 (not directly checked; no 2026-07-04 ripple via cross-source references) |
-| kb.cert.org/vuls | 0 | 4 | 1 | 2026-07-05 (no new VU# since 2026-07-02 GameFirst) |
-| opencve.io / app.opencve.io | 1 | 1 | 1 | 2026-07-05 (marketing page only — no per-CVE data; Chrome 150 batch already in 2026-07-04 dedup) |
-| dbugs.ptsecurity.com | 1 | 5 | 0 | 2026-07-05 (+1 NOTED grouped: 2026-07-04 batch n8n CVE-2025-71380 + Fickling CVE-2026-14534/14535 + Vesta CVE-2026-12195 + HestiaCP CVE-2026-12196 + Picklescan 13-CVE CVSS 8.1 cluster) |
-| github.com/0xMarcio/cve | 0 | 1 | 1 | 2026-07-05 (+1 NOTED: CVE-2026-31431 "Copy Fail" Linux kernel LPE 9-year-old post-exploit chain material; other entries in dedup) |
-| blog.cloudflare.com/tag/security | 0 | 2 | 1 | 2026-07-05 (no new posts since 2026-07-01 Attribution Business Insights) |
-| avleonov.com | 0 | 0 | 2 | 2026-07-05 (no new posts since 2026-07-02 Exchange XSS) |
-| cisa.gov (incl. /KEV) | 0 | 1 | 2 | 2026-07-05 (403 persistent; SharePoint CVE-2026-45659 FCEB deadline expired Saturday 2026-07-04 via SW cross-reference) |
-| attackerkb.com | 0 | 0 | 2 | 2026-07-05 (403 persistent) |
-| cve.org / cve.mitre.org | 0 | 0 | 2 | 2026-07-05 (JS-required) |
-| googleprojectzero.blogspot.com → projectzero.google | 0 | 0 | 2 | 2026-07-05 (still 2026-05-13; 53-day silence) |
-| msrc.microsoft.com/blog | 0 | 0 | 2 | 2026-07-05 (redirect+nav-only persistent) |
-| hackerone.com/hacktivity | 0 | 0 | 2 | 2026-07-05 (JS-required) |
-| bugcrowd.com/disclosures | 0 | 0 | 2 | 2026-07-05 (404 persistent) |
-| packetstormsecurity.com → packetstorm.news | 0 | 0 | 2 | 2026-07-05 (nav-only + TOS persistent) |
-| nvd.nist.gov | 0 | 0 | 2 | 2026-07-05 (JS-required — data surfaced via opencve.io) |
-| habr.com/ru/companies/tomhunter | 0 | 0 | 2 | — (silent through 2026-03-06, ~4.0-month silence — drop candidate confirmed) |
-| teletype.in/@cyberok | 0 | 0 | 2 | — (silent through 2026-02-04, ~5.0-month silence — drop candidate confirmed) |
-| cert.gov.ua | 0 | 0 | 2 | — (empty) |
+| bleepingcomputer.com | 6 | 4 | 2 | 2026-07-06 (no new NEWS-grade — DuneSlide+JADEPUFFER+ARToken+Medtronic+Cisco Unified CM all already dedupe'd; Cisco Unified CM in-wild confirmation → Noted pending CVE ID) |
+| thehackernews.com | 9 | 9 | 0 | 2026-07-06 (+1 NOTED: CVE-2026-46242 "Bad Epoll" Linux kernel LPE — OOS but tracked; Kairos $1M / FatFs / Avalon-CrownX / Rollup npm / Armored Likho / Pegasus EP / Umbrij OAuth / PamStealer all already covered or OOS) |
+| securityweek.com | 5 | 4 | 1 | 2026-07-06 (no new items — Adobe/CitrixBleed2/Cisco Unified CM/SharePoint all already covered) |
+| krebsonsecurity.com | 1 | 2 | 1 | 2026-07-06 (+1 NOTED: FBI seizes NetNut proxy platform + Popa botnet — non-scope but calibration) |
+| rapid7.com | 1 | 0 | 2 | 2026-07-06 (Metasploit wrap-up unchanged; ETRs for PeopleSoft/Ivanti/Check Point verified — no material update since 06-12) |
+| schneier.com | 0 | 2 | 2 | 2026-07-06 (no vuln signal — Flock cameras / AI liability / Meta face-rec / RSA-keys-with-zeros research) |
+| fortinet.com/blog/threat-research | 0 | 3 | 1 | 2026-07-06 (+1 NOTED: Ousaban Iberian Peninsula campaign 2026-07-01 — regional low relevance) |
+| securitylab.github.com | 0 | 0 | 3 | 2026-07-06 (still 2026-05-22 batch — 45-day silence; drop candidate confirmed) |
+| github.com/search (advisories) | 4 | 5 | 0 | 2026-07-06 (+1 FINDING: CVE-2026-48939 iCagenda Joomla pre-auth file-upload RCE via shinthink 07-06 same-day tooling; 3 shinthink WP-plugin PoCs 8713/9290/27966 below promotion threshold) |
+| seclists.org/fulldisclosure | 0 | 4 | 1 | 2026-07-06 (no new items since 2026-07-02 batch) |
+| openwall.com/lists/oss-security | 4 | 27 | 1 | 2026-07-06 (+2 FINDINGS: CVE-2026-39999 Apache APISIX JWT alg confusion HIGH, Apache Camel 25+ batch MEDIUM; +5 NOTED: Kafka OAUTHBEARER CVE-request, Airflow CVE-2026-49297, Perl Net::IP::LPM 56015 / Crypt::DSA 14570 / OAuth Provider 12746/12740) |
+| kb.cert.org/vuls | 0 | 4 | 2 | 2026-07-06 (no new VU# since 2026-07-02 GameFirst LPE) |
+| opencve.io / app.opencve.io | 1 | 1 | 2 | 2026-07-06 (redirects to app; 07-01→07-06 CVEs mostly Chrome OOS + UTT nv518G 7.5 minor) |
+| dbugs.ptsecurity.com | 1 | 6 | 0 | 2026-07-06 (batch mostly SMB web apps + UTT device 9.0 niche + AIL Framework 7.1 + Keycloak 4.8 — no News-tier items) |
+| github.com/0xMarcio/cve | 0 | 2 | 1 | 2026-07-06 (+1 CROSS-REF signal for CVE-2026-45504 Exchange file read PoC — promoted to News; React2Shell PoC repo activity noted but no fresh active-exploitation window) |
+| blog.cloudflare.com/tag/security | 0 | 2 | 2 | 2026-07-06 (no new posts since 2026-07-01 Attribution Business Insights) |
+| avleonov.com | 0 | 1 | 2 | 2026-07-06 (+1 CROSS-REF: Exchange XSS CVE-2026-42897 2026-07-02 recap — already covered) |
+| cisa.gov (incl. /KEV) | 0 | 1 | 3 | 2026-07-06 (403 persistent — no new KEV additions in reachable proxies since SharePoint 2026-07-02) |
+| attackerkb.com | 0 | 0 | 3 | 2026-07-06 (403 persistent) |
+| cve.org / cve.mitre.org | 0 | 0 | 3 | 2026-07-06 (JS-required) |
+| googleprojectzero.blogspot.com → projectzero.google | 0 | 0 | 3 | 2026-07-06 (still 2026-05-13; 54-day silence) |
+| msrc.microsoft.com/blog | 0 | 0 | 3 | 2026-07-06 (redirect+nav-only persistent) |
+| hackerone.com/hacktivity | 0 | 0 | 3 | 2026-07-06 (JS-required) |
+| bugcrowd.com/disclosures | 0 | 0 | 3 | 2026-07-06 (404 persistent) |
+| packetstormsecurity.com → packetstorm.news | 0 | 0 | 3 | 2026-07-06 (nav-only + TOS persistent) |
+| nvd.nist.gov | 0 | 0 | 3 | 2026-07-06 (JS-required — data surfaced via github.com/advisories + openwall) |
+| habr.com/ru/companies/tomhunter | 0 | 0 | 3 | — (silent through 2026-03-06, ~4.1-month silence — drop candidate confirmed) |
+| teletype.in/@cyberok | 0 | 0 | 3 | — (silent through 2026-02-04, ~5.1-month silence — drop candidate confirmed) |
+| cert.gov.ua | 0 | 0 | 3 | — (empty content persistent) |
+| github.com/advisories (off-list, high-value 2026-05-07) | 0 | 0 | 1 | 2026-07-06 (17 advisories 07-01→07-06 surfaced; no single item meets News threshold — SimpleSAMLphp/Keycloak SAML cluster + Steeltoe cluster noted for calibration; promote to Tier 1 formally next monthly review) |
 
 ## Missed 2026-07-01 monthly review
 
