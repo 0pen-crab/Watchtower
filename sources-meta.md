@@ -2,32 +2,32 @@
 
 | Source | Findings | Noted | Empty | Last Hit |
 |--------|----------|-------|-------|----------|
-| bleepingcomputer.com | 6 | 4 | 2 | 2026-07-06 (no new NEWS-grade — DuneSlide+JADEPUFFER+ARToken+Medtronic+Cisco Unified CM all already dedupe'd; Cisco Unified CM in-wild confirmation → Noted pending CVE ID) |
-| thehackernews.com | 9 | 9 | 0 | 2026-07-06 (+1 NOTED: CVE-2026-46242 "Bad Epoll" Linux kernel LPE — OOS but tracked; Kairos $1M / FatFs / Avalon-CrownX / Rollup npm / Armored Likho / Pegasus EP / Umbrij OAuth / PamStealer all already covered or OOS) |
-| securityweek.com | 5 | 4 | 1 | 2026-07-06 (no new items — Adobe/CitrixBleed2/Cisco Unified CM/SharePoint all already covered) |
-| krebsonsecurity.com | 1 | 2 | 1 | 2026-07-06 (+1 NOTED: FBI seizes NetNut proxy platform + Popa botnet — non-scope but calibration) |
-| rapid7.com | 1 | 0 | 2 | 2026-07-06 (Metasploit wrap-up unchanged; ETRs for PeopleSoft/Ivanti/Check Point verified — no material update since 06-12) |
-| schneier.com | 0 | 2 | 2 | 2026-07-06 (no vuln signal — Flock cameras / AI liability / Meta face-rec / RSA-keys-with-zeros research) |
-| fortinet.com/blog/threat-research | 0 | 3 | 1 | 2026-07-06 (+1 NOTED: Ousaban Iberian Peninsula campaign 2026-07-01 — regional low relevance) |
-| securitylab.github.com | 0 | 0 | 3 | 2026-07-06 (still 2026-05-22 batch — 45-day silence; drop candidate confirmed) |
-| github.com/search (advisories) | 4 | 5 | 0 | 2026-07-06 (+1 FINDING: CVE-2026-48939 iCagenda Joomla pre-auth file-upload RCE via shinthink 07-06 same-day tooling; 3 shinthink WP-plugin PoCs 8713/9290/27966 below promotion threshold) |
-| seclists.org/fulldisclosure | 0 | 4 | 1 | 2026-07-06 (no new items since 2026-07-02 batch) |
-| openwall.com/lists/oss-security | 4 | 27 | 1 | 2026-07-06 (+2 FINDINGS: CVE-2026-39999 Apache APISIX JWT alg confusion HIGH, Apache Camel 25+ batch MEDIUM; +5 NOTED: Kafka OAUTHBEARER CVE-request, Airflow CVE-2026-49297, Perl Net::IP::LPM 56015 / Crypt::DSA 14570 / OAuth Provider 12746/12740) |
-| kb.cert.org/vuls | 0 | 4 | 2 | 2026-07-06 (no new VU# since 2026-07-02 GameFirst LPE) |
-| opencve.io / app.opencve.io | 1 | 1 | 2 | 2026-07-06 (redirects to app; 07-01→07-06 CVEs mostly Chrome OOS + UTT nv518G 7.5 minor) |
-| dbugs.ptsecurity.com | 1 | 6 | 0 | 2026-07-06 (batch mostly SMB web apps + UTT device 9.0 niche + AIL Framework 7.1 + Keycloak 4.8 — no News-tier items) |
-| github.com/0xMarcio/cve | 0 | 2 | 1 | 2026-07-06 (+1 CROSS-REF signal for CVE-2026-45504 Exchange file read PoC — promoted to News; React2Shell PoC repo activity noted but no fresh active-exploitation window) |
-| blog.cloudflare.com/tag/security | 0 | 2 | 2 | 2026-07-06 (no new posts since 2026-07-01 Attribution Business Insights) |
-| avleonov.com | 0 | 1 | 2 | 2026-07-06 (+1 CROSS-REF: Exchange XSS CVE-2026-42897 2026-07-02 recap — already covered) |
-| cisa.gov (incl. /KEV) | 0 | 1 | 3 | 2026-07-06 (403 persistent — no new KEV additions in reachable proxies since SharePoint 2026-07-02) |
-| attackerkb.com | 0 | 0 | 3 | 2026-07-06 (403 persistent) |
-| cve.org / cve.mitre.org | 0 | 0 | 3 | 2026-07-06 (JS-required) |
-| googleprojectzero.blogspot.com → projectzero.google | 0 | 0 | 3 | 2026-07-06 (still 2026-05-13; 54-day silence) |
-| msrc.microsoft.com/blog | 0 | 0 | 3 | 2026-07-06 (redirect+nav-only persistent) |
-| hackerone.com/hacktivity | 0 | 0 | 3 | 2026-07-06 (JS-required) |
-| bugcrowd.com/disclosures | 0 | 0 | 3 | 2026-07-06 (404 persistent) |
-| packetstormsecurity.com → packetstorm.news | 0 | 0 | 3 | 2026-07-06 (nav-only + TOS persistent) |
-| nvd.nist.gov | 0 | 0 | 3 | 2026-07-06 (JS-required — data surfaced via github.com/advisories + openwall) |
+| bleepingcomputer.com | 8 | 9 | 2 | 2026-07-10 (+2 FINDINGS: Ubiquiti UniFi CVE-2026-50746 max-sev batch, Roundcube UNK_MassTraction China APT campaign CVE-2024-42009+CVE-2025-49113; +5 NOTED: Tenda backdoor CVE-2026-11405, Forg365 AI PhaaS, KDDI 12M breach, Injective SDK npm, fake Paysafe/Skrill SDKs) |
+| thehackernews.com | 10 | 12 | 0 | 2026-07-10 (+1 FINDING: GhostApproval AI-IDE symlink CVE-2026-12958+CVE-2026-50549; +3 NOTED: GigaWiper Windows destructive backdoor, Lurking Lizard fake 7-Zip proxy op, DEBULL device-code tooling — Rogue Agent Dialogflow CX cross-ref) |
+| securityweek.com | 6 | 8 | 1 | 2026-07-10 (+1 FINDING: Palo Alto PAN-OS 13-CVE batch CVE-2026-0288/0265/0300; +4 NOTED: LapDogs 'Leash' SOHO-router backdoors, KEV ColdFusion/Langflow/Joomla listing dedup, GhostLock CVE-2026-43499 LPE, Defender RoguePlanet CVE-2026-50656 patched) |
+| krebsonsecurity.com | 1 | 2 | 2 | 2026-07-10 (no new content — IRIS C2 profile / NetNut recap already dedupe'd) |
+| rapid7.com | 1 | 0 | 3 | 2026-07-10 (blog landing nav-only; Metasploit wrap-ups and PeopleSoft/Ivanti Sentry ETRs already in dedup, nothing new) |
+| schneier.com | 0 | 2 | 3 | 2026-07-10 (3 essays — AI language/skill-gap/Google-vs-Gemini-scam — no vuln signal) |
+| fortinet.com/blog/threat-research | 0 | 3 | 2 | 2026-07-10 (still 2026-07-01 Ousaban as latest — no July 7-10 posts) |
+| securitylab.github.com | 0 | 0 | 4 | 2026-07-10 (still 2026-05-22 batch — 49-day silence; drop candidate reconfirmed) |
+| github.com/search (advisories) | 5 | 6 | 0 | 2026-07-10 (+1 FINDING cross-ref: GhostApproval CVE-2026-12958 Amazon Q + CVE-2026-50549 Cursor same-day PoC repos; +1 NOTED: CVE-2026-24291 RegPwn Windows LPE PoC — OOS but calibration; multiple 41089-LongLogon PoC updates below Update threshold) |
+| seclists.org/fulldisclosure | 0 | 6 | 1 | 2026-07-10 (+2 NOTED: OPNsense CVE-2026-53582 XPATH-injection 07-06, Asterisk 20-advisory batch 07-02; Revive-SA-2026-003 minor) |
+| openwall.com/lists/oss-security | 4 | 34 | 1 | 2026-07-10 (+7 NOTED: Apache Airflow 6-CVE batch CVE-2026-33264, Django 3-CVE batch CVE-2026-48588+53877+53878, Foreman 4-CVE batch CVE-2026-5135/36/38/42, Apache Gravitino CVE-2026-41042, Apache Helix REST CVE-2026-57111, HTSlib multi, CVE-2026-15308 HTMLParser CPU-DoS) |
+| kb.cert.org/vuls | 0 | 6 | 2 | 2026-07-10 (+2 NOTED: VU#213560 Tenda backdoor→CVE-2026-11405 cross-ref, VU#734812 Xerte Online Toolkit auth-bypass RCE) |
+| opencve.io / app.opencve.io | 1 | 1 | 3 | 2026-07-10 (app.opencve.io/cve — 07-09 batch mostly Chrome+Discourse+Pimcore+LoginPress OAuth OOS or below promotion threshold; BOSH CLI CVE-2026-47826 malicious-Director scope narrow) |
+| dbugs.ptsecurity.com | 1 | 6 | 1 | 2026-07-10 (~1173 entries this week; Bieticaret 9.8 + ValeApp 9.3 niche SMB apps + WordPress plugin cluster — no News-tier hits) |
+| github.com/0xMarcio/cve | 0 | 3 | 1 | 2026-07-10 (+1 CROSS-REF: CVE-2026-11405 Tenda backdoor PoC repo + CVE-2026-41089-LongLogon PoC updates confirmed as noted only) |
+| blog.cloudflare.com/tag/security | 0 | 2 | 3 | 2026-07-10 (2 posts — ML-DSA post-quantum + UK Cyber Resilience Pledge — no vuln signal) |
+| avleonov.com | 0 | 1 | 3 | 2026-07-10 (still 2026-07-02 CVE-2026-42897 latest — 8-day silence, unusual for weekly cadence) |
+| cisa.gov (incl. /KEV) | 0 | 2 | 4 | 2026-07-10 (403 persistent; +1 NOTED cross-ref: KEV ColdFusion+Langflow+Joomla federal-deadline 2026-07-10 already in dedup) |
+| attackerkb.com | 0 | 0 | 4 | 2026-07-10 (403 persistent) |
+| cve.org / cve.mitre.org | 0 | 0 | 4 | 2026-07-10 (JS-required) |
+| googleprojectzero.blogspot.com → projectzero.google | 0 | 0 | 4 | 2026-07-10 (still 2026-05-13; 58-day silence) |
+| msrc.microsoft.com/blog | 0 | 0 | 4 | 2026-07-10 (redirect+nav-only persistent) |
+| hackerone.com/hacktivity | 0 | 0 | 4 | 2026-07-10 (JS-required) |
+| bugcrowd.com/disclosures | 0 | 0 | 4 | 2026-07-10 (404 persistent) |
+| packetstormsecurity.com → packetstorm.news | 0 | 0 | 4 | 2026-07-10 (multiple retries — landing / news / advisory endpoints all return ToS/marketing/nav; consistently degraded) |
+| nvd.nist.gov | 0 | 0 | 4 | 2026-07-10 (JS-required — data surfaced via github.com/advisories + openwall) |
 | habr.com/ru/companies/tomhunter | 0 | 0 | 3 | — (silent through 2026-03-06, ~4.1-month silence — drop candidate confirmed) |
 | teletype.in/@cyberok | 0 | 0 | 3 | — (silent through 2026-02-04, ~5.1-month silence — drop candidate confirmed) |
 | cert.gov.ua | 0 | 0 | 3 | — (empty content persistent) |

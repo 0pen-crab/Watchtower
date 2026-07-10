@@ -1,0 +1,99 @@
+{
+  "date": "2026-07-10",
+  "findings": [
+    {
+      "type": "news",
+      "title": "Ubiquiti UniFi Multi-Product Batch — CVE-2026-50746 (Max Severity) Command Injection in UniFi Connect + 6 Critical CVEs Across UniFi Talk / Access / Protect / OS Server / Routers; ~100k Instances Exposed",
+      "threat_score": 7,
+      "cve": "CVE-2026-50746, CVE-2026-50747, CVE-2026-50748, CVE-2026-54400, CVE-2026-54402, CVE-2026-55115, CVE-2026-55116",
+      "cvss": null,
+      "affected_technology": "Ubiquiti UniFi Connect Application (≤ 3.4.16), UniFi Talk, UniFi Access, UniFi Protect, UniFi OS Server, UniFi routers/gateways/NAS/surveillance",
+      "summary": "Ubiquiti disclosed 7 critical/max-severity vulns on 2026-07-09 topped by CVE-2026-50746 (network-adjacent unauth Command Injection via Improper Access Control in UniFi Connect); Censys tracks ~100k exposed UniFi OS instances with ~50k in the US and prior state-sponsored targeting history.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-07-09"
+    },
+    {
+      "type": "news",
+      "title": "GhostApproval (Wiz) — Symlink Sandbox-Escape in Six AI Coding Agents (Amazon Q, Claude Code, Cursor, Google Antigravity, Windsurf, Augment); AWS CVE-2026-12958 + Cursor CVE-2026-50549; Anthropic Initially Disputed, Now Fixed in Claude Code 2.1.173+",
+      "threat_score": 7,
+      "cve": "CVE-2026-12958, CVE-2026-50549",
+      "cvss": null,
+      "affected_technology": "Amazon Q Developer (language server < 1.69.0), Anthropic Claude Code (< 2.1.173), Cursor, Google Antigravity, Windsurf, Augment",
+      "summary": "Wiz disclosed 2026-07-08 that six AI coding agents fail to resolve symlinks before write-approval; a malicious repo project_settings.json→~/.zshrc lands RCE on the developer host — an 'informed-consent bypass' since the approval dialog shows the safe filename while the agent writes to the symlink target.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-07-08"
+    },
+    {
+      "type": "news",
+      "title": "Palo Alto Networks PAN-OS 2026-07-09 Batch — 13 Vulns Including CVE-2026-0288 (CVSS 9.2) User-ID TSA Unauth Buffer Overflow RCE, CVE-2026-0265 CAS Auth Bypass, and CVE-2026-0300 (CVSS 9.3) Captive Portal Buffer Overflow",
+      "threat_score": 7,
+      "cve": "CVE-2026-0288, CVE-2026-0265, CVE-2026-0300, Multiple",
+      "cvss": 9.3,
+      "affected_technology": "Palo Alto Networks PAN-OS 11.1, 11.2, 12.1 on PA-Series firewalls, VM-Series, Panorama",
+      "summary": "Palo Alto disclosed 13 PAN-OS vulns on 2026-07-09 topped by unauth memory-corruption RCE in User-ID Terminal Server Agent (CVE-2026-0288, CVSS 9.2), Cloud Authentication Service auth bypass (CVE-2026-0265), and User-ID Captive Portal buffer overflow (CVE-2026-0300, CVSS 9.3) — vendor-highest urgency rating, no in-the-wild yet reported.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-07-09"
+    },
+    {
+      "type": "news",
+      "title": "Roundcube In-the-Wild Exploitation Campaign — UNK_MassTraction (China-Aligned) Weaponises CVE-2024-42009 XSS + CVE-2025-49113 Deserialization Against US/Canada Academic Targets; Proofpoint Discloses May-Onwards Activity",
+      "threat_score": 6,
+      "cve": "CVE-2024-42009, CVE-2025-49113",
+      "cvss": null,
+      "affected_technology": "Roundcube Webmail (unpatched instances vulnerable to either CVE)",
+      "summary": "Proofpoint on 2026-07-08 detailed the China-aligned UNK_MassTraction cluster exploiting long-patched Roundcube XSS + deserialization since May 2026 against US and Canadian physics/engineering/national-security researchers via malicious emails deploying IceCube stealer + SquareShell/VShell webshells.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-07-08"
+    }
+  ],
+  "noted": [
+    {"cve": "CVE-2026-11405", "product": "Tenda router firmware (FH1201, W15E, AC10, AC5, AC6 V2) hardcoded backdoor (CERT VU#213560, BleepingComputer + SecurityWeek 2026-07-09)", "summary": "Undocumented sys.rzadmin.password backdoor in /bin/httpd grants full admin on 5 model families; vendor unreachable per CERT/CC, no patch — consumer/SOHO scope but botnet targeting expected"},
+    {"cve": "CVE-2026-33264, CVE-2026-48828, CVE-2026-48891, CVE-2026-48892, CVE-2026-49296, CVE-2026-49487", "product": "Apache Airflow 6-CVE batch via oss-security 2026-07-07 (RCE + secret leaks in <3.3.0)", "summary": "DAG-author RCE via unrestricted import_string() in BaseSerialization.deserialize plus 5 secret-exposure/read-bypass paths; fixed in 3.3.0 — Airflow rarely internet-exposed but critical for internal-platform hygiene"},
+    {"cve": "CVE-2026-48588, CVE-2026-53877, CVE-2026-53878", "product": "Django 6.0.7 / 5.2.16 3-CVE batch (oss-security 2026-07-07) — cache middleware Set-Cookie leak, GDALRaster heap over-read, DomainNameValidator header injection", "summary": "All 3 flagged Low severity by Django team; Set-Cookie caching leak is the highest-impact but requires shared-cache deployments; upgrade window is not urgent"},
+    {"cve": "CVE-2026-53582", "product": "OPNsense XPATH Injection (Full Disclosure 2026-07-06)", "summary": "XPATH injection in OPNsense firewall/router — details minimal in initial post; in-scope for edge infrastructure, watching for vendor advisory and patch version"},
+    {"cve": "None assigned", "product": "Asterisk 20-advisory security release batch (23.4.1 / 22.10.1 / 21.12.3 / 20.20.1 + certified-22.8-cert3 + certified-20.7-cert11; Full Disclosure 2026-07-02)", "summary": "20 GHSA-tracked issues incl. 'ARI setChannelVar bypasses live_dangerously' FILE()-write and 'ARI REST-over-WebSocket read-only bypass' arbitrary module load / conditional RCE; VoIP widely deployed but no in-the-wild yet, no CVE IDs assigned"},
+    {"cve": "None assigned", "product": "Forg365 AI-assisted PhaaS platform for Microsoft 365 (BleepingComputer 2026-07-09; ZeroBEC research)", "summary": "Combines device-code phishing + AiTM proxying + AI-generated lures + persistent browser-extension access; extends the DEBULL/EvilTokens family and the 2026-07-04 MEMORY device-code-flow-must-be-CA-blocked posture"},
+    {"cve": "CVE-2026-50656", "product": "Microsoft Defender Malware Protection Engine 'RoguePlanet' privilege escalation (SecurityWeek + THN 2026-07-08→09; existing 2026-06-19 Noted)", "summary": "Patched via mpengine.dll v1.1.26060.3008; 30-day dedup — Watchtower policy classifies LPE as out-of-scope, keeping as calibration only, no promotion warranted"},
+    {"cve": "None assigned", "product": "GigaWiper Windows destructive backdoor bundling disk-wipe + spyware (THN 2026-07-09)", "summary": "Post-exploitation malware with no patch; calibration for destructive-payload IR playbooks, no defensive patching advisory"},
+    {"cve": "None assigned", "product": "Injective SDK npm cryptocurrency wallet stealer (BleepingComputer 2026-07-09)", "summary": "Malicious SDK on npm exfiltrating wallet private keys and mnemonic seed phrases; supply-chain calibration, developer-workstation scope"},
+    {"cve": "None assigned", "product": "Fake Paysafe / Skrill SDKs on npm + PyPI (BleepingComputer 2026-07-08)", "summary": "Credential-stealing malicious packages targeting payment-integration developers; supply-chain calibration, monitor developer-workstation package installs"},
+    {"cve": "None assigned", "product": "KDDI Japanese telecom data breach — 12M+ email addresses + passwords exposed (BleepingComputer + SecurityWeek 2026-07-09)", "summary": "Attributed to zero-day in third-party system; credential-stuffing risk for downstream services, calibration for identity-defense playbooks"},
+    {"cve": "None assigned", "product": "Google Dialogflow CX 'Rogue Agent' AI-conversation-hijack + credential theft (SecurityWeek 2026-07-08)", "summary": "Cross-project AI agent hijack primitive on Google Cloud Dialogflow CX; in-scope AI-platform advisory but early details limited, watching for full technical writeup"},
+    {"cve": "CVE-2026-41042", "product": "Apache Gravitino unauthenticated API exploitation (oss-security 2026-07-08)", "summary": "Unauth API access in Apache Gravitino data catalog; new Apache in-scope framework but low deployment footprint, calibration for internal-platform hygiene"},
+    {"cve": "CVE-2026-57111", "product": "Apache Helix REST CORS misconfiguration (oss-security 2026-07-08)", "summary": "CORS misconfig in Helix REST allowing cross-origin abuse; internal-cluster-mgmt tool with limited internet exposure"},
+    {"cve": "CVE-2026-5135, CVE-2026-5136, CVE-2026-5138, CVE-2026-5142", "product": "Foreman 3.18.2 / 3.19.1 4-CVE batch (oss-security 2026-07-07)", "summary": "Red Hat Satellite / provisioning platform multi-CVE fixes; enterprise Linux mgmt scope, low internet-facing surface for most fleets"},
+    {"cve": "None assigned", "product": "HTSlib ≤1.23.1 multiple vulnerabilities in file-reading code (oss-security 2026-07-09)", "summary": "Genomics/BAM/CRAM parsing library; niche defensive scope, calibration for bioinformatics research infrastructure"},
+    {"cve": "CVE-2026-15308", "product": "Incremental HTMLParser CPU-exhaustion DoS via repeated unterminated markup (oss-security 2026-07-09)", "summary": "Unauthenticated remote CPU DoS in incremental HTML parser; watch for downstream web-framework consumers"},
+    {"cve": "CVE-2026-43499", "product": "Linux kernel 'GhostLock' stack-UAF LPE across kernels 2.6.39–7.1 (oss-security 2026-07-08→09, SecurityWeek 2026-07-09)", "summary": "15-year-old LPE in Linux kernel earning $92k Google bounty; local-only per Watchtower scope but tracked as post-exploit chain from RCE pivots"},
+    {"cve": "None assigned", "product": "CERT VU#734812 — Xerte Online Toolkit authentication bypass leading to RCE (CERT/CC 2026-07-09)", "summary": "Auth-bypass → RCE in e-learning content platform; niche vertical but in-scope for enterprise education deployments"},
+    {"cve": "None assigned", "product": "CISA KEV additions — Adobe ColdFusion + Langflow + Joomla extensions (SecurityWeek 2026-07-08)", "summary": "Federal patch deadline 2026-07-10; existing 30-day dedup covers ColdFusion (2026-07-03 News) and Joomla iCagenda (2026-07-06 News) — no new material beyond KEV listing"},
+    {"cve": "None assigned", "product": "China-linked LapDogs 'Leash' backdoor arsenal expansion on SOHO routers (Cisco Talos via SecurityWeek 2026-07-08)", "summary": "LongLeash / DogLeash / JarLeash variants for SOHO-router persistence; documentation of expanding campaign, calibration for edge-device baseline hygiene"},
+    {"cve": "None assigned", "product": "Lurking Lizard fake 7-Zip installer residential-proxy operation (THN 2026-07-09; active since Aug 2022)", "summary": "230+ lookalike domains + fake 7-Zip installers recruiting residential-proxy nodes; supply-chain and endpoint calibration, watch for lookalike-domain intel feeds"}
+  ],
+  "source_coverage": {
+    "total": 30,
+    "checked": 26,
+    "with_findings": 12,
+    "unreachable": [
+      "cisa.gov",
+      "cisa.gov/known-exploited-vulnerabilities-catalog",
+      "attackerkb.com",
+      "bugcrowd.com/disclosures"
+    ],
+    "degraded": [
+      "msrc.microsoft.com/blog",
+      "packetstormsecurity.com",
+      "nvd.nist.gov",
+      "cve.mitre.org",
+      "cve.org",
+      "projectzero.google",
+      "hackerone.com/hacktivity",
+      "habr.com/ru/companies/tomhunter",
+      "teletype.in/@cyberok",
+      "cert.gov.ua",
+      "avleonov.com",
+      "fortinet.com/blog/threat-research"
+    ]
+  },
+  "full_report": "reports/2026/07/10/report.md"
+}
