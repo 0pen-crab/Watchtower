@@ -2,35 +2,35 @@
 
 | Source | Findings | Noted | Empty | Last Hit |
 |--------|----------|-------|-------|----------|
-| bleepingcomputer.com | 8 | 9 | 2 | 2026-07-10 (+2 FINDINGS: Ubiquiti UniFi CVE-2026-50746 max-sev batch, Roundcube UNK_MassTraction China APT campaign CVE-2024-42009+CVE-2025-49113; +5 NOTED: Tenda backdoor CVE-2026-11405, Forg365 AI PhaaS, KDDI 12M breach, Injective SDK npm, fake Paysafe/Skrill SDKs) |
-| thehackernews.com | 10 | 12 | 0 | 2026-07-10 (+1 FINDING: GhostApproval AI-IDE symlink CVE-2026-12958+CVE-2026-50549; +3 NOTED: GigaWiper Windows destructive backdoor, Lurking Lizard fake 7-Zip proxy op, DEBULL device-code tooling — Rogue Agent Dialogflow CX cross-ref) |
-| securityweek.com | 6 | 8 | 1 | 2026-07-10 (+1 FINDING: Palo Alto PAN-OS 13-CVE batch CVE-2026-0288/0265/0300; +4 NOTED: LapDogs 'Leash' SOHO-router backdoors, KEV ColdFusion/Langflow/Joomla listing dedup, GhostLock CVE-2026-43499 LPE, Defender RoguePlanet CVE-2026-50656 patched) |
-| krebsonsecurity.com | 1 | 2 | 2 | 2026-07-10 (no new content — IRIS C2 profile / NetNut recap already dedupe'd) |
-| rapid7.com | 1 | 0 | 3 | 2026-07-10 (blog landing nav-only; Metasploit wrap-ups and PeopleSoft/Ivanti Sentry ETRs already in dedup, nothing new) |
-| schneier.com | 0 | 2 | 3 | 2026-07-10 (3 essays — AI language/skill-gap/Google-vs-Gemini-scam — no vuln signal) |
-| fortinet.com/blog/threat-research | 0 | 3 | 2 | 2026-07-10 (still 2026-07-01 Ousaban as latest — no July 7-10 posts) |
-| securitylab.github.com | 0 | 0 | 4 | 2026-07-10 (still 2026-05-22 batch — 49-day silence; drop candidate reconfirmed) |
-| github.com/search (advisories) | 5 | 6 | 0 | 2026-07-10 (+1 FINDING cross-ref: GhostApproval CVE-2026-12958 Amazon Q + CVE-2026-50549 Cursor same-day PoC repos; +1 NOTED: CVE-2026-24291 RegPwn Windows LPE PoC — OOS but calibration; multiple 41089-LongLogon PoC updates below Update threshold) |
-| seclists.org/fulldisclosure | 0 | 6 | 1 | 2026-07-10 (+2 NOTED: OPNsense CVE-2026-53582 XPATH-injection 07-06, Asterisk 20-advisory batch 07-02; Revive-SA-2026-003 minor) |
-| openwall.com/lists/oss-security | 4 | 34 | 1 | 2026-07-10 (+7 NOTED: Apache Airflow 6-CVE batch CVE-2026-33264, Django 3-CVE batch CVE-2026-48588+53877+53878, Foreman 4-CVE batch CVE-2026-5135/36/38/42, Apache Gravitino CVE-2026-41042, Apache Helix REST CVE-2026-57111, HTSlib multi, CVE-2026-15308 HTMLParser CPU-DoS) |
-| kb.cert.org/vuls | 0 | 6 | 2 | 2026-07-10 (+2 NOTED: VU#213560 Tenda backdoor→CVE-2026-11405 cross-ref, VU#734812 Xerte Online Toolkit auth-bypass RCE) |
-| opencve.io / app.opencve.io | 1 | 1 | 3 | 2026-07-10 (app.opencve.io/cve — 07-09 batch mostly Chrome+Discourse+Pimcore+LoginPress OAuth OOS or below promotion threshold; BOSH CLI CVE-2026-47826 malicious-Director scope narrow) |
-| dbugs.ptsecurity.com | 1 | 6 | 1 | 2026-07-10 (~1173 entries this week; Bieticaret 9.8 + ValeApp 9.3 niche SMB apps + WordPress plugin cluster — no News-tier hits) |
-| github.com/0xMarcio/cve | 0 | 3 | 1 | 2026-07-10 (+1 CROSS-REF: CVE-2026-11405 Tenda backdoor PoC repo + CVE-2026-41089-LongLogon PoC updates confirmed as noted only) |
-| blog.cloudflare.com/tag/security | 0 | 2 | 3 | 2026-07-10 (2 posts — ML-DSA post-quantum + UK Cyber Resilience Pledge — no vuln signal) |
-| avleonov.com | 0 | 1 | 3 | 2026-07-10 (still 2026-07-02 CVE-2026-42897 latest — 8-day silence, unusual for weekly cadence) |
-| cisa.gov (incl. /KEV) | 0 | 2 | 4 | 2026-07-10 (403 persistent; +1 NOTED cross-ref: KEV ColdFusion+Langflow+Joomla federal-deadline 2026-07-10 already in dedup) |
-| attackerkb.com | 0 | 0 | 4 | 2026-07-10 (403 persistent) |
-| cve.org / cve.mitre.org | 0 | 0 | 4 | 2026-07-10 (JS-required) |
-| googleprojectzero.blogspot.com → projectzero.google | 0 | 0 | 4 | 2026-07-10 (still 2026-05-13; 58-day silence) |
-| msrc.microsoft.com/blog | 0 | 0 | 4 | 2026-07-10 (redirect+nav-only persistent) |
-| hackerone.com/hacktivity | 0 | 0 | 4 | 2026-07-10 (JS-required) |
-| bugcrowd.com/disclosures | 0 | 0 | 4 | 2026-07-10 (404 persistent) |
-| packetstormsecurity.com → packetstorm.news | 0 | 0 | 4 | 2026-07-10 (multiple retries — landing / news / advisory endpoints all return ToS/marketing/nav; consistently degraded) |
-| nvd.nist.gov | 0 | 0 | 4 | 2026-07-10 (JS-required — data surfaced via github.com/advisories + openwall) |
-| habr.com/ru/companies/tomhunter | 0 | 0 | 3 | — (silent through 2026-03-06, ~4.1-month silence — drop candidate confirmed) |
-| teletype.in/@cyberok | 0 | 0 | 3 | — (silent through 2026-02-04, ~5.1-month silence — drop candidate confirmed) |
-| cert.gov.ua | 0 | 0 | 3 | — (empty content persistent) |
+| bleepingcomputer.com | 10 | 10 | 2 | 2026-07-11 (+2 FINDINGS: Progress ShareFile SZC vendor-shutdown 07-10, Gitea Docker CVE-2026-20896 active exploitation 07-10; +1 NOTED: Injective @injectivelabs/sdk-ts v1.20.21 GitHub compromise 07-10, U-Boot 6-flaw Binarly batch 07-09) |
+| thehackernews.com | 12 | 13 | 0 | 2026-07-11 (+2 FINDINGS: OpenClaw WhatsApp-to-Host 3-GHSA 07-10, XQUIC XRING HTTP/3 DoS 07-08 unpatched; +1 NOTED: WP-SHELLSTORM WordPress webshell campaign 07-10, Microsoft Entra passkey-phishing 07-10) |
+| securityweek.com | 6 | 9 | 1 | 2026-07-11 (+1 NOTED: Google Chrome 150 27-CVE batch incl 13 UAFs / 2 critical 07-09; PAN-OS/GhostLock/RoguePlanet all dedup) |
+| krebsonsecurity.com | 1 | 3 | 2 | 2026-07-11 (+1 NOTED: IRIS C2 Burkman/Wohl profile 07-08; no new vuln signal) |
+| rapid7.com | 1 | 1 | 3 | 2026-07-11 (+1 NOTED: PeopleSoft CVE-2026-35273 active-exploitation blog wrap-up 07-10 — calibration only, existing 30-day dedup) |
+| schneier.com | 0 | 2 | 3 | 2026-07-11 (Squidbleed CVE-2026-47729 mainstream surfacing 07-10 → drove Squid 7.6/7.7 patch-status Update) |
+| fortinet.com/blog/threat-research | 0 | 3 | 3 | 2026-07-11 (still 2026-07-01 Ousaban — 10-day silence — reconfirmed drop candidate) |
+| securitylab.github.com | 0 | 0 | 5 | 2026-07-11 (still 2026-05-22 batch — 50-day silence; drop candidate reconfirmed) |
+| github.com/search (advisories) | 5 | 6 | 0 | 2026-07-11 (recently-updated PoC repos — CVE-2026-43499 GhostLock, CVE-2026-41940 cPanel, CVE-2026-31431 Linux LPE, CVE-2026-31802 npm tar, CVE-2026-24291 RegPwn — all dedup or out-of-scope) |
+| seclists.org/fulldisclosure | 0 | 8 | 1 | 2026-07-11 (+2 NOTED: CWP KIS-2026-12 SQLi 07-09, pwnlift CVE-2026-56815 symlink TOCTOU root file-write 07-10; Horde IMP re-post dedup) |
+| openwall.com/lists/oss-security | 4 | 35 | 1 | 2026-07-11 (+1 NOTED: Apache IoTDB 8-CVE batch CVE-2026-28564/40005-9/40452/40454 on 2026-07-10) |
+| kb.cert.org/vuls | 0 | 7 | 2 | 2026-07-11 (+1 NOTED: VU#849433 Adalo Database API cross-app extraction 07-08; VU#152953 PayRange Android mobile-OOS; VU#734812 Xerte dedup) |
+| opencve.io / app.opencve.io | 1 | 7 | 3 | 2026-07-11 (+6 NOTED: OpenPLC CVE-2026-14480 auth file-write RCE, OpenReplay CVE-2026-55879 SDK stored-XSS, Spinnaker CVE-2026-55175 Kustomize YAML RCE, Genetec CVE-2026-55727 unauth video-stream, Anviz CVE-2026-40066 firmware RCE, Fire-Boltt CVE-2026-37271 BLE-replay mobile-OOS) |
+| dbugs.ptsecurity.com | 1 | 6 | 1 | 2026-07-11 (multi-vendor surfacings — Apache IoTDB / Grafana / JetBrains TeamCity updates — none News-tier; IoTDB batch cross-ref to oss-security) |
+| github.com/0xMarcio/cve | 0 | 3 | 1 | 2026-07-11 (PoC repos for GhostLock CVE-2026-43499 + Netlogon CLDAP CVE-2026-41089 + Linux LPE CVE-2026-31431 — all dedup or out-of-scope) |
+| blog.cloudflare.com/tag/security | 0 | 2 | 3 | 2026-07-11 (2026-07-09 post-quantum signature algorithms — no vuln signal) |
+| avleonov.com | 0 | 1 | 3 | 2026-07-11 (still 2026-07-02 CVE-2026-42897 latest — 9-day silence continued) |
+| cisa.gov (incl. /KEV) | 0 | 2 | 5 | 2026-07-11 (403 persistent) |
+| attackerkb.com | 0 | 0 | 5 | 2026-07-11 (403 persistent) |
+| cve.org / cve.mitre.org | 0 | 0 | 5 | 2026-07-11 (JS-required — no CVE listing on landing pages) |
+| googleprojectzero.blogspot.com → projectzero.google | 0 | 0 | 5 | 2026-07-11 (still 2026-05-13 Pixel-10 chain — 59-day silence) |
+| msrc.microsoft.com/blog | 0 | 0 | 5 | 2026-07-11 (redirect+nav-only persistent) |
+| hackerone.com/hacktivity | 0 | 0 | 5 | 2026-07-11 (JS-required) |
+| bugcrowd.com/disclosures | 0 | 0 | 5 | 2026-07-11 (404 persistent) |
+| packetstormsecurity.com → packetstorm.news | 0 | 0 | 5 | 2026-07-11 (landing / news endpoints all return ToS/marketing/nav — consistently degraded) |
+| nvd.nist.gov | 1 | 0 | 4 | 2026-07-11 (+1 NOTED: Snipe-IT 9-CVE batch CVE-2026-54329/55460/55464/55472/55474/55476/55478/55516/55843 surfaced via NVD landing) |
+| habr.com/ru/companies/tomhunter | 0 | 0 | 4 | — (silent through 2026-03-06, ~4.2-month silence — drop candidate confirmed) |
+| teletype.in/@cyberok | 0 | 0 | 4 | — (silent through 2026-02-04, ~5.2-month silence — drop candidate confirmed) |
+| cert.gov.ua | 0 | 0 | 4 | — (empty content persistent) |
 | github.com/advisories (off-list, high-value 2026-05-07) | 0 | 0 | 1 | 2026-07-06 (17 advisories 07-01→07-06 surfaced; no single item meets News threshold — SimpleSAMLphp/Keycloak SAML cluster + Steeltoe cluster noted for calibration; promote to Tier 1 formally next monthly review) |
 
 ## Missed 2026-07-01 monthly review
