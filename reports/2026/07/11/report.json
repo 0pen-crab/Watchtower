@@ -1,0 +1,117 @@
+{
+  "date": "2026-07-11",
+  "findings": [
+    {
+      "type": "news",
+      "title": "Progress ShareFile Storage Zone Controller — Vendor-Mandated Emergency Shutdown Over 'Credible External Security Threat' (2026-07-10; No CVE Assigned; Possible New Zero-Day Or Live Exploitation Of April CVE-2026-2699/2701 Chain)",
+      "threat_score": 7,
+      "cve": "None assigned",
+      "cvss": null,
+      "affected_technology": "Progress ShareFile — on-prem Windows Storage Zone Controllers (SZC); historical link to unpatched watchTowr CVE-2026-2699 auth-bypass + CVE-2026-2701 RCE chain from April 2026",
+      "summary": "Progress emailed ShareFile customers 2026-07-09/10 to shut down Windows Storage Zone Controllers over a 'credible external security threat' and temporarily disabled SZC-backed account access; whether new zero-day or live exploitation of April CVE-2026-2699/2701 chain is undisclosed and the shutdown-not-patch response signals no available fix.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-07-10"
+    },
+    {
+      "type": "news",
+      "title": "Gitea CVE-2026-20896 (CVSS 9.8) Docker-Image Default REVERSE_PROXY_TRUSTED_PROXIES=* Turns X-WEBAUTH-USER Header Into One-Header Admin Impersonation; Active Exploitation From 2026-07-07 (~13 Days After Disclosure), ProtonVPN Probe Node Observed",
+      "threat_score": 7,
+      "cve": "CVE-2026-20896",
+      "cvss": 9.8,
+      "affected_technology": "Gitea official Docker image ≤ 1.26.2 (default config with reverse-proxy auth enabled)",
+      "summary": "Gitea's Docker image default trusts X-WEBAUTH-USER from any source when reverse-proxy auth is on, letting a remote attacker impersonate gitea_admin with one header; Michael Clark confirmed active exploitation from 2026-07-07 (~13 days post-advisory) — upgrade to 1.26.4.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-07-10"
+    },
+    {
+      "type": "news",
+      "title": "Zimbra ZCS 10.1.19 — Critical Stored XSS In Classic Web Client Reported By Google TAG (No CVE Assigned); Open-Email Trigger, APT29/APT28 History Of Zimbra XSS Exploitation",
+      "threat_score": 6,
+      "cve": "Not yet assigned",
+      "cvss": null,
+      "affected_technology": "Zimbra Collaboration Suite < 10.1.19 (Classic/Ajax Web Client only)",
+      "summary": "Zimbra shipped 10.1.19 on 2026-07-08 to patch a Google-TAG-reported stored XSS in the Classic Web Client where a crafted email executes JavaScript on message open, yielding session/mailbox theft; TAG involvement + Zimbra's APT29/APT28 XSS-exploitation history strongly implies state-sponsored ITW.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-07-08"
+    },
+    {
+      "type": "news",
+      "title": "OpenClaw 2026.6.6 — Three GHSAs (CVSS 8.4–8.8) Chain WhatsApp Message → Host Code Execution: sanitizeEnvVars() Denylist Bypass Via NODE_OPTIONS/BASH_ENV/PYTHONSTARTUP + Sandbox Bind-Mount Path Traversal (GHSA-hjr6-g723-hmfm, GHSA-9969-8g9h-rxwm, GHSA-575v-8hfq-m3mc)",
+      "threat_score": 6,
+      "cve": "None assigned",
+      "cvss": 8.8,
+      "affected_technology": "OpenClaw self-hosted AI assistant ≤ 2026.6.5 (WhatsApp / Slack / Discord / Telegram / Teams bridges)",
+      "summary": "Researcher Chinmohan Nayak chained three OpenClaw flaws — env-var denylist bypass (NODE_OPTIONS/BASH_ENV/PYTHONSTARTUP) + sandbox bind-mount path traversal — so an inbound WhatsApp message reaches host code execution and mounts /home /var, exposing SSH/AWS/Docker; patched in 2026.6.6.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-07-10"
+    },
+    {
+      "type": "news",
+      "title": "XQUIC 'XRING' HTTP/3 Denial-of-Service — 260-Byte QPACK Traffic Crashes Any Server Embedding XQUIC ≤ 1.9.4 (No Patch, No CVE); Affects Tengine And Alibaba's CDN Fronting Taobao / Alipay",
+      "threat_score": 5,
+      "cve": "None assigned",
+      "cvss": null,
+      "affected_technology": "Alibaba XQUIC ≤ 1.9.4 QUIC/HTTP/3 library; Tengine (Alibaba's Nginx-based web server); any HTTP/3 endpoint embedding XQUIC with default QPACK settings",
+      "summary": "FoxIO's Sébastien Féry disclosed 2026-07-08 that a single-line variable-shadow in XQUIC's QPACK dynamic-table handling lets ~260 bytes of legal HTTP/3 traffic crash the server process unauthenticated; no patch and no CVE — set SETTINGS_QPACK_MAX_TABLE_CAPACITY=0 or drop HTTP/3 until XQUIC 1.9.5.",
+      "discovery_latency": "on-time",
+      "first_seen_at": "2026-07-08"
+    },
+    {
+      "type": "update",
+      "title": "Squidbleed CVE-2026-47729 — Correction: Fix Was NOT In Squid 7.6, Scheduled For Squid 7.7 (Amos Jeffries Clarification 2026-06-15, Mainstream Schneier Surfacing 2026-07-10); Our 2026-06-13 Coverage Incorrectly Stated 7.6 Patched This CVE",
+      "threat_score": 6,
+      "previous_threat_score": 6,
+      "cve": "CVE-2026-47729",
+      "cvss": null,
+      "affected_technology": "Squid caching proxy — FTP gateway parser; every Squid release including 7.6 (fix pending in 7.7)",
+      "summary": "Squid maintainer Amos Jeffries corrected on oss-security 2026-06-15 that Squid 7.6 did NOT ship the CVE-2026-47729 Squidbleed FTP-gateway fix (only CVE-2026-50012 cache-digests overflow) — the null-terminator patch is queued for 7.7; operators who upgraded to 7.6 remain exposed and must apply commit 865a131c or disable FTP gateway.",
+      "first_seen_at": "2026-06-15"
+    }
+  ],
+  "noted": [
+    {"cve": "None assigned", "product": "U-Boot 6-flaw batch — BRLY-2026-037 through BRLY-2026-042 (Binarly; BleepingComputer + The Hacker News 2026-07-09→10)", "summary": "Six FIT signature-verification flaws in U-Boot ≥ 2013.07 — two allow arbitrary code execution during boot, four cause crashes; patches upstream but individual vendor firmware rebuilds required; remote scope limited to BMCs with remote firmware update"},
+    {"cve": "CVE-2026-28564, CVE-2026-40005, CVE-2026-40006, CVE-2026-40007, CVE-2026-40008, CVE-2026-40009, CVE-2026-40452, CVE-2026-40454", "product": "Apache IoTDB 8-CVE batch (oss-security 2026-07-10)", "summary": "REST auth accepting stale cached creds, Pipe file-transfer path traversal, unauth heap-DoS + unbounded recursion in AirGap receiver, arbitrary-class instantiation via Pipe RPC, __internal_aud* auth escalation, /rest/v2/fastLastQuery authz bypass, C++ client OOB reads; in-scope Apache framework but rarely internet-exposed"},
+    {"cve": "CVE-2026-56815", "product": "pwnlift symlink TOCTOU root file write (Full Disclosure 2026-07-10, CVSS 7.8)", "summary": "Symlink following + TOCTOU race in privileged upload handler yields arbitrary file write as root; niche product, LPE-adjacent primitive"},
+    {"cve": "None assigned", "product": "Control Web Panel (CWP) ≤ 0.9.8.1224 SQL injection via userRes POST parameter (Full Disclosure 2026-07-09, KIS-2026-12)", "summary": "SQLi in hosting-control-panel admin surface; moderate internet exposure via small VPS/hosting providers, watch for CVE assignment"},
+    {"cve": "CVE-2026-54329, CVE-2026-55460, CVE-2026-55464, CVE-2026-55472, CVE-2026-55474, CVE-2026-55476, CVE-2026-55478, CVE-2026-55516, CVE-2026-55843", "product": "Snipe-IT 9-CVE batch (NVD 2026-07-10)", "summary": "Mass-assignment company_id, javascript URI in markdown, authorization bypasses across accessory/user/location/kit/maintenance endpoints, private-upload path concat; enterprise IT-asset mgmt, limited internet exposure"},
+    {"cve": "CVE-2026-14480", "product": "OpenPLC Runtime authenticated file write RCE (OpenCVE 2026-07-10)", "summary": "Authenticated arbitrary file write anywhere writable by OpenPLC webserver process; can chain to native code execution via malicious C++ injection; OT-adjacent, monitor for vendor patch"},
+    {"cve": "CVE-2026-55879", "product": "OpenReplay tracking SDK stored XSS (OpenCVE 2026-07-10)", "summary": "Custom event names and captured page URLs from any visitor with public project key yield stored XSS compromising authenticated dashboard accounts; product-analytics dashboards in-scope"},
+    {"cve": "CVE-2026-55175", "product": "Spinnaker Kustomize bake YAML RCE on rosco pods (OpenCVE 2026-07-10)", "summary": "Unsafe YAML processing in Kustomize bake creates RCE on rosco pods; internal CI/CD, low internet exposure but critical for cluster-mgmt hygiene"},
+    {"cve": "CVE-2026-55727", "product": "Genetec Security Center unauth live-video access (OpenCVE 2026-07-10)", "summary": "Authentication mechanism flaws permit unauthenticated access to live video streams; internet-exposed CCTV/video surveillance nodes should be reviewed"},
+    {"cve": "CVE-2026-40066", "product": "Anviz access-control devices unverified firmware RCE (OpenCVE 2026-07-10)", "summary": "Unverified firmware updates enable unauth RCE across multiple Anviz device models; niche footprint, zero-auth RCE-via-firmware primitive"},
+    {"cve": "None assigned", "product": "CERT VU#849433 — Adalo Database API cross-app user-data extraction (CERT/CC 2026-07-08)", "summary": "Over-fetching + missing authorization controls in Adalo no-code Database API allow cross-app user-data extraction; watching for vendor fix"},
+    {"cve": "None assigned", "product": "WordPress WP-SHELLSTORM webshell campaign — Breeze caching plugin + Joomla JCE editor (The Hacker News 2026-07-10)", "summary": "Internal logs from operator infrastructure show 1.4M+ targeted sites; ongoing mass-webshell activity against widely deployed CMS plugins — plugin-inventory hardening priority"},
+    {"cve": "None assigned", "product": "Microsoft Entra passkey-phishing voice-vishing campaign (The Hacker News 2026-07-10)", "summary": "Voice phishing directs users to fake passkey enrollment, hijacking accounts for downstream extortion; identity-defence calibration + Entra passkey-enrollment logging"},
+    {"cve": "Multiple", "product": "Google Chrome 150 — 27 vulns patched incl. 13 UAFs, 2 critical (SecurityWeek 2026-07-09)", "summary": "Browser-client scope typically out per Watchtower policy, but noted for infrastructure fleets pinning Chrome for headless-CI / Puppeteer scraping — upgrade the pinned image"},
+    {"cve": "None assigned", "product": "Injective Labs @injectivelabs/sdk-ts v1.20.21 GitHub compromise → npm wallet-key exfiltration (BleepingComputer + The Hacker News 2026-07-10; extends 2026-07-10 Noted)", "summary": "Continuation of the 2026-07-10 Noted Injective npm SDK stealer item — attack traced to Injective Labs GitHub compromise pushing fake-telemetry v1.20.21; supply-chain calibration, developer-workstation scope"},
+    {"cve": "CVE-2026-35273", "product": "Rapid7 blog on active exploitation of Oracle PeopleSoft CVE-2026-35273 (Rapid7 2026-07-10)", "summary": "Analysis wrap-up of ShinyHunters campaign; no new material beyond existing 2026-06-11/12/14 coverage — calibration only, existing 30-day dedup"},
+    {"cve": "None assigned", "product": "IRIS C2 offensive-cybersecurity startup by Burkman/Wohl (KrebsOnSecurity 2026-07-08)", "summary": "Investigative reporting on convicted felons running a zero-day acquisition company; ecosystem/threat-actor calibration, no defensive-patching action"}
+  ],
+  "source_coverage": {
+    "total": 30,
+    "checked": 24,
+    "with_findings": 13,
+    "unreachable": [
+      "cisa.gov",
+      "cisa.gov/known-exploited-vulnerabilities-catalog",
+      "attackerkb.com",
+      "bugcrowd.com/disclosures",
+      "hackerone.com/hacktivity",
+      "cert.gov.ua"
+    ],
+    "degraded": [
+      "packetstormsecurity.com",
+      "cve.mitre.org",
+      "cve.org",
+      "msrc.microsoft.com/blog",
+      "habr.com/ru/companies/tomhunter/articles",
+      "teletype.in/@cyberok",
+      "projectzero.google",
+      "fortinet.com/blog/threat-research",
+      "avleonov.com",
+      "securitylab.github.com",
+      "blog.cloudflare.com/tag/security"
+    ]
+  },
+  "full_report": "reports/2026/07/11/report.md"
+}

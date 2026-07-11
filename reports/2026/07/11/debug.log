@@ -1,0 +1,114 @@
+Watchtower run — 2026-07-11 (Night cycle)
+Started: 2026-07-11 00:00 UTC
+
+STEP 1 — git pull
+  cd /home/claude/workspace/watchtower && git pull → "Already up to date."
+
+STEP 2 — Build 30-day dedup index
+  Enumerated reports/2026/06/{01..19} + reports/2026/07/{03..06,10}
+  Extracted 322 unique CVE IDs → /tmp/dedup_cves.txt
+  Extracted 341 titles → /tmp/dedup_titles.txt
+
+STEP 3 — Source checks (SOURCES.md — 30 unique entries)
+  ✅ bleepingcomputer.com — 200 OK, in-window content: Progress ShareFile shutdown, Zimbra 10.1.19, Gitea Docker CVE-2026-20896, U-Boot 6-flaw, Injective npm, Entra passkey phishing
+  ✅ thehackernews.com — 200 OK, in-window: ShareFile URGENT, Gitea probing, XRING/XQUIC, OpenClaw WhatsApp-to-Host, WP-SHELLSTORM, Chrome 150
+  ❌ cisa.gov — HTTP 403 (unreachable)
+  ❌ cisa.gov/known-exploited-vulnerabilities-catalog — HTTP 403 (unreachable)
+  ✅ securityweek.com — 200 OK, in-window: PAN-OS batch (already 2026-07-10 dedup), GhostLock (dedup), RoguePlanet (dedup), Chrome 150
+  ✅ github.com/search?q=CVE — 200 OK, in-window: recently-updated PoC repos for CVE-2026-43499 GhostLock, CVE-2026-41940 cPanel, CVE-2026-31431 Linux LPE, CVE-2026-31802 npm tar, CVE-2026-24291 RegPwn Windows LPE
+  ✅ schneier.com — 200 OK, in-window: Squidbleed post 2026-07-10 (late mainstream surfacing of prior CVE-2026-47729)
+  ✅ krebsonsecurity.com — 200 OK, in-window: IRIS C2 investigative report 2026-07-08 (Burkman/Wohl)
+  ✅ rapid7.com — 200 OK, in-window: Active Exploitation of Oracle PeopleSoft CVE-2026-35273 wrap-up (already-covered)
+  ❌ attackerkb.com — HTTP 403 (unreachable)
+  ⚠️ fortinet.com/blog/threat-research — 200 OK, but latest posts 2026-07-01 (Ousaban) and 2026-06-26 — no in-window content
+  ⚠️ securitylab.github.com — 200 OK, latest dated 2026-05-22 — no in-window content
+  ✅ seclists.org/fulldisclosure — 200 OK, in-window: KIS-2026-12 CWP SQLi (2026-07-09), pwnlift CVE-2026-56815 (2026-07-10), Horde IMP CVE-2026-58451 (2026-07-11 surface; already in 2026-07-05 dedup as CVE-2026-58451)
+  ⚠️ packetstormsecurity.com — 301 → packetstorm.news homepage; only navigation returned, no dated advisories rendered (degraded)
+  ✅ opencve.io — 301 → app.opencve.io/cve; in-window: CVE-2026-14480 OpenPLC, CVE-2026-55879 OpenReplay, CVE-2026-37271 Fire-Boltt (mobile, skip), CVE-2026-55175 Spinnaker, CVE-2026-55727 Genetec, CVE-2026-40066 Anviz
+  ✅ nvd.nist.gov — 200 OK, in-window: Snipe-IT 9-CVE batch (CVE-2026-54329, 55460, 55464, 55472, 55474, 55476, 55478, 55516, 55843)
+  ⚠️ cve.mitre.org — 301 → cve.org; landing page only, no CVE list rendered (degraded)
+  ⚠️ cve.org — 200 OK, landing page only, no in-window CVE list rendered (degraded)
+  ✅ projectzero.google — 200 OK (via redirect from googleprojectzero.blogspot.com), no in-window posts (nearest: 2026-05-13 Pixel 10 chain)  (degraded — no in-window)
+  ⚠️ blog.cloudflare.com/tag/security — 200 OK, in-window: 2026-07-09 post-quantum signature algorithms (not vuln advisory — degraded/informational)
+  ⚠️ msrc.microsoft.com/blog — 301 → microsoft.com/en-us/msrc/blog; landing page only, no in-window content rendered (degraded)
+  ❌ hackerone.com/hacktivity — JS-only page, no server-rendered content (unreachable per validator)
+  ❌ bugcrowd.com/disclosures — HTTP 404 (unreachable)
+  ✅ kb.cert.org/vuls — 200 OK, in-window: VU#152953 PayRange Android (mobile, skip), VU#734812 Xerte Online Toolkit (already in 2026-07-10 Noted dedup), VU#849433 Adalo Database API (2026-07-08 — new Noted)
+  ⚠️ avleonov.com — 200 OK, latest post 2026-07-02 (Exchange XSS analysis), no in-window content (degraded)
+  ✅ github.com/0xMarcio/cve — 200 OK, in-window: CVE-2026-43499 GhostLock, CVE-2026-41089 Netlogon CLDAP, CVE-2026-21858 n8n (dedup), CVE-2026-24061 (dedup), CVE-2026-31431 Linux
+  ✅ dbugs.ptsecurity.com — 200 OK, in-window: Apache IoTDB, Grafana, JetBrains TeamCity updates surfaced (multi-vendor)
+  ⚠️ habr.com/ru/companies/tomhunter/articles — 200 OK, latest post 2026-03-06, no in-window content (degraded)
+  ⚠️ teletype.in/@cyberok — 200 OK, latest post 2026-02-04, no in-window content (degraded)
+  ❌ cert.gov.ua — no content extracted from webfetch, treating as unreachable
+
+  Bonus (per MEMORY.md — outside SOURCES.md but high-value):
+  ✅ openwall.com/lists/oss-security/2026/07 — 200 OK, in-window: Apache IoTDB 8-CVE batch, GhostLock disclosure (dedup 2026-07-10), CVE-2026-15308 Incremental HTMLParser (2026-07-10 dedup)
+
+STEP 4 — Dedup classification
+  Cross-reference candidates against 322-CVE 30-day index (/tmp/dedup_cves.txt) and 341 titles (/tmp/dedup_titles.txt).
+
+  NEW candidates (added to News):
+    - Progress ShareFile "credible external security threat" 2026-07-10 vendor shutdown → NEWS (no CVE, distinct event from April CVE-2026-2699/2701 which were already covered)
+    - Gitea Docker CVE-2026-20896 X-WEBAUTH-USER auth bypass → NEWS (distinct from 2026-07-04 Gitea 8-CVE batch dedup — new CVE, different vulnerability, actively exploited)
+    - Zimbra 10.1.19 Classic Web Client stored XSS (no CVE, Google TAG-reported) → NEWS
+    - OpenClaw 3-GHSA WhatsApp-to-Host chain (GHSA-hjr6-g723-hmfm/9969-8g9h-rxwm/575v-8hfq-m3mc) → NEWS (distinct from prior 2026-06-14 CVE-2026-53819 Homebrew executable-selection OpenClaw item)
+    - XQUIC XRING HTTP/3 DoS (no CVE) → NEWS (in-scope edge infra)
+
+  UPDATE candidates:
+    - Squidbleed CVE-2026-47729 patch-status correction — 2026-06-13 report incorrectly stated fix was in Squid 7.6; Amos Jeffries clarification 2026-06-15 says 7.7. Threat-score unchanged (6→6), but material to defensive posture → UPDATE
+
+  Dedup skips (SKIP: already in 30-day window):
+    - CVE-2026-43499 GhostLock Linux LPE — 2026-07-10 Noted (SKIP)
+    - CVE-2026-50656 RoguePlanet Defender — 2026-07-10 Noted (SKIP)
+    - CVE-2026-35273 Oracle PeopleSoft — 2026-06-11/12/14 coverage (Noted as calibration only)
+    - CVE-2026-48282 Adobe ColdFusion — 2026-07-03 News (SKIP)
+    - CVE-2026-56290 Joomlack Page Builder — 2026-07-06 News (SKIP)
+    - CVE-2026-50746 series Ubiquiti UniFi — 2026-07-10 News (SKIP)
+    - CVE-2026-0288 / CVE-2026-0265 / CVE-2026-0300 PAN-OS — 2026-07-10 News (SKIP)
+    - CVE-2026-15308 Incremental HTMLParser — 2026-07-10 Noted (SKIP)
+    - CVE-2026-58451 Horde IMP — 2026-07-05 dedup (SKIP; Full Disclosure resurfaced it 2026-07-11 as [fulldis] re-post, no material change)
+    - CVE-2026-24291 RegPwn Windows LPE — LPE only, out-of-scope
+    - CVE-2026-41089 Netlogon CLDAP CVSS 9.8 — verify in-window (grep confirms not in dedup, but per current scope Windows-server LPE via Netlogon is Windows-domain LPE class; noting for further calibration — not surfaced today since GitHub search only, no vendor advisory dated in-window)
+    - VU#152953 PayRange Android — mobile only (SKIP)
+    - VU#734812 Xerte — 2026-07-10 Noted (SKIP)
+    - Tenda CVE-2026-11405 — 2026-07-10 Noted (SKIP)
+    - Injective SDK npm — 2026-07-10 Noted (continuation, added updated Noted entry)
+
+  Scope skips:
+    - CERT VU#152953 PayRange Android — mobile-only, out of scope
+    - Tangem Wallet Laser Attack — hardware/side-channel, out of scope
+    - Ill Bloom Cryptocurrency Wallet — cryptocurrency-wallet-only, out of scope
+    - Android VPN App Study — mobile-app research, out of scope
+
+STEP 5 — Draft reports
+  Wrote:
+    reports/2026/07/11/report.md
+    reports/2026/07/11/report.json
+  Structure: 2 CRITICAL (ShareFile, Gitea) / 2 HIGH (Zimbra, OpenClaw) / 1 UPDATE (Squidbleed) / 1 MEDIUM (XRING) / 17 Noted / Source Coverage table.
+
+STEP 6 — Debug log (this file)
+
+STEP 7 — Pre-validation source-coverage math
+  total = 30 (unique URLs in SOURCES.md)
+  unreachable = 6 (cisa.gov, cisa.gov/known-exploited-vulnerabilities-catalog, attackerkb.com, bugcrowd.com/disclosures, hackerone.com/hacktivity, cert.gov.ua)
+  degraded = 11 (packetstormsecurity.com, cve.mitre.org, cve.org, msrc.microsoft.com/blog, habr.com/ru/companies/tomhunter/articles, teletype.in/@cyberok, projectzero.google, fortinet.com/blog/threat-research, avleonov.com, securitylab.github.com, blog.cloudflare.com/tag/security)
+  checked = 30 - 6 = 24  (per validator: checked >= total - unreachable → 24 >= 24 OK)
+  with_findings = 13 (bleepingcomputer, thehackernews, securityweek, github.com/search, seclists/fulldisclosure, opencve, nvd.nist.gov, kb.cert.org/vuls, github.com/0xMarcio/cve, dbugs.ptsecurity, schneier, krebs, rapid7)
+
+STEP 8 — Validate + commit + push
+  Will run: python3 /home/claude/workspace/watchtower/scripts/validate_report.py reports/2026/07/11/report.json
+  Then: git add reports/2026/07/11/{report.md,report.json,debug.log} && git commit -m "report: 2026-07-11" && git push
+
+STEP 7 (final) — Validation output:
+$ python3 scripts/validate_report.py reports/2026/07/11/report.json
+⚠️  5 warning(s):
+   findings[0]: 'summary' is 344 chars (aim for <200)
+   findings[0]: CVE 'None assigned' doesn't start with 'CVE-'
+   findings[3]: CVE 'None assigned' doesn't start with 'CVE-'
+   findings[4]: CVE 'None assigned' doesn't start with 'CVE-'
+   findings[5]: 'summary' is 333 chars (aim for <200)
+✅ reports/2026/07/11/report.json — valid
+
+Warnings only (validator exit 0). "None assigned" CVE string retained for items without vendor-assigned identifiers; matches 2026-07-10 report convention. Long-summary warnings tolerated — narrative depth needed to convey the CVE-linked context for ShareFile and Squidbleed correction.
+
+STEP 8 — Commit & push (pending)
