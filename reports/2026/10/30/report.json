@@ -1,0 +1,630 @@
+{
+  "date": "2026-10-30",
+  "findings": [
+    {
+      "type": "news",
+      "title": "PHP 'PHP2Shell' RCE",
+      "threat_score": 10,
+      "cve": "CVE-2026-109618, CVE-2026-109619",
+      "cvss": "9.2",
+      "affected_technology": "PHP",
+      "summary": "Two critical vulnerabilities in PHP allow unauthenticated remote code execution via memory corruption and stale global state.",
+      "first_seen_at": "2026-10-30",
+      "discovery_latency": "late"
+    },
+    {
+      "type": "news",
+      "title": "Cisco Catalyst SD-WAN Manager Authentication Bypass",
+      "threat_score": 10,
+      "cve": "CVE-2026-20127",
+      "cvss": "10",
+      "affected_technology": "Cisco Catalyst SD-WAN",
+      "summary": "A critical authentication bypass vulnerability in Cisco SD-WAN peering allows remote attackers to gain administrative privileges.",
+      "first_seen_at": "2026-10-30",
+      "discovery_latency": "late"
+    },
+    {
+      "type": "news",
+      "title": "Google Brotli 'Node2Shell' OOB Write",
+      "threat_score": 9,
+      "cve": "CVE-2026-111497",
+      "cvss": "9.2",
+      "affected_technology": "Google Brotli Decoder",
+      "summary": "An out-of-bounds write vulnerability in the Brotli decoder allows remote attackers to execute arbitrary code via crafted compressed streams.",
+      "first_seen_at": "2026-10-30",
+      "discovery_latency": "late"
+    },
+    {
+      "type": "news",
+      "title": "GitLab RCE (CVE-2026-97229)",
+      "threat_score": 9,
+      "cve": "CVE-2026-97229",
+      "cvss": "10",
+      "affected_technology": "GitLab CE/EE",
+      "summary": "An integer overflow in regular expression validation allows unauthenticated users to execute arbitrary code on the GitLab server.",
+      "first_seen_at": "2026-10-30",
+      "discovery_latency": "late"
+    },
+    {
+      "type": "news",
+      "title": "Arista VeloCloud Orchestrator SQL Injection",
+      "threat_score": 9,
+      "cve": "CVE-2026-114625",
+      "cvss": "9.9",
+      "affected_technology": "Arista VeloCloud Orchestrator (VCO)",
+      "summary": "A critical SQL injection vulnerability in VCO on-prem allows authenticated users to escalate privileges to superuser operator.",
+      "first_seen_at": "2026-10-30",
+      "discovery_latency": "late"
+    },
+    {
+      "type": "news",
+      "title": "Oracle PeopleSoft Enterprise PeopleTools RCE",
+      "threat_score": 9,
+      "cve": "CVE-2026-35273",
+      "cvss": "9.8",
+      "affected_technology": "Oracle PeopleSoft Enterprise PeopleTools",
+      "summary": "An unauthenticated remote attacker can achieve full system takeover via the Updates Environment Management component.",
+      "first_seen_at": "2026-10-30",
+      "discovery_latency": "late"
+    },
+    {
+      "type": "news",
+      "title": "Cisco ASA/FTD VPN DoS",
+      "threat_score": 8,
+      "cve": "CVE-2026-76418",
+      "cvss": "8.6",
+      "affected_technology": "Cisco Secure Firewall (ASA/FTD)",
+      "summary": "A logic error in the Remote Access SSL VPN service allows unauthenticated remote attackers to crash the device.",
+      "first_seen_at": "2026-10-30",
+      "discovery_latency": "late"
+    },
+    {
+      "type": "news",
+      "title": "Drupal Commerce Core Authorization Bypass",
+      "threat_score": 8,
+      "cve": "CVE-2026-118539",
+      "cvss": "Not specified",
+      "affected_technology": "Drupal Commerce Core",
+      "summary": "A missing authorization vulnerability allows attackers to bypass access controls via forceful browsing.",
+      "first_seen_at": "2026-10-30",
+      "discovery_latency": "on-time"
+    },
+    {
+      "type": "news",
+      "title": "Oracle E-Business Suite RCE (CVE-2026-101767)",
+      "threat_score": 8,
+      "cve": "CVE-2026-101767",
+      "cvss": "9.8",
+      "affected_technology": "Oracle Application Object Library",
+      "summary": "An unauthenticated remote attacker can take over the Oracle Application Object Library via HTTP.",
+      "first_seen_at": "2026-10-30",
+      "discovery_latency": "late"
+    },
+    {
+      "type": "news",
+      "title": "Linux Kernel TCP Use-After-Free",
+      "threat_score": 7,
+      "cve": "CVE-2026-98432",
+      "cvss": "9.8",
+      "affected_technology": "Linux Kernel (ipv4)",
+      "summary": "A vulnerability in the Linux kernel's TCP stack allows for potential memory corruption during SYN request processing.",
+      "first_seen_at": "2026-10-30",
+      "discovery_latency": "on-time"
+    },
+    {
+      "type": "news",
+      "title": "TianoCore EDK2 Pre-boot RCE",
+      "threat_score": 6,
+      "cve": "CVE-2026-97631",
+      "cvss": "9.5",
+      "affected_technology": "TianoCore EDK2 (UEFI)",
+      "summary": "A buffer overflow in the EDK2 PXE driver allows remote code execution during the pre-boot phase.",
+      "first_seen_at": "2026-10-30",
+      "discovery_latency": "late"
+    },
+    {
+      "type": "news",
+      "title": "VMware ESX Insufficient Logging",
+      "threat_score": 5,
+      "cve": "CVE-2026-41709",
+      "cvss": "2.7",
+      "affected_technology": "VMware ESX / Cloud Foundation",
+      "summary": "A low-severity flaw allows a malicious administrator to perform operations without leaving an audit trail.",
+      "first_seen_at": "2026-10-30",
+      "discovery_latency": "on-time"
+    },
+    {
+      "type": "news",
+      "title": "TeamViewer Remote Control Buffer Overflow (CVE-2026-111585)",
+      "threat_score": 4,
+      "cve": "CVE-2026-111585",
+      "cvss": "8.8",
+      "affected_technology": "TeamViewer Full Client / Portable",
+      "summary": "An integer overflow in screen decompression can lead to a heap-based buffer overflow and potential code execution.",
+      "first_seen_at": "2026-10-30",
+      "discovery_latency": "on-time"
+    }
+  ],
+  "noted": [
+    {
+      "cve": "CVE-2026-88771",
+      "product": "Citrix NetScaler ADC/Gateway",
+      "summary": "Unauthenticated remote code execution via improper input validation."
+    },
+    {
+      "cve": "CVE-2026-48356",
+      "product": "Adobe Commerce",
+      "summary": "Arbitrary code execution via unrestricted file upload requiring user interaction."
+    },
+    {
+      "cve": "CVE-2026-86950",
+      "product": "Apple iOS/iPadOS/macOS",
+      "summary": "Arbitrary code execution via an out-of-bounds write issue."
+    },
+    {
+      "cve": "CVE-2026-46300",
+      "product": "Linux Kernel",
+      "summary": "Vulnerability in skbuff coalescing that breaks shared-frag marker invariants."
+    },
+    {
+      "cve": "CVE-2026-63030",
+      "product": "WordPress",
+      "summary": "Remote code execution via REST API route confusion and SQL injection."
+    },
+    {
+      "cve": "CVE-2026-96654",
+      "product": "Plex Media Server",
+      "summary": "URL injection allowing attackers to call other plugin functions."
+    },
+    {
+      "cve": "CVE-2026-110936",
+      "product": "Siemens Software Center",
+      "summary": "Local privilege escalation via DLL hijacking from an uncontrolled search path."
+    },
+    {
+      "cve": "CVE-2026-111357",
+      "product": "Ivanti Connect Secure",
+      "summary": "Privilege escalation to root via mishandled DSCache configuration data."
+    },
+    {
+      "cve": "CVE-2026-111862",
+      "product": "Rank Math SEO PRO",
+      "summary": "Supply-chain compromise delivering a self-restoring backdoor."
+    },
+    {
+      "cve": "CVE-2025-65200",
+      "product": "LocalStack",
+      "summary": "Arbitrary code execution via crafted content in the cloudformation deploy endpoint."
+    },
+    {
+      "cve": "CVE-2026-80097",
+      "product": "Microsoft Authenticator (Android)",
+      "summary": "Local privilege escalation allowing apps to steal work account tokens."
+    },
+    {
+      "cve": "CVE-2026-113470",
+      "product": "Mozilla Firefox/Thunderbird",
+      "summary": "Cryptographic issue in security block-lists and allow-lists."
+    },
+    {
+      "cve": "CVE-2026-86990",
+      "product": "Apple iOS/iPadOS/macOS",
+      "summary": "Unauthorized camera access by malicious applications."
+    },
+    {
+      "cve": "CVE-2026-65339",
+      "product": "Apple iOS/iPadOS/macOS",
+      "summary": "Logic issue allowing applications to leak sensitive user information."
+    },
+    {
+      "cve": "CVE-2026-86987",
+      "product": "Apple iOS/iPadOS",
+      "summary": "Remote access to sensitive user data via authorization bypass."
+    },
+    {
+      "cve": "CVE-2021-33044",
+      "product": "Dahua IP Cameras/Devices",
+      "summary": "Identity authentication bypass during the login process."
+    },
+    {
+      "cve": "CVE-2021-33045",
+      "product": "Dahua IP Cameras/Devices",
+      "summary": "Identity authentication bypass during the login process."
+    },
+    {
+      "cve": "CVE-2025-54236",
+      "product": "Adobe Commerce",
+      "summary": "Improper input validation leading to session takeover."
+    },
+    {
+      "cve": "CVE-2026-42208",
+      "product": "LiteLLM",
+      "summary": "Unauthenticated SQL injection in Proxy API key verification."
+    },
+    {
+      "cve": "CVE-2026-88772",
+      "product": "Citrix NetScaler ADC/Gateway",
+      "summary": "Memory overflow leading to remote code execution or denial of service."
+    },
+    {
+      "cve": "CVE-2026-110447",
+      "product": "Collabora Online (CODE Server)",
+      "summary": "Remote code execution via OS command injection in proxy.php."
+    },
+    {
+      "cve": "CVE-2026-102764",
+      "product": "BeyondTrust Remote Support",
+      "summary": "Unauthenticated file upload to RCE via improper origin validation."
+    },
+    {
+      "cve": "CVE-2026-88779",
+      "product": "NetScaler ADC/Gateway",
+      "summary": "Memory overflow leading to denial of service."
+    },
+    {
+      "cve": "CVE-2026-68820",
+      "product": "Microsoft Windows 10",
+      "summary": "Local privilege escalation via use-after-free in WinSock driver."
+    },
+    {
+      "cve": "CVE-2024-39717",
+      "product": "Versa Director",
+      "summary": "Malicious file upload via the Change Favicon option for admins."
+    },
+    {
+      "cve": "CVE-2026-75650",
+      "product": "Adobe Commerce",
+      "summary": "Arbitrary code execution via template engine injection."
+    },
+    {
+      "cve": "CVE-2026-96652",
+      "product": "Plex Media Server",
+      "summary": "Server-side request forgery via the player timeline endpoint."
+    },
+    {
+      "cve": "CVE-2026-96656",
+      "product": "Plex Media Server",
+      "summary": "Arbitrary file write allowing execution of malicious .so files."
+    },
+    {
+      "cve": "CVE-2026-16812",
+      "product": "Arista VeloCloud Orchestrator",
+      "summary": "Remote OS command injection in on-prem installations."
+    },
+    {
+      "cve": "CVE-2026-96655",
+      "product": "Plex Media Server",
+      "summary": "Authenticated server-side request forgery via transcode path parameters."
+    }
+  ],
+  "source_coverage": {
+    "total": 21,
+    "checked": 21,
+    "with_findings": 7,
+    "unreachable": [],
+    "degraded": []
+  },
+  "full_report": "reports/2026/10/30/report.md",
+  "index": [
+    {
+      "cve": "CVE-2026-109618",
+      "first_seen_at": "2026-10-30",
+      "threat_score": 10,
+      "title": "PHP 'PHP2Shell' RCE",
+      "summary": "Two critical vulnerabilities in PHP allow unauthenticated remote code execution via memory corruption and stale global state.",
+      "facts": {
+        "kev_added": "2026-10-26",
+        "poc": true,
+        "nuclei_template": true,
+        "ssvc_exploitation": "active",
+        "cvss": 9.2,
+        "epss": 1.0,
+        "articles": [
+          "https://blog.cloudflare.com/php-ctf/",
+          "https://krebsonsecurity.com/2026/10/widespread-php-flaw-may-cause-many-site-outages-today/",
+          "https://thehackernews.com/2026/10/attackers-exploit-php2shell-flaws-in.html",
+          "https://thehackernews.com/2026/10/cisa-confirms-active-exploitation-of.html",
+          "https://thehackernews.com/2026/10/php-issues-emergency-patches-for-two.html",
+          "https://thehackernews.com/2026/10/php2shell-attack-roots-25-servers.html",
+          "https://thehackernews.com/2026/10/php2shell-exploit-attempts-hit-millions.html",
+          "https://thehackernews.com/2026/10/php2shell-exploitation-hits-government.html",
+          "https://thehackernews.com/2026/10/php2shell-two-unpatched-critical-php.html",
+          "https://thehackernews.com/2026/10/php2shell-what-actually-protects-you.html",
+          "https://thehackernews.com/2026/10/someone-tried-to-exploit-php2shell-4.html",
+          "https://thehackernews.com/2026/10/urgent-php-warns-of-another-unpatched.html",
+          "https://www.rapid7.com/blog/post/etr-cve-2026-109618-and-cve-2026-109619-critical-unauthenticated-remote-code-execution-in-php",
+          "https://www.schneier.com/blog/archives/2026/10/new-serious-php-vulnerabilities-released-and-patched.html",
+          "https://www.securityweek.com/china-linked-hackers-exploit-php2shell-to-root-firewalls/",
+          "https://www.securityweek.com/industrial-vendors-check-products-for-php2shell-vulnerabilities/",
+          "https://www.securityweek.com/mirai-botnet-operators-join-php2shell-attacks-as-aslr-bypass-exploits-emerge/",
+          "https://www.securityweek.com/php2shell-attacks-root-palo-alto-firewalls-but-fail-against-wordpress/",
+          "https://www.securityweek.com/php2shell-exploitation-moves-from-probes-to-working-shells/",
+          "https://www.securityweek.com/php2shell-exploitation-started-days-before-patches/",
+          "https://www.securityweek.com/php2shell-mass-exploitation-looms-for-leaked-critical-php-flaws/",
+          "https://www.securityweek.com/php2shell-patches-land-as-first-exploitation-attempts-hit-sensors/",
+          "https://www.securityweek.com/tech-and-security-companies-respond-to-php2shell-vulnerabilities/"
+        ]
+      }
+    },
+    {
+      "cve": "CVE-2026-109619",
+      "first_seen_at": "2026-10-30",
+      "threat_score": 10,
+      "title": "PHP 'PHP2Shell' RCE",
+      "summary": "Two critical vulnerabilities in PHP allow unauthenticated remote code execution via memory corruption and stale global state.",
+      "facts": {
+        "kev_added": "2026-10-26",
+        "poc": false,
+        "nuclei_template": false,
+        "ssvc_exploitation": "active",
+        "cvss": 9.2,
+        "epss": 1.0,
+        "articles": [
+          "https://blog.cloudflare.com/php-ctf/",
+          "https://krebsonsecurity.com/2026/10/widespread-php-flaw-may-cause-many-site-outages-today/",
+          "https://thehackernews.com/2026/10/attackers-exploit-php2shell-flaws-in.html",
+          "https://thehackernews.com/2026/10/cisa-confirms-active-exploitation-of.html",
+          "https://thehackernews.com/2026/10/php-issues-emergency-patches-for-two.html",
+          "https://thehackernews.com/2026/10/php2shell-attack-roots-25-servers.html",
+          "https://thehackernews.com/2026/10/php2shell-exploit-attempts-hit-millions.html",
+          "https://thehackernews.com/2026/10/php2shell-exploitation-hits-government.html",
+          "https://thehackernews.com/2026/10/php2shell-two-unpatched-critical-php.html",
+          "https://thehackernews.com/2026/10/php2shell-what-actually-protects-you.html",
+          "https://thehackernews.com/2026/10/someone-tried-to-exploit-php2shell-4.html",
+          "https://thehackernews.com/2026/10/urgent-php-warns-of-another-unpatched.html",
+          "https://www.rapid7.com/blog/post/etr-cve-2026-109618-and-cve-2026-109619-critical-unauthenticated-remote-code-execution-in-php",
+          "https://www.schneier.com/blog/archives/2026/10/new-serious-php-vulnerabilities-released-and-patched.html",
+          "https://www.securityweek.com/china-linked-hackers-exploit-php2shell-to-root-firewalls/",
+          "https://www.securityweek.com/industrial-vendors-check-products-for-php2shell-vulnerabilities/",
+          "https://www.securityweek.com/mirai-botnet-operators-join-php2shell-attacks-as-aslr-bypass-exploits-emerge/",
+          "https://www.securityweek.com/php2shell-attacks-root-palo-alto-firewalls-but-fail-against-wordpress/",
+          "https://www.securityweek.com/php2shell-exploitation-moves-from-probes-to-working-shells/",
+          "https://www.securityweek.com/php2shell-exploitation-started-days-before-patches/",
+          "https://www.securityweek.com/php2shell-mass-exploitation-looms-for-leaked-critical-php-flaws/",
+          "https://www.securityweek.com/php2shell-patches-land-as-first-exploitation-attempts-hit-sensors/",
+          "https://www.securityweek.com/tech-and-security-companies-respond-to-php2shell-vulnerabilities/"
+        ]
+      }
+    },
+    {
+      "cve": "CVE-2026-20127",
+      "first_seen_at": "2026-10-30",
+      "threat_score": 10,
+      "title": "Cisco Catalyst SD-WAN Manager Authentication Bypass",
+      "summary": "A critical authentication bypass vulnerability in Cisco SD-WAN peering allows remote attackers to gain administrative privileges.",
+      "facts": {
+        "kev_added": "2026-02-25",
+        "poc": false,
+        "nuclei_template": false,
+        "ssvc_exploitation": "active",
+        "cvss": 10,
+        "epss": 0.893,
+        "articles": [
+          "https://thehackernews.com/2026/10/hackers-exploited-cisco-sd-wan-flaw-to.html",
+          "https://www.bleepingcomputer.com/news/security/hackers-exploit-cisco-sd-wan-flaw-to-deploy-custom-keydrift-malware/",
+          "https://www.securityweek.com/cisco-patches-34-vulnerabilities-across-multiple-products/",
+          "https://www.securityweek.com/cisco-sd-wan-zero-day-exploitation-tied-to-volt-typhoons-silent-train-network/"
+        ]
+      }
+    },
+    {
+      "cve": "CVE-2026-111497",
+      "first_seen_at": "2026-10-30",
+      "threat_score": 9,
+      "title": "Google Brotli 'Node2Shell' OOB Write",
+      "summary": "An out-of-bounds write vulnerability in the Brotli decoder allows remote attackers to execute arbitrary code via crafted compressed streams.",
+      "facts": {
+        "kev_added": "2026-10-27",
+        "poc": true,
+        "nuclei_template": true,
+        "ssvc_exploitation": "active",
+        "cvss": 9.2,
+        "epss": 0.826,
+        "articles": [
+          "https://thehackernews.com/2026/10/adobe-commerce-polyshell-attacks-breach.html",
+          "https://thehackernews.com/2026/10/brotli-decoder-flaw-behind-nodejs-rce.html",
+          "https://thehackernews.com/2026/10/nodejs-brotli-decoder-bug-could-allow.html",
+          "https://thehackernews.com/2026/10/php-issues-second-windows-security.html",
+          "https://thehackernews.com/2026/10/researchers-demonstrate-node2shell-rce.html",
+          "https://www.rapid7.com/blog/post/etr-cve-2026-111497-critical-out-of-bounds-write-in-the-node-js-brotli-decoder",
+          "https://www.securityweek.com/cisa-warns-of-node2shell-exploitation-as-honeypots-log-attack-attempts/",
+          "https://www.securityweek.com/node2shell-brotli-flaw-triggers-patching-across-microsoft-node-js-python-packages/"
+        ]
+      }
+    },
+    {
+      "cve": "CVE-2026-97229",
+      "first_seen_at": "2026-10-30",
+      "threat_score": 9,
+      "title": "GitLab RCE (CVE-2026-97229)",
+      "summary": "An integer overflow in regular expression validation allows unauthenticated users to execute arbitrary code on the GitLab server.",
+      "facts": {
+        "kev_added": "2026-10-29",
+        "poc": false,
+        "nuclei_template": false,
+        "ssvc_exploitation": "active",
+        "cvss": 10,
+        "epss": 0.266,
+        "articles": [
+          "https://thehackernews.com/2026/10/attacker-tried-to-exploit-alpine-linuxs.html",
+          "https://thehackernews.com/2026/10/cisa-adds-actively-exploited-gitlab-rce.html",
+          "https://thehackernews.com/2026/10/critical-gitlab-flaw-cvss-100-could.html",
+          "https://www.securityweek.com/max-severity-gitlab-vulnerability-exploited-against-alpine-linux/"
+        ]
+      }
+    },
+    {
+      "cve": "CVE-2026-114625",
+      "first_seen_at": "2026-10-30",
+      "threat_score": 9,
+      "title": "Arista VeloCloud Orchestrator SQL Injection",
+      "summary": "A critical SQL injection vulnerability in VCO on-prem allows authenticated users to escalate privileges to superuser operator.",
+      "facts": {
+        "kev_added": "2026-10-23",
+        "poc": false,
+        "nuclei_template": false,
+        "ssvc_exploitation": "active",
+        "cvss": 9.9,
+        "epss": 0.01,
+        "articles": [
+          "https://thehackernews.com/2026/10/arista-warns-of-critical-velocloud-sql.html",
+          "https://thehackernews.com/2026/10/cisa-flags-two-actively-exploited.html",
+          "https://www.securityweek.com/attackers-exploit-third-velocloud-orchestrator-zero-day-in-four-months/"
+        ]
+      }
+    },
+    {
+      "cve": "CVE-2026-35273",
+      "first_seen_at": "2026-10-30",
+      "threat_score": 9,
+      "title": "Oracle PeopleSoft Enterprise PeopleTools RCE",
+      "summary": "An unauthenticated remote attacker can achieve full system takeover via the Updates Environment Management component.",
+      "facts": {
+        "kev_added": "2026-06-12",
+        "poc": false,
+        "nuclei_template": false,
+        "ssvc_exploitation": "active",
+        "cvss": 9.8,
+        "epss": 0.967,
+        "articles": [
+          "https://thehackernews.com/2026/10/shinyhunters-exploited-oracle.html",
+          "https://www.securityweek.com/oracle-patches-over-1200-vulnerabilities-with-october-2026-cpu/"
+        ]
+      }
+    },
+    {
+      "cve": "CVE-2026-76418",
+      "first_seen_at": "2026-10-30",
+      "threat_score": 8,
+      "title": "Cisco ASA/FTD VPN DoS",
+      "summary": "A logic error in the Remote Access SSL VPN service allows unauthenticated remote attackers to crash the device.",
+      "facts": {
+        "kev_added": "2026-10-29",
+        "poc": false,
+        "nuclei_template": false,
+        "ssvc_exploitation": "active",
+        "cvss": 8.6,
+        "epss": 0.009,
+        "articles": [
+          "https://thehackernews.com/2026/10/cisco-patches-actively-exploited-asa.html",
+          "https://www.securityweek.com/attackers-exploit-second-cisco-firewall-vpn-zero-day-since-august/",
+          "https://www.securityweek.com/cisco-patches-34-vulnerabilities-across-multiple-products/"
+        ]
+      }
+    },
+    {
+      "cve": "CVE-2026-118539",
+      "first_seen_at": "2026-10-30",
+      "threat_score": 8,
+      "title": "Drupal Commerce Core Authorization Bypass",
+      "summary": "A missing authorization vulnerability allows attackers to bypass access controls via forceful browsing.",
+      "facts": {
+        "kev_added": null,
+        "poc": false,
+        "nuclei_template": false,
+        "ssvc_exploitation": null,
+        "cvss": null,
+        "epss": 0.002,
+        "articles": [
+          "https://thehackernews.com/2026/10/hackers-actively-exploit-highly.html",
+          "https://www.bleepingcomputer.com/news/security/drupal-warns-of-critical-commerce-core-flaw-exploited-in-attacks/",
+          "https://www.securityweek.com/drupal-commerce-core-vulnerability-exploited-against-online-stores/"
+        ]
+      }
+    },
+    {
+      "cve": "CVE-2026-101767",
+      "first_seen_at": "2026-10-30",
+      "threat_score": 8,
+      "title": "Oracle E-Business Suite RCE (CVE-2026-101767)",
+      "summary": "An unauthenticated remote attacker can take over the Oracle Application Object Library via HTTP.",
+      "facts": {
+        "kev_added": null,
+        "poc": false,
+        "nuclei_template": false,
+        "ssvc_exploitation": "none",
+        "cvss": 9.8,
+        "epss": 0.006,
+        "articles": [
+          "https://thehackernews.com/2026/10/hackers-target-critical-oracle-e.html",
+          "https://www.securityweek.com/hackers-start-probing-fresh-oracle-ebs-vulnerability/",
+          "https://www.securityweek.com/oracle-patches-over-1200-vulnerabilities-with-october-2026-cpu/"
+        ]
+      }
+    },
+    {
+      "cve": "CVE-2026-98432",
+      "first_seen_at": "2026-10-30",
+      "threat_score": 7,
+      "title": "Linux Kernel TCP Use-After-Free",
+      "summary": "A vulnerability in the Linux kernel's TCP stack allows for potential memory corruption during SYN request processing.",
+      "facts": {
+        "kev_added": null,
+        "poc": true,
+        "nuclei_template": false,
+        "ssvc_exploitation": null,
+        "cvss": 9.8,
+        "epss": 0.004,
+        "articles": [
+          "https://thehackernews.com/2026/10/linux-kernel-tcp-flaw-with-98-cvss.html"
+        ]
+      }
+    },
+    {
+      "cve": "CVE-2026-97631",
+      "first_seen_at": "2026-10-30",
+      "threat_score": 6,
+      "title": "TianoCore EDK2 Pre-boot RCE",
+      "summary": "A buffer overflow in the EDK2 PXE driver allows remote code execution during the pre-boot phase.",
+      "facts": {
+        "kev_added": null,
+        "poc": false,
+        "nuclei_template": false,
+        "ssvc_exploitation": null,
+        "cvss": 9.5,
+        "epss": 0.006,
+        "articles": [
+          "https://thehackernews.com/2026/10/critical-16-year-old-uefi-flaw-can-run.html"
+        ]
+      }
+    },
+    {
+      "cve": "CVE-2026-41709",
+      "first_seen_at": "2026-10-30",
+      "threat_score": 5,
+      "title": "VMware ESX Insufficient Logging",
+      "summary": "A low-severity flaw allows a malicious administrator to perform operations without leaving an audit trail.",
+      "facts": {
+        "kev_added": "2026-10-28",
+        "poc": false,
+        "nuclei_template": false,
+        "ssvc_exploitation": "active",
+        "cvss": 2.7,
+        "epss": 0.007,
+        "articles": [
+          "https://thehackernews.com/2026/10/china-linked-hackers-exploited-vmware.html",
+          "https://www.securityweek.com/chinese-hackers-quietly-used-low-severity-esxi-logging-flaw-as-zero-day/"
+        ]
+      }
+    },
+    {
+      "cve": "CVE-2026-111585",
+      "first_seen_at": "2026-10-30",
+      "threat_score": 4,
+      "title": "TeamViewer Remote Control Buffer Overflow (CVE-2026-111585)",
+      "summary": "An integer overflow in screen decompression can lead to a heap-based buffer overflow and potential code execution.",
+      "facts": {
+        "kev_added": null,
+        "poc": false,
+        "nuclei_template": false,
+        "ssvc_exploitation": null,
+        "cvss": 8.8,
+        "epss": 0.003,
+        "articles": [
+          "https://thehackernews.com/2026/10/teamviewer-flaw-lets-remote-computers.html",
+          "https://www.securityweek.com/teamviewer-flaw-could-let-malicious-hosts-take-over-support-technicians-machines/"
+        ]
+      }
+    }
+  ]
+}

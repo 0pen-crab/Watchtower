@@ -1,0 +1,258 @@
+{
+  "date": "2026-11-01",
+  "findings": [
+    {
+      "type": "news",
+      "title": "Ivanti Connect Secure Root Escalation (CVE-2026-111357)",
+      "threat_score": 9,
+      "cve": "CVE-2026-111357",
+      "cvss": "7",
+      "affected_technology": "Ivanti Connect Secure",
+      "summary": "A privilege escalation vulnerability in Ivanti Connect Secure allows attackers to gain root access.",
+      "first_seen_at": "2026-11-01",
+      "discovery_latency": "on-time"
+    },
+    {
+      "type": "update",
+      "title": "Oracle E-Business Suite RCE (CVE-2026-101767)",
+      "threat_score": 9,
+      "cve": "CVE-2026-101767",
+      "cvss": "9.8",
+      "affected_technology": "Oracle Application Object Library",
+      "summary": "An unauthenticated remote attacker can take over the Oracle Application Object Library via HTTP.",
+      "first_seen_at": "2026-10-30",
+      "previous_threat_score": 8
+    },
+    {
+      "type": "update",
+      "title": "Drupal Commerce Core Authorization Bypass (CVE-2026-118539)",
+      "threat_score": 8,
+      "cve": "CVE-2026-118539",
+      "cvss": "6.5",
+      "affected_technology": "Drupal Commerce Core",
+      "summary": "A missing authorization vulnerability allows attackers to bypass access controls via forceful browsing.",
+      "first_seen_at": "2026-10-30",
+      "previous_threat_score": 8
+    }
+  ],
+  "noted": [
+    {
+      "cve": "CVE-2026-104935",
+      "product": "Ivanti Connect Secure",
+      "summary": "Remote unauthenticated command execution via authentication bypass by spoofing."
+    },
+    {
+      "cve": "CVE-2026-88771",
+      "product": "Citrix NetScaler ADC/Gateway",
+      "summary": "Remote code execution via improper input validation."
+    },
+    {
+      "cve": "CVE-2026-86950",
+      "product": "Apple iOS/iPadOS/macOS",
+      "summary": "Arbitrary code execution via an out-of-bounds write issue."
+    },
+    {
+      "cve": "CVE-2026-46300",
+      "product": "Linux Kernel",
+      "summary": "Vulnerability in skbuff coalescing that breaks invariants for in-place writers."
+    },
+    {
+      "cve": "CVE-2026-63030",
+      "product": "WordPress",
+      "summary": "Remote code execution via REST API route confusion and SQL injection."
+    },
+    {
+      "cve": "CVE-2026-96654",
+      "product": "Plex Media Server",
+      "summary": "URL injection allowing attackers to call other plugins' functions."
+    },
+    {
+      "cve": "CVE-2026-110936",
+      "product": "Siemens Software Center",
+      "summary": "Local privilege escalation via DLL hijacking from an uncontrolled search path."
+    },
+    {
+      "cve": "CVE-2026-110264",
+      "product": "GitLab",
+      "summary": "Unauthenticated remote code execution via integer overflow in regular expression compilation."
+    },
+    {
+      "cve": "CVE-2026-111862",
+      "product": "Rank Math SEO PRO",
+      "summary": "Supply-chain compromise delivering a self-restoring backdoor."
+    },
+    {
+      "cve": "CVE-2026-80097",
+      "product": "Microsoft Authenticator for Android",
+      "summary": "Local privilege elevation allowing apps to steal work account tokens."
+    },
+    {
+      "cve": "CVE-2026-113470",
+      "product": "Mozilla Firefox/Thunderbird",
+      "summary": "Cryptographic issue in security block-lists and allow-lists."
+    },
+    {
+      "cve": "CVE-2026-106378",
+      "product": "Google Chrome",
+      "summary": "Sandbox escape on macOS allowing remote code execution outside the sandbox."
+    },
+    {
+      "cve": "CVE-2026-86990",
+      "product": "Apple iOS/iPadOS/macOS",
+      "summary": "Malicious apps may access the camera without user permission."
+    },
+    {
+      "cve": "CVE-2026-86987",
+      "product": "Apple iOS/iPadOS",
+      "summary": "Remote attacker may access sensitive user data via authorization issues."
+    },
+    {
+      "cve": "CVE-2026-65339",
+      "product": "Apple iOS/iPadOS/macOS",
+      "summary": "Logic issue allowing apps to leak sensitive user information."
+    },
+    {
+      "cve": "CVE-2026-58882",
+      "product": "Android",
+      "summary": "SMS of Death exploit that can remotely crash unpatched phones."
+    },
+    {
+      "cve": "CVE-2021-33044",
+      "product": "Dahua IP Cameras/Devices",
+      "summary": "Identity authentication bypass via malicious data packets."
+    },
+    {
+      "cve": "CVE-2021-33045",
+      "product": "Dahua IP Cameras/Devices",
+      "summary": "Identity authentication bypass via malicious data packets."
+    },
+    {
+      "cve": "CVE-2025-54236",
+      "product": "Adobe Commerce",
+      "summary": "Improper input validation leading to session takeover."
+    },
+    {
+      "cve": "CVE-2026-42208",
+      "product": "BerriAI litellm",
+      "summary": "Unauthenticated SQL injection in Proxy API key verification."
+    },
+    {
+      "cve": "CVE-2026-88772",
+      "product": "Citrix NetScaler ADC/Gateway",
+      "summary": "Memory overflow leading to remote code execution or denial of service."
+    },
+    {
+      "cve": "CVE-2026-110447",
+      "product": "Collabora Online CODE Server",
+      "summary": "Remote code execution via OS command injection in proxy.php."
+    },
+    {
+      "cve": "CVE-2026-48356",
+      "product": "Adobe Commerce/B2B",
+      "summary": "Arbitrary code execution via unrestricted upload of dangerous file types."
+    },
+    {
+      "cve": "CVE-2026-102764",
+      "product": "BeyondTrust Remote Support",
+      "summary": "Unauthenticated file operations via improper origin validation."
+    },
+    {
+      "cve": "CVE-2026-88779",
+      "product": "Citrix NetScaler ADC/Gateway",
+      "summary": "Memory overflow leading to denial of service."
+    },
+    {
+      "cve": "CVE-2026-68820",
+      "product": "Microsoft Windows 10",
+      "summary": "Local privilege escalation via use-after-free in WinSock driver."
+    },
+    {
+      "cve": "CVE-2024-39717",
+      "product": "Versa Director",
+      "summary": "Malicious file upload via the Change Favicon option."
+    },
+    {
+      "cve": "CVE-2026-75650",
+      "product": "Adobe Commerce/B2B",
+      "summary": "Remote code execution via improper neutralization in a template engine."
+    },
+    {
+      "cve": "CVE-2026-96652",
+      "product": "Plex Media Server",
+      "summary": "Server-side request forgery via the player timeline endpoint."
+    },
+    {
+      "cve": "CVE-2026-96656",
+      "product": "Plex Media Server",
+      "summary": "Arbitrary file write allowing execution of malicious .so files."
+    }
+  ],
+  "source_coverage": {
+    "total": 21,
+    "checked": 21,
+    "with_findings": 3,
+    "unreachable": [],
+    "degraded": []
+  },
+  "full_report": "reports/2026/11/01/report.md",
+  "index": [
+    {
+      "cve": "CVE-2026-111357",
+      "first_seen_at": "2026-11-01",
+      "threat_score": 9,
+      "title": "Ivanti Connect Secure Root Escalation (CVE-2026-111357)",
+      "summary": "A privilege escalation vulnerability in Ivanti Connect Secure allows attackers to gain root access.",
+      "facts": {
+        "kev_added": "2026-10-30",
+        "poc": false,
+        "nuclei_template": false,
+        "ssvc_exploitation": "active",
+        "cvss": 7,
+        "epss": 0.005,
+        "articles": [
+          "https://thehackernews.com/2026/10/attackers-chain-three-ivanti-connect.html"
+        ]
+      }
+    },
+    {
+      "cve": "CVE-2026-101767",
+      "first_seen_at": "2026-10-30",
+      "threat_score": 9,
+      "title": "Oracle E-Business Suite RCE (CVE-2026-101767)",
+      "summary": "An unauthenticated remote attacker can take over the Oracle Application Object Library via HTTP.",
+      "facts": {
+        "kev_added": null,
+        "poc": true,
+        "nuclei_template": false,
+        "ssvc_exploitation": "none",
+        "cvss": 9.8,
+        "epss": 0.006,
+        "articles": [
+          "https://thehackernews.com/2026/10/hackers-target-critical-oracle-e.html",
+          "https://www.securityweek.com/hackers-start-probing-fresh-oracle-ebs-vulnerability/",
+          "https://www.securityweek.com/oracle-patches-over-1200-vulnerabilities-with-october-2026-cpu/"
+        ]
+      }
+    },
+    {
+      "cve": "CVE-2026-118539",
+      "first_seen_at": "2026-10-30",
+      "threat_score": 8,
+      "title": "Drupal Commerce Core Authorization Bypass (CVE-2026-118539)",
+      "summary": "A missing authorization vulnerability allows attackers to bypass access controls via forceful browsing.",
+      "facts": {
+        "kev_added": null,
+        "poc": false,
+        "nuclei_template": false,
+        "ssvc_exploitation": "none",
+        "cvss": 6.5,
+        "epss": 0.003,
+        "articles": [
+          "https://thehackernews.com/2026/10/hackers-actively-exploit-highly.html",
+          "https://www.bleepingcomputer.com/news/security/drupal-warns-of-critical-commerce-core-flaw-exploited-in-attacks/",
+          "https://www.securityweek.com/drupal-commerce-core-vulnerability-exploited-against-online-stores/"
+        ]
+      }
+    }
+  ]
+}
