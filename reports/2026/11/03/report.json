@@ -1,0 +1,301 @@
+{
+  "date": "2026-11-03",
+  "findings": [
+    {
+      "type": "update",
+      "title": "GitLab RCE (CVE-2026-97229)",
+      "threat_score": 10,
+      "cve": "CVE-2026-97229",
+      "cvss": "10",
+      "affected_technology": "GitLab CE/EE",
+      "summary": "An integer overflow in regular expression validation allows unauthenticated users to execute arbitrary code on the GitLab server.",
+      "first_seen_at": "2026-10-30",
+      "previous_threat_score": 9
+    },
+    {
+      "type": "update",
+      "title": "Ivanti Connect Secure Zero-Days",
+      "threat_score": 9,
+      "cve": "CVE-2026-111357, CVE-2026-118527",
+      "cvss": "7",
+      "affected_technology": "Ivanti Connect Secure",
+      "summary": "A chain of vulnerabilities including a root privilege escalation is being exploited in the wild.",
+      "first_seen_at": "2026-11-01",
+      "previous_threat_score": 9
+    },
+    {
+      "type": "news",
+      "title": "IBM Langflow OSS (ARTEX) RCE",
+      "threat_score": 8,
+      "cve": "CVE-2026-93680, CVE-2026-110186",
+      "cvss": "9.8",
+      "affected_technology": "IBM Langflow OSS",
+      "summary": "Improper authentication and poor control of code generation allow remote attackers to bypass security and execute arbitrary code.",
+      "first_seen_at": "2026-11-03",
+      "discovery_latency": "on-time"
+    }
+  ],
+  "noted": [
+    {
+      "cve": "CVE-2026-104935",
+      "product": "Ivanti Connect Secure",
+      "summary": "Authentication bypass allows remote unauthenticated command execution."
+    },
+    {
+      "cve": "CVE-2026-9198",
+      "product": "IBM Langflow OSS",
+      "summary": "Unauthenticated RCE via auto-login bypass and code validation."
+    },
+    {
+      "cve": "CVE-2026-102764",
+      "product": "BeyondTrust Remote Support",
+      "summary": "Improper origin validation allows unauthenticated file operations and RCE."
+    },
+    {
+      "cve": "CVE-2026-63030",
+      "product": "WordPress",
+      "summary": "REST API route confusion and SQL injection lead to RCE."
+    },
+    {
+      "cve": "CVE-2025-1974",
+      "product": "kubernetes ingress-nginx",
+      "summary": "Unauthenticated attacker on pod network can achieve RCE in the controller."
+    },
+    {
+      "cve": "CVE-2026-93674",
+      "product": "IBM Langflow OSS",
+      "summary": "Remote code execution due to improper neutralization of OS command elements."
+    },
+    {
+      "cve": "CVE-2026-10134",
+      "product": "IBM Langflow OSS",
+      "summary": "Unauthenticated server-side RCE via PythonCodeStructuredTool in public flows."
+    },
+    {
+      "cve": "CVE-2026-7873",
+      "product": "IBM Langflow OSS",
+      "summary": "Authenticated code injection in the code validation endpoint."
+    },
+    {
+      "cve": "CVE-2026-110264",
+      "product": "GitLab",
+      "summary": "Unauthenticated RCE via integer overflow when compiling regular expressions."
+    },
+    {
+      "cve": "CVE-2026-113380",
+      "product": "Signal RingRTC",
+      "summary": "FSM queue saturation allows a caller to block local hang-ups."
+    },
+    {
+      "cve": "CVE-2026-110193",
+      "product": "IBM Langflow OSS",
+      "summary": "Low-privileged authenticated users can execute OS commands via Agentic Assistant."
+    },
+    {
+      "cve": "CVE-2026-104339",
+      "product": "IBM Langflow OSS",
+      "summary": "Remote code execution due to improper neutralization of OS command elements."
+    },
+    {
+      "cve": "CVE-2026-93577",
+      "product": "GitLab",
+      "summary": "Authenticated RCE via integer overflow in CI/CD regular expression compilation."
+    },
+    {
+      "cve": "CVE-2026-89078",
+      "product": "GitLab",
+      "summary": "Authenticated RCE via double free when parsing CI/CD regular expressions."
+    },
+    {
+      "cve": "CVE-2026-15723",
+      "product": "GitLab",
+      "summary": "LDAP injection allows authenticated account takeover when SAML and LDAP auto-linking are enabled."
+    },
+    {
+      "cve": "CVE-2026-118306",
+      "product": "Google Chrome",
+      "summary": "Memory corruption in FileSystem allows remote code execution outside the sandbox."
+    },
+    {
+      "cve": "CVE-2026-106378",
+      "product": "Google Chrome",
+      "summary": "Sandbox privilege elevation allows code execution outside the sandbox on macOS."
+    },
+    {
+      "cve": "CVE-2026-110192",
+      "product": "IBM Langflow OSS",
+      "summary": "Remote authenticated attackers can obtain sensitive credentials."
+    },
+    {
+      "cve": "CVE-2026-112212",
+      "product": "GitLab",
+      "summary": "HTTP request smuggling allows unauthenticated poisoning of OAuth/OIDC discovery documents."
+    },
+    {
+      "cve": "CVE-2026-112706",
+      "product": "Apple iOS/iPadOS/tvOS",
+      "summary": "Permissions issue may allow an app to access sensitive user data."
+    },
+    {
+      "cve": "CVE-2026-115560",
+      "product": "unknown product",
+      "summary": "Vulnerability related to php2shell protections."
+    },
+    {
+      "cve": "CVE-2026-58882",
+      "product": "Google Android",
+      "summary": "Integer overflow in WapPushOverSms allows remote denial of service via SMS."
+    },
+    {
+      "cve": "CVE-2021-33044",
+      "product": "Dahua IP Cameras/Devices",
+      "summary": "Identity authentication bypass allows attackers to hijack devices."
+    },
+    {
+      "cve": "CVE-2021-33045",
+      "product": "Dahua IP Cameras/Devices",
+      "summary": "Identity authentication bypass allows attackers to hijack devices."
+    },
+    {
+      "cve": "CVE-2025-54236",
+      "product": "Adobe Commerce",
+      "summary": "Improper input validation allows unauthenticated session takeover."
+    },
+    {
+      "cve": "CVE-2026-42208",
+      "product": "BerriAI litellm",
+      "summary": "Unauthenticated SQL injection in Proxy API key verification."
+    },
+    {
+      "cve": "CVE-2026-76460",
+      "product": "Cisco ISE",
+      "summary": "Insufficient authentication control on an API endpoint allows remote bypass."
+    },
+    {
+      "cve": "CVE-2026-110447",
+      "product": "Collabora Online CODE Server",
+      "summary": "OS command injection in proxy.php allows remote code execution."
+    },
+    {
+      "cve": "CVE-2026-48356",
+      "product": "Adobe Commerce",
+      "summary": "Unrestricted upload of dangerous file types allows RCE via user interaction."
+    },
+    {
+      "cve": "CVE-2026-86950",
+      "product": "Apple iOS/iPadOS/macOS",
+      "summary": "Out-of-bounds write in CoreGraphics allows arbitrary code execution via crafted files."
+    }
+  ],
+  "source_coverage": {
+    "total": 21,
+    "checked": 21,
+    "with_findings": 4,
+    "unreachable": [],
+    "degraded": []
+  },
+  "full_report": "reports/2026/11/03/report.md",
+  "index": [
+    {
+      "cve": "CVE-2026-97229",
+      "first_seen_at": "2026-10-30",
+      "threat_score": 10,
+      "title": "GitLab RCE (CVE-2026-97229)",
+      "summary": "An integer overflow in regular expression validation allows unauthenticated users to execute arbitrary code on the GitLab server.",
+      "facts": {
+        "kev_added": "2026-10-29",
+        "poc": false,
+        "nuclei_template": false,
+        "ssvc_exploitation": "active",
+        "cvss": 10,
+        "epss": 0.273,
+        "articles": [
+          "https://thehackernews.com/2026/10/attacker-tried-to-exploit-alpine-linuxs.html",
+          "https://thehackernews.com/2026/10/cisa-adds-actively-exploited-gitlab-rce.html",
+          "https://thehackernews.com/2026/10/critical-gitlab-flaw-cvss-100-could.html",
+          "https://www.bleepingcomputer.com/news/security/over-1-000-gitlab-servers-vulnerable-to-code-execution-attacks/",
+          "https://www.securityweek.com/max-severity-gitlab-vulnerability-exploited-against-alpine-linux/"
+        ]
+      }
+    },
+    {
+      "cve": "CVE-2026-111357",
+      "first_seen_at": "2026-11-01",
+      "threat_score": 9,
+      "title": "Ivanti Connect Secure Zero-Days",
+      "summary": "A chain of vulnerabilities including a root privilege escalation is being exploited in the wild.",
+      "facts": {
+        "kev_added": "2026-10-30",
+        "poc": false,
+        "nuclei_template": false,
+        "ssvc_exploitation": "active",
+        "cvss": 7,
+        "epss": 0.005,
+        "articles": [
+          "https://thehackernews.com/2026/10/attackers-chain-three-ivanti-connect.html",
+          "https://www.bleepingcomputer.com/news/security/ivanti-patches-two-more-connect-secure-zero-days-chained-in-attacks/",
+          "https://www.rapid7.com/blog/post/etr-additional-ivanti-connect-secure-zero-days-exploited-in-the-wild-cve-2026-111357-cve-2026-118527",
+          "https://www.securityweek.com/ivanti-patches-two-more-zero-days-exploited-in-connect-secure-attack-chain/"
+        ]
+      }
+    },
+    {
+      "cve": "CVE-2026-118527",
+      "first_seen_at": "2026-11-01",
+      "threat_score": 9,
+      "title": "Ivanti Connect Secure Zero-Days",
+      "summary": "A chain of vulnerabilities including a root privilege escalation is being exploited in the wild.",
+      "facts": {
+        "kev_added": "2026-10-30",
+        "poc": false,
+        "nuclei_template": false,
+        "ssvc_exploitation": null,
+        "cvss": null,
+        "epss": 0,
+        "articles": [
+          "https://www.rapid7.com/blog/post/etr-additional-ivanti-connect-secure-zero-days-exploited-in-the-wild-cve-2026-111357-cve-2026-118527",
+          "https://www.securityweek.com/ivanti-patches-two-more-zero-days-exploited-in-connect-secure-attack-chain/"
+        ]
+      }
+    },
+    {
+      "cve": "CVE-2026-93680",
+      "first_seen_at": "2026-11-03",
+      "threat_score": 8,
+      "title": "IBM Langflow OSS (ARTEX) RCE",
+      "summary": "Improper authentication and poor control of code generation allow remote attackers to bypass security and execute arbitrary code.",
+      "facts": {
+        "kev_added": null,
+        "poc": false,
+        "nuclei_template": false,
+        "ssvc_exploitation": "none",
+        "cvss": 9.8,
+        "epss": 0.022,
+        "articles": [
+          "https://thehackernews.com/2026/11/critical-langflow-flaws-could-let.html",
+          "https://www.bleepingcomputer.com/news/security/chinese-hackers-use-artex-ai-in-automated-attacks-against-200-orgs/",
+          "https://www.rapid7.com/blog/post/pt-metasploit-wrap-up-langflow-mongodb-and-more"
+        ]
+      }
+    },
+    {
+      "cve": "CVE-2026-110186",
+      "first_seen_at": "2026-11-03",
+      "threat_score": 8,
+      "title": "IBM Langflow OSS (ARTEX) RCE",
+      "summary": "Improper authentication and poor control of code generation allow remote attackers to bypass security and execute arbitrary code.",
+      "facts": {
+        "kev_added": null,
+        "poc": false,
+        "nuclei_template": false,
+        "ssvc_exploitation": "none",
+        "cvss": 9.8,
+        "epss": 0.006,
+        "articles": [
+          "https://thehackernews.com/2026/11/critical-langflow-flaws-could-let.html",
+          "https://www.bleepingcomputer.com/news/security/chinese-hackers-use-artex-ai-in-automated-attacks-against-200-orgs/"
+        ]
+      }
+    }
+  ]
+}
