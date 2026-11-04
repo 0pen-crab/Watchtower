@@ -1,0 +1,330 @@
+{
+  "date": "2026-11-04",
+  "findings": [
+    {
+      "type": "update",
+      "title": "Ivanti Connect Secure Zero-Day Chain",
+      "threat_score": 10,
+      "cve": "CVE-2026-104935, CVE-2026-118527",
+      "cvss": "8.6",
+      "affected_technology": "Ivanti Connect Secure",
+      "summary": "A chain of vulnerabilities including an authentication bypass and predictable filename upload is being exploited in the wild.",
+      "first_seen_at": "2026-11-01",
+      "previous_threat_score": 9
+    },
+    {
+      "type": "news",
+      "title": "Siemens SIMATIC IoT2050 Unauthenticated RCE",
+      "threat_score": 9,
+      "cve": "CVE-2026-58115",
+      "cvss": "10",
+      "affected_technology": "Siemens SIMATIC IoT2050 Advanced",
+      "summary": "Missing authentication on the Node-RED HTTP interface allows remote attackers to execute arbitrary system commands.",
+      "first_seen_at": "2026-11-04",
+      "discovery_latency": "on-time"
+    },
+    {
+      "type": "news",
+      "title": "CryptoPayment Gateway WordPress Plugin RCE",
+      "threat_score": 8,
+      "cve": "CVE-2026-81648",
+      "cvss": "10",
+      "affected_technology": "CryptoPayment Gateway WordPress Plugin",
+      "summary": "An unguarded AJAX router allows unauthenticated users to delete files and steal wallet credentials in cleartext.",
+      "first_seen_at": "2026-11-04",
+      "discovery_latency": "on-time"
+    },
+    {
+      "type": "news",
+      "title": "Google Chrome Use-After-Free (CVE-2026-118306)",
+      "threat_score": 6,
+      "cve": "CVE-2026-118306",
+      "cvss": "9.6",
+      "affected_technology": "Google Chrome",
+      "summary": "A use-after-free vulnerability in the FileSystem component of Google Chrome could allow remote code execution outside the sandbox.",
+      "first_seen_at": "2026-11-04",
+      "discovery_latency": "early"
+    },
+    {
+      "type": "news",
+      "title": "Android SMS 'of Death' DoS",
+      "threat_score": 5,
+      "cve": "CVE-2026-58882",
+      "cvss": "Not specified",
+      "affected_technology": "Google Android",
+      "summary": "An integer overflow in the WAP PDU decoding process allows a remote attacker to crash unpatched phones via SMS.",
+      "first_seen_at": "2026-11-04",
+      "discovery_latency": "late"
+    }
+  ],
+  "noted": [
+    {
+      "cve": "CVE-2025-8088",
+      "product": "win.rar GmbH WinRAR",
+      "summary": "Path traversal vulnerability allowing arbitrary code execution via malicious archives."
+    },
+    {
+      "cve": "CVE-2026-9198",
+      "product": "IBM Langflow OSS",
+      "summary": "Unauthenticated remote code execution via auto-login bypass and code validation."
+    },
+    {
+      "cve": "CVE-2026-102764",
+      "product": "BeyondTrust Remote Support",
+      "summary": "Improper origin validation allowing unauthenticated file upload to RCE."
+    },
+    {
+      "cve": "CVE-2026-63030",
+      "product": "WordPress",
+      "summary": "REST API route confusion and SQL injection leading to remote code execution."
+    },
+    {
+      "cve": "CVE-2025-1974",
+      "product": "kubernetes ingress-nginx",
+      "summary": "RCE escalation in the admission controller for attackers with pod network access."
+    },
+    {
+      "cve": "CVE-2026-93674",
+      "product": "IBM Langflow OSS",
+      "summary": "Remote code execution due to improper neutralization of OS command elements."
+    },
+    {
+      "cve": "CVE-2026-7873",
+      "product": "IBM Langflow OSS",
+      "summary": "Authenticated code injection via the code validation endpoint."
+    },
+    {
+      "cve": "CVE-2026-10134",
+      "product": "IBM Langflow OSS",
+      "summary": "Unauthenticated server-side RCE via PythonCodeStructuredTool in public flows."
+    },
+    {
+      "cve": "CVE-2026-110264",
+      "product": "GitLab",
+      "summary": "Unauthenticated RCE via integer overflow when compiling regular expressions."
+    },
+    {
+      "cve": "CVE-2026-110193",
+      "product": "IBM Langflow OSS",
+      "summary": "Authenticated RCE via the Agentic Assistant using unblocked code patterns."
+    },
+    {
+      "cve": "CVE-2026-104339",
+      "product": "IBM Langflow OSS",
+      "summary": "Remote code execution due to improper neutralization of OS command elements."
+    },
+    {
+      "cve": "CVE-2026-116606",
+      "product": "Barracuda Email Security Gateway",
+      "summary": "Authentication bypass allowing unauthenticated global configuration restore."
+    },
+    {
+      "cve": "CVE-2026-111560",
+      "product": "Barracuda Appliances",
+      "summary": "Authenticated OS command injection via the timezone configuration field."
+    },
+    {
+      "cve": "CVE-2026-106378",
+      "product": "Google Chrome",
+      "summary": "Sandbox privilege elevation on macOS allowing code execution outside the sandbox."
+    },
+    {
+      "cve": "CVE-2026-110192",
+      "product": "IBM Langflow OSS",
+      "summary": "Authenticated information disclosure due to insufficiently protected credentials."
+    },
+    {
+      "cve": "CVE-2026-58868",
+      "product": "Google Android",
+      "summary": "Heap buffer overflow in FrameDecoder allowing remote code execution."
+    },
+    {
+      "cve": "CVE-2026-58876",
+      "product": "Google Android",
+      "summary": "Use-after-free memory safety issue allowing remote code execution."
+    },
+    {
+      "cve": "CVE-2026-58936",
+      "product": "Google Android",
+      "summary": "Use-after-free memory corruption in pngset.c allowing remote code execution."
+    },
+    {
+      "cve": "CVE-2021-33044",
+      "product": "Dahua IP Cameras/Devices",
+      "summary": "Identity authentication bypass during the login process via malicious packets."
+    },
+    {
+      "cve": "CVE-2021-33045",
+      "product": "Dahua IP Cameras/Devices",
+      "summary": "Identity authentication bypass during the login process via malicious packets."
+    },
+    {
+      "cve": "CVE-2025-54236",
+      "product": "Adobe Commerce",
+      "summary": "Improper input validation allowing session takeover without user interaction."
+    },
+    {
+      "cve": "CVE-2026-42208",
+      "product": "BerriAI litellm",
+      "summary": "Unauthenticated SQL injection in Proxy API key verification."
+    },
+    {
+      "cve": "CVE-2026-110447",
+      "product": "Collabora Online CODE Server",
+      "summary": "OS command injection in proxy.php allowing remote code execution."
+    },
+    {
+      "cve": "CVE-2026-48356",
+      "product": "Adobe Commerce",
+      "summary": "Unrestricted upload of dangerous file types leading to arbitrary code execution."
+    },
+    {
+      "cve": "CVE-2026-86950",
+      "product": "Apple iOS/iPadOS/macOS",
+      "summary": "Out-of-bounds write in CoreGraphics allowing arbitrary code execution via crafted files."
+    },
+    {
+      "cve": "CVE-2026-102489",
+      "product": "Zammad",
+      "summary": "Session hijack vulnerability leading to remote code execution."
+    },
+    {
+      "cve": "CVE-2026-102490",
+      "product": "Zammad",
+      "summary": "Local privilege escalation to root for users with filesystem write privileges."
+    },
+    {
+      "cve": "CVE-2026-68820",
+      "product": "Microsoft Windows",
+      "summary": "Use-after-free in WinSock driver allowing local privilege elevation."
+    },
+    {
+      "cve": "CVE-2024-39717",
+      "product": "Versa Director",
+      "summary": "Malicious file upload via the Change Favicon option for administrative users."
+    },
+    {
+      "cve": "CVE-2026-96654",
+      "product": "Plex Media Server",
+      "summary": "URL injection allowing attackers to call other plugins' functions with custom parameters."
+    }
+  ],
+  "source_coverage": {
+    "total": 21,
+    "checked": 21,
+    "with_findings": 4,
+    "unreachable": [],
+    "degraded": []
+  },
+  "full_report": "reports/2026/11/04/report.md",
+  "index": [
+    {
+      "cve": "CVE-2026-104935",
+      "first_seen_at": "2026-11-01",
+      "threat_score": 10,
+      "title": "Ivanti Connect Secure Zero-Day Chain",
+      "summary": "A chain of vulnerabilities including an authentication bypass and predictable filename upload is being exploited in the wild.",
+      "facts": {
+        "kev_added": "2026-10-13",
+        "poc": false,
+        "nuclei_template": false,
+        "ssvc_exploitation": "active",
+        "cvss": 8.6,
+        "epss": 0.889,
+        "articles": [
+          "https://www.bleepingcomputer.com/news/security/ivanti-patches-two-more-connect-secure-zero-days-chained-in-attacks/"
+        ]
+      }
+    },
+    {
+      "cve": "CVE-2026-118527",
+      "first_seen_at": "2026-11-01",
+      "threat_score": 10,
+      "title": "Ivanti Connect Secure Zero-Day Chain",
+      "summary": "A chain of vulnerabilities including an authentication bypass and predictable filename upload is being exploited in the wild.",
+      "facts": {
+        "kev_added": "2026-10-30",
+        "poc": false,
+        "nuclei_template": false,
+        "ssvc_exploitation": "active",
+        "cvss": 4.3,
+        "epss": 0,
+        "articles": [
+          "https://www.rapid7.com/blog/post/etr-additional-ivanti-connect-secure-zero-days-exploited-in-the-wild-cve-2026-111357-cve-2026-118527",
+          "https://www.securityweek.com/ivanti-patches-two-more-zero-days-exploited-in-connect-secure-attack-chain/"
+        ]
+      }
+    },
+    {
+      "cve": "CVE-2026-58115",
+      "first_seen_at": "2026-11-04",
+      "threat_score": 9,
+      "title": "Siemens SIMATIC IoT2050 Unauthenticated RCE",
+      "summary": "Missing authentication on the Node-RED HTTP interface allows remote attackers to execute arbitrary system commands.",
+      "facts": {
+        "kev_added": null,
+        "poc": false,
+        "nuclei_template": false,
+        "ssvc_exploitation": "none",
+        "cvss": 10,
+        "epss": 0.009,
+        "articles": [
+          "https://thehackernews.com/2026/11/attackers-exploit-critical-siemens.html"
+        ]
+      }
+    },
+    {
+      "cve": "CVE-2026-81648",
+      "first_seen_at": "2026-11-04",
+      "threat_score": 8,
+      "title": "CryptoPayment Gateway WordPress Plugin RCE",
+      "summary": "An unguarded AJAX router allows unauthenticated users to delete files and steal wallet credentials in cleartext.",
+      "facts": {
+        "kev_added": null,
+        "poc": false,
+        "nuclei_template": false,
+        "ssvc_exploitation": "poc",
+        "cvss": 10,
+        "epss": 0.005,
+        "articles": [
+          "https://thehackernews.com/2026/11/attackers-target-unpatched.html"
+        ]
+      }
+    },
+    {
+      "cve": "CVE-2026-118306",
+      "first_seen_at": "2026-11-04",
+      "threat_score": 6,
+      "title": "Google Chrome Use-After-Free (CVE-2026-118306)",
+      "summary": "A use-after-free vulnerability in the FileSystem component of Google Chrome could allow remote code execution outside the sandbox.",
+      "facts": {
+        "kev_added": null,
+        "poc": false,
+        "nuclei_template": false,
+        "ssvc_exploitation": "none",
+        "cvss": 9.6,
+        "epss": 0.004,
+        "articles": []
+      }
+    },
+    {
+      "cve": "CVE-2026-58882",
+      "first_seen_at": "2026-11-04",
+      "threat_score": 5,
+      "title": "Android SMS 'of Death' DoS",
+      "summary": "An integer overflow in the WAP PDU decoding process allows a remote attacker to crash unpatched phones via SMS.",
+      "facts": {
+        "kev_added": null,
+        "poc": false,
+        "nuclei_template": false,
+        "ssvc_exploitation": null,
+        "cvss": null,
+        "epss": 0.002,
+        "articles": [
+          "https://www.bleepingcomputer.com/news/security/new-android-sms-of-death-exploit-can-remotely-crash-unpatched-phones/",
+          "https://www.securityweek.com/androids-november-2026-updates-patch-over-200-vulnerabilities/"
+        ]
+      }
+    }
+  ]
+}
