@@ -1,0 +1,511 @@
+{
+  "date": "2026-11-05",
+  "findings": [
+    {
+      "type": "update",
+      "title": "PHP 'PHP2Shell' RCE",
+      "threat_score": 10,
+      "cve": "CVE-2026-109619",
+      "cvss": "9.2",
+      "affected_technology": "PHP",
+      "summary": "Two critical vulnerabilities in PHP allow unauthenticated remote code execution via memory corruption and stale global state.",
+      "first_seen_at": "2026-10-30",
+      "previous_threat_score": 10
+    },
+    {
+      "type": "update",
+      "title": "GitLab RCE (CVE-2026-97229)",
+      "threat_score": 10,
+      "cve": "CVE-2026-97229",
+      "cvss": "10",
+      "affected_technology": "GitLab CE/EE",
+      "summary": "An integer overflow in regular expression validation allows unauthenticated users to execute arbitrary code on the GitLab server.",
+      "first_seen_at": "2026-10-30",
+      "previous_threat_score": 10
+    },
+    {
+      "type": "news",
+      "title": "WordPress Core RCE (CVE-2026-119977)",
+      "threat_score": 10,
+      "cve": "CVE-2026-119977",
+      "cvss": "8.1",
+      "affected_technology": "WordPress Core",
+      "summary": "Predictable staging paths used during core upgrades allow unauthenticated remote code execution.",
+      "first_seen_at": "2026-11-05",
+      "discovery_latency": "on-time"
+    },
+    {
+      "type": "news",
+      "title": "Android Remote Code Execution Flaws",
+      "threat_score": 8,
+      "cve": "CVE-2026-58868, CVE-2026-58876, CVE-2026-58936",
+      "cvss": "Not specified",
+      "affected_technology": "Google Android",
+      "summary": "Multiple memory safety vulnerabilities in Android allow for remote code execution without user interaction.",
+      "first_seen_at": "2026-11-05",
+      "discovery_latency": "on-time"
+    },
+    {
+      "type": "update",
+      "title": "Google Chrome Use-After-Free (CVE-2026-118306)",
+      "threat_score": 8,
+      "cve": "CVE-2026-118306",
+      "cvss": "9.6",
+      "affected_technology": "Google Chrome",
+      "summary": "A critical use-after-free vulnerability in the FileSystem component of Google Chrome allows remote code execution outside the sandbox.",
+      "first_seen_at": "2026-11-04",
+      "previous_threat_score": 6
+    },
+    {
+      "type": "update",
+      "title": "Linux Kernel TCP Use-After-Free",
+      "threat_score": 7,
+      "cve": "CVE-2026-98432",
+      "cvss": "9.8",
+      "affected_technology": "Linux Kernel",
+      "summary": "A vulnerability in the Linux kernel's TCP stack allows for potential memory corruption during SYN request processing.",
+      "first_seen_at": "2026-10-30",
+      "previous_threat_score": 7
+    },
+    {
+      "type": "news",
+      "title": "Zyxel GS1900 Series Out-of-Bounds Write",
+      "threat_score": 7,
+      "cve": "CVE-2026-107441",
+      "cvss": "8.8",
+      "affected_technology": "Zyxel GS1900-10HP/16/24E Switches",
+      "summary": "An out-of-bounds write vulnerability in the CGI program of Zyxel GS1900 switches allows unauthenticated adjacent attackers to execute OS commands.",
+      "first_seen_at": "2026-11-05",
+      "discovery_latency": "on-time"
+    },
+    {
+      "type": "news",
+      "title": "Barracuda ESG and ADC Root Access Chain",
+      "threat_score": 6,
+      "cve": "CVE-2026-116606, CVE-2026-111560",
+      "cvss": "9.3",
+      "affected_technology": "Barracuda Email Security Gateway (ESG) and Load Balancer ADC",
+      "summary": "A combination of an authentication bypass and a command injection flaw allows attackers to gain root access to Barracuda appliances.",
+      "first_seen_at": "2026-11-05",
+      "discovery_latency": "on-time"
+    },
+    {
+      "type": "update",
+      "title": "Android SMS 'of Death' DoS",
+      "threat_score": 5,
+      "cve": "CVE-2026-58882",
+      "cvss": "Not specified",
+      "affected_technology": "Google Android",
+      "summary": "An integer overflow in the WAP PDU decoding process allows a remote attacker to crash unpatched phones via SMS.",
+      "first_seen_at": "2026-11-04",
+      "previous_threat_score": 5
+    }
+  ],
+  "noted": [
+    {
+      "cve": "CVE-2026-9198",
+      "product": "IBM Langflow OSS",
+      "summary": "Unauthenticated RCE via auto-login bypass and code validation."
+    },
+    {
+      "cve": "CVE-2026-63030",
+      "product": "WordPress",
+      "summary": "RCE via REST API route confusion and SQL injection."
+    },
+    {
+      "cve": "CVE-2026-7273",
+      "product": "Zyxel GS1900 Series",
+      "summary": "LAN-based unauthenticated RCE via stack-based buffer overflow."
+    },
+    {
+      "cve": "CVE-2024-27834",
+      "product": "Apple Safari/iOS/iPadOS",
+      "summary": "Pointer Authentication bypass for attackers with arbitrary read/write capability."
+    },
+    {
+      "cve": "CVE-2025-1974",
+      "product": "kubernetes ingress-nginx",
+      "summary": "RCE escalation for unauthenticated attackers with pod network access."
+    },
+    {
+      "cve": "CVE-2026-93674",
+      "product": "IBM Langflow OSS",
+      "summary": "Remote code execution due to improper neutralization of OS command elements."
+    },
+    {
+      "cve": "CVE-2026-7873",
+      "product": "IBM Langflow OSS",
+      "summary": "Authenticated OS command injection via the code validation endpoint."
+    },
+    {
+      "cve": "CVE-2026-10134",
+      "product": "IBM Langflow OSS",
+      "summary": "Unauthenticated server-side RCE via PythonCodeStructuredTool in public flows."
+    },
+    {
+      "cve": "CVE-2026-110264",
+      "product": "GitLab",
+      "summary": "Unauthenticated RCE via integer overflow during regular expression compilation."
+    },
+    {
+      "cve": "CVE-2024-10441",
+      "product": "Synology BeeStation/DiskStation Manager",
+      "summary": "Remote code execution via improper output encoding in the system plugin daemon."
+    },
+    {
+      "cve": "CVE-2026-110193",
+      "product": "IBM Langflow OSS",
+      "summary": "Low-privileged authenticated RCE via the Agentic Assistant."
+    },
+    {
+      "cve": "CVE-2026-104339",
+      "product": "IBM Langflow OSS",
+      "summary": "Remote code execution due to improper neutralization of OS command elements."
+    },
+    {
+      "cve": "CVE-2026-109593",
+      "product": "SonicWall GMS",
+      "summary": "Unauthenticated read of internal files in end-of-life software."
+    },
+    {
+      "cve": "CVE-2026-109594",
+      "product": "SonicWall GMS",
+      "summary": "Authenticated SQL injection in end-of-life software."
+    },
+    {
+      "cve": "CVE-2026-118331",
+      "product": "Google Chrome",
+      "summary": "Use-after-free in FileAPI allowing RCE outside the sandbox."
+    },
+    {
+      "cve": "CVE-2026-118344",
+      "product": "Google Chrome",
+      "summary": "Use-after-free in Layout allowing RCE inside the sandbox."
+    },
+    {
+      "cve": "CVE-2026-118348",
+      "product": "Google Chrome",
+      "summary": "Integer overflow in Skia allowing RCE outside the sandbox."
+    },
+    {
+      "cve": "CVE-2026-106378",
+      "product": "Google Chrome",
+      "summary": "Sandbox privilege elevation on macOS."
+    },
+    {
+      "cve": "CVE-2026-110192",
+      "product": "IBM Langflow OSS",
+      "summary": "Authenticated information disclosure due to unprotected credentials."
+    },
+    {
+      "cve": "CVE-2026-109518",
+      "product": "Debian/Ubuntu APT",
+      "summary": "Root RCE via MitM attack using hard link reuse during package installation."
+    },
+    {
+      "cve": "CVE-2026-120422",
+      "product": "Sogou Input Method",
+      "summary": "RCE via insecure HTTP configuration retrieval in SGTool.exe."
+    },
+    {
+      "cve": "CVE-2021-33044",
+      "product": "Dahua IP Cameras/Devices",
+      "summary": "Identity authentication bypass during the login process."
+    },
+    {
+      "cve": "CVE-2021-33045",
+      "product": "Dahua IP Cameras/Devices",
+      "summary": "Identity authentication bypass during the login process."
+    },
+    {
+      "cve": "CVE-2025-54236",
+      "product": "Adobe Commerce",
+      "summary": "Improper input validation leading to session takeover."
+    },
+    {
+      "cve": "CVE-2025-8088",
+      "product": "WinRAR",
+      "summary": "Path traversal allowing arbitrary code execution via malicious archives."
+    },
+    {
+      "cve": "CVE-2026-42208",
+      "product": "BerriAI litellm",
+      "summary": "Unauthenticated SQL injection in Proxy API key verification."
+    },
+    {
+      "cve": "CVE-2026-102764",
+      "product": "BeyondTrust Remote Support",
+      "summary": "Unauthenticated file operations via improper origin validation."
+    },
+    {
+      "cve": "CVE-2026-110447",
+      "product": "Collabora Online CODE Server",
+      "summary": "Remote code execution via OS command injection in proxy.php."
+    },
+    {
+      "cve": "CVE-2025-14174",
+      "product": "Google Chrome",
+      "summary": "Out-of-bounds memory access in ANGLE on macOS."
+    },
+    {
+      "cve": "CVE-2026-48356",
+      "product": "Adobe Commerce",
+      "summary": "Unrestricted upload of dangerous file types leading to RCE."
+    }
+  ],
+  "source_coverage": {
+    "total": 21,
+    "checked": 21,
+    "with_findings": 5,
+    "unreachable": [],
+    "degraded": []
+  },
+  "full_report": "reports/2026/11/05/report.md",
+  "index": [
+    {
+      "cve": "CVE-2026-109619",
+      "first_seen_at": "2026-10-30",
+      "threat_score": 10,
+      "title": "PHP 'PHP2Shell' RCE",
+      "summary": "Two critical vulnerabilities in PHP allow unauthenticated remote code execution via memory corruption and stale global state.",
+      "facts": {
+        "kev_added": "2026-10-26",
+        "poc": true,
+        "nuclei_template": false,
+        "ssvc_exploitation": "active",
+        "cvss": 9.2,
+        "epss": 1.0,
+        "articles": [
+          "https://blog.cloudflare.com/php-ctf/",
+          "https://krebsonsecurity.com/2026/10/widespread-php-flaw-may-cause-many-site-outages-today/",
+          "https://thehackernews.com/2026/10/attackers-exploit-php2shell-flaws-in.html",
+          "https://thehackernews.com/2026/10/cisa-confirms-active-exploitation-of.html",
+          "https://thehackernews.com/2026/10/php-issues-emergency-patches-for-two.html",
+          "https://thehackernews.com/2026/10/php2shell-attack-roots-25-servers.html",
+          "https://thehackernews.com/2026/10/php2shell-exploitation-hits-government.html",
+          "https://thehackernews.com/2026/10/php2shell-two-unpatched-critical-php.html",
+          "https://thehackernews.com/2026/10/urgent-php-warns-of-another-unpatched.html",
+          "https://www.securityweek.com/china-linked-hackers-exploit-php2shell-to-root-firewalls/",
+          "https://www.securityweek.com/industrial-vendors-check-products-for-php2shell-vulnerabilities/",
+          "https://www.securityweek.com/mirai-botnet-operators-join-php2shell-attacks-as-aslr-bypass-exploits-emerge/",
+          "https://www.securityweek.com/php2shell-attacks-root-palo-alto-firewalls-but-fail-against-wordpress/",
+          "https://www.securityweek.com/php2shell-exploitation-moves-from-probes-to-working-shells/",
+          "https://www.securityweek.com/php2shell-exploitation-started-days-before-patches/",
+          "https://www.securityweek.com/tech-and-security-companies-respond-to-php2shell-vulnerabilities/"
+        ]
+      }
+    },
+    {
+      "cve": "CVE-2026-97229",
+      "first_seen_at": "2026-10-30",
+      "threat_score": 10,
+      "title": "GitLab RCE (CVE-2026-97229)",
+      "summary": "An integer overflow in regular expression validation allows unauthenticated users to execute arbitrary code on the GitLab server.",
+      "facts": {
+        "kev_added": "2026-10-29",
+        "poc": false,
+        "nuclei_template": false,
+        "ssvc_exploitation": "active",
+        "cvss": 10,
+        "epss": 0.652,
+        "articles": [
+          "https://thehackernews.com/2026/10/attacker-tried-to-exploit-alpine-linuxs.html",
+          "https://thehackernews.com/2026/10/cisa-adds-actively-exploited-gitlab-rce.html",
+          "https://www.bleepingcomputer.com/news/security/over-1-000-gitlab-servers-vulnerable-to-code-execution-attacks/",
+          "https://www.securityweek.com/max-severity-gitlab-vulnerability-exploited-against-alpine-linux/"
+        ]
+      }
+    },
+    {
+      "cve": "CVE-2026-119977",
+      "first_seen_at": "2026-11-05",
+      "threat_score": 10,
+      "title": "WordPress Core RCE (CVE-2026-119977)",
+      "summary": "Predictable staging paths used during core upgrades allow unauthenticated remote code execution.",
+      "facts": {
+        "kev_added": "2026-11-03",
+        "poc": false,
+        "nuclei_template": false,
+        "ssvc_exploitation": "active",
+        "cvss": 8.1,
+        "epss": 0.01,
+        "articles": [
+          "https://thehackernews.com/2026/11/cisa-confirms-hackers-exploiting.html",
+          "https://www.bleepingcomputer.com/news/security/cisa-flags-wordpress-rce-flaw-as-actively-exploited-in-attacks/"
+        ]
+      }
+    },
+    {
+      "cve": "CVE-2026-58868",
+      "first_seen_at": "2026-11-05",
+      "threat_score": 8,
+      "title": "Android Remote Code Execution Flaws",
+      "summary": "Multiple memory safety vulnerabilities in Android allow for remote code execution without user interaction.",
+      "facts": {
+        "kev_added": null,
+        "poc": false,
+        "nuclei_template": false,
+        "ssvc_exploitation": "none",
+        "cvss": null,
+        "epss": 0.002,
+        "articles": [
+          "https://thehackernews.com/2026/11/google-patches-critical-android-flaw.html",
+          "https://www.securityweek.com/androids-november-2026-updates-patch-over-200-vulnerabilities/"
+        ]
+      }
+    },
+    {
+      "cve": "CVE-2026-58876",
+      "first_seen_at": "2026-11-05",
+      "threat_score": 8,
+      "title": "Android Remote Code Execution Flaws",
+      "summary": "Multiple memory safety vulnerabilities in Android allow for remote code execution without user interaction.",
+      "facts": {
+        "kev_added": null,
+        "poc": false,
+        "nuclei_template": false,
+        "ssvc_exploitation": null,
+        "cvss": null,
+        "epss": 0.002,
+        "articles": [
+          "https://thehackernews.com/2026/11/google-patches-critical-android-flaw.html",
+          "https://www.securityweek.com/androids-november-2026-updates-patch-over-200-vulnerabilities/"
+        ]
+      }
+    },
+    {
+      "cve": "CVE-2026-58936",
+      "first_seen_at": "2026-11-05",
+      "threat_score": 8,
+      "title": "Android Remote Code Execution Flaws",
+      "summary": "Multiple memory safety vulnerabilities in Android allow for remote code execution without user interaction.",
+      "facts": {
+        "kev_added": null,
+        "poc": false,
+        "nuclei_template": false,
+        "ssvc_exploitation": null,
+        "cvss": null,
+        "epss": 0.002,
+        "articles": [
+          "https://thehackernews.com/2026/11/google-patches-critical-android-flaw.html",
+          "https://www.securityweek.com/androids-november-2026-updates-patch-over-200-vulnerabilities/"
+        ]
+      }
+    },
+    {
+      "cve": "CVE-2026-118306",
+      "first_seen_at": "2026-11-04",
+      "threat_score": 8,
+      "title": "Google Chrome Use-After-Free (CVE-2026-118306)",
+      "summary": "A critical use-after-free vulnerability in the FileSystem component of Google Chrome allows remote code execution outside the sandbox.",
+      "facts": {
+        "kev_added": null,
+        "poc": true,
+        "nuclei_template": false,
+        "ssvc_exploitation": "none",
+        "cvss": 9.6,
+        "epss": 0.004,
+        "articles": [
+          "https://www.securityweek.com/chrome-157-rolls-out-with-213-security-fixes-seven-rated-critical/"
+        ]
+      }
+    },
+    {
+      "cve": "CVE-2026-98432",
+      "first_seen_at": "2026-10-30",
+      "threat_score": 7,
+      "title": "Linux Kernel TCP Use-After-Free",
+      "summary": "A vulnerability in the Linux kernel's TCP stack allows for potential memory corruption during SYN request processing.",
+      "facts": {
+        "kev_added": null,
+        "poc": false,
+        "nuclei_template": false,
+        "ssvc_exploitation": null,
+        "cvss": 9.8,
+        "epss": 0.008,
+        "articles": [
+          "https://thehackernews.com/2026/10/linux-kernel-tcp-flaw-with-98-cvss.html",
+          "https://thehackernews.com/2026/11/red-hat-patches-98-rated-linux-tcp-rce.html"
+        ]
+      }
+    },
+    {
+      "cve": "CVE-2026-107441",
+      "first_seen_at": "2026-11-05",
+      "threat_score": 7,
+      "title": "Zyxel GS1900 Series Out-of-Bounds Write",
+      "summary": "An out-of-bounds write vulnerability in the CGI program of Zyxel GS1900 switches allows unauthenticated adjacent attackers to execute OS commands.",
+      "facts": {
+        "kev_added": null,
+        "poc": false,
+        "nuclei_template": false,
+        "ssvc_exploitation": null,
+        "cvss": 8.8,
+        "epss": 0.003,
+        "articles": [
+          "https://www.bleepingcomputer.com/news/security/zyxel-fixes-zero-day-exploited-to-hack-nearly-1-000-network-switches/"
+        ]
+      }
+    },
+    {
+      "cve": "CVE-2026-116606",
+      "first_seen_at": "2026-11-05",
+      "threat_score": 6,
+      "title": "Barracuda ESG and ADC Root Access Chain",
+      "summary": "A combination of an authentication bypass and a command injection flaw allows attackers to gain root access to Barracuda appliances.",
+      "facts": {
+        "kev_added": null,
+        "poc": false,
+        "nuclei_template": false,
+        "ssvc_exploitation": "none",
+        "cvss": 9.3,
+        "epss": 0.007,
+        "articles": [
+          "https://thehackernews.com/2026/11/barracuda-flaws-could-be-chained-to.html",
+          "https://www.bleepingcomputer.com/news/security/barracuda-warns-of-critical-flaws-allowing-root-access-to-devices/",
+          "https://www.securityweek.com/barracuda-email-security-gateway-authentication-bypass-opens-path-to-root/"
+        ]
+      }
+    },
+    {
+      "cve": "CVE-2026-111560",
+      "first_seen_at": "2026-11-05",
+      "threat_score": 6,
+      "title": "Barracuda ESG and ADC Root Access Chain",
+      "summary": "A combination of an authentication bypass and a command injection flaw allows attackers to gain root access to Barracuda appliances.",
+      "facts": {
+        "kev_added": null,
+        "poc": false,
+        "nuclei_template": false,
+        "ssvc_exploitation": "none",
+        "cvss": 8.6,
+        "epss": 0.005,
+        "articles": [
+          "https://thehackernews.com/2026/11/barracuda-flaws-could-be-chained-to.html",
+          "https://www.bleepingcomputer.com/news/security/barracuda-warns-of-critical-flaws-allowing-root-access-to-devices/",
+          "https://www.securityweek.com/barracuda-email-security-gateway-authentication-bypass-opens-path-to-root/"
+        ]
+      }
+    },
+    {
+      "cve": "CVE-2026-58882",
+      "first_seen_at": "2026-11-04",
+      "threat_score": 5,
+      "title": "Android SMS 'of Death' DoS",
+      "summary": "An integer overflow in the WAP PDU decoding process allows a remote attacker to crash unpatched phones via SMS.",
+      "facts": {
+        "kev_added": null,
+        "poc": false,
+        "nuclei_template": false,
+        "ssvc_exploitation": null,
+        "cvss": null,
+        "epss": 0.002,
+        "articles": [
+          "https://thehackernews.com/2026/11/google-patches-critical-android-flaw.html",
+          "https://www.bleepingcomputer.com/news/security/new-android-sms-of-death-exploit-can-remotely-crash-unpatched-phones/",
+          "https://www.securityweek.com/androids-november-2026-updates-patch-over-200-vulnerabilities/"
+        ]
+      }
+    }
+  ]
+}
