@@ -1,0 +1,372 @@
+{
+  "date": "2026-11-07",
+  "findings": [
+    {
+      "type": "update",
+      "title": "WordPress Core RCE (CVE-2026-119977)",
+      "threat_score": 10,
+      "cve": "CVE-2026-119977",
+      "cvss": "8.1",
+      "affected_technology": "WordPress Foundation WordPress",
+      "summary": "Predictable staging paths used during core upgrades allow unauthenticated remote code execution.",
+      "first_seen_at": "2026-11-05",
+      "previous_threat_score": 10
+    },
+    {
+      "type": "update",
+      "title": "GitLab RCE (CVE-2026-97229)",
+      "threat_score": 10,
+      "cve": "CVE-2026-97229",
+      "cvss": "10",
+      "affected_technology": "GitLab GitLab",
+      "summary": "An integer overflow in regular expression validation allows unauthenticated remote code execution on GitLab servers.",
+      "first_seen_at": "2026-10-30",
+      "previous_threat_score": 10
+    },
+    {
+      "type": "news",
+      "title": "SonicWall SonicOS SSL-VPN MFA Bypass",
+      "threat_score": 9,
+      "cve": "CVE-2026-19868",
+      "cvss": "7.5",
+      "affected_technology": "SonicWall SonicOS SSLVPN",
+      "summary": "An authentication enforcement flaw allows attackers with valid credentials to bypass SAML and multi-factor authentication.",
+      "first_seen_at": "2026-11-07",
+      "discovery_latency": "on-time"
+    },
+    {
+      "type": "news",
+      "title": "OpenSSH 'SSHole' Auth Bypass (CVE-2026-123158)",
+      "threat_score": 8,
+      "cve": "CVE-2026-123158",
+      "cvss": "8.1",
+      "affected_technology": "OpenBSD OpenSSH",
+      "summary": "A password authentication bypass exists in OpenSSH when used with musl libc without PAM.",
+      "first_seen_at": "2026-11-07",
+      "discovery_latency": "on-time"
+    },
+    {
+      "type": "update",
+      "title": "Barracuda ESG/ADC Root Access Chain",
+      "threat_score": 6,
+      "cve": "CVE-2026-116606, CVE-2026-111560",
+      "cvss": "9.3",
+      "affected_technology": "Barracuda Email Security Gateway / Load Balancer ADC",
+      "summary": "A combination of authentication bypass and command injection allows unauthenticated attackers to gain root access.",
+      "first_seen_at": "2026-11-05",
+      "previous_threat_score": 6
+    },
+    {
+      "type": "news",
+      "title": "Microsoft Paint RCE (CVE-2026-83844)",
+      "threat_score": 5,
+      "cve": "CVE-2026-83844",
+      "cvss": "8.1",
+      "affected_technology": "Microsoft Paint",
+      "summary": "An out-of-bounds read vulnerability in Windows Paint could allow a remote unauthorized attacker to execute arbitrary code.",
+      "first_seen_at": "2026-11-07",
+      "discovery_latency": "on-time"
+    }
+  ],
+  "noted": [
+    {
+      "cve": "CVE-2026-9198",
+      "product": "IBM Langflow OSS",
+      "summary": "Unauthenticated RCE via auto-login bypass and code validation."
+    },
+    {
+      "cve": "CVE-2025-43529",
+      "product": "Apple Safari/iOS/iPadOS",
+      "summary": "Use-after-free in web content processing leading to arbitrary code execution."
+    },
+    {
+      "cve": "CVE-2026-46300",
+      "product": "Linux Kernel",
+      "summary": "Memory corruption in skbuff coalescing allowing local privilege escalation."
+    },
+    {
+      "cve": "CVE-2026-63030",
+      "product": "WordPress",
+      "summary": "REST API route confusion and SQL injection leading to RCE."
+    },
+    {
+      "cve": "CVE-2026-96654",
+      "product": "Plex Media Server",
+      "summary": "URL injection allowing attackers to call other plugin functions."
+    },
+    {
+      "cve": "CVE-2016-6210",
+      "product": "OpenSSH",
+      "summary": "Timing difference in password hashing allowing remote user enumeration."
+    },
+    {
+      "cve": "CVE-2026-110264",
+      "product": "GitLab",
+      "summary": "Integer overflow in regular expression compilation leading to unauthenticated RCE."
+    },
+    {
+      "cve": "CVE-2026-110193",
+      "product": "IBM Langflow OSS",
+      "summary": "Authenticated RCE via Agentic Assistant component code generation."
+    },
+    {
+      "cve": "CVE-2026-104339",
+      "product": "IBM Langflow OSS",
+      "summary": "RCE due to improper neutralization of OS command elements."
+    },
+    {
+      "cve": "CVE-2026-118331",
+      "product": "Google Chrome",
+      "summary": "Use-after-free in FileAPI allowing RCE outside the sandbox."
+    },
+    {
+      "cve": "CVE-2026-118344",
+      "product": "Google Chrome",
+      "summary": "Use-after-free in Layout allowing RCE inside the sandbox."
+    },
+    {
+      "cve": "CVE-2026-118348",
+      "product": "Google Chrome",
+      "summary": "Integer overflow in Skia allowing RCE outside the sandbox."
+    },
+    {
+      "cve": "CVE-2026-110192",
+      "product": "IBM Langflow OSS",
+      "summary": "Information disclosure of sensitive credentials for authenticated attackers."
+    },
+    {
+      "cve": "CVE-2021-33044",
+      "product": "Dahua IP Cameras",
+      "summary": "Identity authentication bypass via malicious data packets."
+    },
+    {
+      "cve": "CVE-2025-55182",
+      "product": "Meta React Server Components",
+      "summary": "Pre-authentication RCE via unsafe deserialization of HTTP payloads."
+    },
+    {
+      "cve": "CVE-2021-33045",
+      "product": "Dahua IP Cameras/NVR",
+      "summary": "Identity authentication bypass via malicious data packets."
+    },
+    {
+      "cve": "CVE-2025-54236",
+      "product": "Adobe Commerce",
+      "summary": "Improper input validation leading to session takeover."
+    },
+    {
+      "cve": "CVE-2025-8088",
+      "product": "WinRAR",
+      "summary": "Path traversal allowing arbitrary code execution via malicious archives."
+    },
+    {
+      "cve": "CVE-2026-102764",
+      "product": "BeyondTrust Remote Support",
+      "summary": "Improper origin validation allowing unauthenticated file upload and RCE."
+    },
+    {
+      "cve": "CVE-2026-110447",
+      "product": "Collabora Online CODE Server",
+      "summary": "OS command injection in proxy.php leading to RCE."
+    },
+    {
+      "cve": "CVE-2025-14174",
+      "product": "Google Chrome",
+      "summary": "Out of bounds memory access in ANGLE on macOS."
+    },
+    {
+      "cve": "CVE-2026-48356",
+      "product": "Adobe Commerce",
+      "summary": "Unrestricted upload of dangerous file types leading to RCE."
+    },
+    {
+      "cve": "CVE-2021-38003",
+      "product": "Google Chrome",
+      "summary": "Heap corruption in V8 allowing remote exploitation via HTML."
+    },
+    {
+      "cve": "CVE-2026-86950",
+      "product": "Apple iOS/iPadOS/macOS",
+      "summary": "Out-of-bounds write in CoreGraphics leading to arbitrary code execution."
+    },
+    {
+      "cve": "CVE-2026-102489",
+      "product": "Zammad",
+      "summary": "Session hijack vulnerability leading to RCE as the zammad user."
+    },
+    {
+      "cve": "CVE-2026-96652",
+      "product": "Plex Media Server",
+      "summary": "SSRF via the /player/timeline endpoint."
+    },
+    {
+      "cve": "CVE-2026-102490",
+      "product": "Zammad",
+      "summary": "Local privilege escalation to root via writable service files."
+    },
+    {
+      "cve": "CVE-2026-96655",
+      "product": "Plex Media Server",
+      "summary": "Authenticated SSRF via the transcode universal path parameter."
+    },
+    {
+      "cve": "CVE-2026-68820",
+      "product": "Microsoft Windows",
+      "summary": "Use-after-free in WinSock driver allowing local privilege escalation."
+    },
+    {
+      "cve": "CVE-2024-4671",
+      "product": "Google Chrome",
+      "summary": "Use-after-free in Visuals allowing sandbox escape."
+    }
+  ],
+  "source_coverage": {
+    "total": 21,
+    "checked": 21,
+    "with_findings": 3,
+    "unreachable": [],
+    "degraded": []
+  },
+  "full_report": "reports/2026/11/07/report.md",
+  "index": [
+    {
+      "cve": "CVE-2026-119977",
+      "first_seen_at": "2026-11-05",
+      "threat_score": 10,
+      "title": "WordPress Core RCE (CVE-2026-119977)",
+      "summary": "Predictable staging paths used during core upgrades allow unauthenticated remote code execution.",
+      "facts": {
+        "kev_added": "2026-11-03",
+        "poc": false,
+        "nuclei_template": false,
+        "ssvc_exploitation": "active",
+        "cvss": 8.1,
+        "epss": 0.012,
+        "articles": [
+          "https://thehackernews.com/2026/11/cisa-confirms-hackers-exploiting.html",
+          "https://thehackernews.com/2026/11/installing-fix-for-exploited-wordpress.html",
+          "https://www.bleepingcomputer.com/news/security/cisa-flags-wordpress-rce-flaw-as-actively-exploited-in-attacks/"
+        ]
+      }
+    },
+    {
+      "cve": "CVE-2026-97229",
+      "first_seen_at": "2026-10-30",
+      "threat_score": 10,
+      "title": "GitLab RCE (CVE-2026-97229)",
+      "summary": "An integer overflow in regular expression validation allows unauthenticated remote code execution on GitLab servers.",
+      "facts": {
+        "kev_added": "2026-10-29",
+        "poc": true,
+        "nuclei_template": true,
+        "ssvc_exploitation": "active",
+        "cvss": 10,
+        "epss": 0.652,
+        "articles": [
+          "https://thehackernews.com/2026/10/attacker-tried-to-exploit-alpine-linuxs.html",
+          "https://thehackernews.com/2026/10/cisa-adds-actively-exploited-gitlab-rce.html",
+          "https://www.bleepingcomputer.com/news/security/over-1-000-gitlab-servers-vulnerable-to-code-execution-attacks/",
+          "https://www.securityweek.com/max-severity-gitlab-vulnerability-exploited-against-alpine-linux/"
+        ]
+      }
+    },
+    {
+      "cve": "CVE-2026-19868",
+      "first_seen_at": "2026-11-07",
+      "threat_score": 9,
+      "title": "SonicWall SonicOS SSL-VPN MFA Bypass",
+      "summary": "An authentication enforcement flaw allows attackers with valid credentials to bypass SAML and multi-factor authentication.",
+      "facts": {
+        "kev_added": "2026-11-06",
+        "poc": false,
+        "nuclei_template": false,
+        "ssvc_exploitation": "active",
+        "cvss": 7.5,
+        "epss": 0,
+        "articles": [
+          "https://www.bleepingcomputer.com/news/security/sonicwall-warns-of-new-ssl-vpn-mfa-bypass-flaw-exploited-in-attacks/"
+        ]
+      }
+    },
+    {
+      "cve": "CVE-2026-123158",
+      "first_seen_at": "2026-11-07",
+      "threat_score": 8,
+      "title": "OpenSSH 'SSHole' Auth Bypass (CVE-2026-123158)",
+      "summary": "A password authentication bypass exists in OpenSSH when used with musl libc without PAM.",
+      "facts": {
+        "kev_added": null,
+        "poc": true,
+        "nuclei_template": false,
+        "ssvc_exploitation": "poc",
+        "cvss": 8.1,
+        "epss": 0.01,
+        "articles": [
+          "https://thehackernews.com/2026/11/hackers-exploited-openssh-sshole-flaw.html",
+          "https://www.bleepingcomputer.com/news/security/openssh-flaw-lets-attackers-log-into-password-disabled-linux-accounts/",
+          "https://www.securityweek.com/openssh-rushes-patches-for-sshole-authentication-bypass/"
+        ]
+      }
+    },
+    {
+      "cve": "CVE-2026-116606",
+      "first_seen_at": "2026-11-05",
+      "threat_score": 6,
+      "title": "Barracuda ESG/ADC Root Access Chain",
+      "summary": "A combination of authentication bypass and command injection allows unauthenticated attackers to gain root access.",
+      "facts": {
+        "kev_added": null,
+        "poc": false,
+        "nuclei_template": false,
+        "ssvc_exploitation": "none",
+        "cvss": 9.3,
+        "epss": 0.007,
+        "articles": [
+          "https://thehackernews.com/2026/11/barracuda-flaws-could-be-chained-to.html",
+          "https://thehackernews.com/2026/11/experts-demonstrate-barracuda-email.html",
+          "https://www.bleepingcomputer.com/news/security/barracuda-warns-of-critical-flaws-allowing-root-access-to-devices/",
+          "https://www.securityweek.com/barracuda-email-security-gateway-authentication-bypass-opens-path-to-root/"
+        ]
+      }
+    },
+    {
+      "cve": "CVE-2026-111560",
+      "first_seen_at": "2026-11-05",
+      "threat_score": 6,
+      "title": "Barracuda ESG/ADC Root Access Chain",
+      "summary": "A combination of authentication bypass and command injection allows unauthenticated attackers to gain root access.",
+      "facts": {
+        "kev_added": null,
+        "poc": false,
+        "nuclei_template": false,
+        "ssvc_exploitation": "none",
+        "cvss": 8.6,
+        "epss": 0.005,
+        "articles": [
+          "https://thehackernews.com/2026/11/barracuda-flaws-could-be-chained-to.html",
+          "https://thehackernews.com/2026/11/experts-demonstrate-barracuda-email.html",
+          "https://www.bleepingcomputer.com/news/security/barracuda-warns-of-critical-flaws-allowing-root-access-to-devices/",
+          "https://www.securityweek.com/barracuda-email-security-gateway-authentication-bypass-opens-path-to-root/"
+        ]
+      }
+    },
+    {
+      "cve": "CVE-2026-83844",
+      "first_seen_at": "2026-11-07",
+      "threat_score": 5,
+      "title": "Microsoft Paint RCE (CVE-2026-83844)",
+      "summary": "An out-of-bounds read vulnerability in Windows Paint could allow a remote unauthorized attacker to execute arbitrary code.",
+      "facts": {
+        "kev_added": null,
+        "poc": false,
+        "nuclei_template": false,
+        "ssvc_exploitation": "none",
+        "cvss": 8.1,
+        "epss": 0.007,
+        "articles": [
+          "https://thehackernews.com/2026/11/microsoft-paint-rce-fix-now-available.html"
+        ]
+      }
+    }
+  ]
+}
