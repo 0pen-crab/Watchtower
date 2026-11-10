@@ -1,0 +1,286 @@
+{
+  "date": "2026-11-10",
+  "findings": [
+    {
+      "type": "news",
+      "title": "SignalWire FreeSWITCH RCE (CVE-2026-116779)",
+      "threat_score": 10,
+      "cve": "CVE-2026-116779",
+      "cvss": "9.8",
+      "affected_technology": "SignalWire FreeSWITCH",
+      "summary": "A vulnerability in the handling of inbound SIP MESSAGE requests allows remote attackers to execute arbitrary FreeSWITCH API commands.",
+      "first_seen_at": "2026-11-10",
+      "discovery_latency": "early"
+    },
+    {
+      "type": "update",
+      "title": "OpenSSH 'SSHole' Auth Bypass (CVE-2026-123158)",
+      "threat_score": 9,
+      "cve": "CVE-2026-123158",
+      "cvss": "8.1",
+      "affected_technology": "OpenSSH on Linux (musl libc)",
+      "summary": "A password authentication bypass exists in OpenSSH when used with musl libc without PAM.",
+      "first_seen_at": "2026-11-07",
+      "previous_threat_score": 8
+    },
+    {
+      "type": "news",
+      "title": "Plex Media Server 'Plex2Shell' (CVE-2026-96654)",
+      "threat_score": 8,
+      "cve": "CVE-2026-96654",
+      "cvss": "6.5",
+      "affected_technology": "Plex Media Server",
+      "summary": "A URL injection vulnerability allows attackers to call unauthorized plugin functions and supply custom parameters.",
+      "first_seen_at": "2026-11-10",
+      "discovery_latency": "on-time"
+    },
+    {
+      "type": "update",
+      "title": "Microsoft Paint RCE (CVE-2026-83844)",
+      "threat_score": 7,
+      "cve": "CVE-2026-83844",
+      "cvss": "7",
+      "affected_technology": "Microsoft Paint",
+      "summary": "An out-of-bounds read vulnerability in Windows Paint could allow a remote unauthorized attacker to execute arbitrary code.",
+      "first_seen_at": "2026-11-07",
+      "previous_threat_score": 5
+    }
+  ],
+  "noted": [
+    {
+      "cve": "CVE-2026-9198",
+      "product": "IBM Langflow OSS",
+      "summary": "Unauthenticated RCE via auto-login bypass and code validation."
+    },
+    {
+      "cve": "CVE-2025-43529",
+      "product": "Apple Safari/iOS/iPadOS",
+      "summary": "Use-after-free in web content processing leading to arbitrary code execution."
+    },
+    {
+      "cve": "CVE-2026-46300",
+      "product": "Linux Kernel",
+      "summary": "Memory corruption in skbuff coalescing allowing potential root escalation."
+    },
+    {
+      "cve": "CVE-2026-96652",
+      "product": "Plex Media Server",
+      "summary": "SSRF via the /player/timeline endpoint."
+    },
+    {
+      "cve": "CVE-2026-96655",
+      "product": "Plex Media Server",
+      "summary": "Authenticated SSRF via the transcode universal path parameter."
+    },
+    {
+      "cve": "CVE-2026-63030",
+      "product": "WordPress",
+      "summary": "REST API route confusion and SQL injection leading to RCE."
+    },
+    {
+      "cve": "CVE-2026-96656",
+      "product": "Plex Media Server",
+      "summary": "Arbitrary file write by admin users leading to code execution."
+    },
+    {
+      "cve": "CVE-2026-123218",
+      "product": "IBM Aspera Faspex",
+      "summary": "Authorization bypass allowing users to gain administrative privileges."
+    },
+    {
+      "cve": "CVE-2026-102895",
+      "product": "GPUStack",
+      "summary": "Authentication bypass via trusted loopback source granting admin access."
+    },
+    {
+      "cve": "CVE-2016-6210",
+      "product": "OpenSSH",
+      "summary": "Timing difference in password hashing allowing remote user enumeration."
+    },
+    {
+      "cve": "CVE-2026-110264",
+      "product": "GitLab",
+      "summary": "Integer overflow in regular expression compilation leading to unauthenticated RCE."
+    },
+    {
+      "cve": "CVE-2026-110193",
+      "product": "IBM Langflow OSS",
+      "summary": "Authenticated RCE via Agentic Assistant component code generation."
+    },
+    {
+      "cve": "CVE-2026-104339",
+      "product": "IBM Langflow OSS",
+      "summary": "Remote code execution due to improper neutralization of OS commands."
+    },
+    {
+      "cve": "CVE-2026-114432",
+      "product": "Contact Form 7",
+      "summary": "Unauthenticated arbitrary file upload leading to RCE on specific configurations."
+    },
+    {
+      "cve": "CVE-2026-118331",
+      "product": "Google Chrome",
+      "summary": "Use-after-free in FileAPI allowing RCE outside the sandbox."
+    },
+    {
+      "cve": "CVE-2026-118344",
+      "product": "Google Chrome",
+      "summary": "Use-after-free in Layout allowing RCE inside the sandbox."
+    },
+    {
+      "cve": "CVE-2026-118348",
+      "product": "Google Chrome",
+      "summary": "Integer overflow in Skia allowing RCE outside the sandbox."
+    },
+    {
+      "cve": "CVE-2026-110963",
+      "product": "Userplace",
+      "summary": "Unauthenticated privilege escalation via AJAX action and nonce exposure."
+    },
+    {
+      "cve": "CVE-2026-110192",
+      "product": "IBM Langflow OSS",
+      "summary": "Information disclosure of sensitive credentials to authenticated attackers."
+    },
+    {
+      "cve": "CVE-2021-33044",
+      "product": "Dahua Devices",
+      "summary": "Identity authentication bypass during the login process."
+    },
+    {
+      "cve": "CVE-2021-33045",
+      "product": "Dahua Devices",
+      "summary": "Identity authentication bypass via malicious data packets during login."
+    },
+    {
+      "cve": "CVE-2025-31324",
+      "product": "SAP NetWeaver",
+      "summary": "Unauthenticated upload of malicious binaries via Visual Composer Metadata Uploader."
+    },
+    {
+      "cve": "CVE-2025-8088",
+      "product": "WinRAR",
+      "summary": "Path traversal in archive processing leading to arbitrary code execution."
+    },
+    {
+      "cve": "CVE-2026-102764",
+      "product": "BeyondTrust Remote Support",
+      "summary": "Improper origin validation allowing unauthenticated file operations."
+    },
+    {
+      "cve": "CVE-2025-14174",
+      "product": "Google Chrome",
+      "summary": "Out of bounds memory access in ANGLE on macOS."
+    },
+    {
+      "cve": "CVE-2026-102489",
+      "product": "Zammad",
+      "summary": "Session hijack vulnerability leading to remote code execution."
+    },
+    {
+      "cve": "CVE-2026-48356",
+      "product": "Adobe Commerce",
+      "summary": "Unrestricted upload of dangerous file types leading to RCE."
+    },
+    {
+      "cve": "CVE-2021-38003",
+      "product": "Google Chrome",
+      "summary": "Heap corruption in V8 engine via crafted HTML pages."
+    },
+    {
+      "cve": "CVE-2026-86950",
+      "product": "Apple iOS/macOS",
+      "summary": "Out-of-bounds write in CoreGraphics leading to arbitrary code execution."
+    },
+    {
+      "cve": "CVE-2026-18577",
+      "product": "N-able N-central",
+      "summary": "Authentication bypass and account takeover due to an incomplete patch."
+    }
+  ],
+  "source_coverage": {
+    "total": 21,
+    "checked": 21,
+    "with_findings": 3,
+    "unreachable": [],
+    "degraded": []
+  },
+  "full_report": "reports/2026/11/10/report.md",
+  "index": [
+    {
+      "cve": "CVE-2026-116779",
+      "first_seen_at": "2026-11-10",
+      "threat_score": 10,
+      "title": "SignalWire FreeSWITCH RCE (CVE-2026-116779)",
+      "summary": "A vulnerability in the handling of inbound SIP MESSAGE requests allows remote attackers to execute arbitrary FreeSWITCH API commands.",
+      "facts": {
+        "kev_added": "2026-11-09",
+        "poc": false,
+        "nuclei_template": false,
+        "ssvc_exploitation": "active",
+        "cvss": 9.8,
+        "epss": 0.013,
+        "articles": []
+      }
+    },
+    {
+      "cve": "CVE-2026-123158",
+      "first_seen_at": "2026-11-07",
+      "threat_score": 9,
+      "title": "OpenSSH 'SSHole' Auth Bypass (CVE-2026-123158)",
+      "summary": "A password authentication bypass exists in OpenSSH when used with musl libc without PAM.",
+      "facts": {
+        "kev_added": "2026-11-09",
+        "poc": true,
+        "nuclei_template": false,
+        "ssvc_exploitation": "active",
+        "cvss": 8.1,
+        "epss": 0.01,
+        "articles": [
+          "https://thehackernews.com/2026/11/hackers-exploited-openssh-sshole-flaw.html",
+          "https://www.bleepingcomputer.com/news/security/hackers-exploit-sshole-openssh-flaw-to-breach-linux-systems/",
+          "https://www.bleepingcomputer.com/news/security/openssh-flaw-lets-attackers-log-into-password-disabled-linux-accounts/",
+          "https://www.securityweek.com/hackers-exploiting-sshole-authentication-bypass-in-openssh/",
+          "https://www.securityweek.com/openssh-rushes-patches-for-sshole-authentication-bypass/"
+        ]
+      }
+    },
+    {
+      "cve": "CVE-2026-96654",
+      "first_seen_at": "2026-11-10",
+      "threat_score": 8,
+      "title": "Plex Media Server 'Plex2Shell' (CVE-2026-96654)",
+      "summary": "A URL injection vulnerability allows attackers to call unauthorized plugin functions and supply custom parameters.",
+      "facts": {
+        "kev_added": "2026-10-20",
+        "poc": false,
+        "nuclei_template": false,
+        "ssvc_exploitation": "active",
+        "cvss": 6.5,
+        "epss": 0.019,
+        "articles": [
+          "https://www.bleepingcomputer.com/news/security/qnap-says-hackers-breaching-nas-devices-in-plex2shell-attacks/",
+          "https://www.securityweek.com/plex2shell-exploited-against-qnap-nas-users/"
+        ]
+      }
+    },
+    {
+      "cve": "CVE-2026-83844",
+      "first_seen_at": "2026-11-07",
+      "threat_score": 7,
+      "title": "Microsoft Paint RCE (CVE-2026-83844)",
+      "summary": "An out-of-bounds read vulnerability in Windows Paint could allow a remote unauthorized attacker to execute arbitrary code.",
+      "facts": {
+        "kev_added": null,
+        "poc": true,
+        "nuclei_template": false,
+        "ssvc_exploitation": "none",
+        "cvss": 7,
+        "epss": 0.004,
+        "articles": [
+          "https://thehackernews.com/2026/11/microsoft-paint-rce-fix-now-available.html"
+        ]
+      }
+    }
+  ]
+}
