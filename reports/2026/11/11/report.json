@@ -1,0 +1,509 @@
+{
+  "date": "2026-11-11",
+  "findings": [
+    {
+      "type": "news",
+      "title": "IBM Aspera Faspex Authorization Bypass",
+      "threat_score": 10,
+      "cve": "CVE-2026-123218",
+      "cvss": "9.8",
+      "affected_technology": "IBM Aspera Faspex",
+      "summary": "An authorization bypass vulnerability allows authorized users to gain full administrative privileges.",
+      "first_seen_at": "2026-11-11",
+      "discovery_latency": "on-time"
+    },
+    {
+      "type": "update",
+      "title": "SignalWire FreeSWITCH RCE (CVE-2026-116779)",
+      "threat_score": 10,
+      "cve": "CVE-2026-116779",
+      "cvss": "9.8",
+      "affected_technology": "SignalWire FreeSWITCH",
+      "summary": "A vulnerability in the handling of inbound SIP MESSAGE requests allows remote attackers to execute arbitrary FreeSWITCH API commands.",
+      "first_seen_at": "2026-11-10",
+      "previous_threat_score": 10
+    },
+    {
+      "type": "news",
+      "title": "GPUStack Authentication Bypass (CVE-2026-102895)",
+      "threat_score": 10,
+      "cve": "CVE-2026-102895",
+      "cvss": "9.8",
+      "affected_technology": "GPUStack",
+      "summary": "An authentication bypass allows remote attackers to gain unauthenticated administrator access by spoofing a loopback source address.",
+      "first_seen_at": "2026-11-11",
+      "discovery_latency": "on-time"
+    },
+    {
+      "type": "update",
+      "title": "OpenSSH 'SSHole' Auth Bypass",
+      "threat_score": 9,
+      "cve": "CVE-2026-123158",
+      "cvss": "8.1",
+      "affected_technology": "OpenBSD OpenSSH",
+      "summary": "A password authentication bypass exists in OpenSSH when used with musl libc without PAM.",
+      "first_seen_at": "2026-11-07",
+      "previous_threat_score": 9
+    },
+    {
+      "type": "news",
+      "title": "Google Chrome XML Use-After-Free",
+      "threat_score": 9,
+      "cve": "CVE-2026-125350",
+      "cvss": "8.8",
+      "affected_technology": "Google Chrome",
+      "summary": "A use-after-free vulnerability in the XML component of Google Chrome allows remote code execution.",
+      "first_seen_at": "2026-11-11",
+      "discovery_latency": "on-time"
+    },
+    {
+      "type": "update",
+      "title": "Barracuda ESG/ADC Root Access Chain",
+      "threat_score": 9,
+      "cve": "CVE-2026-116606, CVE-2026-111560",
+      "cvss": "9.3",
+      "affected_technology": "Barracuda Email Security Gateway / Load Balancer ADC",
+      "summary": "A combination of authentication bypass and command injection allows unauthenticated attackers to gain root access.",
+      "first_seen_at": "2026-11-05",
+      "previous_threat_score": 6
+    },
+    {
+      "type": "news",
+      "title": "N-able N-central 'Able2Shell' Account Takeover",
+      "threat_score": 9,
+      "cve": "CVE-2026-18577, CVE-2026-18556",
+      "cvss": "8.2",
+      "affected_technology": "N-able N-central",
+      "summary": "Authentication bypass vulnerabilities allow unauthenticated attackers to take over administrative accounts.",
+      "first_seen_at": "2026-11-11",
+      "discovery_latency": "on-time"
+    },
+    {
+      "type": "news",
+      "title": "Microsoft Outlook Spoofing Vulnerability",
+      "threat_score": 8,
+      "cve": "CVE-2026-124194",
+      "cvss": "6.5",
+      "affected_technology": "Microsoft Office Outlook",
+      "summary": "A spoofing vulnerability in Microsoft Outlook allows attackers to perform unauthorized actions over a network.",
+      "first_seen_at": "2026-11-11",
+      "discovery_latency": "on-time"
+    },
+    {
+      "type": "news",
+      "title": "SAP NetWeaver and Web Dispatcher 'ICM2SHELL/ProxyGate'",
+      "threat_score": 8,
+      "cve": "CVE-2026-76964, CVE-2026-89126",
+      "cvss": "10",
+      "affected_technology": "SAP NetWeaver AS ABAP / SAP Web Dispatcher",
+      "summary": "Memory corruption vulnerabilities in network input processing allow unauthenticated remote code execution.",
+      "first_seen_at": "2026-11-11",
+      "discovery_latency": "on-time"
+    }
+  ],
+  "noted": [
+    {
+      "cve": "CVE-2026-9198",
+      "product": "Langflow",
+      "summary": "Unauthenticated remote code execution vulnerability used in automated attacks."
+    },
+    {
+      "cve": "CVE-2025-43529",
+      "product": "Apple Safari/iOS/iPadOS",
+      "summary": "Use-after-free vulnerability allowing arbitrary code execution via crafted web content."
+    },
+    {
+      "cve": "CVE-2026-46300",
+      "product": "Linux Kernel",
+      "summary": "Kernel vulnerability in skbuff coalescing allowing root escalation."
+    },
+    {
+      "cve": "CVE-2026-96652",
+      "product": "Plex Media Server",
+      "summary": "SSRF vulnerability via the /player/timeline endpoint."
+    },
+    {
+      "cve": "CVE-2026-96655",
+      "product": "Plex Media Server",
+      "summary": "Authenticated SSRF vulnerability via the transcode universal path."
+    },
+    {
+      "cve": "CVE-2026-96656",
+      "product": "Plex Media Server",
+      "summary": "Arbitrary file write vulnerability allowing code execution by admin users."
+    },
+    {
+      "cve": "CVE-2026-63030",
+      "product": "WordPress",
+      "summary": "REST API route confusion and SQL injection leading to remote code execution."
+    },
+    {
+      "cve": "CVE-2026-20320",
+      "product": "Cisco BroadWorks",
+      "summary": "XXE vulnerability in the OCI XML Parser allowing sensitive information disclosure."
+    },
+    {
+      "cve": "CVE-2026-110264",
+      "product": "GitLab",
+      "summary": "Integer overflow in regular expression compilation allowing unauthenticated RCE."
+    },
+    {
+      "cve": "CVE-2026-104353",
+      "product": "Adobe Campaign Classic",
+      "summary": "OS command injection vulnerability allowing arbitrary code execution."
+    },
+    {
+      "cve": "CVE-2026-110193",
+      "product": "IBM Langflow OSS",
+      "summary": "RCE vulnerability allowing authenticated users to execute OS commands."
+    },
+    {
+      "cve": "CVE-2026-104339",
+      "product": "IBM Langflow OSS",
+      "summary": "Unauthenticated remote code execution via improper neutralization of OS commands."
+    },
+    {
+      "cve": "CVE-2026-104350",
+      "product": "Adobe Campaign Classic",
+      "summary": "Reflected cross-site scripting vulnerability requiring user interaction."
+    },
+    {
+      "cve": "CVE-2026-104351",
+      "product": "Adobe Campaign Classic",
+      "summary": "Code injection vulnerability allowing arbitrary code execution by low-privileged users."
+    },
+    {
+      "cve": "CVE-2026-115252",
+      "product": "Confection WordPress Plugin",
+      "summary": "Unauthenticated RCE via insecure writing of settings to a PHP file."
+    },
+    {
+      "cve": "CVE-2026-118331",
+      "product": "Google Chrome",
+      "summary": "Use-after-free in FileAPI allowing RCE outside the sandbox."
+    },
+    {
+      "cve": "CVE-2026-118344",
+      "product": "Google Chrome",
+      "summary": "Use-after-free in Layout allowing RCE inside the sandbox."
+    },
+    {
+      "cve": "CVE-2026-118348",
+      "product": "Google Chrome",
+      "summary": "Integer overflow in Skia allowing RCE outside the sandbox."
+    },
+    {
+      "cve": "CVE-2026-89103",
+      "product": "SAP Gateway",
+      "summary": "Broken access control allowing unauthenticated attackers to perform unauthorized actions."
+    },
+    {
+      "cve": "CVE-2026-120017",
+      "product": "SAP NetWeaver",
+      "summary": "Authentication bypass in SAML2 Service Provider allowing user impersonation."
+    },
+    {
+      "cve": "CVE-2026-110192",
+      "product": "IBM Langflow OSS",
+      "summary": "Information disclosure vulnerability due to insufficiently protected credentials."
+    },
+    {
+      "cve": "CVE-2026-111760",
+      "product": "Git",
+      "summary": "Vulnerability allowing code execution during recursive clones of malicious repositories."
+    },
+    {
+      "cve": "CVE-2025-3248",
+      "product": "Langflow",
+      "summary": "Unauthenticated RCE via the /api/v1/validate/code endpoint."
+    },
+    {
+      "cve": "CVE-2025-31324",
+      "product": "SAP NetWeaver",
+      "summary": "Unauthenticated arbitrary file upload in Visual Composer development server."
+    },
+    {
+      "cve": "CVE-2025-8088",
+      "product": "WinRAR",
+      "summary": "Path traversal vulnerability allowing arbitrary code execution via malicious archives."
+    },
+    {
+      "cve": "CVE-2023-2868",
+      "product": "Barracuda Email Security Gateway",
+      "summary": "Remote command injection via improperly sanitized .tar files."
+    },
+    {
+      "cve": "CVE-2026-105133",
+      "product": "AhsayCBS",
+      "summary": "Improper authentication in the API allowing remote access."
+    },
+    {
+      "cve": "CVE-2026-105134",
+      "product": "AhsayCBS",
+      "summary": "Remote OS command injection in the Replication Receiver component."
+    },
+    {
+      "cve": "CVE-2026-102764",
+      "product": "BeyondTrust Remote Support",
+      "summary": "Improper origin validation allowing unauthenticated file upload and RCE."
+    },
+    {
+      "cve": "CVE-2025-14174",
+      "product": "Google Chrome",
+      "summary": "Out-of-bounds memory access in ANGLE on macOS."
+    }
+  ],
+  "source_coverage": {
+    "total": 21,
+    "checked": 21,
+    "with_findings": 6,
+    "unreachable": [],
+    "degraded": []
+  },
+  "full_report": "reports/2026/11/11/report.md",
+  "index": [
+    {
+      "cve": "CVE-2026-123218",
+      "first_seen_at": "2026-11-11",
+      "threat_score": 10,
+      "title": "IBM Aspera Faspex Authorization Bypass",
+      "summary": "An authorization bypass vulnerability allows authorized users to gain full administrative privileges.",
+      "facts": {
+        "kev_added": "2026-11-09",
+        "poc": false,
+        "nuclei_template": false,
+        "ssvc_exploitation": "active",
+        "cvss": 9.8,
+        "epss": 0.007,
+        "articles": [
+          "https://thehackernews.com/2026/11/cisa-warns-of-active-exploitation-of.html",
+          "https://www.securityweek.com/ibm-aspera-faspex-signalwire-freeswitch-vulnerabilities-exploited-in-attacks/"
+        ]
+      }
+    },
+    {
+      "cve": "CVE-2026-116779",
+      "first_seen_at": "2026-11-10",
+      "threat_score": 10,
+      "title": "SignalWire FreeSWITCH RCE (CVE-2026-116779)",
+      "summary": "A vulnerability in the handling of inbound SIP MESSAGE requests allows remote attackers to execute arbitrary FreeSWITCH API commands.",
+      "facts": {
+        "kev_added": "2026-11-09",
+        "poc": false,
+        "nuclei_template": false,
+        "ssvc_exploitation": "active",
+        "cvss": 9.8,
+        "epss": 0.022,
+        "articles": [
+          "https://www.securityweek.com/ibm-aspera-faspex-signalwire-freeswitch-vulnerabilities-exploited-in-attacks/"
+        ]
+      }
+    },
+    {
+      "cve": "CVE-2026-102895",
+      "first_seen_at": "2026-11-11",
+      "threat_score": 10,
+      "title": "GPUStack Authentication Bypass (CVE-2026-102895)",
+      "summary": "An authentication bypass allows remote attackers to gain unauthenticated administrator access by spoofing a loopback source address.",
+      "facts": {
+        "kev_added": "2026-11-09",
+        "poc": false,
+        "nuclei_template": false,
+        "ssvc_exploitation": "active",
+        "cvss": 9.8,
+        "epss": 0.006,
+        "articles": [
+          "https://thehackernews.com/2026/11/cisa-warns-of-active-exploitation-of.html"
+        ]
+      }
+    },
+    {
+      "cve": "CVE-2026-123158",
+      "first_seen_at": "2026-11-07",
+      "threat_score": 9,
+      "title": "OpenSSH 'SSHole' Auth Bypass",
+      "summary": "A password authentication bypass exists in OpenSSH when used with musl libc without PAM.",
+      "facts": {
+        "kev_added": "2026-11-09",
+        "poc": true,
+        "nuclei_template": false,
+        "ssvc_exploitation": "active",
+        "cvss": 8.1,
+        "epss": 0.165,
+        "articles": [
+          "https://thehackernews.com/2026/11/cisa-warns-of-active-exploitation-of.html",
+          "https://thehackernews.com/2026/11/hackers-exploited-openssh-sshole-flaw.html",
+          "https://www.bleepingcomputer.com/news/security/hackers-exploit-sshole-openssh-flaw-to-breach-linux-systems/",
+          "https://www.bleepingcomputer.com/news/security/openssh-flaw-lets-attackers-log-into-password-disabled-linux-accounts/",
+          "https://www.schneier.com/blog/archives/2026/11/new-openssh-vulnerability.html",
+          "https://www.securityweek.com/hackers-exploiting-sshole-authentication-bypass-in-openssh/",
+          "https://www.securityweek.com/openssh-rushes-patches-for-sshole-authentication-bypass/"
+        ]
+      }
+    },
+    {
+      "cve": "CVE-2026-125350",
+      "first_seen_at": "2026-11-11",
+      "threat_score": 9,
+      "title": "Google Chrome XML Use-After-Free",
+      "summary": "A use-after-free vulnerability in the XML component of Google Chrome allows remote code execution.",
+      "facts": {
+        "kev_added": "2026-11-10",
+        "poc": true,
+        "nuclei_template": false,
+        "ssvc_exploitation": "active",
+        "cvss": 8.8,
+        "epss": 0,
+        "articles": [
+          "https://thehackernews.com/2026/11/google-issues-chrome-security-update.html",
+          "https://www.securityweek.com/chrome-update-patches-exploited-xml-zero-day-eighth-this-year/"
+        ]
+      }
+    },
+    {
+      "cve": "CVE-2026-116606",
+      "first_seen_at": "2026-11-05",
+      "threat_score": 9,
+      "title": "Barracuda ESG/ADC Root Access Chain",
+      "summary": "A combination of authentication bypass and command injection allows unauthenticated attackers to gain root access.",
+      "facts": {
+        "kev_added": "2026-11-10",
+        "poc": false,
+        "nuclei_template": false,
+        "ssvc_exploitation": "active",
+        "cvss": 9.3,
+        "epss": 0.016,
+        "articles": [
+          "https://thehackernews.com/2026/11/barracuda-flaws-could-be-chained-to.html",
+          "https://thehackernews.com/2026/11/experts-demonstrate-barracuda-email.html",
+          "https://www.bleepingcomputer.com/news/security/barracuda-warns-of-critical-flaws-allowing-root-access-to-devices/",
+          "https://www.bleepingcomputer.com/news/security/hackers-exploit-barracuda-email-security-gateway-flaws-to-get-root-access/",
+          "https://www.securityweek.com/barracuda-email-security-gateway-authentication-bypass-opens-path-to-root/"
+        ]
+      }
+    },
+    {
+      "cve": "CVE-2026-111560",
+      "first_seen_at": "2026-11-05",
+      "threat_score": 9,
+      "title": "Barracuda ESG/ADC Root Access Chain",
+      "summary": "A combination of authentication bypass and command injection allows unauthenticated attackers to gain root access.",
+      "facts": {
+        "kev_added": "2026-11-10",
+        "poc": false,
+        "nuclei_template": false,
+        "ssvc_exploitation": "active",
+        "cvss": 8.6,
+        "epss": 0.011,
+        "articles": [
+          "https://thehackernews.com/2026/11/barracuda-flaws-could-be-chained-to.html",
+          "https://thehackernews.com/2026/11/experts-demonstrate-barracuda-email.html",
+          "https://www.bleepingcomputer.com/news/security/barracuda-warns-of-critical-flaws-allowing-root-access-to-devices/",
+          "https://www.bleepingcomputer.com/news/security/hackers-exploit-barracuda-email-security-gateway-flaws-to-get-root-access/",
+          "https://www.securityweek.com/barracuda-email-security-gateway-authentication-bypass-opens-path-to-root/"
+        ]
+      }
+    },
+    {
+      "cve": "CVE-2026-18577",
+      "first_seen_at": "2026-11-11",
+      "threat_score": 9,
+      "title": "N-able N-central 'Able2Shell' Account Takeover",
+      "summary": "Authentication bypass vulnerabilities allow unauthenticated attackers to take over administrative accounts.",
+      "facts": {
+        "kev_added": "2026-08-03",
+        "poc": false,
+        "nuclei_template": false,
+        "ssvc_exploitation": "active",
+        "cvss": 8.2,
+        "epss": 0.146,
+        "articles": [
+          "https://thehackernews.com/2026/11/n-able-takes-hosted-n-central-offline.html",
+          "https://www.bleepingcomputer.com/news/security/n-able-takes-cloud-platform-offline-after-30-plus-zero-days-published/",
+          "https://www.securityweek.com/n-able-takes-n-central-offline-as-researcher-drops-over-30-zero-days/"
+        ]
+      }
+    },
+    {
+      "cve": "CVE-2026-18556",
+      "first_seen_at": "2026-11-11",
+      "threat_score": 9,
+      "title": "N-able N-central 'Able2Shell' Account Takeover",
+      "summary": "Authentication bypass vulnerabilities allow unauthenticated attackers to take over administrative accounts.",
+      "facts": {
+        "kev_added": "2026-08-04",
+        "poc": false,
+        "nuclei_template": false,
+        "ssvc_exploitation": "active",
+        "cvss": 8.2,
+        "epss": 0.079,
+        "articles": [
+          "https://thehackernews.com/2026/11/n-able-takes-hosted-n-central-offline.html",
+          "https://www.bleepingcomputer.com/news/security/n-able-takes-cloud-platform-offline-after-30-plus-zero-days-published/",
+          "https://www.securityweek.com/n-able-takes-n-central-offline-as-researcher-drops-over-30-zero-days/"
+        ]
+      }
+    },
+    {
+      "cve": "CVE-2026-124194",
+      "first_seen_at": "2026-11-11",
+      "threat_score": 8,
+      "title": "Microsoft Outlook Spoofing Vulnerability",
+      "summary": "A spoofing vulnerability in Microsoft Outlook allows attackers to perform unauthorized actions over a network.",
+      "facts": {
+        "kev_added": "2026-11-10",
+        "poc": true,
+        "nuclei_template": false,
+        "ssvc_exploitation": "active",
+        "cvss": 6.5,
+        "epss": 0,
+        "articles": [
+          "https://krebsonsecurity.com/2026/11/microsoft-fixes-nearly-1100-security-vulnerabilities/",
+          "https://www.bleepingcomputer.com/news/microsoft/microsoft-november-2026-patch-tuesday-fixes-1-235-flaws-outlook-zero-day/",
+          "https://www.rapid7.com/blog/post/em-patch-tuesday-november-2026",
+          "https://www.securityweek.com/exploited-outlook-zero-day-among-1094-flaws-patched-by-microsoft/"
+        ]
+      }
+    },
+    {
+      "cve": "CVE-2026-76964",
+      "first_seen_at": "2026-11-11",
+      "threat_score": 8,
+      "title": "SAP NetWeaver and Web Dispatcher 'ICM2SHELL/ProxyGate'",
+      "summary": "Memory corruption vulnerabilities in network input processing allow unauthenticated remote code execution.",
+      "facts": {
+        "kev_added": null,
+        "poc": false,
+        "nuclei_template": false,
+        "ssvc_exploitation": null,
+        "cvss": 10,
+        "epss": 0.004,
+        "articles": [
+          "https://thehackernews.com/2026/11/sap-patches-four-cvss-100-flaws.html",
+          "https://www.bleepingcomputer.com/news/security/sap-patches-four-maximum-severity-security-vulnerabilities/",
+          "https://www.securityweek.com/sap-patches-critical-icm2shell-proxygate-vulnerabilities/"
+        ]
+      }
+    },
+    {
+      "cve": "CVE-2026-89126",
+      "first_seen_at": "2026-11-11",
+      "threat_score": 8,
+      "title": "SAP NetWeaver and Web Dispatcher 'ICM2SHELL/ProxyGate'",
+      "summary": "Memory corruption vulnerabilities in network input processing allow unauthenticated remote code execution.",
+      "facts": {
+        "kev_added": null,
+        "poc": false,
+        "nuclei_template": false,
+        "ssvc_exploitation": "none",
+        "cvss": 10,
+        "epss": 0.004,
+        "articles": [
+          "https://thehackernews.com/2026/11/sap-patches-four-cvss-100-flaws.html",
+          "https://www.bleepingcomputer.com/news/security/sap-patches-four-maximum-severity-security-vulnerabilities/",
+          "https://www.securityweek.com/sap-patches-critical-icm2shell-proxygate-vulnerabilities/"
+        ]
+      }
+    }
+  ]
+}
