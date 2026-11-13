@@ -1,0 +1,426 @@
+{
+  "date": "2026-11-13",
+  "findings": [
+    {
+      "type": "update",
+      "title": "N-able N-central '4EverAble2Shell' Account Takeover",
+      "threat_score": 9,
+      "cve": "CVE-2026-18556, CVE-2026-18577",
+      "cvss": "8.2",
+      "affected_technology": "N-able N-central",
+      "summary": "Authentication bypass vulnerabilities allow unauthenticated attackers to take over administrative accounts.",
+      "first_seen_at": "2026-11-11",
+      "previous_threat_score": 9
+    },
+    {
+      "type": "news",
+      "title": "ConnectWise ScreenConnect Guest-to-Host Execution",
+      "threat_score": 9,
+      "cve": "CVE-2026-84869",
+      "cvss": "9.9",
+      "affected_technology": "ConnectWise ScreenConnect Client",
+      "summary": "A flaw in the client allows unauthorized file transfer and execution during active remote sessions.",
+      "first_seen_at": "2026-11-13",
+      "discovery_latency": "on-time"
+    },
+    {
+      "type": "news",
+      "title": "Apache HTTP Server mod_http2 RCE",
+      "threat_score": 8,
+      "cve": "CVE-2026-119618",
+      "cvss": "Not specified",
+      "affected_technology": "Apache HTTP Server (mod_http2)",
+      "summary": "A heap corruption vulnerability in the mod_http2 module of Apache HTTP Server allows for remote code execution.",
+      "first_seen_at": "2026-11-13",
+      "discovery_latency": "on-time"
+    },
+    {
+      "type": "news",
+      "title": "Cisco BroadWorks XML External Entity (XXE)",
+      "threat_score": 8,
+      "cve": "CVE-2026-20320",
+      "cvss": "7.5",
+      "affected_technology": "Cisco BroadWorks",
+      "summary": "An XML parsing vulnerability in the Open Client Interface allows unauthenticated remote attackers to read sensitive configuration data.",
+      "first_seen_at": "2026-11-13",
+      "discovery_latency": "late"
+    },
+    {
+      "type": "news",
+      "title": "Citrix NetScaler Memory Overflow",
+      "threat_score": 6,
+      "cve": "CVE-2026-120868",
+      "cvss": "9.3",
+      "affected_technology": "Citrix NetScaler ADC and Gateway",
+      "summary": "A memory overflow in packet processing can cause unpredictable behavior or a Denial of Service.",
+      "first_seen_at": "2026-11-13",
+      "discovery_latency": "on-time"
+    },
+    {
+      "type": "news",
+      "title": "MongoDB Server Pre-Auth Remote Code Execution",
+      "threat_score": 6,
+      "cve": "CVE-2026-118383",
+      "cvss": "9",
+      "affected_technology": "MongoDB Server",
+      "summary": "A pre-authentication use-after-free vulnerability in the replication component can lead to server crashes or arbitrary code execution.",
+      "first_seen_at": "2026-11-13",
+      "discovery_latency": "on-time"
+    },
+    {
+      "type": "news",
+      "title": "Zoom Workplace Privilege Escalation",
+      "threat_score": 6,
+      "cve": "CVE-2026-108186, CVE-2026-108187",
+      "cvss": "9.6",
+      "affected_technology": "Zoom Workplace for Windows",
+      "summary": "Two vulnerabilities in Zoom Workplace for Windows allow unauthenticated users to escalate privileges via network access.",
+      "first_seen_at": "2026-11-13",
+      "discovery_latency": "late"
+    }
+  ],
+  "noted": [
+    {
+      "cve": "CVE-2026-104935",
+      "product": "Ivanti Connect Secure",
+      "summary": "Authentication bypass allowing remote command execution."
+    },
+    {
+      "cve": "CVE-2023-2868",
+      "product": "Barracuda Email Security Gateway",
+      "summary": "Remote command injection via unsanitized .tar files."
+    },
+    {
+      "cve": "CVE-2026-111497",
+      "product": "Google Brotli",
+      "summary": "Out-of-bounds write in the decoder allowing remote code execution."
+    },
+    {
+      "cve": "CVE-2026-2441",
+      "product": "Google Chrome",
+      "summary": "Use-after-free in CSS allowing sandboxed remote code execution."
+    },
+    {
+      "cve": "CVE-2026-9198",
+      "product": "IBM Langflow OSS",
+      "summary": "Unauthenticated remote code execution via auto-login bypass."
+    },
+    {
+      "cve": "CVE-2025-43529",
+      "product": "Apple Safari/iOS/iPadOS",
+      "summary": "Use-after-free in web content processing leading to code execution."
+    },
+    {
+      "cve": "CVE-2026-46300",
+      "product": "Linux Kernel",
+      "summary": "Memory corruption in skbuff coalescing leading to potential privilege escalation."
+    },
+    {
+      "cve": "CVE-2026-5281",
+      "product": "Google Chrome",
+      "summary": "Use-after-free in Dawn allowing code execution from a compromised renderer."
+    },
+    {
+      "cve": "CVE-2026-96652",
+      "product": "Plex Media Server",
+      "summary": "SSRF via the /player/timeline endpoint."
+    },
+    {
+      "cve": "CVE-2026-96655",
+      "product": "Plex Media Server",
+      "summary": "Authenticated SSRF via the transcode universal path."
+    },
+    {
+      "cve": "CVE-2026-63030",
+      "product": "WordPress",
+      "summary": "REST API route confusion and SQL injection leading to remote code execution."
+    },
+    {
+      "cve": "CVE-2026-87491",
+      "product": "Google Chrome",
+      "summary": "Out-of-bounds write in V8 allowing sandboxed remote code execution."
+    },
+    {
+      "cve": "CVE-2026-3910",
+      "product": "Google Chrome",
+      "summary": "V8 implementation flaw allowing sandboxed remote code execution."
+    },
+    {
+      "cve": "CVE-2026-11645",
+      "product": "Google Chrome",
+      "summary": "Out-of-bounds read/write in V8 allowing sandboxed remote code execution."
+    },
+    {
+      "cve": "CVE-2026-3909",
+      "product": "Google Chrome",
+      "summary": "Out-of-bounds write in Skia allowing remote memory access."
+    },
+    {
+      "cve": "CVE-2026-85046",
+      "product": "Google Chrome",
+      "summary": "Type confusion in V8 allowing sandboxed remote code execution."
+    },
+    {
+      "cve": "CVE-2026-96656",
+      "product": "Plex Media Server",
+      "summary": "Arbitrary file write allowing potential code execution on load."
+    },
+    {
+      "cve": "CVE-2026-111793",
+      "product": "Openwave Webtop Media Transcoder",
+      "summary": "Failure to enforce file type restrictions during conversion."
+    },
+    {
+      "cve": "CVE-2016-6210",
+      "product": "OpenSSH",
+      "summary": "Timing difference in password hashing allowing remote user enumeration."
+    },
+    {
+      "cve": "CVE-2026-23918",
+      "product": "Apache HTTP Server",
+      "summary": "Double free in HTTP/2 protocol leading to possible remote code execution."
+    },
+    {
+      "cve": "CVE-2026-126187",
+      "product": "React",
+      "summary": "Unauthenticated remote code execution in React Server Components."
+    },
+    {
+      "cve": "CVE-2026-58115",
+      "product": "Siemens SIMATIC IoT2050",
+      "summary": "Missing authentication on Node-RED interface allowing remote command execution."
+    },
+    {
+      "cve": "CVE-2026-110193",
+      "product": "IBM Langflow OSS",
+      "summary": "Authenticated remote code execution via Agentic Assistant."
+    },
+    {
+      "cve": "CVE-2026-104339",
+      "product": "IBM Langflow OSS",
+      "summary": "Remote code execution due to improper neutralization of OS commands."
+    },
+    {
+      "cve": "CVE-2026-113961",
+      "product": "Apple HomeView/iOS/iPadOS",
+      "summary": "Authorization issue allowing unauthorized joining of iMessage group chats."
+    },
+    {
+      "cve": "CVE-2024-36350",
+      "product": "AMD EPYC Processors",
+      "summary": "Transient execution vulnerability allowing privileged information leakage."
+    },
+    {
+      "cve": "CVE-2026-123710",
+      "product": "Red Hat Quay",
+      "summary": "Unauthenticated registry signing-key takeover allowing image replacement."
+    },
+    {
+      "cve": "CVE-2024-36357",
+      "product": "AMD EPYC Processors",
+      "summary": "Transient execution vulnerability allowing L1D cache data leakage."
+    },
+    {
+      "cve": "CVE-2026-118331",
+      "product": "Google Chrome",
+      "summary": "Use-after-free in FileAPI allowing remote code execution outside the sandbox."
+    },
+    {
+      "cve": "CVE-2026-118344",
+      "product": "Google Chrome",
+      "summary": "Use-after-free in Layout allowing sandboxed remote code execution."
+    }
+  ],
+  "source_coverage": {
+    "total": 21,
+    "checked": 21,
+    "with_findings": 3,
+    "unreachable": [],
+    "degraded": []
+  },
+  "full_report": "reports/2026/11/13/report.md",
+  "index": [
+    {
+      "cve": "CVE-2026-18556",
+      "first_seen_at": "2026-11-11",
+      "threat_score": 9,
+      "title": "N-able N-central '4EverAble2Shell' Account Takeover",
+      "summary": "Authentication bypass vulnerabilities allow unauthenticated attackers to take over administrative accounts.",
+      "facts": {
+        "kev_added": "2026-08-04",
+        "poc": false,
+        "nuclei_template": false,
+        "ssvc_exploitation": "active",
+        "cvss": 8.2,
+        "epss": 0.439,
+        "articles": [
+          "https://thehackernews.com/2026/11/n-able-takes-hosted-n-central-offline.html",
+          "https://www.bleepingcomputer.com/news/security/n-able-releases-security-hotfixes-for-zero-day-vulnerabilities/",
+          "https://www.bleepingcomputer.com/news/security/n-able-takes-cloud-platform-offline-after-30-plus-zero-days-published/",
+          "https://www.bleepingcomputer.com/news/security/new-n-able-4everable2shell-zero-day-exploited-hours-after-poc-released/",
+          "https://www.securityweek.com/hackers-target-n-central-zero-days-as-n-able-rushes-patches/",
+          "https://www.securityweek.com/n-able-takes-n-central-offline-as-researcher-drops-over-30-zero-days/"
+        ]
+      }
+    },
+    {
+      "cve": "CVE-2026-18577",
+      "first_seen_at": "2026-11-11",
+      "threat_score": 9,
+      "title": "N-able N-central '4EverAble2Shell' Account Takeover",
+      "summary": "Authentication bypass vulnerabilities allow unauthenticated attackers to take over administrative accounts.",
+      "facts": {
+        "kev_added": "2026-08-03",
+        "poc": false,
+        "nuclei_template": false,
+        "ssvc_exploitation": "active",
+        "cvss": 8.2,
+        "epss": 0.146,
+        "articles": [
+          "https://thehackernews.com/2026/11/n-able-takes-hosted-n-central-offline.html",
+          "https://www.bleepingcomputer.com/news/security/n-able-releases-security-hotfixes-for-zero-day-vulnerabilities/",
+          "https://www.bleepingcomputer.com/news/security/n-able-takes-cloud-platform-offline-after-30-plus-zero-days-published/",
+          "https://www.bleepingcomputer.com/news/security/new-n-able-4everable2shell-zero-day-exploited-hours-after-poc-released/",
+          "https://www.securityweek.com/hackers-target-n-central-zero-days-as-n-able-rushes-patches/",
+          "https://www.securityweek.com/n-able-takes-n-central-offline-as-researcher-drops-over-30-zero-days/"
+        ]
+      }
+    },
+    {
+      "cve": "CVE-2026-84869",
+      "first_seen_at": "2026-11-13",
+      "threat_score": 9,
+      "title": "ConnectWise ScreenConnect Guest-to-Host Execution",
+      "summary": "A flaw in the client allows unauthorized file transfer and execution during active remote sessions.",
+      "facts": {
+        "kev_added": "2026-09-11",
+        "poc": false,
+        "nuclei_template": false,
+        "ssvc_exploitation": "active",
+        "cvss": 9.9,
+        "epss": 0.009,
+        "articles": [
+          "https://thehackernews.com/2026/11/sckit-malware-targets-screenconnect.html",
+          "https://www.bleepingcomputer.com/news/security/active-screenconnect-attacks-breach-msps-impact-dozens-of-organizations/",
+          "https://www.bleepingcomputer.com/news/security/new-worm-like-sckit-malware-targets-msps-in-screenconnect-attacks/",
+          "https://www.securityweek.com/hackers-deploy-malware-in-fresh-screenconnect-campaign/"
+        ]
+      }
+    },
+    {
+      "cve": "CVE-2026-119618",
+      "first_seen_at": "2026-11-13",
+      "threat_score": 8,
+      "title": "Apache HTTP Server mod_http2 RCE",
+      "summary": "A heap corruption vulnerability in the mod_http2 module of Apache HTTP Server allows for remote code execution.",
+      "facts": {
+        "kev_added": null,
+        "poc": true,
+        "nuclei_template": false,
+        "ssvc_exploitation": null,
+        "cvss": null,
+        "epss": 0.004,
+        "articles": [
+          "https://thehackernews.com/2026/11/critical-apache-http2-flaw-could-let.html",
+          "https://www.bleepingcomputer.com/news/security/apache-http-server-patches-critical-http-2-remote-code-execution-flaw/",
+          "https://www.securityweek.com/apache-patches-critical-http-server-rce-found-by-anthropic-google/"
+        ]
+      }
+    },
+    {
+      "cve": "CVE-2026-20320",
+      "first_seen_at": "2026-11-13",
+      "threat_score": 8,
+      "title": "Cisco BroadWorks XML External Entity (XXE)",
+      "summary": "An XML parsing vulnerability in the Open Client Interface allows unauthenticated remote attackers to read sensitive configuration data.",
+      "facts": {
+        "kev_added": "2026-11-10",
+        "poc": false,
+        "nuclei_template": false,
+        "ssvc_exploitation": "active",
+        "cvss": 7.5,
+        "epss": 0.008,
+        "articles": [
+          "https://thehackernews.com/2026/11/cisco-broadworks-and-openwave-flaws.html",
+          "https://www.bleepingcomputer.com/news/security/cisa-flags-cisco-broadworks-flaw-as-actively-exploited-in-attacks/",
+          "https://www.securityweek.com/threat-actors-exploit-openwave-cisco-broadworks-vulnerabilities/"
+        ]
+      }
+    },
+    {
+      "cve": "CVE-2026-120868",
+      "first_seen_at": "2026-11-13",
+      "threat_score": 6,
+      "title": "Citrix NetScaler Memory Overflow",
+      "summary": "A memory overflow in packet processing can cause unpredictable behavior or a Denial of Service.",
+      "facts": {
+        "kev_added": null,
+        "poc": false,
+        "nuclei_template": false,
+        "ssvc_exploitation": null,
+        "cvss": 9.3,
+        "epss": 0,
+        "articles": [
+          "https://thehackernews.com/2026/11/citrix-patches-12-netscaler-and-secure.html",
+          "https://www.securityweek.com/citrix-ivanti-patch-critical-and-high-severity-vulnerabilities/"
+        ]
+      }
+    },
+    {
+      "cve": "CVE-2026-118383",
+      "first_seen_at": "2026-11-13",
+      "threat_score": 6,
+      "title": "MongoDB Server Pre-Auth Remote Code Execution",
+      "summary": "A pre-authentication use-after-free vulnerability in the replication component can lead to server crashes or arbitrary code execution.",
+      "facts": {
+        "kev_added": null,
+        "poc": false,
+        "nuclei_template": false,
+        "ssvc_exploitation": null,
+        "cvss": 9,
+        "epss": 0.007,
+        "articles": [
+          "https://thehackernews.com/2026/11/critical-pre-auth-mongodb-flaw-cve-2026.html"
+        ]
+      }
+    },
+    {
+      "cve": "CVE-2026-108186",
+      "first_seen_at": "2026-11-13",
+      "threat_score": 6,
+      "title": "Zoom Workplace Privilege Escalation",
+      "summary": "Two vulnerabilities in Zoom Workplace for Windows allow unauthenticated users to escalate privileges via network access.",
+      "facts": {
+        "kev_added": null,
+        "poc": false,
+        "nuclei_template": false,
+        "ssvc_exploitation": "none",
+        "cvss": 9.6,
+        "epss": 0.004,
+        "articles": [
+          "https://thehackernews.com/2026/11/critical-zoom-workplace-flaw-could.html",
+          "https://www.securityweek.com/asus-zoom-release-security-patches/"
+        ]
+      }
+    },
+    {
+      "cve": "CVE-2026-108187",
+      "first_seen_at": "2026-11-13",
+      "threat_score": 6,
+      "title": "Zoom Workplace Privilege Escalation",
+      "summary": "Two vulnerabilities in Zoom Workplace for Windows allow unauthenticated users to escalate privileges via network access.",
+      "facts": {
+        "kev_added": null,
+        "poc": false,
+        "nuclei_template": false,
+        "ssvc_exploitation": "none",
+        "cvss": 8.1,
+        "epss": 0.002,
+        "articles": [
+          "https://thehackernews.com/2026/11/critical-zoom-workplace-flaw-could.html",
+          "https://www.securityweek.com/asus-zoom-release-security-patches/"
+        ]
+      }
+    }
+  ]
+}
