@@ -1,0 +1,605 @@
+{
+  "date": "2026-11-15",
+  "findings": [
+    {
+      "type": "update",
+      "title": "PHP 'PHP2Shell' RCE",
+      "threat_score": 10,
+      "cve": "CVE-2026-109618, CVE-2026-109619",
+      "cvss": "9.2",
+      "affected_technology": "PHP",
+      "summary": "Two critical memory corruption vulnerabilities in PHP allow unauthenticated remote code execution.",
+      "first_seen_at": "2026-10-30",
+      "previous_threat_score": 10
+    },
+    {
+      "type": "news",
+      "title": "UnrealIRCd Command Injection",
+      "threat_score": 10,
+      "cve": "CVE-2026-114713",
+      "cvss": "8.6",
+      "affected_technology": "UnrealIRCd",
+      "summary": "A failure to escape IRCv3 label message tags allows users on linked servers to inject server-to-server commands.",
+      "first_seen_at": "2026-11-15",
+      "discovery_latency": "on-time"
+    },
+    {
+      "type": "news",
+      "title": "Check Point Quantum 'PHP2Shell' LPE",
+      "threat_score": 9,
+      "cve": "CVE-2026-123039",
+      "cvss": "7.8",
+      "affected_technology": "Check Point Quantum Security Gateway / Management",
+      "summary": "A local privilege escalation vulnerability in the DynamicCLI daemon allows an authenticated user to gain root access.",
+      "first_seen_at": "2026-11-15",
+      "discovery_latency": "on-time"
+    },
+    {
+      "type": "update",
+      "title": "N-able N-central '4EverAble2Shell' Account Takeover",
+      "threat_score": 9,
+      "cve": "CVE-2026-18556, CVE-2026-18577",
+      "cvss": "8.2",
+      "affected_technology": "N-able N-central",
+      "summary": "Authentication bypass vulnerabilities allow unauthenticated attackers to take over administrative accounts.",
+      "first_seen_at": "2026-11-11",
+      "previous_threat_score": 9
+    },
+    {
+      "type": "update",
+      "title": "Barracuda ESG/ADC Root Access Chain",
+      "threat_score": 9,
+      "cve": "CVE-2026-116606, CVE-2026-111560",
+      "cvss": "9.3",
+      "affected_technology": "Barracuda Email Security Gateway / Load Balancer ADC",
+      "summary": "A combination of authentication bypass and command injection allows unauthenticated attackers to gain root access.",
+      "first_seen_at": "2026-11-05",
+      "previous_threat_score": 9
+    },
+    {
+      "type": "update",
+      "title": "SonicWall SonicOS SSL-VPN MFA Bypass",
+      "threat_score": 9,
+      "cve": "CVE-2026-19868",
+      "cvss": "7.5",
+      "affected_technology": "SonicWall SonicOS",
+      "summary": "An authentication enforcement flaw allows attackers with valid credentials to bypass SAML and multi-factor authentication.",
+      "first_seen_at": "2026-11-07",
+      "previous_threat_score": 9
+    },
+    {
+      "type": "update",
+      "title": "Apache HTTP Server mod_http2 RCE",
+      "threat_score": 8,
+      "cve": "CVE-2026-119618",
+      "cvss": "8.1",
+      "affected_technology": "Apache HTTP Server",
+      "summary": "A heap corruption vulnerability in the mod_http2 module can lead to remote code execution.",
+      "first_seen_at": "2026-11-13",
+      "previous_threat_score": 8
+    },
+    {
+      "type": "update",
+      "title": "Plex Media Server 'Plex2Shell' URL Injection",
+      "threat_score": 8,
+      "cve": "CVE-2026-96654",
+      "cvss": "6.5",
+      "affected_technology": "Plex Media Server",
+      "summary": "A URL injection vulnerability allows attackers to call unauthorized plugin functions and supply custom parameters.",
+      "first_seen_at": "2026-11-10",
+      "previous_threat_score": 8
+    },
+    {
+      "type": "news",
+      "title": "Red Hat Quay Registry Signing-Key Takeover",
+      "threat_score": 8,
+      "cve": "CVE-2026-123710",
+      "cvss": "9.8",
+      "affected_technology": "Red Hat Quay",
+      "summary": "An unauthenticated attacker can take over the registry signing key to gain full access to private container images.",
+      "first_seen_at": "2026-11-15",
+      "discovery_latency": "on-time"
+    },
+    {
+      "type": "news",
+      "title": "PostgreSQL Type Confusion RCE",
+      "threat_score": 6,
+      "cve": "CVE-2026-6460",
+      "cvss": "8.8",
+      "affected_technology": "PostgreSQL",
+      "summary": "A type confusion vulnerability during data type alteration allows an authenticated object creator to execute arbitrary code.",
+      "first_seen_at": "2026-11-15",
+      "discovery_latency": "late"
+    },
+    {
+      "type": "news",
+      "title": "Next.js Middleware Authorization Bypass",
+      "threat_score": 6,
+      "cve": "CVE-2025-29927",
+      "cvss": "9.1",
+      "affected_technology": "vercel next.js",
+      "summary": "An authorization bypass is possible in Next.js applications that perform security checks within middleware.",
+      "first_seen_at": "2026-11-15",
+      "discovery_latency": "early"
+    },
+    {
+      "type": "update",
+      "title": "Citrix NetScaler Memory Overflow",
+      "threat_score": 6,
+      "cve": "CVE-2026-120868",
+      "cvss": "9.3",
+      "affected_technology": "Citrix NetScaler ADC / Gateway",
+      "summary": "A memory overflow in packet processing can cause unpredictable behavior or a Denial of Service.",
+      "first_seen_at": "2026-11-13",
+      "previous_threat_score": 6
+    }
+  ],
+  "noted": [
+    {
+      "cve": "CVE-2026-104935",
+      "product": "Ivanti Connect Secure",
+      "summary": "Authentication bypass allowing remote command execution."
+    },
+    {
+      "cve": "CVE-2023-2868",
+      "product": "Barracuda Email Security Gateway",
+      "summary": "Remote command injection via unsanitized .tar files."
+    },
+    {
+      "cve": "CVE-2026-2441",
+      "product": "Google Chrome",
+      "summary": "Use-after-free in CSS allowing sandboxed code execution."
+    },
+    {
+      "cve": "CVE-2026-9198",
+      "product": "IBM Langflow OSS",
+      "summary": "Unauthenticated RCE via auto-login bypass and code validation."
+    },
+    {
+      "cve": "CVE-2025-43529",
+      "product": "Apple Safari/iOS/iPadOS",
+      "summary": "Use-after-free in web content processing leading to code execution."
+    },
+    {
+      "cve": "CVE-2026-96656",
+      "product": "Plex Media Server",
+      "summary": "Arbitrary file write allowing execution of .so files."
+    },
+    {
+      "cve": "CVE-2026-46300",
+      "product": "Linux Kernel",
+      "summary": "Memory corruption in skbuff coalescing leading to root escalation."
+    },
+    {
+      "cve": "CVE-2026-5281",
+      "product": "Google Chrome",
+      "summary": "Use-after-free in Dawn allowing sandboxed code execution."
+    },
+    {
+      "cve": "CVE-2026-96652",
+      "product": "Plex Media Server",
+      "summary": "SSRF via the /player/timeline endpoint."
+    },
+    {
+      "cve": "CVE-2026-96655",
+      "product": "Plex Media Server",
+      "summary": "Authenticated SSRF via the transcode universal path."
+    },
+    {
+      "cve": "CVE-2026-87491",
+      "product": "Google Chrome",
+      "summary": "Out-of-bounds write in V8 allowing sandboxed code execution."
+    },
+    {
+      "cve": "CVE-2026-3910",
+      "product": "Google Chrome",
+      "summary": "V8 implementation flaw allowing sandboxed code execution."
+    },
+    {
+      "cve": "CVE-2026-11645",
+      "product": "Google Chrome",
+      "summary": "Out-of-bounds read/write in V8 allowing sandboxed code execution."
+    },
+    {
+      "cve": "CVE-2026-3909",
+      "product": "Google Chrome",
+      "summary": "Out-of-bounds write in Skia allowing memory access."
+    },
+    {
+      "cve": "CVE-2026-85046",
+      "product": "Google Chrome",
+      "summary": "Type confusion in V8 allowing sandboxed code execution."
+    },
+    {
+      "cve": "CVE-2026-111793",
+      "product": "Openwave Webtop Media Transcoder",
+      "summary": "Bypass of file type restrictions for document conversion."
+    },
+    {
+      "cve": "CVE-2016-6210",
+      "product": "OpenSSH",
+      "summary": "Timing difference in sshd allowing remote user enumeration."
+    },
+    {
+      "cve": "CVE-2026-23918",
+      "product": "Apache HTTP Server",
+      "summary": "Double free in HTTP/2 protocol potentially leading to RCE."
+    },
+    {
+      "cve": "CVE-2026-58115",
+      "product": "Siemens SIMATIC IoT2050",
+      "summary": "Missing authentication on Node-RED interface allowing RCE."
+    },
+    {
+      "cve": "CVE-2026-110193",
+      "product": "IBM Langflow OSS",
+      "summary": "Authenticated RCE via Agentic Assistant code generation."
+    },
+    {
+      "cve": "CVE-2026-104339",
+      "product": "IBM Langflow OSS",
+      "summary": "Remote code execution due to improper OS command neutralization."
+    },
+    {
+      "cve": "CVE-2026-113961",
+      "product": "Apple HomeView/iOS/iPadOS",
+      "summary": "Authorization issue allowing unauthorized joining of iMessage groups."
+    },
+    {
+      "cve": "CVE-2026-116331",
+      "product": "PostgreSQL",
+      "summary": "Type confusion in aggregate optimization allowing arbitrary code execution."
+    },
+    {
+      "cve": "CVE-2024-36350",
+      "product": "AMD EPYC Processors",
+      "summary": "Transient execution vulnerability allowing privileged data leakage."
+    },
+    {
+      "cve": "CVE-2024-36357",
+      "product": "AMD EPYC Processors",
+      "summary": "Transient execution vulnerability allowing L1D cache data leakage."
+    },
+    {
+      "cve": "CVE-2026-113960",
+      "product": "Apple HomeView/iOS/iPadOS",
+      "summary": "Privacy flaw allowing access to iMessage history before joining a group."
+    },
+    {
+      "cve": "CVE-2026-118331",
+      "product": "Google Chrome",
+      "summary": "Use-after-free in FileAPI allowing code execution outside the sandbox."
+    },
+    {
+      "cve": "CVE-2026-118344",
+      "product": "Google Chrome",
+      "summary": "Use-after-free in Layout allowing sandboxed code execution."
+    },
+    {
+      "cve": "CVE-2026-118348",
+      "product": "Google Chrome",
+      "summary": "Integer overflow in Skia allowing code execution outside the sandbox."
+    },
+    {
+      "cve": "CVE-2026-107412",
+      "product": "Citrix NetScaler ADC/Gateway",
+      "summary": "Memory overflow vulnerabilities leading to Denial of Service."
+    }
+  ],
+  "source_coverage": {
+    "total": 21,
+    "checked": 21,
+    "with_findings": 3,
+    "unreachable": [],
+    "degraded": []
+  },
+  "full_report": "reports/2026/11/15/report.md",
+  "index": [
+    {
+      "cve": "CVE-2026-109618",
+      "first_seen_at": "2026-10-30",
+      "threat_score": 10,
+      "title": "PHP 'PHP2Shell' RCE",
+      "summary": "Two critical memory corruption vulnerabilities in PHP allow unauthenticated remote code execution.",
+      "facts": {
+        "kev_added": "2026-10-26",
+        "poc": true,
+        "nuclei_template": false,
+        "ssvc_exploitation": "active",
+        "cvss": 9.2,
+        "epss": 1.0,
+        "articles": [
+          "https://thehackernews.com/2026/10/php-issues-emergency-patches-for-two.html",
+          "https://thehackernews.com/2026/10/php2shell-two-unpatched-critical-php.html",
+          "https://thehackernews.com/2026/11/hackers-exploit-php2shell-flaws-in.html",
+          "https://www.bleepingcomputer.com/news/security/check-point-gateways-hacked-via-php2shell-to-deploy-vmware-esxi-wiper/"
+        ]
+      }
+    },
+    {
+      "cve": "CVE-2026-109619",
+      "first_seen_at": "2026-10-30",
+      "threat_score": 10,
+      "title": "PHP 'PHP2Shell' RCE",
+      "summary": "Two critical memory corruption vulnerabilities in PHP allow unauthenticated remote code execution.",
+      "facts": {
+        "kev_added": "2026-10-26",
+        "poc": false,
+        "nuclei_template": false,
+        "ssvc_exploitation": "active",
+        "cvss": 9.2,
+        "epss": 1.0,
+        "articles": [
+          "https://thehackernews.com/2026/10/php-issues-emergency-patches-for-two.html",
+          "https://thehackernews.com/2026/10/php2shell-two-unpatched-critical-php.html",
+          "https://thehackernews.com/2026/11/hackers-exploit-php2shell-flaws-in.html",
+          "https://www.bleepingcomputer.com/news/security/check-point-gateways-hacked-via-php2shell-to-deploy-vmware-esxi-wiper/"
+        ]
+      }
+    },
+    {
+      "cve": "CVE-2026-114713",
+      "first_seen_at": "2026-11-15",
+      "threat_score": 10,
+      "title": "UnrealIRCd Command Injection",
+      "summary": "A failure to escape IRCv3 label message tags allows users on linked servers to inject server-to-server commands.",
+      "facts": {
+        "kev_added": "2026-11-13",
+        "poc": false,
+        "nuclei_template": false,
+        "ssvc_exploitation": "active",
+        "cvss": 8.6,
+        "epss": 0.005,
+        "articles": [
+          "https://thehackernews.com/2026/11/attackers-exploit-unrealircd-flaw-that.html"
+        ]
+      }
+    },
+    {
+      "cve": "CVE-2026-123039",
+      "first_seen_at": "2026-11-15",
+      "threat_score": 9,
+      "title": "Check Point Quantum 'PHP2Shell' LPE",
+      "summary": "A local privilege escalation vulnerability in the DynamicCLI daemon allows an authenticated user to gain root access.",
+      "facts": {
+        "kev_added": "2026-11-13",
+        "poc": false,
+        "nuclei_template": false,
+        "ssvc_exploitation": "active",
+        "cvss": 7.8,
+        "epss": 0.022,
+        "articles": [
+          "https://thehackernews.com/2026/11/hackers-exploit-php2shell-flaws-in.html",
+          "https://www.bleepingcomputer.com/news/security/check-point-gateways-hacked-via-php2shell-to-deploy-vmware-esxi-wiper/",
+          "https://www.securityweek.com/php2shell-exploited-in-destructive-check-point-gateway-attacks/"
+        ]
+      }
+    },
+    {
+      "cve": "CVE-2026-18556",
+      "first_seen_at": "2026-11-11",
+      "threat_score": 9,
+      "title": "N-able N-central '4EverAble2Shell' Account Takeover",
+      "summary": "Authentication bypass vulnerabilities allow unauthenticated attackers to take over administrative accounts.",
+      "facts": {
+        "kev_added": "2026-08-04",
+        "poc": false,
+        "nuclei_template": false,
+        "ssvc_exploitation": "active",
+        "cvss": 8.2,
+        "epss": 0.439,
+        "articles": [
+          "https://thehackernews.com/2026/11/n-able-takes-hosted-n-central-offline.html",
+          "https://www.bleepingcomputer.com/news/security/n-able-releases-security-hotfixes-for-zero-day-vulnerabilities/",
+          "https://www.bleepingcomputer.com/news/security/n-able-takes-cloud-platform-offline-after-30-plus-zero-days-published/",
+          "https://www.bleepingcomputer.com/news/security/new-n-able-4everable2shell-zero-day-exploited-hours-after-poc-released/",
+          "https://www.securityweek.com/hackers-exploit-new-n-central-zero-day-hours-after-poc-publication/",
+          "https://www.securityweek.com/hackers-target-n-central-zero-days-as-n-able-rushes-patches/",
+          "https://www.securityweek.com/n-able-takes-n-central-offline-as-researcher-drops-over-30-zero-days/"
+        ]
+      }
+    },
+    {
+      "cve": "CVE-2026-18577",
+      "first_seen_at": "2026-11-11",
+      "threat_score": 9,
+      "title": "N-able N-central '4EverAble2Shell' Account Takeover",
+      "summary": "Authentication bypass vulnerabilities allow unauthenticated attackers to take over administrative accounts.",
+      "facts": {
+        "kev_added": "2026-08-03",
+        "poc": false,
+        "nuclei_template": false,
+        "ssvc_exploitation": "active",
+        "cvss": 8.2,
+        "epss": 0.146,
+        "articles": [
+          "https://thehackernews.com/2026/11/n-able-takes-hosted-n-central-offline.html",
+          "https://www.bleepingcomputer.com/news/security/n-able-releases-security-hotfixes-for-zero-day-vulnerabilities/",
+          "https://www.bleepingcomputer.com/news/security/n-able-takes-cloud-platform-offline-after-30-plus-zero-days-published/",
+          "https://www.bleepingcomputer.com/news/security/new-n-able-4everable2shell-zero-day-exploited-hours-after-poc-released/",
+          "https://www.securityweek.com/hackers-exploit-new-n-central-zero-day-hours-after-poc-publication/",
+          "https://www.securityweek.com/hackers-target-n-central-zero-days-as-n-able-rushes-patches/",
+          "https://www.securityweek.com/n-able-takes-n-central-offline-as-researcher-drops-over-30-zero-days/"
+        ]
+      }
+    },
+    {
+      "cve": "CVE-2026-116606",
+      "first_seen_at": "2026-11-05",
+      "threat_score": 9,
+      "title": "Barracuda ESG/ADC Root Access Chain",
+      "summary": "A combination of authentication bypass and command injection allows unauthenticated attackers to gain root access.",
+      "facts": {
+        "kev_added": "2026-11-10",
+        "poc": false,
+        "nuclei_template": false,
+        "ssvc_exploitation": "active",
+        "cvss": 9.3,
+        "epss": 0.109,
+        "articles": [
+          "https://thehackernews.com/2026/11/barracuda-flaws-could-be-chained-to.html",
+          "https://thehackernews.com/2026/11/experts-demonstrate-barracuda-email.html",
+          "https://www.bleepingcomputer.com/news/security/barracuda-warns-of-critical-flaws-allowing-root-access-to-devices/",
+          "https://www.bleepingcomputer.com/news/security/hackers-exploit-barracuda-email-security-gateway-flaws-to-get-root-access/",
+          "https://www.securityweek.com/barracuda-email-security-gateway-authentication-bypass-opens-path-to-root/",
+          "https://www.securityweek.com/recently-patched-barracuda-vulnerabilities-exploited-in-attacks/"
+        ]
+      }
+    },
+    {
+      "cve": "CVE-2026-111560",
+      "first_seen_at": "2026-11-05",
+      "threat_score": 9,
+      "title": "Barracuda ESG/ADC Root Access Chain",
+      "summary": "A combination of authentication bypass and command injection allows unauthenticated attackers to gain root access.",
+      "facts": {
+        "kev_added": "2026-11-10",
+        "poc": false,
+        "nuclei_template": false,
+        "ssvc_exploitation": "active",
+        "cvss": 8.6,
+        "epss": 0.091,
+        "articles": [
+          "https://thehackernews.com/2026/11/barracuda-flaws-could-be-chained-to.html",
+          "https://thehackernews.com/2026/11/experts-demonstrate-barracuda-email.html",
+          "https://www.bleepingcomputer.com/news/security/barracuda-warns-of-critical-flaws-allowing-root-access-to-devices/",
+          "https://www.bleepingcomputer.com/news/security/hackers-exploit-barracuda-email-security-gateway-flaws-to-get-root-access/",
+          "https://www.securityweek.com/barracuda-email-security-gateway-authentication-bypass-opens-path-to-root/",
+          "https://www.securityweek.com/recently-patched-barracuda-vulnerabilities-exploited-in-attacks/"
+        ]
+      }
+    },
+    {
+      "cve": "CVE-2026-19868",
+      "first_seen_at": "2026-11-07",
+      "threat_score": 9,
+      "title": "SonicWall SonicOS SSL-VPN MFA Bypass",
+      "summary": "An authentication enforcement flaw allows attackers with valid credentials to bypass SAML and multi-factor authentication.",
+      "facts": {
+        "kev_added": "2026-11-06",
+        "poc": false,
+        "nuclei_template": false,
+        "ssvc_exploitation": "active",
+        "cvss": 7.5,
+        "epss": 0.005,
+        "articles": [
+          "https://thehackernews.com/2026/11/cisa-flags-sonicwall-sonicos-mfa-bypass.html",
+          "https://www.bleepingcomputer.com/news/security/sonicwall-warns-of-new-ssl-vpn-mfa-bypass-flaw-exploited-in-attacks/",
+          "https://www.securityweek.com/sonicwall-patches-exploited-sonicos-bug-that-weakens-vpn-logins/"
+        ]
+      }
+    },
+    {
+      "cve": "CVE-2026-119618",
+      "first_seen_at": "2026-11-13",
+      "threat_score": 8,
+      "title": "Apache HTTP Server mod_http2 RCE",
+      "summary": "A heap corruption vulnerability in the mod_http2 module can lead to remote code execution.",
+      "facts": {
+        "kev_added": null,
+        "poc": false,
+        "nuclei_template": false,
+        "ssvc_exploitation": "none",
+        "cvss": 8.1,
+        "epss": 0.013,
+        "articles": [
+          "https://thehackernews.com/2026/11/critical-apache-http2-flaw-could-let.html",
+          "https://www.bleepingcomputer.com/news/security/apache-http-server-patches-critical-http-2-remote-code-execution-flaw/",
+          "https://www.securityweek.com/apache-patches-critical-http-server-rce-found-by-anthropic-google/"
+        ]
+      }
+    },
+    {
+      "cve": "CVE-2026-96654",
+      "first_seen_at": "2026-11-10",
+      "threat_score": 8,
+      "title": "Plex Media Server 'Plex2Shell' URL Injection",
+      "summary": "A URL injection vulnerability allows attackers to call unauthorized plugin functions and supply custom parameters.",
+      "facts": {
+        "kev_added": "2026-10-20",
+        "poc": false,
+        "nuclei_template": false,
+        "ssvc_exploitation": "active",
+        "cvss": 6.5,
+        "epss": 0.127,
+        "articles": [
+          "https://www.bleepingcomputer.com/news/security/qnap-says-hackers-breaching-nas-devices-in-plex2shell-attacks/",
+          "https://www.securityweek.com/plex2shell-exploited-against-qnap-nas-users/"
+        ]
+      }
+    },
+    {
+      "cve": "CVE-2026-123710",
+      "first_seen_at": "2026-11-15",
+      "threat_score": 8,
+      "title": "Red Hat Quay Registry Signing-Key Takeover",
+      "summary": "An unauthenticated attacker can take over the registry signing key to gain full access to private container images.",
+      "facts": {
+        "kev_added": null,
+        "poc": false,
+        "nuclei_template": false,
+        "ssvc_exploitation": "none",
+        "cvss": 9.8,
+        "epss": 0.007,
+        "articles": [
+          "https://thehackernews.com/2026/11/critical-red-hat-quay-flaw-lets.html",
+          "https://www.securityweek.com/critical-red-hat-quay-vulnerability-could-expose-private-container-images/"
+        ]
+      }
+    },
+    {
+      "cve": "CVE-2026-6460",
+      "first_seen_at": "2026-11-15",
+      "threat_score": 6,
+      "title": "PostgreSQL Type Confusion RCE",
+      "summary": "A type confusion vulnerability during data type alteration allows an authenticated object creator to execute arbitrary code.",
+      "facts": {
+        "kev_added": null,
+        "poc": false,
+        "nuclei_template": false,
+        "ssvc_exploitation": "none",
+        "cvss": 8.8,
+        "epss": 0.006,
+        "articles": [
+          "https://thehackernews.com/2026/11/postgresql-patches-52-flaws-including.html"
+        ]
+      }
+    },
+    {
+      "cve": "CVE-2025-29927",
+      "first_seen_at": "2026-11-15",
+      "threat_score": 6,
+      "title": "Next.js Middleware Authorization Bypass",
+      "summary": "An authorization bypass is possible in Next.js applications that perform security checks within middleware.",
+      "facts": {
+        "kev_added": null,
+        "poc": false,
+        "nuclei_template": false,
+        "ssvc_exploitation": "none",
+        "cvss": 9.1,
+        "epss": 0.992,
+        "articles": []
+      }
+    },
+    {
+      "cve": "CVE-2026-120868",
+      "first_seen_at": "2026-11-13",
+      "threat_score": 6,
+      "title": "Citrix NetScaler Memory Overflow",
+      "summary": "A memory overflow in packet processing can cause unpredictable behavior or a Denial of Service.",
+      "facts": {
+        "kev_added": null,
+        "poc": false,
+        "nuclei_template": false,
+        "ssvc_exploitation": null,
+        "cvss": 9.3,
+        "epss": 0.003,
+        "articles": [
+          "https://thehackernews.com/2026/11/citrix-patches-12-netscaler-and-secure.html",
+          "https://www.securityweek.com/citrix-ivanti-patch-critical-and-high-severity-vulnerabilities/",
+          "https://www.securityweek.com/citrix-patches-10-critical-netscaler-vulnerabilities/"
+        ]
+      }
+    }
+  ]
+}
