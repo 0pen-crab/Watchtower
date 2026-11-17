@@ -1,0 +1,260 @@
+{
+  "date": "2026-11-17",
+  "findings": [
+    {
+      "type": "update",
+      "title": "UnrealIRCd Command Injection",
+      "threat_score": 10,
+      "cve": "CVE-2026-114713",
+      "cvss": "8.6",
+      "affected_technology": "UnrealIRCd",
+      "summary": "A failure to escape IRCv3 label message tags allows users on linked servers to inject server-to-server commands.",
+      "first_seen_at": "2026-11-15",
+      "previous_threat_score": 10
+    },
+    {
+      "type": "news",
+      "title": "Apache Axis 1.x Remote Code Execution",
+      "threat_score": 8,
+      "cve": "CVE-2026-90436",
+      "cvss": "9.8",
+      "affected_technology": "Apache Axis 1.x",
+      "summary": "Unauthenticated remote class instantiation via SOAP fault exceptionName allows for remote code execution.",
+      "first_seen_at": "2026-11-17",
+      "discovery_latency": "on-time"
+    },
+    {
+      "type": "update",
+      "title": "Linux Kernel NoisyTCP Use-After-Free",
+      "threat_score": 7,
+      "cve": "CVE-2026-98432",
+      "cvss": "9.8",
+      "affected_technology": "Linux Kernel",
+      "summary": "A memory corruption vulnerability in the Linux kernel's TCP stack allows for potential privilege escalation or system crashes.",
+      "first_seen_at": "2026-10-30",
+      "previous_threat_score": 7
+    }
+  ],
+  "noted": [
+    {
+      "cve": "CVE-2023-2868",
+      "product": "Barracuda Email Security Gateway",
+      "summary": "Remote command injection via unsanitized .tar files allows root access."
+    },
+    {
+      "cve": "CVE-2026-111497",
+      "product": "Google Brotli",
+      "summary": "An out-of-bounds write in the decoder can lead to remote code execution."
+    },
+    {
+      "cve": "CVE-2026-2441",
+      "product": "Google Chrome",
+      "summary": "A use-after-free vulnerability in CSS allows remote code execution inside a sandbox."
+    },
+    {
+      "cve": "CVE-2025-43529",
+      "product": "Apple Safari/iOS/iPadOS",
+      "summary": "A use-after-free issue in web content processing may lead to arbitrary code execution."
+    },
+    {
+      "cve": "CVE-2026-96656",
+      "product": "Plex Media Server",
+      "summary": "An arbitrary file write vulnerability allows admin users to execute code on load."
+    },
+    {
+      "cve": "CVE-2026-46300",
+      "product": "Linux Kernel",
+      "summary": "A failure to preserve shared-frag markers during coalescing can lead to root escalation."
+    },
+    {
+      "cve": "CVE-2026-5281",
+      "product": "Google Chrome",
+      "summary": "A use-after-free in Dawn allows a compromised renderer process to execute arbitrary code."
+    },
+    {
+      "cve": "CVE-2026-96652",
+      "product": "Plex Media Server",
+      "summary": "A server-side request forgery (SSRF) vulnerability exists via the /player/timeline endpoint."
+    },
+    {
+      "cve": "CVE-2026-96655",
+      "product": "Plex Media Server",
+      "summary": "An authenticated user can trigger SSRF via the transcode universal path parameter."
+    },
+    {
+      "cve": "CVE-2026-87491",
+      "product": "Google Chrome",
+      "summary": "An out-of-bounds write in V8 allows remote code execution inside a sandbox."
+    },
+    {
+      "cve": "CVE-2026-3910",
+      "product": "Google Chrome",
+      "summary": "An implementation flaw in V8 allows remote code execution inside a sandbox."
+    },
+    {
+      "cve": "CVE-2026-116779",
+      "product": "SignalWire FreeSWITCH",
+      "summary": "Improper handling of SIP MESSAGE requests allows remote execution of API commands."
+    },
+    {
+      "cve": "CVE-2026-11645",
+      "product": "Google Chrome",
+      "summary": "Out-of-bounds read and write in V8 allows remote code execution inside a sandbox."
+    },
+    {
+      "cve": "CVE-2026-3909",
+      "product": "Google Chrome",
+      "summary": "An out-of-bounds write in Skia allows remote memory access via crafted HTML."
+    },
+    {
+      "cve": "CVE-2026-85046",
+      "product": "Google Chrome",
+      "summary": "Type confusion in V8 allows remote code execution inside a sandbox."
+    },
+    {
+      "cve": "CVE-2026-111793",
+      "product": "Openwave Webtop Media Transcoder",
+      "summary": "Failure to enforce file type restrictions allows authenticated users to convert unintended documents."
+    },
+    {
+      "cve": "CVE-2026-23918",
+      "product": "Apache HTTP Server",
+      "summary": "A double free vulnerability in the HTTP/2 protocol may lead to remote code execution."
+    },
+    {
+      "cve": "CVE-2026-126187",
+      "product": "React",
+      "summary": "Unauthenticated remote code execution is possible in React Server Components via crafted payloads."
+    },
+    {
+      "cve": "CVE-2026-58115",
+      "product": "Siemens SIMATIC IoT2050",
+      "summary": "Missing authentication on the Node-RED HTTP interface allows remote system command execution."
+    },
+    {
+      "cve": "CVE-2026-113961",
+      "product": "Apple HomeView/iOS/iPadOS",
+      "summary": "An authorization issue allows a remote attacker to join iMessage group chats and receive messages."
+    },
+    {
+      "cve": "CVE-2024-36350",
+      "product": "AMD EPYC Processors",
+      "summary": "A transient execution vulnerability may allow the leakage of privileged information."
+    },
+    {
+      "cve": "CVE-2024-36357",
+      "product": "AMD EPYC Processors",
+      "summary": "A transient execution vulnerability may allow sensitive information leakage from the L1D cache."
+    },
+    {
+      "cve": "CVE-2026-113960",
+      "product": "Apple HomeView/iOS/iPadOS",
+      "summary": "A vulnerability allows users added to an iMessage group to access messages sent before they joined."
+    },
+    {
+      "cve": "CVE-2026-118331",
+      "product": "Google Chrome",
+      "summary": "A use-after-free in FileAPI allows remote code execution outside the sandbox."
+    },
+    {
+      "cve": "CVE-2026-118344",
+      "product": "Google Chrome",
+      "summary": "A use-after-free in Layout allows remote code execution inside the sandbox."
+    },
+    {
+      "cve": "CVE-2026-118348",
+      "product": "Google Chrome",
+      "summary": "An integer overflow in Skia allows remote code execution outside the sandbox."
+    },
+    {
+      "cve": "CVE-2026-0004",
+      "product": "AMD EPYC Processors",
+      "summary": "A transient execution vulnerability allows local attackers to infer data in the L1D cache."
+    },
+    {
+      "cve": "CVE-2026-99288",
+      "product": "Linux Kernel",
+      "summary": "Failure to reject unhashed sockets during established lookups can lead to memory issues."
+    },
+    {
+      "cve": "CVE-2026-102703",
+      "product": "Xen Hypervisor",
+      "summary": "Incorrect re-validation of internal data allows arbitrary read/write via grant copy."
+    },
+    {
+      "cve": "CVE-2026-102704",
+      "product": "Xen Hypervisor",
+      "summary": "Incorrect re-validation of internal data allows arbitrary read/write via grant copy."
+    }
+  ],
+  "source_coverage": {
+    "total": 21,
+    "checked": 21,
+    "with_findings": 4,
+    "unreachable": [],
+    "degraded": []
+  },
+  "full_report": "reports/2026/11/17/report.md",
+  "index": [
+    {
+      "cve": "CVE-2026-114713",
+      "first_seen_at": "2026-11-15",
+      "threat_score": 10,
+      "title": "UnrealIRCd Command Injection",
+      "summary": "A failure to escape IRCv3 label message tags allows users on linked servers to inject server-to-server commands.",
+      "facts": {
+        "kev_added": "2026-11-13",
+        "poc": false,
+        "nuclei_template": false,
+        "ssvc_exploitation": "active",
+        "cvss": 8.6,
+        "epss": 0.005,
+        "articles": [
+          "https://thehackernews.com/2026/11/attackers-exploit-unrealircd-flaw-that.html",
+          "https://www.securityweek.com/recent-unrealircd-vulnerability-exploited-in-attacks/"
+        ]
+      }
+    },
+    {
+      "cve": "CVE-2026-90436",
+      "first_seen_at": "2026-11-17",
+      "threat_score": 8,
+      "title": "Apache Axis 1.x Remote Code Execution",
+      "summary": "Unauthenticated remote class instantiation via SOAP fault exceptionName allows for remote code execution.",
+      "facts": {
+        "kev_added": null,
+        "poc": false,
+        "nuclei_template": false,
+        "ssvc_exploitation": "none",
+        "cvss": 9.8,
+        "epss": 0.011,
+        "articles": [
+          "https://thehackernews.com/2026/11/hackers-exploit-n-central-flaws-to.html",
+          "https://thehackernews.com/2026/11/new-n-central-exploits-work-against.html",
+          "https://www.rapid7.com/blog/post/etr-rapid7-detected-exploitation-of-cve-2026-90436-against-atlassian-confluence-data-center-n-able-n-central-also-exploited"
+        ]
+      }
+    },
+    {
+      "cve": "CVE-2026-98432",
+      "first_seen_at": "2026-10-30",
+      "threat_score": 7,
+      "title": "Linux Kernel NoisyTCP Use-After-Free",
+      "summary": "A memory corruption vulnerability in the Linux kernel's TCP stack allows for potential privilege escalation or system crashes.",
+      "facts": {
+        "kev_added": null,
+        "poc": false,
+        "nuclei_template": false,
+        "ssvc_exploitation": null,
+        "cvss": 9.8,
+        "epss": 0.008,
+        "articles": [
+          "https://thehackernews.com/2026/11/openai-ai-pipeline-generates-948-linux.html",
+          "https://thehackernews.com/2026/11/red-hat-patches-98-rated-linux-tcp-rce.html",
+          "https://www.bleepingcomputer.com/news/linux/new-noisytcp-linux-kernel-flaw-lets-attackers-crash-servers/",
+          "https://www.securityweek.com/ai-agents-got-root-on-linux-via-948-kernel-flaws-in-openai-research/"
+        ]
+      }
+    }
+  ]
+}
